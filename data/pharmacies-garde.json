@@ -1,50 +1,50 @@
 {
-  "source": "https://pharmaciedegardekenitra.com",
-  "updatedAt": "2026-05-27",
-  "title": "Pharmacies de garde Kenitra - mercredi 27 mai 2026",
+  "source": "https://pharmaciedegardekenitra.com/",
+  "updatedAt": "2026-05-27T10:07:58+01:00",
+  "title": "Pharmacies de garde Kenitra - 27 May 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  "updateFrequency": "daily-data-weekly-manual-image",
-  "note": "Les données texte sont prévues pour une actualisation quotidienne. L'affiche image est mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Pasteur",
+      "name": "pharmacie pasteur",
       "nameAr": "صيدلية باستور",
-      "phone": "05 37 37 97 61",
-      "district": "Centre-ville",
-      "districtAr": "وسط المدينة",
-      "address": "46 avenue Hassan II, immeuble Wahbi, 1er étage, à côté du laboratoire Ibn Sina, Kenitra",
-      "date": "2026-05-27",
-      "mapsUrl": ""
+      "phone": "05 37 38 62 48",
+      "district": "saknia ,الساكنية",
+      "districtAr": "الساكنية",
+      "address": "HAU EL ARAIBI hay Jdid P.d.u. lot 5689 rue 162 SAKNIA Kénitra - Maroc العرايبي الحي الجديد وراء اعدادية المقاطعة ,الساكنية ,القنيطرة 14050,",
+      "date": "27 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/exDzFLztqt1ZbfMQ9"
     },
     {
-      "name": "Pharmacie El Manar",
+      "name": "pharmacie el manar",
       "nameAr": "صيدلية المنار",
-      "phone": "05 37 36 25 50",
-      "district": "Boulevard Mohamed V",
-      "districtAr": "شارع محمد الخامس",
-      "address": "Boulevard Mohamed V n°243, à côté du Crédit Agricole, à 200 m de la gare routière, Kenitra",
-      "date": "2026-05-27",
-      "mapsUrl": ""
+      "phone": "05373 95033",
+      "district": "Bir rami",
+      "districtAr": "",
+      "address": "hay Bir Rami Rte des écoles Lotis. Al Manar n°42  Kénitra - Maroc",
+      "date": "27 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/HHfRUBTGtzduntV99"
     },
     {
-      "name": "Pharmacie Les Iris",
-      "nameAr": "صيدلية ليز إيريس",
-      "phone": "05 37 32 24 44",
-      "district": "Riad Saknia",
-      "districtAr": "رياض الساكنية",
-      "address": "Lotissement Riad Saknia, lot n°77, 1ère tranche, en face de la mosquée Charif Al Idrissi, Kenitra",
-      "date": "2026-05-27",
-      "mapsUrl": ""
+      "name": "pharmacie Les IRIS",
+      "nameAr": "صيدلية السوسن",
+      "phone": "0537351718",
+      "district": "haousia",
+      "districtAr": "",
+      "address": "haousiae, Kénitra - Maroc",
+      "date": "27 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/kcz5F5PuduGQDTAv6"
     },
     {
-      "name": "Pharmacie El Houria",
+      "name": "pharmacie Elhouria",
       "nameAr": "صيدلية الحرية",
-      "phone": "05 37 36 41 42",
-      "district": "Maghrib Arabi",
-      "districtAr": "المغرب العربي",
-      "address": "Maghrib Arabi 4, Oued El Makhazine, lotissement El Houria, Kenitra",
-      "date": "2026-05-27",
-      "mapsUrl": ""
+      "phone": "05 37 37 35 90",
+      "district": "KHABAZAT MARCHER EL HOURIA",
+      "districtAr": "",
+      "address": "rue Bir Anzarane ang. 45 Kénitra - Maroc",
+      "date": "27 May 2026",
+      "mapsUrl": "https://g.co/kgs/XMfokN3"
     }
   ]
 }

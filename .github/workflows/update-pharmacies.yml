@@ -1,0 +1,36 @@
+name: Update Kenitra on-duty pharmacies
+
+on:
+  schedule:
+    - cron: "15 6,12,18,23 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-pharmacies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Update pharmacy data
+        run: node scripts/update-pharmacies.mjs
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- data/pharmacies-garde.json; then
+            echo "No pharmacy changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/pharmacies-garde.json
+          git commit -m "Update pharmacy duty data"
+          git push

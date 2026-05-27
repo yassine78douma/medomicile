@@ -20,6 +20,10 @@ const themeToggle = document.querySelector("[data-theme-toggle]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
 document.querySelector(".bottom-actions")?.remove();
 
 const galleryItems = [
@@ -140,7 +144,7 @@ const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
   updatedAt: "2026-05-27",
   title: "Pharmacies de garde Kenitra - mercredi 27 mai 2026",
-  updateFrequency: "daily-data-weekly-manual-image",
+  updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
   pharmacies: [
     {
       name: "Pharmacie Pasteur",
@@ -187,6 +191,11 @@ const getLocalized = (item, key) => {
   return item[key];
 };
 
+const systemPrefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const getActiveTheme = (theme = localStorage.getItem("medomicile-theme")) =>
+  theme && theme !== "auto" ? theme : systemPrefersDark() ? "dark" : "light";
+
 const setTheme = (theme) => {
   if (!theme || theme === "auto") {
     document.documentElement.removeAttribute("data-theme");
@@ -196,24 +205,32 @@ const setTheme = (theme) => {
     localStorage.setItem("medomicile-theme", theme);
   }
 
-  const activeTheme =
-    theme && theme !== "auto"
-      ? theme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-  const themeColor = activeTheme === "dark" ? "#f3f8fc" : "#f8fafc";
+  const activeTheme = getActiveTheme(theme);
+  const themeColor = activeTheme === "dark" ? "#04111d" : "#f8fafc";
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
   if (themeToggle) {
     themeToggle.textContent = activeTheme === "dark" ? "☾" : "☼";
+    themeToggle.setAttribute(
+      "aria-label",
+      activeTheme === "dark"
+        ? isArabicPage
+          ? "تفعيل المظهر الفاتح"
+          : isEnglishPage
+            ? "Switch to light mode"
+            : "Activer le mode clair"
+        : isArabicPage
+          ? "تفعيل المظهر الداكن"
+          : isEnglishPage
+            ? "Switch to dark mode"
+            : "Activer le mode sombre"
+    );
   }
 };
 
 setTheme(localStorage.getItem("medomicile-theme") || "auto");
 
 themeToggle?.addEventListener("click", () => {
-  const current = document.documentElement.dataset.theme;
-  setTheme(current === "dark" ? "light" : "dark");
+  setTheme(getActiveTheme() === "dark" ? "light" : "dark");
 });
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
@@ -226,6 +243,22 @@ const closeMenu = () => {
   menu.classList.remove("is-open");
   document.body.classList.remove("menu-open");
 };
+
+const clearReloadHash = () => {
+  const navigation = performance.getEntriesByType("navigation")[0];
+  const isReload = navigation?.type === "reload" || performance.navigation?.type === 1;
+
+  if (!isReload) return;
+
+  if (window.location.hash) {
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
+  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 0);
+  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 120);
+  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 480);
+};
+
+clearReloadHash();
 
 if (menuToggle && menu) {
   menuToggle.addEventListener("click", () => {
@@ -280,7 +313,10 @@ const handleServiceChoice = (service) => {
   if (galleryFilter && window.location.hash !== target) window.location.hash = target;
 
   scrollToSection(target, galleryFilter ? "auto" : "smooth");
-  window.setTimeout(() => scrollToSection(target, galleryFilter ? "auto" : "smooth"), 160);
+  window.setTimeout(() => {
+    scrollToSection(target, galleryFilter ? "auto" : "smooth");
+    if (galleryFilter) history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+  }, 160);
 };
 
 pickerOptions.forEach((option) => {
