@@ -200,7 +200,7 @@ const setTheme = (theme) => {
       : window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light";
-  const themeColor = activeTheme === "dark" ? "#08111d" : "#f8fafc";
+  const themeColor = activeTheme === "dark" ? "#f3f8fc" : "#f8fafc";
   document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
   if (themeToggle) {
     themeToggle.textContent = activeTheme === "dark" ? "☾" : "☼";

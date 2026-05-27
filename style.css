@@ -1262,40 +1262,40 @@ h1 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --blue-950: #dbeafe;
-    --blue-850: #60a5fa;
+    --blue-950: #082f49;
+    --blue-850: #0f4c81;
     --blue-700: #2f80ed;
-    --blue-100: #0f2742;
-    --green-700: #22c55e;
+    --blue-100: #eaf3ff;
+    --green-700: #15803d;
     --green-600: #22c55e;
-    --green-100: #0d2f22;
-    --ink: #f8fafc;
-    --muted: #dbe5ef;
-    --soft-muted: #a8b4c3;
-    --line: #24445f;
-    --surface: #0b1624;
-    --soft: #08111d;
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
-    --deep-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+    --green-100: #ecfdf3;
+    --ink: #0f172a;
+    --muted: #334155;
+    --soft-muted: #64748b;
+    --line: #d7e6f2;
+    --surface: #ffffff;
+    --soft: #f3f8fc;
+    --shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+    --deep-shadow: 0 24px 70px rgba(15, 76, 129, 0.18);
   }
 }
 
 [data-theme="dark"] {
-  --blue-950: #dbeafe;
-  --blue-850: #60a5fa;
+  --blue-950: #082f49;
+  --blue-850: #0f4c81;
   --blue-700: #2f80ed;
-  --blue-100: #0f2742;
-  --green-700: #22c55e;
+  --blue-100: #eaf3ff;
+  --green-700: #15803d;
   --green-600: #22c55e;
-  --green-100: #0d2f22;
-  --ink: #f8fafc;
-  --muted: #dbe5ef;
-  --soft-muted: #a8b4c3;
-  --line: #24445f;
-  --surface: #0b1624;
-  --soft: #08111d;
-  --shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
-  --deep-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
+  --green-100: #ecfdf3;
+  --ink: #0f172a;
+  --muted: #334155;
+  --soft-muted: #64748b;
+  --line: #d7e6f2;
+  --surface: #ffffff;
+  --soft: #f3f8fc;
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --deep-shadow: 0 24px 70px rgba(15, 76, 129, 0.18);
 }
 
 [data-theme="light"] {
@@ -1319,13 +1319,15 @@ h1 {
 @media (prefers-color-scheme: dark) {
   body,
   [data-theme="dark"] body {
-    background: linear-gradient(180deg, var(--soft), var(--surface) 42%);
+    background:
+      radial-gradient(circle at 14% 0%, rgba(47, 128, 237, 0.12), transparent 34%),
+      linear-gradient(180deg, var(--soft), var(--surface) 48%);
   }
 
   .mobile-header,
   [data-theme="dark"] .mobile-header {
-    background: rgba(11, 22, 36, 0.9);
-    border-bottom-color: rgba(36, 68, 95, 0.82);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: rgba(215, 230, 242, 0.9);
   }
 
   .media-caption,
@@ -1334,8 +1336,8 @@ h1 {
   [data-theme="dark"] .media-caption,
   [data-theme="dark"] .media-zone,
   [data-theme="dark"] .gallery-caption {
-    background: rgba(11, 22, 36, 0.86);
-    border-color: rgba(219, 234, 254, 0.18);
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.72);
   }
 
   .brand-mark,
@@ -1356,7 +1358,7 @@ h1 {
   [data-theme="dark"] .pharmacy-card,
   [data-theme="dark"] .facility-card,
   [data-theme="dark"] .contact-panel {
-    background: rgba(15, 31, 48, 0.92);
+    background: rgba(255, 255, 255, 0.94);
   }
 
   .pharmacy-image img,
@@ -1366,8 +1368,42 @@ h1 {
 
   .bottom-actions,
   [data-theme="dark"] .bottom-actions {
-    background: rgba(11, 22, 36, 0.92);
+    background: rgba(255, 255, 255, 0.95);
   }
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 14% 0%, rgba(47, 128, 237, 0.12), transparent 34%),
+    linear-gradient(180deg, var(--soft), var(--surface) 48%);
+}
+
+[data-theme="dark"] .mobile-header {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(215, 230, 242, 0.9);
+}
+
+[data-theme="dark"] .media-caption,
+[data-theme="dark"] .media-zone,
+[data-theme="dark"] .gallery-caption {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .brand-mark,
+[data-theme="dark"] .menu,
+[data-theme="dark"] .menu-toggle,
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .gallery-filter,
+[data-theme="dark"] .pharmacy-card,
+[data-theme="dark"] .facility-card,
+[data-theme="dark"] .contact-panel {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+[data-theme="dark"] .bottom-actions {
+  background: rgba(255, 255, 255, 0.95);
 }
 
 [data-theme="light"] .mobile-header {
