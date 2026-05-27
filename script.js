@@ -258,7 +258,7 @@ const galleryFilterForService = (service) => {
   return null;
 };
 
-const scrollToSection = (selector) => {
+const scrollToSection = (selector, behavior = "smooth") => {
   const targetElement = document.querySelector(selector);
   const headerOffset =
     Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-height"), 10) + 18;
@@ -267,7 +267,7 @@ const scrollToSection = (selector) => {
 
   window.scrollTo({
     top: targetElement.getBoundingClientRect().top + window.scrollY - headerOffset,
-    behavior: "smooth",
+    behavior,
   });
 };
 
@@ -277,8 +277,10 @@ const handleServiceChoice = (service) => {
 
   selectService(service);
   if (galleryFilter) applyGalleryFilter(galleryFilter);
+  if (galleryFilter && window.location.hash !== target) window.location.hash = target;
 
-  window.setTimeout(() => scrollToSection(target), 120);
+  scrollToSection(target, galleryFilter ? "auto" : "smooth");
+  window.setTimeout(() => scrollToSection(target, galleryFilter ? "auto" : "smooth"), 160);
 };
 
 pickerOptions.forEach((option) => {
@@ -291,13 +293,19 @@ pickerOptions.forEach((option) => {
 serviceCards.forEach((card) => {
   card.setAttribute("role", "button");
   card.setAttribute("tabindex", "0");
-  card.addEventListener("click", () => handleServiceChoice(card.dataset.serviceCard));
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       handleServiceChoice(card.dataset.serviceCard);
     }
   });
+});
+
+document.addEventListener("click", (event) => {
+  const card = event.target.closest("[data-service-card]");
+  if (!card) return;
+
+  handleServiceChoice(card.dataset.serviceCard);
 });
 
 const visibleGalleryIndexes = () =>
