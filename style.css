@@ -1146,31 +1146,31 @@ h1 {
 
 .bottom-actions {
   position: fixed;
-  left: 14px;
-  right: 14px;
-  bottom: 12px;
+  left: 20px;
+  right: 20px;
+  bottom: 10px;
   z-index: 98;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 7px;
-  width: min(calc(100% - 28px), 520px);
+  gap: 6px;
+  width: min(calc(100% - 40px), 440px);
   margin: 0 auto;
-  padding: 6px;
+  padding: 5px;
   border: 1px solid rgba(220, 234, 243, 0.92);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 14px 36px rgba(15, 76, 129, 0.16);
+  box-shadow: 0 12px 30px rgba(15, 76, 129, 0.14);
   backdrop-filter: blur(16px);
 }
 
 .bottom-call,
 .bottom-whats {
-  min-height: 46px;
+  min-height: 40px;
   display: grid;
   place-items: center;
   border-radius: 999px;
   color: var(--surface);
-  font-size: 0.94rem;
+  font-size: 0.86rem;
   font-weight: 900;
 }
 
