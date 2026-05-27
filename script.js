@@ -253,10 +253,11 @@ const selectService = (service) => {
 pickerOptions.forEach((option) => {
   option.addEventListener("click", () => {
     const service = option.dataset.service;
-    const target = service === "vitamines" ? "#vitamines" : ["ambulance", "fourgon"].includes(service) ? "#galerie" : "#services";
+    const galleryServices = ["ambulance", "couveuse", "fourgon"];
+    const target = service === "vitamines" ? "#vitamines" : galleryServices.includes(service) ? "#galerie" : "#services";
 
     selectService(service);
-    if (service === "ambulance" || service === "fourgon") applyGalleryFilter(service);
+    if (galleryServices.includes(service)) applyGalleryFilter(service === "couveuse" ? "ambulance" : service);
 
     window.setTimeout(() => {
       const targetElement = document.querySelector(target);
