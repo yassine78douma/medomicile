@@ -1146,16 +1146,19 @@ h1 {
 
 .bottom-actions {
   position: fixed;
-  left: 58px;
-  right: 58px;
-  bottom: 7px;
+  left: 50%;
+  right: auto;
+  bottom: calc(7px + env(safe-area-inset-bottom, 0px));
   z-index: 98;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5px;
-  width: min(calc(100% - 116px), 300px);
+  width: calc(100% - 116px);
+  min-width: 250px;
+  max-width: 300px;
   margin: 0 auto;
   padding: 3px;
+  transform: translateX(-50%);
   border: 1px solid rgba(220, 234, 243, 0.92);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.94);
