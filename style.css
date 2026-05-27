@@ -1150,31 +1150,33 @@ h1 {
   right: auto;
   bottom: calc(7px + env(safe-area-inset-bottom, 0px));
   z-index: 98;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  width: calc(100% - 116px);
-  min-width: 250px;
-  max-width: 300px;
+  display: inline-flex;
+  gap: 8px;
+  width: auto;
+  min-width: 0;
+  max-width: calc(100% - 28px);
   margin: 0 auto;
-  padding: 3px;
+  padding: 0;
   transform: translateX(-50%);
-  border: 1px solid rgba(220, 234, 243, 0.92);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 8px 18px rgba(15, 76, 129, 0.1);
-  backdrop-filter: blur(16px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 
 .bottom-call,
 .bottom-whats {
-  min-height: 32px;
+  min-width: 92px;
+  min-height: 36px;
+  padding: 0 14px;
   display: grid;
   place-items: center;
   border-radius: 999px;
   color: var(--surface);
-  font-size: 0.74rem;
-  font-weight: 800;
+  font-size: 0.78rem;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(15, 76, 129, 0.16);
 }
 
 .bottom-call {
@@ -1374,7 +1376,7 @@ h1 {
 
   .bottom-actions,
   [data-theme="dark"] .bottom-actions {
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
   }
 }
 
@@ -1409,7 +1411,7 @@ h1 {
 }
 
 [data-theme="dark"] .bottom-actions {
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent;
 }
 
 [data-theme="light"] .mobile-header {
@@ -1437,7 +1439,7 @@ h1 {
 }
 
 [data-theme="light"] .bottom-actions {
-  background: rgba(255, 255, 255, 0.94);
+  background: transparent;
 }
 
 @media (min-width: 1080px) {
