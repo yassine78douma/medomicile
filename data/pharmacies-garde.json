@@ -1,0 +1,70 @@
+{
+  "source": "https://pharmaciedegardekenitra.com",
+  "updatedAt": "2026-05-26",
+  "title": "Pharmacies de garde Kenitra - semaine du 25 mai 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
+  "updateFrequency": "daily-data-weekly-manual-image",
+  "note": "Les données texte sont prévues pour une actualisation quotidienne. L'affiche image est mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "pharmacies": [
+    {
+      "name": "Pharmacie El Fouissi",
+      "nameAr": "صيدلية لفويسي",
+      "phone": "07 66 80 69 21",
+      "district": "Bir Rami Oust",
+      "districtAr": "بير الرامي الجنوبية",
+      "address": "Bir Rami Oust, près Hammam Hassiba, route vers Moqbirat Ridouane, Kenitra",
+      "date": "2026-05-25",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie El Omouma",
+      "nameAr": "صيدلية الأمومة",
+      "phone": "05 37 38 35 32",
+      "district": "El Irchad",
+      "districtAr": "حي الإرشاد",
+      "address": "Quartier El Irchad, grand boulevard vers la forêt, près Hammam El Irchad, Kenitra",
+      "date": "2026-05-25",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Chifae",
+      "nameAr": "صيدلية الشفاء",
+      "phone": "05 37 35 28 70",
+      "district": "Ouled Oujih",
+      "districtAr": "أولاد أوجيه",
+      "address": "Résidence Iqbal n°44, derrière Mosquée Errahma, Oulad Oujih, Kenitra",
+      "date": "2026-05-26",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Moussa",
+      "nameAr": "صيدلية موسى",
+      "phone": "05 37 38 01 72",
+      "district": "Saknia",
+      "districtAr": "الساكنية",
+      "address": "210 Oulad Arfa, quartier Al Andalous, près Douibla Four Oulad Arfa, Saknia, Kenitra",
+      "date": "2026-05-26",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Tariq",
+      "nameAr": "صيدلية طارق",
+      "phone": "05 37 36 55 75",
+      "district": "Oulad Oujih",
+      "districtAr": "أولاد أوجيه",
+      "address": "Près de l'arc Oulad Oujih et Imarat Al Manal Al Manharaa, Kenitra",
+      "date": "2026-05-29",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Werkan",
+      "nameAr": "صيدلية ورقان",
+      "phone": "07 74 01 64 60",
+      "district": "El Fourate",
+      "districtAr": "الفورات",
+      "address": "Lotissement El Haj Mansour n°153, secteur D, El Fourate, Kenitra",
+      "date": "2026-05-29",
+      "mapsUrl": ""
+    }
+  ]
+}
