@@ -253,9 +253,11 @@ const selectService = (service) => {
 pickerOptions.forEach((option) => {
   option.addEventListener("click", () => {
     const service = option.dataset.service;
-    const target = service === "vitamines" ? "#vitamines" : "#services";
+    const target = service === "vitamines" ? "#vitamines" : service === "fourgon" ? "#galerie" : "#services";
 
     selectService(service);
+    if (service === "fourgon") applyGalleryFilter("fourgon");
+
     window.setTimeout(() => {
       const targetElement = document.querySelector(target);
       const headerOffset =
