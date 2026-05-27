@@ -20,6 +20,8 @@ const themeToggle = document.querySelector("[data-theme-toggle]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
+document.querySelector(".bottom-actions")?.remove();
+
 const galleryItems = [
   {
     src: "assets/gallery/ambulance-exterieur-01.jpg",

@@ -1145,6 +1145,7 @@ h1 {
 }
 
 .bottom-actions {
+  display: none !important;
   position: fixed;
   left: 50%;
   right: auto;
