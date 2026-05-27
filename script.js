@@ -252,8 +252,22 @@ const selectService = (service) => {
 
 pickerOptions.forEach((option) => {
   option.addEventListener("click", () => {
-    selectService(option.dataset.service);
-    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const service = option.dataset.service;
+    const target = service === "vitamines" ? "#vitamines" : "#services";
+
+    selectService(service);
+    window.setTimeout(() => {
+      const targetElement = document.querySelector(target);
+      const headerOffset =
+        Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-height"), 10) + 18;
+
+      if (!targetElement) return;
+
+      window.scrollTo({
+        top: targetElement.getBoundingClientRect().top + window.scrollY - headerOffset,
+        behavior: "smooth",
+      });
+    }, 120);
   });
 });
 
