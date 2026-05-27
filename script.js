@@ -23,9 +23,9 @@ const isEnglishPage = document.documentElement.lang?.startsWith("en");
 const galleryItems = [
   {
     src: "assets/gallery/ambulance-exterieur-01.jpg",
-    title: "Ambulance et fourgon disponibles",
-    titleEn: "Ambulance and medical van available",
-    titleAr: "سيارات إسعاف وفورغون متاحة",
+    title: "Ambulance disponible",
+    titleEn: "Ambulance available",
+    titleAr: "سيارة إسعاف متاحة",
     category: "exterieur",
     alt: "Ambulance extérieure",
     altAr: "سيارة إسعاف من الخارج",
@@ -253,10 +253,10 @@ const selectService = (service) => {
 pickerOptions.forEach((option) => {
   option.addEventListener("click", () => {
     const service = option.dataset.service;
-    const target = service === "vitamines" ? "#vitamines" : service === "fourgon" ? "#galerie" : "#services";
+    const target = service === "vitamines" ? "#vitamines" : ["ambulance", "fourgon"].includes(service) ? "#galerie" : "#services";
 
     selectService(service);
-    if (service === "fourgon") applyGalleryFilter("fourgon");
+    if (service === "ambulance" || service === "fourgon") applyGalleryFilter(service);
 
     window.setTimeout(() => {
       const targetElement = document.querySelector(target);
@@ -276,7 +276,10 @@ pickerOptions.forEach((option) => {
 const visibleGalleryIndexes = () =>
   galleryItems
     .map((item, index) => ({ item, index }))
-    .filter(({ item }) => activeGalleryFilter === "all" || item.category === activeGalleryFilter)
+    .filter(({ item }) =>
+      activeGalleryFilter === "all" ||
+      (activeGalleryFilter === "ambulance" ? item.category !== "fourgon" : item.category === activeGalleryFilter)
+    )
     .map(({ index }) => index);
 
 const setGalleryImage = (index) => {
@@ -311,7 +314,8 @@ const applyGalleryFilter = (filter) => {
 
   galleryThumbs.forEach((thumb) => {
     const category = thumb.dataset.galleryCategory;
-    thumb.classList.toggle("is-hidden", filter !== "all" && category !== filter);
+    const isVisible = filter === "all" || (filter === "ambulance" ? category !== "fourgon" : category === filter);
+    thumb.classList.toggle("is-hidden", !isVisible);
   });
 
   setGalleryImage(visibleGalleryIndexes()[0] || 0);
