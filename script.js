@@ -252,27 +252,51 @@ const selectService = (service) => {
   });
 };
 
+const galleryFilterForService = (service) => {
+  if (service === "fourgon") return "fourgon";
+  if (["ambulance", "couveuse", "evenement"].includes(service)) return "ambulance";
+  return null;
+};
+
+const scrollToSection = (selector) => {
+  const targetElement = document.querySelector(selector);
+  const headerOffset =
+    Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-height"), 10) + 18;
+
+  if (!targetElement) return;
+
+  window.scrollTo({
+    top: targetElement.getBoundingClientRect().top + window.scrollY - headerOffset,
+    behavior: "smooth",
+  });
+};
+
+const handleServiceChoice = (service) => {
+  const galleryFilter = galleryFilterForService(service);
+  const target = service === "vitamines" ? "#vitamines" : galleryFilter ? "#galerie" : "#services";
+
+  selectService(service);
+  if (galleryFilter) applyGalleryFilter(galleryFilter);
+
+  window.setTimeout(() => scrollToSection(target), 120);
+};
+
 pickerOptions.forEach((option) => {
-  option.addEventListener("click", () => {
-    const service = option.dataset.service;
-    const galleryServices = ["ambulance", "couveuse", "fourgon"];
-    const target = service === "vitamines" ? "#vitamines" : galleryServices.includes(service) ? "#galerie" : "#services";
+  option.addEventListener("click", (event) => {
+    event.preventDefault();
+    handleServiceChoice(option.dataset.service);
+  });
+});
 
-    selectService(service);
-    if (galleryServices.includes(service)) applyGalleryFilter(service === "couveuse" ? "ambulance" : service);
-
-    window.setTimeout(() => {
-      const targetElement = document.querySelector(target);
-      const headerOffset =
-        Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-height"), 10) + 18;
-
-      if (!targetElement) return;
-
-      window.scrollTo({
-        top: targetElement.getBoundingClientRect().top + window.scrollY - headerOffset,
-        behavior: "smooth",
-      });
-    }, 120);
+serviceCards.forEach((card) => {
+  card.setAttribute("role", "button");
+  card.setAttribute("tabindex", "0");
+  card.addEventListener("click", () => handleServiceChoice(card.dataset.serviceCard));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleServiceChoice(card.dataset.serviceCard);
+    }
   });
 });
 
