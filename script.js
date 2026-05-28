@@ -143,7 +143,7 @@ const contactServiceTypes = ["medecin", "infirmier", "kine", "vitamines"];
 
 const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
-  updatedAt: "2026-05-28T09:56:23+01:00",
+  updatedAt: "2026-05-28T13:00:36+01:00",
   title: "Pharmacies de garde Kenitra et Mehdia",
   updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
   pharmacies: [
