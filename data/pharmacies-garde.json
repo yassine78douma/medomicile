@@ -1,50 +1,50 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-05-27T10:07:58+01:00",
-  "title": "Pharmacies de garde Kenitra - 27 May 2026",
-  "image": "assets/pharmacies/pharmacie-garde-exceptionnelle-aid-2026.jpg",
+  "updatedAt": "2026-05-28T14:24:23+01:00",
+  "title": "Pharmacies de garde Kenitra - 28 May 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "pharmacie pasteur",
-      "nameAr": "صيدلية باستور",
-      "phone": "05 37 38 62 48",
-      "district": "saknia ,الساكنية",
-      "districtAr": "الساكنية",
-      "address": "HAU EL ARAIBI hay Jdid P.d.u. lot 5689 rue 162 SAKNIA Kénitra - Maroc العرايبي الحي الجديد وراء اعدادية المقاطعة ,الساكنية ,القنيطرة 14050,",
-      "date": "27 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/exDzFLztqt1ZbfMQ9"
+      "name": "PHARMCIE SOUFIA",
+      "nameAr": "صيدلية صوفيا",
+      "phone": "05 37 39 20 03",
+      "district": "saknia",
+      "districtAr": "",
+      "address": "hay lwafa . acote bim Kénitra - Maroc بالقرب من المقاطعة 16 مابين حي الوفا و حي الارشاد و بيم صيدلية صوفيا القنيطرة",
+      "date": "28 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/aVsgRNg53wd6MMgBA"
     },
     {
-      "name": "pharmacie el manar",
-      "nameAr": "صيدلية المنار",
-      "phone": "05373 95033",
-      "district": "Bir rami",
-      "districtAr": "",
-      "address": "hay Bir Rami Rte des écoles Lotis. Al Manar n°42  Kénitra - Maroc",
-      "date": "27 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/HHfRUBTGtzduntV99"
+      "name": "Pharmacie bir Rami Sud",
+      "nameAr": "صيدلية بير الرامي الجنوبية",
+      "phone": "05 37 37 86 07",
+      "district": "bir rami sud ,بير الرامي الجنوبية",
+      "districtAr": "بير الرامي الجنوبية",
+      "address": "Sect. bir rami sud , Kénitra, بير الرامي الجنوبية قرب القاعة المغطات باتجاه حمام سارة ,القنيطرة",
+      "date": "28 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/ZJGs8oKcyoB19vcN7"
     },
     {
-      "name": "pharmacie Les IRIS",
-      "nameAr": "صيدلية السوسن",
-      "phone": "0537351718",
-      "district": "haousia",
-      "districtAr": "",
-      "address": "haousiae, Kénitra - Maroc",
-      "date": "27 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/kcz5F5PuduGQDTAv6"
+      "name": "PHARMACIE El Gueddari",
+      "nameAr": "صيدلية الكداري",
+      "phone": "06 18 82 75 92",
+      "district": "EL ATLAS الاطلس",
+      "districtAr": "الاطلس",
+      "address": "222, Avenue Bacha Abdelhamid. Elalaoui Rue 153, 14010, Kénitra 14000 افكا قرب سينما الاطلس - القنيطرة",
+      "date": "28 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/c1o9iwFExBnM53xQ8"
     },
     {
-      "name": "pharmacie Elhouria",
-      "nameAr": "صيدلية الحرية",
-      "phone": "05 37 37 35 90",
-      "district": "KHABAZAT MARCHER EL HOURIA",
+      "name": "pharmacie el azhar",
+      "nameAr": "صيدلية الازهر",
+      "phone": "05373 63683",
+      "district": "BIR RAMI",
       "districtAr": "",
-      "address": "rue Bir Anzarane ang. 45 Kénitra - Maroc",
-      "date": "27 May 2026",
-      "mapsUrl": "https://g.co/kgs/XMfokN3"
+      "address": "515 hay Bir Rami Est - Kénitra - Maroc",
+      "date": "28 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/ddU79zGHsX26tpN26"
     }
   ]
 }
