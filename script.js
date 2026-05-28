@@ -139,6 +139,7 @@ const galleryItems = [
 
 let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
+const contactServiceTypes = ["medecin", "infirmier", "kine", "vitamines"];
 
 const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
@@ -282,6 +283,7 @@ const selectService = (service) => {
 
   serviceCards.forEach((card) => {
     card.classList.toggle("is-selected", card.dataset.serviceCard === service);
+    card.classList.remove("has-contact-open");
   });
 };
 
@@ -309,6 +311,9 @@ const handleServiceChoice = (service) => {
   const target = service === "vitamines" ? "#vitamines" : galleryFilter ? "#galerie" : "#services";
 
   selectService(service);
+  if (contactServiceTypes.includes(service)) {
+    document.querySelector(`[data-service-card="${service}"]`)?.classList.add("has-contact-open");
+  }
   if (galleryFilter) applyGalleryFilter(galleryFilter);
   if (galleryFilter && window.location.hash !== target) window.location.hash = target;
 
@@ -329,6 +334,15 @@ pickerOptions.forEach((option) => {
 serviceCards.forEach((card) => {
   card.setAttribute("role", "button");
   card.setAttribute("tabindex", "0");
+  if (contactServiceTypes.includes(card.dataset.serviceCard)) {
+    const actions = document.createElement("div");
+    actions.className = "service-contact-options";
+    actions.innerHTML = `
+      <a class="service-call" href="tel:+212663058222">${isArabicPage ? "اتصال" : isEnglishPage ? "Call" : "Appeler"}</a>
+      <a class="service-whats" href="https://wa.me/212663058222">WhatsApp</a>
+    `;
+    card.append(actions);
+  }
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -338,6 +352,8 @@ serviceCards.forEach((card) => {
 });
 
 document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-service-card] a")) return;
+
   const card = event.target.closest("[data-service-card]");
   if (!card) return;
 
