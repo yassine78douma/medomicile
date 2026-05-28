@@ -143,7 +143,7 @@ let activeGalleryFilter = "all";
 const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
   updatedAt: "2026-05-27",
-  title: "Pharmacies de garde Kenitra - mercredi 27 mai 2026",
+  title: "Pharmacies de garde Kenitra et Mehdia",
   updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
   pharmacies: [
     {
@@ -421,9 +421,9 @@ const renderPharmacies = (data) => {
 
   const title = data.title || (isArabicPage ? "صيدليات الحراسة في القنيطرة" : "Pharmacies de garde à Kenitra");
   pharmacyTitle.textContent = isArabicPage
-    ? "صيدليات الحراسة في القنيطرة"
+    ? "صيدليات الحراسة في القنيطرة والمهدية"
     : isEnglishPage
-      ? "On-duty pharmacies in Kenitra"
+      ? "On-duty pharmacies in Kenitra and Mehdia"
       : title;
   pharmacyUpdated.textContent = data.updatedAt
     ? isArabicPage
