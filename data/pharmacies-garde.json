@@ -4,7 +4,7 @@
   "title": "Pharmacies de garde Kenitra et Mehdia",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
-  "note": "Données texte actualisées depuis pharmaciedegardekenitra.com pour Kenitra et Mehdia. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
       "name": "pharmacie pasteur",
@@ -45,26 +45,6 @@
       "address": "rue Bir Anzarane ang. 45 Kénitra - Maroc",
       "date": "27 May 2026",
       "mapsUrl": "https://g.co/kgs/XMfokN3"
-    },
-    {
-      "name": "Pharmacie El Andalous",
-      "nameAr": "صيدلية الاندلس",
-      "phone": "05373-80622",
-      "district": "el Atlas",
-      "districtAr": "",
-      "address": "Av. Bacha Abdelhamid El Alaoui, Kénitra",
-      "date": "23 Avril 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie SOUMAA",
-      "nameAr": "صيدلية الصومعة",
-      "phone": "0537357540",
-      "district": "Bir Rami",
-      "districtAr": "",
-      "address": "Bir Rami ouest Rue 2, Kenitra, Morocc",
-      "date": "23 Avril 2026",
-      "mapsUrl": ""
     }
   ]
 }

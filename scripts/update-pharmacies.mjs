@@ -90,7 +90,7 @@ const parsePharmacies = (html) => {
     })
     .filter((pharmacy) => pharmacy.name && (pharmacy.phone || pharmacy.address))
     .filter((pharmacy, index, items) => items.findIndex((item) => item.name === pharmacy.name) === index)
-    .slice(0, 8);
+    .slice(0, 4);
 };
 
 const run = async () => {
