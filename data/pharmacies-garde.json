@@ -1,30 +1,50 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-05-29T16:48:16+01:00",
+  "updatedAt": "2026-05-30T17:10:34+01:00",
   "title": "Pharmacies de garde Kenitra - 29 May 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Tarik",
-      "nameAr": "صيدلية طارق",
-      "phone": "05 37 36 55 75",
-      "district": "OULADE OUJIH - ولاد وجيه",
-      "districtAr": "ولاد وجيه",
-      "address": "bd Mohammed V lot n°4-Bab fes -  Kénitra - Maroc دوار الشيخ ولاد وجيه قرب العمارات الرايبن - ولاد وجيه - القنيطرة المغرب -",
+      "name": "Pharmacie La Domitienne",
+      "nameAr": "صيدلية لادوميسين",
+      "phone": "0537365575",
+      "district": "cCENTRE VILLE وسط المدينة",
+      "districtAr": "وسط المدينة",
+      "address": " 48, Imm. Maha, N°5, 48 Av. Mohamed El Qori, Kénitra 14020",
       "date": "29 May 2026",
-      "mapsUrl": "https://share.google/ib4gaO5WLIjIrkSQe"
+      "mapsUrl": "https://maps.app.goo.gl/NZ8SnG1UxHr8xNiZA"
     },
     {
-      "name": "Pharmacie Ouirkane",
-      "nameAr": "صيدلية ورقان",
-      "phone": "07 74 01 64 60",
-      "district": "Saknia fouarate",
+      "name": "Pharmacie Echam",
+      "nameAr": "صيدلية الشام",
+      "phone": "05 37 35 13 00",
+      "district": "HOUZIA",
       "districtAr": "",
-      "address": "Sect. D, Nº 153, Lhaj Mansour, Hay, Kénitra",
+      "address": "lotissement brika، 346, Kenitra 14000",
       "date": "29 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/xwNd74WjeL7vnfjcA"
+      "mapsUrl": "https://maps.app.goo.gl/FPu6zjhQ5fRgkncy7"
+    },
+    {
+      "name": "Pharmacie Train Medina",
+      "nameAr": "صيدلية قطار المدينة",
+      "phone": "05373 66422",
+      "district": "khbazat la gare sghir",
+      "districtAr": "",
+      "address": "Rue N 24, Kénitra 14000",
+      "date": "29 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/C3rDDhNPaPVuhiNK6"
+    },
+    {
+      "name": "Pharmacie ibn tofail",
+      "nameAr": "صيدلية ابن طفيل",
+      "phone": "05373 65700",
+      "district": "BIR RAMI",
+      "districtAr": "",
+      "address": "douar Ouled Mbarek lot n°2",
+      "date": "29 May 2026",
+      "mapsUrl": "https://maps.app.goo.gl/H5e5EqHM66k8vLoo8"
     }
   ]
 }
