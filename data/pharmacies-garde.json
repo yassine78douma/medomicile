@@ -1,7 +1,7 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-05-30T17:15:11+01:00",
-  "title": "Pharmacies de garde Kenitra - 29 May 2026",
+  "updatedAt": "2026-06-01T18:23:40+01:00",
+  "title": "Pharmacies de garde Kenitra - 1 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
@@ -10,41 +10,21 @@
       "name": "Pharmacie La Domitienne",
       "nameAr": "صيدلية لادوميسين",
       "phone": "0537365575",
-      "district": "cCENTRE VILLE وسط المدينة",
+      "district": "CENTRE VILLE وسط المدينة",
       "districtAr": "وسط المدينة",
       "address": " 48, Imm. Maha, N°5, 48 Av. Mohamed El Qori, Kénitra 14020",
-      "date": "29 May 2026",
+      "date": "1 juin 2026",
       "mapsUrl": "https://maps.app.goo.gl/NZ8SnG1UxHr8xNiZA"
     },
     {
-      "name": "Pharmacie Echam",
-      "nameAr": "صيدلية الشام",
-      "phone": "05 37 35 13 00",
-      "district": "HOUZIA",
-      "districtAr": "",
-      "address": "lotissement brika، 346, Kenitra 14000",
-      "date": "29 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/FPu6zjhQ5fRgkncy7"
-    },
-    {
-      "name": "Pharmacie Train Medina",
-      "nameAr": "صيدلية قطار المدينة",
-      "phone": "05373 66422",
-      "district": "khbazat la gare sghir",
-      "districtAr": "",
-      "address": "Rue N 24, Kénitra 14000",
-      "date": "29 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/C3rDDhNPaPVuhiNK6"
-    },
-    {
-      "name": "Pharmacie ibn tofail",
-      "nameAr": "صيدلية ابن طفيل",
-      "phone": "05373 65700",
-      "district": "BIR RAMI",
-      "districtAr": "",
-      "address": "douar Ouled Mbarek lot n°2",
-      "date": "29 May 2026",
-      "mapsUrl": "https://maps.app.goo.gl/H5e5EqHM66k8vLoo8"
+      "name": "pharmacie doha el ASSAM",
+      "nameAr": "صيدلية الضحى العصام",
+      "phone": "05 37 32 16 76",
+      "district": "Assam,العصام",
+      "districtAr": "العصام",
+      "address": "125 lotiss. Assam résid. Imane mag.4 q. El Kartoune Kénitra auto halle - Maroc تجزئة العصام خلف اوطوهال ضحى العصام خلف اةطةهال العصام",
+      "date": "1 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/sBA2YseUHMBroygG8"
     }
   ]
 }
