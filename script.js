@@ -17,6 +17,8 @@ const pharmacyList = document.querySelector("[data-pharmacy-list]");
 const pharmacyTitle = document.querySelector("[data-pharmacy-title]");
 const pharmacyUpdated = document.querySelector("[data-pharmacy-updated]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
+const reviewForm = document.querySelector("[data-review-form]");
+const reviewList = document.querySelector("[data-review-list]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -143,50 +145,63 @@ const contactServiceTypes = ["medecin", "infirmier", "kine", "vitamines"];
 
 const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
-  updatedAt: "2026-05-28T13:00:36+01:00",
-  title: "Pharmacies de garde Kenitra et Mehdia",
+  updatedAt: "2026-06-01T09:56:58+01:00",
+  title: "Pharmacies de garde Kenitra et Mehdia - dates disponibles au 1 juin 2026",
   updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
   pharmacies: [
     {
-      name: "pharmacie pasteur",
-      nameAr: "صيدلية باستور",
-      phone: "05 37 38 62 48",
-      district: "saknia ,الساكنية",
+      name: "Pharmacie La Domitienne",
+      nameAr: "",
+      phone: "05 37 36 55 75",
+      district: "Centre ville",
+      districtAr: "وسط المدينة",
+      address: "48, Imm. Maha, N°5, 48 Av. Mohamed El Qori, Kénitra 14020",
+      date: "29-31 May 2026",
+    },
+    {
+      name: "Pharmacie Echam",
+      nameAr: "صيدلية الشام",
+      phone: "05 37 35 13 00",
+      district: "Houzia",
+      districtAr: "الحوزية",
+      address: "Lotissement Brika, 346, Kenitra 14000",
+      date: "29-31 May 2026",
+    },
+    {
+      name: "Pharmacie Train Medina",
+      nameAr: "صيدلية قطار المدينة",
+      phone: "05 37 36 64 22",
+      district: "Khabazat - la gare sghir",
+      districtAr: "",
+      address: "Rue N 24, Kénitra 14000",
+      date: "29-31 May 2026",
+    },
+    {
+      name: "Pharmacie Ibn Tofail",
+      nameAr: "صيدلية ابن طفيل",
+      phone: "05 37 36 57 00",
+      district: "Bir Rami",
+      districtAr: "بير رامي",
+      address: "Douar Ouled Mbarek lot n°2, Kénitra",
+      date: "29-31 May 2026",
+    },
+    {
+      name: "Pharmacie Yaakoub",
+      nameAr: "صيدلية يعقوب",
+      phone: "05 37 39 17 94",
+      district: "Saknia",
       districtAr: "الساكنية",
-      address:
-        "HAU EL ARAIBI hay Jdid P.d.u. lot 5689 rue 162 SAKNIA Kénitra - Maroc العرايبي الحي الجديد وراء اعدادية المقاطعة ,الساكنية ,القنيطرة 14050,",
-      date: "27 May 2026",
-      mapsUrl: "https://maps.app.goo.gl/exDzFLztqt1ZbfMQ9",
+      address: "Ouled Arfa, Saknia, Lotissement Al Andalous, N 385, Kénitra 14000",
+      date: "29-31 May 2026",
     },
     {
-      name: "pharmacie el manar",
-      nameAr: "صيدلية المنار",
-      phone: "05373 95033",
-      district: "Bir rami",
-      districtAr: "",
-      address: "hay Bir Rami Rte des écoles Lotis. Al Manar n°42  Kénitra - Maroc",
-      date: "27 May 2026",
-      mapsUrl: "https://maps.app.goo.gl/HHfRUBTGtzduntV99",
-    },
-    {
-      name: "pharmacie Les IRIS",
-      nameAr: "صيدلية السوسن",
-      phone: "0537351718",
-      district: "haousia",
-      districtAr: "",
-      address: "haousiae, Kénitra - Maroc",
-      date: "27 May 2026",
-      mapsUrl: "https://maps.app.goo.gl/kcz5F5PuduGQDTAv6",
-    },
-    {
-      name: "pharmacie Elhouria",
-      nameAr: "صيدلية الحرية",
-      phone: "05 37 37 35 90",
-      district: "KHABAZAT MARCHER EL HOURIA",
-      districtAr: "",
-      address: "rue Bir Anzarane ang. 45 Kénitra - Maroc",
-      date: "27 May 2026",
-      mapsUrl: "https://g.co/kgs/XMfokN3",
+      name: "Pharmacie Nouha",
+      nameAr: "صيدلية نهى",
+      phone: "05 37 32 85 82",
+      district: "Mehdia alliance",
+      districtAr: "أليانس المهدية",
+      address: "Alliance Mehdia, Kénitra",
+      date: "25 February 2026",
     },
   ],
 };
@@ -314,14 +329,29 @@ const scrollToSection = (selector, behavior = "smooth") => {
 const handleServiceChoice = (service) => {
   const galleryFilter = galleryFilterForService(service);
   const target = service === "vitamines" ? "#vitamines" : galleryFilter ? "#galerie" : "#services";
+  const targetElement = document.querySelector(target);
 
   selectService(service);
   if (contactServiceTypes.includes(service)) {
     document.querySelector(`[data-service-card="${service}"]`)?.classList.add("has-contact-open");
   }
+  if (!targetElement) {
+    if (galleryFilter) {
+      window.location.href = `galerie.html?filter=${encodeURIComponent(galleryFilter)}`;
+      return;
+    }
+    if (service === "vitamines") {
+      window.location.href = "vitamines.html";
+      return;
+    }
+    if (!document.querySelector("#services")) {
+      window.location.href = "services.html";
+      return;
+    }
+  }
+
   if (galleryFilter) applyGalleryFilter(galleryFilter);
   if (galleryFilter && window.location.hash !== target) window.location.hash = target;
-
   scrollToSection(target, galleryFilter ? "auto" : "smooth");
   window.setTimeout(() => {
     scrollToSection(target, galleryFilter ? "auto" : "smooth");
@@ -416,6 +446,11 @@ const applyGalleryFilter = (filter) => {
 galleryFilters.forEach((button) => {
   button.addEventListener("click", () => applyGalleryFilter(button.dataset.galleryFilter));
 });
+
+const requestedGalleryFilter = new URLSearchParams(window.location.search).get("filter");
+if (requestedGalleryFilter && galleryFilters.length) {
+  applyGalleryFilter(requestedGalleryFilter);
+}
 
 galleryThumbs.forEach((thumb) => {
   thumb.addEventListener("click", () => setGalleryImage(Number(thumb.dataset.galleryIndex)));
@@ -535,6 +570,62 @@ const loadPharmacies = async () => {
   }
 };
 
+const reviewStorageKey = "medomicile-reviews";
+
+const getReviews = () => {
+  try {
+    const stored = JSON.parse(localStorage.getItem(reviewStorageKey) || "[]");
+    return Array.isArray(stored) ? stored : [];
+  } catch {
+    return [];
+  }
+};
+
+const renderReviews = () => {
+  if (!reviewList) return;
+  const reviews = getReviews();
+  reviewList.replaceChildren();
+
+  if (!reviews.length) {
+    const empty = document.createElement("p");
+    empty.className = "review-empty";
+    empty.textContent = reviewList.dataset.empty || "Aucun avis affiché pour le moment.";
+    reviewList.append(empty);
+    return;
+  }
+
+  reviews.forEach((review) => {
+    const card = document.createElement("article");
+    card.className = "review-card";
+
+    const name = document.createElement("strong");
+    name.textContent = review.name;
+
+    const message = document.createElement("p");
+    message.textContent = review.message;
+
+    card.append(name, message);
+    reviewList.append(card);
+  });
+};
+
+reviewForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const formData = new FormData(reviewForm);
+  const name = String(formData.get("name") || "").trim();
+  const message = String(formData.get("message") || "").trim();
+  if (!name || !message) return;
+
+  const reviews = getReviews();
+  reviews.unshift({ name, message, createdAt: new Date().toISOString() });
+  localStorage.setItem(reviewStorageKey, JSON.stringify(reviews.slice(0, 12)));
+  reviewForm.reset();
+  renderReviews();
+
+  const text = encodeURIComponent(`Avis Medomicile\nNom: ${name}\nAvis: ${message}`);
+  window.open(`https://wa.me/212663058222?text=${text}`, "_blank", "noopener");
+});
+
 const updateMediaScale = () => {
   if (!scrollMedia) return;
   const rect = scrollMedia.getBoundingClientRect();
@@ -585,5 +676,6 @@ if ("IntersectionObserver" in window) {
 
 updateMediaScale();
 loadPharmacies();
+renderReviews();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);
