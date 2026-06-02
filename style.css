@@ -560,18 +560,21 @@ h1 {
 }
 
 .page-main {
-  padding-top: calc(var(--header-height) + 24px);
+  padding-top: calc(var(--header-height) + 10px);
 }
 
 .page-hero {
   display: grid;
   justify-items: center;
   text-align: center;
+  padding-top: 24px;
+  padding-bottom: 20px;
 }
 
 .page-hero h1 {
-  width: min(100%, 780px);
-  margin-bottom: 14px;
+  width: min(100%, 720px);
+  margin-bottom: 10px;
+  font-size: clamp(1.85rem, 7vw, 3.05rem);
 }
 
 .section-heading {
@@ -596,7 +599,7 @@ h1 {
 
 .service-grid {
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .service-card {
@@ -625,11 +628,11 @@ h1 {
 }
 
 .service-card summary {
-  min-height: 126px;
-  padding: 20px;
+  min-height: 72px;
+  padding: 12px 14px;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) 34px;
-  gap: 14px;
+  grid-template-columns: 38px minmax(0, 1fr) 30px;
+  gap: 12px;
   align-items: center;
   list-style: none;
   cursor: pointer;
@@ -640,8 +643,8 @@ h1 {
 }
 
 .service-icon {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -653,13 +656,13 @@ h1 {
 .service-card h3 {
   margin: 0;
   color: var(--blue-950);
-  font-size: 1.17rem;
+  font-size: 1.02rem;
   line-height: 1.12;
 }
 
 .service-more {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   justify-self: end;
@@ -677,9 +680,9 @@ h1 {
 }
 
 .service-content {
-  padding: 0 20px 22px 82px;
+  padding: 0 16px 18px 64px;
   display: grid;
-  gap: 14px;
+  gap: 12px;
   animation: detailDrop 220ms ease both;
 }
 
@@ -731,8 +734,8 @@ h1 {
 }
 
 [dir="rtl"] .service-content {
-  padding-right: 82px;
-  padding-left: 20px;
+  padding-right: 64px;
+  padding-left: 16px;
 }
 
 [dir="rtl"] .service-content li {
@@ -1871,24 +1874,28 @@ h1 {
   }
 
   .service-card summary {
-    min-height: 164px;
-    padding: 28px;
-    grid-template-columns: 58px minmax(0, 1fr) 36px;
-    gap: 18px;
+    min-height: 92px;
+    padding: 18px 20px;
+    grid-template-columns: 46px minmax(0, 1fr) 32px;
+    gap: 16px;
   }
 
   .service-icon {
-    width: 58px;
-    height: 58px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .service-card h3 {
+    font-size: 1.18rem;
   }
 
   .service-content {
-    padding: 0 28px 30px 104px;
+    padding: 0 24px 24px 82px;
   }
 
   [dir="rtl"] .service-content {
-    padding-right: 104px;
-    padding-left: 28px;
+    padding-right: 82px;
+    padding-left: 24px;
   }
 
   .gallery-shell {
