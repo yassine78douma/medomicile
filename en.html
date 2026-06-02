@@ -6,17 +6,18 @@
     <title>Medomicile - Home medical care in Kenitra</title>
     <meta
       name="description"
-      content="Medomicile provides home medical care in Kenitra and the region: urgent doctor, medical follow-up, ambulance transfer, medical van, event medical standby, IV vitamin therapy and medical equipment rental."
+      content="Medomicile provides home medical care in Kenitra and the region: urgent doctor, ambulance, medical van, nurse, physio, incubator, IV vitamin therapy and medical equipment. Contact by phone or WhatsApp."
     />
     <meta name="theme-color" content="#f8fafc" />
     <meta property="og:title" content="Medomicile - Home medical care in Kenitra" />
     <meta
       property="og:description"
-      content="Urgent doctor, patient transfer, medical van, event medical standby, IV vitamin therapy and medical equipment rental in Kenitra and the region."
+      content="Home medical care, ambulance, medical van, event medical standby, IV vitamin therapy and medical equipment in Kenitra and the region."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_MA" />
     <meta property="og:image" content="assets/brand/medomicile-logo.png" />
+    <link rel="canonical" href="https://yassine78douma.github.io/medomicile/en.html" />
     <link rel="icon" type="image/png" href="assets/brand/medomicile-logo.png" />
     <link rel="apple-touch-icon" href="assets/brand/medomicile-logo.png" />
     <link rel="alternate" hreflang="fr" href="index.html" />
@@ -27,14 +28,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260602-04" />
+    <link rel="stylesheet" href="style.css?v=20260602-05" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="mobile-header">
       <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#accueil" aria-label="Medomicile, home">
+        <a class="brand" href="en.html" aria-label="Medomicile, home">
           <span class="brand-mark" aria-hidden="true">
             <img src="assets/brand/medomicile-logo.png" alt="" />
           </span>
@@ -54,43 +55,35 @@
         <button class="theme-toggle" type="button" aria-label="Change theme" data-theme-toggle>◐</button>
 
         <div class="menu" id="menu">
-          <a href="#services">Services</a>
-          <a href="#galerie">Gallery</a>
-          <a href="#pharmacies">Pharmacies</a>
-          <a href="#hopitaux">Hospitals</a>
-          <a href="#vitamines">Vitamins</a>
-          <a href="#urgence">Quick contact</a>
-          <a href="#contact">Contact</a>
+          <a class="is-current" href="en.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="galerie.html">Gallery</a>
+          <a href="pharmacies.html">Pharmacies</a>
+          <a href="hopitaux.html">Hospitals</a>
+          <a href="vitamines.html">Vitamins</a>
+          <a href="contact.html">Contact</a>
           <a class="lang-link" href="index.html" lang="fr">Français</a>
-          <a class="lang-link" href="ar.html" lang="ar">العربية</a>
+          <a class="lang-link" href="ar.html" lang="ar" dir="rtl">العربية</a>
         </div>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <section class="hero home-hero" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
           <p class="availability">
             <span aria-hidden="true"></span>
-            Kenitra - call or WhatsApp
+            Kenitra and region - call or WhatsApp
           </p>
           <h1 id="hero-title">
             <span class="hero-title-line">Medomicile</span>
             <span class="hero-title-line">home medical</span>
             <span class="hero-title-line">care</span>
-            <span class="hero-title-line">in Kenitra</span>
           </h1>
           <p class="hero-subtitle">
-            Doctor, ambulance, nurse and physio.<br />
-            Medical van and incubator available.<br />
-            IV vitamin therapy available.
+            Clear guidance for home doctors, ambulance transfers, medical vans, nurses, physiotherapy, incubator
+            transport, IV vitamin therapy and medical equipment in Kenitra and the region.
           </p>
-
-          <div class="hero-shortcuts" aria-label="Quick access">
-            <a href="#services">Our services</a>
-            <a href="#pharmacies">On-duty pharmacies</a>
-            <a href="#hopitaux">Kenitra hospitals and clinics</a>
-          </div>
 
           <div class="hero-buttons">
             <a class="primary-action" href="tel:+212663058222">
@@ -103,7 +96,7 @@
             </a>
           </div>
 
-          <p class="fine-print">Main area: Kenitra region.</p>
+          <p class="fine-print">Estimated delay depends on availability, location and traffic.</p>
         </div>
 
         <div class="media-stage reveal" data-scroll-media aria-label="Home medical assistance preview">
@@ -113,559 +106,90 @@
           />
           <div class="media-overlay" aria-hidden="true"></div>
           <div class="media-caption">
-            <strong>~30 min</strong>
-            <span>Estimated time</span>
+            <strong>24/7</strong>
+            <span>Direct contact</span>
           </div>
           <div class="media-zone">
             <span>Main area</span>
             <strong>Kenitra</strong>
           </div>
         </div>
-
-        <div class="service-picker reveal" aria-label="Choose a need">
-          <button class="picker-option is-active" type="button" data-service="medecin">Doctor</button>
-          <button class="picker-option" type="button" data-service="ambulance">Ambulance</button>
-          <button class="picker-option" type="button" data-service="fourgon">Van</button>
-          <button class="picker-option" type="button" data-service="couveuse">Incubator</button>
-          <button class="picker-option" type="button" data-service="infirmier">Nurse</button>
-          <button class="picker-option" type="button" data-service="kine">Physio</button>
-          <a class="picker-option" href="#vitamines" data-service="vitamines">Vitamins</a>
-          <button class="picker-option" type="button" data-service="evenement">Events</button>
-        </div>
       </section>
 
-      <section class="services section" id="services" aria-labelledby="services-title">
+      <section class="home-links section" aria-labelledby="home-links-title">
         <div class="section-heading reveal">
-          <p class="eyebrow">Services</p>
-          <h2 id="services-title">Medical care, ambulance and home support</h2>
-          <p>Tap a service to view details and the direct phone number.</p>
+          <p class="eyebrow">Quick access</p>
+          <h2 id="home-links-title">Choose what you need</h2>
+          <p>Each section has its own page, making navigation cleaner and faster on mobile.</p>
         </div>
 
-        <div class="service-grid">
-          <details class="service-card reveal" data-service-card="medecin">
-            <summary>
-              <span class="service-icon" aria-hidden="true">+</span>
-              <h3>Home Care</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>Urgent doctor visits, medical follow-up and home care with clear guidance for families and patients.</p>
-              <ul>
-                <li>Urgent doctor at home</li>
-                <li>Medical follow-up at home</li>
-                <li>Nursing care, dressings and injections according to prescription</li>
-                <li>Pressure sore follow-up and comfort care</li>
-                <li>Palliative support and human guidance</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
-
-          <details class="service-card reveal" data-service-card="ambulance">
-            <summary>
-              <span class="service-icon" aria-hidden="true">A</span>
-              <h3>Ambulance & Newborn</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>Inter-hospital patient transfer with BLS/ALS ambulances, organized by a professional medical team available 24/7.</p>
-              <ul>
-                <li>Hospital to hospital transfer</li>
-                <li>Home to hospital transport</li>
-                <li>Long-distance patient transport in Morocco</li>
-                <li>Dialysis patient pickup</li>
-                <li>Newborn and incubator transport, subject to availability</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
-
-          <details class="service-card reveal" data-service-card="fourgon">
-            <summary>
-              <span class="service-icon" aria-hidden="true">F</span>
-              <h3>Medical Van</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>Adapted seated or assisted medical transport in Kenitra, the region and across Morocco depending on the route.</p>
-              <ul>
-                <li>Medical appointments and home returns</li>
-                <li>Regional and long-distance transport</li>
-                <li>Support for patients with reduced mobility</li>
-                <li>Scheduling adapted to the situation</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
-
-          <details class="service-card reveal" data-service-card="evenement">
-            <summary>
-              <span class="service-icon" aria-hidden="true">E</span>
-              <h3>Event Medical Standby</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>On-site medical support for events, concerts, sports, film productions, factories and private gatherings.</p>
-              <ul>
-                <li>Concerts and music festivals</li>
-                <li>Marathon and sports events</li>
-                <li>Film and TV productions</li>
-                <li>Factory and industrial sites</li>
-                <li>Weddings, parties and gatherings</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
-
-          <details class="service-card reveal" data-service-card="vitamines">
-            <summary>
-              <span class="service-icon" aria-hidden="true">V</span>
-              <h3>IV Vitamin Therapy at Home</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>IV cocktails confirmed by phone or WhatsApp according to need, availability and prior discussion.</p>
-              <ul>
-                <li>V Boost Antioxydant</li>
-                <li>IV Beauty Glow</li>
-                <li>IV Hair Repair</li>
-                <li>IV Neuro Energy</li>
-                <li>IV Recovery Sport</li>
-                <li>IV Immunité Plus</li>
-                <li>IV Anti-Stress Magnesium</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
-
-          <details class="service-card reveal" data-service-card="materiel">
-            <summary>
-              <span class="service-icon" aria-hidden="true">M</span>
-              <h3>Medical Equipment Rental</h3>
-              <span class="service-more" aria-hidden="true">+</span>
-            </summary>
-            <div class="service-content">
-              <p>Rent or buy medical equipment for home care, with delivery and setup available depending on stock.</p>
-              <ul>
-                <li>Hospital beds</li>
-                <li>Wheelchairs</li>
-                <li>Oxygen concentrators</li>
-                <li>Home delivery and setup</li>
-              </ul>
-              <a class="service-phone" href="tel:+212663058222">Direct contact: +212663058222</a>
-            </div>
-          </details>
+        <div class="home-card-grid">
+          <a class="home-card reveal" href="services.html">
+            <span>01</span>
+            <strong>Our services</strong>
+            <small>Home care, ambulance, medical van, events and medical equipment.</small>
+          </a>
+          <a class="home-card reveal" href="galerie.html">
+            <span>02</span>
+            <strong>Gallery</strong>
+            <small>Vehicle and equipment photos.</small>
+          </a>
+          <a class="home-card reveal" href="pharmacies.html">
+            <span>03</span>
+            <strong>On-duty pharmacies</strong>
+            <small>Updated automatically 4 times per day.</small>
+          </a>
+          <a class="home-card reveal" href="hopitaux.html">
+            <span>04</span>
+            <strong>Hospitals & clinics</strong>
+            <small>Useful addresses and phone numbers in Kenitra.</small>
+          </a>
+          <a class="home-card reveal" href="vitamines.html">
+            <span>05</span>
+            <strong>IV vitamin therapy</strong>
+            <small>IV cocktails confirmed after prior discussion.</small>
+          </a>
+          <a class="home-card reveal" href="contact.html">
+            <span>06</span>
+            <strong>Direct contact</strong>
+            <small>Phone, WhatsApp and landline.</small>
+          </a>
         </div>
       </section>
 
-      <section class="gallery section" id="galerie" aria-labelledby="galerie-title">
+      <section class="reviews section" id="avis" aria-labelledby="reviews-title">
         <div class="section-heading reveal">
-          <p class="eyebrow">Gallery</p>
-          <h2 id="galerie-title">Vehicles and equipment</h2>
-          <p>Photos of ambulances, medical vans and equipment available depending on the need.</p>
+          <p class="eyebrow">Reviews</p>
+          <h2 id="reviews-title">Share your experience</h2>
+          <p>This section starts empty. Visitors can prepare feedback and send it by WhatsApp.</p>
         </div>
 
-        <div class="gallery-shell reveal">
-          <div class="gallery-filters" aria-label="Filter gallery">
-            <button class="gallery-filter is-active" type="button" data-gallery-filter="all">All</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="ambulance">Ambulance</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="exterieur">Exterior</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="interieur">Interior</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="equipement">Equipment</button>
-            <button class="gallery-filter" type="button" data-gallery-filter="fourgon">Van</button>
-          </div>
-
-          <div class="gallery-viewer">
-            <img
-              class="gallery-main"
-              src="assets/gallery/ambulance-exterieur-01.jpg"
-              alt="Ambulance exterior"
-              data-gallery-main
-            />
-            <div class="gallery-caption">
-              <strong data-gallery-title>Ambulance and medical van available</strong>
-              <span data-gallery-count>1 / 12</span>
-            </div>
-            <div class="gallery-controls" aria-label="Gallery navigation">
-              <button type="button" data-gallery-prev aria-label="Previous image">‹</button>
-              <button type="button" data-gallery-next aria-label="Next image">›</button>
-            </div>
-          </div>
-
-          <div class="gallery-strip" aria-label="Gallery thumbnails">
-            <button class="gallery-thumb is-active" type="button" data-gallery-index="0" data-gallery-category="exterieur">
-              <img src="assets/gallery/ambulance-exterieur-01.jpg" alt="Ambulance exterior" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="1" data-gallery-category="interieur">
-              <img src="assets/gallery/ambulance-interieur-01.jpg" alt="Ambulance interior" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="2" data-gallery-category="exterieur">
-              <img src="assets/gallery/ambulance-exterieur-02.jpg" alt="Ambulance with open door" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="3" data-gallery-category="interieur">
-              <img src="assets/gallery/ambulance-interieur-02.jpg" alt="Ambulance stretcher" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="4" data-gallery-category="interieur">
-              <img src="assets/gallery/ambulance-interieur-03.jpg" alt="Ambulance seat and equipment" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="5" data-gallery-category="interieur">
-              <img src="assets/gallery/ambulance-interieur-04.jpg" alt="Equipped ambulance interior" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="6" data-gallery-category="interieur">
-              <img src="assets/gallery/ambulance-interieur-05.jpg" alt="Open ambulance doors" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="7" data-gallery-category="equipement">
-              <img src="assets/gallery/equipement-01.jpg" alt="Ambulance medical equipment" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="8" data-gallery-category="equipement">
-              <img src="assets/gallery/equipement-02.jpg" alt="Ambulance respiratory equipment" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="9" data-gallery-category="equipement">
-              <img src="assets/gallery/materiel-ambulance.jpg" alt="Ambulance medical equipment and supplies" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="10" data-gallery-category="fourgon">
-              <img src="assets/gallery/fourgon-sanitaire-01.jpg" alt="Medical van" loading="lazy" />
-            </button>
-            <button class="gallery-thumb" type="button" data-gallery-index="11" data-gallery-category="fourgon">
-              <img src="assets/gallery/fourgon-couveuse-01.jpg" alt="Medical van with incubator" loading="lazy" />
-            </button>
-          </div>
+        <div class="review-panel reveal">
+          <form class="review-form" data-review-form>
+            <label>
+              Name or initials
+              <input name="name" type="text" autocomplete="name" placeholder="Example: Family K." required />
+            </label>
+            <label>
+              Review
+              <textarea name="message" rows="4" placeholder="Your feedback on the response, guidance or service..." required></textarea>
+            </label>
+            <button class="primary-action" type="submit">Add review</button>
+          </form>
+          <div class="review-list" data-review-list data-empty="No public review yet."></div>
+          <p class="fine-print">Reviews added here remain in your browser. For publication, send your review by WhatsApp.</p>
         </div>
       </section>
 
-      <section class="pharmacy section" id="pharmacies" aria-labelledby="pharmacies-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">On-duty pharmacies</p>
-          <h2 id="pharmacies-title">On-duty pharmacies in Kenitra and Mehdia</h2>
-          <p>Practical information to help families quickly find an open pharmacy.</p>
-        </div>
-
-        <div class="pharmacy-panel reveal">
-          <div class="pharmacy-copy">
-            <h3>Which on-duty pharmacy is near me in Kenitra or Mehdia?</h3>
-            <p>
-              Most pharmacies in Kenitra are open from 9 a.m. to 8 p.m., Monday to Saturday. However, it can be
-              difficult to find one open on Sunday or on public holidays. It is useful to keep on-duty pharmacy contact
-              details close at hand when needed. You can usually find these details in pharmacy windows, on our site, or
-              by contacting medical centers and clinics.
-            </p>
-          </div>
-          <figure class="pharmacy-image">
-            <img
-              src="assets/pharmacies/pharmacie-garde-kenitra.jpg"
-              alt="On-duty pharmacy poster in Kenitra from June 1 to June 5, 2026"
-              loading="lazy"
-            />
-            <figcaption>Night duty 24/24 poster from June 1 to June 5, 2026. Call before going.</figcaption>
-          </figure>
-          <div class="pharmacy-meta">
-            <strong data-pharmacy-title>Loading pharmacies...</strong>
-            <span data-pharmacy-updated>Pharmacy data is updated automatically 4 times per day.</span>
-          </div>
-          <div class="pharmacy-list" data-pharmacy-list></div>
-          <div class="pharmacy-foot">
-            <a class="text-link" href="https://pharmaciedegardekenitra.com" target="_blank" rel="noopener">
-              Check the source site
-            </a>
-            <span>Call the pharmacy before going.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="facilities section" id="hopitaux" aria-labelledby="facilities-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Hospitals & clinics</p>
-          <h2 id="facilities-title">Medical facilities in Kenitra</h2>
-          <p>Addresses, phone numbers and indicative Google ratings to help families orient themselves.</p>
-        </div>
-
-        <div class="facility-note reveal">Google ratings and opening hours may change. Call before going.</div>
-
-        <div class="facility-grid">
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Public hospital</span><strong>3.1 Google</strong></div>
-            <h3>Centre Hospitalier Provincial El-Azemmouri</h3>
-            <p>Route de Sidi Allal Bahraoui, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <span class="facility-muted">Phone not publicly available</span>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Private hospital</span><strong>2.8 Google</strong></div>
-            <h3>Akdital International Hospital - Kenitra</h3>
-            <p>Avenue Mohammed VI, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537369696">+212 5 37 36 96 96</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Private hospital</span><strong>4.8 Google</strong></div>
-            <h3>Clinical International de Kénitra</h3>
-            <p>Kenitra, central area</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537313434">+212 5 37 31 34 34</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Surgical center</span><strong>2.3 Google</strong></div>
-            <h3>Polyclinique de Kénitra</h3>
-            <p>Avenue de l’Hôpital, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537373635">+212 5 37 37 36 35</a>
-            <a href="tel:+212622663536">Emergency: +212 6 22 66 35 36</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Specialized clinic</span><strong>3.4 Google</strong></div>
-            <h3>Polyclinique du Gharb</h3>
-            <p>148 Avenue Mohamed Diouri, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537376565">+212 5 37 37 65 65</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Specialized clinic</span><strong>3.7 Google</strong></div>
-            <h3>Noor Clinic</h3>
-            <p>Lotissement Al Qods 1 Lot C, opposite Acima, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537371333">+212 5 37 37 13 33</a>
-            <a href="tel:+212537373642">+212 5 37 37 36 42</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Private hospital</span><strong>3.0 Google</strong></div>
-            <h3>Clinique Val Fleury</h3>
-            <p>Avenue Abderrahim Bouabid, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537397931">+212 5 37 39 79 31</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Surgical center</span><strong>2.6 Google</strong></div>
-            <h3>Mimosas Clinic</h3>
-            <p>21 Avenue Mohamed El Qori, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537379798">+212 5 37 37 97 98</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">General hospital</span><strong>2.9 Google</strong></div>
-            <h3>Clinique Anoual</h3>
-            <p>33 Rue Ibn Abi Zaraa, Avenue Moulay Abderrahmane, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537366767">+212 5 37 36 67 67</a>
-            <a href="tel:+212537377072">+212 5 37 37 70 72</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Medical clinic</span><strong>3.2 Google</strong></div>
-            <h3>Clinique Sebou</h3>
-            <p>1 Rue Al Masjid, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537366277">+212 5 37 36 62 77</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Private hospital</span><strong>2.5 Google</strong></div>
-            <h3>Polyclinique CNSS Kénitra</h3>
-            <p>Avenue Moulay Youssef, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537378739">+212 5 37 37 87 39</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Medical clinic</span><strong>2.1 Google</strong></div>
-            <h3>Clinique C.C.O.T.K.</h3>
-            <p>Orthopedic and trauma surgery clinic, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212537373081">+212 5 37 37 30 81</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Medical clinic</span><strong>4.4 Google</strong></div>
-            <h3>Clinique Maamora</h3>
-            <p>116 Rue Maamora, Kenitra</p>
-            <span class="facility-hours">Hours to verify</span>
-            <a href="tel:+212537365500">+212 5 37 36 55 00</a>
-          </article>
-
-          <article class="facility-card reveal">
-            <div class="facility-head"><span class="facility-type">Oncology</span><strong>4.0 Google</strong></div>
-            <h3>Clinique d’oncologie Ibn Sina</h3>
-            <p>Avenue 2 Mars, Kenitra</p>
-            <span class="facility-hours">Open - hours to verify</span>
-            <a href="tel:+212650014999">+212 6 50 01 49 99</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="vitamin section" id="vitamines" aria-labelledby="vitamines-title">
-        <div class="vitamin-panel reveal">
-          <div class="section-heading">
-            <p class="eyebrow">IV vitamin therapy</p>
-            <h2 id="vitamines-title">Available cocktails</h2>
-            <p>
-              Treatments are confirmed by phone or WhatsApp according to your situation. Some services may require a
-              medical indication or advice.
-            </p>
-          </div>
-
-          <div class="cocktail-grid" aria-label="IV vitamin cocktail list">
-            <span>V Boost Antioxydant</span>
-            <span>IV Beauty Glow</span>
-            <span>IV Hair Repair</span>
-            <span>IV Neuro Energy</span>
-            <span>IV Recovery Sport</span>
-            <span>IV Immunité Plus</span>
-            <span>IV Anti-Stress Magnesium</span>
-          </div>
-
-          <div class="inline-actions">
-            <a class="primary-action" href="tel:+212663058222">Call</a>
-            <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="why section" aria-labelledby="why-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Why Medomicile</p>
-          <h2 id="why-title">Simple, direct and reassuring</h2>
-        </div>
-
-        <div class="why-grid">
-          <div class="why-item reveal">Fast response depending on availability</div>
-          <div class="why-item reveal">Kenitra and region as the main area</div>
-          <div class="why-item reveal">Direct contact by phone or WhatsApp</div>
-          <div class="why-item reveal">Home service</div>
-          <div class="why-item reveal">Doctor, ambulance, events, van or incubator</div>
-          <div class="why-item reveal">Clear and human support</div>
-        </div>
-      </section>
-
-      <section class="testimonials section" aria-labelledby="testimonials-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Family feedback</p>
-          <h2 id="testimonials-title">Simple contact when decisions need to be made quickly</h2>
-          <p>Anonymous feedback focused on reception, clarity and service organization.</p>
-        </div>
-
-        <div class="testimonial-marquee reveal" aria-label="Anonymous patient and family feedback">
-          <div class="testimonial-track">
-            <article class="testimonial-card">
-              <p>“Clear phone response and quick guidance toward the appropriate service.”</p>
-              <div class="testimonial-person">
-                <span aria-hidden="true">F</span>
-                <div>
-                  <strong>Family in Kenitra</strong>
-                  <small>Phone contact</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p>“WhatsApp helped explain the situation before arranging assistance.”</p>
-              <div class="testimonial-person">
-                <span aria-hidden="true">P</span>
-                <div>
-                  <strong>Home patient</strong>
-                  <small>Nurse orientation</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p>“Useful service for organizing medical transport in the Kenitra region.”</p>
-              <div class="testimonial-person">
-                <span aria-hidden="true">C</span>
-                <div>
-                  <strong>Caregiver</strong>
-                  <small>Medical van</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <p>“Simple explanations, reassuring tone and direct contact without forms.”</p>
-              <div class="testimonial-person">
-                <span aria-hidden="true">H</span>
-                <div>
-                  <strong>Family home</strong>
-                  <small>Doctor request</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card" aria-hidden="true">
-              <p>“Clear phone response and quick guidance toward the appropriate service.”</p>
-              <div class="testimonial-person">
-                <span>F</span>
-                <div>
-                  <strong>Family in Kenitra</strong>
-                  <small>Phone contact</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card" aria-hidden="true">
-              <p>“WhatsApp helped explain the situation before arranging assistance.”</p>
-              <div class="testimonial-person">
-                <span>P</span>
-                <div>
-                  <strong>Home patient</strong>
-                  <small>Nurse orientation</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card" aria-hidden="true">
-              <p>“Useful service for organizing medical transport in the Kenitra region.”</p>
-              <div class="testimonial-person">
-                <span>C</span>
-                <div>
-                  <strong>Caregiver</strong>
-                  <small>Medical van</small>
-                </div>
-              </div>
-            </article>
-            <article class="testimonial-card" aria-hidden="true">
-              <p>“Simple explanations, reassuring tone and direct contact without forms.”</p>
-              <div class="testimonial-person">
-                <span>H</span>
-                <div>
-                  <strong>Family home</strong>
-                  <small>Doctor request</small>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="urgent section" id="urgence" aria-labelledby="urgence-title">
+      <section class="urgent section" aria-labelledby="urgence-title">
         <div class="urgent-panel reveal">
           <p class="eyebrow">Quick contact</p>
-          <h2 id="urgence-title">Need a healthcare professional at home?</h2>
-          <p>Call Medomicile now. We guide you toward the right service according to the situation.</p>
+          <h2 id="urgence-title">Need a home medical service?</h2>
+          <p>Call Medomicile or send a WhatsApp message. We help direct you to the right service.</p>
           <div class="urgent-actions">
-            <a class="primary-action" href="tel:+212663058222">
-              <span aria-hidden="true">☎</span>
-              Call +212663058222
-            </a>
-            <a class="whatsapp-action" href="https://wa.me/212663058222">
-              <span aria-hidden="true">WA</span>
-              WhatsApp +212663058222
-            </a>
+            <a class="primary-action" href="tel:+212663058222">Call +212663058222</a>
+            <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
           </div>
-          <p class="safety-note">
-            In a life-threatening situation, immediate care is the priority: contact the appropriate emergency service
-            and call Medomicile to organize assistance or medical transport.
-          </p>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact" aria-labelledby="contact-title">
-        <p class="eyebrow reveal">Contact</p>
-        <h2 id="contact-title" class="reveal">Phone or WhatsApp only</h2>
-        <div class="contact-panel reveal">
-          <a class="phone-link" href="tel:+212663058222">+212663058222</a>
-          <a class="phone-link fixed-phone" href="tel:+212537373736">Landline: 05 37 37 37 36</a>
-          <a class="primary-action" href="tel:+212663058222">Call now</a>
-          <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
         </div>
       </section>
     </main>
@@ -678,13 +202,17 @@
       <span>Kenitra and region</span>
       <span>Phone: <a href="tel:+212663058222">+212663058222</a></span>
       <span>Landline: <a href="tel:+212537373736">05 37 37 37 36</a></span>
-      <span>WhatsApp : <a href="https://wa.me/212663058222">+212663058222</a></span>
-      <span>Medical van and incubator available.</span>
-      <span>Estimated delay depends on location.</span>
+      <span>WhatsApp: <a href="https://wa.me/212663058222">+212663058222</a></span>
+      <div class="footer-languages" aria-label="Language choices">
+        <span>Languages</span>
+        <a href="index.html" lang="fr">Français</a>
+        <a class="is-active" href="en.html" lang="en" aria-current="true">English</a>
+        <a href="ar.html" lang="ar" dir="rtl">العربية</a>
+      </div>
     </footer>
 
     <a class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
 
-    <script src="script.js?v=20260602-04"></script>
+    <script src="script.js?v=20260602-05"></script>
   </body>
 </html>

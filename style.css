@@ -1431,6 +1431,47 @@ h1 {
   font-weight: 900;
 }
 
+.footer-languages {
+  margin-top: 10px;
+  padding-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.footer-languages span {
+  color: var(--soft-muted);
+  font-weight: 900;
+}
+
+.footer-languages a {
+  min-height: 38px;
+  padding: 9px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--blue-850);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  line-height: 1;
+}
+
+.footer-languages a:hover,
+.footer-languages a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(47, 128, 237, 0.34);
+}
+
+.footer-languages a.is-active {
+  color: #ffffff;
+  border-color: var(--blue-850);
+  background: var(--blue-850);
+}
+
 .floating-call {
   position: fixed;
   right: 14px;
@@ -1989,8 +2030,13 @@ h1 {
 
   .footer {
     padding-bottom: 32px;
-    grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
+  }
+
+  .footer-languages {
+    grid-column: 1 / -1;
+    justify-content: center;
   }
 }
 
