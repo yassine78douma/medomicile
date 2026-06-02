@@ -141,7 +141,6 @@ const galleryItems = [
 
 let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
-const contactServiceTypes = ["medecin", "infirmier", "kine", "vitamines"];
 
 const fallbackPharmacyData = {
   source: "https://pharmaciedegardekenitra.com",
@@ -296,14 +295,30 @@ if (menuToggle && menu) {
   });
 }
 
+const cardServiceFor = (service) => {
+  if (["infirmier", "kine"].includes(service)) return "medecin";
+  if (service === "couveuse") return "ambulance";
+  return service;
+};
+
 const selectService = (service) => {
+  const activeCardService = cardServiceFor(service);
+
   pickerOptions.forEach((option) => {
     option.classList.toggle("is-active", option.dataset.service === service);
   });
 
   serviceCards.forEach((card) => {
-    card.classList.toggle("is-selected", card.dataset.serviceCard === service);
-    card.classList.remove("has-contact-open");
+    const isCurrent = card.dataset.serviceCard === activeCardService;
+    card.classList.toggle("is-selected", isCurrent);
+
+    if (card.tagName === "DETAILS") {
+      if (isCurrent) {
+        card.setAttribute("open", "");
+      } else {
+        card.removeAttribute("open");
+      }
+    }
   });
 };
 
@@ -332,9 +347,6 @@ const handleServiceChoice = (service) => {
   const targetElement = document.querySelector(target);
 
   selectService(service);
-  if (contactServiceTypes.includes(service)) {
-    document.querySelector(`[data-service-card="${service}"]`)?.classList.add("has-contact-open");
-  }
   if (!targetElement) {
     if (galleryFilter) {
       window.location.href = `galerie.html?filter=${encodeURIComponent(galleryFilter)}`;
@@ -367,17 +379,24 @@ pickerOptions.forEach((option) => {
 });
 
 serviceCards.forEach((card) => {
+  if (card.tagName === "DETAILS") {
+    card.addEventListener("toggle", () => {
+      if (!card.open) {
+        card.classList.remove("is-selected");
+        return;
+      }
+
+      serviceCards.forEach((otherCard) => {
+        const isCurrent = otherCard === card;
+        if (!isCurrent && otherCard.tagName === "DETAILS") otherCard.removeAttribute("open");
+        otherCard.classList.toggle("is-selected", isCurrent);
+      });
+    });
+    return;
+  }
+
   card.setAttribute("role", "button");
   card.setAttribute("tabindex", "0");
-  if (contactServiceTypes.includes(card.dataset.serviceCard)) {
-    const actions = document.createElement("div");
-    actions.className = "service-contact-options";
-    actions.innerHTML = `
-      <a class="service-call" href="tel:+212663058222">${isArabicPage ? "اتصال" : isEnglishPage ? "Call" : "Appeler"}</a>
-      <a class="service-whats" href="https://wa.me/212663058222">WhatsApp</a>
-    `;
-    card.append(actions);
-  }
   card.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
@@ -390,7 +409,7 @@ document.addEventListener("click", (event) => {
   if (event.target.closest("[data-service-card] a")) return;
 
   const card = event.target.closest("[data-service-card]");
-  if (!card) return;
+  if (!card || card.tagName === "DETAILS") return;
 
   handleServiceChoice(card.dataset.serviceCard);
 });

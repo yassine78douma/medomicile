@@ -596,33 +596,52 @@ h1 {
 
 .service-grid {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .service-card {
-  min-height: 156px;
-  padding: 18px;
-  display: grid;
-  align-content: start;
+  display: block;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.82)),
+    var(--surface);
   box-shadow: var(--shadow);
   cursor: pointer;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
 }
 
 .service-card.is-selected,
+.service-card[open],
 .service-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: rgba(198, 169, 105, 0.7);
   box-shadow: var(--deep-shadow);
 }
 
+.service-card summary {
+  min-height: 126px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 34px;
+  gap: 14px;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.service-card summary::-webkit-details-marker {
+  display: none;
+}
+
 .service-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 14px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -632,56 +651,110 @@ h1 {
 }
 
 .service-card h3 {
-  margin-bottom: 8px;
+  margin: 0;
   color: var(--blue-950);
-  font-size: 1.15rem;
-  line-height: 1.14;
+  font-size: 1.17rem;
+  line-height: 1.12;
 }
 
-.service-card p {
-  margin-bottom: 0;
-  color: var(--soft-muted);
-  font-size: 0.96rem;
-}
-
-.service-contact-options {
-  display: none;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.service-card.has-contact-open .service-contact-options {
-  display: grid;
-}
-
-.service-contact-options a {
-  min-height: 46px;
-  padding: 10px 12px;
+.service-more {
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-  border-radius: 999px;
-  color: #ffffff;
-  font-size: 0.92rem;
+  justify-self: end;
+  border-radius: 50%;
+  color: var(--blue-850);
+  background: var(--blue-100);
   font-weight: 900;
-  line-height: 1;
-  text-align: center;
-  box-shadow: 0 12px 26px rgba(15, 76, 129, 0.16);
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease;
 }
 
-.service-call {
+.service-card[open] .service-more {
+  color: #ffffff;
   background: var(--blue-850);
+  transform: rotate(45deg);
 }
 
-.service-whats {
-  background: var(--green-600);
+.service-content {
+  padding: 0 20px 22px 82px;
+  display: grid;
+  gap: 14px;
+  animation: detailDrop 220ms ease both;
 }
 
-.service-contact-options a:hover,
-.service-contact-options a:focus-visible {
-  transform: translateY(-1px);
+.service-content p {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.service-content ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+  list-style: none;
+}
+
+.service-content li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--muted);
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.service-content li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green-600);
+  font-weight: 900;
+}
+
+.service-phone {
+  width: max-content;
+  max-width: 100%;
+  padding-bottom: 2px;
+  color: var(--blue-850);
+  border-bottom: 1px solid rgba(15, 76, 129, 0.28);
+  font-weight: 900;
+}
+
+.service-phone:hover,
+.service-phone:focus-visible {
+  color: var(--blue-700);
   outline: none;
-  box-shadow: 0 16px 32px rgba(15, 76, 129, 0.22);
+  border-bottom-color: currentColor;
+}
+
+[dir="rtl"] .service-content {
+  padding-right: 82px;
+  padding-left: 20px;
+}
+
+[dir="rtl"] .service-content li {
+  padding-right: 26px;
+  padding-left: 0;
+}
+
+[dir="rtl"] .service-content li::before {
+  right: 0;
+  left: auto;
+}
+
+@keyframes detailDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .vitamin {
@@ -1782,7 +1855,7 @@ h1 {
   }
 
   .service-grid {
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .home-card-grid {
@@ -1794,7 +1867,28 @@ h1 {
   }
 
   .service-card {
-    min-height: 218px;
+    min-height: 0;
+  }
+
+  .service-card summary {
+    min-height: 164px;
+    padding: 28px;
+    grid-template-columns: 58px minmax(0, 1fr) 36px;
+    gap: 18px;
+  }
+
+  .service-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .service-content {
+    padding: 0 28px 30px 104px;
+  }
+
+  [dir="rtl"] .service-content {
+    padding-right: 104px;
+    padding-left: 28px;
   }
 
   .gallery-shell {
