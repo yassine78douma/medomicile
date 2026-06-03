@@ -1,40 +1,40 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-02T18:24:20+01:00",
-  "title": "Pharmacies de garde Kenitra - 2 juin 2026",
+  "updatedAt": "2026-06-03T17:46:24+01:00",
+  "title": "Pharmacies de garde Kenitra - 3 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie La Forêt",
-      "nameAr": "صيدلية الغابة",
-      "phone": "05373 72280",
-      "district": "nouvelle ville . المدينة الجديدة",
-      "districtAr": "المدينة الجديدة",
-      "address": "Clinique de Kénitra, Av. de l'Hôpital, Kénitra زنقة مستشفى الادريسي قرب مصحة القنيطرة",
-      "date": "2 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/eLLSqYtwqBHCvw3b6"
+      "name": "pharmacie el ha el jamaii",
+      "nameAr": "صيدلية الحي الجامعي",
+      "phone": "06 69 45 86 45",
+      "district": "SAKNIA",
+      "districtAr": "",
+      "address": "امام مدخل الحي الجامعي الساكنية دار الضو",
+      "date": "3 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/eRs9kPzrRk7MW61Y7"
     },
     {
-      "name": "Pharmacie liala",
-      "nameAr": "صيدلية ليلى",
-      "phone": "05 37 35 37 13",
-      "district": "OULADE OUJIH - ولاد وجيه",
-      "districtAr": "ولاد وجيه",
-      "address": "bd Mohammed V lot n°4-Bab fes -  Kénitra - Maroc قرب مسجد المصطفى و مدرسة البدور الخاصة ,المغرب العربي - ولاد وجيه - القنيطرة المغرب",
-      "date": "2 juin 2026",
-      "mapsUrl": "https://share.google/MuYfJ7yoFnw8NIA9J"
+      "name": "Pharmacie Al Boustane",
+      "nameAr": "صيدلية البستان",
+      "phone": "0622067905",
+      "district": "bir rami",
+      "districtAr": "",
+      "address": "bir rami",
+      "date": "3 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/99UbHUZo72KoQGkt8"
     },
     {
-      "name": "pharmacie dabagh",
-      "nameAr": "صيدلية الدباغ",
-      "phone": "05 30 55 50 22",
-      "district": "Mehdia alliance darna",
+      "name": "pharmacie el ATI LAH",
+      "nameAr": "صيدلية العاطي الله",
+      "phone": "08086 65823",
+      "district": "Mehdia alliance",
       "districtAr": "",
       "address": "alliance mehdia kenitra",
-      "date": "2 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/Fgg84tZsJGxGxwC29"
+      "date": "3 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/SRdiQJ5mW8Bctbac9"
     }
   ]
 }
