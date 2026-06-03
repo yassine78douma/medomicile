@@ -7,6 +7,7 @@ const decodeHtml = (value = "") =>
   value
     .replace(/&#8211;/g, "-")
     .replace(/&#039;/g, "'")
+    .replace(/&rsquo;/g, "'")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')

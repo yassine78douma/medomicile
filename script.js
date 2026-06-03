@@ -19,6 +19,7 @@ const pharmacyUpdated = document.querySelector("[data-pharmacy-updated]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
 const reviewForm = document.querySelector("[data-review-form]");
 const reviewList = document.querySelector("[data-review-list]");
+const ambientCanvases = document.querySelectorAll("[data-ambient-canvas]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -27,6 +28,138 @@ if ("scrollRestoration" in history) {
 }
 
 document.querySelector(".bottom-actions")?.remove();
+
+const initAmbientCanvas = (canvas) => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const gl = canvas.getContext("webgl", { alpha: true, antialias: true });
+  if (!gl) return;
+
+  const vertexSource = `
+    attribute vec2 a_position;
+
+    void main() {
+      gl_Position = vec4(a_position, 0.0, 1.0);
+    }
+  `;
+
+  const fragmentSource = `
+    precision mediump float;
+
+    uniform vec2 u_resolution;
+    uniform float u_time;
+    uniform vec2 u_mouse;
+
+    float softCircle(vec2 point, vec2 center, float radius) {
+      float distanceToCenter = length(point - center);
+      return smoothstep(radius, 0.0, distanceToCenter);
+    }
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+      vec2 mouse = mix(vec2(0.5), u_mouse, 0.32);
+      float time = u_time * 0.16;
+
+      vec2 c1 = vec2(0.18 + sin(time) * 0.05, 0.72 + cos(time * 0.8) * 0.05);
+      vec2 c2 = vec2(0.78 + cos(time * 0.7) * 0.05, 0.35 + sin(time * 1.1) * 0.06);
+      vec2 c3 = vec2(0.5 + sin(time * 0.55) * 0.08, 0.48 + cos(time * 0.5) * 0.08);
+
+      float wave = sin((uv.x + uv.y) * 8.0 + time * 5.0) * 0.035;
+      float light = 0.0;
+      light += softCircle(uv + wave, c1, 0.58);
+      light += softCircle(uv - wave, c2, 0.52);
+      light += softCircle(uv, c3, 0.44) * 0.72;
+      light += softCircle(uv, mouse, 0.38) * 0.34;
+
+      vec3 deepBlue = vec3(0.059, 0.298, 0.506);
+      vec3 brightBlue = vec3(0.184, 0.502, 0.929);
+      vec3 softGreen = vec3(0.133, 0.773, 0.369);
+      vec3 softGold = vec3(0.776, 0.663, 0.412);
+
+      vec3 color = mix(deepBlue, brightBlue, uv.x + wave);
+      color = mix(color, softGreen, softCircle(uv, c1, 0.58) * 0.28);
+      color = mix(color, softGold, softCircle(uv, c2, 0.46) * 0.2);
+
+      float alpha = clamp(light * 0.2, 0.0, 0.32);
+      gl_FragColor = vec4(color, alpha);
+    }
+  `;
+
+  const createShader = (type, source) => {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      gl.deleteShader(shader);
+      return null;
+    }
+
+    return shader;
+  };
+
+  const vertexShader = createShader(gl.VERTEX_SHADER, vertexSource);
+  const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentSource);
+  if (!vertexShader || !fragmentShader) return;
+
+  const program = gl.createProgram();
+  gl.attachShader(program, vertexShader);
+  gl.attachShader(program, fragmentShader);
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
+
+  const buffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+
+  const position = gl.getAttribLocation(program, "a_position");
+  const resolution = gl.getUniformLocation(program, "u_resolution");
+  const time = gl.getUniformLocation(program, "u_time");
+  const mouse = gl.getUniformLocation(program, "u_mouse");
+  const pointer = { x: 0.5, y: 0.5 };
+  const start = performance.now();
+
+  const resize = () => {
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.6);
+    const width = Math.max(1, Math.floor(canvas.clientWidth * ratio));
+    const height = Math.max(1, Math.floor(canvas.clientHeight * ratio));
+
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      gl.viewport(0, 0, width, height);
+    }
+  };
+
+  const updatePointer = (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+    const x = (event.clientX - rect.left) / rect.width;
+    const y = 1 - (event.clientY - rect.top) / rect.height;
+    pointer.x = Math.min(1, Math.max(0, x));
+    pointer.y = Math.min(1, Math.max(0, y));
+  };
+
+  const render = () => {
+    resize();
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.useProgram(program);
+    gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+    gl.enableVertexAttribArray(position);
+    gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+    gl.uniform2f(resolution, canvas.width, canvas.height);
+    gl.uniform1f(time, (performance.now() - start) / 1000);
+    gl.uniform2f(mouse, pointer.x, pointer.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  };
+
+  window.addEventListener("mousemove", updatePointer, { passive: true });
+  render();
+};
+
+ambientCanvases.forEach(initAmbientCanvas);
 
 const galleryItems = [
   {
