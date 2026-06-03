@@ -15,6 +15,7 @@
   --surface: #ffffff;
   --soft: #f8fafc;
   --shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-soft: 0 8px 22px rgba(15, 23, 42, 0.05);
   --deep-shadow: 0 24px 70px rgba(15, 76, 129, 0.16);
   --glass: rgba(255, 255, 255, 0.92);
   --panel: rgba(255, 255, 255, 0.86);
@@ -1658,6 +1659,7 @@ h1 {
       radial-gradient(circle at 16% 0%, rgba(47, 128, 237, 0.18), transparent 34%),
       linear-gradient(180deg, #04111d, #071827 48%);
     --shadow: 0 8px 30px rgba(0, 0, 0, 0.26);
+    --shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.22);
     --deep-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
   }
 }
@@ -1682,6 +1684,7 @@ h1 {
     radial-gradient(circle at 16% 0%, rgba(47, 128, 237, 0.18), transparent 34%),
     linear-gradient(180deg, #04111d, #071827 48%);
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.26);
+  --shadow-soft: 0 8px 22px rgba(0, 0, 0, 0.22);
   --deep-shadow: 0 24px 70px rgba(0, 0, 0, 0.36);
 }
 
@@ -1703,6 +1706,7 @@ h1 {
   --panel: rgba(255, 255, 255, 0.86);
   --hero-wash: linear-gradient(180deg, var(--soft), var(--surface) 42%);
   --shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  --shadow-soft: 0 8px 22px rgba(15, 23, 42, 0.05);
   --deep-shadow: 0 24px 70px rgba(15, 76, 129, 0.16);
 }
 

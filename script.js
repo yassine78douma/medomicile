@@ -23,6 +23,12 @@ const ambientCanvases = document.querySelectorAll("[data-ambient-canvas]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
+const localizedPage = (baseName) => {
+  if (isArabicPage) return `${baseName}-ar.html`;
+  if (isEnglishPage) return `${baseName}-en.html`;
+  return `${baseName}.html`;
+};
+
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
@@ -276,64 +282,44 @@ let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
-  source: "https://pharmaciedegardekenitra.com",
-  updatedAt: "2026-06-01T09:56:58+01:00",
-  title: "Pharmacies de garde Kenitra et Mehdia - dates disponibles au 1 juin 2026",
+  source: "https://pharmaciedegardekenitra.com/",
+  updatedAt: "2026-06-02T18:24:20+01:00",
+  title: "Pharmacies de garde Kenitra - 2 juin 2026",
+  image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
+  note:
+    "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   pharmacies: [
     {
-      name: "Pharmacie La Domitienne",
-      nameAr: "",
-      phone: "05 37 36 55 75",
-      district: "Centre ville",
-      districtAr: "وسط المدينة",
-      address: "48, Imm. Maha, N°5, 48 Av. Mohamed El Qori, Kénitra 14020",
-      date: "29-31 May 2026",
+      name: "Pharmacie La Forêt",
+      nameAr: "صيدلية الغابة",
+      phone: "05373 72280",
+      district: "nouvelle ville . المدينة الجديدة",
+      districtAr: "المدينة الجديدة",
+      address: "Clinique de Kénitra, Av. de l'Hôpital, Kénitra زنقة مستشفى الادريسي قرب مصحة القنيطرة",
+      date: "2 juin 2026",
+      mapsUrl: "https://maps.app.goo.gl/eLLSqYtwqBHCvw3b6",
     },
     {
-      name: "Pharmacie Echam",
-      nameAr: "صيدلية الشام",
-      phone: "05 37 35 13 00",
-      district: "Houzia",
-      districtAr: "الحوزية",
-      address: "Lotissement Brika, 346, Kenitra 14000",
-      date: "29-31 May 2026",
+      name: "Pharmacie liala",
+      nameAr: "صيدلية ليلى",
+      phone: "05 37 35 37 13",
+      district: "OULADE OUJIH - ولاد وجيه",
+      districtAr: "ولاد وجيه",
+      address:
+        "bd Mohammed V lot n°4-Bab fes -  Kénitra - Maroc قرب مسجد المصطفى و مدرسة البدور الخاصة ,المغرب العربي - ولاد وجيه - القنيطرة المغرب",
+      date: "2 juin 2026",
+      mapsUrl: "https://share.google/MuYfJ7yoFnw8NIA9J",
     },
     {
-      name: "Pharmacie Train Medina",
-      nameAr: "صيدلية قطار المدينة",
-      phone: "05 37 36 64 22",
-      district: "Khabazat - la gare sghir",
+      name: "pharmacie dabagh",
+      nameAr: "صيدلية الدباغ",
+      phone: "05 30 55 50 22",
+      district: "Mehdia alliance darna",
       districtAr: "",
-      address: "Rue N 24, Kénitra 14000",
-      date: "29-31 May 2026",
-    },
-    {
-      name: "Pharmacie Ibn Tofail",
-      nameAr: "صيدلية ابن طفيل",
-      phone: "05 37 36 57 00",
-      district: "Bir Rami",
-      districtAr: "بير رامي",
-      address: "Douar Ouled Mbarek lot n°2, Kénitra",
-      date: "29-31 May 2026",
-    },
-    {
-      name: "Pharmacie Yaakoub",
-      nameAr: "صيدلية يعقوب",
-      phone: "05 37 39 17 94",
-      district: "Saknia",
-      districtAr: "الساكنية",
-      address: "Ouled Arfa, Saknia, Lotissement Al Andalous, N 385, Kénitra 14000",
-      date: "29-31 May 2026",
-    },
-    {
-      name: "Pharmacie Nouha",
-      nameAr: "صيدلية نهى",
-      phone: "05 37 32 85 82",
-      district: "Mehdia alliance",
-      districtAr: "أليانس المهدية",
-      address: "Alliance Mehdia, Kénitra",
-      date: "25 February 2026",
+      address: "alliance mehdia kenitra",
+      date: "2 juin 2026",
+      mapsUrl: "https://maps.app.goo.gl/Fgg84tZsJGxGxwC29",
     },
   ],
 };
@@ -482,15 +468,15 @@ const handleServiceChoice = (service) => {
   selectService(service);
   if (!targetElement) {
     if (galleryFilter) {
-      window.location.href = `galerie.html?filter=${encodeURIComponent(galleryFilter)}`;
+      window.location.href = `${localizedPage("galerie")}?filter=${encodeURIComponent(galleryFilter)}`;
       return;
     }
     if (service === "vitamines") {
-      window.location.href = "vitamines.html";
+      window.location.href = localizedPage("vitamines");
       return;
     }
     if (!document.querySelector("#services")) {
-      window.location.href = "services.html";
+      window.location.href = localizedPage("services");
       return;
     }
   }
