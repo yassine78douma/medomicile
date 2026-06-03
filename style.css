@@ -1532,6 +1532,18 @@ h1 {
   padding-left: 0;
 }
 
+[lang="en"] .service-card h3,
+[lang="en"] .home-card strong,
+[lang="en"] .article-card h2 {
+  line-height: 1.22;
+}
+
+[lang="en"] .service-content,
+[lang="en"] .home-card small,
+[lang="en"] .hero-subtitle {
+  line-height: 1.58;
+}
+
 .article-note {
   margin-top: 18px;
   padding: 16px;
@@ -2033,6 +2045,33 @@ h1 {
     border-color: rgba(148, 181, 213, 0.28);
   }
 
+  .media-caption,
+  .media-zone,
+  .gallery-caption,
+  [data-theme="dark"] .media-caption,
+  [data-theme="dark"] .media-zone,
+  [data-theme="dark"] .gallery-caption {
+    color: #082f49;
+  }
+
+  .media-caption strong,
+  .media-zone strong,
+  .gallery-caption strong,
+  [data-theme="dark"] .media-caption strong,
+  [data-theme="dark"] .media-zone strong,
+  [data-theme="dark"] .gallery-caption strong {
+    color: #082f49;
+  }
+
+  .media-caption span,
+  .media-zone span,
+  .gallery-caption span,
+  [data-theme="dark"] .media-caption span,
+  [data-theme="dark"] .media-zone span,
+  [data-theme="dark"] .gallery-caption span {
+    color: #475569;
+  }
+
   .pharmacy-image img,
   [data-theme="dark"] .pharmacy-image img {
     background: #f8fafc;
@@ -2084,6 +2123,21 @@ h1 {
   color: #e8f3ff;
   background: rgba(8, 28, 45, 0.92);
   border-color: rgba(148, 181, 213, 0.28);
+}
+
+[data-theme="dark"] .media-caption,
+[data-theme="dark"] .media-zone,
+[data-theme="dark"] .gallery-caption,
+[data-theme="dark"] .media-caption strong,
+[data-theme="dark"] .media-zone strong,
+[data-theme="dark"] .gallery-caption strong {
+  color: #082f49;
+}
+
+[data-theme="dark"] .media-caption span,
+[data-theme="dark"] .media-zone span,
+[data-theme="dark"] .gallery-caption span {
+  color: #475569;
 }
 
 [data-theme="light"] .mobile-header {
