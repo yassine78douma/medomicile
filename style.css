@@ -1776,52 +1776,6 @@ h1 {
   outline: none;
 }
 
-.floating-join {
-  position: fixed;
-  left: 14px;
-  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-  z-index: 99;
-  min-height: 52px;
-  min-width: 52px;
-  padding: 0 15px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: 1px solid rgba(198, 169, 105, 0.56);
-  border-radius: 999px;
-  color: var(--blue-950);
-  background: var(--panel);
-  box-shadow: 0 18px 40px rgba(15, 76, 129, 0.16);
-  font-weight: 900;
-  line-height: 1;
-  backdrop-filter: blur(16px);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
-}
-
-.floating-join span:first-child {
-  width: 26px;
-  height: 26px;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--blue-850), var(--blue-700));
-  font-size: 1rem;
-}
-
-.join-label {
-  display: none;
-}
-
-.floating-join:hover,
-.floating-join:focus-visible {
-  transform: translateY(-2px);
-  border-color: var(--gold);
-  box-shadow: 0 22px 48px rgba(15, 76, 129, 0.24);
-  outline: none;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -2197,15 +2151,6 @@ h1 {
   .mini-action {
     min-width: 106px;
     font-size: 0.9rem;
-  }
-
-  .floating-join {
-    padding: 0 18px 0 14px;
-  }
-
-  .join-label {
-    display: inline;
-    white-space: nowrap;
   }
 
   .header-actions {
