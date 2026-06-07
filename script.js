@@ -282,46 +282,84 @@ let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
-  source: "https://pharmaciedegardekenitra.com/",
-  updatedAt: "2026-06-02T18:24:20+01:00",
-  title: "Pharmacies de garde Kenitra - 2 juin 2026",
-  image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
-  note:
-    "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
-  pharmacies: [
+  "source": "https://pharmaciedegardekenitra.com/",
+  "updatedAt": "2026-06-07T17:30:00+01:00",
+  "title": "Pharmacies de garde Kenitra - 6 et 7 juin 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
+  "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. Appelez la pharmacie avant de vous déplacer.",
+  "pharmacies": [
     {
-      name: "Pharmacie La Forêt",
-      nameAr: "صيدلية الغابة",
-      phone: "05373 72280",
-      district: "nouvelle ville . المدينة الجديدة",
-      districtAr: "المدينة الجديدة",
-      address: "Clinique de Kénitra, Av. de l'Hôpital, Kénitra زنقة مستشفى الادريسي قرب مصحة القنيطرة",
-      date: "2 juin 2026",
-      mapsUrl: "https://maps.app.goo.gl/eLLSqYtwqBHCvw3b6",
+      "name": "Pharmacie Iskan Chaabi",
+      "nameAr": "صيدلية إسكان شعبي",
+      "nameEn": "Iskan Chaabi Pharmacy",
+      "phone": "05 37 37 15 83",
+      "district": "Ville Nouvelle",
+      "districtAr": "المدينة الجديدة",
+      "districtEn": "Ville Nouvelle",
+      "address": "Lot Darsalama, 32 Bloc H, près du marché central Lacyté, Kénitra",
+      "addressAr": "تجزئة دار السلامة، 32 مجموعة H، بجانب السوق المركزي لاسيتى، القنيطرة",
+      "addressEn": "Lot Darsalama, 32 Bloc H, near the central Lacyté market, Kenitra",
+      "date": "6 et 7 juin 2026",
+      "mapsUrl": ""
     },
     {
-      name: "Pharmacie liala",
-      nameAr: "صيدلية ليلى",
-      phone: "05 37 35 37 13",
-      district: "OULADE OUJIH - ولاد وجيه",
-      districtAr: "ولاد وجيه",
-      address:
-        "bd Mohammed V lot n°4-Bab fes -  Kénitra - Maroc قرب مسجد المصطفى و مدرسة البدور الخاصة ,المغرب العربي - ولاد وجيه - القنيطرة المغرب",
-      date: "2 juin 2026",
-      mapsUrl: "https://share.google/MuYfJ7yoFnw8NIA9J",
+      "name": "Pharmacie La Capitale du Gharb",
+      "nameAr": "صيدلية عاصمة الغرب",
+      "nameEn": "La Capitale du Gharb Pharmacy",
+      "phone": "05 37 35 68 42",
+      "district": "Ouled Oujih",
+      "districtAr": "أولاد وجيه",
+      "districtEn": "Ouled Oujih",
+      "address": "176 Bloc F, lot El Haouzia, près Hammam Zair, Kénitra",
+      "addressAr": "بلوك F رقم 176، تجزئة الحوزية، قرب حمام زير، القنيطرة",
+      "addressEn": "176 Bloc F, El Haouzia subdivision, near Hammam Zair, Kenitra",
+      "date": "6 et 7 juin 2026",
+      "mapsUrl": ""
     },
     {
-      name: "pharmacie dabagh",
-      nameAr: "صيدلية الدباغ",
-      phone: "05 30 55 50 22",
-      district: "Mehdia alliance darna",
-      districtAr: "",
-      address: "alliance mehdia kenitra",
-      date: "2 juin 2026",
-      mapsUrl: "https://maps.app.goo.gl/Fgg84tZsJGxGxwC29",
+      "name": "Pharmacie Khabazat Populaire",
+      "nameAr": "صيدلية الخبازات الشعبية",
+      "nameEn": "Khabazat Populaire Pharmacy",
+      "phone": "05 37 36 59 23",
+      "district": "Medina",
+      "districtAr": "المدينة",
+      "districtEn": "Medina",
+      "address": "Avenue Kennidy N° 33, Centre Khabazat, Kénitra",
+      "addressAr": "شارع كينيدي رقم 33، وسط الخبازات، القنيطرة",
+      "addressEn": "33 Kennedy Avenue, Khabazat center, Kenitra",
+      "date": "6 et 7 juin 2026",
+      "mapsUrl": ""
     },
-  ],
+    {
+      "name": "Pharmacie Zakat",
+      "nameAr": "صيدلية زكاة",
+      "nameEn": "Zakat Pharmacy",
+      "phone": "05 37 37 49 37",
+      "district": "Bir Rami Industrielle",
+      "districtAr": "بير الرامي الصناعية",
+      "districtEn": "Bir Rami Industrial Area",
+      "address": "Al Maghreb Arabi N°125, près Assouak Essalam, en face Madaris Azzouhour, Kénitra",
+      "addressAr": "المغرب العربي رقم 125، قرب أسواق السلام، أمام مدارس الزهور، القنيطرة",
+      "addressEn": "Al Maghreb Arabi No. 125, near Assouak Essalam, opposite Madaris Azzouhour, Kenitra",
+      "date": "6 et 7 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Hay Al Wafa",
+      "nameAr": "صيدلية حي الوفاء",
+      "nameEn": "Hay Al Wafa Pharmacy",
+      "phone": "05 37 38 50 51 / 06 64 93 96 00",
+      "district": "Saknia",
+      "districtAr": "الساكنية",
+      "districtEn": "Saknia",
+      "address": "1130 Lot Al Wafa 4, disponible sur Google Maps, Kénitra",
+      "addressAr": "تجزئة الوفاء 4 رقم 1130، متوفرة على Google Maps، القنيطرة",
+      "addressEn": "1130 Lot Al Wafa 4, available on Google Maps, Kenitra",
+      "date": "6 et 7 juin 2026",
+      "mapsUrl": ""
+    }
+  ]
 };
 
 const getLocalized = (item, key) => {
@@ -608,7 +646,10 @@ galleryNext?.addEventListener("click", () => {
   setGalleryImage(visible[nextPosition]);
 });
 
-const normalizePhoneHref = (phone) => `tel:${phone.replace(/[^\d+]/g, "")}`;
+const normalizePhoneHref = (phone) => {
+  const firstNumber = String(phone).split("/")[0] || phone;
+  return `tel:${firstNumber.replace(/[^\d+]/g, "")}`;
+};
 
 const renderPharmacies = (data) => {
   if (!pharmacyList || !pharmacyTitle || !pharmacyUpdated) return;
@@ -638,13 +679,13 @@ const renderPharmacies = (data) => {
     card.className = "pharmacy-card";
 
     const heading = document.createElement("h3");
-    heading.textContent = (isArabicPage && pharmacy.nameAr) || pharmacy.name;
+    heading.textContent = getLocalized(pharmacy, "name") || pharmacy.name;
 
     const district = document.createElement("p");
-    district.textContent = (isArabicPage && pharmacy.districtAr) || pharmacy.district || "";
+    district.textContent = getLocalized(pharmacy, "district") || pharmacy.district || "";
 
     const address = document.createElement("p");
-    address.textContent = pharmacy.address || "";
+    address.textContent = getLocalized(pharmacy, "address") || pharmacy.address || "";
 
     const date = document.createElement("span");
     date.className = "pharmacy-date";
