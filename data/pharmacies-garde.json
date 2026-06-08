@@ -7,7 +7,7 @@
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Chiboub",
+      "name": "Pharmacie Chiboub ,",
       "nameAr": "صيدلية شيبوب",
       "phone": "06 09 27 28 83",
       "district": "Bir Rami Industrielle / بير رامي الصناعية",
@@ -17,12 +17,12 @@
       "mapsUrl": "https://maps.app.goo.gl/48Nx6mbx7p6ocC6b7"
     },
     {
-      "name": "Pharmacie El Khir",
+      "name": "pharmacie el khir",
       "nameAr": "صيدلية الخير",
-      "phone": "06 48 13 40 94",
-      "district": "Saknia / الساكنية",
-      "districtAr": "الساكنية",
-      "address": "1 Oulad Arfa, Saknia, Kénitra",
+      "phone": "0530136945",
+      "district": "saknia",
+      "districtAr": "",
+      "address": "saknia oulad arfa",
       "date": "8 juin 2026",
       "mapsUrl": "https://maps.app.goo.gl/79Jp1imtmPmR4MoUA"
     }
