@@ -101,6 +101,7 @@ const run = async () => {
     firstMatch(html, /property=["']article:modified_time["']\s+content=["']([^"']+)["']/i) ||
     new Date().toISOString();
   const readableDate =
+    firstMatch(html, /pharmacie de garde kenitra\s+(\d{1,2}\s+et\s+\d{1,2}\s+\w+\s+\d{4})/i) ||
     firstMatch(html, /meta name=["']description["'] content=["'][^"']*?(\d{1,2}\s+\w+\s+\d{4})/i) ||
     new Intl.DateTimeFormat("fr-MA", { dateStyle: "full", timeZone: "Africa/Casablanca" }).format(new Date());
 
