@@ -116,7 +116,7 @@ const run = async () => {
     image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
     updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
     note:
-      "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+      "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
     pharmacies: pharmacies.map((pharmacy) => ({ ...pharmacy, date: readableDate })),
   };
 

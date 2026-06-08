@@ -1,50 +1,30 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-06T17:03:26+01:00",
-  "title": "Pharmacies de garde Kenitra - 6 et 7 juin 2026",
+  "updatedAt": "2026-06-08T20:00:57+01:00",
+  "title": "Pharmacies de garde Kenitra - 8 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
-  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "pharmacie khabazat populaire",
-      "nameAr": "صيدلية الخبازات الشعبية",
-      "phone": "0537365923",
-      "district": "المدينة , el mdina",
-      "districtAr": "المدينة",
-      "address": "Avenue Kennidy N° 33, Centre Khabazat, kenitra . maroc شارع كينيدي رقم 33، وسط الخبازات.مدخل كينيدي ’ القنيطرة المغرب",
-      "date": "6 et 7 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/aDN5up6btvCMQrV99"
+      "name": "Pharmacie Chiboub",
+      "nameAr": "صيدلية شيبوب",
+      "phone": "06 09 27 28 83",
+      "district": "Bir Rami Industrielle / بير رامي الصناعية",
+      "districtAr": "بير رامي الصناعية",
+      "address": "بير الرامي الجنوبية قريب من التكوين المهني طريق مقبرة الرضوان",
+      "date": "8 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/48Nx6mbx7p6ocC6b7"
     },
     {
-      "name": "pharmacie hay el wafa",
-      "nameAr": "صيدلية حي الوفاء",
-      "phone": "05 37 38 50 51",
-      "district": "hay lwafa,حي الوفاء عين السبع",
-      "districtAr": "حي الوفاء عين السبع",
-      "address": "Lotissement Wafa 4, Ain Sebaa, Kénitra رومبوان عين السبع على يمين مركز الماء ONEP في اتجاه الشاطو صيدلية حي الوفاء القنيطرة",
-      "date": "6 et 7 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/w8d9TiNFXs9LtGjW8"
-    },
-    {
-      "name": "PHARMACIE ZAKAT",
-      "nameAr": "صيدلية الزكاة",
-      "phone": "05393 13629",
-      "district": "bir rami",
-      "districtAr": "",
-      "address": "hay Al Maghrib Al Arabi bloc A1 lot. 125  Kénitra - Maroc",
-      "date": "6 et 7 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/YPdwAQLiLLFbCX6M6"
-    },
-    {
-      "name": "pharmacie iskan chaabi",
-      "nameAr": "صيدلية الاسكان الشعبي",
-      "phone": "05 37 37 15 83",
-      "district": "taibia,الطيبية",
-      "districtAr": "الطيبية",
-      "address": "nr 32, Lotissement salama 4 bloc H, Kénitra 14000 7CF3+79 Kénitra,امام مسجد اسكان الشعبي بالقرب من السجن المركزي الطيبية , القنيطرة",
-      "date": "6 et 7 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/1qbrt9A7cCk25L86A"
+      "name": "Pharmacie El Khir",
+      "nameAr": "صيدلية الخير",
+      "phone": "06 48 13 40 94",
+      "district": "Saknia / الساكنية",
+      "districtAr": "الساكنية",
+      "address": "1 Oulad Arfa, Saknia, Kénitra",
+      "date": "8 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/79Jp1imtmPmR4MoUA"
     }
   ]
 }
