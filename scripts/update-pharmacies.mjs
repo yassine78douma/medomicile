@@ -49,7 +49,7 @@ const splitNames = (value) => {
 const fetchHtml = async () => {
   const response = await fetch(SOURCE_URL, {
     headers: {
-      "user-agent": "Medomicile pharmacy updater (+https://yassine78douma.github.io/medomicile/)",
+      "user-agent": "Medomicile pharmacy updater (+https://medomicile.com/)",
     },
   });
 
