@@ -1,10 +1,10 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-08T10:20:00+01:00",
+  "updatedAt": "2026-06-06T17:03:26+01:00",
   "title": "Pharmacies de garde Kenitra - 6 et 7 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
-  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
       "name": "pharmacie khabazat populaire",
@@ -29,7 +29,7 @@
     {
       "name": "PHARMACIE ZAKAT",
       "nameAr": "صيدلية الزكاة",
-      "phone": "05 37 37 49 37",
+      "phone": "05393 13629",
       "district": "bir rami",
       "districtAr": "",
       "address": "hay Al Maghrib Al Arabi bloc A1 lot. 125  Kénitra - Maroc",
