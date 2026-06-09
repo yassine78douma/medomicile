@@ -1,8 +1,11 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const SOURCE_URL = "https://pharmaciedegardekenitra.com/";
+const SOURCE_API_URL = "https://pharmaciedegardekenitra.com/wp-json/wp/v2/pages/3846";
 const OUTPUT = new URL("../data/pharmacies-garde.json", import.meta.url);
 const SCRIPT = new URL("../script.js", import.meta.url);
+const FETCH_RETRIES = 4;
+const FETCH_TIMEOUT_MS = 20000;
 
 const decodeHtml = (value = "") =>
   value
@@ -47,15 +50,54 @@ const splitNames = (value) => {
   };
 };
 
-const fetchHtml = async () => {
-  const response = await fetch(SOURCE_URL, {
-    headers: {
-      "user-agent": "Medomicile pharmacy updater (+https://medomicile.com/)",
-    },
-  });
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-  if (!response.ok) throw new Error(`Source unavailable: ${response.status}`);
-  return response.text();
+const fetchTextWithRetries = async (url) => {
+  let lastError;
+
+  for (let attempt = 1; attempt <= FETCH_RETRIES; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+    try {
+      const response = await fetch(url, {
+        headers: {
+          "accept": "text/html,application/json",
+          "user-agent": "Medomicile pharmacy updater (+https://medomicile.com/)",
+        },
+        signal: controller.signal,
+      });
+
+      if (!response.ok) throw new Error(`Source unavailable: ${response.status}`);
+      return response.text();
+    } catch (error) {
+      lastError = error;
+      console.warn(`Attempt ${attempt}/${FETCH_RETRIES} failed for ${url}: ${error.message}`);
+      if (attempt < FETCH_RETRIES) await sleep(attempt * 3000);
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  throw lastError;
+};
+
+const fetchHtml = async () => {
+  try {
+    const jsonText = await fetchTextWithRetries(SOURCE_API_URL);
+    const page = JSON.parse(jsonText);
+    return {
+      html: `${page.title?.rendered || ""}\n${page.content?.rendered || ""}`,
+      updatedAt: page.modified ? `${page.modified}+01:00` : "",
+    };
+  } catch (error) {
+    console.warn(`WordPress API source failed, retrying public page: ${error.message}`);
+  }
+
+  return {
+    html: await fetchTextWithRetries(SOURCE_URL),
+    updatedAt: "",
+  };
 };
 
 const parsePharmacies = (html) => {
@@ -135,9 +177,23 @@ const updateScriptFallback = async (data) => {
 };
 
 const run = async () => {
-  const html = await fetchHtml();
+  let html;
+  let sourceUpdatedAt;
+
+  try {
+    const source = await fetchHtml();
+    html = source.html;
+    sourceUpdatedAt = source.updatedAt;
+  } catch (error) {
+    console.warn(`Pharmacy source temporarily unavailable, keeping current data: ${error.message}`);
+    const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
+    await updateScriptFallback(existing);
+    return;
+  }
+
   const pharmacies = parsePharmacies(html);
   const updatedAt =
+    sourceUpdatedAt ||
     firstMatch(html, /property=["']article:modified_time["']\s+content=["']([^"']+)["']/i) ||
     new Date().toISOString();
   const readableDate =
