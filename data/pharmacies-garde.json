@@ -1,30 +1,30 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-08T20:00:57+01:00",
-  "title": "Pharmacies de garde Kenitra - 8 juin 2026",
+  "updatedAt": "2026-06-09T17:41:24+01:00",
+  "title": "Pharmacies de garde Kenitra - 9 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Chiboub ,",
-      "nameAr": "صيدلية شيبوب",
-      "phone": "06 09 27 28 83",
-      "district": "Bir Rami Industrielle / بير رامي الصناعية",
-      "districtAr": "بير رامي الصناعية",
-      "address": "بير الرامي الجنوبية قريب من التكوين المهني طريق مقبرة الرضوان",
-      "date": "8 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/48Nx6mbx7p6ocC6b7"
+      "name": "pharmacie du passage",
+      "nameAr": "صيدلية السكة",
+      "phone": "05373 63162",
+      "district": "bab fes",
+      "districtAr": "",
+      "address": "133 Rue 206, Kénitra 14000",
+      "date": "9 juin 2026",
+      "mapsUrl": "https://g.co/kgs/XMfokN3"
     },
     {
-      "name": "pharmacie el khir",
-      "nameAr": "صيدلية الخير",
-      "phone": "0530136945",
-      "district": "saknia",
+      "name": "pharmacie el hikma",
+      "nameAr": "صيدلية الحكمة",
+      "phone": "05 37 36 59 24",
+      "district": "maghrib arabi douar chikh",
       "districtAr": "",
-      "address": "saknia oulad arfa",
-      "date": "8 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/79Jp1imtmPmR4MoUA"
+      "address": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc",
+      "date": "9 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/W5ZjGbezv3oiy5o67"
     }
   ]
 }

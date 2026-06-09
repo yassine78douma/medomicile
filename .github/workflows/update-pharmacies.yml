@@ -30,12 +30,12 @@ jobs:
 
       - name: Commit updated data
         run: |
-          if git diff --quiet -- data/pharmacies-garde.json; then
+          if git diff --quiet -- data/pharmacies-garde.json script.js; then
             echo "No pharmacy changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/pharmacies-garde.json
+          git add data/pharmacies-garde.json script.js
           git commit -m "Update pharmacy duty data"
           git push

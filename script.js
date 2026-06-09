@@ -283,39 +283,39 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-08T20:00:57+01:00",
-  "title": "Pharmacies de garde Kenitra - 8 juin 2026",
+  "updatedAt": "2026-06-09T17:41:24+01:00",
+  "title": "Pharmacies de garde Kenitra - 9 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Chiboub",
-      "nameAr": "صيدلية شيبوب",
-      "phone": "06 09 27 28 83",
-      "district": "Bir Rami Industrielle / بير رامي الصناعية",
-      "districtAr": "بير رامي الصناعية",
-      "address": "بير الرامي الجنوبية قريب من التكوين المهني طريق مقبرة الرضوان",
-      "date": "8 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/48Nx6mbx7p6ocC6b7",
-      "nameEn": "Chiboub Pharmacy",
-      "districtEn": "Bir Rami Industrial Area",
-      "addressAr": "بير الرامي الجنوبية قريب من التكوين المهني طريق مقبرة الرضوان",
-      "addressEn": "South Bir Rami, near vocational training, road to the Ridouane cemetery"
+      "name": "pharmacie du passage",
+      "nameAr": "صيدلية السكة",
+      "phone": "05373 63162",
+      "district": "bab fes",
+      "districtAr": "",
+      "address": "133 Rue 206, Kénitra 14000",
+      "date": "9 juin 2026",
+      "mapsUrl": "https://g.co/kgs/XMfokN3",
+      "nameEn": "Du Passage Pharmacy",
+      "districtEn": "bab fes",
+      "addressAr": "133 Rue 206, Kénitra 14000",
+      "addressEn": "133 Rue 206, Kénitra 14000"
     },
     {
-      "name": "Pharmacie El Khir",
-      "nameAr": "صيدلية الخير",
-      "phone": "06 48 13 40 94",
-      "district": "Saknia / الساكنية",
-      "districtAr": "الساكنية",
-      "address": "1 Oulad Arfa, Saknia, Kénitra",
-      "date": "8 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/79Jp1imtmPmR4MoUA",
-      "nameEn": "El Khir Pharmacy",
-      "districtEn": "Saknia",
-      "addressAr": "الأمل 1، أولاد عرفة، الساكنية، القنيطرة",
-      "addressEn": "1 Oulad Arfa, Saknia, Kenitra"
+      "name": "pharmacie el hikma",
+      "nameAr": "صيدلية الحكمة",
+      "phone": "05 37 36 59 24",
+      "district": "maghrib arabi douar chikh",
+      "districtAr": "",
+      "address": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc",
+      "date": "9 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/W5ZjGbezv3oiy5o67",
+      "nameEn": "El Hikma Pharmacy",
+      "districtEn": "maghrib arabi douar chikh",
+      "addressAr": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc",
+      "addressEn": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc"
     }
   ]
 };

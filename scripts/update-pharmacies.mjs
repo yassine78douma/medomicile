@@ -1,7 +1,8 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const SOURCE_URL = "https://pharmaciedegardekenitra.com/";
 const OUTPUT = new URL("../data/pharmacies-garde.json", import.meta.url);
+const SCRIPT = new URL("../script.js", import.meta.url);
 
 const decodeHtml = (value = "") =>
   value
@@ -94,6 +95,45 @@ const parsePharmacies = (html) => {
     .slice(0, 4);
 };
 
+const toTitleCase = (value = "") =>
+  value
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+
+const englishPharmacyName = (name = "") => {
+  const clean = name.trim().replace(/^pharmacie\s+/i, "");
+  return clean ? `${toTitleCase(clean)} Pharmacy` : "On-duty Pharmacy";
+};
+
+const buildFallbackData = (data) => ({
+  ...data,
+  pharmacies: data.pharmacies.map((pharmacy) => ({
+    ...pharmacy,
+    nameEn: pharmacy.nameEn || englishPharmacyName(pharmacy.name),
+    districtEn: pharmacy.districtEn || pharmacy.district,
+    addressAr: pharmacy.addressAr || pharmacy.address,
+    addressEn: pharmacy.addressEn || pharmacy.address,
+  })),
+});
+
+const updateScriptFallback = async (data) => {
+  const script = await readFile(SCRIPT, "utf8");
+  const fallback = JSON.stringify(buildFallbackData(data), null, 2);
+  const updated = script.replace(
+    /const fallbackPharmacyData = \{[\s\S]*?\n\};\n\nconst getLocalized/,
+    `const fallbackPharmacyData = ${fallback};\n\nconst getLocalized`
+  );
+
+  if (updated === script) {
+    throw new Error("Unable to update fallbackPharmacyData in script.js");
+  }
+
+  await writeFile(SCRIPT, updated);
+};
+
 const run = async () => {
   const html = await fetchHtml();
   const pharmacies = parsePharmacies(html);
@@ -121,6 +161,7 @@ const run = async () => {
   };
 
   await writeFile(OUTPUT, `${JSON.stringify(data, null, 2)}\n`);
+  await updateScriptFallback(data);
   console.log(`Updated ${pharmacies.length} pharmacies from ${SOURCE_URL}`);
 };
 
