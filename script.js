@@ -283,39 +283,39 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-09T17:41:24+01:00",
+  "updatedAt": "2026-06-10T17:10:03+01:00",
   "title": "Pharmacies de garde Kenitra - mercredi 10 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "pharmacie du passage",
-      "nameAr": "صيدلية السكة",
-      "phone": "05373 63162",
-      "district": "bab fes",
+      "name": "Pharmacie el mssala",
+      "nameAr": "صيدلية المصلى",
+      "phone": "07 00 80 52 67",
+      "district": "saknia",
       "districtAr": "",
-      "address": "133 Rue 206, Kénitra 14000",
+      "address": "hay Saknia mag.1 imm.14 allée du parc Kénitra 14000 - Maroc طريق الساكنية من ماكدو في اتجاه المسبح البلدي بعد المدار مباشرة على اليمين",
       "date": "mercredi 10 juin 2026",
-      "mapsUrl": "https://g.co/kgs/XMfokN3",
-      "nameEn": "Du Passage Pharmacy",
-      "districtEn": "bab fes",
-      "addressAr": "133 Rue 206, Kénitra 14000",
-      "addressEn": "133 Rue 206, Kénitra 14000"
+      "mapsUrl": "https://maps.app.goo.gl/3AZnbyntkWn4aHfo9",
+      "nameEn": "El Mssala Pharmacy",
+      "districtEn": "saknia",
+      "addressAr": "hay Saknia mag.1 imm.14 allée du parc Kénitra 14000 - Maroc طريق الساكنية من ماكدو في اتجاه المسبح البلدي بعد المدار مباشرة على اليمين",
+      "addressEn": "hay Saknia mag.1 imm.14 allée du parc Kénitra 14000 - Maroc طريق الساكنية من ماكدو في اتجاه المسبح البلدي بعد المدار مباشرة على اليمين"
     },
     {
-      "name": "pharmacie el hikma",
-      "nameAr": "صيدلية الحكمة",
-      "phone": "05 37 36 59 24",
-      "district": "maghrib arabi douar chikh",
-      "districtAr": "",
-      "address": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc",
+      "name": "PHARMACIE ZOUHOR",
+      "nameAr": "صيدلية الزهور",
+      "phone": "0537353598",
+      "district": "Ouled Oujih ولاد وجيه ",
+      "districtAr": "ولاد وجيه",
+      "address": "hay Ouled Oujih lot 447 bloc D Kénitra - Maroc",
       "date": "mercredi 10 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/W5ZjGbezv3oiy5o67",
-      "nameEn": "El Hikma Pharmacy",
-      "districtEn": "maghrib arabi douar chikh",
-      "addressAr": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc",
-      "addressEn": "hay Al Maghrib Al Arabi n°74  Kénitra - Maroc"
+      "mapsUrl": "https://maps.app.goo.gl/kyUczxtfSzuxVL3Z8",
+      "nameEn": "Zouhor Pharmacy",
+      "districtEn": "Ouled Oujih ولاد وجيه ",
+      "addressAr": "hay Ouled Oujih lot 447 bloc D Kénitra - Maroc",
+      "addressEn": "hay Ouled Oujih lot 447 bloc D Kénitra - Maroc"
     }
   ]
 };
