@@ -1,30 +1,30 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-11T17:18:11+01:00",
+  "updatedAt": "2026-06-12T11:56:07+01:00",
   "title": "Pharmacies de garde Kenitra - vendredi 12 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Nour El irchad",
-      "nameAr": "صيدلية نور الارشاد",
+      "name": "Pharmacie diour el pam",
+      "nameAr": "صيدلية ديور البام",
       "phone": "05388 90240",
-      "district": "- saknia- irchad الارشاد , الساكنية",
-      "districtAr": "الارشاد",
-      "address": "irchad saknia route de marjan,kenitra 14000 الارشاد قرب المدار الجديدة طريق مرجان امام الغابة , القنيطرة , المغرب",
+      "district": "saknia pam",
+      "districtAr": "",
+      "address": "hay Chabab pam rue 98 n°28 Kénitra - Maroc",
       "date": "vendredi 12 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/tticocvBB2QKzdFC7"
+      "mapsUrl": "https://maps.app.goo.gl/NZ8SnG1UxHr8xNiZA"
     },
     {
-      "name": "pharmacie omar",
-      "nameAr": "صيدلية عمر",
-      "phone": "05373 66364",
-      "district": "TIABIA,الطيبية",
-      "districtAr": "الطيبية",
-      "address": "176 lotiss. Taibya rte Mehdia  Kénitra - Maroc مقابل بريد المغرب الطيبية الطريق المزدوجة الطيبية ’القنيطرة ,المغرب",
+      "name": "La Grande Pharmacie",
+      "nameAr": "الصيدلية الكبرى",
+      "phone": "05 37 37 10 46",
+      "district": "la nouvelle ville",
+      "districtAr": "",
+      "address": "près de l'Hotel La Rotonde, 62 Av. Mohamed Diouri, Kénitra",
       "date": "vendredi 12 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/aYVPXXuuPySGtdJH9"
+      "mapsUrl": "https://maps.app.goo.gl/Df3YSV4KtcJwqmKV7"
     }
   ]
 }
