@@ -38,4 +38,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/pharmacies-garde.json script.js
           git commit -m "Update pharmacy duty data"
+          git pull --rebase origin main
           git push

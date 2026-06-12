@@ -1,30 +1,30 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-10T17:10:03+01:00",
-  "title": "Pharmacies de garde Kenitra - jeudi 11 juin 2026",
+  "updatedAt": "2026-06-11T17:18:11+01:00",
+  "title": "Pharmacies de garde Kenitra - vendredi 12 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie el mssala",
-      "nameAr": "صيدلية المصلى",
-      "phone": "07 00 80 52 67",
-      "district": "saknia",
-      "districtAr": "",
-      "address": "hay Saknia mag.1 imm.14 allée du parc Kénitra 14000 - Maroc طريق الساكنية من ماكدو في اتجاه المسبح البلدي بعد المدار مباشرة على اليمين",
-      "date": "jeudi 11 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/3AZnbyntkWn4aHfo9"
+      "name": "Pharmacie Nour El irchad",
+      "nameAr": "صيدلية نور الارشاد",
+      "phone": "05388 90240",
+      "district": "- saknia- irchad الارشاد , الساكنية",
+      "districtAr": "الارشاد",
+      "address": "irchad saknia route de marjan,kenitra 14000 الارشاد قرب المدار الجديدة طريق مرجان امام الغابة , القنيطرة , المغرب",
+      "date": "vendredi 12 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/tticocvBB2QKzdFC7"
     },
     {
-      "name": "PHARMACIE ZOUHOR",
-      "nameAr": "صيدلية الزهور",
-      "phone": "0537353598",
-      "district": "Ouled Oujih ولاد وجيه ",
-      "districtAr": "ولاد وجيه",
-      "address": "hay Ouled Oujih lot 447 bloc D Kénitra - Maroc",
-      "date": "jeudi 11 juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/kyUczxtfSzuxVL3Z8"
+      "name": "pharmacie omar",
+      "nameAr": "صيدلية عمر",
+      "phone": "05373 66364",
+      "district": "TIABIA,الطيبية",
+      "districtAr": "الطيبية",
+      "address": "176 lotiss. Taibya rte Mehdia  Kénitra - Maroc مقابل بريد المغرب الطيبية الطريق المزدوجة الطيبية ’القنيطرة ,المغرب",
+      "date": "vendredi 12 juin 2026",
+      "mapsUrl": "https://maps.app.goo.gl/aYVPXXuuPySGtdJH9"
     }
   ]
 }
