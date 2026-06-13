@@ -292,72 +292,72 @@ const fallbackPharmacyData = {
     {
       "name": "Pharmacie L'Avenir",
       "nameAr": "صيدلية المستقبل",
+      "nameEn": "L'Avenir Pharmacy",
       "phone": "05 37 35 24 72",
       "district": "Ouled Oujih",
       "districtAr": "أولاد أوجيه",
-      "address": "Lot 29 sec C - Ouled Oujih, près Station d'essence ZIZ, Kénitra",
-      "date": "week-end 13 et 14 juin 2026",
-      "mapsUrl": "",
-      "nameEn": "L'Avenir Pharmacy",
       "districtEn": "Ouled Oujih",
+      "address": "Lot 29 sec C - Ouled Oujih, près Station d'essence ZIZ, Kénitra",
       "addressAr": "مع 29 سكتور C - أولاد أوجيه، قرب محطة البنزين زيز",
-      "addressEn": "Lot 29 sec C - Ouled Oujih, near ZIZ gas station, Kenitra"
+      "addressEn": "Lot 29 sec C - Ouled Oujih, near ZIZ gas station, Kenitra",
+      "date": "week-end 13 et 14 juin 2026",
+      "mapsUrl": ""
     },
     {
       "name": "Pharmacie Riad",
       "nameAr": "صيدلية الرياض",
+      "nameEn": "Riad Pharmacy",
       "phone": "05 37 36 28 07",
       "district": "Medina",
       "districtAr": "المدينة",
-      "address": "Rue 221 et 151, Kénitra",
-      "date": "week-end 13 et 14 juin 2026",
-      "mapsUrl": "",
-      "nameEn": "Riad Pharmacy",
       "districtEn": "Medina",
+      "address": "Rue 221 et 151, Kénitra",
       "addressAr": "زنقة 221 و151، القنيطرة",
-      "addressEn": "Rue 221 and 151, Kenitra"
+      "addressEn": "Rue 221 and 151, Kenitra",
+      "date": "week-end 13 et 14 juin 2026",
+      "mapsUrl": ""
     },
     {
       "name": "Pharmacie Mimosas",
       "nameAr": "صيدلية ميموزا",
+      "nameEn": "Mimosas Pharmacy",
       "phone": "05 37 37 45 23",
       "district": "Ville Nouvelle",
       "districtAr": "المدينة الجديدة",
-      "address": "460 Avenue Mohamed V, à côté de COSMOS, Kénitra",
-      "date": "week-end 13 et 14 juin 2026",
-      "mapsUrl": "",
-      "nameEn": "Mimosas Pharmacy",
       "districtEn": "Ville Nouvelle",
+      "address": "460 Avenue Mohamed V, à côté de COSMOS, Kénitra",
       "addressAr": "460 شارع محمد الخامس، قرب كوسموس، القنيطرة",
-      "addressEn": "460 Avenue Mohamed V, next to COSMOS, Kenitra"
+      "addressEn": "460 Avenue Mohamed V, next to COSMOS, Kenitra",
+      "date": "week-end 13 et 14 juin 2026",
+      "mapsUrl": ""
     },
     {
       "name": "Pharmacie Quartier Industriel Bir Rami",
       "nameAr": "صيدلية الحي الصناعي بير الرامي",
+      "nameEn": "Bir Rami Industrial District Pharmacy",
       "phone": "05 37 36 49 50",
       "district": "Bir Rami Industrielle",
       "districtAr": "بير الرامي الصناعية",
-      "address": "Disponible sur Maps, Bir Rami Industrielle, Kénitra",
-      "date": "week-end 13 et 14 juin 2026",
-      "mapsUrl": "",
-      "nameEn": "Bir Rami Industrial District Pharmacy",
       "districtEn": "Bir Rami Industrial District",
+      "address": "Disponible sur Maps, Bir Rami Industrielle, Kénitra",
       "addressAr": "متوفرة على الخرائط، بير الرامي الصناعية، القنيطرة",
-      "addressEn": "Available on Maps, Bir Rami Industrial District, Kenitra"
+      "addressEn": "Available on Maps, Bir Rami Industrial District, Kenitra",
+      "date": "week-end 13 et 14 juin 2026",
+      "mapsUrl": ""
     },
     {
       "name": "Pharmacie Famiri",
       "nameAr": "صيدلية فميري",
+      "nameEn": "Famiri Pharmacy",
       "phone": "06 64 65 07 34",
       "district": "Saknia",
       "districtAr": "الساكنية",
-      "address": "Lot 182 Wafa 1 - Saknia, près du Hammam Hajija Rquia, Kénitra",
-      "date": "week-end 13 et 14 juin 2026",
-      "mapsUrl": "",
-      "nameEn": "Famiri Pharmacy",
       "districtEn": "Saknia",
+      "address": "Lot 182 Wafa 1 - Saknia, près du Hammam Hajija Rquia, Kénitra",
       "addressAr": "تجزئة الوفاء 1 رقم 182، الساكنية، قرب حمام الحاجة رقية",
-      "addressEn": "Lot 182 Wafa 1 - Saknia, near Hammam Hajija Rquia, Kenitra"
+      "addressEn": "Lot 182 Wafa 1 - Saknia, near Hammam Hajija Rquia, Kenitra",
+      "date": "week-end 13 et 14 juin 2026",
+      "mapsUrl": ""
     }
   ]
 };
