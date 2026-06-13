@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: medomicile.com
 Sitemap: https://medomicile.com/sitemap.xml
