@@ -40,3 +40,28 @@ jobs:
           git commit -m "Update pharmacy duty data"
           git pull --rebase origin main
           git push
+          python3 - <<'PY'
+          import json
+          import urllib.request
+
+          key = "9b3f6c4d9a284f8ba2e1630c5d7a9f21"
+          payload = {
+              "host": "medomicile.com",
+              "key": key,
+              "keyLocation": f"https://medomicile.com/{key}.txt",
+              "urlList": [
+                  "https://medomicile.com/pharmacies.html",
+                  "https://medomicile.com/pharmacies-en.html",
+                  "https://medomicile.com/pharmacies-ar.html",
+                  "https://medomicile.com/sitemap.xml",
+              ],
+          }
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              print("IndexNow status:", response.status)
+          PY

@@ -1,0 +1,48 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify-indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Submit sitemap URLs to IndexNow
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          import urllib.request
+          from pathlib import Path
+
+          key = "9b3f6c4d9a284f8ba2e1630c5d7a9f21"
+          sitemap = Path("sitemap.xml").read_text(encoding="utf-8")
+          urls = re.findall(r"<loc>(https://medomicile\.com/[^<]*)</loc>", sitemap)
+          if "https://medomicile.com/" not in urls:
+              urls.insert(0, "https://medomicile.com/")
+
+          payload = {
+              "host": "medomicile.com",
+              "key": key,
+              "keyLocation": f"https://medomicile.com/{key}.txt",
+              "urlList": urls[:10000],
+          }
+          request = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              print("IndexNow status:", response.status)
+          PY
