@@ -283,70 +283,105 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-13T17:22:43+01:00",
-  "title": "Pharmacies de garde Kenitra - 13 et 14  juin 2026",
+  "updatedAt": "2026-06-15T13:00:00+01:00",
+  "title": "Pharmacies de garde de nuit Kenitra - 15 au 19 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
   "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "pharamcie l'avenir",
-      "nameAr": "صيدلية المستقبل",
-      "phone": "0 5 37 35 24 72",
-      "district": "oulade oujih,ولاد وجيه",
-      "districtAr": "ولاد وجيه",
-      "address": "double voix ouade oujih,المستقبل نهاية الطريقة المزدوجة ولاد وجيه قرب محطة البنزين زيز",
-      "date": "13 et 14  juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/VT6wsse9FsUkGqqj8",
-      "nameEn": "Pharamcie L'avenir Pharmacy",
-      "districtEn": "oulade oujih,ولاد وجيه",
-      "addressAr": "double voix ouade oujih,المستقبل نهاية الطريقة المزدوجة ولاد وجيه قرب محطة البنزين زيز",
-      "addressEn": "double voix ouade oujih,المستقبل نهاية الطريقة المزدوجة ولاد وجيه قرب محطة البنزين زيز"
+      "name": "Pharmacie Hay Rabi",
+      "nameAr": "صيدلية حي الربيع",
+      "phone": "05 38 15 27 97",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "Rue 202, Hay Rabi, Saknia, à environ 200 m du café Berouas",
+      "date": "15 juin 2026",
+      "mapsUrl": ""
     },
     {
-      "name": "Pharmacie raid",
-      "nameAr": "صيدلية الرياض",
-      "phone": "05373 62807",
-      "district": "el khabazat rayad",
-      "districtAr": "",
-      "address": "Av. Palestine, Kénitra",
-      "date": "13 et 14  juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/fPuPEXHRGAemQ4U1A",
-      "nameEn": "Raid Pharmacy",
-      "districtEn": "el khabazat rayad",
-      "addressAr": "Av. Palestine, Kénitra",
-      "addressEn": "Av. Palestine, Kénitra"
+      "name": "Pharmacie Tabiba",
+      "nameAr": "صيدلية الطبيبة",
+      "phone": "05 37 36 25 00",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "346, lotissement Brika, Hay Tabiba, à environ 20 m du hammam Brikat",
+      "date": "15 juin 2026",
+      "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Quartier Industriel Bir Rami ‏",
-      "nameAr": "صيدلية الحي الصناعي بئر الرامي",
-      "phone": "0622067905",
-      "district": "bir rami,بير الرامي",
-      "districtAr": "بير الرامي",
-      "address": "bir rami بير الرامي الجنوبية في الطريق المؤدية الى مقبرة الرضوان بعد التكون المهني",
-      "date": "13 et 14  juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/jMKoiLLai9c7w1nW6",
-      "nameEn": "Quartier Industriel Bir Rami ‏ Pharmacy",
-      "districtEn": "bir rami,بير الرامي",
-      "addressAr": "bir rami بير الرامي الجنوبية في الطريق المؤدية الى مقبرة الرضوان بعد التكون المهني",
-      "addressEn": "bir rami بير الرامي الجنوبية في الطريق المؤدية الى مقبرة الرضوان بعد التكون المهني"
+      "name": "Pharmacie Al Masjid",
+      "nameAr": "صيدلية المسجد",
+      "phone": "05 37 38 07 05",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "Lot 91, n°90, Pam, 8e arrondissement, Laayta",
+      "date": "16 juin 2026",
+      "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Famiri",
-      "nameAr": "صيدلية فاميري",
-      "phone": "0666 05 79 00",
-      "district": "hay lwafa",
-      "districtAr": "",
-      "address": "lotiss. El Wafa 1, n°182 souk sebt Kenitra",
-      "date": "13 et 14  juin 2026",
-      "mapsUrl": "https://maps.app.goo.gl/HHfRUBTGtzduntV99",
-      "nameEn": "Famiri Pharmacy",
-      "districtEn": "hay lwafa",
-      "addressAr": "lotiss. El Wafa 1, n°182 souk sebt Kenitra",
-      "addressEn": "lotiss. El Wafa 1, n°182 souk sebt Kenitra"
+      "name": "Pharmacie Saha",
+      "nameAr": "صيدلية الصحة",
+      "phone": "05 37 30 55 29",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "Résidence 2000, route double voie vers Ouled Oujih, près Banque Populaire et Wafabank",
+      "date": "16 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Fête de Moharram",
+      "nameAr": "فاتح محرم",
+      "phone": "",
+      "district": "Kenitra",
+      "districtAr": "القنيطرة",
+      "address": "La garde sera assurée ce jour par des pharmacies autorisées.",
+      "date": "17 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Madina Al Oulya",
+      "nameAr": "صيدلية المدينة العليا",
+      "phone": "05 37 37 04 53",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "À 50 m de Dadiben, à environ 200 m de la mosquée Chaabi et de la première annexe",
+      "date": "18 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Rahma",
+      "nameAr": "صيدلية الرحمة",
+      "phone": "05 37 38 31 36",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "454, lotissement Al Wafaa 1, entre la mosquée Al Ghofrane et la mosquée Al Koweiti",
+      "date": "18 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Zerkaki",
+      "nameAr": "صيدلية الزركاكي",
+      "phone": "05 37 36 13 18",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "12, rue Yacoub El Mansour, devant le collège Oued Eddahab",
+      "date": "19 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Nakhl",
+      "nameAr": "صيدلية النخل",
+      "phone": "05 37 38 78 66",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "Lotissement Al Hizam, n°100 D, derrière Marjane Layta, Saknia",
+      "date": "19 juin 2026",
+      "mapsUrl": ""
     }
   ]
-};
+}
+;
 
 const getLocalized = (item, key) => {
   if (isArabicPage && item[`${key}Ar`]) return item[`${key}Ar`];
