@@ -637,6 +637,8 @@ const renderPharmacies = (data) => {
         ? "Information may change, please call before going."
         : "Les informations peuvent changer, appelez avant de vous déplacer.";
 
+  if (pharmacyList.children.length) return;
+
   pharmacyList.replaceChildren();
 
   (data.pharmacies || []).forEach((pharmacy) => {
