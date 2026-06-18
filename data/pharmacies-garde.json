@@ -1,61 +1,11 @@
 {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-15T13:00:00+01:00",
-  "title": "Pharmacies de garde de nuit Kenitra - 15 au 19 juin 2026",
+  "updatedAt": "2026-06-18T09:00:00+01:00",
+  "title": "Pharmacies de garde de nuit Kenitra - 18 et 19 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
-  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+  "updateFrequency": "manual-image-weekly",
+  "note": "Affiche et données des gardes de nuit du 18 et 19 juin 2026. Les informations peuvent changer. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
-    {
-      "name": "Pharmacie Hay Rabi",
-      "nameAr": "صيدلية حي الربيع",
-      "phone": "05 38 15 27 97",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "address": "Rue 202, Hay Rabi, Saknia, à environ 200 m du café Berouas",
-      "date": "15 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Tabiba",
-      "nameAr": "صيدلية الطبيبة",
-      "phone": "05 37 36 25 00",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "address": "346, lotissement Brika, Hay Tabiba, à environ 20 m du hammam Brikat",
-      "date": "15 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Masjid",
-      "nameAr": "صيدلية المسجد",
-      "phone": "05 37 38 07 05",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "address": "Lot 91, n°90, Pam, 8e arrondissement, Laayta",
-      "date": "16 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Saha",
-      "nameAr": "صيدلية الصحة",
-      "phone": "05 37 30 55 29",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "address": "Résidence 2000, route double voie vers Ouled Oujih, près Banque Populaire et Wafabank",
-      "date": "16 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Fête de Moharram",
-      "nameAr": "فاتح محرم",
-      "phone": "",
-      "district": "Kenitra",
-      "districtAr": "القنيطرة",
-      "address": "La garde sera assurée ce jour par des pharmacies autorisées.",
-      "date": "17 juin 2026",
-      "mapsUrl": ""
-    },
     {
       "name": "Pharmacie Madina Al Oulya",
       "nameAr": "صيدلية المدينة العليا",
