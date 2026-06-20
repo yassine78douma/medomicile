@@ -283,91 +283,65 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-18T09:00:00+01:00",
-  "title": "Pharmacies de garde de nuit Kenitra - 18 et 19 juin 2026",
+  "updatedAt": "2026-06-20T10:15:00+01:00",
+  "title": "Pharmacies de garde Kenitra - 20 et 21 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  "updateFrequency": "manual-image-weekly",
-  "note": "Affiche et données des gardes de nuit du 18 et 19 juin 2026. Les informations peuvent changer. Appelez la pharmacie avant de vous déplacer.",
+  "updateFrequency": "manual-weekend-guard",
+  "note": "Affiche et données des pharmacies de garde du week-end 20 et 21 juin 2026. Les informations peuvent changer. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Madina Al Oulya",
-      "nameAr": "صيدلية المدينة العليا",
-      "phone": "05 37 37 04 53",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "address": "À 50 m de Dadiben, à environ 200 m de la mosquée Chaabi et de la première annexe",
-      "date": "18 juin 2026",
+      "name": "Pharmacie Les Iris",
+      "nameAr": "صيدلية السوسن",
+      "phone": "05 37 35 17 18",
+      "district": "Ouled Oujih",
+      "districtAr": "أولاد أوجيه",
+      "address": "Lotissement El Haouzia, près de l’école Les Iris et du café Cool Vieux",
+      "date": "20 et 21 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Rahma",
-      "nameAr": "صيدلية الرحمة",
-      "phone": "05 37 38 31 36",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "address": "454, lotissement Al Wafaa 1, entre la mosquée Al Ghofrane et la mosquée Al Koweiti",
-      "date": "18 juin 2026",
+      "name": "Pharmacie Loudiyi",
+      "nameAr": "صيدلية لوديي",
+      "phone": "05 30 50 50 66 / 06 94 70 46 39",
+      "district": "Medina",
+      "districtAr": "المدينة",
+      "address": "Hay Ourida, près de la mosquée Idriss I, direction La Merja",
+      "date": "20 et 21 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Zerkaki",
-      "nameAr": "صيدلية الزركاكي",
-      "phone": "05 37 36 13 18",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "address": "12, rue Yacoub El Mansour, devant le collège Oued Eddahab",
-      "date": "19 juin 2026",
+      "name": "Pharmacie Amicale",
+      "nameAr": "صيدلية أميكال",
+      "phone": "08 08 53 12 62",
+      "district": "Ville Nouvelle",
+      "districtAr": "المدينة الجديدة",
+      "address": "566, Bir Rami Est, devant la direction régionale de l’agriculture",
+      "date": "20 et 21 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Nakhl",
-      "nameAr": "صيدلية النخل",
-      "phone": "05 37 38 78 66",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "address": "Lotissement Al Hizam, n°100 D, derrière Marjane Layta, Saknia",
-      "date": "19 juin 2026",
+      "name": "Pharmacie Al Hayat",
+      "nameAr": "صيدلية الحياة",
+      "phone": "05 37 37 70 15",
+      "district": "Bir Rami Industrielle",
+      "districtAr": "بئر الرامي الصناعية",
+      "address": "162, zone industrielle A.I.C Bir Rami, devant Hiba Fellahi",
+      "date": "20 et 21 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Badr",
+      "nameAr": "صيدلية بدر",
+      "phone": "05 37 38 01 41",
+      "district": "Saknia",
+      "districtAr": "السكنية",
+      "address": "3, avenue Al Massira, devant la station Total, à côté de l’ancien café Le Bois",
+      "date": "20 et 21 juin 2026",
       "mapsUrl": ""
     }
   ]
 }
 ;
-
-const systemPrefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-const getActiveTheme = (theme = localStorage.getItem("medomicile-theme")) =>
-  theme && theme !== "auto" ? theme : systemPrefersDark() ? "dark" : "light";
-
-const setTheme = (theme) => {
-  if (!theme || theme === "auto") {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.removeItem("medomicile-theme");
-  } else {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem("medomicile-theme", theme);
-  }
-
-  const activeTheme = getActiveTheme(theme);
-  const themeColor = activeTheme === "dark" ? "#04111d" : "#f8fafc";
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
-  if (themeToggle) {
-    themeToggle.textContent = activeTheme === "dark" ? "☾" : "☼";
-    themeToggle.setAttribute(
-      "aria-label",
-      activeTheme === "dark"
-        ? isArabicPage
-          ? "تفعيل المظهر الفاتح"
-          : isEnglishPage
-            ? "Switch to light mode"
-            : "Activer le mode clair"
-        : isArabicPage
-          ? "تفعيل المظهر الداكن"
-          : isEnglishPage
-            ? "Switch to dark mode"
-            : "Activer le mode sombre"
-    );
-  }
-};
 
 setTheme(localStorage.getItem("medomicile-theme") || "auto");
 
