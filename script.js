@@ -283,115 +283,164 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "https://pharmaciedegardekenitra.com/",
-  "updatedAt": "2026-06-22T09:00:00+01:00",
-  "title": "Pharmacies de garde de nuit Kenitra - 22 au 26 juin 2026",
+  "updatedAt": "2026-06-15T13:00:00+01:00",
+  "title": "Pharmacies de garde de nuit Kenitra - 15 au 19 juin 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  "updateFrequency": "manual-night-guard",
-  "note": "Affiche et données des pharmacies de garde de nuit du 22 au 26 juin 2026. Les informations peuvent changer. Appelez la pharmacie avant de vous déplacer.",
+  "updateFrequency": "automatic-4-times-per-day-data-weekly-manual-image",
+  "note": "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Faleh",
-      "nameAr": "صيدلية فالح",
-      "phone": "06 38 92 66 50 / 06 61 44 46 94",
-      "district": "Bir Rami Industrielle",
-      "districtAr": "بئر الرامي الصناعية",
-      "address": "Jnanat El Khechna, rue principale venant d’Aswak Assalam, près des écoles Zohour",
-      "date": "22 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Markazia",
-      "nameAr": "صيدلية المركزية",
-      "phone": "05 37 37 80 80",
+      "name": "Pharmacie Hay Rabi",
+      "nameAr": "صيدلية حي الربيع",
+      "phone": "05 38 15 27 97",
       "district": "Saknia - Medina",
       "districtAr": "السكنية - المدينة",
-      "address": "Rue A33, n°28 bis, Place des Martyrs, Diour Siniak",
-      "date": "22 juin 2026",
+      "address": "Rue 202, Hay Rabi, Saknia, à environ 200 m du café Berouas",
+      "date": "15 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Al Houzia",
-      "nameAr": "صيدلية الحوزية",
-      "phone": "05 37 35 37 38",
-      "district": "Al Houzia",
-      "districtAr": "الحوزية",
-      "address": "Al Houzia H60, passage bus n°8 et 13, près de la mosquée Al Ridouane, à environ 300 m du café Omar",
-      "date": "23 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Koweiti",
-      "nameAr": "صيدلية الكويتي",
-      "phone": "",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "address": "Près du café Borj Al Wafaa, à 50 m de l’arrondissement n°16, Al Wafaa 1 - Saknia",
-      "date": "23 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Sebou",
-      "nameAr": "صيدلية سبو",
-      "phone": "05 37 37 38 56",
+      "name": "Pharmacie Tabiba",
+      "nameAr": "صيدلية الطبيبة",
+      "phone": "05 37 36 25 00",
       "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد أوجيه - بئر الرامي",
-      "address": "Près du premier arrondissement et de la Wilaya de police, devant les taxis de Mehdia",
-      "date": "24 juin 2026",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "346, lotissement Brika, Hay Tabiba, à environ 20 m du hammam Brikat",
+      "date": "15 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Loudiyi",
-      "nameAr": "صيدلية لودي",
-      "phone": "05 30 50 50 66",
-      "district": "Hay Ourida",
-      "districtAr": "حي وريدة",
-      "address": "Hay Ourida, près de la mosquée Idriss I, direction La Merja",
-      "date": "24 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Mowatin",
-      "nameAr": "صيدلية المواطن",
-      "phone": "05 37 32 21 68",
-      "district": "Maghreb Arabi",
-      "districtAr": "المغرب العربي",
-      "address": "Maghreb Arabi F2 n°279, entre Château Ouled Oujih et cimetière Ouled Oujih, bus n°26, route vers Doha",
-      "date": "25 juin 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Nasr",
-      "nameAr": "صيدلية النصر",
-      "phone": "06 59 79 90 24 / 05 37 38 79 00",
+      "name": "Pharmacie Al Masjid",
+      "nameAr": "صيدلية المسجد",
+      "phone": "05 37 38 07 05",
       "district": "Saknia - Medina",
       "districtAr": "السكنية - المدينة",
-      "address": "Avenue Mohammed V, route de Tanger, près de Mechoui Al Mizan",
-      "date": "25 juin 2026",
+      "address": "Lot 91, n°90, Pam, 8e arrondissement, Laayta",
+      "date": "16 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Annour",
-      "nameAr": "صيدلية النور",
-      "phone": "05 37 35 01 85",
-      "district": "Hay Ismailia",
-      "districtAr": "حي الإسماعيلية",
-      "address": "595, Hay Ismailia, route de Mehdia, devant la porte de la base aérienne",
-      "date": "26 juin 2026",
+      "name": "Pharmacie Saha",
+      "nameAr": "صيدلية الصحة",
+      "phone": "05 37 30 55 29",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "Résidence 2000, route double voie vers Ouled Oujih, près Banque Populaire et Wafabank",
+      "date": "16 juin 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Arzak",
-      "nameAr": "صيدلية أرزاق",
-      "phone": "05 37 39 14 16",
-      "district": "Saknia",
-      "districtAr": "السكنية",
-      "address": "Lotissement Al Amal 1, n°1208, Ouled Arfa - Saknia, près du complexe Al Wafaa d’athlétisme",
-      "date": "26 juin 2026",
+      "name": "Fête de Moharram",
+      "nameAr": "فاتح محرم",
+      "phone": "",
+      "district": "Kenitra",
+      "districtAr": "القنيطرة",
+      "address": "La garde sera assurée ce jour par des pharmacies autorisées.",
+      "date": "17 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Madina Al Oulya",
+      "nameAr": "صيدلية المدينة العليا",
+      "phone": "05 37 37 04 53",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "À 50 m de Dadiben, à environ 200 m de la mosquée Chaabi et de la première annexe",
+      "date": "18 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Rahma",
+      "nameAr": "صيدلية الرحمة",
+      "phone": "05 37 38 31 36",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "454, lotissement Al Wafaa 1, entre la mosquée Al Ghofrane et la mosquée Al Koweiti",
+      "date": "18 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Zerkaki",
+      "nameAr": "صيدلية الزركاكي",
+      "phone": "05 37 36 13 18",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "address": "12, rue Yacoub El Mansour, devant le collège Oued Eddahab",
+      "date": "19 juin 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Nakhl",
+      "nameAr": "صيدلية النخل",
+      "phone": "05 37 38 78 66",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "address": "Lotissement Al Hizam, n°100 D, derrière Marjane Layta, Saknia",
+      "date": "19 juin 2026",
       "mapsUrl": ""
     }
   ]
 }
 ;
+
+const getLocalized = (item, key) => {
+  if (isArabicPage && item[`${key}Ar`]) return item[`${key}Ar`];
+  if (isEnglishPage && item[`${key}En`]) return item[`${key}En`];
+  return item[key];
+};
+
+const systemPrefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const getActiveTheme = (theme = localStorage.getItem("medomicile-theme")) =>
+  theme && theme !== "auto" ? theme : systemPrefersDark() ? "dark" : "light";
+
+const setTheme = (theme) => {
+  if (!theme || theme === "auto") {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.removeItem("medomicile-theme");
+  } else {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("medomicile-theme", theme);
+  }
+
+  const activeTheme = getActiveTheme(theme);
+  const themeColor = activeTheme === "dark" ? "#04111d" : "#f8fafc";
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
+  if (themeToggle) {
+    themeToggle.textContent = activeTheme === "dark" ? "☾" : "☼";
+    themeToggle.setAttribute(
+      "aria-label",
+      activeTheme === "dark"
+        ? isArabicPage
+          ? "تفعيل المظهر الفاتح"
+          : isEnglishPage
+            ? "Switch to light mode"
+            : "Activer le mode clair"
+        : isArabicPage
+          ? "تفعيل المظهر الداكن"
+          : isEnglishPage
+            ? "Switch to dark mode"
+            : "Activer le mode sombre"
+    );
+  }
+};
+
+setTheme(localStorage.getItem("medomicile-theme") || "auto");
+
+themeToggle?.addEventListener("click", () => {
+  setTheme(getActiveTheme() === "dark" ? "light" : "dark");
+});
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  if (!localStorage.getItem("medomicile-theme")) setTheme("auto");
+});
+
+const closeMenu = () => {
+  if (!menuToggle || !menu) return;
+  menuToggle.setAttribute("aria-expanded", "false");
+  menu.classList.remove("is-open");
+  document.body.classList.remove("menu-open");
+};
 
 const clearReloadHash = () => {
   const navigation = performance.getEntriesByType("navigation")[0];
@@ -643,8 +692,6 @@ const renderPharmacies = (data) => {
       : isEnglishPage
         ? "Information may change, please call before going."
         : "Les informations peuvent changer, appelez avant de vous déplacer.";
-
-  if (pharmacyList.children.length) return;
 
   pharmacyList.replaceChildren();
 
