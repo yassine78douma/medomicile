@@ -283,60 +283,160 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Affiche du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
-  "updatedAt": "2026-06-27T17:48:00+01:00",
-  "title": "Pharmacies de garde Kenitra - 27 et 28 juin 2026",
+  "updatedAt": "2026-06-30T00:10:00+01:00",
+  "title": "Pharmacies de garde de nuit Kenitra - 29 juin au 3 juillet 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
   "updateFrequency": "manual-from-official-poster",
-  "note": "Garde de week-end 24h/24 le samedi 27 et le dimanche 28 juin 2026. Appelez la pharmacie avant de vous déplacer.",
+  "note": "Garde de nuit 24h/24 du 29 juin au 3 juillet 2026. Appelez la pharmacie avant de vous déplacer.",
   "pharmacies": [
     {
-      "name": "Pharmacie Lourak",
-      "nameAr": "صيدلية الوراق",
-      "phone": "05 37 38 11 44 / 08 08 39 39 56",
-      "district": "Medina",
-      "districtAr": "المدينة",
-      "address": "Rue 164 n°25, route Hay Ourida, près du hammam Al Jabri",
-      "date": "27 et 28 juin 2026",
+      "name": "Pharmacie Yacoub",
+      "nameAr": "صيدلية يعقوب",
+      "phone": "05 37 39 17 94",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "districtEn": "Saknia - Medina",
+      "address": "385, Hay Al Andalous, Ouled Arfaa, près du lycée Al Massira Al Khadra, Saknia",
+      "addressAr": "حي الأندلس رقم 385، أولاد عرفة، قرب ثانوية المسيرة الخضراء، السكنية",
+      "addressEn": "385 Hay Al Andalous, Ouled Arfaa, near Al Massira Al Khadra high school, Saknia",
+      "date": "29 juin 2026",
+      "dateAr": "29 يونيو 2026",
+      "dateEn": "June 29, 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Benkassou",
-      "nameAr": "صيدلية بنقصو",
-      "phone": "05 30 77 71 81",
-      "district": "Ouled Oujih",
-      "districtAr": "أولاد وجيه",
-      "address": "Lotissement Al Maghrib Al Arabi, bloc F n°3, près de la mosquée Al Ikhlas et de la place Palestine",
-      "date": "27 et 28 juin 2026",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Benkassou+Kenitra"
-    },
-    {
-      "name": "Pharmacie Benlahsen",
-      "nameAr": "صيدلية بنلحسن",
-      "phone": "05 37 37 03 50",
-      "district": "Ville Nouvelle - Ville Haute",
-      "districtAr": "المدينة الجديدة - المدينة العليا",
-      "address": "12, rue Ibn Battouta, Ville Haute, près de Jemaa Chaab, rue en face de Bank of Africa",
-      "date": "27 et 28 juin 2026",
+      "name": "Pharmacie Kenitra",
+      "nameAr": "صيدلية القنيطرة",
+      "phone": "05 37 37 68 99",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
+      "address": "Près de la mosquée Manchich Al Ilmi, Bir Rami Est",
+      "addressAr": "مسجد منشيش العلمي، بئر الرامي الشرقية",
+      "addressEn": "Near Manchich Al Ilmi mosque, Bir Rami East",
+      "date": "29 juin 2026",
+      "dateAr": "29 يونيو 2026",
+      "dateEn": "June 29, 2026",
       "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Bassine",
-      "nameAr": "صيدلية باسين",
-      "phone": "07 00 71 14 70 / 06 91 82 08 89",
-      "district": "Bir Rami Industrielle",
-      "districtAr": "بئر الرامي الصناعية",
-      "address": "Route menant d'Aswak Assalam, lignes de bus 11, Jnane 2",
-      "date": "27 et 28 juin 2026",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Bassine+Kenitra"
+      "name": "Pharmacie Bismillah",
+      "nameAr": "صيدلية بسم الله",
+      "phone": "05 37 38 35 76",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "districtEn": "Saknia - Medina",
+      "address": "Diour Chaabi, Atlas 2 n°77, entre le hammam Maaroufi et la mosquée Salam, près du cimetière Al Boustane",
+      "addressAr": "ديور الشعبي أطلس 2 رقم 77، ما بين حمام المعروفي ومسجد السلام، قرب مقبرة البوشتين",
+      "addressEn": "Diour Chaabi, Atlas 2 no. 77, between Maaroufi hammam and Salam mosque, near Al Boustane cemetery",
+      "date": "30 juin 2026",
+      "dateAr": "30 يونيو 2026",
+      "dateEn": "June 30, 2026",
+      "mapsUrl": ""
     },
     {
-      "name": "Pharmacie Moussa",
-      "nameAr": "صيدلية موسى",
-      "phone": "05 37 38 01 72",
-      "district": "Saknia",
-      "districtAr": "السكنية",
-      "address": "210 Ouled Arfaa, Hay Al Andalous, double voie d'Ouled Arfa, Saknia",
-      "date": "27 et 28 juin 2026",
+      "name": "Pharmacie Soufi",
+      "nameAr": "صيدلية الصوفي",
+      "phone": "05 37 36 74 12",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
+      "address": "Lot n°506, à environ 200 m du lycée Abderrahmane Nasser, nouveau lotissement Al Omrane, Val Fleury",
+      "addressAr": "تجزئة رقم 506، على بعد 200م من ثانوية عبد الرحمن الناصر، أمام التجزئة الجديدة العمران، فال فلوري",
+      "addressEn": "Lot no. 506, about 200 m from Abderrahmane Nasser high school, new Al Omrane development, Val Fleury",
+      "date": "30 juin 2026",
+      "dateAr": "30 يونيو 2026",
+      "dateEn": "June 30, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Al Matahana",
+      "nameAr": "صيدلية المطحنة",
+      "phone": "05 37 38 69 28",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "districtEn": "Saknia - Medina",
+      "address": "N°153, groupe 7, rue Pacha Abdelhamid, Tahouna Melh, Diour Al Makhzen, près de la 11e annexe administrative",
+      "addressAr": "رقم 153 مجموعة 7، شارع الباشا عبد الحميد، طاحونة الملح، ديور المخزن، قرب الملحقة الإدارية الحادية عشر",
+      "addressEn": "No. 153, group 7, Pacha Abdelhamid Street, Tahouna Melh, Diour Al Makhzen, near the 11th administrative annex",
+      "date": "1 juillet 2026",
+      "dateAr": "1 يوليوز 2026",
+      "dateEn": "July 1, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Chams",
+      "nameAr": "صيدلية شمس",
+      "phone": "05 37 35 18 16",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
+      "address": "Lot n°229, bloc B2, Al Maghrib Al Arabi, Diour Al Makhzenia, au nouveau terminus du bus n°12",
+      "addressAr": "مجموعة 229 بلوك ب 2 المغرب العربي، ديور المخازنية، عند نهاية المحطة الجديدة للحافلة رقم 12",
+      "addressEn": "Lot no. 229, block B2, Al Maghrib Al Arabi, Diour Al Makhzenia, at the new terminus of bus 12",
+      "date": "1 juillet 2026",
+      "dateAr": "1 يوليوز 2026",
+      "dateEn": "July 1, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Al Amana",
+      "nameAr": "صيدلية الأمانة",
+      "phone": "05 37 38 44 37",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "districtEn": "Saknia - Medina",
+      "address": "Hay Al Wafaa 1, en face de la mosquée Al Wahab, près de la salle couverte, Saknia",
+      "addressAr": "حي الوفاء 1، قبالة مسجد الوهاب، قرب القاعة المغطاة، السكنية",
+      "addressEn": "Hay Al Wafaa 1, opposite Al Wahab mosque, near the covered hall, Saknia",
+      "date": "2 juillet 2026",
+      "dateAr": "2 يوليوز 2026",
+      "dateEn": "July 2, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Toubix",
+      "nameAr": "صيدلية طوبيكس",
+      "phone": "05 37 35 22 41",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
+      "address": "Lot n°154, bloc F, Ouled Oujih, près de Zamzami, vendeur de zellige",
+      "addressAr": "مجموعة 154 بلوك F، أولاد وجيه، قرب الزمزمي بائع الزليج",
+      "addressEn": "Lot no. 154, block F, Ouled Oujih, near Zamzami tile shop",
+      "date": "2 juillet 2026",
+      "dateAr": "2 يوليوز 2026",
+      "dateEn": "July 2, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Al Maghrib",
+      "nameAr": "صيدلية المغرب",
+      "phone": "05 37 38 15 25",
+      "district": "Saknia - Medina",
+      "districtAr": "السكنية - المدينة",
+      "districtEn": "Saknia - Medina",
+      "address": "Groupe Al Fath n°1, Saknia, devant la mosquée Smara et derrière Lazrak",
+      "addressAr": "مجموعة الفتح رقم 1، السكنية، أمام مسجد سمارة ووراء لازرق",
+      "addressEn": "Al Fath group no. 1, Saknia, opposite Smara mosque and behind Lazrak",
+      "date": "3 juillet 2026",
+      "dateAr": "3 يوليوز 2026",
+      "dateEn": "July 3, 2026",
+      "mapsUrl": ""
+    },
+    {
+      "name": "Pharmacie Mohsin",
+      "nameAr": "صيدلية محسن",
+      "phone": "05 37 35 65 96",
+      "district": "Maamora - Ouled Oujih - Bir Rami",
+      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
+      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
+      "address": "Diour Salfa, Ouled Oujih, derrière la pachaouia, près du terrain Laâb-Lyoun et du centre turc pour femmes",
+      "addressAr": "ديور سلفا، أولاد وجيه، وراء الباشوية بجانب ملعب ليون والمركز التركي للنساء",
+      "addressEn": "Diour Salfa, Ouled Oujih, behind the pacha office, near Laâb-Lyoun field and the Turkish women's center",
+      "date": "3 juillet 2026",
+      "dateAr": "3 يوليوز 2026",
+      "dateEn": "July 3, 2026",
       "mapsUrl": ""
     }
   ]
@@ -670,12 +770,13 @@ const renderPharmacies = (data) => {
 
     const date = document.createElement("span");
     date.className = "pharmacy-date";
-    date.textContent = pharmacy.date
+    const localizedDate = getLocalized(pharmacy, "date") || pharmacy.date;
+    date.textContent = localizedDate
       ? isArabicPage
-        ? `تاريخ الحراسة: ${pharmacy.date}`
+        ? `تاريخ الحراسة: ${localizedDate}`
         : isEnglishPage
-          ? `On duty: ${pharmacy.date}`
-          : `Garde : ${pharmacy.date}`
+          ? `On duty: ${localizedDate}`
+          : `Garde : ${localizedDate}`
       : isArabicPage
         ? "Garde hebdomadaire"
         : isEnglishPage
