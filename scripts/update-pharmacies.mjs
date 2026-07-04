@@ -165,7 +165,7 @@ const updateScriptFallback = async (data) => {
   const script = await readFile(SCRIPT, "utf8");
   const fallback = JSON.stringify(buildFallbackData(data), null, 2);
   const updated = script.replace(
-    /const fallbackPharmacyData = \{[\s\S]*?\n\};\n\nconst getLocalized/,
+    /const fallbackPharmacyData = \{[\s\S]*?\n\}\s*;\n\nconst getLocalized/,
     `const fallbackPharmacyData = ${fallback};\n\nconst getLocalized`
   );
 
@@ -177,6 +177,7 @@ const updateScriptFallback = async (data) => {
 };
 
 const run = async () => {
+  const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
   let html;
   let sourceUpdatedAt;
 
@@ -186,7 +187,6 @@ const run = async () => {
     sourceUpdatedAt = source.updatedAt;
   } catch (error) {
     console.warn(`Pharmacy source temporarily unavailable, keeping current data: ${error.message}`);
-    const existing = JSON.parse(await readFile(OUTPUT, "utf8"));
     await updateScriptFallback(existing);
     return;
   }
@@ -203,6 +203,14 @@ const run = async () => {
 
   if (!pharmacies.length) {
     throw new Error("No pharmacies could be parsed from the source page.");
+  }
+
+  const sourceTimestamp = Date.parse(updatedAt);
+  const existingTimestamp = Date.parse(existing.updatedAt || "");
+  if (Number.isFinite(sourceTimestamp) && Number.isFinite(existingTimestamp) && sourceTimestamp < existingTimestamp) {
+    console.warn(`Source data is older than current data (${updatedAt} < ${existing.updatedAt}); keeping current list.`);
+    await updateScriptFallback(existing);
+    return;
   }
 
   const data = {

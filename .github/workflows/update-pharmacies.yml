@@ -1,8 +1,6 @@
 name: Update Kenitra on-duty pharmacies
 
 on:
-  schedule:
-    - cron: "15 6,12,18,23 * * *"
   workflow_dispatch:
 
 permissions:
