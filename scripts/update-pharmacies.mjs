@@ -164,16 +164,19 @@ const buildFallbackData = (data) => ({
 const updateScriptFallback = async (data) => {
   const script = await readFile(SCRIPT, "utf8");
   const fallback = JSON.stringify(buildFallbackData(data), null, 2);
+  const fallbackPattern = /const fallbackPharmacyData = \{[\s\S]*?\n\}\s*;\n\nconst getLocalized/;
+  if (!fallbackPattern.test(script)) {
+    throw new Error("Unable to find fallbackPharmacyData in script.js");
+  }
+
   const updated = script.replace(
-    /const fallbackPharmacyData = \{[\s\S]*?\n\}\s*;\n\nconst getLocalized/,
+    fallbackPattern,
     `const fallbackPharmacyData = ${fallback};\n\nconst getLocalized`
   );
 
-  if (updated === script) {
-    throw new Error("Unable to update fallbackPharmacyData in script.js");
+  if (updated !== script) {
+    await writeFile(SCRIPT, updated);
   }
-
-  await writeFile(SCRIPT, updated);
 };
 
 const run = async () => {
