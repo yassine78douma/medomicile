@@ -3336,25 +3336,29 @@ h1 {
 }
 
 .specialty-grid {
-  width: min(100% - 24px, 1040px);
+  width: min(100% - 24px, 1120px);
   margin: 0 auto;
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .specialty-card {
-  min-height: 132px;
+  min-height: 150px;
   position: relative;
-  padding: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 24px;
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr) 28px;
-  gap: 14px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 18px;
   align-items: center;
-  border: 1px solid rgba(15, 76, 129, 0.1);
-  border-radius: 20px;
+  border: 1px solid rgba(15, 76, 129, 0.12);
+  border-radius: 22px;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 14px 34px rgba(15, 76, 129, 0.08);
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(15, 76, 129, 0.07);
+  cursor: pointer;
   text-decoration: none;
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
@@ -3367,51 +3371,68 @@ h1 {
   outline: none;
 }
 
-.specialty-icon,
+.specialty-card__icon,
 .pending-icon {
-  width: 48px;
-  height: 48px;
+  width: 62px;
+  height: 62px;
   display: grid;
   place-items: center;
-  border-radius: 16px;
-  color: var(--blue-850);
-  background: var(--blue-100);
-  font-size: 1.35rem;
+  border: 1px solid rgba(47, 128, 237, 0.22);
+  border-radius: 18px;
+  color: var(--blue-700);
+  background: rgba(47, 128, 237, 0.08);
+  font-size: 1.7rem;
   font-weight: 900;
 }
 
-.specialty-card strong {
-  display: block;
-  color: var(--blue-950);
-  font-size: 1.06rem;
-  line-height: 1.15;
+.specialty-card__content {
+  min-width: 0;
 }
 
-.specialty-card small {
+.specialty-card__title {
   display: block;
-  margin-top: 6px;
-  color: var(--soft-muted);
+  margin: 0 0 8px;
+  color: #0f172a;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   font-weight: 800;
-  line-height: 1.45;
+  line-height: 1.2;
 }
 
-.specialty-status {
+.specialty-card__description {
+  display: block;
+  max-width: 50ch;
+  margin: 0;
+  color: #475569;
+  font-size: 1rem;
+  font-weight: 750;
+  line-height: 1.55;
+  hyphens: none;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.specialty-card__meta {
+  display: flex;
+}
+
+.specialty-card__status {
   width: fit-content;
-  margin-top: 10px;
+  margin-top: 14px;
   display: inline-flex;
-  border: 1px solid rgba(198, 169, 105, 0.36);
+  border: 1px solid rgba(198, 169, 105, 0.35);
   border-radius: 999px;
-  padding: 5px 9px;
-  color: #6b4f12;
-  background: rgba(198, 169, 105, 0.14);
-  font-size: 0.75rem;
-  font-weight: 900;
+  padding: 6px 10px;
+  color: #8a6a15;
+  background: rgba(198, 169, 105, 0.12);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
-.specialty-chevron {
-  color: var(--blue-850);
-  font-size: 1.6rem;
+.specialty-card__arrow {
+  color: var(--blue-700);
+  font-size: 1.5rem;
   font-weight: 900;
+  line-height: 1;
 }
 
 .pending-page {
@@ -3438,9 +3459,45 @@ h1 {
   line-height: 1.62;
 }
 
-@media (min-width: 760px) {
+@media (max-width: 780px) {
   .specialty-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .specialty-card {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 14px;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .specialty-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    font-size: 1.35rem;
+  }
+
+  .specialty-card__title {
+    font-size: 1.25rem;
+  }
+
+  .specialty-card__description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .specialty-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .specialty-card__arrow {
+    position: absolute;
+    top: 18px;
+    right: 18px;
   }
 }
 
@@ -3514,7 +3571,7 @@ h1 {
 }
 
 [data-theme="dark"] .compact-card-title strong,
-[data-theme="dark"] .specialty-card strong,
+[data-theme="dark"] .specialty-card__title,
 [data-theme="dark"] .pending-page h1 {
   color: #f8fafc;
 }
@@ -3522,7 +3579,7 @@ h1 {
 [data-theme="dark"] .compact-card-title small,
 [data-theme="dark"] .compact-card-details p,
 [data-theme="dark"] .compact-card-details .doctor-line,
-[data-theme="dark"] .specialty-card small,
+[data-theme="dark"] .specialty-card__description,
 [data-theme="dark"] .pending-page p {
   color: #cbd5e1;
 }
@@ -3532,11 +3589,21 @@ h1 {
 }
 
 [data-theme="dark"] .compact-chevron,
-[data-theme="dark"] .specialty-icon,
+[data-theme="dark"] .specialty-card__icon,
 [data-theme="dark"] .pending-icon {
   color: #5aa2f8;
   background: #0b1d2e;
   border: 1px solid rgba(90, 162, 248, 0.28);
+}
+
+[data-theme="dark"] .specialty-card__status {
+  color: #d6a931;
+  background: rgba(198, 169, 105, 0.1);
+  border-color: rgba(198, 169, 105, 0.35);
+}
+
+[data-theme="dark"] .specialty-card__arrow {
+  color: #5aa2f8;
 }
 
 [data-theme="dark"] .establishment-action.call {
