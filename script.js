@@ -878,7 +878,7 @@ const getLocalizedLabel = (fr, en, ar) => {
   return fr;
 };
 
-const normalizeAddressForDirections = (address) => {
+const normalizeAddressForDirections = (address, name) => {
   const value = String(address || "").trim();
   const lower = value.toLowerCase();
   const uncertainParts = [
@@ -893,7 +893,10 @@ const normalizeAddressForDirections = (address) => {
     "مصحة جراحة",
   ];
 
-  if (!value || uncertainParts.some((part) => lower.includes(part))) return "";
+  if (!value || uncertainParts.some((part) => lower.includes(part))) {
+    return `${name}, Kenitra`;
+  }
+
   return value;
 };
 
@@ -915,7 +918,7 @@ const enhanceEstablishmentCards = () => {
     if (!name) return;
 
     const phone = card.querySelector('a[href^="tel:"]');
-    const address = normalizeAddressForDirections(getCardAddress(card));
+    const address = normalizeAddressForDirections(getCardAddress(card), name);
     if (!phone && !address) return;
 
     const actions = document.createElement("div");
