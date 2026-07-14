@@ -40,7 +40,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260715-02" />
+    <link rel="stylesheet" href="style.css?v=20260715-03" />
   </head>
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
@@ -72,17 +72,23 @@
       </nav>
     </header>
 
-    <main id="main" class="page-main">
-      <section class="facilities section" id="hopitaux" aria-labelledby="facilities-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Hôpitaux & cliniques</p>
+    <main id="main" class="page-main directory-main">
+      <section class="directory-hero page-hero section ambient-page-hero" aria-labelledby="facilities-title">
+        <canvas class="ambient-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+        <div class="directory-hero-copy reveal">
+          <p class="eyebrow">HÔPITAUX & CLINIQUES</p>
           <h1 id="facilities-title">Hôpitaux et cliniques à Kénitra</h1>
-          <p>Consultez les principales structures médicales de Kénitra et affichez leurs coordonnées en un clic.</p>
+          <p class="hero-subtitle">Consultez les principales structures médicales de Kénitra et affichez leurs coordonnées en un clic.</p>
+          <p class="directory-note">Les informations et notes Google sont données à titre indicatif et peuvent évoluer.</p>
+          <div class="hero-buttons">
+            <a class="primary-action" href="tel:+212663058222">Appeler Medomicile</a>
+            <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
+          </div>
         </div>
+      </section>
 
-        <div class="facility-note reveal">
-          Les notes Google sont indicatives et peuvent évoluer.
-        </div>
+      <section class="facilities section" id="hopitaux" aria-label="Liste des hôpitaux et cliniques">
+        <div class="facility-note reveal">Appelez l’établissement avant de vous déplacer.</div>
 
         <div class="facility-grid">
           <article class="facility-card reveal">
@@ -218,6 +224,6 @@
     </footer>
 
     <a class="floating-call" href="tel:+212663058222" aria-label="Appeler Medomicile">Appeler</a>
-    <script src="script.js?v=20260715-02"></script>
+    <script src="script.js?v=20260715-03"></script>
   </body>
 </html>

@@ -3629,3 +3629,381 @@ h1 {
     margin-left: 0;
   }
 }
+
+/* Premium directory pages aligned with Services */
+.directory-main {
+  background: transparent;
+}
+
+.breadcrumb {
+  width: min(100% - 24px, 1040px);
+  margin: 14px auto 0;
+  padding: 0 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--soft-muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.breadcrumb a {
+  color: var(--soft-muted);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover,
+.breadcrumb a:focus-visible {
+  color: var(--blue-700);
+  outline: none;
+}
+
+.directory-hero.page-hero {
+  width: min(100% - 24px, 1040px);
+  min-height: clamp(300px, 30vw, 420px);
+  margin: 16px auto 0;
+  padding: clamp(28px, 5vw, 56px);
+  align-items: center;
+  justify-items: start;
+  text-align: left;
+  border-color: rgba(15, 76, 129, 0.12);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(47, 128, 237, 0.16), transparent 34%),
+    radial-gradient(circle at 8% 88%, rgba(15, 76, 129, 0.14), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(248, 250, 252, 0.84)),
+    var(--soft);
+  box-shadow: var(--deep-shadow);
+}
+
+.directory-hero .ambient-canvas {
+  opacity: 0.28;
+}
+
+.directory-hero-copy {
+  width: min(100%, 720px);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.directory-hero .eyebrow {
+  justify-content: flex-start;
+  color: var(--blue-850);
+}
+
+.directory-hero h1 {
+  width: min(100%, 760px);
+  margin: 0 0 12px;
+  color: var(--blue-950);
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  line-height: 0.98;
+  overflow-wrap: break-word;
+}
+
+.directory-hero .hero-subtitle {
+  width: min(100%, 680px);
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+.directory-hero .directory-note {
+  width: min(100%, 640px);
+  margin: 0 0 20px;
+  color: var(--soft-muted);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.directory-hero .hero-buttons,
+.directory-hero .urgent-actions {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.directory-hero .primary-action,
+.directory-hero .whatsapp-action {
+  min-height: 52px;
+  width: auto;
+  padding: 14px 26px;
+  border-radius: 18px;
+}
+
+.directory-toolbar {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.82)),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.directory-toolbar .eyebrow {
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.directory-search {
+  position: relative;
+}
+
+.directory-search::before {
+  content: "⌕";
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue-850);
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.directory-search input {
+  padding-left: 42px;
+  border-color: var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(248, 250, 252, 0.82)),
+    var(--surface);
+}
+
+.doctor-card,
+.facility-card.compact-card,
+.specialty-card,
+.pending-page,
+.directory-cta,
+.directory-info {
+  border-color: var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 250, 252, 0.82)),
+    var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.doctor-card:hover,
+.doctor-card:focus-within,
+.facility-card.compact-card:hover,
+.facility-card.compact-card.is-open,
+.specialty-card:hover,
+.specialty-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(198, 169, 105, 0.7);
+  box-shadow: var(--deep-shadow);
+}
+
+.facility-grid,
+.doctor-grid,
+.specialty-grid {
+  width: min(100% - 24px, 1040px);
+}
+
+.doctor-card h3,
+.compact-card-title strong,
+.specialty-card__title,
+.directory-toolbar h2,
+.directory-cta h2,
+.directory-info h2,
+.pending-page h1 {
+  color: var(--blue-950);
+}
+
+.doctor-card,
+.compact-card-details p,
+.compact-card-details .doctor-line,
+.specialty-card__description,
+.directory-cta p,
+.directory-info p,
+.pending-page p {
+  color: var(--muted);
+}
+
+.compact-card-toggle {
+  min-height: 98px;
+  padding: 18px;
+}
+
+.compact-card-details {
+  padding: 0 18px 18px;
+  background: rgba(234, 243, 255, 0.28);
+}
+
+.compact-card-details .establishment-actions {
+  gap: 10px;
+}
+
+.compact-card-details .establishment-action {
+  min-height: 50px;
+  border-radius: 16px;
+}
+
+.compact-card-details .establishment-action.directions {
+  color: var(--blue-850);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.specialty-card {
+  min-height: 156px;
+}
+
+.specialty-card__icon,
+.pending-icon {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--blue-850), var(--blue-700));
+}
+
+.specialty-card__status,
+.status-badge {
+  width: fit-content;
+  display: inline-flex;
+  border: 1px solid rgba(198, 169, 105, 0.35);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #8a6a15;
+  background: rgba(198, 169, 105, 0.12);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.pending-page {
+  width: min(100% - 24px, 780px);
+  margin-top: 22px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.pending-page .urgent-actions {
+  margin-top: 4px;
+}
+
+[data-theme="dark"] .directory-hero.page-hero {
+  border-color: rgba(148, 181, 213, 0.2);
+  background:
+    radial-gradient(circle at 86% 18%, rgba(90, 162, 248, 0.18), transparent 34%),
+    radial-gradient(circle at 8% 88%, rgba(15, 76, 129, 0.34), transparent 38%),
+    linear-gradient(180deg, rgba(8, 28, 45, 0.78), rgba(7, 24, 39, 0.92)),
+    var(--soft);
+}
+
+[data-theme="dark"] .directory-toolbar,
+[data-theme="dark"] .doctor-card,
+[data-theme="dark"] .facility-card.compact-card,
+[data-theme="dark"] .specialty-card,
+[data-theme="dark"] .pending-page,
+[data-theme="dark"] .directory-cta,
+[data-theme="dark"] .directory-info {
+  border-color: rgba(148, 181, 213, 0.18);
+  background: rgba(8, 28, 45, 0.9);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .doctor-card:hover,
+[data-theme="dark"] .doctor-card:focus-within,
+[data-theme="dark"] .facility-card.compact-card:hover,
+[data-theme="dark"] .facility-card.compact-card.is-open,
+[data-theme="dark"] .specialty-card:hover,
+[data-theme="dark"] .specialty-card:focus-visible {
+  background: rgba(18, 42, 64, 0.95);
+}
+
+[data-theme="dark"] .directory-hero h1,
+[data-theme="dark"] .doctor-card h3,
+[data-theme="dark"] .compact-card-title strong,
+[data-theme="dark"] .specialty-card__title,
+[data-theme="dark"] .directory-toolbar h2,
+[data-theme="dark"] .directory-cta h2,
+[data-theme="dark"] .directory-info h2,
+[data-theme="dark"] .pending-page h1 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .directory-hero .hero-subtitle,
+[data-theme="dark"] .doctor-card,
+[data-theme="dark"] .compact-card-details p,
+[data-theme="dark"] .compact-card-details .doctor-line,
+[data-theme="dark"] .specialty-card__description,
+[data-theme="dark"] .directory-cta p,
+[data-theme="dark"] .directory-info p,
+[data-theme="dark"] .pending-page p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .directory-hero .directory-note,
+[data-theme="dark"] .breadcrumb,
+[data-theme="dark"] .breadcrumb a,
+[data-theme="dark"] .facility-note,
+[data-theme="dark"] .compact-card-title small {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .directory-search input {
+  color: #f8fafc;
+  background: rgba(11, 29, 46, 0.88);
+  border-color: rgba(148, 181, 213, 0.24);
+}
+
+[data-theme="dark"] .compact-card-details {
+  background: rgba(11, 29, 46, 0.72);
+}
+
+[data-theme="dark"] .compact-card-details .establishment-action.directions {
+  color: #f8fafc;
+  background: #0b1d2e;
+}
+
+@media (max-width: 720px) {
+  .breadcrumb {
+    margin-top: 10px;
+    font-size: 0.86rem;
+  }
+
+  .directory-hero.page-hero {
+    min-height: auto;
+    margin-top: 12px;
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
+
+  .directory-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .directory-hero .hero-buttons,
+  .directory-hero .urgent-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .directory-hero .primary-action,
+  .directory-hero .whatsapp-action {
+    width: 100%;
+  }
+
+  .directory-toolbar {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-card,
+  .facility-card.compact-card,
+  .specialty-card,
+  .pending-page,
+  .directory-cta,
+  .directory-info {
+    transition: none;
+  }
+}
