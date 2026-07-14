@@ -1017,17 +1017,6 @@ const enhanceEstablishmentCards = () => {
       : "";
 
     if (directionsHref) {
-      const quickDirections = document.createElement("a");
-      quickDirections.className = "compact-card-quick-directions";
-      quickDirections.href = directionsHref;
-      quickDirections.target = "_blank";
-      quickDirections.rel = "noopener noreferrer";
-      quickDirections.setAttribute("aria-label", `${getLocalizedLabel("Obtenir l’itinéraire vers", "Get directions to", "الحصول على الاتجاهات إلى")} ${name}`);
-      quickDirections.innerHTML = `<span aria-hidden="true">⌖</span>${getLocalizedLabel("Itinéraire", "Directions", "الاتجاهات")}`;
-      card.insertBefore(quickDirections, details);
-    }
-
-    if (directionsHref) {
       const directions = document.createElement("a");
       directions.className = "establishment-action directions";
       directions.href = directionsHref;
