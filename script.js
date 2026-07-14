@@ -20,6 +20,9 @@ const themeToggle = document.querySelector("[data-theme-toggle]");
 const reviewForm = document.querySelector("[data-review-form]");
 const reviewList = document.querySelector("[data-review-list]");
 const ambientCanvases = document.querySelectorAll("[data-ambient-canvas]");
+const directorySearch = document.querySelector("[data-directory-search]");
+const directoryList = document.querySelector("[data-directory-list]");
+const directoryEmpty = document.querySelector("[data-directory-empty]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -878,6 +881,37 @@ const renderReviews = () => {
   });
 };
 
+const initDirectorySearch = () => {
+  if (!directorySearch || !directoryList) return;
+
+  const cards = [...directoryList.querySelectorAll("[data-search]")];
+  const normalize = (value) =>
+    String(value || "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+  const filterCards = () => {
+    const query = normalize(directorySearch.value);
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const haystack = normalize(card.dataset.search || card.textContent);
+      const isVisible = !query || haystack.includes(query);
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    if (directoryEmpty) {
+      directoryEmpty.hidden = visibleCount > 0;
+    }
+  };
+
+  directorySearch.addEventListener("input", filterCards);
+  filterCards();
+};
+
 reviewForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const formData = new FormData(reviewForm);
@@ -946,5 +980,6 @@ if ("IntersectionObserver" in window) {
 updateMediaScale();
 loadPharmacies();
 renderReviews();
+initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);
