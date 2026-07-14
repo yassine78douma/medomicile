@@ -22,6 +22,7 @@ const directorySearch = document.querySelector("[data-directory-search]");
 const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
 const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
+const facilityFilters = document.querySelectorAll("[data-facility-filter]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -910,16 +911,106 @@ const getCardAddress = (card) => {
   return card.querySelector("p")?.textContent?.trim() || "";
 };
 
+const formatGoogleRating = (ratingText) => {
+  const raw = String(ratingText || "").replace(",", ".").match(/\d+(?:\.\d+)?/)?.[0];
+  if (!raw) {
+    return {
+      label: getLocalizedLabel("Note Google non disponible", "Google rating unavailable", "تقييم Google غير متوفر"),
+      stars: "☆☆☆☆☆",
+      value: "",
+    };
+  }
+
+  const rating = Math.max(0, Math.min(5, Number(raw)));
+  const rounded = Math.round(rating);
+  const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
+  return {
+    label: `${rating.toFixed(1).replace(".", ",")} Google`,
+    stars,
+    value: raw,
+  };
+};
+
+const getFacilityCategory = (card) => {
+  const type = card.querySelector(".facility-type")?.textContent?.toLowerCase() || "";
+  if (type.includes("public")) return "public";
+  if (type.includes("privé") || type.includes("général")) return "private";
+  if (type.includes("centre") || type.includes("oncologie") || type.includes("chirurgical")) return "specialized";
+  if (type.includes("clinique")) return "clinic";
+  return "clinic";
+};
+
+const closeCompactCard = (card) => {
+  const button = card.querySelector(".compact-card-toggle");
+  const panel = card.querySelector(".compact-card-details");
+  card.classList.remove("is-open");
+  button?.setAttribute("aria-expanded", "false");
+  if (panel) panel.hidden = true;
+};
+
+const toggleCompactCard = (card) => {
+  const isOpen = card.classList.contains("is-open");
+
+  if (!isOpen && window.matchMedia("(max-width: 720px)").matches) {
+    establishmentCards.forEach((otherCard) => {
+      if (otherCard !== card) closeCompactCard(otherCard);
+    });
+  }
+
+  const button = card.querySelector(".compact-card-toggle");
+  const panel = card.querySelector(".compact-card-details");
+  card.classList.toggle("is-open", !isOpen);
+  button?.setAttribute("aria-expanded", String(!isOpen));
+  if (panel) panel.hidden = isOpen;
+};
+
 const enhanceEstablishmentCards = () => {
   establishmentCards.forEach((card) => {
-    if (card.querySelector(".establishment-actions")) return;
+    if (card.querySelector(".compact-card-toggle")) return;
 
     const name = card.querySelector("h3")?.textContent?.trim();
     if (!name) return;
 
+    const isDoctor = card.classList.contains("doctor-card");
+    const type = isDoctor
+      ? card.querySelector(".doctor-specialty")?.textContent?.trim() || "Cardiologue à Kénitra"
+      : card.querySelector(".facility-type")?.textContent?.trim() || "";
+    const rating = formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
     const phone = card.querySelector('a[href^="tel:"]');
     const address = normalizeAddressForDirections(getCardAddress(card), name);
-    if (!phone && !address) return;
+    const panelId = `${isDoctor ? "doctor" : "facility"}-${[...establishmentCards].indexOf(card) + 1}-details`;
+
+    if (!isDoctor) card.dataset.category = getFacilityCategory(card);
+
+    const toggle = document.createElement("button");
+    toggle.className = "compact-card-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", panelId);
+    toggle.setAttribute("aria-label", `${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${name}`);
+    toggle.innerHTML = `
+      <span class="compact-card-title">
+        <strong>${name}</strong>
+        <small>${type}</small>
+      </span>
+      <span class="compact-rating" aria-label="${rating.label}">
+        <span aria-hidden="true">${rating.stars}</span>
+        <b>${rating.label}</b>
+      </span>
+      <span class="compact-chevron" aria-hidden="true">⌄</span>
+    `;
+
+    const details = document.createElement("div");
+    details.className = "compact-card-details";
+    details.id = panelId;
+    details.hidden = true;
+
+    const currentChildren = [...card.childNodes];
+    card.append(toggle, details);
+    currentChildren.forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE && !child.textContent.trim()) return;
+      details.append(child);
+    });
 
     const actions = document.createElement("div");
     actions.className = "establishment-actions";
@@ -944,7 +1035,31 @@ const enhanceEstablishmentCards = () => {
       actions.append(directions);
     }
 
-    card.append(actions);
+    details.append(actions);
+    card.classList.add("compact-card");
+    toggle.addEventListener("click", () => toggleCompactCard(card));
+  });
+};
+
+const initFacilityFilters = () => {
+  if (!facilityFilters.length) return;
+  const cards = [...document.querySelectorAll(".facility-card")];
+
+  facilityFilters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const value = filter.dataset.facilityFilter || "all";
+      facilityFilters.forEach((button) => {
+        const isActive = button === filter;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      cards.forEach((card) => {
+        const isVisible = value === "all" || card.dataset.category === value;
+        card.hidden = !isVisible;
+        if (!isVisible) closeCompactCard(card);
+      });
+    });
   });
 };
 
@@ -999,6 +1114,7 @@ if ("IntersectionObserver" in window) {
 updateMediaScale();
 loadPharmacies();
 enhanceEstablishmentCards();
+initFacilityFilters();
 initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);

@@ -3127,6 +3127,213 @@ h1 {
   justify-self: end;
 }
 
+.facility-filter {
+  width: min(100% - 24px, 1040px);
+  margin: 0 auto 18px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  scrollbar-width: thin;
+}
+
+.facility-filter button {
+  min-height: 42px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 999px;
+  padding: 9px 14px;
+  color: var(--blue-850);
+  background: rgba(255, 255, 255, 0.82);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.facility-filter button.is-active,
+.facility-filter button:hover,
+.facility-filter button:focus-visible {
+  color: #fff;
+  background: var(--blue-850);
+  outline: none;
+}
+
+.facility-grid,
+.doctor-grid {
+  width: min(100% - 24px, 1040px);
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+.facility-card.compact-card,
+.doctor-card.compact-card {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 76, 129, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 76, 129, 0.08);
+}
+
+.compact-card-toggle {
+  width: 100%;
+  min-height: 96px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 28px;
+  gap: 12px;
+  align-items: center;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+[dir="rtl"] .compact-card-toggle {
+  text-align: right;
+}
+
+.compact-card-toggle:focus-visible {
+  outline: 3px solid rgba(47, 128, 237, 0.2);
+  outline-offset: -3px;
+}
+
+.compact-card-title {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.compact-card-title strong {
+  color: var(--blue-950);
+  font-size: 1.02rem;
+  line-height: 1.14;
+}
+
+.compact-card-title small {
+  color: var(--soft-muted);
+  font-weight: 850;
+}
+
+.compact-rating {
+  display: grid;
+  gap: 3px;
+  justify-items: end;
+  color: #6b4f12;
+  font-size: 0.84rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+[dir="rtl"] .compact-rating {
+  justify-items: start;
+}
+
+.compact-rating span {
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.compact-rating b {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.compact-chevron {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blue-850);
+  background: var(--blue-100);
+  font-weight: 900;
+  transition: transform 220ms ease;
+}
+
+.compact-card.is-open .compact-chevron {
+  transform: rotate(180deg);
+}
+
+.compact-card-details {
+  padding: 0 16px 16px;
+  display: grid;
+  gap: 10px;
+  animation: compactReveal 240ms ease;
+}
+
+.compact-card-details[hidden] {
+  display: none;
+}
+
+@keyframes compactReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.compact-card-details .facility-head,
+.compact-card-details > h3,
+.compact-card-details > .doctor-specialty {
+  display: none;
+}
+
+.compact-card-details .facility-hours {
+  display: none;
+}
+
+.compact-card-details p,
+.compact-card-details .doctor-line {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.compact-card-details > a[href^="tel:"] {
+  display: none;
+}
+
+.compact-card-details .facility-muted {
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: var(--muted);
+  background: var(--soft);
+}
+
+.compact-card-details .establishment-actions {
+  margin-top: 2px;
+  padding-top: 8px;
+}
+
+@media (min-width: 760px) {
+  .facility-grid,
+  .doctor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .compact-card-toggle {
+    grid-template-columns: minmax(0, 1fr) 28px;
+  }
+
+  .compact-rating {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-items: start;
+  }
+
+  [dir="rtl"] .compact-rating {
+    justify-items: end;
+  }
+}
+
 @media (min-width: 1080px) {
   [dir="rtl"] .hero-copy {
     justify-items: start;
