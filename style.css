@@ -1819,7 +1819,7 @@ h1 {
   line-height: 1.55;
 }
 
-.review-panel {
+.google-review-panel {
   width: min(720px, 100%);
   margin: 0 auto;
   padding: 18px;
@@ -1827,61 +1827,97 @@ h1 {
   gap: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.94), rgba(234, 243, 255, 0.86)),
+    var(--surface);
   box-shadow: var(--shadow);
 }
 
-.review-form {
+.google-review-card {
   display: grid;
-  gap: 12px;
-}
-
-.review-form label {
-  display: grid;
-  gap: 7px;
-  color: var(--blue-950);
-  font-size: 0.9rem;
-  font-weight: 900;
-  text-align: left;
-}
-
-.review-form input,
-.review-form textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 13px 14px;
-  color: var(--ink);
-  background: var(--soft);
-  font: inherit;
-  resize: vertical;
-}
-
-.review-form input:focus,
-.review-form textarea:focus {
-  border-color: var(--blue-700);
-  outline: 3px solid rgba(47, 128, 237, 0.16);
-}
-
-.review-card,
-.review-empty {
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
   padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: var(--soft);
+  border: 1px solid rgba(15, 76, 129, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
 }
 
-.review-card p,
-.review-empty {
+.google-review-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--blue-850), var(--blue-700));
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.google-review-card h3 {
+  margin: 0 0 6px;
+  color: var(--blue-950);
+  font-size: 1.1rem;
+}
+
+.google-review-card p {
   margin: 0;
   color: var(--muted);
+  line-height: 1.55;
 }
 
-.review-card strong {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--blue-950);
-  font-family: "Manrope", "Inter", sans-serif;
+.google-review-actions,
+.establishment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.google-review-button,
+.establishment-action {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(15, 76, 129, 0.26);
+  border-radius: 16px;
+  padding: 12px 16px;
+  color: var(--blue-850);
+  background: rgba(255, 255, 255, 0.86);
+  font-weight: 900;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.google-review-button:hover,
+.establishment-action:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47, 128, 237, 0.5);
+  box-shadow: 0 14px 28px rgba(15, 76, 129, 0.13);
+}
+
+.google-review-button.is-primary,
+.establishment-action.call {
+  border-color: transparent;
+  color: #fff;
+  background: var(--blue-850);
+}
+
+.establishment-actions {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.establishment-action {
+  flex: 1 1 142px;
+  font-size: 0.92rem;
 }
 
 .urgent-panel {
@@ -2229,8 +2265,8 @@ h1 {
   .service-card,
   .home-card,
   .article-card,
-  .review-panel,
-  .review-card,
+  .google-review-panel,
+  .google-review-card,
   .gallery-filter,
   .pharmacy-card,
   .facility-card,
@@ -2246,8 +2282,8 @@ h1 {
   [data-theme="dark"] .service-card,
   [data-theme="dark"] .home-card,
   [data-theme="dark"] .article-card,
-  [data-theme="dark"] .review-panel,
-  [data-theme="dark"] .review-card,
+  [data-theme="dark"] .google-review-panel,
+  [data-theme="dark"] .google-review-card,
   [data-theme="dark"] .gallery-filter,
   [data-theme="dark"] .pharmacy-card,
   [data-theme="dark"] .facility-card,
@@ -2327,8 +2363,8 @@ h1 {
 [data-theme="dark"] .service-card,
 [data-theme="dark"] .home-card,
 [data-theme="dark"] .article-card,
-[data-theme="dark"] .review-panel,
-[data-theme="dark"] .review-card,
+[data-theme="dark"] .google-review-panel,
+[data-theme="dark"] .google-review-card,
 [data-theme="dark"] .gallery-filter,
 [data-theme="dark"] .pharmacy-card,
 [data-theme="dark"] .facility-card,
@@ -2482,8 +2518,8 @@ h1 {
 [data-theme="light"] .service-card,
 [data-theme="light"] .home-card,
 [data-theme="light"] .article-card,
-[data-theme="light"] .review-panel,
-[data-theme="light"] .review-card,
+[data-theme="light"] .google-review-panel,
+[data-theme="light"] .google-review-card,
 [data-theme="light"] .gallery-filter,
 [data-theme="light"] .pharmacy-card,
 [data-theme="light"] .facility-card,
@@ -2640,7 +2676,7 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .review-panel {
+  .google-review-panel {
     padding: 28px;
   }
 

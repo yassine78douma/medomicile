@@ -17,12 +17,11 @@ const pharmacyList = document.querySelector("[data-pharmacy-list]");
 const pharmacyTitle = document.querySelector("[data-pharmacy-title]");
 const pharmacyUpdated = document.querySelector("[data-pharmacy-updated]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
-const reviewForm = document.querySelector("[data-review-form]");
-const reviewList = document.querySelector("[data-review-list]");
 const ambientCanvases = document.querySelectorAll("[data-ambient-canvas]");
 const directorySearch = document.querySelector("[data-directory-search]");
 const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
+const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -842,45 +841,6 @@ const loadPharmacies = async () => {
   }
 };
 
-const reviewStorageKey = "medomicile-reviews";
-
-const getReviews = () => {
-  try {
-    const stored = JSON.parse(localStorage.getItem(reviewStorageKey) || "[]");
-    return Array.isArray(stored) ? stored : [];
-  } catch {
-    return [];
-  }
-};
-
-const renderReviews = () => {
-  if (!reviewList) return;
-  const reviews = getReviews();
-  reviewList.replaceChildren();
-
-  if (!reviews.length) {
-    const empty = document.createElement("p");
-    empty.className = "review-empty";
-    empty.textContent = reviewList.dataset.empty || "Aucun avis affiché pour le moment.";
-    reviewList.append(empty);
-    return;
-  }
-
-  reviews.forEach((review) => {
-    const card = document.createElement("article");
-    card.className = "review-card";
-
-    const name = document.createElement("strong");
-    name.textContent = review.name;
-
-    const message = document.createElement("p");
-    message.textContent = review.message;
-
-    card.append(name, message);
-    reviewList.append(card);
-  });
-};
-
 const initDirectorySearch = () => {
   if (!directorySearch || !directoryList) return;
 
@@ -912,22 +872,78 @@ const initDirectorySearch = () => {
   filterCards();
 };
 
-reviewForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const formData = new FormData(reviewForm);
-  const name = String(formData.get("name") || "").trim();
-  const message = String(formData.get("message") || "").trim();
-  if (!name || !message) return;
+const getLocalizedLabel = (fr, en, ar) => {
+  if (isArabicPage) return ar;
+  if (isEnglishPage) return en;
+  return fr;
+};
 
-  const reviews = getReviews();
-  reviews.unshift({ name, message, createdAt: new Date().toISOString() });
-  localStorage.setItem(reviewStorageKey, JSON.stringify(reviews.slice(0, 12)));
-  reviewForm.reset();
-  renderReviews();
+const normalizeAddressForDirections = (address) => {
+  const value = String(address || "").trim();
+  const lower = value.toLowerCase();
+  const uncertainParts = [
+    "zone centrale",
+    "central area",
+    "المنطقة المركزية",
+    "adresse à confirmer",
+    "address to confirm",
+    "العنوان للتأكيد",
+    "clinique de chirurgie",
+    "orthopedic and trauma surgery",
+    "مصحة جراحة",
+  ];
 
-  const text = encodeURIComponent(`Avis Medomicile\nNom: ${name}\nAvis: ${message}`);
-  window.open(`https://wa.me/212663058222?text=${text}`, "_blank", "noopener");
-});
+  if (!value || uncertainParts.some((part) => lower.includes(part))) return "";
+  return value;
+};
+
+const getCardAddress = (card) => {
+  if (card.classList.contains("doctor-card")) {
+    const lines = [...card.querySelectorAll(".doctor-line")];
+    const addressLine = lines.find((line) => line.textContent.includes("⌖"));
+    return addressLine?.querySelector("span:last-child")?.textContent?.trim() || "";
+  }
+
+  return card.querySelector("p")?.textContent?.trim() || "";
+};
+
+const enhanceEstablishmentCards = () => {
+  establishmentCards.forEach((card) => {
+    if (card.querySelector(".establishment-actions")) return;
+
+    const name = card.querySelector("h3")?.textContent?.trim();
+    if (!name) return;
+
+    const phone = card.querySelector('a[href^="tel:"]');
+    const address = normalizeAddressForDirections(getCardAddress(card));
+    if (!phone && !address) return;
+
+    const actions = document.createElement("div");
+    actions.className = "establishment-actions";
+
+    if (phone) {
+      const call = document.createElement("a");
+      call.className = "establishment-action call";
+      call.href = phone.href;
+      call.setAttribute("aria-label", `${getLocalizedLabel("Appeler", "Call", "اتصال")} ${name}`);
+      call.innerHTML = `<span aria-hidden="true">☎</span>${getLocalizedLabel("Appeler", "Call", "اتصال")}`;
+      actions.append(call);
+    }
+
+    if (address) {
+      const directions = document.createElement("a");
+      directions.className = "establishment-action directions";
+      directions.href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${name}, ${address}`)}`;
+      directions.target = "_blank";
+      directions.rel = "noopener noreferrer";
+      directions.setAttribute("aria-label", `${getLocalizedLabel("Obtenir l’itinéraire vers", "Get directions to", "الحصول على الاتجاهات إلى")} ${name}`);
+      directions.innerHTML = `<span aria-hidden="true">⌖</span>${getLocalizedLabel("Itinéraire", "Directions", "الاتجاهات")}`;
+      actions.append(directions);
+    }
+
+    card.append(actions);
+  });
+};
 
 const updateMediaScale = () => {
   if (!scrollMedia) return;
@@ -979,7 +995,7 @@ if ("IntersectionObserver" in window) {
 
 updateMediaScale();
 loadPharmacies();
-renderReviews();
+enhanceEstablishmentCards();
 initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);
