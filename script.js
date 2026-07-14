@@ -38,6 +38,40 @@ if ("scrollRestoration" in history) {
 
 document.querySelector(".bottom-actions")?.remove();
 
+const loadGoogleAdsTag = () => {
+  if (window.__medomicileAdsLoaded) return;
+  window.__medomicileAdsLoaded = true;
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=AW-18241787343";
+  document.head.append(script);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", "AW-18241787343");
+};
+
+const scheduleGoogleAdsTag = () => {
+  window.addEventListener(
+    "load",
+    () => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadGoogleAdsTag, { timeout: 3500 });
+        return;
+      }
+
+      window.setTimeout(loadGoogleAdsTag, 1800);
+    },
+    { once: true },
+  );
+};
+
+scheduleGoogleAdsTag();
+
 const initAmbientCanvas = (canvas) => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
