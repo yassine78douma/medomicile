@@ -3158,6 +3158,17 @@ h1 {
   outline: none;
 }
 
+.facility-note {
+  max-width: 1040px;
+  margin: -8px auto 18px;
+  padding: 0 12px;
+  border: 0;
+  color: var(--soft-muted);
+  background: transparent;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
 .facility-grid,
 .doctor-grid {
   width: min(100% - 24px, 1040px);
@@ -3309,6 +3320,128 @@ h1 {
 .compact-card-details .establishment-actions {
   margin-top: 2px;
   padding-top: 8px;
+  display: flex !important;
+  visibility: visible;
+  opacity: 1;
+}
+
+.compact-card.is-open .establishment-actions {
+  display: flex !important;
+}
+
+.compact-card-details .establishment-action {
+  flex: 0 1 auto;
+  min-width: 136px;
+  max-width: 100%;
+}
+
+.specialty-grid {
+  width: min(100% - 24px, 1040px);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.specialty-card {
+  min-height: 132px;
+  position: relative;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) 28px;
+  gap: 14px;
+  align-items: center;
+  border: 1px solid rgba(15, 76, 129, 0.1);
+  border-radius: 20px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 76, 129, 0.08);
+  text-decoration: none;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.specialty-card:hover,
+.specialty-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(47, 128, 237, 0.28);
+  box-shadow: 0 18px 42px rgba(15, 76, 129, 0.12);
+  outline: none;
+}
+
+.specialty-icon,
+.pending-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--blue-850);
+  background: var(--blue-100);
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+.specialty-card strong {
+  display: block;
+  color: var(--blue-950);
+  font-size: 1.06rem;
+  line-height: 1.15;
+}
+
+.specialty-card small {
+  display: block;
+  margin-top: 6px;
+  color: var(--soft-muted);
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.specialty-status {
+  width: fit-content;
+  margin-top: 10px;
+  display: inline-flex;
+  border: 1px solid rgba(198, 169, 105, 0.36);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: #6b4f12;
+  background: rgba(198, 169, 105, 0.14);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.specialty-chevron {
+  color: var(--blue-850);
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.pending-page {
+  width: min(100% - 24px, 780px);
+  margin: 24px auto;
+  padding: 26px;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  border: 1px solid rgba(15, 76, 129, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 76, 129, 0.08);
+}
+
+.pending-page h1 {
+  color: var(--blue-950);
+  font-size: clamp(1.8rem, 7vw, 3rem);
+  line-height: 1.04;
+}
+
+.pending-page p {
+  color: var(--muted);
+  line-height: 1.62;
+}
+
+@media (min-width: 760px) {
+  .specialty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (min-width: 760px) {
@@ -3332,6 +3465,89 @@ h1 {
   [dir="rtl"] .compact-rating {
     justify-items: end;
   }
+
+  .compact-card-details .establishment-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .compact-card-details .establishment-action {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .compact-card-details .establishment-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+[data-theme="dark"] .directory-main,
+[data-theme="dark"] .facilities,
+[data-theme="dark"] .directory,
+[data-theme="dark"] .doctor-specialties {
+  background: #071827;
+}
+
+[data-theme="dark"] .facility-note,
+[data-theme="dark"] .directory-note,
+[data-theme="dark"] .breadcrumb,
+[data-theme="dark"] .breadcrumb a {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .facility-card.compact-card,
+[data-theme="dark"] .doctor-card.compact-card,
+[data-theme="dark"] .specialty-card,
+[data-theme="dark"] .pending-page {
+  border-color: rgba(148, 163, 184, 0.18);
+  color: #cbd5e1;
+  background: #0f2235;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .compact-card.is-open,
+[data-theme="dark"] .compact-card:hover,
+[data-theme="dark"] .specialty-card:hover {
+  background: #122a40;
+}
+
+[data-theme="dark"] .compact-card-title strong,
+[data-theme="dark"] .specialty-card strong,
+[data-theme="dark"] .pending-page h1 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .compact-card-title small,
+[data-theme="dark"] .compact-card-details p,
+[data-theme="dark"] .compact-card-details .doctor-line,
+[data-theme="dark"] .specialty-card small,
+[data-theme="dark"] .pending-page p {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .compact-rating b {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .compact-chevron,
+[data-theme="dark"] .specialty-icon,
+[data-theme="dark"] .pending-icon {
+  color: #5aa2f8;
+  background: #0b1d2e;
+  border: 1px solid rgba(90, 162, 248, 0.28);
+}
+
+[data-theme="dark"] .establishment-action.call {
+  color: #fff;
+  background: #0f4c81;
+}
+
+[data-theme="dark"] .establishment-action.directions {
+  color: #f8fafc;
+  border-color: rgba(90, 162, 248, 0.55);
+  background: #0b1d2e;
 }
 
 @media (min-width: 1080px) {

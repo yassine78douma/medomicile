@@ -22,7 +22,6 @@ const directorySearch = document.querySelector("[data-directory-search]");
 const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
 const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
-const facilityFilters = document.querySelectorAll("[data-facility-filter]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -931,15 +930,6 @@ const formatGoogleRating = (ratingText) => {
   };
 };
 
-const getFacilityCategory = (card) => {
-  const type = card.querySelector(".facility-type")?.textContent?.toLowerCase() || "";
-  if (type.includes("public")) return "public";
-  if (type.includes("privé") || type.includes("général")) return "private";
-  if (type.includes("centre") || type.includes("oncologie") || type.includes("chirurgical")) return "specialized";
-  if (type.includes("clinique")) return "clinic";
-  return "clinic";
-};
-
 const closeCompactCard = (card) => {
   const button = card.querySelector(".compact-card-toggle");
   const panel = card.querySelector(".compact-card-details");
@@ -979,8 +969,6 @@ const enhanceEstablishmentCards = () => {
     const phone = card.querySelector('a[href^="tel:"]');
     const address = normalizeAddressForDirections(getCardAddress(card), name);
     const panelId = `${isDoctor ? "doctor" : "facility"}-${[...establishmentCards].indexOf(card) + 1}-details`;
-
-    if (!isDoctor) card.dataset.category = getFacilityCategory(card);
 
     const toggle = document.createElement("button");
     toggle.className = "compact-card-toggle";
@@ -1041,28 +1029,6 @@ const enhanceEstablishmentCards = () => {
   });
 };
 
-const initFacilityFilters = () => {
-  if (!facilityFilters.length) return;
-  const cards = [...document.querySelectorAll(".facility-card")];
-
-  facilityFilters.forEach((filter) => {
-    filter.addEventListener("click", () => {
-      const value = filter.dataset.facilityFilter || "all";
-      facilityFilters.forEach((button) => {
-        const isActive = button === filter;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-      });
-
-      cards.forEach((card) => {
-        const isVisible = value === "all" || card.dataset.category === value;
-        card.hidden = !isVisible;
-        if (!isVisible) closeCompactCard(card);
-      });
-    });
-  });
-};
-
 const updateMediaScale = () => {
   if (!scrollMedia) return;
   const rect = scrollMedia.getBoundingClientRect();
@@ -1114,7 +1080,6 @@ if ("IntersectionObserver" in window) {
 updateMediaScale();
 loadPharmacies();
 enhanceEstablishmentCards();
-initFacilityFilters();
 initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);
