@@ -1,0 +1,22 @@
+{
+  "lastUpdated": "2026-07-15",
+  "notes": "Les laboratoires ci-dessous sont des entrées à vérifier avant publication. Ne pas afficher une entrée tant que verified reste false.",
+  "laboratories": [
+    { "id": "laboratoire-central-analyses-medicales", "name": "Laboratoire Central d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "laboratoire-les-mimosas", "name": "Laboratoire Les Mimosas", "verified": false, "sponsored": false },
+    { "id": "laboratoire-la-ville-haute", "name": "Laboratoire La Ville Haute", "verified": false, "sponsored": false },
+    { "id": "laboratoire-maamora-analyses-medicales", "name": "Laboratoire Mâamora d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "centre-biologie-medicale-sebou", "name": "Centre de Biologie Médicale Sebou", "verified": false, "sponsored": false },
+    { "id": "laboratoire-maghreb-arabi", "name": "Laboratoire Maghreb Arabi", "verified": false, "sponsored": false },
+    { "id": "laboratoire-al-hikma", "name": "Laboratoire Al Hikma", "verified": false, "sponsored": false },
+    { "id": "laboratoire-saknia-analyses-medicales", "name": "Laboratoire Saknia d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "laboratoire-gharb-analyses-medicales", "name": "Laboratoire du Gharb d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "laboratoire-ibn-sina-analyses-medicales", "name": "Laboratoire Ibn Sina d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "laboratoire-asseha-analyses-medicales", "name": "Laboratoire Asseha d’Analyses Médicales", "verified": false, "sponsored": false },
+    { "id": "laboratoire-ittihad", "name": "Laboratoire Ittihad", "verified": false, "sponsored": false },
+    { "id": "dhl-lab", "name": "DHL-Lab", "verified": false, "sponsored": false },
+    { "id": "laboratoire-international-kenitra", "name": "Laboratoire International Kénitra", "verified": false, "sponsored": false },
+    { "id": "laboratoire-la-province", "name": "Laboratoire La Province", "verified": false, "sponsored": false },
+    { "id": "laboratoire-hopital-international-kenitra", "name": "Laboratoire de l’Hôpital International de Kénitra", "verified": false, "sponsored": false }
+  ]
+}
