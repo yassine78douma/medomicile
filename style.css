@@ -3272,6 +3272,7 @@ h1 {
   padding: 0 16px 16px;
   display: grid;
   gap: 10px;
+  align-content: start;
   animation: compactReveal 240ms ease;
 }
 
@@ -3509,8 +3510,15 @@ h1 {
 }
 
 @media (max-width: 520px) {
+  .facility-card.compact-card,
+  .doctor-card.compact-card {
+    min-height: 0;
+  }
+
   .compact-card-toggle {
     grid-template-columns: minmax(0, 1fr) 28px;
+    min-height: 116px;
+    align-items: start;
   }
 
   .compact-rating {
@@ -3524,6 +3532,7 @@ h1 {
   }
 
   .compact-card-details .establishment-actions {
+    margin-top: 0;
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -4010,6 +4019,66 @@ h1 {
 
 /* Targeted mobile fixes for directory pages */
 @media (max-width: 600px) {
+  .facility-grid,
+  .doctor-grid {
+    gap: 12px;
+  }
+
+  .compact-card-details {
+    min-height: 0;
+    padding: 0 16px 16px;
+    display: grid;
+    align-content: start;
+    gap: 10px;
+  }
+
+  .compact-card-details[hidden] {
+    display: none !important;
+  }
+
+  .compact-card-details p,
+  .compact-card-details .doctor-line,
+  .compact-card-details .facility-muted {
+    display: block;
+    margin: 0;
+  }
+
+  .compact-card.is-open,
+  .compact-card.is-open .compact-card-details,
+  .compact-card.is-open .compact-card-details * {
+    opacity: 1;
+  }
+
+  [data-theme="dark"] .compact-card.is-open .compact-card-details {
+    background: rgba(11, 29, 46, 0.96);
+  }
+
+  [data-theme="dark"] .compact-card.is-open .compact-card-details p,
+  [data-theme="dark"] .compact-card.is-open .compact-card-details .doctor-line,
+  [data-theme="dark"] .compact-card.is-open .compact-card-details .facility-muted {
+    color: #f8fafc;
+  }
+
+  .compact-card-details .establishment-actions {
+    position: static;
+  }
+
+  .compact-card.is-open .establishment-action.call {
+    color: #ffffff;
+    background: #1f7ad8;
+    border-color: transparent;
+  }
+
+  .compact-card.is-open .establishment-action.directions {
+    color: #f8fafc;
+    background: #102f4f;
+    border-color: rgba(90, 162, 248, 0.42);
+  }
+
+  .floating-call {
+    display: none;
+  }
+
   .breadcrumb {
     width: min(100% - 24px, 1040px);
     overflow: hidden;
