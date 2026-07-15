@@ -4478,3 +4478,348 @@ h1 {
     font-size: 0.92rem;
   }
 }
+
+/* Premium Arabic RTL refinement */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="rtl"] body {
+  font-family: "Tajawal", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: right;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] body,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] p,
+[dir="rtl"] a,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] small,
+[dir="rtl"] strong,
+[dir="rtl"] span {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .container,
+[dir="rtl"] .hero,
+[dir="rtl"] .section,
+[dir="rtl"] .directory-main,
+[dir="rtl"] .services,
+[dir="rtl"] .facilities,
+[dir="rtl"] .directory,
+[dir="rtl"] .doctor-specialties,
+[dir="rtl"] .contact,
+[dir="rtl"] .vitamin,
+[dir="rtl"] .articles,
+[dir="rtl"] .gallery {
+  direction: rtl;
+}
+
+[dir="rtl"] .brand {
+  direction: rtl;
+}
+
+[dir="rtl"] .menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .menu a,
+[dir="rtl"] .lang-switcher,
+[dir="rtl"] .header-actions,
+[dir="rtl"] .hero-buttons,
+[dir="rtl"] .urgent-actions,
+[dir="rtl"] .inline-actions,
+[dir="rtl"] .google-review-actions,
+[dir="rtl"] .featured-clinic__actions,
+[dir="rtl"] .establishment-actions {
+  direction: rtl;
+}
+
+[dir="rtl"] .section-heading,
+[dir="rtl"] .hero-copy,
+[dir="rtl"] .directory-hero,
+[dir="rtl"] .directory-hero-copy,
+[dir="rtl"] .urgent-panel,
+[dir="rtl"] .vitamin-panel,
+[dir="rtl"] .contact-panel,
+[dir="rtl"] .article-card,
+[dir="rtl"] .pharmacy-panel,
+[dir="rtl"] .gallery-panel,
+[dir="rtl"] .directory-cta,
+[dir="rtl"] .directory-info,
+[dir="rtl"] .pending-page {
+  text-align: right;
+}
+
+[dir="rtl"] .section-heading,
+[dir="rtl"] .directory-hero.page-hero,
+[dir="rtl"] .directory-hero-copy {
+  justify-items: start;
+}
+
+[dir="rtl"] .section-heading {
+  margin-inline: auto;
+}
+
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .directory-hero .eyebrow,
+[dir="rtl"] .directory-toolbar .eyebrow {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .service-card,
+[dir="rtl"] .facility-card,
+[dir="rtl"] .doctor-card,
+[dir="rtl"] .specialty-card,
+[dir="rtl"] .home-card,
+[dir="rtl"] .google-review-card,
+[dir="rtl"] .featured-clinic,
+[dir="rtl"] .cocktail-card,
+[dir="rtl"] .pharmacy-current-list,
+[dir="rtl"] .pharmacy-image-panel {
+  text-align: right;
+}
+
+[dir="rtl"] .service-card summary {
+  direction: rtl;
+  grid-template-columns: 38px minmax(0, 1fr) 30px;
+  text-align: right;
+}
+
+[dir="rtl"] .service-more {
+  justify-self: start;
+}
+
+[dir="rtl"] .service-content {
+  padding-right: 64px;
+  padding-left: 16px;
+}
+
+[dir="rtl"] .service-content p {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+[dir="rtl"] .facility-head,
+[dir="rtl"] .pharmacy-current-list li,
+[dir="rtl"] .contact-method,
+[dir="rtl"] .blood-center-card {
+  direction: rtl;
+}
+
+[dir="rtl"] .facility-card a,
+[dir="rtl"] .service-phone,
+[dir="rtl"] .doctor-specialty,
+[dir="rtl"] .facility-type,
+[dir="rtl"] .facility-hours,
+[dir="rtl"] .facility-head strong,
+[dir="rtl"] .featured-clinic__eyebrow,
+[dir="rtl"] .specialty-card__status,
+[dir="rtl"] .status-badge {
+  justify-self: end;
+}
+
+[dir="rtl"] .doctor-line {
+  grid-template-columns: minmax(0, 1fr) 24px;
+  direction: rtl;
+}
+
+[dir="rtl"] .doctor-line span[aria-hidden="true"] {
+  grid-column: 2;
+}
+
+[dir="rtl"] .doctor-line span:not([aria-hidden="true"]),
+[dir="rtl"] .doctor-line a {
+  grid-column: 1;
+}
+
+[dir="rtl"] .medical-alert {
+  border-right: 4px solid var(--blue-850);
+  border-left: 0;
+}
+
+[dir="rtl"] .directory-search::before {
+  right: 16px;
+  left: auto;
+}
+
+[dir="rtl"] .directory-search input {
+  padding-right: 42px;
+  padding-left: 14px;
+  text-align: right;
+}
+
+[dir="rtl"] .google-review-card {
+  grid-template-columns: minmax(0, 1fr) 48px;
+}
+
+[dir="rtl"] .google-review-icon {
+  grid-column: 2;
+}
+
+[dir="rtl"] .google-review-card > div {
+  grid-column: 1;
+}
+
+[dir="rtl"] .featured-clinic {
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+}
+
+[dir="rtl"] .featured-clinic__media {
+  grid-column: 2;
+}
+
+[dir="rtl"] .featured-clinic__content {
+  grid-column: 1;
+  text-align: right;
+  justify-items: start;
+}
+
+[dir="rtl"] .featured-clinic__meta {
+  text-align: right;
+}
+
+[dir="rtl"] .compact-card-toggle {
+  grid-template-columns: 28px auto minmax(0, 1fr);
+  text-align: right;
+}
+
+[dir="rtl"] .compact-chevron {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+[dir="rtl"] .compact-rating {
+  grid-column: 2;
+  grid-row: 1;
+  justify-items: start;
+}
+
+[dir="rtl"] .compact-card-title {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+[dir="rtl"] .compact-card-details {
+  text-align: right;
+}
+
+[dir="rtl"] .compact-card-details .establishment-actions {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .specialty-card {
+  direction: rtl;
+}
+
+[dir="rtl"] .specialty-card__content {
+  min-width: 0;
+}
+
+[dir="rtl"] .specialty-card__description {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+[dir="rtl"] .specialty-card__arrow {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .breadcrumb {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer-grid,
+[dir="rtl"] .footer-links,
+[dir="rtl"] .footer-contact {
+  text-align: right;
+}
+
+@media (max-width: 780px) {
+  [dir="rtl"] .featured-clinic {
+    grid-template-columns: 1fr;
+  }
+
+  [dir="rtl"] .featured-clinic__media,
+  [dir="rtl"] .featured-clinic__content {
+    grid-column: auto;
+  }
+
+  [dir="rtl"] .featured-clinic h2 {
+    max-width: 100%;
+    font-size: clamp(1.8rem, 8vw, 2.45rem);
+  }
+}
+
+@media (max-width: 720px) {
+  [dir="rtl"] .menu {
+    align-items: stretch;
+  }
+
+  [dir="rtl"] .menu a {
+    justify-content: flex-start;
+    text-align: right;
+  }
+
+  [dir="rtl"] .directory-hero.page-hero {
+    padding: 24px 18px;
+  }
+
+  [dir="rtl"] .hero-buttons,
+  [dir="rtl"] .urgent-actions,
+  [dir="rtl"] .featured-clinic__actions,
+  [dir="rtl"] .google-review-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  [dir="rtl"] .service-card summary {
+    grid-template-columns: 36px minmax(0, 1fr) 28px;
+    gap: 10px;
+  }
+
+  [dir="rtl"] .service-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  [dir="rtl"] .compact-card-toggle {
+    grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  [dir="rtl"] .compact-chevron {
+    grid-column: 1;
+  }
+
+  [dir="rtl"] .compact-card-title {
+    grid-column: 2;
+  }
+
+  [dir="rtl"] .compact-rating {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-items: end;
+  }
+
+  [dir="rtl"] .compact-card-details .establishment-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 360px) {
+  [dir="rtl"] .specialty-card {
+    padding: 16px;
+  }
+
+  [dir="rtl"] .specialty-card__arrow {
+    left: 16px;
+    right: auto;
+  }
+}
