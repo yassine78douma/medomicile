@@ -1833,6 +1833,36 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.google-rating-summary {
+  padding: 18px;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  border: 1px solid rgba(198, 169, 105, 0.42);
+  border-radius: 18px;
+  color: var(--blue-950);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(255, 250, 235, 0.86)),
+    var(--surface);
+  text-align: center;
+}
+
+.google-rating-summary strong {
+  font-size: clamp(2rem, 8vw, 3rem);
+  line-height: 1;
+}
+
+.google-rating-summary span {
+  color: var(--gold);
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+}
+
+.google-rating-summary small {
+  color: var(--muted);
+  font-weight: 900;
+}
+
 .google-review-card {
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr);
@@ -2494,6 +2524,18 @@ h1 {
   border-color: rgba(148, 181, 213, 0.3);
   color: #e8f3ff;
   background: rgba(8, 28, 45, 0.92);
+}
+
+[data-theme="dark"] .google-rating-summary {
+  border-color: rgba(198, 169, 105, 0.5);
+  color: #f8fafc;
+  background:
+    linear-gradient(135deg, rgba(15, 76, 129, 0.34), rgba(8, 28, 45, 0.94)),
+    #081c2d;
+}
+
+[data-theme="dark"] .google-rating-summary small {
+  color: #cbd5e1;
 }
 
 [data-theme="light"] .mobile-header {
