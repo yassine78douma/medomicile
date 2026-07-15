@@ -22,6 +22,7 @@ const directorySearch = document.querySelector("[data-directory-search]");
 const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
 const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
+const featuredClinicGalleries = document.querySelectorAll("[data-featured-clinic-gallery]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
 
@@ -1056,6 +1057,37 @@ const enhanceEstablishmentCards = () => {
   });
 };
 
+const initFeaturedClinicGalleries = () => {
+  featuredClinicGalleries.forEach((gallery) => {
+    const images = [...gallery.querySelectorAll("img")];
+    const buttons = [...gallery.querySelectorAll(".featured-clinic__controls button")];
+    if (images.length < 2 || !buttons.length) return;
+
+    let activeIndex = Math.max(0, images.findIndex((image) => image.classList.contains("is-active")));
+    let timer;
+
+    const showImage = (index) => {
+      activeIndex = (index + images.length) % images.length;
+      images.forEach((image, imageIndex) => image.classList.toggle("is-active", imageIndex === activeIndex));
+      buttons.forEach((button, buttonIndex) => button.classList.toggle("is-active", buttonIndex === activeIndex));
+    };
+
+    const restart = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => showImage(activeIndex + 1), 4200);
+    };
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        showImage(index);
+        restart();
+      });
+    });
+
+    restart();
+  });
+};
+
 const updateMediaScale = () => {
   if (!scrollMedia) return;
   const rect = scrollMedia.getBoundingClientRect();
@@ -1106,6 +1138,7 @@ if ("IntersectionObserver" in window) {
 
 updateMediaScale();
 loadPharmacies();
+initFeaturedClinicGalleries();
 enhanceEstablishmentCards();
 initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
