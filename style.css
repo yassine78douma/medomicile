@@ -4007,3 +4007,113 @@ h1 {
     transition: none;
   }
 }
+
+/* Targeted mobile fixes for directory pages */
+@media (max-width: 600px) {
+  .breadcrumb {
+    width: min(100% - 24px, 1040px);
+    overflow: hidden;
+    font-size: 0.82rem;
+  }
+
+  .breadcrumb a,
+  .breadcrumb span {
+    overflow-wrap: anywhere;
+  }
+
+  .directory-hero.page-hero {
+    width: min(100% - 24px, 1040px);
+    min-height: 0;
+    padding: 22px 18px;
+    overflow: hidden;
+  }
+
+  .directory-hero,
+  .directory-hero *,
+  .specialty-card,
+  .specialty-card * {
+    min-width: 0;
+  }
+
+  .directory-hero-copy {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .directory-hero h1 {
+    width: fit-content;
+    max-width: 11ch;
+    font-size: clamp(1.9rem, 10vw, 2.45rem);
+    line-height: 1.06;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+
+  .directory-hero .hero-subtitle,
+  .directory-hero .directory-note {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .directory-hero .hero-buttons,
+  .directory-hero .urgent-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .directory-hero .primary-action,
+  .directory-hero .whatsapp-action {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 12px;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .specialty-card {
+    width: 100%;
+    grid-template-columns: 48px minmax(0, 1fr);
+    padding: 16px 46px 16px 16px;
+    gap: 12px;
+  }
+
+  .specialty-card__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .specialty-card__content {
+    min-width: 0;
+  }
+
+  .specialty-card__title,
+  .specialty-card__description {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .specialty-card__title {
+    max-width: 12ch;
+  }
+
+  .specialty-card__arrow {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 350px) {
+  .directory-hero h1 {
+    font-size: clamp(1.65rem, 9vw, 2rem);
+  }
+
+  .directory-hero .primary-action,
+  .directory-hero .whatsapp-action {
+    font-size: 0.92rem;
+  }
+}
