@@ -3280,6 +3280,12 @@ h1 {
   display: none;
 }
 
+.compact-card-details.is-expanded {
+  display: grid !important;
+  visibility: visible;
+  opacity: 1;
+}
+
 @keyframes compactReveal {
   from {
     opacity: 0;
@@ -4030,10 +4036,18 @@ h1 {
     display: grid;
     align-content: start;
     gap: 10px;
+    animation: none;
+    transform: translateZ(0);
   }
 
   .compact-card-details[hidden] {
     display: none !important;
+  }
+
+  .compact-card-details.is-expanded {
+    display: grid !important;
+    visibility: visible;
+    opacity: 1;
   }
 
   .compact-card-details p,

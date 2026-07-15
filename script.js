@@ -935,7 +935,11 @@ const closeCompactCard = (card) => {
   const panel = card.querySelector(".compact-card-details");
   card.classList.remove("is-open");
   button?.setAttribute("aria-expanded", "false");
-  if (panel) panel.hidden = true;
+  if (panel) {
+    panel.hidden = true;
+    panel.classList.remove("is-expanded");
+    panel.style.removeProperty("display");
+  }
 };
 
 const toggleCompactCard = (card) => {
@@ -951,7 +955,26 @@ const toggleCompactCard = (card) => {
   const panel = card.querySelector(".compact-card-details");
   card.classList.toggle("is-open", !isOpen);
   button?.setAttribute("aria-expanded", String(!isOpen));
-  if (panel) panel.hidden = isOpen;
+  if (!panel) return;
+
+  if (isOpen) {
+    panel.hidden = true;
+    panel.classList.remove("is-expanded");
+    panel.style.removeProperty("display");
+    return;
+  }
+
+  panel.hidden = false;
+  panel.classList.add("is-expanded");
+  panel.style.display = "grid";
+  panel.offsetHeight;
+  requestAnimationFrame(() => {
+    panel.style.display = "grid";
+    panel.querySelectorAll("a, p, span, h3, div").forEach((item) => {
+      item.style.opacity = "1";
+      item.style.visibility = "visible";
+    });
+  });
 };
 
 const enhanceEstablishmentCards = () => {
