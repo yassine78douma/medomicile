@@ -529,35 +529,8 @@ const clearReloadHash = () => {
 
 clearReloadHash();
 
-const ensureMobileMenuActions = () => {
-  if (!menu) return;
-  const hasCall = [...menu.querySelectorAll('a[href^="tel:"]')].length > 0;
-  const hasWhatsApp = [...menu.querySelectorAll('a[href*="wa.me"]')].length > 0;
-
-  if (!hasCall) {
-    const callLink = document.createElement("a");
-    callLink.href = "tel:+212663058222";
-    callLink.className = "menu-quick-action";
-    callLink.textContent = getLocalizedLabel("Appeler", "Call", "اتصال");
-    callLink.addEventListener("click", closeMenu);
-    menu.append(callLink);
-  }
-
-  if (!hasWhatsApp) {
-    const whatsappLink = document.createElement("a");
-    whatsappLink.href = "https://wa.me/212663058222";
-    whatsappLink.className = "menu-quick-action";
-    whatsappLink.textContent = "WhatsApp";
-    whatsappLink.addEventListener("click", closeMenu);
-    menu.append(whatsappLink);
-  }
-};
-
-ensureMobileMenuActions();
-
 if (menuToggle && menu) {
-  menuToggle.addEventListener("click", (event) => {
-    event.stopPropagation();
+  menuToggle.addEventListener("click", () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
     menu.classList.toggle("is-open", !isOpen);
@@ -565,12 +538,6 @@ if (menuToggle && menu) {
   });
 
   menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
-  document.addEventListener("click", (event) => {
-    if (!menu.classList.contains("is-open")) return;
-    if (menu.contains(event.target) || menuToggle.contains(event.target)) return;
-    closeMenu();
-  });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
