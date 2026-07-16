@@ -11,13 +11,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Medical laboratories in Kénitra | Medomicile</title>
-    <meta name="description" content="Medical laboratories in Kénitra with contact details, indicative opening hours, Google ratings and directions once verified." />
+    <meta name="description" content="Find medical laboratories in Kénitra with phone numbers, indicative opening hours, Google ratings and directions." />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="geo.region" content="MA-KEN" />
     <meta name="geo.placename" content="Kenitra, Morocco" />
     <meta name="geo.position" content="34.2610;-6.5802" />
     <meta name="ICBM" content="34.2610, -6.5802" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://www.google.com https://ad.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta property="og:title" content="Medical laboratories in Kénitra | Medomicile" />
     <meta property="og:description" content="Verified laboratory contact details, indicative hours, Google ratings and directions in Kénitra." />
@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260715-17" />
+    <link rel="stylesheet" href="style.css?v=20260716-01" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -48,7 +48,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="laboratories-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="Main navigation">
@@ -78,18 +78,20 @@
           <div><p class="eyebrow">Search</p><h2 id="laboratory-list-title">Verified laboratory list</h2></div>
           <label class="directory-search"><span class="sr-only">Search for a laboratory or district</span><input type="search" placeholder="Search for a laboratory or district..." data-directory-search autocomplete="off" /></label>
         </div>
-        <div class="facility-grid laboratory-grid" data-directory-list></div>
-        <p class="directory-empty laboratory-empty reveal" data-directory-empty>No verified laboratory is published yet. Listings will be added only after contact details, opening hours and Google information are checked.</p>
+        <p class="directory-note laboratory-sort-note reveal">Establishments are displayed according to their Google rating and review count at the time of the latest verification. Ratings may change.</p>
+        <div class="facility-grid laboratory-grid laboratory-sponsored-grid" data-laboratory-sponsored></div>
+        <div class="facility-grid laboratory-grid" data-directory-list data-laboratory-list></div>
+        <p class="directory-empty laboratory-empty reveal" data-directory-empty>Laboratories cannot be loaded for the moment. Please try again or contact Medomicile.</p>
       </section>
       <section class="directory-cta laboratory-sponsor section reveal" aria-labelledby="laboratory-sponsor-title">
         <div>
           <p class="eyebrow">Local visibility</p>
-          <h2 id="laboratory-sponsor-title">Give your laboratory priority visibility</h2>
-          <p>Showcase your laboratory to people searching for medical testing services in Kénitra. A clearly labelled sponsored placement can feature your contact details, opening hours, directions and an authorised photo.</p>
-          <p>Sponsored visibility does not constitute a medical ranking or a traffic guarantee.</p>
-          <p><strong>Contact:</strong> <a href="mailto:contact@medomicile.com?subject=Laboratory%20sponsorship%20request%20Medomicile">contact@medomicile.com</a></p>
+          <h2 id="laboratory-sponsor-title">Improve your laboratory’s visibility in Kénitra</h2>
+          <p>Medomicile offers a clearly labelled sponsored placement where laboratories may present their contact details, opening hours, directions and an authorised photo to people searching for testing services in Kénitra.</p>
+          <p>Sponsored visibility is not a medical ranking or a quality recommendation and does not guarantee traffic or new patients.</p>
+          <p><strong>Contact:</strong> <a href="mailto:contact@medomicile.com?subject=Laboratory%20sponsored%20visibility%20request">contact@medomicile.com</a></p>
         </div>
-        <div class="urgent-actions"><a class="primary-action" href="mailto:contact@medomicile.com?subject=Laboratory%20sponsorship%20request%20Medomicile">Request information</a></div>
+        <div class="urgent-actions"><a class="primary-action" href="mailto:contact@medomicile.com?subject=Laboratory%20sponsored%20visibility%20request">Request information</a></div>
       </section>
       <section class="directory-info section reveal" aria-labelledby="laboratory-ethics-title">
         <h2 id="laboratory-ethics-title">Indicative information</h2>
@@ -102,6 +104,6 @@
       <div class="footer-languages" aria-label="Language selection"><span>Languages</span><a href="laboratoires-kenitra.html" lang="fr">Français</a><a class="is-active" href="laboratories-kenitra.html" lang="en" aria-current="true">English</a><a href="laboratoires-kenitra-ar.html" lang="ar" dir="rtl">العربية</a></div>
     </footer>
     <div class="mobile-sticky-actions" aria-label="Mobile contact"><a class="primary-action" href="tel:+212663058222">Call</a><a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a></div>
-    <script src="script.js?v=20260715-17"></script>
+    <script src="script.js?v=20260716-01"></script>
   </body>
 </html>

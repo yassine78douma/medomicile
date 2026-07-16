@@ -3530,6 +3530,18 @@ h1 {
   background: var(--soft);
 }
 
+.compact-card-details .doctor-line a {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--blue-850);
+  background: transparent;
+  box-shadow: none;
+  font-weight: 900;
+}
+
 .compact-card-details .establishment-actions {
   margin-top: 2px;
   padding-top: 8px;
@@ -4256,6 +4268,11 @@ h1 {
   background: #0b1d2e;
 }
 
+[data-theme="dark"] .compact-card-details .doctor-line a {
+  color: #90c2ff;
+  background: transparent;
+}
+
 @media (max-width: 720px) {
   .breadcrumb {
     margin-top: 10px;
@@ -4860,6 +4877,56 @@ h1 {
   width: 100%;
 }
 
+.laboratory-sponsored-grid:empty {
+  display: none;
+}
+
+.laboratory-sort-note {
+  width: min(100% - 24px, 1040px);
+  margin: -4px auto 16px;
+  color: var(--soft-muted);
+  font-size: 0.92rem;
+  font-weight: 850;
+  line-height: 1.5;
+}
+
+.laboratory-card__image {
+  width: calc(100% - 20px);
+  height: auto;
+  aspect-ratio: 16 / 9;
+  margin: 10px 10px 0;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.laboratory-card .sponsored-badge {
+  margin: 12px 16px 0;
+}
+
+.laboratory-hours {
+  padding: 10px 12px;
+  display: grid;
+  gap: 6px;
+  border-radius: 14px;
+  color: var(--muted);
+  background: var(--soft);
+  font-weight: 800;
+}
+
+.laboratory-hours strong {
+  color: var(--blue-950);
+}
+
+.laboratory-card .maps-link {
+  color: var(--blue-850);
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.laboratories-page .mobile-sticky-actions {
+  display: none;
+}
+
 .sponsored-badge {
   width: fit-content;
   padding: 7px 10px;
@@ -4873,7 +4940,9 @@ h1 {
 }
 
 [dir="rtl"] .laboratory-empty,
-[dir="rtl"] .laboratory-sponsor {
+[dir="rtl"] .laboratory-sponsor,
+[dir="rtl"] .laboratory-sort-note,
+[dir="rtl"] .laboratory-hours {
   text-align: right;
 }
 
@@ -4892,4 +4961,24 @@ h1 {
   color: #f8fafc;
   border-color: rgba(198, 169, 105, 0.42);
   background: rgba(198, 169, 105, 0.16);
+}
+
+[data-theme="dark"] .laboratory-hours {
+  color: #cbd5e1;
+  background: rgba(11, 29, 46, 0.82);
+}
+
+[data-theme="dark"] .laboratory-hours strong {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .laboratory-card .maps-link {
+  color: #f8fafc;
+  background: #0b1d2e;
+}
+
+@media (max-width: 600px) {
+  .laboratory-card .establishment-actions {
+    grid-template-columns: 1fr;
+  }
 }

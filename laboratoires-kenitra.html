@@ -11,13 +11,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laboratoires d’analyses médicales à Kénitra | Medomicile</title>
-    <meta name="description" content="Liste des laboratoires d’analyses médicales à Kénitra avec coordonnées, horaires indicatifs, notes Google et itinéraires." />
+    <meta name="description" content="Retrouvez les laboratoires d’analyses médicales à Kénitra avec leurs téléphones, horaires indicatifs, notes Google et itinéraires." />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="geo.region" content="MA-KEN" />
     <meta name="geo.placename" content="Kenitra, Morocco" />
     <meta name="geo.position" content="34.2610;-6.5802" />
     <meta name="ICBM" content="34.2610, -6.5802" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://www.google.com https://ad.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me mailto:" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta property="og:title" content="Laboratoires d’analyses médicales à Kénitra | Medomicile" />
     <meta property="og:description" content="Coordonnées vérifiées, horaires indicatifs, notes Google et itinéraires des laboratoires à Kénitra." />
@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260715-17" />
+    <link rel="stylesheet" href="style.css?v=20260716-01" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -48,7 +48,7 @@
       }
     </script>
   </head>
-  <body>
+  <body class="laboratories-page">
     <a class="skip-link" href="#main">Aller au contenu</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="Navigation principale">
@@ -78,18 +78,20 @@
           <div><p class="eyebrow">Recherche</p><h2 id="laboratory-list-title">Liste des laboratoires vérifiés</h2></div>
           <label class="directory-search"><span class="sr-only">Rechercher un laboratoire ou un quartier</span><input type="search" placeholder="Rechercher un laboratoire ou un quartier..." data-directory-search autocomplete="off" /></label>
         </div>
-        <div class="facility-grid laboratory-grid" data-directory-list></div>
-        <p class="directory-empty laboratory-empty reveal" data-directory-empty>Aucun laboratoire vérifié n’est publié pour le moment. Les fiches seront ajoutées uniquement après vérification des coordonnées, horaires et informations Google.</p>
+        <p class="directory-note laboratory-sort-note reveal">Les établissements sont présentés selon leur note Google et leur nombre d’avis au moment de la dernière vérification. Les notes peuvent évoluer.</p>
+        <div class="facility-grid laboratory-grid laboratory-sponsored-grid" data-laboratory-sponsored></div>
+        <div class="facility-grid laboratory-grid" data-directory-list data-laboratory-list></div>
+        <p class="directory-empty laboratory-empty reveal" data-directory-empty>Les laboratoires ne peuvent pas être chargés pour le moment. Veuillez réessayer ou contacter Medomicile.</p>
       </section>
       <section class="directory-cta laboratory-sponsor section reveal" aria-labelledby="laboratory-sponsor-title">
         <div>
           <p class="eyebrow">Visibilité locale</p>
-          <h2 id="laboratory-sponsor-title">Votre laboratoire peut bénéficier d’une visibilité prioritaire</h2>
-          <p>Présentez votre établissement aux personnes recherchant un laboratoire d’analyses médicales à Kénitra. Un emplacement sponsorisé clairement identifié peut mettre en avant vos coordonnées, vos horaires, votre itinéraire et une photo officielle.</p>
-          <p>Cette visibilité ne constitue pas un classement médical ni une garantie de trafic.</p>
-          <p><strong>Contact :</strong> <a href="mailto:contact@medomicile.com?subject=Demande%20de%20sponsorisation%20laboratoire%20Medomicile">contact@medomicile.com</a></p>
+          <h2 id="laboratory-sponsor-title">Développez la visibilité de votre laboratoire à Kénitra</h2>
+          <p>Vous représentez un laboratoire d’analyses médicales à Kénitra ? Medomicile propose un emplacement sponsorisé clairement identifié permettant de présenter votre établissement, vos coordonnées, vos horaires, votre itinéraire et une photo officielle aux personnes recherchant un laboratoire dans la ville.</p>
+          <p>L’emplacement sponsorisé ne constitue ni un classement médical ni une recommandation de qualité. Il peut contribuer à renforcer la visibilité locale de votre établissement, sans garantie de trafic ou de nouveaux patients.</p>
+          <p><strong>Contact :</strong> <a href="mailto:contact@medomicile.com?subject=Demande%20de%20visibilite%20sponsorisee%20pour%20un%20laboratoire">contact@medomicile.com</a></p>
         </div>
-        <div class="urgent-actions"><a class="primary-action" href="mailto:contact@medomicile.com?subject=Demande%20de%20sponsorisation%20laboratoire%20Medomicile">Demander des informations</a></div>
+        <div class="urgent-actions"><a class="primary-action" href="mailto:contact@medomicile.com?subject=Demande%20de%20visibilite%20sponsorisee%20pour%20un%20laboratoire">Demander des informations</a></div>
       </section>
       <section class="directory-info section reveal" aria-labelledby="laboratory-ethics-title">
         <h2 id="laboratory-ethics-title">Informations indicatives</h2>
@@ -102,6 +104,6 @@
       <div class="footer-languages" aria-label="Choix de langue"><span>Langues</span><a class="is-active" href="laboratoires-kenitra.html" lang="fr" aria-current="true">Français</a><a href="laboratories-kenitra.html" lang="en">English</a><a href="laboratoires-kenitra-ar.html" lang="ar" dir="rtl">العربية</a></div>
     </footer>
     <div class="mobile-sticky-actions" aria-label="Contact mobile"><a class="primary-action" href="tel:+212663058222">Appeler</a><a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a></div>
-    <script src="script.js?v=20260715-17"></script>
+    <script src="script.js?v=20260716-01"></script>
   </body>
 </html>

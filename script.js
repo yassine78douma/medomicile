@@ -21,6 +21,8 @@ const ambientCanvases = document.querySelectorAll("[data-ambient-canvas]");
 const directorySearch = document.querySelector("[data-directory-search]");
 const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
+const laboratoryList = document.querySelector("[data-laboratory-list]");
+const laboratorySponsoredList = document.querySelector("[data-laboratory-sponsored]");
 const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
 const featuredClinicGalleries = document.querySelectorAll("[data-featured-clinic-gallery]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
@@ -947,7 +949,7 @@ const toggleCompactCard = (card) => {
   const isOpen = card.classList.contains("is-open");
 
   if (!isOpen && window.matchMedia("(max-width: 720px)").matches) {
-    establishmentCards.forEach((otherCard) => {
+    document.querySelectorAll(".facility-card, .doctor-card, .laboratory-card").forEach((otherCard) => {
       if (otherCard !== card) closeCompactCard(otherCard);
     });
   }
@@ -1057,6 +1059,258 @@ const enhanceEstablishmentCards = () => {
   });
 };
 
+const laboratoryTranslations = {
+  fr: {
+    type: "Laboratoire d’analyses médicales",
+    call: "Appeler",
+    directions: "Itinéraire",
+    maps: "Voir sur Google Maps",
+    googleUnavailable: "Note Google non disponible",
+    reviews: "avis",
+    sponsored: "SPONSORISÉ",
+    phone: "Téléphone",
+    phoneToConfirm: "Téléphone à confirmer",
+    hours: "Horaires",
+    hoursToConfirm: "Horaire à confirmer",
+    lastVerified: "Dernière vérification",
+    informationToConfirm: "Information à confirmer",
+    loadError: "Les laboratoires ne peuvent pas être chargés pour le moment. Veuillez réessayer ou contacter Medomicile.",
+  },
+  en: {
+    type: "Medical laboratory",
+    call: "Call",
+    directions: "Directions",
+    maps: "View on Google Maps",
+    googleUnavailable: "Google rating unavailable",
+    reviews: "reviews",
+    sponsored: "SPONSORED",
+    phone: "Phone",
+    phoneToConfirm: "Phone to be confirmed",
+    hours: "Opening hours",
+    hoursToConfirm: "Hours to be confirmed",
+    lastVerified: "Latest verification",
+    informationToConfirm: "Information to be confirmed",
+    loadError: "Laboratories cannot be loaded for the moment. Please try again or contact Medomicile.",
+  },
+  ar: {
+    type: "مختبر للتحاليل الطبية",
+    call: "اتصال",
+    directions: "المسار",
+    maps: "عرض على Google Maps",
+    googleUnavailable: "تقييم Google غير متوفر",
+    reviews: "مراجعة",
+    sponsored: "إعلان ممول",
+    phone: "الهاتف",
+    phoneToConfirm: "الهاتف يحتاج إلى تأكيد",
+    hours: "أوقات العمل",
+    hoursToConfirm: "أوقات العمل تحتاج إلى تأكيد",
+    lastVerified: "آخر تحقق",
+    informationToConfirm: "المعلومة تحتاج إلى تأكيد",
+    loadError: "لا يمكن تحميل المختبرات حالياً. يرجى المحاولة من جديد أو التواصل مع Medomicile.",
+  },
+};
+
+const getLanguageKey = () => {
+  if (isArabicPage) return "ar";
+  if (isEnglishPage) return "en";
+  return "fr";
+};
+
+const getLaboratoryText = () => laboratoryTranslations[getLanguageKey()];
+
+const isSponsorActive = (lab) => {
+  if (!lab?.sponsored) return false;
+  const today = new Date();
+  const start = lab.sponsorStartDate ? new Date(`${lab.sponsorStartDate}T00:00:00`) : null;
+  const end = lab.sponsorEndDate ? new Date(`${lab.sponsorEndDate}T23:59:59`) : null;
+  if (start && today < start) return false;
+  if (end && today > end) return false;
+  return true;
+};
+
+const hasNumericRating = (lab) => Number.isFinite(Number(lab.rating));
+const hasNumericReviewCount = (lab) => Number.isFinite(lab.reviewCount);
+
+const sortLaboratories = (laboratories) =>
+  [...laboratories].sort((a, b) => {
+    const ratingA = hasNumericRating(a) ? Number(a.rating) : -1;
+    const ratingB = hasNumericRating(b) ? Number(b.rating) : -1;
+
+    if (ratingB !== ratingA) return ratingB - ratingA;
+
+    const reviewsA = hasNumericReviewCount(a) ? Number(a.reviewCount) : 0;
+    const reviewsB = hasNumericReviewCount(b) ? Number(b.reviewCount) : 0;
+
+    if (reviewsB !== reviewsA) return reviewsB - reviewsA;
+
+    return String(a.name || "").localeCompare(String(b.name || ""), "fr", { sensitivity: "base" });
+  });
+
+const getDirectionsUrl = (lab) => {
+  const url = String(lab.mapsUrl || "");
+  const query = url.match(/[?&]q=([^&]+)/)?.[1];
+  const destination = query ? decodeURIComponent(query.replace(/\+/g, " ")) : lab.name;
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+};
+
+const getLocalizedHours = (hours) => {
+  if (!Array.isArray(hours)) return [];
+  if (!isArabicPage && !isEnglishPage) return hours;
+  return hours.map((line) => {
+    if (isEnglishPage) {
+      return line
+        .replace("Lun–Ven", "Mon–Fri")
+        .replace("Sam", "Sat")
+        .replace("Dim", "Sun")
+        .replace("à confirmer", "to be confirmed");
+    }
+    return line
+      .replace("Lun–Ven", "الإثنين–الجمعة")
+      .replace("Sam", "السبت")
+      .replace("Dim", "الأحد")
+      .replace("à confirmer", "تحتاج إلى تأكيد");
+  });
+};
+
+const formatLaboratoryRating = (lab) => {
+  const text = getLaboratoryText();
+  if (!hasNumericRating(lab)) {
+    return {
+      label: text.googleUnavailable,
+      stars: "",
+    };
+  }
+
+  const rating = Math.max(0, Math.min(5, Number(lab.rating)));
+  const rounded = Math.round(rating);
+  const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
+  const reviews = hasNumericReviewCount(lab) ? ` · ${Number(lab.reviewCount)} ${text.reviews}` : "";
+  return {
+    label: `${rating.toFixed(1).replace(".", isEnglishPage ? "." : ",")} Google${reviews}`,
+    stars,
+  };
+};
+
+const updateLaboratoryItemListJsonLd = (labs) => {
+  if (!laboratoryList || !labs.length) return;
+
+  document.querySelector("[data-laboratory-itemlist-jsonld]")?.remove();
+
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: sortLaboratories(labs).map((lab, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "MedicalBusiness",
+        name: lab.name,
+        url: lab.mapsUrl,
+        telephone: lab.phone || undefined,
+      },
+    })),
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.dataset.laboratoryItemlistJsonld = "true";
+  script.textContent = JSON.stringify(itemList);
+  document.head.append(script);
+};
+
+const createLaboratoryCard = (lab, options = {}) => {
+  const text = getLaboratoryText();
+  const rating = formatLaboratoryRating(lab);
+  const card = document.createElement("article");
+  card.className = `facility-card laboratory-card compact-card reveal is-visible${options.sponsored ? " sponsored-card" : ""}`;
+  card.dataset.search = [lab.name, lab.shortName, lab.phone, ...(lab.hours || [])].filter(Boolean).join(" ");
+
+  const panelId = `laboratory-${lab.id}-details`;
+  const phoneHtml = lab.phone && lab.phoneHref
+    ? `<p class="doctor-line"><span aria-hidden="true">☎</span><a dir="ltr" href="${lab.phoneHref}">${lab.phone}</a></p>`
+    : `<p class="doctor-line facility-muted"><span aria-hidden="true">☎</span><span>${text.phoneToConfirm}</span></p>`;
+  const hours = getLocalizedHours(lab.hours);
+  const hoursHtml = hours.length
+    ? `<div class="laboratory-hours"><strong>${text.hours}</strong>${hours.map((hour) => `<span>${hour}</span>`).join("")}</div>`
+    : `<p class="facility-muted">${text.hoursToConfirm}</p>`;
+  const unverified = [
+    lab.verifiedPhone === false ? text.phoneToConfirm : "",
+    lab.verifiedHours === false ? text.hoursToConfirm : "",
+  ].filter(Boolean);
+  const unverifiedHtml = unverified.length
+    ? `<p class="facility-muted">${unverified.join(" · ")}</p>`
+    : "";
+  const imageHtml = options.sponsored && lab.image
+    ? `<img class="laboratory-card__image" src="${lab.image}" width="720" height="420" loading="lazy" decoding="async" alt="${lab.name}" />`
+    : "";
+
+  card.innerHTML = `
+    ${imageHtml}
+    ${options.sponsored ? `<span class="sponsored-badge">${text.sponsored}</span>` : ""}
+    <button class="compact-card-toggle" type="button" aria-expanded="false" aria-controls="${panelId}" aria-label="${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${lab.name}">
+      <span class="compact-card-title">
+        <strong>${lab.name}</strong>
+        <small>${text.type}</small>
+      </span>
+      <span class="compact-rating" aria-label="${rating.label}">
+        ${rating.stars ? `<span aria-hidden="true">${rating.stars}</span>` : ""}
+        <b>${rating.label}</b>
+      </span>
+      <span class="compact-chevron" aria-hidden="true">⌄</span>
+    </button>
+    <div class="compact-card-details" id="${panelId}" hidden>
+      ${phoneHtml}
+      ${hoursHtml}
+      ${unverifiedHtml}
+      <p class="facility-muted">${text.lastVerified} : ${lab.lastVerified || "2026-07-16"}</p>
+      <div class="establishment-actions">
+        ${lab.phoneHref ? `<a class="establishment-action call" href="${lab.phoneHref}" aria-label="${text.call} ${lab.name}"><span aria-hidden="true">☎</span>${text.call}</a>` : ""}
+        <a class="establishment-action directions" href="${getDirectionsUrl(lab)}" target="_blank" rel="noopener noreferrer" aria-label="${text.directions} ${lab.name}"><span aria-hidden="true">⌖</span>${text.directions}</a>
+        <a class="establishment-action directions maps-link" href="${lab.mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${text.maps} ${lab.name}"><span aria-hidden="true">↗</span>${text.maps}</a>
+      </div>
+    </div>
+  `;
+
+  card.querySelector(".compact-card-toggle")?.addEventListener("click", () => toggleCompactCard(card));
+  return card;
+};
+
+const renderLaboratories = (data) => {
+  if (!laboratoryList) return;
+  const labs = Array.isArray(data?.laboratories) ? data.laboratories.filter((lab) => lab.verified) : [];
+  const sponsored = labs.filter(isSponsorActive);
+  const organic = sortLaboratories(labs.filter((lab) => !isSponsorActive(lab)));
+
+  laboratoryList.innerHTML = "";
+  laboratorySponsoredList && (laboratorySponsoredList.innerHTML = "");
+
+  sponsored.forEach((lab) => laboratorySponsoredList?.append(createLaboratoryCard(lab, { sponsored: true })));
+  organic.forEach((lab) => laboratoryList.append(createLaboratoryCard(lab)));
+
+  if (directoryEmpty) {
+    directoryEmpty.hidden = Boolean(labs.length);
+    directoryEmpty.textContent = getLaboratoryText().loadError;
+  }
+
+  updateLaboratoryItemListJsonLd(labs);
+  initDirectorySearch();
+};
+
+const loadLaboratories = async () => {
+  if (!laboratoryList) return;
+
+  try {
+    const response = await fetch(`data/laboratoires-kenitra.json?cache=20260716-01`);
+    if (!response.ok) throw new Error("Laboratory data unavailable");
+    renderLaboratories(await response.json());
+  } catch (error) {
+    if (directoryEmpty) {
+      directoryEmpty.hidden = false;
+      directoryEmpty.textContent = getLaboratoryText().loadError;
+    }
+  }
+};
+
 const initFeaturedClinicGalleries = () => {
   featuredClinicGalleries.forEach((gallery) => {
     const images = [...gallery.querySelectorAll("img")];
@@ -1138,6 +1392,7 @@ if ("IntersectionObserver" in window) {
 
 updateMediaScale();
 loadPharmacies();
+loadLaboratories();
 initFeaturedClinicGalleries();
 enhanceEstablishmentCards();
 initDirectorySearch();
