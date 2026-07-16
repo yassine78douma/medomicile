@@ -980,6 +980,40 @@ const toggleCompactCard = (card) => {
   });
 };
 
+const sortHospitalFacilityCards = () => {
+  const section = document.querySelector("#hopitaux");
+  const grid = section?.querySelector(".facility-grid");
+  if (!grid) return;
+
+  const getRating = (card) => {
+    const raw = card.querySelector(".facility-head strong")?.textContent || "";
+    const match = raw.match(/\d+(?:[,.]\d+)?/);
+    return match ? Number(match[0].replace(",", ".")) : -1;
+  };
+
+  const getReviews = (card) => {
+    const raw = card.querySelector(".facility-head strong")?.textContent || "";
+    const match = raw.match(/(\d+)\s*avis/i);
+    return match ? Number(match[1]) : 0;
+  };
+
+  const getName = (card) => card.querySelector("h3")?.textContent?.trim() || "";
+
+  [...grid.querySelectorAll(".facility-card")]
+    .sort((a, b) => {
+      const ratingDiff = getRating(b) - getRating(a);
+      if (ratingDiff) return ratingDiff;
+
+      const reviewDiff = getReviews(b) - getReviews(a);
+      if (reviewDiff) return reviewDiff;
+
+      return getName(a).localeCompare(getName(b), document.documentElement.lang || "fr", {
+        sensitivity: "base",
+      });
+    })
+    .forEach((card) => grid.append(card));
+};
+
 const enhanceEstablishmentCards = () => {
   establishmentCards.forEach((card) => {
     if (card.querySelector(".compact-card-toggle")) return;
@@ -1394,6 +1428,7 @@ updateMediaScale();
 loadPharmacies();
 loadLaboratories();
 initFeaturedClinicGalleries();
+sortHospitalFacilityCards();
 enhanceEstablishmentCards();
 initDirectorySearch();
 window.addEventListener("scroll", updateMediaScale, { passive: true });

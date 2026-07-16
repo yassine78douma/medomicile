@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const SOURCE_URL = "https://pharmaciedegardekenitra.com/";
-const SOURCE_API_URL = "https://pharmaciedegardekenitra.com/wp-json/wp/v2/pages/3846";
+const SOURCE_URL = "";
+const SOURCE_API_URL = "";
 const OUTPUT = new URL("../data/pharmacies-garde.json", import.meta.url);
 const SCRIPT = new URL("../script.js", import.meta.url);
 const FETCH_RETRIES = 4;
@@ -53,6 +53,8 @@ const splitNames = (value) => {
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const fetchTextWithRetries = async (url) => {
+  if (!url) throw new Error("No external pharmacy source configured");
+
   let lastError;
 
   for (let attempt = 1; attempt <= FETCH_RETRIES; attempt += 1) {
@@ -83,21 +85,7 @@ const fetchTextWithRetries = async (url) => {
 };
 
 const fetchHtml = async () => {
-  try {
-    const jsonText = await fetchTextWithRetries(SOURCE_API_URL);
-    const page = JSON.parse(jsonText);
-    return {
-      html: `${page.title?.rendered || ""}\n${page.content?.rendered || ""}`,
-      updatedAt: page.modified ? `${page.modified}+01:00` : "",
-    };
-  } catch (error) {
-    console.warn(`WordPress API source failed, retrying public page: ${error.message}`);
-  }
-
-  return {
-    html: await fetchTextWithRetries(SOURCE_URL),
-    updatedAt: "",
-  };
+  throw new Error("External pharmacy source disabled. Update data/pharmacies-garde.json from the official poster.");
 };
 
 const parsePharmacies = (html) => {
@@ -217,19 +205,19 @@ const run = async () => {
   }
 
   const data = {
-    source: SOURCE_URL,
+    source: "Affiche officielle fournie à Medomicile",
     updatedAt,
     title: `Pharmacies de garde Kenitra - ${readableDate}`,
     image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
     updateFrequency: "automatic-4-times-per-day-data-weekly-manual-image",
     note:
-      "Données texte actualisées automatiquement 4 fois par jour depuis pharmaciedegardekenitra.com. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
+      "Données texte à vérifier depuis l'affiche officielle fournie à Medomicile. Les pharmacies ouvrent généralement de 9h à 13h puis de 16h à 20h. La pharmacie de garde reste ouverte 24h/24 à partir de 9h du matin. L'affiche image reste mise à jour manuellement une fois par semaine. Appelez la pharmacie avant de vous déplacer.",
     pharmacies: pharmacies.map((pharmacy) => ({ ...pharmacy, date: readableDate })),
   };
 
   await writeFile(OUTPUT, `${JSON.stringify(data, null, 2)}\n`);
   await updateScriptFallback(data);
-  console.log(`Updated ${pharmacies.length} pharmacies from ${SOURCE_URL}`);
+  console.log(`Updated ${pharmacies.length} pharmacies from official poster data`);
 };
 
 run().catch((error) => {

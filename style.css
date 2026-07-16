@@ -1874,6 +1874,17 @@ h1 {
   background: rgba(255, 255, 255, 0.74);
 }
 
+.google-review-list {
+  display: grid;
+  gap: 12px;
+}
+
+.google-review-meta {
+  margin-bottom: 6px !important;
+  color: #8a6a15 !important;
+  font-weight: 900;
+}
+
 .google-review-icon {
   width: 48px;
   height: 48px;
@@ -2036,6 +2047,35 @@ h1 {
 .footer a {
   color: var(--blue-850);
   font-weight: 900;
+}
+
+.footer-social {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-social a {
+  min-height: 36px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--blue-850);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  line-height: 1;
+  text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(47, 128, 237, 0.34);
 }
 
 .footer-languages {
@@ -2865,6 +2905,10 @@ h1 {
 
 .footer-languages {
   grid-column: 1 / -1;
+  justify-content: center;
+}
+
+.footer-social {
   justify-content: center;
 }
 }
