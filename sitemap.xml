@@ -280,9 +280,33 @@
   </url>
   <url>
     <loc>https://medomicile.com/medecins-kenitra.html</loc>
-    <lastmod>2026-07-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/medecins-kenitra.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/medecins-kenitra-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/medecins-kenitra-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/medecins-kenitra.html" />
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://medomicile.com/medecins-kenitra-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/medecins-kenitra.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/medecins-kenitra-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/medecins-kenitra-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/medecins-kenitra.html" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://medomicile.com/medecins-kenitra-ar.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/medecins-kenitra.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/medecins-kenitra-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/medecins-kenitra-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/medecins-kenitra.html" />
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://medomicile.com/tous-les-medecins-kenitra.html</loc>
