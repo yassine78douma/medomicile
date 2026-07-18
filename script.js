@@ -23,15 +23,249 @@ const directoryList = document.querySelector("[data-directory-list]");
 const directoryEmpty = document.querySelector("[data-directory-empty]");
 const laboratoryList = document.querySelector("[data-laboratory-list]");
 const laboratorySponsoredList = document.querySelector("[data-laboratory-sponsored]");
+const radiologyList = document.querySelector("[data-radiology-list]");
+const radiologyCount = document.querySelector("[data-radiology-count]");
+const radiologyFilters = document.querySelectorAll("[data-radiology-filter]");
 const establishmentCards = document.querySelectorAll(".facility-card, .doctor-card");
 const featuredClinicGalleries = document.querySelectorAll("[data-featured-clinic-gallery]");
 const isArabicPage = document.documentElement.lang?.startsWith("ar");
 const isEnglishPage = document.documentElement.lang?.startsWith("en");
+const newCabinetsCarousels = document.querySelectorAll("[data-new-cabinets-carousel]");
+const specialtyProfessionalSlots = document.querySelectorAll("[data-specialty-professional-slots]");
+const directoryFooterCtas = document.querySelectorAll("[data-directory-footer-cta]");
+
+const normalizeText = (value = "") =>
+  String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
 
 const localizedPage = (baseName) => {
   if (isArabicPage) return `${baseName}-ar.html`;
   if (isEnglishPage) return `${baseName}-en.html`;
   return `${baseName}.html`;
+};
+
+const newMedicalCabinets = [
+  {
+    id: "ophthalmology-principale-building",
+    status: "coming",
+    name: {
+      fr: "Cabinet d’ophtalmologie en préparation",
+      en: "Ophthalmology practice in preparation",
+      ar: "عيادة طب العيون قيد التحضير"
+    },
+    specialty: { fr: "Ophtalmologie", en: "Ophthalmology", ar: "طب العيون" },
+    district: {
+      fr: "Immeuble de la Pharmacie Principale",
+      en: "Pharmacie Principale building",
+      ar: "عمارة الصيدلية الرئيسية"
+    },
+    href: "ophtalmologues-kenitra",
+    image: "assets/cabinets/cabinet-ophtalmologie-pharmacie-principale.jpg"
+  },
+  {
+    id: "dental-haddada-congress",
+    status: "coming",
+    name: {
+      fr: "Cabinet dentaire en préparation",
+      en: "Dental practice in preparation",
+      ar: "عيادة طب الأسنان قيد التحضير"
+    },
+    specialty: { fr: "Dentisterie", en: "Dentistry", ar: "طب الأسنان" },
+    district: {
+      fr: "Haddada, près Café Congress",
+      en: "Haddada, near Café Congress",
+      ar: "الحدادة، قرب مقهى كونغرس"
+    },
+    href: "dentistes-kenitra",
+    image: "assets/cabinets/cabinet-dentaire-haddada-congress.jpg"
+  },
+  {
+    id: "laboratory-rx-alhilal",
+    status: "coming",
+    name: {
+      fr: "Laboratoire d’analyses en préparation",
+      en: "Medical laboratory in preparation",
+      ar: "مختبر تحاليل قيد التحضير"
+    },
+    specialty: { fr: "Analyses médicales", en: "Medical testing", ar: "تحاليل طبية" },
+    district: {
+      fr: "À côté du centre RX Al Hilal",
+      en: "Next to RX Al Hilal center",
+      ar: "بجانب مركز الأشعة الهلال"
+    },
+    href: {
+      fr: "laboratoires-kenitra.html",
+      en: "laboratories-kenitra.html",
+      ar: "laboratoires-kenitra-ar.html"
+    },
+    image: "assets/cabinets/laboratoire-rx-alhilal.jpg"
+  },
+  {
+    id: "clinique-internationale-kenitra",
+    status: "recent",
+    name: {
+      fr: "Clinique Internationale de Kénitra",
+      en: "Clinique Internationale de Kénitra",
+      ar: "المصحة الدولية بالقنيطرة"
+    },
+    specialty: {
+      fr: "Clinique récemment ouverte",
+      en: "Recently opened clinic",
+      ar: "مصحة افتتحت حديثاً"
+    },
+    district: {
+      fr: "Kénitra, zone centrale",
+      en: "Kenitra, central area",
+      ar: "القنيطرة، المنطقة المركزية"
+    },
+    href: {
+      fr: "hopitaux.html",
+      en: "hopitaux-en.html",
+      ar: "hopitaux-ar.html"
+    },
+    image: "assets/partners/clinical-international/exterieur-principal.jpg"
+  }
+];
+
+const newCabinetTranslations = {
+  fr: {
+    name: "Cabinet médical en préparation",
+    button: "Voir la fiche",
+    statuses: {
+      new: "Nouveau cabinet",
+      coming: "Ouverture prochaine",
+      recent: "Ouverture récente"
+    }
+  },
+  en: {
+    name: "Medical practice in preparation",
+    button: "View profile",
+    statuses: {
+      new: "New practice",
+      coming: "Opening soon",
+      recent: "Recently opened"
+    }
+  },
+  ar: {
+    name: "عيادة طبية قيد التحضير",
+    button: "عرض الصفحة",
+    statuses: {
+      new: "عيادة جديدة",
+      coming: "افتتاح قريب",
+      recent: "افتتاح حديث"
+    }
+  }
+};
+
+const currentLang = isArabicPage ? "ar" : isEnglishPage ? "en" : "fr";
+
+const directoryFooterCtaTranslations = {
+  fr: {
+    eyebrow: "Medomicile",
+    title: "Besoin d’une prise en charge à domicile ?",
+    text: "Contactez Medomicile pour une consultation médicale, des soins à domicile ou un transport sanitaire selon votre situation et la disponibilité des équipes.",
+    call: "Appeler",
+    whatsapp: "WhatsApp"
+  },
+  en: {
+    eyebrow: "Medomicile",
+    title: "Need home healthcare support?",
+    text: "Contact Medomicile for a home medical consultation, home care or medical transport depending on your situation and team availability.",
+    call: "Call",
+    whatsapp: "WhatsApp"
+  },
+  ar: {
+    eyebrow: "Medomicile",
+    title: "هل تحتاجون إلى رعاية صحية في المنزل؟",
+    text: "تواصلوا مع Medomicile من أجل استشارة طبية في المنزل، أو رعاية منزلية، أو نقل صحي حسب الحالة وتوفر الفرق.",
+    call: "اتصال",
+    whatsapp: "WhatsApp"
+  }
+};
+
+const specialtyPageText = {
+  cardiologues: { fr: { singular: "cardiologue", plural: "cardiologues" }, en: { singular: "cardiologist", plural: "cardiologists" }, ar: { singular: "طبيب قلب", plural: "أطباء القلب" } },
+  neurologues: { fr: { singular: "neurologue", plural: "neurologues" }, en: { singular: "neurologist", plural: "neurologists" }, ar: { singular: "طبيب أعصاب", plural: "أطباء الأعصاب" } },
+  traumatologues: { fr: { singular: "traumatologue et orthopédiste", plural: "traumatologues et orthopédistes" }, en: { singular: "trauma and orthopedic specialist", plural: "trauma and orthopedic specialists" }, ar: { singular: "طبيب عظام ومفاصل", plural: "أطباء العظام والمفاصل" } },
+  gynecologues: { fr: { singular: "gynécologue", plural: "gynécologues" }, en: { singular: "gynecologist", plural: "gynecologists" }, ar: { singular: "طبيب نساء وتوليد", plural: "أطباء النساء والتوليد" } },
+  pediatres: { fr: { singular: "pédiatre", plural: "pédiatres" }, en: { singular: "pediatrician", plural: "pediatricians" }, ar: { singular: "طبيب أطفال", plural: "أطباء الأطفال" } },
+  dentistes: { fr: { singular: "dentiste", plural: "dentistes" }, en: { singular: "dentist", plural: "dentists" }, ar: { singular: "طبيب أسنان", plural: "أطباء الأسنان" } },
+  dermatologues: { fr: { singular: "dermatologue", plural: "dermatologues" }, en: { singular: "dermatologist", plural: "dermatologists" }, ar: { singular: "طبيب جلد", plural: "أطباء الجلد" } },
+  ophtalmologues: { fr: { singular: "ophtalmologue", plural: "ophtalmologues" }, en: { singular: "ophthalmologist", plural: "ophthalmologists" }, ar: { singular: "طبيب عيون", plural: "أطباء العيون" } },
+  pneumologues: { fr: { singular: "pneumologue", plural: "pneumologues" }, en: { singular: "pulmonologist", plural: "pulmonologists" }, ar: { singular: "طبيب أمراض تنفسية", plural: "أطباء الأمراض التنفسية" } },
+  internistes: { fr: { singular: "interniste", plural: "internistes" }, en: { singular: "internist", plural: "internists" }, ar: { singular: "طبيب باطني", plural: "أطباء الباطنة" } },
+  visceralistes: { fr: { singular: "chirurgien viscéraliste", plural: "chirurgiens viscéralistes" }, en: { singular: "visceral surgeon", plural: "visceral surgeons" }, ar: { singular: "جراح أحشاء", plural: "جراحو الأحشاء" } },
+  endocrinologues: { fr: { singular: "endocrinologue", plural: "endocrinologues" }, en: { singular: "endocrinologist", plural: "endocrinologists" }, ar: { singular: "طبيب غدد وسكري", plural: "أطباء الغدد والسكري" } },
+  orl: { fr: { singular: "ORL", plural: "ORL" }, en: { singular: "ENT specialist", plural: "ENT specialists" }, ar: { singular: "طبيب أنف وأذن وحنجرة", plural: "أطباء الأنف والأذن والحنجرة" } },
+  urologues: { fr: { singular: "urologue", plural: "urologues" }, en: { singular: "urologist", plural: "urologists" }, ar: { singular: "طبيب مسالك بولية", plural: "أطباء المسالك البولية" } },
+  rhumatologues: { fr: { singular: "rhumatologue", plural: "rhumatologues" }, en: { singular: "rheumatologist", plural: "rheumatologists" }, ar: { singular: "طبيب روماتيزم", plural: "أطباء الروماتيزم" } },
+};
+
+const professionalSlotTranslations = {
+  fr: {
+    city: "Kénitra",
+    badge: "ESPACE PROFESSIONNEL",
+    button: "Découvrir l’espace professionnel",
+    mention: "Emplacement professionnel clairement identifié.",
+    templates: [
+      {
+        title: ({ singular, city }) => `Vous êtes ${singular} à ${city} ?`,
+        text: () => "Développez votre visibilité sur Medomicile."
+      },
+      {
+        title: ({ city }) => `Présentez votre cabinet aux patients de ${city}.`,
+        text: () => "Un espace professionnel clair et facilement accessible."
+      },
+      {
+        title: () => "Rejoignez l’annuaire médical Medomicile.",
+        text: () => "Ajoutez vos coordonnées, horaires et itinéraire."
+      }
+    ]
+  },
+  en: {
+    city: "Kenitra",
+    badge: "PROFESSIONAL SPACE",
+    button: "Discover the professional space",
+    mention: "Clearly identified professional placement.",
+    templates: [
+      {
+        title: ({ singular, city }) => `Are you a ${singular} in ${city}?`,
+        text: () => "Increase your visibility on Medomicile."
+      },
+      {
+        title: ({ city }) => `Present your practice to patients in ${city}.`,
+        text: () => "A clear professional space that is easy to access."
+      },
+      {
+        title: () => "Join the Medomicile medical directory.",
+        text: () => "Add your contact details, opening hours and directions."
+      }
+    ]
+  },
+  ar: {
+    city: "القنيطرة",
+    badge: "مساحة مهنية",
+    button: "اكتشف المساحة المهنية",
+    mention: "مساحة مهنية موضحة بشكل واضح.",
+    templates: [
+      {
+        title: ({ singular, city }) => `هل أنت ${singular} في ${city}؟`,
+        text: () => "عزّز ظهور عيادتك على Medomicile."
+      },
+      {
+        title: ({ city }) => `قدّموا عيادتكم للمرضى في ${city}.`,
+        text: () => "مساحة مهنية واضحة وسهلة الوصول."
+      },
+      {
+        title: () => "انضموا إلى دليل Medomicile الطبي.",
+        text: () => "أضيفوا معلومات الاتصال، أوقات العمل والمسار."
+      }
+    ]
+  }
 };
 
 if ("scrollRestoration" in history) {
@@ -174,7 +408,7 @@ ambientCanvases.forEach(initAmbientCanvas);
 
 const galleryItems = [
   {
-    src: "assets/gallery/ambulance-exterieur-01.jpg",
+    src: "assets/optimized/gallery/ambulance-exterieur-01.jpg",
     title: "Ambulance disponible",
     titleEn: "Ambulance available",
     titleAr: "سيارة إسعاف متاحة",
@@ -183,7 +417,7 @@ const galleryItems = [
     altAr: "سيارة إسعاف من الخارج",
   },
   {
-    src: "assets/gallery/ambulance-interieur-01.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-01.jpg",
     title: "Intérieur ambulance équipé",
     titleEn: "Equipped ambulance interior",
     titleAr: "داخل سيارة إسعاف مجهز",
@@ -192,7 +426,7 @@ const galleryItems = [
     altAr: "داخل سيارة الإسعاف",
   },
   {
-    src: "assets/gallery/ambulance-exterieur-02.jpg",
+    src: "assets/optimized/gallery/ambulance-exterieur-02.jpg",
     title: "Ambulance prête au départ",
     titleEn: "Ambulance ready to move",
     titleAr: "سيارة إسعاف جاهزة",
@@ -201,7 +435,7 @@ const galleryItems = [
     altAr: "سيارة إسعاف مفتوحة",
   },
   {
-    src: "assets/gallery/ambulance-interieur-02.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-02.jpg",
     title: "Brancard et oxygène",
     titleEn: "Stretcher and oxygen",
     titleAr: "نقالة وأكسجين",
@@ -210,7 +444,7 @@ const galleryItems = [
     altAr: "نقالة داخل الإسعاف",
   },
   {
-    src: "assets/gallery/ambulance-interieur-03.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-03.jpg",
     title: "Cabine sanitaire aménagée",
     titleEn: "Prepared medical cabin",
     titleAr: "مساحة صحية مجهزة",
@@ -219,7 +453,7 @@ const galleryItems = [
     altAr: "مقعد ومعدات الإسعاف",
   },
   {
-    src: "assets/gallery/ambulance-interieur-04.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-04.jpg",
     title: "Matériel de transport médicalisé",
     titleEn: "Medical transport equipment",
     titleAr: "معدات النقل الطبي",
@@ -228,7 +462,7 @@ const galleryItems = [
     altAr: "داخل مجهز في الإسعاف",
   },
   {
-    src: "assets/gallery/ambulance-interieur-05.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-05.jpg",
     title: "Ambulance ouverte et accessible",
     titleEn: "Open and accessible ambulance",
     titleAr: "سيارة إسعاف مفتوحة وسهلة الولوج",
@@ -237,7 +471,7 @@ const galleryItems = [
     altAr: "أبواب سيارة الإسعاف مفتوحة",
   },
   {
-    src: "assets/gallery/equipement-01.jpg",
+    src: "assets/optimized/gallery/equipement-01.jpg",
     title: "Équipement médical embarqué",
     titleEn: "On-board medical equipment",
     titleAr: "معدات طبية داخل السيارة",
@@ -246,7 +480,7 @@ const galleryItems = [
     altAr: "معدات طبية في الإسعاف",
   },
   {
-    src: "assets/gallery/equipement-02.jpg",
+    src: "assets/optimized/gallery/equipement-02.jpg",
     title: "Assistance respiratoire",
     titleEn: "Respiratory assistance",
     titleAr: "مساعدة تنفسية",
@@ -255,16 +489,7 @@ const galleryItems = [
     altAr: "معدات تنفس في الإسعاف",
   },
   {
-    src: "assets/gallery/materiel-ambulance.jpg",
-    title: "Matériel médical et équipements",
-    titleEn: "Medical equipment and supplies",
-    titleAr: "المعدات الطبية في سيارة الإسعاف",
-    category: "equipement",
-    alt: "Matériel médical et équipements ambulance",
-    altAr: "المعدات الطبية في سيارة الإسعاف",
-  },
-  {
-    src: "assets/gallery/fourgon-sanitaire-01.jpg",
+    src: "assets/optimized/gallery/fourgon-sanitaire-01.jpg",
     title: "Fourgon sanitaire",
     titleEn: "Medical van",
     titleAr: "فورغون صحي",
@@ -273,7 +498,7 @@ const galleryItems = [
     altAr: "فورغون صحي",
   },
   {
-    src: "assets/gallery/fourgon-couveuse-01.jpg",
+    src: "assets/optimized/gallery/fourgon-couveuse-01.jpg",
     title: "Fourgon avec couveuse",
     titleEn: "Van with incubator",
     titleAr: "فورغون مع حاضنة",
@@ -287,174 +512,94 @@ let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
-  "source": "Affiche du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
-  "updatedAt": "2026-07-13T21:09:00+01:00",
-  "title": "Pharmacies de garde de nuit Kenitra - 13 au 17 juillet 2026",
-  "image": "assets/pharmacies/pharmacie-garde-kenitra.jpg",
-  "updateFrequency": "manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du 13 au 17 juillet 2026. Pour nécessité extrême, appelez la pharmacie de garde la plus proche avant de vous déplacer.",
-  "pharmacies": [
+  source: "Affiche du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
+  updatedAt: "2026-07-18T09:00:00+01:00",
+  title: "Pharmacies de garde de week-end Kenitra - 18 et 19 juillet 2026",
+  image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
+  updateFrequency: "manual-from-official-poster",
+  note: "Garde de week-end 24h/24 les 18 et 19 juillet 2026. Appelez la pharmacie avant de vous deplacer.",
+  pharmacies: [
     {
-      "name": "Pharmacie Dar Dawa",
-      "nameAr": "صيدلية دار الدواء",
-      "nameEn": "Dar Dawa Pharmacy",
-      "phone": "05 37 36 02 88",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
-      "address": "Rue Idriss Al Akbar, en face de la Gendarmerie Royale, près de Rijal Al Matafi",
-      "addressAr": "زنقة إدريس الأكبر، قبالة الدرك الملكي، قرب رجال المطافئ",
-      "addressEn": "Idriss Al Akbar street, opposite the Royal Gendarmerie, near the firefighters",
-      "date": "13 juillet 2026",
-      "dateAr": "13 يوليوز 2026",
-      "dateEn": "July 13, 2026",
-      "mapsUrl": ""
+      name: "Pharmacie Irchad",
+      nameAr: "صيدلية الإرشاد",
+      nameEn: "Irchad Pharmacy",
+      phone: "05 37 39 29 00",
+      district: "Saknia",
+      districtAr: "السكنية",
+      districtEn: "Saknia",
+      address: "Avenue El Massira, route Ain Sebaa, en face de Joutiaa Saknia",
+      addressAr: "شارع المسيرة، طريق عين السبع، أمام جوطية السكنية",
+      addressEn: "Avenue El Massira, Ain Sebaa road, opposite Joutiaa Saknia",
+      date: "18 et 19 juillet 2026",
+      dateAr: "18 و19 يوليوز 2026",
+      dateEn: "July 18 and 19, 2026",
+      mapsUrl: "",
     },
     {
-      "name": "Pharmacie Fadl Allah",
-      "nameAr": "صيدلية فضل الله",
-      "nameEn": "Fadl Allah Pharmacy",
-      "phone": "05 37 38 33 28",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "districtEn": "Saknia - Medina",
-      "address": "Rue 41 n°314, El Boustiyine, près du hammam Daouia, à côté de l'école El Boustiyine",
-      "addressAr": "زنقة 41 رقم 314، البوشتين، قرب حمام الضّاوية، بجانب مدرسة البوشتين",
-      "addressEn": "41 Street no. 314, El Boustiyine, near Hammam Daouia, beside El Boustiyine school",
-      "date": "13 juillet 2026",
-      "dateAr": "13 يوليوز 2026",
-      "dateEn": "July 13, 2026",
-      "mapsUrl": ""
+      name: "Pharmacie Belhachmi",
+      nameAr: "صيدلية بلحاشمي",
+      nameEn: "Belhachmi Pharmacy",
+      phone: "05 37 39 80 54",
+      district: "Ouled Oujih",
+      districtAr: "أولاد وجيه",
+      districtEn: "Ouled Oujih",
+      address: "Lotissement Haddada 1146, derriere la mosquee Erriane, rue en face de Banque Populaire Maghreb",
+      addressAr: "تجزئة الحداد رقم 1146، خلف مسجد الريان، في الشارع المقابل للبنك الشعبي المغرب",
+      addressEn: "Lotissement Haddada 1146, behind Erriane mosque, on the street opposite Banque Populaire Maghreb",
+      date: "18 et 19 juillet 2026",
+      dateAr: "18 و19 يوليوز 2026",
+      dateEn: "July 18 and 19, 2026",
+      mapsUrl: "",
     },
     {
-      "name": "Pharmacie Badine",
-      "nameAr": "صيدلية بادين",
-      "nameEn": "Badine Pharmacy",
-      "phone": "06 37 55 18 55 / 05 37 32 52 44",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
-      "address": "237 Ouled Mbarek, près de l'Union féminine, en face de la jeunesse et des sports",
-      "addressAr": "237 أولاد مبارك، قرب الاتحاد النسوي، أمام الشبيبة والرياضة",
-      "addressEn": "237 Ouled Mbarek, near the Women's Union, opposite Youth and Sports",
-      "date": "14 juillet 2026",
-      "dateAr": "14 يوليوز 2026",
-      "dateEn": "July 14, 2026",
-      "mapsUrl": ""
+      name: "Pharmacie Principale",
+      nameAr: "الصيدلية الرئيسية",
+      nameEn: "Principale Pharmacy",
+      phone: "05 37 36 35 03",
+      district: "Medina",
+      districtAr: "المدينة",
+      districtEn: "Medina",
+      address: "N 204, avenue Mohamed V, entre Kenitra Union et l'entree El Khabisat, pres de Kissariat Sellahi",
+      addressAr: "رقم 204، شارع محمد الخامس، بين قنيطرة الاتحاد ومدخل الخبيزات، بجانب قيسارية السلاحي",
+      addressEn: "No. 204, Mohamed V Avenue, between Kenitra Union and the El Khabisat entrance, near Kissariat Sellahi",
+      date: "18 et 19 juillet 2026",
+      dateAr: "18 و19 يوليوز 2026",
+      dateEn: "July 18 and 19, 2026",
+      mapsUrl: "",
     },
     {
-      "name": "Pharmacie Safae",
-      "nameAr": "صيدلية الصفاء",
-      "nameEn": "Safae Pharmacy",
-      "phone": "05 37 39 10 44",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "districtEn": "Saknia - Medina",
-      "address": "Lotissement El Motahira, groupe 878, près du collège Saknia et de l'école El Jaoulan, au milieu de Diour El Halouf",
-      "addressAr": "مج 878 المنطقة المطهرة، قرب متوسطة السكنية ومدرسة الجولان، وسط ديور الحلوف",
-      "addressEn": "El Motahira subdivision, group 878, near Saknia middle school and El Jaoulan school, in Diour El Halouf",
-      "date": "14 juillet 2026",
-      "dateAr": "14 يوليوز 2026",
-      "dateEn": "July 14, 2026",
-      "mapsUrl": ""
+      name: "Pharmacie Saad",
+      nameAr: "صيدلية سعد",
+      nameEn: "Saad Pharmacy",
+      phone: "05 37 36 05 05",
+      district: "Ville Nouvelle",
+      districtAr: "المدينة الجديدة",
+      districtEn: "Ville Nouvelle",
+      address: "69 rue Homman El Fatouaki, pres de la piscine couverte et ex terrain mini foot",
+      addressAr: "رقم 69 زنقة حمان الفتوكي، قرب المسبح المغطى وملعب ميني فوت سابقا",
+      addressEn: "69 Homman El Fatouaki Street, near the indoor swimming pool and former mini football field",
+      date: "18 et 19 juillet 2026",
+      dateAr: "18 و19 يوليوز 2026",
+      dateEn: "July 18 and 19, 2026",
+      mapsUrl: "",
     },
     {
-      "name": "Pharmacie Al Iqamates",
-      "nameAr": "صيدلية الإقامات",
-      "nameEn": "Al Iqamates Pharmacy",
-      "phone": "05 37 35 25 57",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
-      "address": "Immeubles Riyad Al Maamora, rue principale d'Ouled Oujih, près du café Dimachq",
-      "addressAr": "عمارات رياض المعمورة، الشارع الرئيسي لأولاد وجيه، قرب مقهى دمشق",
-      "addressEn": "Riyad Al Maamora buildings, main street of Ouled Oujih, near Dimachq cafe",
-      "date": "15 juillet 2026",
-      "dateAr": "15 يوليوز 2026",
-      "dateEn": "July 15, 2026",
-      "mapsUrl": ""
+      name: "Pharmacie Bir Rami Sud",
+      nameAr: "صيدلية بئر الرامي الجنوبية",
+      nameEn: "Bir Rami Sud Pharmacy",
+      phone: "05 37 37 86 07",
+      district: "Bir Rami Industrielle",
+      districtAr: "بئر الرامي الصناعية",
+      districtEn: "Bir Rami Industrielle",
+      address: "Terminus bus 29-30, a cote de la salle couverte et du hammam Sara Jadid, derriere le quartier industriel Bir Rami Sud",
+      addressAr: "نهاية الحافلة 29-30، جنب القاعة المغطاة وحمام سارة الجديد، خلف الحي الصناعي بئر الرامي الجنوبية",
+      addressEn: "Bus terminus 29-30, beside the covered hall and Hammam Sara Jadid, behind Bir Rami Sud industrial area",
+      date: "18 et 19 juillet 2026",
+      dateAr: "18 و19 يوليوز 2026",
+      dateEn: "July 18 and 19, 2026",
+      mapsUrl: "",
     },
-    {
-      "name": "Pharmacie El Hilal",
-      "nameAr": "صيدلية الهلال",
-      "nameEn": "El Hilal Pharmacy",
-      "phone": "05 37 35 21 57",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "districtEn": "Saknia - Medina",
-      "address": "PAM 2, fin des bus 12 et 1, devant le laboratoire agricole, en face du café Terminus, près de BIM Saknia",
-      "addressAr": "بام 2، نهاية الحافلة 12 و1، أمام معمل الزراعي، ومقابل مقهى الترمنيس، قرب بيم السكنية",
-      "addressEn": "PAM 2, bus 12 and 1 terminus, in front of the agricultural laboratory, opposite Terminus cafe, near BIM Saknia",
-      "date": "15 juillet 2026",
-      "dateAr": "15 يوليوز 2026",
-      "dateEn": "July 15, 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Basma",
-      "nameAr": "صيدلية بسمة",
-      "nameEn": "Basma Pharmacy",
-      "phone": "05 37 35 41 22 / 06 73 33 39 36",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
-      "address": "Bloc G1 n°7, Ouled Oujih, près du hammam Zerrouk et du collège Ibn Al Mouqaffa",
-      "addressAr": "بلوك G1 رقم 7، أولاد وجيه، قرب حمام زروق وإعدادية ابن المقفع",
-      "addressEn": "Block G1 no. 7, Ouled Oujih, near Hammam Zerrouk and Ibn Al Mouqaffa middle school",
-      "date": "16 juillet 2026",
-      "dateAr": "16 يوليوز 2026",
-      "dateEn": "July 16, 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Maghrib Al Arabi",
-      "nameAr": "صيدلية المغرب العربي",
-      "nameEn": "Al Maghrib Al Arabi Pharmacy",
-      "phone": "05 37 38 02 67",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "districtEn": "Saknia - Medina",
-      "address": "N°1791, lotissement Al Wafaa 1, ancien Souk Sebt, avenue Al Massira, route Ain Sebaa, Saknia",
-      "addressAr": "رقم 1791 تجزئة الوفاء 1، سوق السبت سابقا، شارع المسيرة، طريق عين السبع، السكنية",
-      "addressEn": "No. 1791, Al Wafaa 1 subdivision, former Souk Sebt, Al Massira Avenue, Ain Sebaa road, Saknia",
-      "date": "16 juillet 2026",
-      "dateAr": "16 يوليوز 2026",
-      "dateEn": "July 16, 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Al Hay Al Moustaajalat",
-      "nameAr": "صيدلية الحي المستعجلات",
-      "nameEn": "Al Hay Al Moustaajalat Pharmacy",
-      "phone": "05 37 36 33 89",
-      "district": "Maamora - Ouled Oujih - Bir Rami",
-      "districtAr": "المعمورة - أولاد وجيه - بئر الرامي",
-      "districtEn": "Maamora - Ouled Oujih - Bir Rami",
-      "address": "Devant la mosquée du quartier La Cité, au centre du quartier Al Moustaajalat",
-      "addressAr": "أمام مسجد حي لاستي، وسط الحي المستعجل",
-      "addressEn": "In front of La Cité neighborhood mosque, in the center of Al Moustaajalat district",
-      "date": "17 juillet 2026",
-      "dateAr": "17 يوليوز 2026",
-      "dateEn": "July 17, 2026",
-      "mapsUrl": ""
-    },
-    {
-      "name": "Pharmacie Pasteur",
-      "nameAr": "صيدلية باستور",
-      "nameEn": "Pasteur Pharmacy",
-      "phone": "05 37 38 62 48",
-      "district": "Saknia - Medina",
-      "districtAr": "السكنية - المدينة",
-      "districtEn": "Saknia - Medina",
-      "address": "Groupe 5689 n°162, Hay Jadid, près du café Lekhal Ali, à 100 m de la 10e arrondissement, Saknia",
-      "addressAr": "مجموعة 5689 رقم 162 الحي الجديد، قرب مقهى لكحل علي، بعد 100 م من المقاطعة العاشرة، السكنية",
-      "addressEn": "Group 5689 no. 162, Hay Jadid, near Lekhal Ali cafe, 100 m from the 10th district office, Saknia",
-      "date": "17 juillet 2026",
-      "dateAr": "17 يوليوز 2026",
-      "dateEn": "July 17, 2026",
-      "mapsUrl": ""
-    }
-  ]
+  ],
 };
 
 const getLocalized = (item, key) => {
@@ -1022,10 +1167,13 @@ const enhanceEstablishmentCards = () => {
     if (!name) return;
 
     const isDoctor = card.classList.contains("doctor-card");
-    const type = isDoctor
-      ? card.querySelector(".doctor-specialty")?.textContent?.trim() || "Cardiologue à Kénitra"
-      : card.querySelector(".facility-type")?.textContent?.trim() || "";
-    const rating = formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
+    if (isDoctor) {
+      card.querySelectorAll(".doctor-specialty").forEach((specialty) => specialty.remove());
+    }
+    const rating = isDoctor ? null : formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
+    const open24h = card.dataset.open24h === "true";
+    const open24hLabel = getLocalizedLabel("Ouvert 24h/24", "Open 24/7", "متاح 24 ساعة");
+    const open24hBadge = open24h ? `<span class="availability-badge" title="${open24hLabel}" aria-label="${open24hLabel}">24h/24</span>` : "";
     const phone = card.querySelector('a[href^="tel:"]');
     const address = normalizeAddressForDirections(getCardAddress(card), name);
     const panelId = `${isDoctor ? "doctor" : "facility"}-${[...establishmentCards].indexOf(card) + 1}-details`;
@@ -1038,13 +1186,12 @@ const enhanceEstablishmentCards = () => {
     toggle.setAttribute("aria-label", `${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${name}`);
     toggle.innerHTML = `
       <span class="compact-card-title">
-        <strong>${name}</strong>
-        <small>${type}</small>
+        <strong>${name}</strong>${open24hBadge}
       </span>
-      <span class="compact-rating" aria-label="${rating.label}">
+      ${rating ? `<span class="compact-rating" aria-label="${rating.label}">
         <span aria-hidden="true">${rating.stars}</span>
         <b>${rating.label}</b>
-      </span>
+      </span>` : ""}
       <span class="compact-chevron" aria-hidden="true">⌄</span>
     `;
 
@@ -1098,7 +1245,6 @@ const laboratoryTranslations = {
     type: "Laboratoire d’analyses médicales",
     call: "Appeler",
     directions: "Itinéraire",
-    maps: "Voir sur Google Maps",
     googleUnavailable: "Note Google non disponible",
     reviews: "avis",
     sponsored: "SPONSORISÉ",
@@ -1106,15 +1252,14 @@ const laboratoryTranslations = {
     phoneToConfirm: "Téléphone à confirmer",
     hours: "Horaires",
     hoursToConfirm: "Horaire à confirmer",
-    lastVerified: "Dernière vérification",
     informationToConfirm: "Information à confirmer",
     loadError: "Les laboratoires ne peuvent pas être chargés pour le moment. Veuillez réessayer ou contacter Medomicile.",
+    open24h: "Ouvert 24h/24",
   },
   en: {
     type: "Medical laboratory",
     call: "Call",
     directions: "Directions",
-    maps: "View on Google Maps",
     googleUnavailable: "Google rating unavailable",
     reviews: "reviews",
     sponsored: "SPONSORED",
@@ -1122,15 +1267,14 @@ const laboratoryTranslations = {
     phoneToConfirm: "Phone to be confirmed",
     hours: "Opening hours",
     hoursToConfirm: "Hours to be confirmed",
-    lastVerified: "Latest verification",
     informationToConfirm: "Information to be confirmed",
     loadError: "Laboratories cannot be loaded for the moment. Please try again or contact Medomicile.",
+    open24h: "Open 24/7",
   },
   ar: {
     type: "مختبر للتحاليل الطبية",
     call: "اتصال",
     directions: "المسار",
-    maps: "عرض على Google Maps",
     googleUnavailable: "تقييم Google غير متوفر",
     reviews: "مراجعة",
     sponsored: "إعلان ممول",
@@ -1138,9 +1282,9 @@ const laboratoryTranslations = {
     phoneToConfirm: "الهاتف يحتاج إلى تأكيد",
     hours: "أوقات العمل",
     hoursToConfirm: "أوقات العمل تحتاج إلى تأكيد",
-    lastVerified: "آخر تحقق",
     informationToConfirm: "المعلومة تحتاج إلى تأكيد",
     loadError: "لا يمكن تحميل المختبرات حالياً. يرجى المحاولة من جديد أو التواصل مع Medomicile.",
+    open24h: "متاح 24 ساعة",
   },
 };
 
@@ -1225,6 +1369,11 @@ const formatLaboratoryRating = (lab) => {
   };
 };
 
+const getLaboratoryDisplayName = (lab) => {
+  if (isArabicPage && lab.nameAr) return lab.nameAr;
+  return lab.name || "";
+};
+
 const updateLaboratoryItemListJsonLd = (labs) => {
   if (!laboratoryList || !labs.length) return;
 
@@ -1254,10 +1403,12 @@ const updateLaboratoryItemListJsonLd = (labs) => {
 
 const createLaboratoryCard = (lab, options = {}) => {
   const text = getLaboratoryText();
+  const displayName = getLaboratoryDisplayName(lab);
   const rating = formatLaboratoryRating(lab);
+  const open24hBadge = lab.open24h ? `<span class="availability-badge" title="${text.open24h}" aria-label="${text.open24h}">24h/24</span>` : "";
   const card = document.createElement("article");
   card.className = `facility-card laboratory-card compact-card reveal is-visible${options.sponsored ? " sponsored-card" : ""}`;
-  card.dataset.search = [lab.name, lab.shortName, lab.phone, ...(lab.hours || [])].filter(Boolean).join(" ");
+  card.dataset.search = [lab.name, lab.nameAr, lab.shortName, lab.phone, ...(lab.hours || [])].filter(Boolean).join(" ");
 
   const panelId = `laboratory-${lab.id}-details`;
   const phoneHtml = lab.phone && lab.phoneHref
@@ -1275,16 +1426,15 @@ const createLaboratoryCard = (lab, options = {}) => {
     ? `<p class="facility-muted">${unverified.join(" · ")}</p>`
     : "";
   const imageHtml = options.sponsored && lab.image
-    ? `<img class="laboratory-card__image" src="${lab.image}" width="720" height="420" loading="lazy" decoding="async" alt="${lab.name}" />`
+    ? `<img class="laboratory-card__image" src="${lab.image}" width="720" height="420" loading="lazy" decoding="async" alt="${displayName}" />`
     : "";
 
   card.innerHTML = `
     ${imageHtml}
     ${options.sponsored ? `<span class="sponsored-badge">${text.sponsored}</span>` : ""}
-    <button class="compact-card-toggle" type="button" aria-expanded="false" aria-controls="${panelId}" aria-label="${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${lab.name}">
+    <button class="compact-card-toggle" type="button" aria-expanded="false" aria-controls="${panelId}" aria-label="${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${displayName}">
       <span class="compact-card-title">
-        <strong>${lab.name}</strong>
-        <small>${text.type}</small>
+        <strong>${displayName}</strong>${open24hBadge}
       </span>
       <span class="compact-rating" aria-label="${rating.label}">
         ${rating.stars ? `<span aria-hidden="true">${rating.stars}</span>` : ""}
@@ -1296,17 +1446,501 @@ const createLaboratoryCard = (lab, options = {}) => {
       ${phoneHtml}
       ${hoursHtml}
       ${unverifiedHtml}
-      <p class="facility-muted">${text.lastVerified} : ${lab.lastVerified || "2026-07-16"}</p>
       <div class="establishment-actions">
-        ${lab.phoneHref ? `<a class="establishment-action call" href="${lab.phoneHref}" aria-label="${text.call} ${lab.name}"><span aria-hidden="true">☎</span>${text.call}</a>` : ""}
-        <a class="establishment-action directions" href="${getDirectionsUrl(lab)}" target="_blank" rel="noopener noreferrer" aria-label="${text.directions} ${lab.name}"><span aria-hidden="true">⌖</span>${text.directions}</a>
-        <a class="establishment-action directions maps-link" href="${lab.mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${text.maps} ${lab.name}"><span aria-hidden="true">↗</span>${text.maps}</a>
+        ${lab.phoneHref ? `<a class="establishment-action call" href="${lab.phoneHref}" aria-label="${text.call} ${displayName}"><span aria-hidden="true">☎</span>${text.call}</a>` : ""}
+        <a class="establishment-action directions" href="${getDirectionsUrl(lab)}" target="_blank" rel="noopener noreferrer" aria-label="${text.directions} ${displayName}"><span aria-hidden="true">⌖</span>${text.directions}</a>
       </div>
     </div>
   `;
 
   card.querySelector(".compact-card-toggle")?.addEventListener("click", () => toggleCompactCard(card));
   return card;
+};
+
+// ==============================
+// DONNÉES DES CENTRES À MODIFIER
+// ==============================
+const radiologyCenters = [
+  {
+    id: "clinique-internationale",
+    name: "Clinique Internationale de Kénitra - service radiologie",
+    nameAr: "المصحة الدولية بالقنيطرة - قسم الأشعة",
+    type: "Service d’imagerie médicale",
+    typeEn: "Medical imaging service",
+    typeAr: "قسم التصوير الطبي",
+    district: "Kénitra",
+    address: "Kénitra, zone centrale",
+    phoneDisplay: "+212 5 37 31 34 34",
+    phoneRaw: "tel:+212537313434",
+    hours: "24h/24, urgences radiologiques selon disponibilité",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+    website: "",
+    verified: true,
+    exams: [],
+    featured: true,
+    sponsored: false,
+    lastVerified: "2026-07-17",
+  },
+  {
+    id: "hopital-international",
+    name: "Hôpital International de Kénitra - service radiologie",
+    nameAr: "المستشفى الدولي بالقنيطرة - قسم الأشعة",
+    type: "Service d’imagerie médicale",
+    typeEn: "Medical imaging service",
+    typeAr: "قسم التصوير الطبي",
+    district: "Kénitra",
+    address: "Avenue Mohammed VI, Kénitra",
+    phoneDisplay: "+212 5 37 36 96 96",
+    phoneRaw: "tel:+212537369696",
+    hours: "24h/24, urgences radiologiques selon disponibilité",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+    website: "",
+    verified: true,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: "2026-07-17",
+  },
+  {
+    id: "polyclinique-kenitra",
+    name: "Polyclinique de Kénitra - service radiologie",
+    nameAr: "المصحة المتعددة الاختصاصات بالقنيطرة - قسم الأشعة",
+    type: "Service d’imagerie médicale",
+    typeEn: "Medical imaging service",
+    typeAr: "قسم التصوير الطبي",
+    district: "Kénitra",
+    address: "Avenue de l’Hôpital, Kénitra",
+    phoneDisplay: "+212 5 37 37 36 35",
+    phoneRaw: "tel:+212537373635",
+    hours: "24h/24, urgences radiologiques selon disponibilité",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20de%20K%C3%A9nitra",
+    website: "",
+    verified: true,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: "2026-07-17",
+  },
+  {
+    id: "cnss-radiologie",
+    name: "Polyclinique CNSS Kénitra - service radiologie",
+    nameAr: "مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة - قسم الأشعة",
+    type: "Service d’imagerie médicale",
+    typeEn: "Medical imaging service",
+    typeAr: "قسم التصوير الطبي",
+    district: "Kénitra",
+    address: "Avenue Moulay Youssef, Kénitra",
+    phoneDisplay: "+212 5 37 37 87 39",
+    phoneRaw: "tel:+212537378739",
+    hours: "24h/24, à confirmer auprès de l’établissement",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20CNSS%20K%C3%A9nitra",
+    website: "",
+    verified: true,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: "2026-07-17",
+  },
+  {
+    id: "radiologie-amane",
+    name: "Radiologie Amane",
+    nameAr: "مركز أمان للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Amane%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "horloge",
+    name: "Cabinet radiologique de l’Horloge",
+    nameAr: "عيادة الساعة للأشعة",
+    type: "Cabinet de radiologie",
+    typeEn: "Radiology practice",
+    typeAr: "عيادة للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20radiologique%20de%20l%27Horloge%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "ibn-sina-radiologie",
+    name: "Cabinet de Radiologie Ibn Sina",
+    nameAr: "عيادة ابن سينا للأشعة",
+    type: "Cabinet de radiologie",
+    typeEn: "Radiology practice",
+    typeAr: "عيادة للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20de%20Radiologie%20Ibn%20Sina%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "firdaous-aouifi",
+    name: "Radiologie Firdaous / Aouifi",
+    nameAr: "مركز الفردوس / العويفي للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Firdaous%20Aouifi%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "al-istiqlal",
+    name: "Centre de Radiologie Al Istiqlal",
+    nameAr: "مركز الاستقلال للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Al%20Istiqlal%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "hassan-ii",
+    name: "Centre de Radiologie Hassan II",
+    nameAr: "مركز الحسن الثاني للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: "24h/24, à confirmer auprès de l’établissement",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Hassan%20II%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "nafora",
+    name: "Radiologie Nafora",
+    nameAr: "مركز النافورة للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Nafora%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "diouri",
+    name: "Centre Radiologie Diouri",
+    nameAr: "مركز الديوري للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: "24h/24, à confirmer auprès de l’établissement",
+    open24h: true,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20Radiologie%20Diouri%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "el-hilal",
+    name: "Radiologie El Hilal",
+    nameAr: "مركز الهلال للأشعة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20El%20Hilal%20Kenitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+  {
+    id: "beclere",
+    name: "Radiologie Béclère Kénitra",
+    nameAr: "مركز بيكلير للأشعة بالقنيطرة",
+    type: "Centre de radiologie",
+    typeEn: "Radiology center",
+    typeAr: "مركز للأشعة",
+    district: "Kénitra",
+    address: null,
+    phoneDisplay: null,
+    phoneRaw: null,
+    hours: null,
+    open24h: false,
+    rating: null,
+    reviewCount: null,
+    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20B%C3%A9cl%C3%A8re%20K%C3%A9nitra",
+    website: "",
+    verified: false,
+    exams: [],
+    featured: false,
+    sponsored: false,
+    lastVerified: null,
+  },
+];
+
+// ==============================
+// TRADUCTIONS
+// ==============================
+const radiologyTranslations = {
+  fr: {
+    sponsored: "VISIBILITÉ LOCALE",
+    call: "Appeler",
+    directions: "Itinéraire",
+    unavailableRating: "Note Google non renseignée",
+    phoneToConfirm: "Téléphone à confirmer",
+    hoursToConfirm: "Horaires à confirmer",
+    addressToConfirm: "Adresse à confirmer",
+    informationToConfirm: "Informations à confirmer auprès de l’établissement",
+    examsToConfirm: "Examens à confirmer directement auprès du centre",
+    open24h: "Ouvert 24h/24",
+    results: "centre(s) affiché(s)",
+    noResults: "Aucun centre ne correspond à votre recherche.",
+  },
+  en: {
+    sponsored: "LOCAL VISIBILITY",
+    call: "Call",
+    directions: "Directions",
+    unavailableRating: "Google rating not provided",
+    phoneToConfirm: "Phone to be confirmed",
+    hoursToConfirm: "Opening hours to be confirmed",
+    addressToConfirm: "Address to be confirmed",
+    informationToConfirm: "Information should be confirmed directly with the facility",
+    examsToConfirm: "Exams should be confirmed directly with the center",
+    open24h: "Open 24/7",
+    results: "center(s) shown",
+    noResults: "No center matches your search.",
+  },
+  ar: {
+    sponsored: "ظهور محلي",
+    call: "اتصال",
+    directions: "الاتجاهات",
+    unavailableRating: "تقييم Google غير متوفر",
+    phoneToConfirm: "الهاتف يحتاج إلى تأكيد",
+    hoursToConfirm: "ساعات العمل تحتاج إلى تأكيد",
+    addressToConfirm: "العنوان يحتاج إلى تأكيد",
+    informationToConfirm: "يرجى تأكيد المعلومات مباشرة مع المؤسسة",
+    examsToConfirm: "يجب تأكيد الفحوصات مباشرة مع المركز",
+    open24h: "متاح 24 ساعة",
+    results: "مركز معروض",
+    noResults: "لا يوجد مركز مطابق للبحث.",
+  },
+};
+
+const getRadiologyText = () => radiologyTranslations[getLanguageKey()];
+
+// ==============================
+// TRI ET FILTRES
+// ==============================
+const getRadiologyName = (center) => (isArabicPage && center.nameAr ? center.nameAr : center.name);
+const getRadiologyType = (center) => (isArabicPage ? center.typeAr || center.type : isEnglishPage ? center.typeEn || center.type : center.type);
+
+const sortRadiologyCenters = (centers) =>
+  [...centers].sort((a, b) => {
+    if (a.sponsored !== b.sponsored) return a.sponsored ? -1 : 1;
+    if (a.featured !== b.featured) return a.featured ? -1 : 1;
+    const ratingA = Number.isFinite(Number(a.rating)) ? Number(a.rating) : -1;
+    const ratingB = Number.isFinite(Number(b.rating)) ? Number(b.rating) : -1;
+    if (ratingB !== ratingA) return ratingB - ratingA;
+    const reviewsA = Number.isFinite(a.reviewCount) ? Number(a.reviewCount) : 0;
+    const reviewsB = Number.isFinite(b.reviewCount) ? Number(b.reviewCount) : 0;
+    if (reviewsB !== reviewsA) return reviewsB - reviewsA;
+    return String(a.name || "").localeCompare(String(b.name || ""), "fr", { sensitivity: "base" });
+  });
+
+const filterRadiologyCenters = () => {
+  const query = normalizeText(directorySearch?.value || "");
+  const activeFilter = document.querySelector("[data-radiology-filter].is-active")?.dataset.radiologyFilter || "all";
+  return sortRadiologyCenters(radiologyCenters).filter((center) => {
+    const haystack = normalizeText([
+      center.name,
+      center.nameAr,
+      center.type,
+      center.district,
+      center.address,
+      center.hours,
+      ...(center.exams || []),
+    ].filter(Boolean).join(" "));
+    const matchesSearch = !query || haystack.includes(query);
+    const matchesFilter = activeFilter === "all" || (activeFilter === "open24h" && center.open24h);
+    return matchesSearch && matchesFilter;
+  });
+};
+
+const updateRadiologyResultsCount = (count) => {
+  const text = getRadiologyText();
+  if (radiologyCount) radiologyCount.textContent = `${count} ${text.results}`;
+  if (directoryEmpty) {
+    directoryEmpty.hidden = count > 0;
+    directoryEmpty.textContent = text.noResults;
+  }
+};
+
+// ==============================
+// GÉNÉRATION DES CARTES
+// ==============================
+const formatRadiologyRating = (center) => {
+  const text = getRadiologyText();
+  if (!Number.isFinite(Number(center.rating))) return { label: text.unavailableRating, stars: "" };
+  const rating = Math.max(0, Math.min(5, Number(center.rating)));
+  const rounded = Math.round(rating);
+  const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
+  const reviews = Number.isFinite(center.reviewCount) ? ` · ${center.reviewCount}` : "";
+  return { label: `${rating.toFixed(1).replace(".", isEnglishPage ? "." : ",")} Google${reviews}`, stars };
+};
+
+const createCenterCard = (center) => {
+  const text = getRadiologyText();
+  const name = getRadiologyName(center);
+  const rating = formatRadiologyRating(center);
+  const open24hBadge = center.open24h ? `<span class="availability-badge" title="${text.open24h}" aria-label="${text.open24h}">24h/24</span>` : "";
+  const panelId = `radiology-${center.id}-details`;
+  const card = document.createElement("article");
+  card.className = `facility-card radiology-card compact-card reveal is-visible${center.sponsored ? " sponsored-card" : ""}`;
+  card.dataset.search = [center.name, center.nameAr, center.type, center.address, center.district, center.hours, ...(center.exams || [])].filter(Boolean).join(" ");
+  const exams = center.exams?.length
+    ? `<div class="exam-tags">${center.exams.map((exam) => `<span>${exam}</span>`).join("")}</div>`
+    : `<p class="facility-muted">${text.examsToConfirm}</p>`;
+  card.innerHTML = `
+    ${center.sponsored ? `<span class="sponsored-badge">${text.sponsored}</span>` : ""}
+    <button class="compact-card-toggle" type="button" aria-expanded="false" aria-controls="${panelId}" aria-label="${getLocalizedLabel("Afficher les coordonnées de", "Show contact details for", "عرض معلومات")} ${name}">
+      <span class="compact-card-title">
+        <strong>${name}</strong>${open24hBadge}
+      </span>
+      <span class="compact-rating" aria-label="${rating.label}">
+        ${rating.stars ? `<span aria-hidden="true">${rating.stars}</span>` : ""}
+        <b>${rating.label}</b>
+      </span>
+      <span class="compact-chevron" aria-hidden="true">⌄</span>
+    </button>
+    <div class="compact-card-details" id="${panelId}" hidden>
+      <p class="doctor-line"><span aria-hidden="true">⌖</span><span>${center.address || text.addressToConfirm}</span></p>
+      <p class="doctor-line"><span aria-hidden="true">☎</span>${center.phoneRaw ? `<a dir="ltr" href="${center.phoneRaw}">${center.phoneDisplay}</a>` : `<span>${text.phoneToConfirm}</span>`}</p>
+      <p class="doctor-line"><span aria-hidden="true">◷</span><span>${center.hours || text.hoursToConfirm}</span></p>
+      ${!center.verified ? `<p class="facility-muted">${text.informationToConfirm}</p>` : ""}
+      ${exams}
+      <div class="establishment-actions">
+        ${center.phoneRaw ? `<a class="establishment-action call" href="${center.phoneRaw}" aria-label="${text.call} ${name}"><span aria-hidden="true">☎</span>${text.call}</a>` : ""}
+        ${center.mapsUrl ? `<a class="establishment-action directions" href="${center.mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${text.directions} ${name}"><span aria-hidden="true">⌖</span>${text.directions}</a>` : ""}
+      </div>
+    </div>
+  `;
+  card.querySelector(".compact-card-toggle")?.addEventListener("click", () => toggleCompactCard(card));
+  return card;
+};
+
+const renderCenters = () => {
+  if (!radiologyList) return;
+  const centers = filterRadiologyCenters();
+  radiologyList.innerHTML = "";
+  centers.forEach((center) => radiologyList.append(createCenterCard(center)));
+  updateRadiologyResultsCount(centers.length);
 };
 
 const renderLaboratories = (data) => {
@@ -1376,6 +2010,262 @@ const initFeaturedClinicGalleries = () => {
   });
 };
 
+radiologyFilters.forEach((filter) => {
+  filter.addEventListener("click", () => {
+    radiologyFilters.forEach((button) => button.classList.remove("is-active"));
+    filter.classList.add("is-active");
+    renderCenters();
+  });
+});
+
+directorySearch?.addEventListener("input", () => {
+  if (radiologyList) renderCenters();
+});
+
+const initGoogleReviewMarquees = () => {
+  document.querySelectorAll(".google-review-list").forEach((list) => {
+    if (list.querySelector(".marquee__track")) return;
+
+    const cards = [...list.querySelectorAll(".google-review-card")];
+    if (!cards.length) return;
+
+    const track = document.createElement("div");
+    track.className = "marquee__track";
+    track.style.setProperty("--duration", "32s");
+
+    const group = document.createElement("div");
+    group.className = "marquee__group";
+    cards.forEach((card) => group.append(card));
+
+    const duplicate = group.cloneNode(true);
+    duplicate.setAttribute("aria-hidden", "true");
+
+    track.append(group, duplicate);
+    list.classList.add("marquee");
+    list.append(track);
+  });
+};
+
+const localizedText = (value) => value?.[currentLang] || value?.fr || "";
+const localizedHref = (value) => {
+  if (typeof value === "string") return localizedPage(value);
+  return value?.[currentLang] || value?.fr || "#";
+};
+
+const createNewCabinetCard = (cabinet) => {
+  const labels = newCabinetTranslations[currentLang] || newCabinetTranslations.fr;
+  const article = document.createElement("article");
+  article.className = "new-cabinet-card";
+
+  const photo = document.createElement("div");
+  photo.className = "new-cabinet-card__photo";
+  const image = document.createElement("img");
+  image.src = cabinet.image;
+  image.alt = "";
+  image.loading = "lazy";
+  photo.append(image);
+
+  const body = document.createElement("div");
+  body.className = "new-cabinet-card__body";
+
+  const badge = document.createElement("span");
+  badge.className = "new-cabinet-card__badge";
+  badge.textContent = labels.statuses[cabinet.status] || labels.statuses.coming;
+
+  const title = document.createElement("h3");
+  title.textContent = localizedText(cabinet.name) || labels.name;
+
+  const details = document.createElement("p");
+  details.textContent = localizedText(cabinet.specialty);
+
+  const area = document.createElement("span");
+  area.className = "new-cabinet-card__area";
+  area.textContent = localizedText(cabinet.district);
+  details.append(area);
+
+  const link = document.createElement("a");
+  link.className = "new-cabinet-card__link";
+  link.href = localizedHref(cabinet.href);
+  link.textContent = labels.button;
+
+  body.append(badge, title, details, link);
+  article.append(photo, body);
+
+  return article;
+};
+
+const NewMedicalCabinetsCarousel = (section) => {
+  const track = section.querySelector("[data-new-cabinets-track]");
+  if (!track || track.children.length) return;
+
+  const cards = newMedicalCabinets.map(createNewCabinetCard);
+  const group = document.createElement("div");
+  group.className = "new-cabinets-carousel__group";
+  cards.forEach((card) => group.append(card));
+
+  const duplicate = group.cloneNode(true);
+  duplicate.setAttribute("aria-hidden", "true");
+  duplicate.querySelectorAll("a").forEach((link) => {
+    link.tabIndex = -1;
+  });
+
+  track.append(group, duplicate);
+
+  section.addEventListener("pointerdown", () => section.classList.add("is-touching"));
+  ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
+    section.addEventListener(eventName, () => section.classList.remove("is-touching"));
+  });
+};
+
+const getSpecialtySlugFromPath = () => {
+  const fileName = (window.location.pathname.split("/").pop() || "").replace(/\.html$/i, "");
+  return fileName.replace(/-(?:en|ar)$/i, "").replace(/-kenitra$/i, "");
+};
+
+const getSpecialtyProfessionalConfig = () => {
+  const slug = getSpecialtySlugFromPath();
+  const labels = professionalSlotTranslations[currentLang] || professionalSlotTranslations.fr;
+  const specialtyTexts = specialtyPageText[slug];
+  const fallbackTitle = document.querySelector(".directory-hero h1, h1")?.textContent?.trim() || "";
+  const fallbackName = fallbackTitle
+    .replace(/\s+(?:à|a)\s+Kénitra$/i, "")
+    .replace(/\s+in\s+Kenitra$/i, "")
+    .replace(/\s+في\s+القنيطرة$/i, "")
+    .trim();
+
+  return {
+    specialtySlug: slug || "specialite",
+    cityName: labels.city,
+    specialtyName: specialtyTexts?.[currentLang]?.singular || specialtyTexts?.fr?.singular || fallbackName || "médecin",
+    specialtyNamePlural: specialtyTexts?.[currentLang]?.plural || specialtyTexts?.fr?.plural || fallbackName || "médecins"
+  };
+};
+
+const renderSpecialtyProfessionalSlots = (section) => {
+  if (!section || section.children.length) return;
+
+  const labels = professionalSlotTranslations[currentLang] || professionalSlotTranslations.fr;
+  const config = getSpecialtyProfessionalConfig();
+  const mailSubject = encodeURIComponent(`Espace professionnel Medomicile - ${config.specialtyNamePlural}`);
+  const mailHref = `mailto:contact@medomicile.com?subject=${mailSubject}`;
+  const accessibleTitle =
+    currentLang === "ar"
+      ? `مساحات مهنية ل${config.specialtyNamePlural} في ${config.cityName}`
+      : currentLang === "en"
+        ? `Professional spaces for ${config.specialtyNamePlural} in ${config.cityName}`
+        : `Espaces professionnels pour ${config.specialtyNamePlural} à ${config.cityName}`;
+
+  const heading = document.createElement("h2");
+  heading.className = "sr-only";
+  heading.textContent = accessibleTitle;
+
+  const list = document.createElement("div");
+  list.className = "specialty-professional-slots__list";
+
+  labels.templates.slice(0, 3).forEach((template, index) => {
+    const card = document.createElement("article");
+    card.className = "specialty-professional-slot";
+
+    const icon = document.createElement("span");
+    icon.className = "specialty-professional-slot__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "✦";
+
+    const content = document.createElement("div");
+    content.className = "specialty-professional-slot__content";
+
+    const badge = document.createElement("span");
+    badge.className = "specialty-professional-slot__badge";
+    badge.textContent = labels.badge;
+
+    const title = document.createElement("h3");
+    title.textContent = template.title({
+      singular: config.specialtyName,
+      plural: config.specialtyNamePlural,
+      city: config.cityName,
+      slug: config.specialtySlug
+    });
+
+    const text = document.createElement("p");
+    text.textContent = template.text({
+      singular: config.specialtyName,
+      plural: config.specialtyNamePlural,
+      city: config.cityName,
+      slug: config.specialtySlug
+    });
+
+    const mention = document.createElement("small");
+    mention.textContent = labels.mention;
+
+    const link = document.createElement("a");
+    link.className = "specialty-professional-slot__link";
+    link.href = mailHref;
+    link.textContent = labels.button;
+
+    content.append(badge, title, text, mention);
+    card.append(icon, content, link);
+    card.style.setProperty("--slot-index", index);
+    list.append(card);
+  });
+
+  section.setAttribute("aria-label", accessibleTitle);
+  section.append(heading, list);
+};
+
+const renderDirectoryFooterCtas = () => {
+  const labels = directoryFooterCtaTranslations[currentLang] || directoryFooterCtaTranslations.fr;
+
+  directoryFooterCtas.forEach((section, index) => {
+    const titleId = section.getAttribute("aria-labelledby") || `directory-footer-cta-title-${index + 1}`;
+    section.setAttribute("aria-labelledby", titleId);
+    section.innerHTML = `
+      <div>
+        <p class="eyebrow">${labels.eyebrow}</p>
+        <h2 id="${titleId}">${labels.title}</h2>
+        <p>${labels.text}</p>
+      </div>
+      <div class="urgent-actions">
+        <a dir="ltr" class="primary-action" href="tel:+212663058222">${labels.call}</a>
+        <a class="whatsapp-action" href="https://wa.me/212663058222">${labels.whatsapp}</a>
+      </div>
+    `;
+  });
+};
+
+const cleanGoogleReviewTimes = () => {
+  document.querySelectorAll(".google-review-meta").forEach((meta) => {
+    if ((meta.textContent || "").includes("★")) {
+      meta.textContent = "★★★★★";
+    }
+  });
+};
+
+const ensureFloatingCallButton = () => {
+  const existing = document.querySelector(".floating-call, .floating-call-button");
+  if (existing) {
+    existing.classList.add("floating-call-button");
+    existing.setAttribute("dir", isArabicPage ? "rtl" : "ltr");
+    if (!existing.querySelector(".floating-call-button__icon")) {
+      existing.insertAdjacentHTML("afterbegin", '<span class="floating-call-button__icon" aria-hidden="true">☎</span>');
+    }
+    return;
+  }
+
+  const labels = {
+    fr: { text: "Appeler", aria: "Appeler Medomicile" },
+    en: { text: "Call", aria: "Call Medomicile" },
+    ar: { text: "اتصال", aria: "اتصل ب Medomicile" }
+  };
+  const label = labels[currentLang] || labels.fr;
+  const link = document.createElement("a");
+  link.className = "floating-call floating-call-button";
+  link.href = "tel:+212663058222";
+  link.setAttribute("aria-label", label.aria);
+  link.setAttribute("dir", isArabicPage ? "rtl" : "ltr");
+  link.innerHTML = `<span class="floating-call-button__icon" aria-hidden="true">☎</span><span>${label.text}</span>`;
+  document.body.append(link);
+};
+
 const updateMediaScale = () => {
   if (!scrollMedia) return;
   const rect = scrollMedia.getBoundingClientRect();
@@ -1388,6 +2278,8 @@ const updateMediaScale = () => {
 const revealAll = () => {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 };
+
+renderDirectoryFooterCtas();
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
@@ -1427,7 +2319,13 @@ if ("IntersectionObserver" in window) {
 updateMediaScale();
 loadPharmacies();
 loadLaboratories();
+renderCenters();
 initFeaturedClinicGalleries();
+cleanGoogleReviewTimes();
+ensureFloatingCallButton();
+initGoogleReviewMarquees();
+newCabinetsCarousels.forEach(NewMedicalCabinetsCarousel);
+specialtyProfessionalSlots.forEach(renderSpecialtyProfessionalSlots);
 sortHospitalFacilityCards();
 enhanceEstablishmentCards();
 initDirectorySearch();

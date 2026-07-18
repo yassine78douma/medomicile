@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Doctors in Kénitra by specialty | Medomicile</title>
     <meta name="description" content="Find doctors and specialists in Kénitra by specialty: cardiologists, neurologists, trauma and orthopedic specialists and other healthcare professionals." />
     <meta name="theme-color" content="#f8fafc" />
@@ -25,18 +25,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260716-01" />
+    <link rel="stylesheet" href="style.css?v=20260718-01" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="en.html" aria-label="Medomicile, home">
-          <span class="brand-mark" aria-hidden="true"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" /></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" /></span>
           <span>Medomicile</span>
         </a>
         <div class="header-actions" aria-label="Quick contact">
-          <a class="mini-action call" href="tel:+212663058222">Call</a>
+          <a dir="ltr" class="mini-action call" href="tel:+212663058222">Call</a>
           <a class="mini-action whats" href="https://wa.me/212663058222">WhatsApp</a>
         </div>
         <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
@@ -46,14 +46,17 @@
         <div class="menu" id="menu">
           <a href="en.html">Home</a>
           <a href="services-en.html">Services</a>
-          <a href="galerie-en.html">Gallery</a>
           <a href="pharmacies-en.html">Pharmacies</a>
           <a href="hopitaux-en.html">Hospitals</a>
           <a href="laboratories-kenitra.html">Laboratories</a>
-          <a class="is-current" href="medecins-kenitra-en.html">Doctors in Kénitra</a>
+          <a href="radiology-kenitra.html">Radiology</a>
+          <a class="is-current" href="medecins-kenitra-en.html">Doctors</a>
           <a href="vitamines-en.html">Vitamins</a>
-          <a href="contact-en.html">Contact</a>
+          <a href="galerie-en.html">Gallery</a>
           <a href="articles.html">Articles</a>
+          <a href="contact-en.html">Contact</a>
+          <a class="lang-link" href="medecins-kenitra.html" lang="fr">Français</a>
+          <a class="lang-link" href="medecins-kenitra-ar.html" lang="ar" dir="rtl">العربية</a>
         </div>
       </nav>
     </header>
@@ -75,16 +78,19 @@
         </div>
       </section>
 
+      <section class="new-cabinets-carousel section reveal" aria-labelledby="new-cabinets-title" data-new-cabinets-carousel>
+        <div class="new-cabinets-carousel__heading">
+          <p class="eyebrow">MEDICAL UPDATES</p>
+          <h2 id="new-cabinets-title">New medical practices in Kenitra</h2>
+          <p>Discover recently opened or soon-to-open medical practices in Kenitra.</p>
+        </div>
+        <div class="new-cabinets-carousel__viewport" tabindex="0" aria-label="New medical practices in Kenitra">
+          <div class="new-cabinets-carousel__track" data-new-cabinets-track></div>
+        </div>
+      </section>
+
       <section class="doctor-specialties section" aria-label="Medical specialties in Kénitra">
         <div class="specialty-grid">
-          <a class="specialty-card reveal" href="tous-les-medecins-kenitra.html">
-            <div class="specialty-card__icon" aria-hidden="true">＋</div>
-            <div class="specialty-card__content">
-              <h2 class="specialty-card__title">All doctors in Kénitra</h2>
-              <p class="specialty-card__description">General directory of doctors and specialists practicing in Kénitra.</p>
-            </div>
-            <div class="specialty-card__arrow" aria-hidden="true">›</div>
-          </a>
           <a class="specialty-card reveal" href="cardiologues-kenitra-en.html">
             <div class="specialty-card__icon" aria-hidden="true">♡</div>
             <div class="specialty-card__content">
@@ -93,7 +99,115 @@
             </div>
             <div class="specialty-card__arrow" aria-hidden="true">›</div>
           </a>
-          <a class="specialty-card reveal" href="neurologues-kenitra.html">
+          <a class="specialty-card reveal" href="dentistes-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">✦</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Dentists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="gynecologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">♀</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Gynecologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="pediatres-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Pediatricians</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="dermatologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">◌</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Dermatologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="ophtalmologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">◎</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Ophthalmologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="orl-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">◍</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">ENT specialists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="pneumologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">⌁</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Pulmonologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="endocrinologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">◇</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Endocrinologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="rhumatologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Rheumatologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="urologues-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">◆</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Urologists</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="internistes-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">＋</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Internal medicine doctors</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="visceralistes-kenitra-en.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">Visceral surgeons</h2>
+              <p class="specialty-card__description">Contact details will be added gradually after verification.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">Update in progress</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="neurologues-kenitra-en.html">
             <div class="specialty-card__icon" aria-hidden="true">⌁</div>
             <div class="specialty-card__content">
               <h2 class="specialty-card__title">Neurologists</h2>
@@ -102,7 +216,7 @@
             </div>
             <div class="specialty-card__arrow" aria-hidden="true">›</div>
           </a>
-          <a class="specialty-card reveal" href="traumatologues-kenitra.html">
+          <a class="specialty-card reveal" href="traumatologues-kenitra-en.html">
             <div class="specialty-card__icon" aria-hidden="true">✚</div>
             <div class="specialty-card__content">
               <h2 class="specialty-card__title">Trauma and orthopedic specialists</h2>
@@ -113,16 +227,17 @@
           </a>
         </div>
       </section>
+      <section class="directory-cta section reveal" data-directory-footer-cta></section>
     </main>
 
     <footer class="footer">
-      <strong class="footer-brand"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" />Medomicile</strong>
+      <strong class="footer-brand"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />Medomicile</strong>
       <span>Kenitra, Mehdia and region</span>
-      <span>Phone: <a href="tel:+212663058222">+212663058222</a></span>
-      <span>Landline: <a href="tel:+212537373736">05 37 37 37 36</a></span>
-      <span>Email: <a href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
+      <span>Phone: <a dir="ltr" href="tel:+212663058222">+212663058222</a></span>
+      <span>Landline: <a dir="ltr" href="tel:+212537373736">05 37 37 37 36</a></span>
+      <span>Email: <a dir="ltr" href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
       <span>WhatsApp: <a href="https://wa.me/212663058222">+212663058222</a></span>
-      <div class="footer-social" aria-label="الشبكات الاجتماعية">
+      <div class="footer-social" aria-label="Social media">
         <a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.facebook.com/medomicile" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
@@ -131,9 +246,9 @@
     </footer>
 
     <div class="bottom-actions" aria-label="Quick actions">
-      <a class="bottom-call" href="tel:+212663058222">Call</a>
+      <a dir="ltr" class="bottom-call" href="tel:+212663058222">Call</a>
       <a class="bottom-whatsapp" href="https://wa.me/212663058222">WhatsApp</a>
     </div>
-    <script src="script.js?v=20260716-01"></script>
+    <script defer src="script.js?v=20260718-01"></script>
   </body>
 </html>

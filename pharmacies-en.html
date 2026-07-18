@@ -10,7 +10,7 @@
       gtag('config', 'AW-18241787343');
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>On-duty pharmacies in Kenitra and Mehdia - Medomicile</title>
     <meta name="description" content="On-duty pharmacies in Kenitra and Mehdia with a list updated automatically 4 times per day. Always call before going." />
     <meta name="theme-color" content="#f8fafc" />
@@ -25,7 +25,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://medomicile.com/pharmacies-en.html" />
     <meta property="og:locale" content="en_MA" />
-    <meta property="og:image" content="https://medomicile.com/assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260713-01" />
+    <meta property="og:image" content="https://medomicile.com/assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260718-01" />
     <link rel="canonical" href="https://medomicile.com/pharmacies-en.html" />
     <link rel="alternate" hreflang="fr" href="https://medomicile.com/pharmacies.html" />
     <link rel="alternate" hreflang="en" href="https://medomicile.com/pharmacies-en.html" />
@@ -37,18 +37,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260716-01" />
+    <link rel="stylesheet" href="style.css?v=20260717-07" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="en.html" aria-label="Medomicile, home">
-          <span class="brand-mark" aria-hidden="true"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" /></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" /></span>
           <span>Medomicile</span>
         </a>
         <div class="header-actions" aria-label="Quick contact">
-          <a class="mini-action call" href="tel:+212663058222">Call</a>
+          <a dir="ltr" class="mini-action call" href="tel:+212663058222">Call</a>
           <a class="mini-action whats" href="https://wa.me/212663058222">WhatsApp</a>
         </div>
         <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
@@ -58,27 +58,32 @@
         <div class="menu" id="menu">
           <a href="en.html">Home</a>
           <a href="services-en.html">Services</a>
-          <a href="galerie-en.html">Gallery</a>
           <a class="is-current" href="pharmacies-en.html">Pharmacies</a>
           <a href="hopitaux-en.html">Hospitals</a>
           <a href="laboratories-kenitra.html">Laboratories</a>
-          <a href="medecins-kenitra-en.html">Doctors in Kenitra</a>
+          <a href="radiology-kenitra.html">Radiology</a>
+          <a href="medecins-kenitra-en.html">Doctors</a>
           <a href="vitamines-en.html">Vitamins</a>
+          <a href="galerie-en.html">Gallery</a>
+          <a href="articles.html">Articles</a>
           <a href="contact-en.html">Contact</a>
           <a class="lang-link" href="pharmacies.html" lang="fr">Français</a>
           <a class="lang-link" href="pharmacies-ar.html" lang="ar" dir="rtl">العربية</a>
         </div>
       </nav>
     </header>
-
-    <main id="main" class="page-main">
-      <section class="pharmacy section" id="pharmacies" aria-labelledby="pharmacies-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow">On-duty pharmacies</p>
+    <main id="main" class="page-main directory-main pharmacy-page">
+      <section class="directory-hero page-hero section ambient-page-hero" aria-labelledby="pharmacies-title">
+        <canvas class="ambient-canvas" data-ambient-canvas aria-hidden="true"></canvas>
+        <div class="directory-hero-copy reveal">
+          <p class="eyebrow">ON-DUTY PHARMACIES</p>
           <h1 id="pharmacies-title">On-duty pharmacies in Kenitra and Mehdia</h1>
-          <p>Practical information to help families quickly find an open pharmacy.</p>
+          <p class="hero-subtitle">Practical information to help families quickly find an open pharmacy.</p>
+          <p class="directory-note">Information may change according to rotations and public holidays. Always call the pharmacy before going.</p>
         </div>
+      </section>
 
+      <section class="pharmacy section" id="pharmacies" aria-label="On-duty pharmacies in Kenitra and Mehdia">
         <div class="pharmacy-panel reveal">
           <div class="pharmacy-copy">
             <h3>Which permanent pharmacy is near me in Kenitra or Mehdia?</h3>
@@ -90,24 +95,25 @@
           </div>
           <div class="pharmacy-list" data-pharmacy-list></div>
           <figure class="pharmacy-image">
-            <img src="assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260713-01" alt="On-duty night pharmacy poster in Kenitra from July 13 to 17, 2026" loading="lazy" />
-            <figcaption>Night on-duty pharmacy poster from July 13 to 17, 2026. Call before going.</figcaption>
+            <img src="assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260718-01" alt="Weekend on-duty pharmacy poster in Kenitra on July 18 and 19, 2026" loading="lazy" />
+            <figcaption>Weekend on-duty pharmacy poster for July 18 and 19, 2026. Call before going.</figcaption>
           </figure>
           <div class="pharmacy-foot">
             <span>Call the pharmacy before going.</span>
           </div>
         </div>
       </section>
+      <section class="directory-cta section reveal" data-directory-footer-cta></section>
     </main>
 
     <footer class="footer">
-      <strong class="footer-brand"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" />Medomicile</strong>
+      <strong class="footer-brand"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />Medomicile</strong>
       <span>Kenitra, Mehdia and region</span>
-      <span>Phone: <a href="tel:+212663058222">+212663058222</a></span>
-      <span>Landline: <a href="tel:+212537373736">05 37 37 37 36</a></span>
-      <span>Email: <a href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
-      <span>Extreme emergency or public road accident: <a href="tel:15">call 15</a></span>
-      <div class="footer-social" aria-label="الشبكات الاجتماعية">
+      <span>Phone: <a dir="ltr" href="tel:+212663058222">+212663058222</a></span>
+      <span>Landline: <a dir="ltr" href="tel:+212537373736">05 37 37 37 36</a></span>
+      <span>Email: <a dir="ltr" href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
+      <span>Extreme emergency or public road accident: <a dir="ltr" href="tel:15">call 15</a></span>
+      <div class="footer-social" aria-label="Social media">
         <a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.facebook.com/medomicile" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
@@ -120,7 +126,7 @@
       </div>
     </footer>
 
-    <a class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
-    <script src="script.js?v=20260716-01"></script>
+    <a dir="ltr" class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
+    <script defer src="script.js?v=20260716-01"></script>
   </body>
 </html>

@@ -10,7 +10,7 @@
       gtag('config', 'AW-18241787343');
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Medomicile - Home medical care in Kenitra</title>
     <meta
       name="description"
@@ -46,7 +46,30 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260716-01" />
+    <link rel="stylesheet" href="style.css?v=20260717-07" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Medomicile",
+        "url": "https://medomicile.com/en.html",
+        "telephone": "+212663058222",
+        "email": "contact@medomicile.com",
+        "priceRange": "$$",
+        "areaServed": ["Kenitra", "Mehdia", "Rabat", "Salé", "Sidi Taibi", "Khemisset", "Tiflet"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kenitra",
+          "addressCountry": "MA"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -55,13 +78,13 @@
       <nav class="nav" aria-label="Main navigation">
         <a class="brand" href="en.html" aria-label="Medomicile, home">
           <span class="brand-mark" aria-hidden="true">
-            <img src="assets/brand/medomicile-logo.png" alt="Medomicile" />
+            <img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />
           </span>
           <span>Medomicile</span>
         </a>
 
         <div class="header-actions" aria-label="Quick contact">
-          <a class="mini-action call" href="tel:+212663058222" aria-label="Call +212663058222">Call</a>
+          <a dir="ltr" class="mini-action call" href="tel:+212663058222" aria-label="Call +212663058222">Call</a>
           <a class="mini-action whats" href="https://wa.me/212663058222" aria-label="WhatsApp +212663058222">WhatsApp</a>
         </div>
 
@@ -75,14 +98,15 @@
         <div class="menu" id="menu">
           <a class="is-current" href="en.html">Home</a>
           <a href="services-en.html">Services</a>
-          <a href="galerie-en.html">Gallery</a>
           <a href="pharmacies-en.html">Pharmacies</a>
           <a href="hopitaux-en.html">Hospitals</a>
           <a href="laboratories-kenitra.html">Laboratories</a>
-          <a href="medecins-kenitra-en.html">Doctors in Kenitra</a>
+          <a href="radiology-kenitra.html">Radiology</a>
+          <a href="medecins-kenitra-en.html">Doctors</a>
           <a href="vitamines-en.html">Vitamins</a>
+          <a href="galerie-en.html">Gallery</a>
+          <a href="articles.html">Articles</a>
           <a href="contact-en.html">Contact</a>
-          <a href="articles.html" lang="fr">Articles FR</a>
           <a class="lang-link" href="index.html" lang="fr">Français</a>
           <a class="lang-link" href="ar.html" lang="ar" dir="rtl">العربية</a>
         </div>
@@ -107,7 +131,7 @@
           </p>
 
           <div class="hero-buttons">
-            <a class="primary-action" href="tel:+212663058222">
+            <a dir="ltr" class="primary-action" href="tel:+212663058222">
               <span aria-hidden="true">☎</span>
               Call now
             </a>
@@ -126,21 +150,28 @@
             </div>
             <div class="hero-prompt-box">
               <span class="hero-prompt-icon" aria-hidden="true">⌕</span>
-              <span>Choose the right path: service, pharmacy, hospital or contact.</span>
+              <span>Choose the right path: service, pharmacy, hospital or laboratory.</span>
             </div>
             <div class="hero-suggestions" aria-label="Useful shortcuts">
               <a href="services-en.html">Services</a>
               <a href="pharmacies-en.html">On-duty pharmacies</a>
               <a href="hopitaux-en.html">Hospitals & clinics</a>
-              <a href="contact-en.html">Contact</a>
+              <a href="laboratories-kenitra.html">Laboratories</a>
+          <a href="radiology-kenitra.html">Radiology</a>
             </div>
           </div>
         </div>
 
         <div class="media-stage hero-photo reveal" data-scroll-media aria-label="Home medical assistance preview">
           <img
-            src="assets/hero/medomicile-hospital-team.jpg"
+            src="assets/optimized/medomicile-hospital-team-1200.jpg"
+            srcset="assets/optimized/medomicile-hospital-team-720.jpg 720w, assets/optimized/medomicile-hospital-team-1200.jpg 1200w, assets/hero/medomicile-hospital-team.jpg 1800w"
+            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
             alt="Medomicile team in front of a hospital with ambulance and support vehicle"
+            width="1800"
+            height="1200"
+            fetchpriority="high"
+            decoding="async"
           />
           <div class="media-overlay" aria-hidden="true"></div>
           <div class="media-caption">
@@ -167,45 +198,45 @@
             <strong>Our services</strong>
             <small>Home care, ambulance, medical van, events and medical equipment.</small>
           </a>
-          <a class="home-card reveal" href="galerie-en.html">
-            <span>02</span>
-            <strong>Gallery</strong>
-            <small>Vehicle and equipment photos.</small>
-          </a>
           <a class="home-card reveal" href="pharmacies-en.html">
-            <span>03</span>
+            <span>02</span>
             <strong>On-duty pharmacies</strong>
             <small>Updated automatically 4 times per day.</small>
           </a>
           <a class="home-card reveal" href="hopitaux-en.html">
-            <span>04</span>
+            <span>03</span>
             <strong>Hospitals & clinics</strong>
             <small>Useful addresses and phone numbers in Kenitra.</small>
           </a>
           <a class="home-card reveal" href="laboratories-kenitra.html">
-            <span>05</span>
+            <span>04</span>
             <strong>Laboratories</strong>
             <small>Dedicated page for verified medical laboratories.</small>
           </a>
           <a class="home-card reveal" href="medecins-kenitra.html">
-            <span>06</span>
-            <strong>Doctors in Kenitra</strong>
+            <span>05</span>
+            <strong>Doctors</strong>
             <small>Cardiologists with addresses, districts and phone numbers.</small>
           </a>
           <a class="home-card reveal" href="vitamines-en.html">
-            <span>07</span>
+            <span>06</span>
             <strong>IV vitamin therapy</strong>
             <small>IV cocktails confirmed after prior discussion.</small>
           </a>
-          <a class="home-card reveal" href="contact-en.html">
-            <span>08</span>
-            <strong>Direct contact</strong>
-            <small>Phone, WhatsApp and landline.</small>
+          <a class="home-card reveal" href="galerie-en.html">
+            <span>07</span>
+            <strong>Gallery</strong>
+            <small>Vehicle and equipment photos.</small>
           </a>
           <a class="home-card reveal" href="articles.html" lang="fr">
-            <span>09</span>
+            <span>08</span>
             <strong>Articles FR</strong>
             <small>French practical articles, including blood donation in Kenitra.</small>
+          </a>
+          <a class="home-card reveal" href="contact-en.html">
+            <span>09</span>
+            <strong>Direct contact</strong>
+            <small>Phone, WhatsApp and landline.</small>
           </a>
         </div>
       </section>
@@ -213,8 +244,8 @@
       <section class="reviews section" id="avis" aria-labelledby="reviews-title">
         <div class="section-heading reveal">
           <p class="eyebrow">Google reviews</p>
-          <h2 id="reviews-title">Our Google reviews</h2>
-          <p>View recent feedback published on our Google profile and share your experience with Medomicile.</p>
+          <h2 id="reviews-title">Patient trust</h2>
+          <p>Human and professional medical care, directly at your home in Kénitra.</p>
         </div>
 
         <div class="google-review-panel reveal">
@@ -222,32 +253,6 @@
             <strong>5.0/5</strong>
             <span aria-hidden="true">★★★★★</span>
             <small>11 Google reviews</small>
-          </div>
-          <div class="google-review-list">
-            <article class="google-review-card">
-              <span class="google-review-icon" aria-hidden="true">S</span>
-              <div>
-                <h3>Salma El</h3>
-                <p class="google-review-meta">★★★★★ · 19 minutes ago</p>
-                <p>Fast, efficient and very professional service, with kind and reassuring staff. Highly recommended.</p>
-              </div>
-            </article>
-            <article class="google-review-card">
-              <span class="google-review-icon" aria-hidden="true">Y</span>
-              <div>
-                <h3>Yassine Hachadi</h3>
-                <p class="google-review-meta">★★★★★ · 3 hours ago</p>
-                <p>The ambulance arrived very quickly. Dr Badr and the ambulance driver were professional, competent and reassuring.</p>
-              </div>
-            </article>
-            <article class="google-review-card">
-              <span class="google-review-icon" aria-hidden="true">Y</span>
-              <div>
-                <h3>Yahya Chadli</h3>
-                <p class="google-review-meta">★★★★★ · 2 days ago</p>
-                <p>Very satisfied with the home consultation by Dr Hachimi. Professional, competent, attentive and caring.</p>
-              </div>
-            </article>
           </div>
           <div class="google-review-actions">
             <a class="google-review-button is-primary" href="https://maps.app.goo.gl/PzAUHTarutvJ9A336?g_st=ic" target="_blank" rel="noopener noreferrer" aria-label="Leave a Google review for Medomicile">
@@ -259,6 +264,32 @@
               View Google reviews
             </a>
           </div>
+          <div class="google-review-list">
+            <article class="google-review-card" lang="fr" dir="ltr">
+              <span class="google-review-icon" aria-hidden="true">S</span>
+              <div>
+                <h3>Salma El</h3>
+                <p class="google-review-meta">★★★★★</p>
+                <p lang="fr">Service rapide, efficace et très professionnel, personnel aimable et rassurant. Je recommande sans hésiter.</p>
+              </div>
+            </article>
+            <article class="google-review-card" lang="fr" dir="ltr">
+              <span class="google-review-icon" aria-hidden="true">Y</span>
+              <div>
+                <h3>Yassine Hachadi</h3>
+                <p class="google-review-meta">★★★★★</p>
+                <p lang="fr">L’ambulance est arrivée très rapidement. Le Dr Badr et l’ambulancier ont été très professionnels, compétents et rassurants.</p>
+              </div>
+            </article>
+            <article class="google-review-card" lang="fr" dir="ltr">
+              <span class="google-review-icon" aria-hidden="true">Y</span>
+              <div>
+                <h3>Yahya Chadli</h3>
+                <p class="google-review-meta">★★★★★</p>
+                <p lang="fr">Très satisfait de la consultation à domicile du Dr Hachimi. Professionnelle, compétente, à l’écoute et bienveillante.</p>
+              </div>
+            </article>
+          </div>
           <p class="fine-print">Short excerpts are based on visible Google reviews shared with Medomicile. Reviews may change on Google.</p>
         </div>
       </section>
@@ -269,24 +300,24 @@
           <h2 id="urgence-title">Need a home medical service?</h2>
           <p>Call Medomicile or send a WhatsApp message. We help direct you to the right service.</p>
           <div class="urgent-actions">
-            <a class="primary-action" href="tel:+212663058222">Call +212663058222</a>
+            <a dir="ltr" class="primary-action" href="tel:+212663058222">Call +212663058222</a>
             <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
           </div>
-          <p class="safety-note">In an extreme emergency or a public road accident, call the public emergency service at <a href="tel:15">15</a>.</p>
+          <p class="safety-note">In an extreme emergency or a public road accident, call the public emergency service at <a dir="ltr" href="tel:15">15</a>.</p>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <strong class="footer-brand">
-        <img src="assets/brand/medomicile-logo.png" alt="Medomicile" />
+        <img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />
         Medomicile
       </strong>
       <span>Kenitra, Mehdia and region</span>
-      <span>Phone: <a href="tel:+212663058222">+212663058222</a></span>
-      <span>Landline: <a href="tel:+212537373736">05 37 37 37 36</a></span>
-      <span>Email: <a href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
-      <span>Extreme emergency or public road accident: <a href="tel:15">call 15</a></span>
+      <span>Phone: <a dir="ltr" href="tel:+212663058222">+212663058222</a></span>
+      <span>Landline: <a dir="ltr" href="tel:+212537373736">05 37 37 37 36</a></span>
+      <span>Email: <a dir="ltr" href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
+      <span>Extreme emergency or public road accident: <a dir="ltr" href="tel:15">call 15</a></span>
       <div class="footer-social" aria-label="Social media">
         <a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.facebook.com/medomicile" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -300,8 +331,8 @@
     </footer>
 
 
-    <a class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
+    <a dir="ltr" class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
 
-    <script src="script.js?v=20260716-01"></script>
+    <script defer src="script.js?v=20260717-03"></script>
   </body>
 </html>

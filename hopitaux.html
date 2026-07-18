@@ -10,7 +10,7 @@
       gtag('config', 'AW-18241787343');
     </script>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Hôpitaux et cliniques à Kenitra - Medomicile</title>
     <meta name="description" content="Adresses, téléphones et notes Google indicatives des hôpitaux et cliniques à Kenitra. Appelez l’établissement avant de vous déplacer." />
     <meta name="theme-color" content="#f8fafc" />
@@ -40,18 +40,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=20260716-01" />
+    <link rel="stylesheet" href="style.css?v=20260717-09" />
   </head>
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="Navigation principale">
         <a class="brand" href="index.html" aria-label="Medomicile, accueil">
-          <span class="brand-mark" aria-hidden="true"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" /></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" /></span>
           <span>Medomicile</span>
         </a>
         <div class="header-actions" aria-label="Contact rapide">
-          <a class="mini-action call" href="tel:+212663058222">Appeler</a>
+          <a dir="ltr" class="mini-action call" href="tel:+212663058222">Appeler</a>
           <a class="mini-action whats" href="https://wa.me/212663058222">WhatsApp</a>
         </div>
         <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
@@ -61,14 +61,15 @@
         <div class="menu" id="menu">
           <a href="index.html">Accueil</a>
           <a href="services.html">Services</a>
-          <a href="galerie.html">Galerie</a>
           <a href="pharmacies.html">Pharmacies</a>
           <a class="is-current" href="hopitaux.html">Hôpitaux</a>
           <a href="laboratoires-kenitra.html">Laboratoires</a>
-          <a href="medecins-kenitra.html">Médecins à Kénitra</a>
+          <a href="radiologie-kenitra.html">Radiologie</a>
+          <a href="medecins-kenitra.html">Médecins</a>
           <a href="vitamines.html">Vitamines</a>
-          <a href="contact.html">Contact</a>
+          <a href="galerie.html">Galerie</a>
           <a href="articles.html">Articles</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
     </header>
@@ -80,18 +81,12 @@
           <p class="eyebrow">HÔPITAUX & CLINIQUES</p>
           <h1 id="facilities-title">Hôpitaux et cliniques à Kénitra</h1>
           <p class="hero-subtitle">Consultez les principales structures médicales de Kénitra et affichez leurs coordonnées en un clic.</p>
-          <p class="directory-note">Les informations et notes Google sont données à titre indicatif et peuvent évoluer.</p>
-          <div class="hero-buttons">
-            <a class="primary-action" href="tel:+212663058222">Appeler</a>
-            <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
-          </div>
+          <p class="directory-note radiology-hero-note">Les informations et notes Google sont données à titre indicatif et peuvent évoluer. Le badge <span class="availability-badge">24h/24</span> signale les établissements indiqués comme disponibles 24h/24 et 7j/7 pour les urgences. Appelez avant de vous déplacer.</p>
         </div>
       </section>
 
       <section class="facilities section" id="hopitaux" aria-label="Liste des hôpitaux et cliniques">
-        <div class="facility-note reveal">Les établissements sont présentés selon leur note Google visible au moment de la dernière vérification. Ce classement n’est pas une recommandation médicale et les notes peuvent évoluer. Appelez l’établissement avant de vous déplacer.</div>
-
-        <article class="featured-clinic reveal" aria-labelledby="featured-clinic-title">
+        <article class="featured-clinic reveal" data-open24h="true" aria-labelledby="featured-clinic-title">
           <div class="featured-clinic__media" data-featured-clinic-gallery>
             <img class="is-active" src="assets/partners/clinical-international/exterieur-principal.jpg" alt="Façade de Clinique Internationale de Kénitra" loading="eager" />
             <img src="assets/partners/clinical-international/accueil.jpg" alt="Accueil de Clinique Internationale de Kénitra" loading="lazy" />
@@ -102,7 +97,7 @@
               <button type="button" aria-label="Afficher l'entrée"></button>
             </div>
           </div>
-          <div class="featured-clinic__content">            <h2 id="featured-clinic-title">Clinique Internationale de Kénitra</h2>
+          <div class="featured-clinic__content">            <h2 id="featured-clinic-title">Clinique Internationale de Kénitra <span class="availability-badge">24h/24</span></h2>
             <p class="featured-clinic__type">Hôpital privé · 4,8 Google</p>
             <p>
               Clinique Internationale de Kénitra est une structure médicale privée à Kénitra. Cette fiche met en avant
@@ -113,131 +108,122 @@
               <span>Téléphone : +212 5 37 31 34 34</span>
             </div>
             <div class="featured-clinic__actions">
-              <a class="primary-action" href="tel:+212537313434">Appeler</a>
+              <a dir="ltr" class="primary-action" href="tel:+212537313434">Appeler</a>
               <a class="whatsapp-action route" href="https://www.google.com/maps/dir/?api=1&amp;destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra" target="_blank" rel="noopener noreferrer">Itinéraire</a>
             </div>
           </div>
         </article>
 
+        <div class="facility-note reveal">Les établissements sont présentés selon leur note Google visible au moment de la dernière vérification. Ce classement n’est pas une recommandation médicale et les notes peuvent évoluer. Appelez l’établissement avant de vous déplacer.</div>
+
         <div class="facility-grid">
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Hôpital public</span><strong>3.1 Google</strong></div>
             <h3>Centre Hospitalier Provincial El-Azemmouri</h3>
             <p>Route de Sidi Allal Bahraoui, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
             <span class="facility-muted">Téléphone non disponible publiquement</span>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Hôpital privé</span><strong>2.8 Google</strong></div>
             <h3>Akdital International Hospital - Kenitra</h3>
             <p>Avenue Mohammed VI, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537369696">+212 5 37 36 96 96</a>
+            <a dir="ltr" href="tel:+212537369696">+212 5 37 36 96 96</a>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Centre chirurgical</span><strong>2.3 Google</strong></div>
             <h3>Polyclinique de Kénitra</h3>
             <p>Avenue de l’Hôpital, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537373635">+212 5 37 37 36 35</a>
-            <a href="tel:+212622663536">Urgences : +212 6 22 66 35 36</a>
+            <a dir="ltr" href="tel:+212537373635">+212 5 37 37 36 35</a>
+            <a dir="ltr" href="tel:+212622663536">Urgences : +212 6 22 66 35 36</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Clinique spécialisée</span><strong>3.4 Google</strong></div>
             <h3>Polyclinique du Gharb</h3>
             <p>148 Avenue Mohamed Diouri, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537376565">+212 5 37 37 65 65</a>
+            <a dir="ltr" href="tel:+212537376565">+212 5 37 37 65 65</a>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Clinique spécialisée</span><strong>3.7 Google</strong></div>
             <h3>Noor Clinic</h3>
             <p>Lotissement Al Qods 1 Lot C, en face d’Acima, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537371333">+212 5 37 37 13 33</a>
-            <a href="tel:+212537373642">+212 5 37 37 36 42</a>
+            <a dir="ltr" href="tel:+212537371333">+212 5 37 37 13 33</a>
+            <a dir="ltr" href="tel:+212537373642">+212 5 37 37 36 42</a>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Hôpital privé</span><strong>3.0 Google</strong></div>
             <h3>Clinique Val Fleury</h3>
             <p>Avenue Abderrahim Bouabid, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537397931">+212 5 37 39 79 31</a>
+            <a dir="ltr" href="tel:+212537397931">+212 5 37 39 79 31</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Centre chirurgical</span><strong>2.6 Google</strong></div>
             <h3>Mimosas Clinic</h3>
             <p>21 Avenue Mohamed El Qori, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537379798">+212 5 37 37 97 98</a>
+            <a dir="ltr" href="tel:+212537379798">+212 5 37 37 97 98</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Hôpital général</span><strong>2.9 Google</strong></div>
             <h3>Clinique Anoual</h3>
             <p>33 Rue Ibn Abi Zaraa, Avenue Moulay Abderrahmane, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537366767">+212 5 37 36 67 67</a>
-            <a href="tel:+212537377072">+212 5 37 37 70 72</a>
+            <a dir="ltr" href="tel:+212537366767">+212 5 37 36 67 67</a>
+            <a dir="ltr" href="tel:+212537377072">+212 5 37 37 70 72</a>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Clinique médicale</span><strong>3.2 Google</strong></div>
             <h3>Clinique Sebou</h3>
             <p>1 Rue Al Masjid, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537366277">+212 5 37 36 62 77</a>
+            <a dir="ltr" href="tel:+212537366277">+212 5 37 36 62 77</a>
           </article>
-          <article class="facility-card reveal">
+          <article class="facility-card reveal" data-open24h="true">
             <div class="facility-head"><span class="facility-type">Hôpital privé</span><strong>2.5 Google</strong></div>
             <h3>Polyclinique CNSS Kénitra</h3>
             <p>Avenue Moulay Youssef, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537378739">+212 5 37 37 87 39</a>
+            <a dir="ltr" href="tel:+212537378739">+212 5 37 37 87 39</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Clinique médicale</span><strong>2.1 Google</strong></div>
             <h3>Clinique C.C.O.T.K.</h3>
             <p>Clinique de chirurgie orthopédique et traumatologique, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212537373081">+212 5 37 37 30 81</a>
+            <a dir="ltr" href="tel:+212537373081">+212 5 37 37 30 81</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Clinique médicale</span><strong>4.4 Google</strong></div>
             <h3>Clinique Maamora</h3>
             <p>116 Rue Maamora, Kenitra</p>
             <span class="facility-hours">Horaires à vérifier</span>
-            <a href="tel:+212537365500">+212 5 37 36 55 00</a>
+            <a dir="ltr" href="tel:+212537365500">+212 5 37 36 55 00</a>
           </article>
           <article class="facility-card reveal">
             <div class="facility-head"><span class="facility-type">Oncologie</span><strong>4.0 Google</strong></div>
             <h3>Clinique d’oncologie Ibn Sina</h3>
             <p>Avenue 2 Mars, Kenitra</p>
             <span class="facility-hours">Ouvert - horaires à vérifier</span>
-            <a href="tel:+212650014999">+212 6 50 01 49 99</a>
+            <a dir="ltr" href="tel:+212650014999">+212 6 50 01 49 99</a>
           </article>
         </div>
       </section>
-
-      <section class="directory-cta section reveal" aria-labelledby="facilities-cta-title">
-        <div>
-          <p class="eyebrow">Medomicile</p>
-          <h2 id="facilities-cta-title">Besoin d’une prise en charge à domicile ?</h2>
-          <p>Contactez Medomicile pour une consultation médicale, des soins à domicile ou un transport sanitaire selon votre situation et la disponibilité des équipes.</p>
-        </div>
-        <div class="urgent-actions">
-          <a class="primary-action" href="tel:+212663058222">Appeler</a>
-          <a class="whatsapp-action" href="https://wa.me/212663058222">WhatsApp</a>
-        </div>
-      </section>
+      <section class="directory-cta section reveal" data-directory-footer-cta></section>
     </main>
 
     <footer class="footer">
-      <strong class="footer-brand"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" />Medomicile</strong>
+      <strong class="footer-brand"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />Medomicile</strong>
       <span>Kenitra, Mehdia et région</span>
-      <span>Téléphone: <a href="tel:+212663058222">+212663058222</a></span>
-      <span>Fixe: <a href="tel:+212537373736">05 37 37 37 36</a></span>
-      <span>Email: <a href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
-      <span>Extrême urgence ou accident sur voie publique: <a href="tel:15">appelez le 15</a></span>
-      <div class="footer-social" aria-label="الشبكات الاجتماعية">
+      <span>Téléphone: <a dir="ltr" href="tel:+212663058222">+212663058222</a></span>
+      <span>Fixe: <a dir="ltr" href="tel:+212537373736">05 37 37 37 36</a></span>
+      <span>Email: <a dir="ltr" href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
+      <span>Extrême urgence ou accident sur voie publique: <a dir="ltr" href="tel:15">appelez le 15</a></span>
+      <div class="footer-social" aria-label="Réseaux sociaux">
         <a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://www.facebook.com/medomicile" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
@@ -250,7 +236,7 @@
       </div>
     </footer>
 
-    <a class="floating-call" href="tel:+212663058222" aria-label="Appeler Medomicile">Appeler</a>
-    <script src="script.js?v=20260716-01"></script>
+    <a dir="ltr" class="floating-call" href="tel:+212663058222" aria-label="Appeler Medomicile">Appeler</a>
+    <script defer src="script.js?v=20260717-09"></script>
   </body>
 </html>

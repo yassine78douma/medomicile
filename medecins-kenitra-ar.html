@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>أطباء في القنيطرة حسب التخصص | Medomicile</title>
     <meta name="description" content="تعرّفوا على الأطباء والمتخصصين في القنيطرة حسب التخصص: أطباء القلب، أطباء الأعصاب، أطباء العظام والتخصصات الطبية الأخرى." />
     <meta name="theme-color" content="#f8fafc" />
@@ -25,18 +25,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260716-01" />
+    <link rel="stylesheet" href="style.css?v=20260718-01" />
   </head>
   <body>
     <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
     <header class="mobile-header">
       <nav class="nav" aria-label="التنقل الرئيسي">
         <a class="brand" href="ar.html" aria-label="Medomicile، الرئيسية">
-          <span class="brand-mark" aria-hidden="true"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" /></span>
+          <span class="brand-mark" aria-hidden="true"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" /></span>
           <span>Medomicile</span>
         </a>
         <div class="header-actions" aria-label="تواصل سريع">
-          <a class="mini-action call" href="tel:+212663058222">اتصال</a>
+          <a dir="ltr" class="mini-action call" href="tel:+212663058222">اتصال</a>
           <a class="mini-action whats" href="https://wa.me/212663058222">WhatsApp</a>
         </div>
         <button class="menu-toggle" type="button" aria-controls="menu" aria-expanded="false">
@@ -46,14 +46,16 @@
         <div class="menu" id="menu">
           <a href="ar.html">الرئيسية</a>
           <a href="services-ar.html">الخدمات</a>
-          <a href="galerie-ar.html">الصور</a>
           <a href="pharmacies-ar.html">الصيدليات</a>
           <a href="hopitaux-ar.html">المستشفيات</a>
           <a href="laboratoires-kenitra-ar.html">المختبرات</a>
-          <a class="is-current" href="medecins-kenitra-ar.html">أطباء في القنيطرة</a>
-          <a href="vitamines-ar.html">الفيتامينات</a>
-          <a href="contact-ar.html">الاتصال</a>
+          <a href="radiologie-kenitra-ar.html">الأشعة</a>
+          <a class="is-current" href="medecins-kenitra-ar.html">الأطباء</a>
+          <a href="galerie-ar.html">الصور</a>
           <a href="articles.html">مقالات</a>
+          <a href="contact-ar.html">الاتصال</a>
+          <a class="lang-link" href="medecins-kenitra.html" lang="fr">Français</a>
+          <a class="lang-link" href="medecins-kenitra-en.html" lang="en">English</a>
         </div>
       </nav>
     </header>
@@ -75,16 +77,19 @@
         </div>
       </section>
 
+      <section class="new-cabinets-carousel section reveal" aria-labelledby="new-cabinets-title" data-new-cabinets-carousel>
+        <div class="new-cabinets-carousel__heading">
+          <p class="eyebrow">مستجدات طبية</p>
+          <h2 id="new-cabinets-title">عيادات طبية جديدة في القنيطرة</h2>
+          <p>تعرّفوا على العيادات التي افتتحت حديثاً أو ستتوفر قريباً في القنيطرة.</p>
+        </div>
+        <div class="new-cabinets-carousel__viewport" tabindex="0" aria-label="عيادات طبية جديدة في القنيطرة">
+          <div class="new-cabinets-carousel__track" data-new-cabinets-track></div>
+        </div>
+      </section>
+
       <section class="doctor-specialties section" aria-label="التخصصات الطبية في القنيطرة">
         <div class="specialty-grid">
-          <a class="specialty-card reveal" href="tous-les-medecins-kenitra.html">
-            <div class="specialty-card__icon" aria-hidden="true">＋</div>
-            <div class="specialty-card__content">
-              <h2 class="specialty-card__title">كل الأطباء في القنيطرة</h2>
-              <p class="specialty-card__description">دليل عام للأطباء والمتخصصين الممارسين في القنيطرة.</p>
-            </div>
-            <div class="specialty-card__arrow" aria-hidden="true">›</div>
-          </a>
           <a class="specialty-card reveal" href="cardiologues-kenitra-ar.html">
             <div class="specialty-card__icon" aria-hidden="true">♡</div>
             <div class="specialty-card__content">
@@ -93,7 +98,115 @@
             </div>
             <div class="specialty-card__arrow" aria-hidden="true">›</div>
           </a>
-          <a class="specialty-card reveal" href="neurologues-kenitra.html">
+          <a class="specialty-card reveal" href="dentistes-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">✦</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الأسنان</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="gynecologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">♀</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء النساء والتوليد</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="pediatres-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الأطفال</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="dermatologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">◌</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الجلد</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="ophtalmologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">◎</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء العيون</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="orl-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">◍</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الأنف والأذن والحنجرة</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="pneumologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">⌁</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الجهاز التنفسي</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="endocrinologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">◇</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الغدد والسكري</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="rhumatologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الروماتيزم</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="urologues-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">◆</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء المسالك البولية</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="internistes-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">＋</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">أطباء الطب الداخلي</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="visceralistes-kenitra-ar.html">
+            <div class="specialty-card__icon" aria-hidden="true">✚</div>
+            <div class="specialty-card__content">
+              <h2 class="specialty-card__title">جراحو الجهاز الهضمي والأحشاء</h2>
+              <p class="specialty-card__description">ستتم إضافة معلومات الاتصال تدريجياً بعد التحقق منها.</p>
+              <div class="specialty-card__meta"><span class="specialty-card__status">التحديث جارٍ</span></div>
+            </div>
+            <div class="specialty-card__arrow" aria-hidden="true">›</div>
+          </a>
+          <a class="specialty-card reveal" href="neurologues-kenitra-ar.html">
             <div class="specialty-card__icon" aria-hidden="true">⌁</div>
             <div class="specialty-card__content">
               <h2 class="specialty-card__title">أطباء الأعصاب</h2>
@@ -102,7 +215,7 @@
             </div>
             <div class="specialty-card__arrow" aria-hidden="true">›</div>
           </a>
-          <a class="specialty-card reveal" href="traumatologues-kenitra.html">
+          <a class="specialty-card reveal" href="traumatologues-kenitra-ar.html">
             <div class="specialty-card__icon" aria-hidden="true">✚</div>
             <div class="specialty-card__content">
               <h2 class="specialty-card__title">أطباء العظام والمفاصل</h2>
@@ -113,14 +226,15 @@
           </a>
         </div>
       </section>
+      <section class="directory-cta section reveal" data-directory-footer-cta></section>
     </main>
 
     <footer class="footer">
-      <strong class="footer-brand"><img src="assets/brand/medomicile-logo.png" alt="Medomicile" />Medomicile</strong>
+      <strong class="footer-brand"><img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />Medomicile</strong>
       <span>القنيطرة، المهدية والنواحي</span>
       <span>الهاتف: <a href="tel:+212663058222" dir="ltr">+212663058222</a></span>
       <span>الثابت: <a href="tel:+212537373736" dir="ltr">05 37 37 37 36</a></span>
-      <span>البريد الإلكتروني: <a href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
+      <span>البريد الإلكتروني: <a dir="ltr" href="mailto:contact@medomicile.com">contact@medomicile.com</a></span>
       <span>واتساب: <a href="https://wa.me/212663058222" dir="ltr">+212663058222</a></span>
       <div class="footer-social" aria-label="الشبكات الاجتماعية">
         <a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -131,9 +245,9 @@
     </footer>
 
     <div class="bottom-actions" aria-label="إجراءات سريعة">
-      <a class="bottom-call" href="tel:+212663058222">اتصال</a>
+      <a dir="ltr" class="bottom-call" href="tel:+212663058222">اتصال</a>
       <a class="bottom-whatsapp" href="https://wa.me/212663058222">WhatsApp</a>
     </div>
-    <script src="script.js?v=20260716-01"></script>
+    <script defer src="script.js?v=20260718-01"></script>
   </body>
 </html>
