@@ -886,6 +886,69 @@ galleryNext?.addEventListener("click", () => {
   setGalleryImage(visible[nextPosition]);
 });
 
+const initGalleryAutoplay = () => {
+  if (!galleryMain || !galleryItems.length) return;
+
+  let timer;
+  let startX = 0;
+  let startY = 0;
+  let isSwiping = false;
+
+  const showRelativeImage = (offset) => {
+    const visible = visibleGalleryIndexes();
+    const position = visible.indexOf(activeGalleryIndex);
+    const nextPosition = (position + offset + visible.length) % visible.length;
+    setGalleryImage(visible[nextPosition]);
+  };
+
+  const restart = () => {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => showRelativeImage(1), 4800);
+  };
+
+  const pause = () => window.clearInterval(timer);
+
+  galleryMain.addEventListener(
+    "touchstart",
+    (event) => {
+      const touch = event.touches[0];
+      startX = touch.clientX;
+      startY = touch.clientY;
+      isSwiping = true;
+      pause();
+    },
+    { passive: true }
+  );
+
+  galleryMain.addEventListener(
+    "touchend",
+    (event) => {
+      if (!isSwiping) return;
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - startX;
+      const deltaY = touch.clientY - startY;
+      isSwiping = false;
+
+      if (Math.abs(deltaX) > 42 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) {
+        showRelativeImage(deltaX < 0 ? 1 : -1);
+      }
+
+      restart();
+    },
+    { passive: true }
+  );
+
+  [galleryPrev, galleryNext, ...galleryThumbs, ...galleryFilters].filter(Boolean).forEach((control) => {
+    control.addEventListener("click", restart);
+  });
+
+  galleryMain.addEventListener("mouseenter", pause);
+  galleryMain.addEventListener("mouseleave", restart);
+  galleryMain.addEventListener("focusin", pause);
+  galleryMain.addEventListener("focusout", restart);
+  restart();
+};
+
 const normalizePhoneHref = (phone) => {
   const firstNumber = String(phone).split("/")[0] || phone;
   return `tel:${firstNumber.replace(/[^\d+]/g, "")}`;
@@ -1308,16 +1371,18 @@ const isSponsorActive = (lab) => {
 
 const hasNumericRating = (lab) => Number.isFinite(Number(lab.rating));
 const hasNumericReviewCount = (lab) => Number.isFinite(lab.reviewCount);
+const hasVerifiedGoogleRating = (lab) =>
+  lab.rating !== null && lab.rating !== "" && hasNumericRating(lab) && hasNumericReviewCount(lab) && Number(lab.reviewCount) > 0;
 
 const sortLaboratories = (laboratories) =>
   [...laboratories].sort((a, b) => {
-    const ratingA = hasNumericRating(a) ? Number(a.rating) : -1;
-    const ratingB = hasNumericRating(b) ? Number(b.rating) : -1;
+    const ratingA = hasVerifiedGoogleRating(a) ? Number(a.rating) : -1;
+    const ratingB = hasVerifiedGoogleRating(b) ? Number(b.rating) : -1;
 
     if (ratingB !== ratingA) return ratingB - ratingA;
 
-    const reviewsA = hasNumericReviewCount(a) ? Number(a.reviewCount) : 0;
-    const reviewsB = hasNumericReviewCount(b) ? Number(b.reviewCount) : 0;
+    const reviewsA = hasVerifiedGoogleRating(a) ? Number(a.reviewCount) : 0;
+    const reviewsB = hasVerifiedGoogleRating(b) ? Number(b.reviewCount) : 0;
 
     if (reviewsB !== reviewsA) return reviewsB - reviewsA;
 
@@ -1351,18 +1416,14 @@ const getLocalizedHours = (hours) => {
 };
 
 const formatLaboratoryRating = (lab) => {
-  const text = getLaboratoryText();
-  if (!hasNumericRating(lab)) {
-    return {
-      label: text.googleUnavailable,
-      stars: "",
-    };
+  if (!hasVerifiedGoogleRating(lab)) {
+    return null;
   }
 
   const rating = Math.max(0, Math.min(5, Number(lab.rating)));
   const rounded = Math.round(rating);
   const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
-  const reviews = hasNumericReviewCount(lab) ? ` · ${Number(lab.reviewCount)} ${text.reviews}` : "";
+  const reviews = ` · ${Number(lab.reviewCount)} ${text.reviews}`;
   return {
     label: `${rating.toFixed(1).replace(".", isEnglishPage ? "." : ",")} Google${reviews}`,
     stars,
@@ -1405,6 +1466,12 @@ const createLaboratoryCard = (lab, options = {}) => {
   const text = getLaboratoryText();
   const displayName = getLaboratoryDisplayName(lab);
   const rating = formatLaboratoryRating(lab);
+  const ratingHtml = rating
+    ? `<span class="compact-rating" aria-label="${rating.label}">
+        <span aria-hidden="true">${rating.stars}</span>
+        <b>${rating.label}</b>
+      </span>`
+    : "";
   const open24hBadge = lab.open24h ? `<span class="availability-badge" title="${text.open24h}" aria-label="${text.open24h}">24h/24</span>` : "";
   const card = document.createElement("article");
   card.className = `facility-card laboratory-card compact-card reveal is-visible${options.sponsored ? " sponsored-card" : ""}`;
@@ -1436,10 +1503,7 @@ const createLaboratoryCard = (lab, options = {}) => {
       <span class="compact-card-title">
         <strong>${displayName}</strong>${open24hBadge}
       </span>
-      <span class="compact-rating" aria-label="${rating.label}">
-        ${rating.stars ? `<span aria-hidden="true">${rating.stars}</span>` : ""}
-        <b>${rating.label}</b>
-      </span>
+      ${ratingHtml}
       <span class="compact-chevron" aria-hidden="true">⌄</span>
     </button>
     <div class="compact-card-details" id="${panelId}" hidden>
@@ -1845,8 +1909,8 @@ const sortRadiologyCenters = (centers) =>
   [...centers].sort((a, b) => {
     if (a.sponsored !== b.sponsored) return a.sponsored ? -1 : 1;
     if (a.featured !== b.featured) return a.featured ? -1 : 1;
-    const ratingA = Number.isFinite(Number(a.rating)) ? Number(a.rating) : -1;
-    const ratingB = Number.isFinite(Number(b.rating)) ? Number(b.rating) : -1;
+    const ratingA = a.rating !== null && a.rating !== "" && Number.isFinite(Number(a.rating)) ? Number(a.rating) : -1;
+    const ratingB = b.rating !== null && b.rating !== "" && Number.isFinite(Number(b.rating)) ? Number(b.rating) : -1;
     if (ratingB !== ratingA) return ratingB - ratingA;
     const reviewsA = Number.isFinite(a.reviewCount) ? Number(a.reviewCount) : 0;
     const reviewsB = Number.isFinite(b.reviewCount) ? Number(b.reviewCount) : 0;
@@ -1886,8 +1950,7 @@ const updateRadiologyResultsCount = (count) => {
 // GÉNÉRATION DES CARTES
 // ==============================
 const formatRadiologyRating = (center) => {
-  const text = getRadiologyText();
-  if (!Number.isFinite(Number(center.rating))) return { label: text.unavailableRating, stars: "" };
+  if (center.rating === null || center.rating === "" || !Number.isFinite(Number(center.rating))) return null;
   const rating = Math.max(0, Math.min(5, Number(center.rating)));
   const rounded = Math.round(rating);
   const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
@@ -1899,6 +1962,12 @@ const createCenterCard = (center) => {
   const text = getRadiologyText();
   const name = getRadiologyName(center);
   const rating = formatRadiologyRating(center);
+  const ratingHtml = rating
+    ? `<span class="compact-rating" aria-label="${rating.label}">
+        <span aria-hidden="true">${rating.stars}</span>
+        <b>${rating.label}</b>
+      </span>`
+    : "";
   const open24hBadge = center.open24h ? `<span class="availability-badge" title="${text.open24h}" aria-label="${text.open24h}">24h/24</span>` : "";
   const panelId = `radiology-${center.id}-details`;
   const card = document.createElement("article");
@@ -1913,10 +1982,7 @@ const createCenterCard = (center) => {
       <span class="compact-card-title">
         <strong>${name}</strong>${open24hBadge}
       </span>
-      <span class="compact-rating" aria-label="${rating.label}">
-        ${rating.stars ? `<span aria-hidden="true">${rating.stars}</span>` : ""}
-        <b>${rating.label}</b>
-      </span>
+      ${ratingHtml}
       <span class="compact-chevron" aria-hidden="true">⌄</span>
     </button>
     <div class="compact-card-details" id="${panelId}" hidden>
@@ -1987,6 +2053,9 @@ const initFeaturedClinicGalleries = () => {
 
     let activeIndex = Math.max(0, images.findIndex((image) => image.classList.contains("is-active")));
     let timer;
+    let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
 
     const showImage = (index) => {
       activeIndex = (index + images.length) % images.length;
@@ -2005,6 +2074,36 @@ const initFeaturedClinicGalleries = () => {
         restart();
       });
     });
+
+    gallery.addEventListener(
+      "touchstart",
+      (event) => {
+        const touch = event.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        isSwiping = true;
+        window.clearInterval(timer);
+      },
+      { passive: true }
+    );
+
+    gallery.addEventListener(
+      "touchend",
+      (event) => {
+        if (!isSwiping) return;
+        const touch = event.changedTouches[0];
+        const deltaX = touch.clientX - startX;
+        const deltaY = touch.clientY - startY;
+        isSwiping = false;
+
+        if (Math.abs(deltaX) > 42 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) {
+          showImage(activeIndex + (deltaX < 0 ? 1 : -1));
+        }
+
+        restart();
+      },
+      { passive: true }
+    );
 
     restart();
   });
@@ -2095,8 +2194,9 @@ const createNewCabinetCard = (cabinet) => {
 };
 
 const NewMedicalCabinetsCarousel = (section) => {
+  const viewport = section.querySelector(".new-cabinets-carousel__viewport");
   const track = section.querySelector("[data-new-cabinets-track]");
-  if (!track || track.children.length) return;
+  if (!viewport || !track || track.children.length) return;
 
   const cards = newMedicalCabinets.map(createNewCabinetCard);
   const group = document.createElement("div");
@@ -2108,12 +2208,89 @@ const NewMedicalCabinetsCarousel = (section) => {
   duplicate.querySelectorAll("a").forEach((link) => {
     link.tabIndex = -1;
   });
+  const duplicateAfter = duplicate.cloneNode(true);
 
-  track.append(group, duplicate);
+  track.append(group, duplicate, duplicateAfter);
 
-  section.addEventListener("pointerdown", () => section.classList.add("is-touching"));
+  let autoplayId = 0;
+  let resumeId = 0;
+  let isPointerDown = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  const getLoopWidth = () => group.scrollWidth;
+  const normalizeScroll = () => {
+    const loopWidth = getLoopWidth();
+    if (!loopWidth) return;
+    if (viewport.scrollLeft >= loopWidth * 1.5) viewport.scrollLeft -= loopWidth;
+    if (viewport.scrollLeft <= loopWidth * 0.5) viewport.scrollLeft += loopWidth;
+  };
+
+  const stopAutoplay = () => {
+    window.clearInterval(autoplayId);
+    autoplayId = 0;
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayId = window.setInterval(() => {
+      const direction = document.documentElement.dir === "rtl" ? -1 : 1;
+      viewport.scrollLeft += direction;
+      normalizeScroll();
+    }, 24);
+  };
+
+  const scheduleAutoplay = () => {
+    window.clearTimeout(resumeId);
+    resumeId = window.setTimeout(startAutoplay, 1800);
+  };
+
+  requestAnimationFrame(() => {
+    viewport.scrollLeft = getLoopWidth();
+    startAutoplay();
+  });
+
+  viewport.addEventListener("pointerdown", (event) => {
+    isPointerDown = true;
+    startX = event.clientX;
+    startScrollLeft = viewport.scrollLeft;
+    section.classList.add("is-touching");
+    stopAutoplay();
+    viewport.setPointerCapture?.(event.pointerId);
+  });
+
+  viewport.addEventListener("pointermove", (event) => {
+    if (!isPointerDown) return;
+    viewport.scrollLeft = startScrollLeft - (event.clientX - startX);
+    normalizeScroll();
+  });
+
   ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
-    section.addEventListener(eventName, () => section.classList.remove("is-touching"));
+    viewport.addEventListener(eventName, (event) => {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      section.classList.remove("is-touching");
+      viewport.releasePointerCapture?.(event.pointerId);
+      normalizeScroll();
+      scheduleAutoplay();
+    });
+  });
+
+  viewport.addEventListener(
+    "scroll",
+    () => {
+      normalizeScroll();
+    },
+    { passive: true }
+  );
+
+  section.addEventListener("mouseenter", stopAutoplay);
+  section.addEventListener("mouseleave", scheduleAutoplay);
+  section.addEventListener("focusin", stopAutoplay);
+  section.addEventListener("focusout", scheduleAutoplay);
+  window.addEventListener("resize", () => {
+    normalizeScroll();
+    scheduleAutoplay();
   });
 };
 
@@ -2321,6 +2498,7 @@ loadPharmacies();
 loadLaboratories();
 renderCenters();
 initFeaturedClinicGalleries();
+initGalleryAutoplay();
 cleanGoogleReviewTimes();
 ensureFloatingCallButton();
 initGoogleReviewMarquees();

@@ -3317,10 +3317,23 @@ a[href^="https://wa.me/"] {
 }
 
 .new-cabinets-carousel__viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 4px 0 12px;
   outline: none;
   touch-action: pan-y;
+  cursor: grab;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.new-cabinets-carousel__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.new-cabinets-carousel.is-touching .new-cabinets-carousel__viewport {
+  cursor: grabbing;
 }
 
 .new-cabinets-carousel__viewport:focus-visible {
@@ -3332,26 +3345,14 @@ a[href^="https://wa.me/"] {
   display: flex;
   width: max-content;
   gap: 0;
-  animation: new-cabinets-scroll var(--new-cabinets-duration) linear infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  will-change: transform;
 }
 
 .new-cabinets-carousel__group {
   display: flex;
   gap: 18px;
   padding-inline-end: 18px;
-}
-
-[dir="rtl"] .new-cabinets-carousel__track {
-  animation-direction: reverse;
-}
-
-.new-cabinets-carousel:hover .new-cabinets-carousel__track,
-.new-cabinets-carousel:focus-within .new-cabinets-carousel__track,
-.new-cabinets-carousel.is-touching .new-cabinets-carousel__track {
-  animation-play-state: paused;
 }
 
 .new-cabinet-card {
@@ -3440,16 +3441,6 @@ a[href^="https://wa.me/"] {
 .new-cabinet-card__link:focus-visible {
   outline: 3px solid rgba(47, 128, 237, 0.3);
   outline-offset: 3px;
-}
-
-@keyframes new-cabinets-scroll {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
 }
 
 .doctor-card h3 {
@@ -5843,7 +5834,6 @@ a[href^="https://wa.me/"] {
 
   .new-cabinets-carousel__viewport {
     overflow-x: auto;
-    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -5861,7 +5851,6 @@ a[href^="https://wa.me/"] {
     gap: 14px;
     width: calc(100vw - 40px);
     min-height: 148px;
-    scroll-snap-align: center;
   }
 
   .new-cabinet-card__photo {
@@ -5896,7 +5885,6 @@ a[href^="https://wa.me/"] {
 
   .new-cabinets-carousel__viewport {
     overflow-x: auto;
-    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
   }
 }
