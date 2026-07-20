@@ -199,6 +199,7 @@ const specialtyPageText = {
   ophtalmologues: { fr: { singular: "ophtalmologue", plural: "ophtalmologues" }, en: { singular: "ophthalmologist", plural: "ophthalmologists" }, ar: { singular: "طبيب عيون", plural: "أطباء العيون" } },
   pneumologues: { fr: { singular: "pneumologue", plural: "pneumologues" }, en: { singular: "pulmonologist", plural: "pulmonologists" }, ar: { singular: "طبيب أمراض تنفسية", plural: "أطباء الأمراض التنفسية" } },
   internistes: { fr: { singular: "interniste", plural: "internistes" }, en: { singular: "internist", plural: "internists" }, ar: { singular: "طبيب باطني", plural: "أطباء الباطنة" } },
+  gastroenterologues: { fr: { singular: "gastro-entérologue", plural: "gastro-entérologues" }, en: { singular: "gastroenterologist", plural: "gastroenterologists" }, ar: { singular: "طبيب جهاز هضمي", plural: "أطباء الجهاز الهضمي" } },
   visceralistes: { fr: { singular: "chirurgien viscéraliste", plural: "chirurgiens viscéralistes" }, en: { singular: "visceral surgeon", plural: "visceral surgeons" }, ar: { singular: "جراح أحشاء", plural: "جراحو الأحشاء" } },
   endocrinologues: { fr: { singular: "endocrinologue", plural: "endocrinologues" }, en: { singular: "endocrinologist", plural: "endocrinologists" }, ar: { singular: "طبيب غدد وسكري", plural: "أطباء الغدد والسكري" } },
   orl: { fr: { singular: "ORL", plural: "ORL" }, en: { singular: "ENT specialist", plural: "ENT specialists" }, ar: { singular: "طبيب أنف وأذن وحنجرة", plural: "أطباء الأنف والأذن والحنجرة" } },
@@ -1041,7 +1042,7 @@ const createPharmacyCard = (pharmacy, options = {}) => {
     ${createPharmacyLine(labels.district, district)}
     ${createPharmacyLine(labels.address, address)}
     ${createPharmacyLine(labels.phone, pharmacy.phone, { dir: "ltr" })}
-    ${createPharmacyLine(isDuty ? labels.hours : labels.directoryHours, hours)}
+    ${isDuty ? createPharmacyLine(labels.hours, hours) : ""}
     <div class="pharmacy-actions">
       ${pharmacy.phone ? `<a href="${normalizePhoneHref(pharmacy.phone)}" aria-label="${labels.call} ${name}">${labels.call}</a>` : ""}
       <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${labels.directions} ${name}">${labels.directions}</a>
@@ -1449,7 +1450,7 @@ const isSponsorActive = (lab) => {
 const hasNumericRating = (lab) => Number.isFinite(Number(lab.rating));
 const hasNumericReviewCount = (lab) => Number.isFinite(lab.reviewCount);
 const hasVerifiedGoogleRating = (lab) =>
-  lab.rating !== null && lab.rating !== "" && hasNumericRating(lab) && hasNumericReviewCount(lab) && Number(lab.reviewCount) > 0;
+  lab.rating !== null && lab.rating !== "" && hasNumericRating(lab);
 
 const sortLaboratories = (laboratories) =>
   [...laboratories].sort((a, b) => {
@@ -1493,6 +1494,7 @@ const getLocalizedHours = (hours) => {
 };
 
 const formatLaboratoryRating = (lab) => {
+  const text = getLaboratoryText();
   if (!hasVerifiedGoogleRating(lab)) {
     return null;
   }
@@ -1500,7 +1502,7 @@ const formatLaboratoryRating = (lab) => {
   const rating = Math.max(0, Math.min(5, Number(lab.rating)));
   const rounded = Math.round(rating);
   const stars = "★★★★★".slice(0, rounded) + "☆☆☆☆☆".slice(rounded);
-  const reviews = ` · ${Number(lab.reviewCount)} ${text.reviews}`;
+  const reviews = hasNumericReviewCount(lab) ? ` · ${Number(lab.reviewCount)} ${text.reviews}` : "";
   return {
     label: `${rating.toFixed(1).replace(".", isEnglishPage ? "." : ",")} Google${reviews}`,
     stars,

@@ -3242,7 +3242,7 @@ a[href^="https://wa.me/"] {
   }
 
   .pharmacy-duty-groups {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
     align-items: start;
   }
 
