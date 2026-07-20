@@ -65,7 +65,7 @@ const newMedicalCabinets = [
       ar: "عمارة الصيدلية الرئيسية"
     },
     href: "ophtalmologues-kenitra",
-    image: "assets/cabinets/cabinet-ophtalmologie-pharmacie-principale.jpg"
+    image: "assets/cabinets/cabinet-ophtalmologie-pharmacie-principale.avif"
   },
   {
     id: "dental-haddada-congress",
@@ -82,7 +82,7 @@ const newMedicalCabinets = [
       ar: "الحدادة، قرب مقهى كونغرس"
     },
     href: "dentistes-kenitra",
-    image: "assets/cabinets/cabinet-dentaire-haddada-congress.jpg"
+    image: "assets/cabinets/cabinet-dentaire-haddada-congress.avif"
   },
   {
     id: "laboratory-rx-alhilal",
@@ -103,7 +103,7 @@ const newMedicalCabinets = [
       en: "laboratories-kenitra.html",
       ar: "laboratoires-kenitra-ar.html"
     },
-    image: "assets/cabinets/laboratoire-rx-alhilal.jpg"
+    image: "assets/cabinets/laboratoire-rx-alhilal.avif"
   },
   {
     id: "clinique-internationale-kenitra",
@@ -128,7 +128,7 @@ const newMedicalCabinets = [
       en: "hopitaux-en.html",
       ar: "hopitaux-ar.html"
     },
-    image: "assets/partners/clinical-international/exterieur-principal.jpg"
+    image: "assets/partners/clinical-international/exterieur-principal.avif"
   }
 ];
 
@@ -410,7 +410,7 @@ ambientCanvases.forEach(initAmbientCanvas);
 
 const galleryItems = [
   {
-    src: "assets/optimized/gallery/ambulance-exterieur-01.jpg",
+    src: "assets/optimized/gallery/ambulance-exterieur-01.avif",
     title: "Ambulance disponible",
     titleEn: "Ambulance available",
     titleAr: "سيارة إسعاف متاحة",
@@ -419,7 +419,7 @@ const galleryItems = [
     altAr: "سيارة إسعاف من الخارج",
   },
   {
-    src: "assets/optimized/gallery/ambulance-interieur-01.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-01.avif",
     title: "Intérieur ambulance équipé",
     titleEn: "Equipped ambulance interior",
     titleAr: "داخل سيارة إسعاف مجهز",
@@ -428,7 +428,7 @@ const galleryItems = [
     altAr: "داخل سيارة الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/ambulance-exterieur-02.jpg",
+    src: "assets/optimized/gallery/ambulance-exterieur-02.avif",
     title: "Ambulance prête au départ",
     titleEn: "Ambulance ready to move",
     titleAr: "سيارة إسعاف جاهزة",
@@ -437,7 +437,7 @@ const galleryItems = [
     altAr: "سيارة إسعاف مفتوحة",
   },
   {
-    src: "assets/optimized/gallery/ambulance-interieur-02.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-02.avif",
     title: "Brancard et oxygène",
     titleEn: "Stretcher and oxygen",
     titleAr: "نقالة وأكسجين",
@@ -446,7 +446,7 @@ const galleryItems = [
     altAr: "نقالة داخل الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/ambulance-interieur-03.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-03.avif",
     title: "Cabine sanitaire aménagée",
     titleEn: "Prepared medical cabin",
     titleAr: "مساحة صحية مجهزة",
@@ -455,7 +455,7 @@ const galleryItems = [
     altAr: "مقعد ومعدات الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/ambulance-interieur-04.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-04.avif",
     title: "Matériel de transport médicalisé",
     titleEn: "Medical transport equipment",
     titleAr: "معدات النقل الطبي",
@@ -464,7 +464,7 @@ const galleryItems = [
     altAr: "داخل مجهز في الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/ambulance-interieur-05.jpg",
+    src: "assets/optimized/gallery/ambulance-interieur-05.avif",
     title: "Ambulance ouverte et accessible",
     titleEn: "Open and accessible ambulance",
     titleAr: "سيارة إسعاف مفتوحة وسهلة الولوج",
@@ -473,7 +473,7 @@ const galleryItems = [
     altAr: "أبواب سيارة الإسعاف مفتوحة",
   },
   {
-    src: "assets/optimized/gallery/equipement-01.jpg",
+    src: "assets/optimized/gallery/equipement-01.avif",
     title: "Équipement médical embarqué",
     titleEn: "On-board medical equipment",
     titleAr: "معدات طبية داخل السيارة",
@@ -482,7 +482,7 @@ const galleryItems = [
     altAr: "معدات طبية في الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/equipement-02.jpg",
+    src: "assets/optimized/gallery/equipement-02.avif",
     title: "Assistance respiratoire",
     titleEn: "Respiratory assistance",
     titleAr: "مساعدة تنفسية",
@@ -491,7 +491,7 @@ const galleryItems = [
     altAr: "معدات تنفس في الإسعاف",
   },
   {
-    src: "assets/optimized/gallery/fourgon-sanitaire-01.jpg",
+    src: "assets/optimized/gallery/fourgon-sanitaire-01.avif",
     title: "Fourgon sanitaire",
     titleEn: "Medical van",
     titleAr: "فورغون صحي",
@@ -500,7 +500,7 @@ const galleryItems = [
     altAr: "فورغون صحي",
   },
   {
-    src: "assets/optimized/gallery/fourgon-couveuse-01.jpg",
+    src: "assets/optimized/gallery/fourgon-couveuse-01.avif",
     title: "Fourgon avec couveuse",
     titleEn: "Van with incubator",
     titleAr: "فورغون مع حاضنة",
@@ -517,7 +517,7 @@ const fallbackPharmacyData = {
   source: "Affiche du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
   updatedAt: "2026-07-18T09:00:00+01:00",
   title: "Pharmacies de garde de week-end Kenitra - 18 et 19 juillet 2026",
-  image: "assets/pharmacies/pharmacie-garde-kenitra.jpg",
+  image: "assets/pharmacies/pharmacie-garde-kenitra.avif",
   updateFrequency: "manual-from-official-poster",
   note: "Garde de week-end 24h/24 les 18 et 19 juillet 2026. Appelez la pharmacie avant de vous deplacer.",
   pharmacies: [
@@ -969,8 +969,8 @@ const pharmacyLabels = {
     district: "Quartier",
     address: "Adresse",
     hours: "Horaires de garde",
-    day: "Jour",
-    night: "Nuit",
+    day: "De garde",
+    night: "De garde",
     directoryHours: "Horaires",
     toComplete: "À compléter"
   },
@@ -986,8 +986,8 @@ const pharmacyLabels = {
     district: "District",
     address: "Address",
     hours: "Duty hours",
-    day: "Day",
-    night: "Night",
+    day: "On duty",
+    night: "On duty",
     directoryHours: "Opening hours",
     toComplete: "To be completed"
   },
@@ -1003,8 +1003,8 @@ const pharmacyLabels = {
     district: "الحي",
     address: "العنوان",
     hours: "أوقات الحراسة",
-    day: "نهار",
-    night: "ليل",
+    day: "حراسة",
+    night: "حراسة",
     directoryHours: "أوقات العمل",
     toComplete: "سيتم إكمالها"
   }
@@ -1029,7 +1029,6 @@ const createPharmacyCard = (pharmacy, options = {}) => {
   const name = getLocalized(pharmacy, "name") || pharmacy.name || labels.toComplete;
   const district = getLocalized(pharmacy, "district") || pharmacy.district || labels.toComplete;
   const address = getLocalized(pharmacy, "address") || pharmacy.address || labels.toComplete;
-  const hours = getLocalized(pharmacy, "hours") || pharmacy.hours || labels.toComplete;
   const mapsUrl = getPharmacyMapsUrl(pharmacy);
   const article = document.createElement("article");
   article.className = `pharmacy-card${isDuty ? " pharmacy-card--duty" : " pharmacy-card--directory"}`;
@@ -1042,7 +1041,6 @@ const createPharmacyCard = (pharmacy, options = {}) => {
     ${createPharmacyLine(labels.district, district)}
     ${createPharmacyLine(labels.address, address)}
     ${createPharmacyLine(labels.phone, pharmacy.phone, { dir: "ltr" })}
-    ${isDuty ? createPharmacyLine(labels.hours, hours) : ""}
     <div class="pharmacy-actions">
       ${pharmacy.phone ? `<a href="${normalizePhoneHref(pharmacy.phone)}" aria-label="${labels.call} ${name}">${labels.call}</a>` : ""}
       <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${labels.directions} ${name}">${labels.directions}</a>
@@ -2581,7 +2579,21 @@ initGalleryAutoplay();
 cleanGoogleReviewTimes();
 ensureFloatingCallButton();
 initGoogleReviewMarquees();
-newCabinetsCarousels.forEach(NewMedicalCabinetsCarousel);
+if ("IntersectionObserver" in window && newCabinetsCarousels.length) {
+  const carouselObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        NewMedicalCabinetsCarousel(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "220px 0px" }
+  );
+  newCabinetsCarousels.forEach((carousel) => carouselObserver.observe(carousel));
+} else {
+  newCabinetsCarousels.forEach(NewMedicalCabinetsCarousel);
+}
 specialtyProfessionalSlots.forEach(renderSpecialtyProfessionalSlots);
 sortHospitalFacilityCards();
 enhanceEstablishmentCards();

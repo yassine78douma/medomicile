@@ -86,7 +86,7 @@
       </section>
 
       <section class="pharmacy section" id="pharmacies-garde" aria-labelledby="pharmacy-duty-title">
-        <div class="pharmacy-panel reveal">
+        <div class="pharmacy-panel pharmacy-panel--centered reveal">
           <div class="pharmacy-copy">
             <p class="eyebrow">MISE À JOUR QUOTIDIENNE</p>
             <h2 id="pharmacy-duty-title">Pharmacies de garde</h2>
@@ -104,11 +104,18 @@
             </section>
           </div>
           <figure class="pharmacy-image">
-            <img
-              src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png"
-              alt="Affiche des pharmacies de garde de nuit à Kenitra du lundi 20 juillet 2026"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.avif" type="image/avif" />
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.webp" type="image/webp" />
+              <img
+                src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png"
+                alt="Affiche des pharmacies de garde de nuit à Kenitra du lundi 20 juillet 2026"
+                width="1038"
+                height="1536"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
             <figcaption>Affiche officielle de garde de nuit du 20 juillet 2026. À vérifier par téléphone avant déplacement.</figcaption>
           </figure>
         </div>
@@ -120,6 +127,7 @@
             <p class="eyebrow">ANNUAIRE PERMANENT</p>
             <h2 id="pharmacy-directory-title">Toutes les pharmacies de Kénitra</h2>
             <p>Accédez à l’annuaire permanent sur une page dédiée.</p>
+            <p>Toutes les fiches ne sont pas encore à jour. Le reste des pharmacies est en cours de vérification. Vous êtes pharmacien ? Contactez-nous pour accélérer votre mise en ligne sur Medomicile.</p>
           </div>
           <div class="urgent-actions">
             <a class="primary-action" href="pharmacies-kenitra.html">Voir toutes les pharmacies de Kénitra</a>

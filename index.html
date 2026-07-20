@@ -2,12 +2,19 @@
 <html lang="fr">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18241787343"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-18241787343');
+      window.addEventListener('load', function(){
+        window.setTimeout(function(){
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18241787343';
+        document.head.appendChild(script);
+        gtag('js', new Date());
+        gtag('config', 'AW-18241787343');
+        }, 8000);
+      }, { once: true });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -44,13 +51,21 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" href="assets/brand/medomicile-logo.png" />
     <link rel="apple-touch-icon" href="assets/brand/medomicile-logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="image"
+      href="assets/optimized/medomicile-hospital-team-520.avif"
+      imagesrcset="assets/optimized/medomicile-hospital-team-520.avif 520w, assets/optimized/medomicile-hospital-team-720.avif 720w, assets/optimized/medomicile-hospital-team-1200.avif 1200w"
+      imagesizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
+      type="image/avif"
+      fetchpriority="high"
     />
-    <link rel="stylesheet" href="style.css?v=20260717-07" />
+    <style>
+      :root{--blue-950:#082f49;--blue-850:#0f4c81;--blue-700:#2f80ed;--blue-100:#eaf3ff;--green-700:#15803d;--green-600:#22c55e;--gold:#c6a969;--ink:#0f172a;--muted:#334155;--soft-muted:#64748b;--line:#dbe7f3;--surface:#fff;--soft:#f8fafc;--shadow:0 8px 30px rgba(15,23,42,.06);--deep-shadow:0 24px 70px rgba(15,76,129,.16);--radius:16px;--header-height:68px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--soft);font-family:Inter,"Helvetica Neue",Arial,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}img{max-width:100%;height:auto}.mobile-header{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(18px)}.nav{width:min(1120px,calc(100% - 32px));min-height:var(--header-height);margin:auto;display:flex;align-items:center;gap:16px}.brand{display:inline-flex;align-items:center;gap:8px;min-width:0;color:var(--blue-950);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:.92rem;font-weight:900;line-height:1.05}.brand-mark{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 38px;border:1px solid rgba(198,169,105,.45);border-radius:50%;background:#fff;box-shadow:var(--shadow)}.brand-mark img{width:30px;height:30px;display:block;object-fit:contain}.nav-links{display:flex;align-items:center;gap:4px;margin-left:auto}.nav-links a,.nav-actions a{padding:10px 12px;border-radius:999px;color:#1e3655;font-weight:850;font-size:.86rem}.nav-actions{display:flex;gap:8px}.call-link{color:#fff!important;background:var(--blue-850)}.whatsapp-link{color:#fff!important;background:var(--green-600)}.theme-toggle{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--blue-850)}.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--soft),var(--surface) 42%)}.hero-shell{width:min(1120px,calc(100% - 32px));margin:auto;padding:clamp(38px,7vw,86px) 0 clamp(28px,5vw,62px);display:grid;gap:28px}.hero-copy{display:grid;gap:16px;max-width:880px}.eyebrow{margin:0;color:var(--blue-700);font-size:.78rem;font-weight:950;letter-spacing:.08em;text-transform:uppercase}.hero h1{margin:0;color:var(--blue-950);font-size:clamp(2.35rem,7.8vw,5.8rem);line-height:.92}.hero-subtitle{margin:0;max-width:760px;color:var(--muted);font-size:clamp(1.02rem,2.4vw,1.3rem)}.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.primary-action,.secondary-action{min-height:48px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:950}.primary-action{color:#fff;background:var(--blue-850)}.secondary-action{color:var(--blue-850);background:var(--blue-100)}.media-stage{position:relative;min-height:430px;border-radius:var(--radius);overflow:hidden;background:var(--blue-100);box-shadow:var(--deep-shadow)}.media-stage picture,.media-stage img{width:100%;height:430px;display:block}.media-stage img{object-fit:cover}.media-stage.hero-photo{background-size:cover;background-position:center;background-image:image-set(url("assets/optimized/medomicile-hospital-team-1200.avif") type("image/avif"),url("assets/optimized/medomicile-hospital-team-1200.webp") type("image/webp"),url("assets/optimized/medomicile-hospital-team-1200.jpg") type("image/jpeg"))}.media-stage.hero-photo picture{display:none}.media-overlay,.media-caption,.media-zone{position:absolute;z-index:2}.media-overlay{inset:0;background:linear-gradient(180deg,transparent,rgba(8,47,73,.26))}.media-caption{left:18px;bottom:18px;color:#fff}.media-zone{right:18px;bottom:18px;padding:10px 12px;border-radius:14px;color:#fff;background:rgba(8,47,73,.72)}.reveal{opacity:1;transform:none}@media(max-width:760px){.nav{width:min(100% - 20px,1120px);gap:8px}.nav-links{display:none}.nav-actions{margin-left:auto}.nav-actions .whatsapp-link{display:none}.hero-shell{padding-top:30px}.media-stage,.media-stage picture,.media-stage img{height:310px;min-height:310px}.hero h1{font-size:clamp(2.18rem,12vw,3.7rem)}.media-stage.hero-photo{background-image:image-set(url("assets/optimized/medomicile-hospital-team-520.avif") type("image/avif"),url("assets/optimized/medomicile-hospital-team-520.webp") type("image/webp"),url("assets/optimized/medomicile-hospital-team-720.jpg") type("image/jpeg"))}}
+    </style>
+    <link rel="preload" href="home.css?v=20260720-01" as="style" />
+    <link rel="stylesheet" href="home.css?v=20260720-01" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="home.css?v=20260720-01" /></noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -185,16 +200,20 @@
         </div>
 
         <div class="media-stage hero-photo reveal" data-scroll-media aria-label="Aperçu assistance médicale à domicile">
-          <img
-            src="assets/optimized/medomicile-hospital-team-1200.jpg"
-            srcset="assets/optimized/medomicile-hospital-team-720.jpg 720w, assets/optimized/medomicile-hospital-team-1200.jpg 1200w, assets/hero/medomicile-hospital-team.jpg 1800w"
-            sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
-            alt="Équipe Medomicile devant un hôpital avec ambulance et véhicule d’assistance"
-            width="1800"
-            height="1200"
-            fetchpriority="high"
-            decoding="async"
-          />
+          <picture>
+            <source srcset="assets/optimized/medomicile-hospital-team-520.avif 520w, assets/optimized/medomicile-hospital-team-720.avif 720w, assets/optimized/medomicile-hospital-team-1200.avif 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px" type="image/avif" />
+            <source srcset="assets/optimized/medomicile-hospital-team-520.webp 520w, assets/optimized/medomicile-hospital-team-720.webp 720w, assets/optimized/medomicile-hospital-team-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px" type="image/webp" />
+            <img
+              src="assets/optimized/medomicile-hospital-team-1200.jpg"
+              srcset="assets/optimized/medomicile-hospital-team-720.jpg 720w, assets/optimized/medomicile-hospital-team-1200.jpg 1200w"
+              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
+              alt="Équipe Medomicile devant un hôpital avec ambulance et véhicule d’assistance"
+              width="1200"
+              height="800"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
           <div class="media-overlay" aria-hidden="true"></div>
           <div class="media-caption">
             <strong>24/7</strong>

@@ -88,11 +88,18 @@
       <section class="section" aria-labelledby="blood-article-title">
         <article class="blood-article reveal">
           <figure class="blood-article-media">
-            <img
-              src="assets/awareness/don-sang-article.png?v=20260615-01"
-              alt="Campagne de sensibilisation au don du sang : donnez votre sang, sauvez des vies"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="assets/awareness/don-sang-article.avif" type="image/avif" />
+              <source srcset="assets/awareness/don-sang-article.webp" type="image/webp" />
+              <img
+                src="assets/awareness/don-sang-article.png?v=20260615-01"
+                alt="Campagne de sensibilisation au don du sang : donnez votre sang, sauvez des vies"
+                width="1536"
+                height="2048"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </figure>
 
           <div class="blood-article-layout">

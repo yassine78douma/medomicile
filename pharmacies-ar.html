@@ -84,7 +84,7 @@
       </section>
 
       <section class="pharmacy section" id="pharmacies-garde" aria-labelledby="pharmacy-duty-title">
-        <div class="pharmacy-panel reveal">
+        <div class="pharmacy-panel pharmacy-panel--centered reveal">
           <div class="pharmacy-copy">
             <p class="eyebrow">تحديث يومي</p>
             <h2 id="pharmacy-duty-title">صيدليات الحراسة</h2>
@@ -102,7 +102,11 @@
             </section>
           </div>
           <figure class="pharmacy-image">
-            <img src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" alt="إعلان صيدليات الحراسة الليلية بالقنيطرة يوم الاثنين 20 يوليوز 2026" loading="lazy" />
+            <picture>
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.avif" type="image/avif" />
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.webp" type="image/webp" />
+              <img src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" alt="إعلان صيدليات الحراسة الليلية بالقنيطرة يوم الاثنين 20 يوليوز 2026" width="1038" height="1536" loading="lazy" decoding="async" />
+            </picture>
             <figcaption>إعلان رسمي للحراسة الليلية ليوم 20 يوليوز 2026. يرجى الاتصال قبل التنقل.</figcaption>
           </figure>
         </div>
@@ -114,6 +118,7 @@
             <p class="eyebrow">دليل دائم</p>
             <h2 id="pharmacy-directory-title">كل صيدليات القنيطرة</h2>
             <p>افتحوا الدليل الدائم في صفحة مخصصة.</p>
+            <p>ليست كل البطاقات محدثة حالياً. باقي الصيدليات قيد التحقق. إذا كنتم صيدلياً، تواصلوا معنا لتسريع إضافة معلوماتكم على Medomicile.</p>
           </div>
           <div class="urgent-actions">
             <a class="primary-action" href="pharmacies-kenitra-ar.html">عرض كل صيدليات القنيطرة</a>

@@ -85,7 +85,7 @@
       </section>
 
       <section class="pharmacy section" id="pharmacies-garde" aria-labelledby="pharmacy-duty-title">
-        <div class="pharmacy-panel reveal">
+        <div class="pharmacy-panel pharmacy-panel--centered reveal">
           <div class="pharmacy-copy">
             <p class="eyebrow">DAILY UPDATE</p>
             <h2 id="pharmacy-duty-title">On-duty pharmacies</h2>
@@ -103,7 +103,11 @@
             </section>
           </div>
           <figure class="pharmacy-image">
-            <img src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" alt="Night on-duty pharmacy poster in Kenitra for Monday, July 20, 2026" loading="lazy" />
+            <picture>
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.avif" type="image/avif" />
+              <source srcset="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.webp" type="image/webp" />
+              <img src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" alt="Night on-duty pharmacy poster in Kenitra for Monday, July 20, 2026" width="1038" height="1536" loading="lazy" decoding="async" />
+            </picture>
             <figcaption>Official night duty poster for July 20, 2026. Call before going.</figcaption>
           </figure>
         </div>
@@ -115,6 +119,7 @@
             <p class="eyebrow">PERMANENT DIRECTORY</p>
             <h2 id="pharmacy-directory-title">All pharmacies in Kenitra</h2>
             <p>Open the permanent directory on a dedicated page.</p>
+            <p>Not every profile is up to date yet. The remaining pharmacies are being verified. Are you a pharmacist? Contact us to speed up your Medomicile listing.</p>
           </div>
           <div class="urgent-actions">
             <a class="primary-action" href="pharmacies-kenitra-en.html">See all pharmacies in Kenitra</a>
