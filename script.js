@@ -13,7 +13,8 @@ const galleryTitle = document.querySelector("[data-gallery-title]");
 const galleryCount = document.querySelector("[data-gallery-count]");
 const galleryPrev = document.querySelector("[data-gallery-prev]");
 const galleryNext = document.querySelector("[data-gallery-next]");
-const pharmacyList = document.querySelector("[data-pharmacy-list]");
+const pharmacyDutyLists = document.querySelectorAll("[data-pharmacy-duty-list]");
+const pharmacyDirectoryList = document.querySelector("[data-pharmacy-directory-list]");
 const pharmacyTitle = document.querySelector("[data-pharmacy-title]");
 const pharmacyUpdated = document.querySelector("[data-pharmacy-updated]");
 const themeToggle = document.querySelector("[data-theme-toggle]");
@@ -954,94 +955,170 @@ const normalizePhoneHref = (phone) => {
   return `tel:${firstNumber.replace(/[^\d+]/g, "")}`;
 };
 
-const renderPharmacies = (data) => {
-  if (!pharmacyList || !pharmacyTitle || !pharmacyUpdated) return;
-
-  const title = data.title || (isArabicPage ? "صيدليات الحراسة في القنيطرة" : "Pharmacies de garde à Kenitra");
-  pharmacyTitle.textContent = isArabicPage
-    ? "صيدليات الحراسة في القنيطرة والمهدية"
-    : isEnglishPage
-      ? "On-duty pharmacies in Kenitra and Mehdia"
-      : title;
-  pharmacyUpdated.textContent = data.updatedAt
-    ? isArabicPage
-      ? `آخر تحديث: ${data.updatedAt}`
-      : isEnglishPage
-        ? `Last update: ${data.updatedAt}`
-        : `Dernière actualisation : ${data.updatedAt}`
-    : isArabicPage
-      ? "المعلومات قابلة للتغيير، يرجى الاتصال قبل التنقل."
-      : isEnglishPage
-        ? "Information may change, please call before going."
-        : "Les informations peuvent changer, appelez avant de vous déplacer.";
-
-  pharmacyList.replaceChildren();
-
-  (data.pharmacies || []).forEach((pharmacy) => {
-    const card = document.createElement("article");
-    card.className = "pharmacy-card";
-
-    const heading = document.createElement("h3");
-    heading.textContent = getLocalized(pharmacy, "name") || pharmacy.name;
-
-    const district = document.createElement("p");
-    district.textContent = getLocalized(pharmacy, "district") || pharmacy.district || "";
-
-    const address = document.createElement("p");
-    address.textContent = getLocalized(pharmacy, "address") || pharmacy.address || "";
-
-    const date = document.createElement("span");
-    date.className = "pharmacy-date";
-    date.textContent = pharmacy.date
-      ? isArabicPage
-        ? `تاريخ الحراسة: ${pharmacy.date}`
-        : isEnglishPage
-          ? `On duty: ${pharmacy.date}`
-          : `Garde : ${pharmacy.date}`
-      : isArabicPage
-        ? "Garde hebdomadaire"
-        : isEnglishPage
-          ? "Weekly duty"
-          : "Garde hebdomadaire";
-
-    const actions = document.createElement("div");
-    actions.className = "pharmacy-actions";
-
-    if (pharmacy.phone) {
-      const phoneLink = document.createElement("a");
-      phoneLink.href = normalizePhoneHref(pharmacy.phone);
-      phoneLink.textContent = isArabicPage
-        ? "اتصال بالصيدلية"
-        : isEnglishPage
-          ? "Call pharmacy"
-          : "Appeler la pharmacie";
-      actions.append(phoneLink);
-    }
-
-    if (pharmacy.mapsUrl) {
-      const mapLink = document.createElement("a");
-      mapLink.href = pharmacy.mapsUrl;
-      mapLink.target = "_blank";
-      mapLink.rel = "noopener";
-      mapLink.textContent = isArabicPage ? "الخريطة" : isEnglishPage ? "Directions" : "Itinéraire";
-      actions.append(mapLink);
-    }
-
-    card.append(heading, date, district, address, actions);
-    pharmacyList.append(card);
-  });
-
-  if (!pharmacyList.children.length) {
-    pharmacyList.textContent = isArabicPage
-      ? "لم يتم العثور على صيدليات في الملف الحالي."
-      : isEnglishPage
-        ? "No pharmacy found in the current file."
-        : "Aucune pharmacie trouvée dans le fichier actuel.";
+const pharmacyLabels = {
+  fr: {
+    title: "Pharmacies de garde à Kénitra",
+    updated: "Date de mise à jour",
+    noDay: "Aucune pharmacie de garde de jour officielle n’est renseignée pour le moment.",
+    noNight: "Aucune pharmacie de garde de nuit officielle n’est renseignée pour le moment.",
+    noDirectory: "Aucune pharmacie permanente n’est encore renseignée.",
+    call: "Appeler",
+    directions: "Itinéraire Google Maps",
+    phone: "Téléphone",
+    district: "Quartier",
+    address: "Adresse",
+    hours: "Horaires de garde",
+    day: "Jour",
+    night: "Nuit",
+    directoryHours: "Horaires",
+    toComplete: "À compléter"
+  },
+  en: {
+    title: "On-duty pharmacies in Kenitra",
+    updated: "Update date",
+    noDay: "No official day on-duty pharmacy is listed for now.",
+    noNight: "No official night on-duty pharmacy is listed for now.",
+    noDirectory: "No permanent pharmacy profile is listed yet.",
+    call: "Call",
+    directions: "Google Maps directions",
+    phone: "Phone",
+    district: "District",
+    address: "Address",
+    hours: "Duty hours",
+    day: "Day",
+    night: "Night",
+    directoryHours: "Opening hours",
+    toComplete: "To be completed"
+  },
+  ar: {
+    title: "صيدليات الحراسة في القنيطرة",
+    updated: "تاريخ التحديث",
+    noDay: "لا توجد صيدلية حراسة نهارية رسمية مسجلة حالياً.",
+    noNight: "لا توجد صيدلية حراسة ليلية رسمية مسجلة حالياً.",
+    noDirectory: "لم تتم إضافة أي صيدلية دائمة بعد.",
+    call: "اتصال",
+    directions: "الاتجاهات عبر Google Maps",
+    phone: "الهاتف",
+    district: "الحي",
+    address: "العنوان",
+    hours: "أوقات الحراسة",
+    day: "نهار",
+    night: "ليل",
+    directoryHours: "أوقات العمل",
+    toComplete: "سيتم إكمالها"
   }
 };
 
+const getPharmacyLabels = () => pharmacyLabels[currentLang] || pharmacyLabels.fr;
+
+const getPharmacyMapsUrl = (pharmacy) =>
+  pharmacy.mapsUrl ||
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name || ""} ${pharmacy.district || ""} Kenitra`)}`;
+
+const createPharmacyLine = (label, value, options = {}) => {
+  if (!value) return "";
+  const dir = options.dir ? ` dir="${options.dir}"` : "";
+  return `<p class="pharmacy-card-line"><span>${label}</span><b${dir}>${value}</b></p>`;
+};
+
+const createPharmacyCard = (pharmacy, options = {}) => {
+  const labels = getPharmacyLabels();
+  const isDuty = Boolean(options.badge);
+  const badgeLabel = options.badge === "day" ? labels.day : options.badge === "night" ? labels.night : "";
+  const name = getLocalized(pharmacy, "name") || pharmacy.name || labels.toComplete;
+  const district = getLocalized(pharmacy, "district") || pharmacy.district || labels.toComplete;
+  const address = getLocalized(pharmacy, "address") || pharmacy.address || labels.toComplete;
+  const hours = getLocalized(pharmacy, "hours") || pharmacy.hours || labels.toComplete;
+  const mapsUrl = getPharmacyMapsUrl(pharmacy);
+  const article = document.createElement("article");
+  article.className = `pharmacy-card${isDuty ? " pharmacy-card--duty" : " pharmacy-card--directory"}`;
+
+  article.innerHTML = `
+    <div class="pharmacy-card-head">
+      <h3>${name}</h3>
+      ${badgeLabel ? `<span class="pharmacy-duty-badge pharmacy-duty-badge--${options.badge}">${badgeLabel}</span>` : ""}
+    </div>
+    ${createPharmacyLine(labels.district, district)}
+    ${createPharmacyLine(labels.address, address)}
+    ${createPharmacyLine(labels.phone, pharmacy.phone, { dir: "ltr" })}
+    ${createPharmacyLine(isDuty ? labels.hours : labels.directoryHours, hours)}
+    <div class="pharmacy-actions">
+      ${pharmacy.phone ? `<a href="${normalizePhoneHref(pharmacy.phone)}" aria-label="${labels.call} ${name}">${labels.call}</a>` : ""}
+      <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer" aria-label="${labels.directions} ${name}">${labels.directions}</a>
+    </div>
+  `;
+
+  return article;
+};
+
+const renderPharmacyEmpty = (container, message) => {
+  container.replaceChildren();
+  const empty = document.createElement("p");
+  empty.className = "pharmacy-empty";
+  empty.textContent = message;
+  container.append(empty);
+};
+
+const updatePharmacyJsonLd = (data) => {
+  document.querySelector("[data-pharmacy-jsonld]")?.remove();
+  const pharmacies = [...(data?.duty?.day || []), ...(data?.duty?.night || []), ...(data?.directory || [])];
+  if (!pharmacies.length) return;
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.dataset.pharmacyJsonld = "true";
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: getPharmacyLabels().title,
+    itemListElement: pharmacies.map((pharmacy, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Pharmacy",
+        name: pharmacy.name,
+        telephone: pharmacy.phone || undefined,
+        address: pharmacy.address || undefined,
+        url: getPharmacyMapsUrl(pharmacy)
+      }
+    }))
+  });
+  document.head.append(script);
+};
+
+const renderPharmacies = (data) => {
+  if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
+
+  const labels = getPharmacyLabels();
+  if (pharmacyTitle) pharmacyTitle.textContent = data.displayDate ? `${labels.updated} : ${getLocalized(data, "displayDate") || data.displayDate}` : labels.title;
+  if (pharmacyUpdated) pharmacyUpdated.textContent = data.note || labels.title;
+
+  pharmacyDutyLists.forEach((container) => {
+    const dutyType = container.dataset.pharmacyDutyList;
+    const pharmacies = data?.duty?.[dutyType] || [];
+    container.replaceChildren();
+    if (!pharmacies.length) {
+      renderPharmacyEmpty(container, dutyType === "night" ? labels.noNight : labels.noDay);
+      return;
+    }
+    pharmacies.forEach((pharmacy) => container.append(createPharmacyCard(pharmacy, { badge: dutyType })));
+  });
+
+  if (pharmacyDirectoryList) {
+    const directory = data.directory || data.pharmacies || [];
+    pharmacyDirectoryList.replaceChildren();
+    if (!directory.length) {
+      renderPharmacyEmpty(pharmacyDirectoryList, labels.noDirectory);
+    } else {
+      directory.forEach((pharmacy) => pharmacyDirectoryList.append(createPharmacyCard(pharmacy)));
+    }
+  }
+
+  updatePharmacyJsonLd(data);
+};
+
 const loadPharmacies = async () => {
-  if (!pharmacyList) return;
+  if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
   try {
     const response = await fetch(`data/pharmacies-garde.json?cache=${Date.now()}`);

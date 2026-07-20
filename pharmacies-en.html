@@ -12,20 +12,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>On-duty pharmacies in Kenitra and Mehdia - Medomicile</title>
-    <meta name="description" content="On-duty pharmacies in Kenitra and Mehdia with a list updated automatically 4 times per day. Always call before going." />
+    <meta name="description" content="Today’s on-duty pharmacies in Kenitra and a permanent pharmacy directory with phone numbers, addresses, directions and information to verify before going." />
     <meta name="theme-color" content="#f8fafc" />
     <meta name="geo.region" content="MA-KEN" />
     <meta name="geo.placename" content="Kenitra, Morocco" />
     <meta name="geo.position" content="34.2610;-6.5802" />
     <meta name="ICBM" content="34.2610, -6.5802" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.google.co.ma https://www.googletagmanager.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://www.google.com https://www.google.co.ma https://www.googletagmanager.com https://ad.doubleclick.net https://googleads.g.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta property="og:title" content="On-duty pharmacies in Kenitra and Mehdia - Medomicile" />
-    <meta property="og:description" content="On-duty pharmacies in Kenitra and Mehdia with a list updated automatically 4 times per day. Always call before going." />
+    <meta property="og:description" content="Today’s on-duty pharmacies in Kenitra and a permanent pharmacy directory with phone numbers, addresses and directions." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://medomicile.com/pharmacies-en.html" />
     <meta property="og:locale" content="en_MA" />
-    <meta property="og:image" content="https://medomicile.com/assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260718-01" />
+    <meta property="og:image" content="https://medomicile.com/assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" />
     <link rel="canonical" href="https://medomicile.com/pharmacies-en.html" />
     <link rel="alternate" hreflang="fr" href="https://medomicile.com/pharmacies.html" />
     <link rel="alternate" hreflang="en" href="https://medomicile.com/pharmacies-en.html" />
@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Manrope:wght@700;800;900&amp;family=Tajawal:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css?v=20260717-07" />
+    <link rel="stylesheet" href="style.css?v=20260720-01" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -80,27 +80,47 @@
           <h1 id="pharmacies-title">On-duty pharmacies in Kenitra and Mehdia</h1>
           <p class="hero-subtitle">Practical information to help families quickly find an open pharmacy.</p>
           <p class="directory-note">Information may change according to rotations and public holidays. Always call the pharmacy before going.</p>
+          <a class="pharmacy-premium-button" href="#pharmacies-garde">See today’s on-duty pharmacies</a>
         </div>
       </section>
 
-      <section class="pharmacy section" id="pharmacies" aria-label="On-duty pharmacies in Kenitra and Mehdia">
+      <section class="pharmacy section" id="pharmacies-garde" aria-labelledby="pharmacy-duty-title">
         <div class="pharmacy-panel reveal">
           <div class="pharmacy-copy">
-            <h3>Which permanent pharmacy is near me in Kenitra or Mehdia?</h3>
-            <p>Most pharmacies in Kenitra open from 9 a.m. to 1 p.m., then from 4 p.m. to 8 p.m. The on-duty pharmacy remains open 24/24 starting from 9 a.m. Keep on-duty pharmacy contact details within reach when needed. You can verify details in pharmacy windows, on our website, or with medical centers and clinics.</p>
+            <p class="eyebrow">DAILY UPDATE</p>
+            <h2 id="pharmacy-duty-title">On-duty pharmacies</h2>
+            <p>Information is updated regularly.</p>
+            <p>We recommend calling the pharmacy before going.</p>
           </div>
           <div class="pharmacy-meta">
             <strong data-pharmacy-title>Loading pharmacies...</strong>
-            <span data-pharmacy-updated>Data updated automatically 4 times per day.</span>
+            <span data-pharmacy-updated>Data prepared for a daily update.</span>
           </div>
-          <div class="pharmacy-list" data-pharmacy-list></div>
+          <div class="pharmacy-duty-groups">
+            <section class="pharmacy-duty-group" aria-labelledby="pharmacy-day-title">
+              <h3 id="pharmacy-day-title">Day on-duty pharmacies</h3>
+              <div class="pharmacy-list" data-pharmacy-duty-list="day"></div>
+            </section>
+            <section class="pharmacy-duty-group" aria-labelledby="pharmacy-night-title">
+              <h3 id="pharmacy-night-title">Night on-duty pharmacies</h3>
+              <div class="pharmacy-list" data-pharmacy-duty-list="night"></div>
+            </section>
+          </div>
           <figure class="pharmacy-image">
-            <img src="assets/pharmacies/pharmacie-garde-kenitra.jpg?v=20260718-01" alt="Weekend on-duty pharmacy poster in Kenitra on July 18 and 19, 2026" loading="lazy" />
-            <figcaption>Weekend on-duty pharmacy poster for July 18 and 19, 2026. Call before going.</figcaption>
+            <img src="assets/pharmacies/pharmacie-garde-kenitra-2026-07-20.png" alt="Night on-duty pharmacy poster in Kenitra for Monday, July 20, 2026" loading="lazy" />
+            <figcaption>Official night duty poster for July 20, 2026. Call before going.</figcaption>
           </figure>
-          <div class="pharmacy-foot">
-            <span>Call the pharmacy before going.</span>
+        </div>
+      </section>
+
+      <section class="pharmacy section" id="all-pharmacies" aria-labelledby="pharmacy-directory-title">
+        <div class="pharmacy-panel reveal">
+          <div class="pharmacy-copy">
+            <p class="eyebrow">PERMANENT DIRECTORY</p>
+            <h2 id="pharmacy-directory-title">All pharmacies in Kenitra</h2>
+            <p>This list remains permanent. Profiles will progressively be completed with phone numbers, directions, opening hours and useful services.</p>
           </div>
+          <div class="pharmacy-list pharmacy-directory-list" data-pharmacy-directory-list></div>
         </div>
       </section>
       <section class="directory-cta section reveal" data-directory-footer-cta></section>
@@ -127,6 +147,6 @@
     </footer>
 
     <a dir="ltr" class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
-    <script defer src="script.js?v=20260716-01"></script>
+    <script defer src="script.js?v=20260720-01"></script>
   </body>
 </html>
