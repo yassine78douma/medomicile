@@ -592,6 +592,7 @@ h1 {
 }
 
 .media-stage.hero-photo img {
+  object-fit: contain;
   object-position: center;
   filter: saturate(0.96) contrast(1.05) brightness(0.96);
 }

@@ -69,13 +69,27 @@
 
   const initReviewMarquee = () => {
     document.querySelectorAll(".google-review-list").forEach((list) => {
-      if (list.children.length < 2 || list.dataset.marqueeReady === "true") return;
+      if (list.querySelector(".marquee__track") || list.dataset.marqueeReady === "true") return;
+
+      const cards = [...list.querySelectorAll(".google-review-card")];
+      if (!cards.length) return;
+
       list.dataset.marqueeReady = "true";
-      [...list.children].forEach((card) => {
-        const clone = card.cloneNode(true);
-        clone.setAttribute("aria-hidden", "true");
-        list.append(clone);
-      });
+
+      const track = document.createElement("div");
+      track.className = "marquee__track";
+      track.style.setProperty("--duration", "32s");
+
+      const group = document.createElement("div");
+      group.className = "marquee__group";
+      cards.forEach((card) => group.append(card));
+
+      const duplicate = group.cloneNode(true);
+      duplicate.setAttribute("aria-hidden", "true");
+
+      track.append(group, duplicate);
+      list.classList.add("marquee");
+      list.append(track);
     });
   };
 
