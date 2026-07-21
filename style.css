@@ -1840,7 +1840,7 @@ h1 {
 .blood-article-media {
   margin: 0;
   border-bottom: 1px solid var(--line);
-  background: var(--surface);
+  background: linear-gradient(180deg, rgba(232, 244, 255, 0.72), rgba(255, 255, 255, 0.92));
 }
 
 .blood-article-media picture,
@@ -1855,7 +1855,8 @@ h1 {
 .blood-article-media img {
   aspect-ratio: 1969 / 799;
   display: block;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
 }
 
