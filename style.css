@@ -3213,11 +3213,16 @@ a[href^="https://wa.me/"] {
   }
 
   .media-stage {
-    min-height: 520px;
+    aspect-ratio: 3 / 2;
+    min-height: 0;
+  }
+
+  .media-stage picture {
+    height: 100%;
   }
 
   .media-stage img {
-    height: 520px;
+    height: 100%;
   }
 
   .service-picker {
