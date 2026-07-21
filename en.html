@@ -45,19 +45,21 @@
     <link rel="alternate" hreflang="ar" href="https://medomicile.com/ar.html" />
     <link rel="alternate" hreflang="x-default" href="https://medomicile.com/" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" href="assets/brand/medomicile-logo.png" />
-    <link rel="apple-touch-icon" href="assets/brand/medomicile-logo.png" />
+    <link rel="icon" type="image/png" href="assets/optimized/medomicile-logo-160.png" />
+    <link rel="apple-touch-icon" href="assets/optimized/medomicile-logo-160.png" />
     <link
       rel="preload"
       as="image"
-      href="assets/optimized/medomicile-hospital-team-520.avif"
-      imagesrcset="assets/optimized/medomicile-hospital-team-520.avif 520w, assets/optimized/medomicile-hospital-team-720.avif 720w, assets/optimized/medomicile-hospital-team-1200.avif 1200w"
-      imagesizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
+      href="assets/optimized/medomicile-hospital-team-768.avif"
+      imagesrcset="assets/optimized/medomicile-hospital-team-480.avif 480w, assets/optimized/medomicile-hospital-team-768.avif 768w, assets/optimized/medomicile-hospital-team-1200.avif 1200w"
+      imagesizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw"
       type="image/avif"
       fetchpriority="high"
     />
-    <link rel="preload" href="style.css?v=20260721-01" as="style" />
-    <link rel="stylesheet" href="style.css?v=20260721-01" />
+    <link rel="stylesheet" href="critical-home.css?v=20260721-01" />
+    <link rel="stylesheet" href="style.css?v=20260721-02" media="(min-width: 769px)" />
+    <link rel="stylesheet" href="style.css?v=20260721-02" media="print" onload="this.media='(max-width: 768px)'" />
+    <noscript><link rel="stylesheet" href="style.css?v=20260721-02" /></noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -175,12 +177,12 @@
 
         <div class="media-stage hero-photo reveal" data-scroll-media aria-label="Home medical assistance preview">
           <picture>
-            <source srcset="assets/optimized/medomicile-hospital-team-520.avif 520w, assets/optimized/medomicile-hospital-team-720.avif 720w, assets/optimized/medomicile-hospital-team-1200.avif 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px" type="image/avif" />
-            <source srcset="assets/optimized/medomicile-hospital-team-520.webp 520w, assets/optimized/medomicile-hospital-team-720.webp 720w, assets/optimized/medomicile-hospital-team-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px" type="image/webp" />
+            <source srcset="assets/optimized/medomicile-hospital-team-480.avif 480w, assets/optimized/medomicile-hospital-team-768.avif 768w, assets/optimized/medomicile-hospital-team-1200.avif 1200w" sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw" type="image/avif" />
+            <source srcset="assets/optimized/medomicile-hospital-team-480.webp 480w, assets/optimized/medomicile-hospital-team-768.webp 768w, assets/optimized/medomicile-hospital-team-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw" type="image/webp" />
             <img
               src="assets/optimized/medomicile-hospital-team-1200.jpg"
               srcset="assets/optimized/medomicile-hospital-team-720.jpg 720w, assets/optimized/medomicile-hospital-team-1200.jpg 1200w"
-              sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 1120px"
+              sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw"
               alt="Medomicile team in front of a hospital with ambulance and support vehicle"
               width="1200"
               height="800"
@@ -356,6 +358,6 @@
 
     <a dir="ltr" class="floating-call" href="tel:+212663058222" aria-label="Call Medomicile">Call</a>
 
-    <script defer src="script.js?v=20260717-03"></script>
+    <script defer src="home.js?v=20260721-01"></script>
   </body>
 </html>

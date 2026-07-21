@@ -601,14 +601,6 @@ h1 {
   background-position: center;
 }
 
-.media-stage.hero-photo {
-  background-image: image-set(
-    url("assets/optimized/medomicile-hospital-team-1200.avif") type("image/avif"),
-    url("assets/optimized/medomicile-hospital-team-1200.webp") type("image/webp"),
-    url("assets/optimized/medomicile-hospital-team-1200.jpg") type("image/jpeg")
-  );
-}
-
 .media-stage.hero-photo picture {
   display: block;
 }
