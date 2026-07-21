@@ -1358,6 +1358,7 @@ h1 {
 
 .pharmacy-panel--centered,
 .pharmacy-directory-cta {
+  justify-items: center;
   text-align: center;
 }
 
@@ -1376,10 +1377,22 @@ h1 {
   justify-items: center;
 }
 
+.pharmacy-directory-cta .pharmacy-copy {
+  width: min(100%, 820px);
+  justify-self: center;
+  text-align: center;
+}
+
 .pharmacy-directory-cta .pharmacy-copy p {
   max-width: 760px;
   margin-right: auto;
   margin-left: auto;
+  text-align: center;
+}
+
+.pharmacy-directory-cta .urgent-actions {
+  width: min(100%, 420px);
+  justify-self: center;
 }
 
 .pharmacy-copy h3 {
