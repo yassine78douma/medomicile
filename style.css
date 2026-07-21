@@ -1377,6 +1377,19 @@ h1 {
   justify-items: center;
 }
 
+.pharmacy-panel--centered .pharmacy-copy {
+  width: min(100%, 820px);
+  justify-self: center;
+  text-align: center;
+}
+
+.pharmacy-panel--centered .pharmacy-copy p {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
 .pharmacy-directory-cta .pharmacy-copy {
   width: min(100%, 820px);
   justify-self: center;
