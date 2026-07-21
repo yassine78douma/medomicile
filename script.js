@@ -2502,6 +2502,7 @@ const ensureFloatingCallButton = () => {
     if (!existing.querySelector(".floating-call-button__icon")) {
       existing.insertAdjacentHTML("afterbegin", '<span class="floating-call-button__icon" aria-hidden="true">☎</span>');
     }
+    initFloatingCallVisibility(existing);
     return;
   }
 
@@ -2518,6 +2519,33 @@ const ensureFloatingCallButton = () => {
   link.setAttribute("dir", isArabicPage ? "rtl" : "ltr");
   link.innerHTML = `<span class="floating-call-button__icon" aria-hidden="true">☎</span><span>${label.text}</span>`;
   document.body.append(link);
+  initFloatingCallVisibility(link);
+};
+
+const initFloatingCallVisibility = (button) => {
+  const hero = document.querySelector(".home-hero");
+  if (!button || !hero) return;
+
+  button.classList.add("is-hidden");
+
+  if (!("IntersectionObserver" in window)) {
+    const update = () => {
+      button.classList.toggle("is-hidden", hero.getBoundingClientRect().bottom > 80);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      button.classList.toggle("is-hidden", entry.isIntersecting);
+    },
+    { rootMargin: "0px 0px -65% 0px", threshold: 0 }
+  );
+
+  observer.observe(hero);
 };
 
 const updateMediaScale = () => {
