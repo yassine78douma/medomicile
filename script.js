@@ -1119,10 +1119,18 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-07-23.json", "data/pharmacies-garde.json"];
+
   try {
-    const response = await fetch(`data/pharmacies-garde.json?cache=${Date.now()}`);
-    if (!response.ok) throw new Error("Pharmacy data unavailable");
-    renderPharmacies(await response.json());
+    let data = null;
+    for (const url of pharmacyDataUrls) {
+      const response = await fetch(`${url}?cache=${Date.now()}`);
+      if (!response.ok) continue;
+      data = await response.json();
+      break;
+    }
+    if (!data) throw new Error("Pharmacy data unavailable");
+    renderPharmacies(data);
   } catch (error) {
     renderPharmacies(fallbackPharmacyData);
   }
