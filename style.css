@@ -7022,3 +7022,472 @@ html[dir="rtl"] .specialty-professional-slot__link {
     transition: none;
   }
 }
+
+/* Dark mode contrast pass: keep the Medomicile palette, but make text and controls reliably readable. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-page: #071421;
+  --bg-surface: #0b2234;
+  --bg-surface-soft: #12314a;
+  --text-primary: #f7fbff;
+  --text-secondary: #dbe8f5;
+  --text-muted: #b9cadc;
+  --border-default: rgba(157, 187, 216, 0.36);
+  --brand-primary: #78baff;
+  --brand-secondary: #4d95e8;
+  --whatsapp: #46d977;
+  --gold: #f2cf7b;
+  --gold-strong: #f7da8e;
+  --blue-950: var(--text-primary);
+  --blue-850: var(--brand-primary);
+  --blue-700: var(--brand-secondary);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --soft-muted: var(--text-muted);
+  --line: var(--border-default);
+  --surface: var(--bg-surface);
+  --soft: var(--bg-page);
+  --glass: rgba(7, 20, 33, 0.94);
+  --panel: rgba(11, 34, 52, 0.94);
+  --hero-wash:
+    radial-gradient(circle at 12% 0%, rgba(77, 149, 232, 0.2), transparent 34%),
+    linear-gradient(180deg, #071421, #0b2234 48%, #071421);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg-page: #071421;
+    --bg-surface: #0b2234;
+    --bg-surface-soft: #12314a;
+    --text-primary: #f7fbff;
+    --text-secondary: #dbe8f5;
+    --text-muted: #b9cadc;
+    --border-default: rgba(157, 187, 216, 0.36);
+    --brand-primary: #78baff;
+    --brand-secondary: #4d95e8;
+    --whatsapp: #46d977;
+    --gold: #f2cf7b;
+    --gold-strong: #f7da8e;
+    --blue-950: var(--text-primary);
+    --blue-850: var(--brand-primary);
+    --blue-700: var(--brand-secondary);
+    --ink: var(--text-primary);
+    --muted: var(--text-secondary);
+    --soft-muted: var(--text-muted);
+    --line: var(--border-default);
+    --surface: var(--bg-surface);
+    --soft: var(--bg-page);
+    --glass: rgba(7, 20, 33, 0.94);
+    --panel: rgba(11, 34, 52, 0.94);
+    --hero-wash:
+      radial-gradient(circle at 12% 0%, rgba(77, 149, 232, 0.2), transparent 34%),
+      linear-gradient(180deg, #071421, #0b2234 48%, #071421);
+  }
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .section,
+[data-theme="dark"] .page-hero,
+[data-theme="dark"] .directory-hero,
+[data-theme="dark"] .directory-main,
+[data-theme="dark"] .facilities,
+[data-theme="dark"] .directory,
+[data-theme="dark"] .doctor-specialties,
+[data-theme="dark"] .pharmacy-panel,
+[data-theme="dark"] .pharmacy-card,
+[data-theme="dark"] .home-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .article-card,
+[data-theme="dark"] .facility-card,
+[data-theme="dark"] .doctor-card,
+[data-theme="dark"] .laboratory-card,
+[data-theme="dark"] .specialty-card,
+[data-theme="dark"] .google-review-panel,
+[data-theme="dark"] .google-review-card,
+[data-theme="dark"] .contact-panel,
+[data-theme="dark"] .vitamin-panel,
+[data-theme="dark"] .cocktail-card,
+[data-theme="dark"] .new-cabinet-card,
+[data-theme="dark"] .pending-page {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .pharmacy-panel,
+[data-theme="dark"] .pharmacy-card,
+[data-theme="dark"] .home-card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .article-card,
+[data-theme="dark"] .facility-card,
+[data-theme="dark"] .doctor-card,
+[data-theme="dark"] .laboratory-card,
+[data-theme="dark"] .specialty-card,
+[data-theme="dark"] .google-review-panel,
+[data-theme="dark"] .google-review-card,
+[data-theme="dark"] .contact-panel,
+[data-theme="dark"] .vitamin-panel,
+[data-theme="dark"] .directory-info,
+[data-theme="dark"] .directory-cta,
+[data-theme="dark"] .new-cabinets-carousel,
+[data-theme="dark"] .new-cabinet-card,
+[data-theme="dark"] .hero-prompt-box,
+[data-theme="dark"] .hero-prompt-pill,
+[data-theme="dark"] .hero-suggestions a {
+  background:
+    linear-gradient(180deg, rgba(18, 49, 74, 0.74), rgba(11, 34, 52, 0.96)),
+    var(--bg-surface);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-soft);
+}
+
+[data-theme="dark"] .hero-subtitle,
+[data-theme="dark"] .fine-print,
+[data-theme="dark"] .section-heading p,
+[data-theme="dark"] .facility-note,
+[data-theme="dark"] .directory-note,
+[data-theme="dark"] .breadcrumb,
+[data-theme="dark"] .breadcrumb a,
+[data-theme="dark"] .article-card p,
+[data-theme="dark"] .service-content,
+[data-theme="dark"] .pharmacy-panel p,
+[data-theme="dark"] .contact-panel p,
+[data-theme="dark"] .compact-card-details p,
+[data-theme="dark"] .compact-card-details .doctor-line,
+[data-theme="dark"] .facility-muted,
+[data-theme="dark"] .specialty-card__description,
+[data-theme="dark"] .new-cabinet-card p,
+[data-theme="dark"] .new-cabinet-card__area,
+[data-theme="dark"] .directory-info p,
+[data-theme="dark"] .directory-cta p,
+[data-theme="dark"] .cocktail-details p,
+[data-theme="dark"] .cocktail-disclaimer,
+[data-theme="dark"] .google-review-card p,
+[data-theme="dark"] .google-review-meta {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] strong,
+[data-theme="dark"] .compact-card-title strong,
+[data-theme="dark"] .pharmacy-copy h2,
+[data-theme="dark"] .pharmacy-duty-group h3,
+[data-theme="dark"] .pharmacy-card h3,
+[data-theme="dark"] .pharmacy-meta strong,
+[data-theme="dark"] .specialty-card__title,
+[data-theme="dark"] .google-review-card strong {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .primary-action,
+[data-theme="dark"] .mini-action.call,
+[data-theme="dark"] .floating-call,
+[data-theme="dark"] .floating-call-button,
+[data-theme="dark"] .establishment-action.call,
+[data-theme="dark"] .featured-clinic__actions .primary-action,
+[data-theme="dark"] .pharmacy-card-actions a:first-child,
+[data-theme="dark"] .pharmacy-premium-button {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f5d99, #1c78c2);
+  border-color: rgba(167, 207, 245, 0.34);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+[data-theme="dark"] .whatsapp-action,
+[data-theme="dark"] .mini-action.whats,
+[data-theme="dark"] .whats,
+[data-theme="dark"] .urgent-actions .whats {
+  color: #062214;
+  background: linear-gradient(135deg, #54e283, #25c765);
+  text-shadow: none;
+}
+
+[data-theme="dark"] .secondary-action,
+[data-theme="dark"] .establishment-action.directions,
+[data-theme="dark"] .featured-clinic__actions .route,
+[data-theme="dark"] .pharmacy-card-actions a:not(:first-child),
+[data-theme="dark"] .gallery-filter,
+[data-theme="dark"] .radiology-filter-row button,
+[data-theme="dark"] .specialty-professional-slot__link,
+[data-theme="dark"] .google-review-button {
+  color: #eaf5ff;
+  background: rgba(18, 49, 74, 0.86);
+  border-color: rgba(120, 186, 255, 0.44);
+}
+
+[data-theme="dark"] .google-review-button.is-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #0f5d99, #1c78c2);
+  border-color: rgba(167, 207, 245, 0.34);
+}
+
+[data-theme="dark"] .footer-languages a,
+[data-theme="dark"] .menu .lang-link,
+[data-theme="dark"] .article-tag,
+[data-theme="dark"] .exam-tags span {
+  color: #f4fbff;
+  background: rgba(18, 49, 74, 0.88);
+  border-color: rgba(120, 186, 255, 0.38);
+}
+
+[data-theme="dark"] .footer-languages a.is-active,
+[data-theme="dark"] .menu .lang-link.is-current,
+[data-theme="dark"] .menu .lang-link[aria-current="page"] {
+  color: #061826;
+  background: linear-gradient(135deg, #f7da8e, #d5ad4f);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+[data-theme="dark"] .media-caption,
+[data-theme="dark"] .media-zone,
+[data-theme="dark"] .gallery-caption {
+  color: #f7fbff;
+  background: rgba(7, 20, 33, 0.9);
+  border-color: rgba(205, 224, 242, 0.26);
+}
+
+[data-theme="dark"] .media-caption strong,
+[data-theme="dark"] .media-zone strong,
+[data-theme="dark"] .gallery-caption strong {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .media-caption span,
+[data-theme="dark"] .media-zone span,
+[data-theme="dark"] .gallery-caption span {
+  color: #dbe8f5;
+}
+
+[data-theme="dark"] .google-rating-summary {
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(30, 65, 96, 0.92), rgba(13, 37, 54, 0.96)),
+    var(--bg-surface);
+  border-color: rgba(242, 207, 123, 0.52);
+}
+
+[data-theme="dark"] .google-stars,
+[data-theme="dark"] .compact-rating span,
+[data-theme="dark"] .compact-rating,
+[data-theme="dark"] .featured-clinic__type,
+[data-theme="dark"] .home-card span,
+[data-theme="dark"] .specialty-card__status,
+[data-theme="dark"] .new-cabinet-card__badge {
+  color: var(--gold-strong);
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea,
+[data-theme="dark"] .directory-search input {
+  color: var(--text-primary);
+  background: #102c42;
+  border-color: var(--border-default);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+[data-theme="dark"] .directory-search input::placeholder {
+  color: #c5d3e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body,
+  :root:not([data-theme="light"]) .section,
+  :root:not([data-theme="light"]) .page-hero,
+  :root:not([data-theme="light"]) .directory-hero,
+  :root:not([data-theme="light"]) .directory-main,
+  :root:not([data-theme="light"]) .facilities,
+  :root:not([data-theme="light"]) .directory,
+  :root:not([data-theme="light"]) .doctor-specialties,
+  :root:not([data-theme="light"]) .pharmacy-panel,
+  :root:not([data-theme="light"]) .pharmacy-card,
+  :root:not([data-theme="light"]) .home-card,
+  :root:not([data-theme="light"]) .service-card,
+  :root:not([data-theme="light"]) .article-card,
+  :root:not([data-theme="light"]) .facility-card,
+  :root:not([data-theme="light"]) .doctor-card,
+  :root:not([data-theme="light"]) .laboratory-card,
+  :root:not([data-theme="light"]) .specialty-card,
+  :root:not([data-theme="light"]) .google-review-panel,
+  :root:not([data-theme="light"]) .google-review-card,
+  :root:not([data-theme="light"]) .contact-panel,
+  :root:not([data-theme="light"]) .vitamin-panel,
+  :root:not([data-theme="light"]) .cocktail-card,
+  :root:not([data-theme="light"]) .new-cabinet-card,
+  :root:not([data-theme="light"]) .pending-page {
+    color: var(--text-primary);
+  }
+
+  :root:not([data-theme="light"]) .pharmacy-panel,
+  :root:not([data-theme="light"]) .pharmacy-card,
+  :root:not([data-theme="light"]) .home-card,
+  :root:not([data-theme="light"]) .service-card,
+  :root:not([data-theme="light"]) .article-card,
+  :root:not([data-theme="light"]) .facility-card,
+  :root:not([data-theme="light"]) .doctor-card,
+  :root:not([data-theme="light"]) .laboratory-card,
+  :root:not([data-theme="light"]) .specialty-card,
+  :root:not([data-theme="light"]) .google-review-panel,
+  :root:not([data-theme="light"]) .google-review-card,
+  :root:not([data-theme="light"]) .contact-panel,
+  :root:not([data-theme="light"]) .vitamin-panel,
+  :root:not([data-theme="light"]) .directory-info,
+  :root:not([data-theme="light"]) .directory-cta,
+  :root:not([data-theme="light"]) .new-cabinets-carousel,
+  :root:not([data-theme="light"]) .new-cabinet-card,
+  :root:not([data-theme="light"]) .hero-prompt-box,
+  :root:not([data-theme="light"]) .hero-prompt-pill,
+  :root:not([data-theme="light"]) .hero-suggestions a {
+    background:
+      linear-gradient(180deg, rgba(18, 49, 74, 0.74), rgba(11, 34, 52, 0.96)),
+      var(--bg-surface);
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-soft);
+  }
+
+  :root:not([data-theme="light"]) .hero-subtitle,
+  :root:not([data-theme="light"]) .fine-print,
+  :root:not([data-theme="light"]) .section-heading p,
+  :root:not([data-theme="light"]) .facility-note,
+  :root:not([data-theme="light"]) .directory-note,
+  :root:not([data-theme="light"]) .breadcrumb,
+  :root:not([data-theme="light"]) .breadcrumb a,
+  :root:not([data-theme="light"]) .article-card p,
+  :root:not([data-theme="light"]) .service-content,
+  :root:not([data-theme="light"]) .pharmacy-panel p,
+  :root:not([data-theme="light"]) .contact-panel p,
+  :root:not([data-theme="light"]) .compact-card-details p,
+  :root:not([data-theme="light"]) .compact-card-details .doctor-line,
+  :root:not([data-theme="light"]) .facility-muted,
+  :root:not([data-theme="light"]) .specialty-card__description,
+  :root:not([data-theme="light"]) .new-cabinet-card p,
+  :root:not([data-theme="light"]) .new-cabinet-card__area,
+  :root:not([data-theme="light"]) .directory-info p,
+  :root:not([data-theme="light"]) .directory-cta p,
+  :root:not([data-theme="light"]) .cocktail-details p,
+  :root:not([data-theme="light"]) .cocktail-disclaimer,
+  :root:not([data-theme="light"]) .google-review-card p,
+  :root:not([data-theme="light"]) .google-review-meta {
+    color: var(--text-secondary);
+  }
+
+  :root:not([data-theme="light"]) h1,
+  :root:not([data-theme="light"]) h2,
+  :root:not([data-theme="light"]) h3,
+  :root:not([data-theme="light"]) h4,
+  :root:not([data-theme="light"]) strong,
+  :root:not([data-theme="light"]) .compact-card-title strong,
+  :root:not([data-theme="light"]) .pharmacy-copy h2,
+  :root:not([data-theme="light"]) .pharmacy-duty-group h3,
+  :root:not([data-theme="light"]) .pharmacy-card h3,
+  :root:not([data-theme="light"]) .pharmacy-meta strong,
+  :root:not([data-theme="light"]) .specialty-card__title,
+  :root:not([data-theme="light"]) .google-review-card strong {
+    color: var(--text-primary);
+  }
+
+  :root:not([data-theme="light"]) .primary-action,
+  :root:not([data-theme="light"]) .mini-action.call,
+  :root:not([data-theme="light"]) .floating-call,
+  :root:not([data-theme="light"]) .floating-call-button,
+  :root:not([data-theme="light"]) .establishment-action.call,
+  :root:not([data-theme="light"]) .featured-clinic__actions .primary-action,
+  :root:not([data-theme="light"]) .pharmacy-card-actions a:first-child,
+  :root:not([data-theme="light"]) .pharmacy-premium-button {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0f5d99, #1c78c2);
+    border-color: rgba(167, 207, 245, 0.34);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+  }
+
+  :root:not([data-theme="light"]) .whatsapp-action,
+  :root:not([data-theme="light"]) .mini-action.whats,
+  :root:not([data-theme="light"]) .whats,
+  :root:not([data-theme="light"]) .urgent-actions .whats {
+    color: #062214;
+    background: linear-gradient(135deg, #54e283, #25c765);
+    text-shadow: none;
+  }
+
+  :root:not([data-theme="light"]) .secondary-action,
+  :root:not([data-theme="light"]) .establishment-action.directions,
+  :root:not([data-theme="light"]) .featured-clinic__actions .route,
+  :root:not([data-theme="light"]) .pharmacy-card-actions a:not(:first-child),
+  :root:not([data-theme="light"]) .gallery-filter,
+  :root:not([data-theme="light"]) .radiology-filter-row button,
+  :root:not([data-theme="light"]) .specialty-professional-slot__link,
+  :root:not([data-theme="light"]) .google-review-button {
+    color: #eaf5ff;
+    background: rgba(18, 49, 74, 0.86);
+    border-color: rgba(120, 186, 255, 0.44);
+  }
+
+  :root:not([data-theme="light"]) .google-review-button.is-primary {
+    color: #ffffff;
+    background: linear-gradient(135deg, #0f5d99, #1c78c2);
+    border-color: rgba(167, 207, 245, 0.34);
+  }
+
+  :root:not([data-theme="light"]) .footer-languages a,
+  :root:not([data-theme="light"]) .menu .lang-link,
+  :root:not([data-theme="light"]) .article-tag,
+  :root:not([data-theme="light"]) .exam-tags span {
+    color: #f4fbff;
+    background: rgba(18, 49, 74, 0.88);
+    border-color: rgba(120, 186, 255, 0.38);
+  }
+
+  :root:not([data-theme="light"]) .footer-languages a.is-active,
+  :root:not([data-theme="light"]) .menu .lang-link.is-current,
+  :root:not([data-theme="light"]) .menu .lang-link[aria-current="page"] {
+    color: #061826;
+    background: linear-gradient(135deg, #f7da8e, #d5ad4f);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+
+  :root:not([data-theme="light"]) .media-caption,
+  :root:not([data-theme="light"]) .media-zone,
+  :root:not([data-theme="light"]) .gallery-caption {
+    color: #f7fbff;
+    background: rgba(7, 20, 33, 0.9);
+    border-color: rgba(205, 224, 242, 0.26);
+  }
+
+  :root:not([data-theme="light"]) .media-caption strong,
+  :root:not([data-theme="light"]) .media-zone strong,
+  :root:not([data-theme="light"]) .gallery-caption strong {
+    color: #ffffff;
+  }
+
+  :root:not([data-theme="light"]) .media-caption span,
+  :root:not([data-theme="light"]) .media-zone span,
+  :root:not([data-theme="light"]) .gallery-caption span {
+    color: #dbe8f5;
+  }
+
+  :root:not([data-theme="light"]) .google-rating-summary {
+    color: #ffffff;
+    background:
+      linear-gradient(135deg, rgba(30, 65, 96, 0.92), rgba(13, 37, 54, 0.96)),
+      var(--bg-surface);
+    border-color: rgba(242, 207, 123, 0.52);
+  }
+
+  :root:not([data-theme="light"]) input,
+  :root:not([data-theme="light"]) select,
+  :root:not([data-theme="light"]) textarea,
+  :root:not([data-theme="light"]) .directory-search input {
+    color: var(--text-primary);
+    background: #102c42;
+    border-color: var(--border-default);
+  }
+
+  :root:not([data-theme="light"]) .google-stars,
+  :root:not([data-theme="light"]) .compact-rating,
+  :root:not([data-theme="light"]) .compact-rating span {
+    color: var(--gold-strong);
+  }
+}
