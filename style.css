@@ -3769,6 +3769,7 @@ a[href^="https://wa.me/"] {
 
 .directory-info {
   padding: 22px;
+  margin-top: clamp(18px, 4vw, 30px);
   border: 1px solid rgba(15, 76, 129, 0.12);
   border-radius: var(--radius);
   background: var(--surface);

@@ -2503,6 +2503,10 @@ const cleanGoogleReviewTimes = () => {
 };
 
 const ensureFloatingCallButton = () => {
+  if (document.querySelector(".mobile-sticky-actions")) {
+    return;
+  }
+
   const existing = document.querySelector(".floating-call, .floating-call-button");
   if (existing) {
     existing.classList.add("floating-call-button");
