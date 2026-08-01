@@ -1090,7 +1090,7 @@ const renderPharmacies = (data) => {
 
   const labels = getPharmacyLabels();
   if (pharmacyTitle) pharmacyTitle.textContent = data.displayDate ? `${labels.updated} : ${getLocalized(data, "displayDate") || data.displayDate}` : labels.title;
-  if (pharmacyUpdated) pharmacyUpdated.textContent = data.note || labels.title;
+  if (pharmacyUpdated) pharmacyUpdated.textContent = getLocalized(data, "note") || data.note || labels.title;
 
   pharmacyDutyLists.forEach((container) => {
     const dutyType = container.dataset.pharmacyDutyList;
@@ -1119,7 +1119,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-07-31.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-01.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
