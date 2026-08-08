@@ -3776,7 +3776,47 @@ a[href^="https://wa.me/"] {
   box-shadow: var(--shadow-soft);
 }
 
+.directory-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 22px auto 0;
+  text-align: center;
+}
+
+.directory-links a,
+.directory-info details {
+  border: 1px solid rgba(15, 76, 129, 0.14);
+  border-radius: 14px;
+  background: rgba(234, 243, 255, 0.72);
+}
+
+.directory-links a {
+  padding: 10px 14px;
+  color: var(--blue-850);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.directory-info details {
+  margin-top: 10px;
+  padding: 14px 16px;
+}
+
+.directory-info summary {
+  color: var(--blue-950);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.directory-info details p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
 .medical-alert {
+  margin-top: 18px;
   margin-bottom: 0;
   padding: 14px;
   border-left: 4px solid var(--blue-850);
@@ -4968,6 +5008,17 @@ a[href^="https://wa.me/"] {
 [data-theme="dark"] .directory-info p,
 [data-theme="dark"] .pending-page p {
   color: #cbd5e1;
+}
+
+[data-theme="dark"] .directory-links a,
+[data-theme="dark"] .directory-info details {
+  border-color: rgba(148, 181, 213, 0.2);
+  background: rgba(18, 42, 64, 0.88);
+}
+
+[data-theme="dark"] .directory-links a,
+[data-theme="dark"] .directory-info summary {
+  color: #d8ecff;
 }
 
 [data-theme="dark"] .directory-hero .directory-note,
