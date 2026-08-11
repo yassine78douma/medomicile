@@ -2616,8 +2616,8 @@ a[href^="https://wa.me/"] {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 620ms ease, transform 620ms ease;
 }
 
@@ -6286,6 +6286,18 @@ a[href^="https://wa.me/"] {
   border-color: var(--border-default);
 }
 
+.specialty-card[href*="cardiologues-kenitra"] {
+  order: 1;
+}
+
+.specialty-card[href*="traumatologues-kenitra"] {
+  order: 2;
+}
+
+.specialty-card[href*="neurologues-neurochirurgiens-kenitra"] {
+  order: 3;
+}
+
 [data-theme="dark"] .brand,
 [data-theme="dark"] .menu a,
 [data-theme="dark"] .menu-toggle,
@@ -6838,9 +6850,11 @@ a[href^="https://wa.me/"] {
   .floating-call-button {
     right: 16px;
     bottom: calc(var(--mobile-bottom-bar-height, 0px) + 16px + env(safe-area-inset-bottom, 0px));
-    min-height: 52px;
-    padding: 0 20px;
-    font-size: 0.96rem;
+    min-height: 46px;
+    padding: 0 15px;
+    gap: 6px;
+    font-size: 0.9rem;
+    box-shadow: 0 12px 30px rgba(15, 76, 129, 0.26);
   }
 
   [dir="rtl"] .floating-call,
@@ -6860,8 +6874,9 @@ a[href^="https://wa.me/"] {
   .floating-call,
   .floating-call-button {
     right: 12px;
-    padding: 0 16px;
-    font-size: 0.9rem;
+    min-height: 44px;
+    padding: 0 13px;
+    font-size: 0.84rem;
   }
 
   [dir="rtl"] .floating-call,
@@ -7038,9 +7053,30 @@ html[dir="rtl"] .specialty-professional-slot__link {
 }
 
 @media (max-width: 768px) {
+  .directory-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .directory-main > .directory {
+    order: 20;
+  }
+
+  .directory-main > .specialty-professional-slots {
+    order: 30;
+  }
+
+  .directory-main > .directory-info {
+    order: 40;
+  }
+
+  .directory-main > [data-directory-footer-cta] {
+    order: 50;
+  }
+
   .specialty-professional-slots {
     width: min(100% - 28px, 1040px);
-    margin: 20px auto 24px;
+    margin: 26px auto 24px;
   }
 
   .specialty-professional-slot {
