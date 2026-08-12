@@ -515,55 +515,55 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Affiche du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-10T09:30:00+01:00",
-  "displayDate": "Lundi 10 aout 2026",
-  "displayDateEn": "Monday, August 10, 2026",
-  "displayDateAr": "الاثنين 10 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 10 aout 2026",
+  "updatedAt": "2026-08-12T09:30:00+01:00",
+  "displayDate": "Mercredi 12 aout 2026",
+  "displayDateEn": "Wednesday, August 12, 2026",
+  "displayDateAr": "الأربعاء 12 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 12 aout 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-10.jpg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du lundi 10 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde de nuit 24h/24 du mercredi 12 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
       {
-        "id": "al-hamd-2026-08-10",
-        "directoryId": "al-hamd",
+        "id": "ar-rif-2026-08-12",
+        "directoryId": "ar-rif",
         "badge": "night",
-        "name": "Pharmacie Al Hamd",
-        "nameEn": "Al Hamd Pharmacy",
-        "nameAr": "صيدلية الحمد",
-        "phone": "05 37 35 74 73",
-        "district": "Ouled Oujih",
-        "districtEn": "Ouled Oujih",
-        "districtAr": "أولاد أوجيه",
-        "address": "Tajziat Al Maghrib Al Arabi, bloc D, numero 659, Ouled Oujih, devant Dar Al Ajaza et Dar Al Fatayat, pres d Asswak Salam",
-        "addressEn": "Al Maghrib Al Arabi subdivision, Block D, No. 659, Ouled Oujih, in front of Dar Al Ajaza and Dar Al Fatayat, near Asswak Salam",
-        "addressAr": "تجزئة المغرب العربي بلوك د رقم 659، أولاد أوجيه، أمام دار العجزة ودار الفتيات، قرب أسواق السلام",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Hamd%20Bloc%20D%20659%20Ouled%20Oujih%20Kenitra",
-        "hours": "Garde de nuit 24h/24 - 10 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 10, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 10 غشت 2026",
+        "name": "Pharmacie Ar Rif",
+        "nameEn": "Ar Rif Pharmacy",
+        "nameAr": "صيدلية الريف",
+        "phone": "05 37 36 33 00",
+        "district": "Bir Rami Est",
+        "districtEn": "Bir Rami East",
+        "districtAr": "بئر الرامي الشرقي",
+        "address": "Pres de la mosquee Maich, Bir Rami Est, sur la route double en direction de la grande gare",
+        "addressEn": "Near Maich mosque, Bir Rami East, on the dual road toward the main train station",
+        "addressAr": "قرب مسجد مائش، بئر الرامي الشرقي، على الطريق المزدوجة في اتجاه محطة القطار الكبرى",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ar%20Rif%20Bir%20Rami%20Est%20Kenitra",
+        "hours": "Garde de nuit 24h/24 - 12 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 12, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 12 غشت 2026",
         "services": []
       },
       {
-        "id": "al-mostachfa-2026-08-10",
-        "directoryId": "al-mostachfa",
+        "id": "al-ghofrane-2026-08-12",
+        "directoryId": "al-ghofrane",
         "badge": "night",
-        "name": "Pharmacie Al Mostachfa",
-        "nameEn": "Al Mostachfa Pharmacy",
-        "nameAr": "صيدلية المستشفى",
-        "phone": "05 37 38 10 37",
-        "district": "Saknia - Medina",
-        "districtEn": "Saknia - Medina",
-        "districtAr": "السكنية - المدينة",
-        "address": "Numero 4, rue Al Bassra, Hay Al Fath, entre la 7e annexe administrative et Dar Chabab Rahal El Meskini",
-        "addressEn": "No. 4, Al Bassra Street, Hay Al Fath, between the 7th administrative annex and Dar Chabab Rahal El Meskini",
-        "addressAr": "رقم 4 شارع البصرة، حي الفتح، بين المقاطعة السابعة ودار الشباب رحال المسكيني",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Mostachfa%20Hay%20Al%20Fath%20Rahal%20El%20Meskini%20Kenitra",
-        "hours": "Garde de nuit 24h/24 - 10 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 10, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 10 غشت 2026",
+        "name": "Pharmacie Al Ghofrane",
+        "nameEn": "Al Ghofrane Pharmacy",
+        "nameAr": "صيدلية الغفران",
+        "phone": "05 37 38 53 23",
+        "district": "Saknia",
+        "districtEn": "Saknia",
+        "districtAr": "السكنية",
+        "address": "Al Wifaq F, numero 128, Saknia, pres de la mosquee Al Ghofrane en direction de la salle couverte",
+        "addressEn": "Al Wifaq F, No. 128, Saknia, near Al Ghofrane mosque toward the covered hall",
+        "addressAr": "الوفاق F رقم 128، السكنية، قرب مسجد الغفران في اتجاه القاعة المغطاة",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Ghofrane%20Al%20Wifaq%20128%20Saknia%20Kenitra",
+        "hours": "Garde de nuit 24h/24 - 12 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 12, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 12 غشت 2026",
         "services": []
       }
     ]
@@ -1596,362 +1596,9 @@ const fallbackPharmacyData = {
       "services": []
     }
   ],
-  "noteEn": "Night duty 24/24 for Monday, August 10, 2026. Always call the pharmacy before going.",
-  "noteAr": "حراسة ليلية 24/24 ليوم الاثنين 10 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
+  "noteEn": "Night duty 24/24 for Wednesday, August 12, 2026. Always call the pharmacy before going.",
+  "noteAr": "حراسة ليلية 24/24 ليوم الأربعاء 12 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
 };
-
-const getLocalized = (item, key) => {
-  if (isArabicPage && item[`${key}Ar`]) return item[`${key}Ar`];
-  if (isEnglishPage && item[`${key}En`]) return item[`${key}En`];
-  return item[key];
-};
-
-const systemPrefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-const getActiveTheme = (theme = localStorage.getItem("medomicile-theme")) =>
-  theme && theme !== "auto" ? theme : systemPrefersDark() ? "dark" : "light";
-
-const setTheme = (theme) => {
-  if (!theme || theme === "auto") {
-    document.documentElement.removeAttribute("data-theme");
-    localStorage.removeItem("medomicile-theme");
-  } else {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem("medomicile-theme", theme);
-  }
-
-  const activeTheme = getActiveTheme(theme);
-  const themeColor = activeTheme === "dark" ? "#04111d" : "#f8fafc";
-  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themeColor);
-  if (themeToggle) {
-    themeToggle.textContent = activeTheme === "dark" ? "☾" : "☼";
-    themeToggle.setAttribute(
-      "aria-label",
-      activeTheme === "dark"
-        ? isArabicPage
-          ? "تفعيل المظهر الفاتح"
-          : isEnglishPage
-            ? "Switch to light mode"
-            : "Activer le mode clair"
-        : isArabicPage
-          ? "تفعيل المظهر الداكن"
-          : isEnglishPage
-            ? "Switch to dark mode"
-            : "Activer le mode sombre"
-    );
-  }
-};
-
-setTheme(localStorage.getItem("medomicile-theme") || "auto");
-
-themeToggle?.addEventListener("click", () => {
-  setTheme(getActiveTheme() === "dark" ? "light" : "dark");
-});
-
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-  if (!localStorage.getItem("medomicile-theme")) setTheme("auto");
-});
-
-const closeMenu = () => {
-  if (!menuToggle || !menu) return;
-  menuToggle.setAttribute("aria-expanded", "false");
-  menu.classList.remove("is-open");
-  document.body.classList.remove("menu-open");
-};
-
-const clearReloadHash = () => {
-  const navigation = performance.getEntriesByType("navigation")[0];
-  const isReload = navigation?.type === "reload" || performance.navigation?.type === 1;
-
-  if (!isReload) return;
-
-  if (window.location.hash) {
-    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-  }
-  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 0);
-  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 120);
-  window.setTimeout(() => window.scrollTo({ top: 0, behavior: "auto" }), 480);
-};
-
-clearReloadHash();
-
-if (menuToggle && menu) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menu.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
-  });
-
-  menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu();
-  });
-}
-
-const cardServiceFor = (service) => {
-  if (["infirmier", "kine"].includes(service)) return "medecin";
-  if (service === "couveuse") return "ambulance";
-  return service;
-};
-
-const selectService = (service) => {
-  const activeCardService = cardServiceFor(service);
-
-  pickerOptions.forEach((option) => {
-    option.classList.toggle("is-active", option.dataset.service === service);
-  });
-
-  serviceCards.forEach((card) => {
-    const isCurrent = card.dataset.serviceCard === activeCardService;
-    card.classList.toggle("is-selected", isCurrent);
-
-    if (card.tagName === "DETAILS") {
-      if (isCurrent) {
-        card.setAttribute("open", "");
-      } else {
-        card.removeAttribute("open");
-      }
-    }
-  });
-};
-
-const galleryFilterForService = (service) => {
-  if (service === "fourgon") return "fourgon";
-  if (["ambulance", "couveuse", "evenement"].includes(service)) return "ambulance";
-  return null;
-};
-
-const scrollToSection = (selector, behavior = "smooth") => {
-  const targetElement = document.querySelector(selector);
-  const headerOffset =
-    Number.parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-height"), 10) + 18;
-
-  if (!targetElement) return;
-
-  window.scrollTo({
-    top: targetElement.getBoundingClientRect().top + window.scrollY - headerOffset,
-    behavior,
-  });
-};
-
-const handleServiceChoice = (service) => {
-  const galleryFilter = galleryFilterForService(service);
-  const target = service === "vitamines" ? "#vitamines" : galleryFilter ? "#galerie" : "#services";
-  const targetElement = document.querySelector(target);
-
-  selectService(service);
-  if (!targetElement) {
-    if (galleryFilter) {
-      window.location.href = `${localizedPage("galerie")}?filter=${encodeURIComponent(galleryFilter)}`;
-      return;
-    }
-    if (service === "vitamines") {
-      window.location.href = localizedPage("vitamines");
-      return;
-    }
-    if (!document.querySelector("#services")) {
-      window.location.href = localizedPage("services");
-      return;
-    }
-  }
-
-  if (galleryFilter) applyGalleryFilter(galleryFilter);
-  if (galleryFilter && window.location.hash !== target) window.location.hash = target;
-  scrollToSection(target, galleryFilter ? "auto" : "smooth");
-  window.setTimeout(() => {
-    scrollToSection(target, galleryFilter ? "auto" : "smooth");
-    if (galleryFilter) history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
-  }, 160);
-};
-
-pickerOptions.forEach((option) => {
-  option.addEventListener("click", (event) => {
-    event.preventDefault();
-    handleServiceChoice(option.dataset.service);
-  });
-});
-
-serviceCards.forEach((card) => {
-  if (card.tagName === "DETAILS") {
-    card.addEventListener("toggle", () => {
-      if (!card.open) {
-        card.classList.remove("is-selected");
-        return;
-      }
-
-      serviceCards.forEach((otherCard) => {
-        const isCurrent = otherCard === card;
-        if (!isCurrent && otherCard.tagName === "DETAILS") otherCard.removeAttribute("open");
-        otherCard.classList.toggle("is-selected", isCurrent);
-      });
-    });
-    return;
-  }
-
-  card.setAttribute("role", "button");
-  card.setAttribute("tabindex", "0");
-  card.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleServiceChoice(card.dataset.serviceCard);
-    }
-  });
-});
-
-document.addEventListener("click", (event) => {
-  if (event.target.closest("[data-service-card] a")) return;
-
-  const card = event.target.closest("[data-service-card]");
-  if (!card || card.tagName === "DETAILS") return;
-
-  handleServiceChoice(card.dataset.serviceCard);
-});
-
-const visibleGalleryIndexes = () =>
-  galleryItems
-    .map((item, index) => ({ item, index }))
-    .filter(({ item }) =>
-      activeGalleryFilter === "all" ||
-      (activeGalleryFilter === "ambulance" ? item.category !== "fourgon" : item.category === activeGalleryFilter)
-    )
-    .map(({ index }) => index);
-
-const setGalleryImage = (index) => {
-  if (!galleryMain || !galleryTitle || !galleryCount) return;
-
-  const visibleIndexes = visibleGalleryIndexes();
-  const safeIndex = visibleIndexes.includes(index) ? index : visibleIndexes[0] || 0;
-  const item = galleryItems[safeIndex];
-  activeGalleryIndex = safeIndex;
-
-  galleryMain.classList.add("is-changing");
-  window.setTimeout(() => {
-    galleryMain.src = item.src;
-    galleryMain.alt = getLocalized(item, "alt");
-    galleryTitle.textContent = getLocalized(item, "title");
-    galleryCount.textContent = `${safeIndex + 1} / ${galleryItems.length}`;
-    galleryMain.classList.remove("is-changing");
-  }, 120);
-
-  galleryThumbs.forEach((thumb) => {
-    const thumbIndex = Number(thumb.dataset.galleryIndex);
-    thumb.classList.toggle("is-active", thumbIndex === safeIndex);
-  });
-};
-
-const applyGalleryFilter = (filter) => {
-  activeGalleryFilter = filter;
-
-  galleryFilters.forEach((button) => {
-    button.classList.toggle("is-active", button.dataset.galleryFilter === filter);
-  });
-
-  galleryThumbs.forEach((thumb) => {
-    const category = thumb.dataset.galleryCategory;
-    const isVisible = filter === "all" || (filter === "ambulance" ? category !== "fourgon" : category === filter);
-    thumb.classList.toggle("is-hidden", !isVisible);
-  });
-
-  setGalleryImage(visibleGalleryIndexes()[0] || 0);
-};
-
-galleryFilters.forEach((button) => {
-  button.addEventListener("click", () => applyGalleryFilter(button.dataset.galleryFilter));
-});
-
-const requestedGalleryFilter = new URLSearchParams(window.location.search).get("filter");
-if (requestedGalleryFilter && galleryFilters.length) {
-  applyGalleryFilter(requestedGalleryFilter);
-}
-
-galleryThumbs.forEach((thumb) => {
-  thumb.addEventListener("click", () => setGalleryImage(Number(thumb.dataset.galleryIndex)));
-});
-
-galleryPrev?.addEventListener("click", () => {
-  const visible = visibleGalleryIndexes();
-  const position = visible.indexOf(activeGalleryIndex);
-  const nextPosition = position <= 0 ? visible.length - 1 : position - 1;
-  setGalleryImage(visible[nextPosition]);
-});
-
-galleryNext?.addEventListener("click", () => {
-  const visible = visibleGalleryIndexes();
-  const position = visible.indexOf(activeGalleryIndex);
-  const nextPosition = position >= visible.length - 1 ? 0 : position + 1;
-  setGalleryImage(visible[nextPosition]);
-});
-
-const initGalleryAutoplay = () => {
-  if (!galleryMain || !galleryItems.length) return;
-
-  let timer;
-  let startX = 0;
-  let startY = 0;
-  let isSwiping = false;
-
-  const showRelativeImage = (offset) => {
-    const visible = visibleGalleryIndexes();
-    const position = visible.indexOf(activeGalleryIndex);
-    const nextPosition = (position + offset + visible.length) % visible.length;
-    setGalleryImage(visible[nextPosition]);
-  };
-
-  const restart = () => {
-    window.clearInterval(timer);
-    timer = window.setInterval(() => showRelativeImage(1), 4800);
-  };
-
-  const pause = () => window.clearInterval(timer);
-
-  galleryMain.addEventListener(
-    "touchstart",
-    (event) => {
-      const touch = event.touches[0];
-      startX = touch.clientX;
-      startY = touch.clientY;
-      isSwiping = true;
-      pause();
-    },
-    { passive: true }
-  );
-
-  galleryMain.addEventListener(
-    "touchend",
-    (event) => {
-      if (!isSwiping) return;
-      const touch = event.changedTouches[0];
-      const deltaX = touch.clientX - startX;
-      const deltaY = touch.clientY - startY;
-      isSwiping = false;
-
-      if (Math.abs(deltaX) > 42 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) {
-        showRelativeImage(deltaX < 0 ? 1 : -1);
-      }
-
-      restart();
-    },
-    { passive: true }
-  );
-
-  [galleryPrev, galleryNext, ...galleryThumbs, ...galleryFilters].filter(Boolean).forEach((control) => {
-    control.addEventListener("click", restart);
-  });
-
-  galleryMain.addEventListener("mouseenter", pause);
-  galleryMain.addEventListener("mouseleave", restart);
-  galleryMain.addEventListener("focusin", pause);
-  galleryMain.addEventListener("focusout", restart);
-  restart();
-};
-
-const normalizePhoneHref = (phone) => {
-  const firstNumber = String(phone).split("/")[0] || phone;
-  return `tel:${firstNumber.replace(/[^\d+]/g, "")}`;
-};
-
 const pharmacyLabels = {
   fr: {
     title: "Pharmacies de garde à Kénitra",
@@ -2115,7 +1762,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-10.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-12.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;

@@ -3725,6 +3725,17 @@ a[href^="https://wa.me/"] {
   font-weight: 900;
 }
 
+.doctor-line--whatsapp span[aria-hidden="true"] {
+  color: #ffffff;
+  background: var(--green-600);
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.doctor-line--whatsapp a {
+  color: var(--green-600);
+}
+
 .directory-empty {
   margin: 18px 0 0;
   padding: 16px;
@@ -3765,6 +3776,18 @@ a[href^="https://wa.me/"] {
 .directory-cta p,
 .directory-info p {
   color: var(--muted);
+}
+
+.directory-cta--spaced {
+  margin-top: clamp(26px, 5vw, 58px);
+}
+
+.directory-cta--spaced p + .urgent-actions {
+  margin-top: 24px;
+}
+
+.ophtalmology-hero-note {
+  margin-top: clamp(16px, 3vw, 26px);
 }
 
 .directory-info {
