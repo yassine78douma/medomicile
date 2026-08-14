@@ -6321,6 +6321,10 @@ a[href^="https://wa.me/"] {
   order: 3;
 }
 
+.specialty-card[href*="ophtalmologues-kenitra"] {
+  order: 4;
+}
+
 [data-theme="dark"] .brand,
 [data-theme="dark"] .menu a,
 [data-theme="dark"] .menu-toggle,
