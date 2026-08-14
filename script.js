@@ -515,55 +515,55 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Affiche du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-12T09:30:00+01:00",
-  "displayDate": "Mercredi 12 aout 2026",
-  "displayDateEn": "Wednesday, August 12, 2026",
-  "displayDateAr": "الأربعاء 12 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 12 aout 2026",
+  "updatedAt": "2026-08-14T09:30:00+01:00",
+  "displayDate": "Vendredi 14 aout 2026",
+  "displayDateEn": "Friday, August 14, 2026",
+  "displayDateAr": "الجمعة 14 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 14 aout 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-10.jpg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du mercredi 12 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde de nuit 24h/24 du vendredi 14 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
       {
-        "id": "ar-rif-2026-08-12",
-        "directoryId": "ar-rif",
+        "id": "mosquee-palestine-2026-08-14",
+        "directoryId": "mosquee-palestine",
         "badge": "night",
-        "name": "Pharmacie Ar Rif",
-        "nameEn": "Ar Rif Pharmacy",
-        "nameAr": "صيدلية الريف",
-        "phone": "05 37 36 33 00",
+        "name": "Pharmacie Mosquee Palestine",
+        "nameEn": "Mosquee Palestine Pharmacy",
+        "nameAr": "صيدلية مسجد فلسطين",
+        "phone": "05 37 36 44 06",
         "district": "Bir Rami Est",
         "districtEn": "Bir Rami East",
         "districtAr": "بئر الرامي الشرقي",
-        "address": "Pres de la mosquee Maich, Bir Rami Est, sur la route double en direction de la grande gare",
-        "addressEn": "Near Maich mosque, Bir Rami East, on the dual road toward the main train station",
-        "addressAr": "قرب مسجد مائش، بئر الرامي الشرقي، على الطريق المزدوجة في اتجاه محطة القطار الكبرى",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ar%20Rif%20Bir%20Rami%20Est%20Kenitra",
-        "hours": "Garde de nuit 24h/24 - 12 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 12, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 12 غشت 2026",
+        "address": "Hay Al Manzah, Bir Rami Est, pres de la mosquee Palestine, Douar Fellaha",
+        "addressEn": "Hay Al Manzah, Bir Rami East, near Palestine mosque, Douar Fellaha",
+        "addressAr": "حي المنزه، بئر الرامي الشرقية، قرب مسجد فلسطين، دوار الفلاحة",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Mosquee%20Palestine%20Bir%20Rami%20Kenitra",
+        "hours": "Garde de nuit 24h/24 - 14 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 14, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 14 غشت 2026",
         "services": []
       },
       {
-        "id": "al-ghofrane-2026-08-12",
-        "directoryId": "al-ghofrane",
+        "id": "al-massira-2026-08-14",
+        "directoryId": "al-massira",
         "badge": "night",
-        "name": "Pharmacie Al Ghofrane",
-        "nameEn": "Al Ghofrane Pharmacy",
-        "nameAr": "صيدلية الغفران",
-        "phone": "05 37 38 53 23",
+        "name": "Pharmacie Al Massira",
+        "nameEn": "Al Massira Pharmacy",
+        "nameAr": "صيدلية المسيرة",
+        "phone": "05 37 38 06 27",
         "district": "Saknia",
         "districtEn": "Saknia",
         "districtAr": "السكنية",
-        "address": "Al Wifaq F, numero 128, Saknia, pres de la mosquee Al Ghofrane en direction de la salle couverte",
-        "addressEn": "Al Wifaq F, No. 128, Saknia, near Al Ghofrane mosque toward the covered hall",
-        "addressAr": "الوفاق F رقم 128، السكنية، قرب مسجد الغفران في اتجاه القاعة المغطاة",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Ghofrane%20Al%20Wifaq%20128%20Saknia%20Kenitra",
-        "hours": "Garde de nuit 24h/24 - 12 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 12, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 12 غشت 2026",
+        "address": "Groupe Pam, a cote de Kissariat Oued Dahab",
+        "addressEn": "Pam group, next to Kissariat Oued Dahab",
+        "addressAr": "مجموعة بام، بجانب قيسارية وادي الذهب",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Massira%20Groupe%20Pam%20Kenitra",
+        "hours": "Garde de nuit 24h/24 - 14 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 14, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 14 غشت 2026",
         "services": []
       }
     ]
@@ -1596,8 +1596,8 @@ const fallbackPharmacyData = {
       "services": []
     }
   ],
-  "noteEn": "Night duty 24/24 for Wednesday, August 12, 2026. Always call the pharmacy before going.",
-  "noteAr": "حراسة ليلية 24/24 ليوم الأربعاء 12 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
+  "noteEn": "Night duty 24/24 for Friday, August 14, 2026. Always call the pharmacy before going.",
+  "noteAr": "حراسة ليلية 24/24 ليوم الجمعة 14 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
 };
 const pharmacyLabels = {
   fr: {
@@ -1762,7 +1762,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-12.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-14.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
