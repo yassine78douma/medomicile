@@ -1805,6 +1805,13 @@ const pharmacyLabels = {
 
 const getPharmacyLabels = () => pharmacyLabels[currentLang] || pharmacyLabels.fr;
 
+const getLocalized = (item, key) => {
+  if (!item || !key) return "";
+  if (currentLang === "ar") return item[`${key}Ar`] || item[key] || "";
+  if (currentLang === "en") return item[`${key}En`] || item[key] || "";
+  return item[key] || "";
+};
+
 const getPharmacyMapsUrl = (pharmacy) =>
   pharmacy.mapsUrl ||
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name || ""} ${pharmacy.district || ""} Kenitra`)}`;
@@ -3414,7 +3421,9 @@ loadPharmacies();
 loadLaboratories();
 renderCenters();
 initFeaturedClinicGalleries();
-initGalleryAutoplay();
+if (typeof initGalleryAutoplay === "function") {
+  initGalleryAutoplay();
+}
 cleanGoogleReviewTimes();
 ensureFloatingCallButton();
 initGoogleReviewMarquees();
