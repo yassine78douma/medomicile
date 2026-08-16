@@ -1809,6 +1809,12 @@ const getPharmacyMapsUrl = (pharmacy) =>
   pharmacy.mapsUrl ||
   `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${pharmacy.name || ""} ${pharmacy.district || ""} Kenitra`)}`;
 
+const normalizePhoneHref = (phone = "") => {
+  const firstPhone = String(phone).split(/[\\/|,;]/)[0] || "";
+  const normalized = firstPhone.replace(/[^\d+]/g, "");
+  return normalized ? `tel:${normalized}` : "#";
+};
+
 const createPharmacyLine = (label, value, options = {}) => {
   if (!value) return "";
   const dir = options.dir ? ` dir="${options.dir}"` : "";
