@@ -49,6 +49,29 @@ const localizedPage = (baseName) => {
   return `${baseName}.html`;
 };
 
+const initMobileMenu = () => {
+  if (!menuToggle || !menu) return;
+
+  const closeMenu = () => {
+    document.body.classList.remove("menu-open");
+    menu.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const toggleMenu = () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    document.body.classList.toggle("menu-open", !isOpen);
+    menu.classList.toggle("is-open", !isOpen);
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  };
+
+  menuToggle.addEventListener("click", toggleMenu);
+  menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+};
+
 const newMedicalCabinets = [
   {
     id: "ophthalmology-principale-building",
@@ -3507,6 +3530,7 @@ const revealAll = () => {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 };
 
+initMobileMenu();
 renderDirectoryFooterCtas();
 
 if ("IntersectionObserver" in window) {
