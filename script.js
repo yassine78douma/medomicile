@@ -515,68 +515,68 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-17T09:00:00+01:00",
-  "displayDate": "Lundi 17 aout 2026",
-  "displayDateEn": "Monday, August 17, 2026",
-  "displayDateAr": "الاثنين 17 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 17 aout 2026",
+  "updatedAt": "2026-08-18T09:00:00+01:00",
+  "displayDate": "Mardi 18 aout 2026",
+  "displayDateEn": "Tuesday, August 18, 2026",
+  "displayDateAr": "الثلاثاء 18 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 18 aout 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-17.jpg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du lundi 17 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde de nuit 24h/24 du mardi 18 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
       {
-        "id": "pharmacie-zohour",
-        "name": "Pharmacie Zohour",
-        "nameEn": "Zohour Pharmacy",
-        "nameAr": "صيدلية زهور",
-        "district": "Ouled Oujih",
-        "districtEn": "Ouled Oujih",
-        "districtAr": "أولاد أوجيه",
-        "address": "Lot 433 Bloc D, Ouled Oujih, pres de l'ecole El Kadi Ayad, route vers Diour Essiad, terminus bus n°7",
-        "addressEn": "Lot 433 Bloc D, Ouled Oujih, near El Kadi Ayad school, road to Diour Essiad, bus terminus no. 7",
-        "addressAr": "مجموعة 433 بلوك د، أولاد أوجيه، قرب مدرسة القاضي عياض، الطريق المؤدية إلى ديور الصياد، نهاية الحافلة رقم 7",
-        "phone": "05 37 35 35 98",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Zohour%20Lot%20433%20Bloc%20D%2C%20Ouled%20Oujih%2C%20pres%20de%20l%27ecole%20El%20Kadi%20Ayad%2C%20route%20vers%20Diour%20Essiad%2C%20terminus%20bus%20n%C2%B07%20Kenitra",
+        "id": "pharmacie-centrale-bir-rami",
+        "name": "Pharmacie Centrale Bir Rami",
+        "nameEn": "Centrale Bir Rami Pharmacy",
+        "nameAr": "صيدلية سنطرال بئر الرامي",
+        "district": "Bir Rami Industrielle",
+        "districtEn": "Bir Rami Industrial Area",
+        "districtAr": "بئر الرامي الصناعية",
+        "address": "Jnan 3 n°3959, Bir Rami Industrielle, pres de la mosquee Al Abrar, ligne bus 1 et 31, route vers le cimetiere Redouane",
+        "addressEn": "Jnan 3 no. 3959, Bir Rami Industrial Area, near Al Abrar mosque, bus lines 1 and 31, road to Redouane cemetery",
+        "addressAr": "جنان 3 رقم 3959، بئر الرامي الصناعية، قرب مسجد الأبرار، خط الحافلة 1 و31، عبر الطريق المزدوج المؤدي إلى مقبرة الرضوان",
+        "phone": "07 75 28 54 85",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Centrale%20Bir%20Rami%20Jnan%203%20n%C2%B03959%2C%20Bir%20Rami%20Industrielle%2C%20pres%20de%20la%20mosquee%20Al%20Abrar%2C%20ligne%20bus%201%20et%2031%2C%20route%20vers%20le%20cimetiere%20Redouane%20Kenitra",
         "services": [
           "Pharmacie de garde",
           "Ordonnances",
           "Conseil pharmaceutique"
         ],
-        "directoryId": "pharmacie-zohour",
+        "hours": "Garde de nuit 24h/24 - 18 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 18, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 18 غشت 2026",
+        "directoryId": "pharmacie-centrale-bir-rami",
         "badge": "De garde",
         "badgeEn": "On duty",
-        "badgeAr": "حراسة",
-        "hours": "Garde de nuit 24h/24 - 17 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 17, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 17 غشت 2026"
+        "badgeAr": "حراسة"
       },
       {
-        "id": "pharmacie-errachad",
-        "name": "Pharmacie Errachad",
-        "nameEn": "Errachad Pharmacy",
-        "nameAr": "صيدلية الإرشاد",
+        "id": "pharmacie-20-aout",
+        "name": "Pharmacie 20 Aout",
+        "nameEn": "20 Aout Pharmacy",
+        "nameAr": "صيدلية 20 غشت",
         "district": "Saknia",
         "districtEn": "Saknia",
         "districtAr": "الساكنية",
-        "address": "Avenue Al Massira, route Ain Sebaa, Hay Errachad, devant Joutiya Saknia",
-        "addressEn": "Al Massira Avenue, Ain Sebaa road, Hay Errachad, opposite Joutiya Saknia",
-        "addressAr": "شارع المسيرة، طريق عين السبع، حي الإرشاد، أمام جوطية الساكنية",
-        "phone": "05 37 39 29 00",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Errachad%20Avenue%20Al%20Massira%2C%20route%20Ain%20Sebaa%2C%20Hay%20Errachad%2C%20devant%20Joutiya%20Saknia%20Kenitra",
+        "address": "Lotissement Al Wafaa 4 n°545, pres de la mosquee Al Maarouf, Saknia",
+        "addressEn": "Lotissement Al Wafaa 4 no. 545, near Al Maarouf mosque, Saknia",
+        "addressAr": "تجزئة الوفاء 4 رقم 545، قرب المسجد المعروف، الساكنية",
+        "phone": "06 13 30 19 97",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%2020%20Aout%20Lotissement%20Al%20Wafaa%204%20n%C2%B0545%2C%20pres%20de%20la%20mosquee%20Al%20Maarouf%2C%20Saknia%20Kenitra",
         "services": [
           "Pharmacie de garde",
           "Ordonnances",
           "Conseil pharmaceutique"
         ],
-        "directoryId": "pharmacie-errachad",
+        "hours": "Garde de nuit 24h/24 - 18 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 18, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 18 غشت 2026",
+        "directoryId": "pharmacie-20-aout",
         "badge": "De garde",
         "badgeEn": "On duty",
-        "badgeAr": "حراسة",
-        "hours": "Garde de nuit 24h/24 - 17 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 17, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 17 غشت 2026"
+        "badgeAr": "حراسة"
       }
     ]
   },
@@ -1874,8 +1874,8 @@ const fallbackPharmacyData = {
       "hoursAr": "سيتم إكمالها"
     }
   ],
-  "noteEn": "Night duty 24/24 for Monday, August 17, 2026. Always call the pharmacy before going.",
-  "noteAr": "حراسة ليلية 24/24 ليوم الاثنين 17 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
+  "noteEn": "Night duty 24/24 for Tuesday, August 18, 2026. Always call the pharmacy before going.",
+  "noteAr": "حراسة ليلية 24/24 ليوم الثلاثاء 18 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
 };
 const pharmacyLabels = {
   fr: {
@@ -2053,7 +2053,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-17.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-18.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
