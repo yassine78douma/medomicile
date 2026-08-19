@@ -6309,22 +6309,6 @@ a[href^="https://wa.me/"] {
   border-color: var(--border-default);
 }
 
-.specialty-card[href*="cardiologues-kenitra"] {
-  order: 1;
-}
-
-.specialty-card[href*="traumatologues-kenitra"] {
-  order: 2;
-}
-
-.specialty-card[href*="neurologues-neurochirurgiens-kenitra"] {
-  order: 3;
-}
-
-.specialty-card[href*="ophtalmologues-kenitra"] {
-  order: 4;
-}
-
 [data-theme="dark"] .brand,
 [data-theme="dark"] .menu a,
 [data-theme="dark"] .menu-toggle,
