@@ -1,0 +1,166 @@
+{
+  "updated_at": "2026-08-19",
+  "description": "Source de vérité pour trier les spécialités médicales sur les pages médecins. Les spécialités disponibles remontent avant celles en cours.",
+  "specialties": [
+    {
+      "id": "cardiologues",
+      "available": true,
+      "order": 10,
+      "href": {
+        "fr": "cardiologues-kenitra.html",
+        "en": "cardiologues-kenitra-en.html",
+        "ar": "cardiologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "traumatologues",
+      "available": true,
+      "order": 20,
+      "href": {
+        "fr": "traumatologues-kenitra.html",
+        "en": "traumatologues-kenitra-en.html",
+        "ar": "traumatologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "neurologues-neurochirurgiens",
+      "available": true,
+      "order": 30,
+      "href": {
+        "fr": "neurologues-neurochirurgiens-kenitra.html",
+        "en": "neurologues-neurochirurgiens-kenitra-en.html",
+        "ar": "neurologues-neurochirurgiens-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "ophtalmologues",
+      "available": true,
+      "order": 40,
+      "href": {
+        "fr": "ophtalmologues-kenitra.html",
+        "en": "ophtalmologues-kenitra-en.html",
+        "ar": "ophtalmologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "dentistes",
+      "available": false,
+      "order": 110,
+      "href": {
+        "fr": "dentistes-kenitra.html",
+        "en": "dentistes-kenitra-en.html",
+        "ar": "dentistes-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "gynecologues",
+      "available": false,
+      "order": 120,
+      "href": {
+        "fr": "gynecologues-kenitra.html",
+        "en": "gynecologues-kenitra-en.html",
+        "ar": "gynecologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "pediatres",
+      "available": false,
+      "order": 130,
+      "href": {
+        "fr": "pediatres-kenitra.html",
+        "en": "pediatres-kenitra-en.html",
+        "ar": "pediatres-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "dermatologues",
+      "available": false,
+      "order": 140,
+      "href": {
+        "fr": "dermatologues-kenitra.html",
+        "en": "dermatologues-kenitra-en.html",
+        "ar": "dermatologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "orl",
+      "available": false,
+      "order": 150,
+      "href": {
+        "fr": "orl-kenitra.html",
+        "en": "orl-kenitra-en.html",
+        "ar": "orl-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "pneumologues",
+      "available": false,
+      "order": 160,
+      "href": {
+        "fr": "pneumologues-kenitra.html",
+        "en": "pneumologues-kenitra-en.html",
+        "ar": "pneumologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "endocrinologues",
+      "available": false,
+      "order": 170,
+      "href": {
+        "fr": "endocrinologues-kenitra.html",
+        "en": "endocrinologues-kenitra-en.html",
+        "ar": "endocrinologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "rhumatologues",
+      "available": false,
+      "order": 180,
+      "href": {
+        "fr": "rhumatologues-kenitra.html",
+        "en": "rhumatologues-kenitra-en.html",
+        "ar": "rhumatologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "urologues",
+      "available": false,
+      "order": 190,
+      "href": {
+        "fr": "urologues-kenitra.html",
+        "en": "urologues-kenitra-en.html",
+        "ar": "urologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "internistes",
+      "available": false,
+      "order": 200,
+      "href": {
+        "fr": "internistes-kenitra.html",
+        "en": "internistes-kenitra-en.html",
+        "ar": "internistes-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "gastroenterologues",
+      "available": false,
+      "order": 210,
+      "href": {
+        "fr": "gastroenterologues-kenitra.html",
+        "en": "gastroenterologues-kenitra-en.html",
+        "ar": "gastroenterologues-kenitra-ar.html"
+      }
+    },
+    {
+      "id": "visceralistes",
+      "available": false,
+      "order": 220,
+      "href": {
+        "fr": "visceralistes-kenitra.html",
+        "en": "visceralistes-kenitra-en.html",
+        "ar": "visceralistes-kenitra-ar.html"
+      }
+    }
+  ]
+}
