@@ -3,6 +3,9 @@
   <head>
     <!-- Google tag (gtag.js) -->
     <script>
+      if (window.location.protocol.indexOf("http") === 0 && window.location.pathname === "/index.html") {
+        window.location.replace("https://medomicile.com/");
+      }
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.addEventListener('load', function(){
@@ -43,6 +46,10 @@
     <meta property="og:url" content="https://medomicile.com/" />
     <meta property="og:locale" content="fr_MA" />
     <meta property="og:image" content="https://medomicile.com/assets/brand/medomicile-logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Medomicile - Soins médicaux à domicile à Kenitra" />
+    <meta name="twitter:description" content="Soins médicaux à domicile à Kenitra, Mehdia et région : médecin, ambulance, infirmier, kiné, fourgon sanitaire. Appel ou WhatsApp." />
+    <meta name="twitter:image" content="https://medomicile.com/assets/brand/medomicile-logo.png" />
     <link rel="canonical" href="https://medomicile.com/" />
     <link rel="alternate" hreflang="fr" href="https://medomicile.com/" />
     <link rel="alternate" hreflang="en" href="https://medomicile.com/en.html" />
@@ -111,7 +118,7 @@
 
     <header class="mobile-header">
       <nav class="nav" aria-label="Navigation principale">
-        <a class="brand" href="index.html" aria-label="Medomicile, accueil">
+        <a class="brand" href="./" aria-label="Medomicile, accueil">
           <span class="brand-mark" aria-hidden="true">
             <img src="assets/optimized/medomicile-logo-160.png" alt="Medomicile" width="160" height="160" loading="eager" decoding="async" />
           </span>
@@ -131,7 +138,7 @@
         <button class="theme-toggle" type="button" aria-label="Changer le thème" data-theme-toggle>◐</button>
 
         <div class="menu" id="menu">
-          <a class="is-current" href="index.html">Accueil</a>
+          <a class="is-current" href="./">Accueil</a>
           <a href="services.html">Services</a>
           <a href="pharmacies.html">Pharmacies</a>
           <a href="hopitaux.html">Hôpitaux</a>
@@ -378,7 +385,7 @@
       </div>
       <div class="footer-languages" aria-label="Choix de langue">
         <span>Langues</span>
-        <a class="is-active" href="index.html" lang="fr" aria-current="true">Français</a>
+        <a class="is-active" href="./" lang="fr" aria-current="true">Français</a>
         <a href="en.html" lang="en">English</a>
         <a href="ar.html" lang="ar" dir="rtl">العربية</a>
       </div>

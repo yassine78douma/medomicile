@@ -12,7 +12,7 @@ Site vitrine statique pour un service de soins a domicile a Kenitra et region.
 
 ## Contenu
 
-- Page francaise : `index.html`
+- Page francaise publique : `https://medomicile.com/`
 - Page anglaise : `en.html`
 - Page arabe : `ar.html`
 - Styles : `style.css`
@@ -23,4 +23,4 @@ Site vitrine statique pour un service de soins a domicile a Kenitra et region.
 
 Le site est pret a etre publie sur GitHub Pages ou tout hebergement statique.
 
-Point d'entree principal : `index.html`.
+Point d'entree public principal : `https://medomicile.com/`.
