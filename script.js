@@ -537,18 +537,96 @@ let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
-  "source": "Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-19T09:00:00+01:00",
-  "displayDate": "Mercredi 19 aout 2026",
-  "displayDateEn": "Wednesday, August 19, 2026",
-  "displayDateAr": "الأربعاء 19 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 19 aout 2026",
+  "source": "Sahha.ma et donnees locales Medomicile, a verifier par telephone avant deplacement",
+  "updatedAt": "2026-08-20T09:00:00+01:00",
+  "displayDate": "Jeudi 20 aout 2026",
+  "displayDateEn": "Thursday, August 20, 2026",
+  "displayDateAr": "الخميس 20 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 20 aout 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-17.jpg",
-  "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du mercredi 19 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "updateFrequency": "daily-manual-from-current-duty-source",
+  "note": "Garde 24h/24 du jeudi 20 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
+      {
+        "id": "pharmacie-20-aout",
+        "name": "Pharmacie 20 Aout",
+        "nameEn": "20 Aout Pharmacy",
+        "nameAr": "صيدلية 20 غشت",
+        "district": "Saknia",
+        "districtEn": "Saknia",
+        "districtAr": "الساكنية",
+        "address": "Hay El Wafa 4, n°110, Kenitra",
+        "addressEn": "Hay El Wafa 4, no. 110, Kenitra",
+        "addressAr": "حي الوفاء 4 رقم 110، القنيطرة",
+        "phone": "06 13 30 19 97",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%2020%20Aout%20Hay%20El%20Wafa%204%20n%20110%20Kenitra",
+        "directoryId": "pharmacie-20-aout",
+        "services": [
+          "Pharmacie de garde",
+          "Ordonnances",
+          "Conseil pharmaceutique"
+        ],
+        "hours": "Garde 24h/24 - 20 aout 2026",
+        "hoursEn": "24/24 duty - August 20, 2026",
+        "hoursAr": "حراسة 24/24 - 20 غشت 2026",
+        "badge": "De garde",
+        "badgeEn": "On duty",
+        "badgeAr": "حراسة"
+      },
+      {
+        "id": "pharmacie-bir-rami",
+        "name": "Pharmacie Bir Rami",
+        "nameEn": "Bir Rami Pharmacy",
+        "nameAr": "صيدلية بئر الرامي",
+        "district": "Bir Rami",
+        "districtEn": "Bir Rami",
+        "districtAr": "بئر الرامي",
+        "address": "Rue Zemzem, Mimosa, Bir Rami, Kenitra",
+        "addressEn": "Zemzem Street, Mimosa, Bir Rami, Kenitra",
+        "addressAr": "زنقة زمزم، ميموزا، بئر الرامي، القنيطرة",
+        "phone": "05 37 37 45 90",
+        "mapsUrl": "https://maps.google.com/maps?q=34.25349,-6.5954681",
+        "directoryId": "pharmacie-bir-rami",
+        "services": [
+          "Pharmacie de garde",
+          "Ordonnances",
+          "Conseil pharmaceutique"
+        ],
+        "hours": "Garde 24h/24 - 20 aout 2026",
+        "hoursEn": "24/24 duty - August 20, 2026",
+        "hoursAr": "حراسة 24/24 - 20 غشت 2026",
+        "badge": "De garde",
+        "badgeEn": "On duty",
+        "badgeAr": "حراسة"
+      },
+      {
+        "id": "pharmacie-elmanzeh",
+        "name": "Pharmacie Elmanzeh",
+        "nameEn": "Elmanzeh Pharmacy",
+        "nameAr": "صيدلية المنزه",
+        "district": "Saknia",
+        "districtEn": "Saknia",
+        "districtAr": "الساكنية",
+        "address": "Hay El Fath, n°372, Kenitra",
+        "addressEn": "Hay El Fath, no. 372, Kenitra",
+        "addressAr": "حي الفتح رقم 372، القنيطرة",
+        "phone": "05 37 38 07 38",
+        "mapsUrl": "https://maps.google.com/maps?q=34.2538223,-6.5559103",
+        "directoryId": "pharmacie-elmanzeh",
+        "services": [
+          "Pharmacie de garde",
+          "Ordonnances",
+          "Conseil pharmaceutique"
+        ],
+        "hours": "Garde 24h/24 - 20 aout 2026",
+        "hoursEn": "24/24 duty - August 20, 2026",
+        "hoursAr": "حراسة 24/24 - 20 غشت 2026",
+        "badge": "De garde",
+        "badgeEn": "On duty",
+        "badgeAr": "حراسة"
+      },
       {
         "id": "pharmacie-ismailia",
         "name": "Pharmacie Ismailia",
@@ -557,46 +635,20 @@ const fallbackPharmacyData = {
         "district": "Ouled Oujih",
         "districtEn": "Ouled Oujih",
         "districtAr": "أولاد أوجيه",
-        "address": "Bloc L n°355, Ouled Oujih, pres de l'ancien dispensaire et de la mosquee Al Houda",
-        "addressEn": "Bloc L no. 355, Ouled Oujih, near the former dispensary and Al Houda mosque",
-        "addressAr": "بلوك L رقم 355، أولاد أوجيه، قرب المصلى القديم وقرب مسجد الهدى",
+        "address": "Hay Ouled Oujih, bloc L n°355, Kenitra",
+        "addressEn": "Hay Ouled Oujih, block L no. 355, Kenitra",
+        "addressAr": "حي أولاد أوجيه، بلوك L رقم 355، القنيطرة",
         "phone": "05 37 35 36 16",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ismailia%20Bloc%20L%20n%C2%B0355%2C%20Ouled%20Oujih%2C%20pres%20de%20l%27ancien%20dispensaire%20et%20de%20la%20mosquee%20Al%20Houda%20Kenitra",
-        "services": [
-          "Pharmacie de garde",
-          "Ordonnances",
-          "Conseil pharmaceutique"
-        ],
-        "hours": "Garde de nuit 24h/24 - 19 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 19, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 19 غشت 2026",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ismailia%20Hay%20Ouled%20Oujih%20bloc%20L%20n%20355%20Kenitra",
         "directoryId": "pharmacie-ismailia",
-        "badge": "De garde",
-        "badgeEn": "On duty",
-        "badgeAr": "حراسة"
-      },
-      {
-        "id": "pharmacie-al-manzah",
-        "name": "Pharmacie Al Manzah",
-        "nameEn": "Al Manzah Pharmacy",
-        "nameAr": "صيدلية المنزه",
-        "district": "Saknia",
-        "districtEn": "Saknia",
-        "districtAr": "الساكنية",
-        "address": "Hay Al Fath 372, Al Allama, a 150 m de la mosquee Al Fath, pres du 7e arrondissement et Dar Chabab Rahal Meskini",
-        "addressEn": "Hay Al Fath 372, Al Allama, 150 m from Al Fath mosque, near the 7th district and Dar Chabab Rahal Meskini",
-        "addressAr": "حي الفتح 372، العلامة، على بعد 150 م من مسجد الفتح، قرب المقاطعة السابعة ودار الشباب رحال المسكيني",
-        "phone": "05 37 38 07 38",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Manzah%20Hay%20Al%20Fath%20372%2C%20Al%20Allama%2C%20a%20150%20m%20de%20la%20mosquee%20Al%20Fath%2C%20pres%20du%207e%20arrondissement%20et%20Dar%20Chabab%20Rahal%20Meskini%20Kenitra",
         "services": [
           "Pharmacie de garde",
           "Ordonnances",
           "Conseil pharmaceutique"
         ],
-        "hours": "Garde de nuit 24h/24 - 19 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 19, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 19 غشت 2026",
-        "directoryId": "pharmacie-al-manzah",
+        "hours": "Garde 24h/24 - 20 aout 2026",
+        "hoursEn": "24/24 duty - August 20, 2026",
+        "hoursAr": "حراسة 24/24 - 20 غشت 2026",
         "badge": "De garde",
         "badgeEn": "On duty",
         "badgeAr": "حراسة"
@@ -1794,16 +1846,12 @@ const fallbackPharmacyData = {
       "district": "Saknia",
       "districtEn": "Saknia",
       "districtAr": "الساكنية",
-      "address": "Lotissement Al Wafaa 4 n°545, pres de la mosquee Al Maarouf, Saknia",
-      "addressEn": "Lotissement Al Wafaa 4 no. 545, near Al Maarouf mosque, Saknia",
-      "addressAr": "تجزئة الوفاء 4 رقم 545، قرب المسجد المعروف، الساكنية",
+      "address": "Hay El Wafa 4, n°110, Kenitra",
+      "addressEn": "Hay El Wafa 4, no. 110, Kenitra",
+      "addressAr": "حي الوفاء 4 رقم 110، القنيطرة",
       "phone": "06 13 30 19 97",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%2020%20Aout%20Lotissement%20Al%20Wafaa%204%20n%C2%B0545%2C%20pres%20de%20la%20mosquee%20Al%20Maarouf%2C%20Saknia%20Kenitra",
-      "services": [
-        "Pharmacie de garde",
-        "Ordonnances",
-        "Conseil pharmaceutique"
-      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%2020%20Aout%20Hay%20El%20Wafa%204%20n%20110%20Kenitra",
+      "services": [],
       "hours": "A completer",
       "hoursEn": "To be completed",
       "hoursAr": "سيتم إكمالها"
@@ -1816,16 +1864,12 @@ const fallbackPharmacyData = {
       "district": "Ouled Oujih",
       "districtEn": "Ouled Oujih",
       "districtAr": "أولاد أوجيه",
-      "address": "Bloc L n°355, Ouled Oujih, pres de l'ancien dispensaire et de la mosquee Al Houda",
-      "addressEn": "Bloc L no. 355, Ouled Oujih, near the former dispensary and Al Houda mosque",
-      "addressAr": "بلوك L رقم 355، أولاد أوجيه، قرب المصلى القديم وقرب مسجد الهدى",
+      "address": "Hay Ouled Oujih, bloc L n°355, Kenitra",
+      "addressEn": "Hay Ouled Oujih, block L no. 355, Kenitra",
+      "addressAr": "حي أولاد أوجيه، بلوك L رقم 355، القنيطرة",
       "phone": "05 37 35 36 16",
-      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ismailia%20Bloc%20L%20n%C2%B0355%2C%20Ouled%20Oujih%2C%20pres%20de%20l%27ancien%20dispensaire%20et%20de%20la%20mosquee%20Al%20Houda%20Kenitra",
-      "services": [
-        "Pharmacie de garde",
-        "Ordonnances",
-        "Conseil pharmaceutique"
-      ],
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ismailia%20Hay%20Ouled%20Oujih%20bloc%20L%20n%20355%20Kenitra",
+      "services": [],
       "hours": "A completer",
       "hoursEn": "To be completed",
       "hoursAr": "سيتم إكمالها"
@@ -1895,6 +1939,42 @@ const fallbackPharmacyData = {
       "hours": "A completer",
       "hoursEn": "To be completed",
       "hoursAr": "سيتم إكمالها"
+    },
+    {
+      "name": "Pharmacie Bir Rami",
+      "nameEn": "Bir Rami Pharmacy",
+      "nameAr": "صيدلية بئر الرامي",
+      "phone": "05 37 37 45 90",
+      "district": "Bir Rami",
+      "districtEn": "Bir Rami",
+      "districtAr": "بئر الرامي",
+      "address": "Rue Zemzem, Mimosa, Bir Rami, Kenitra",
+      "addressEn": "Zemzem Street, Mimosa, Bir Rami, Kenitra",
+      "addressAr": "زنقة زمزم، ميموزا، بئر الرامي، القنيطرة",
+      "mapsUrl": "https://maps.google.com/maps?q=34.25349,-6.5954681",
+      "id": "pharmacie-bir-rami",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
+    },
+    {
+      "name": "Pharmacie Elmanzeh",
+      "nameEn": "Elmanzeh Pharmacy",
+      "nameAr": "صيدلية المنزه",
+      "phone": "05 37 38 07 38",
+      "district": "Saknia",
+      "districtEn": "Saknia",
+      "districtAr": "الساكنية",
+      "address": "Hay El Fath, n°372, Kenitra",
+      "addressEn": "Hay El Fath, no. 372, Kenitra",
+      "addressAr": "حي الفتح رقم 372، القنيطرة",
+      "mapsUrl": "https://maps.google.com/maps?q=34.2538223,-6.5559103",
+      "id": "pharmacie-elmanzeh",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
     }
   ],
   "noteEn": "Night duty 24/24 for Wednesday, August 19, 2026. Always call the pharmacy before going.",
@@ -2076,7 +2156,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-19.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-20.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
