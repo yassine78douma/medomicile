@@ -538,65 +538,66 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Affiche officielle du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-26T09:00:00+01:00",
-  "displayDate": "Mercredi 26 aout 2026",
-  "displayDateEn": "Wednesday, August 26, 2026",
-  "displayDateAr": "الأربعاء 26 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 26 aout 2026",
-  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-26.jpg",
+  "updatedAt": "2026-08-27T09:00:00+01:00",
+  "displayDate": "Jeudi 27 aout 2026",
+  "displayDateEn": "Thursday, August 27, 2026",
+  "displayDateAr": "الخميس 27 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 27 aout 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-27.jpg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du mercredi 26 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde de nuit 24h/24 du jeudi 27 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
       {
-        "id": "pharmacie-ibn-bajja",
-        "directoryId": "pharmacie-ibn-bajja",
-        "name": "Pharmacie Ibn Bajja",
-        "nameEn": "Ibn Bajja Pharmacy",
-        "nameAr": "صيدلية ابن باجة",
-        "district": "Ouled Oujih",
-        "districtEn": "Ouled Oujih",
-        "districtAr": "أولاد أوجيه",
-        "address": "Bloc L n°7, Ouled Oujih, pres de la mosquee Al Hoda, pres de Sayara Taallim Aroub",
-        "addressEn": "Block L no. 7, Ouled Oujih, near Al Hoda mosque, near Sayara Taallim Aroub",
-        "addressAr": "بلوك ل رقم 7، أولاد أوجيه، قرب مسجد الهدى، قرب سيارة التعليم عروب",
-        "phone": "05 37 35 22 43",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ibn%20Bajja%20Bloc%20L%207%20Ouled%20Oujih%20Mosquee%20Al%20Hoda%20Kenitra",
+        "id": "pharmacie-ocaliptus",
+        "directoryId": "pharmacie-ocaliptus",
+        "name": "Pharmacie Ocaliptus",
+        "nameEn": "Ocaliptus Pharmacy",
+        "nameAr": "صيدلية أوكاليبتوس",
+        "district": "Route de Mehdia",
+        "districtEn": "Mehdia Road",
+        "districtAr": "طريق مهدية",
+        "address": "Route de Mehdia principale, rond-point Al Haddada, pres du cafe Marrakech anciennement",
+        "addressEn": "Main Mehdia road, Al Haddada roundabout, near the former Cafe Marrakech",
+        "addressAr": "طريق مهدية الرئيسية، مدار الحدادة، قرب مقهى مراكش سابقا",
+        "phone": "05 37 35 35 35",
+        "secondaryPhone": "06 02 24 27 74",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2726391%2C-6.6217005",
         "services": [
           "Pharmacie de garde",
           "Ordonnances",
           "Conseil pharmaceutique"
         ],
-        "hours": "Garde de nuit 24h/24 - 26 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 26, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 26 غشت 2026",
+        "hours": "Garde de nuit 24h/24 - 27 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 27, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 27 غشت 2026",
         "badge": "De garde",
         "badgeEn": "On duty",
         "badgeAr": "حراسة"
       },
       {
-        "id": "pharmacie-ibn-rochd",
-        "directoryId": "pharmacie-ibn-rochd",
-        "name": "Pharmacie Ibn Rochd",
-        "nameEn": "Ibn Rochd Pharmacy",
-        "nameAr": "صيدلية ابن رشد",
-        "district": "Lassakoun",
-        "districtEn": "Lassakoun",
-        "districtAr": "لاسيكون",
-        "address": "102, rue Riyada, quartier Lassakoun",
-        "addressEn": "102 Riyada Street, Lassakoun district",
-        "addressAr": "102 زنقة الرياضة، حي لاسيكون",
-        "phone": "05 37 36 35 98",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ibn%20Rochd%20102%20rue%20Riyada%20Lassakoun%20Kenitra",
+        "id": "pharmacie-al-atlas",
+        "directoryId": "pharmacie-al-atlas",
+        "name": "Pharmacie Al Atlas",
+        "nameEn": "Al Atlas Pharmacy",
+        "nameAr": "صيدلية الأطلس",
+        "district": "Atlas",
+        "districtEn": "Atlas",
+        "districtAr": "الأطلس",
+        "address": "427, avenue El Bacha Abdelhamid, pres du cinema Atlas",
+        "addressEn": "427 El Bacha Abdelhamid Avenue, near Cinema Atlas",
+        "addressAr": "427 شارع الباشا عبد الحميد، قرب سينما الأطلس",
+        "phone": "05 37 38 06 22",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Atlas%20427%20Avenue%20El%20Bacha%20Abdelhamid%20Cinema%20Atlas%20Kenitra",
         "services": [
           "Pharmacie de garde",
           "Ordonnances",
           "Conseil pharmaceutique"
         ],
-        "hours": "Garde de nuit 24h/24 - 26 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 26, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 26 غشت 2026",
+        "hours": "Garde de nuit 24h/24 - 27 aout 2026",
+        "hoursEn": "Night duty 24/24 - August 27, 2026",
+        "hoursAr": "حراسة ليلية 24/24 - 27 غشت 2026",
         "badge": "De garde",
         "badgeEn": "On duty",
         "badgeAr": "حراسة"
@@ -2193,10 +2194,47 @@ const fallbackPharmacyData = {
       "hoursEn": "To be completed",
       "hoursAr": "سيتم إكمالها",
       "services": []
+    },
+    {
+      "name": "Pharmacie Ocaliptus",
+      "nameEn": "Ocaliptus Pharmacy",
+      "nameAr": "صيدلية أوكاليبتوس",
+      "phone": "05 37 35 35 35",
+      "district": "Route de Mehdia",
+      "districtEn": "Mehdia Road",
+      "districtAr": "طريق مهدية",
+      "address": "Route de Mehdia principale, rond-point Al Haddada, pres du cafe Marrakech anciennement",
+      "addressEn": "Main Mehdia road, Al Haddada roundabout, near the former Cafe Marrakech",
+      "addressAr": "طريق مهدية الرئيسية، مدار الحدادة، قرب مقهى مراكش سابقا",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2726391%2C-6.6217005",
+      "id": "pharmacie-ocaliptus",
+      "secondaryPhone": "06 02 24 27 74",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
+    },
+    {
+      "name": "Pharmacie Al Atlas",
+      "nameEn": "Al Atlas Pharmacy",
+      "nameAr": "صيدلية الأطلس",
+      "phone": "05 37 38 06 22",
+      "district": "Atlas",
+      "districtEn": "Atlas",
+      "districtAr": "الأطلس",
+      "address": "427, avenue El Bacha Abdelhamid, pres du cinema Atlas",
+      "addressEn": "427 El Bacha Abdelhamid Avenue, near Cinema Atlas",
+      "addressAr": "427 شارع الباشا عبد الحميد، قرب سينما الأطلس",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Atlas%20427%20Avenue%20El%20Bacha%20Abdelhamid%20Cinema%20Atlas%20Kenitra",
+      "id": "pharmacie-al-atlas",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
     }
   ],
-  "noteEn": "Night duty 24/24 for Wednesday, August 26, 2026. Always call the pharmacy before going.",
-  "noteAr": "حراسة ليلية 24/24 ليوم الأربعاء 26 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
+  "noteEn": "Night duty 24/24 for Thursday, August 27, 2026. Always call the pharmacy before going.",
+  "noteAr": "حراسة ليلية 24/24 ليوم الخميس 27 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
 };
 const pharmacyLabels = {
   fr: {
@@ -2374,7 +2412,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-26.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-27.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
