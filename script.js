@@ -538,66 +538,35 @@ let activeGalleryFilter = "all";
 
 const fallbackPharmacyData = {
   "source": "Affiche officielle du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
-  "updatedAt": "2026-08-27T09:00:00+01:00",
-  "displayDate": "Jeudi 27 aout 2026",
-  "displayDateEn": "Thursday, August 27, 2026",
-  "displayDateAr": "الخميس 27 غشت 2026",
-  "title": "Pharmacies de garde a Kenitra - 27 aout 2026",
-  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-27.jpg",
+  "updatedAt": "2026-08-29T09:00:00+01:00",
+  "displayDate": "Samedi et dimanche 29 et 30 aout 2026",
+  "displayDateEn": "Saturday and Sunday, August 29 and 30, 2026",
+  "displayDateAr": "السبت والأحد 29 و30 غشت 2026",
+  "title": "Pharmacies de garde a Kenitra - 29 et 30 aout 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-08-29.jpg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du jeudi 27 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde 24h/24 du samedi 29 et dimanche 30 aout 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [
       {
-        "id": "pharmacie-ocaliptus",
-        "directoryId": "pharmacie-ocaliptus",
-        "name": "Pharmacie Ocaliptus",
-        "nameEn": "Ocaliptus Pharmacy",
-        "nameAr": "صيدلية أوكاليبتوس",
-        "district": "Route de Mehdia",
-        "districtEn": "Mehdia Road",
-        "districtAr": "طريق مهدية",
-        "address": "Route de Mehdia principale, rond-point Al Haddada, pres du cafe Marrakech anciennement",
-        "addressEn": "Main Mehdia road, Al Haddada roundabout, near the former Cafe Marrakech",
-        "addressAr": "طريق مهدية الرئيسية، مدار الحدادة، قرب مقهى مراكش سابقا",
-        "phone": "05 37 35 35 35",
-        "secondaryPhone": "06 02 24 27 74",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=34.2726391%2C-6.6217005",
-        "services": [
-          "Pharmacie de garde",
-          "Ordonnances",
-          "Conseil pharmaceutique"
-        ],
-        "hours": "Garde de nuit 24h/24 - 27 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 27, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 27 غشت 2026",
-        "badge": "De garde",
-        "badgeEn": "On duty",
-        "badgeAr": "حراسة"
-      },
-      {
-        "id": "pharmacie-al-atlas",
-        "directoryId": "pharmacie-al-atlas",
-        "name": "Pharmacie Al Atlas",
-        "nameEn": "Al Atlas Pharmacy",
-        "nameAr": "صيدلية الأطلس",
-        "district": "Atlas",
-        "districtEn": "Atlas",
-        "districtAr": "الأطلس",
-        "address": "427, avenue El Bacha Abdelhamid, pres du cinema Atlas",
-        "addressEn": "427 El Bacha Abdelhamid Avenue, near Cinema Atlas",
-        "addressAr": "427 شارع الباشا عبد الحميد، قرب سينما الأطلس",
-        "phone": "05 37 38 06 22",
-        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Atlas%20427%20Avenue%20El%20Bacha%20Abdelhamid%20Cinema%20Atlas%20Kenitra",
-        "services": [
-          "Pharmacie de garde",
-          "Ordonnances",
-          "Conseil pharmaceutique"
-        ],
-        "hours": "Garde de nuit 24h/24 - 27 aout 2026",
-        "hoursEn": "Night duty 24/24 - August 27, 2026",
-        "hoursAr": "حراسة ليلية 24/24 - 27 غشت 2026",
+        "id": "pharmacie-arredwan",
+        "directoryId": "pharmacie-arredwan",
+        "name": "Pharmacie Arredwan",
+        "nameEn": "Arredwan Pharmacy",
+        "nameAr": "صيدلية الرضوان",
+        "district": "Bir Rami Industrielle",
+        "districtEn": "Bir Rami Industrielle",
+        "districtAr": "بئر الرامي الصناعية",
+        "address": "Tajziat Jnane 2, pres de la maqbara Arredwan, par la route goudronnee depuis la salle couverte vers le nouveau cimetiere Arredwan, a la fin des lignes de bus 2 et 7",
+        "addressEn": "Jnane 2 subdivision, near Arredwan cemetery, via the paved road from the covered hall toward the new Arredwan cemetery, at the end of bus lines 2 and 7",
+        "addressAr": "تجزئة جنان 2، قرب مقبرة الرضوان، عبر الطريق المزدوج المؤدي من القاعة المغطاة إلى المقبرة الجديدة الرضوان، عند نهاية خط الحافلة رقم 2 و7",
+        "phone": "05 37 36 86 03",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Arredwan%20Bir%20Rami%20Industrielle%20Kenitra",
+        "services": [],
+        "hours": "Garde 24h/24 - 29 et 30 aout 2026",
+        "hoursEn": "24/24 duty - August 29 and 30, 2026",
+        "hoursAr": "حراسة 24/24 - 29 و30 غشت 2026",
         "badge": "De garde",
         "badgeEn": "On duty",
         "badgeAr": "حراسة"
@@ -2231,11 +2200,105 @@ const fallbackPharmacyData = {
       "hoursEn": "To be completed",
       "hoursAr": "سيتم إكمالها",
       "services": []
+    },
+    {
+      "id": "pharmacie-arredwan",
+      "directoryId": "pharmacie-arredwan",
+      "name": "Pharmacie Arredwan",
+      "nameEn": "Arredwan Pharmacy",
+      "nameAr": "صيدلية الرضوان",
+      "district": "Bir Rami Industrielle",
+      "districtEn": "Bir Rami Industrielle",
+      "districtAr": "بئر الرامي الصناعية",
+      "address": "Tajziat Jnane 2, pres de la maqbara Arredwan, par la route goudronnee depuis la salle couverte vers le nouveau cimetiere Arredwan, a la fin des lignes de bus 2 et 7",
+      "addressEn": "Jnane 2 subdivision, near Arredwan cemetery, via the paved road from the covered hall toward the new Arredwan cemetery, at the end of bus lines 2 and 7",
+      "addressAr": "تجزئة جنان 2، قرب مقبرة الرضوان، عبر الطريق المزدوج المؤدي من القاعة المغطاة إلى المقبرة الجديدة الرضوان، عند نهاية خط الحافلة رقم 2 و7",
+      "phone": "05 37 36 86 03",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Arredwan%20Bir%20Rami%20Industrielle%20Kenitra",
+      "services": [],
+      "hours": "Garde 24h/24 - 29 et 30 aout 2026",
+      "hoursEn": "24/24 duty - August 29 and 30, 2026",
+      "hoursAr": "حراسة 24/24 - 29 و30 غشت 2026",
+      "badge": "De garde",
+      "badgeEn": "On duty",
+      "badgeAr": "حراسة"
+    },
+    {
+      "id": "pharmacie-al-mouatene",
+      "name": "Pharmacie Al Mouatene",
+      "nameEn": "Al Mouatene Pharmacy",
+      "nameAr": "صيدلية المواطن",
+      "phone": "05 37 32 21 68",
+      "district": "Ouled Oujih",
+      "districtEn": "Ouled Oujih",
+      "districtAr": "أولاد أوجيه",
+      "address": "Al Maghreb Al Arabi F2 n°279, entre les quartiers Chaouia et Ouled Oujih, pres de la ligne de bus 26",
+      "addressEn": "Al Maghreb Al Arabi F2 no. 279, between Chaouia and Ouled Oujih, near bus line 26",
+      "addressAr": "المغرب العربي F2 رقم 279، بين الشاطور وأولاد أوجيه، قرب خط الحافلة 26",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Mouatene%20Al%20Maghreb%20Al%20Arabi%20Kenitra",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
+    },
+    {
+      "id": "pharmacie-fadl-allah",
+      "name": "Pharmacie Fadl Allah",
+      "nameEn": "Fadl Allah Pharmacy",
+      "nameAr": "صيدلية فضل الله",
+      "phone": "05 37 38 33 28",
+      "district": "Medina",
+      "districtEn": "Medina",
+      "districtAr": "المدينة",
+      "address": "Rue 41 n°314 Al Bouchtiyne, pres du Hammam Dhania, a cote de l ecole Al Bouchtiyne",
+      "addressEn": "41st Street no. 314 Al Bouchtiyne, near Hammam Dhania, beside Al Bouchtiyne school",
+      "addressAr": "زنقة 41 رقم 314 البوشتيين، قرب حمام الضاحية، بجانب مدرسة البوشتيين",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Fadl%20Allah%20Al%20Bouchtiyne%20Kenitra",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
+    },
+    {
+      "id": "pharmacie-abderrahman-nacer",
+      "name": "Pharmacie Abderrahman Nacer",
+      "nameEn": "Abderrahman Nacer Pharmacy",
+      "nameAr": "صيدلية عبد الرحمان الناصر",
+      "phone": "05 37 37 17 12",
+      "district": "Ville Nouvelle",
+      "districtEn": "New Town",
+      "districtAr": "المدينة الجديدة",
+      "address": "N°5, rue de Tanger, Val Fleury, pres de l ancienne villa",
+      "addressEn": "No. 5 Tangier Street, Val Fleury, near the old villa",
+      "addressAr": "رقم 5 زنقة طنجة، فالفلوري، قرب العمارة القديمة",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Abderrahman%20Nacer%205%20Rue%20de%20Tanger%20Kenitra",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
+    },
+    {
+      "id": "pharmacie-ibn-khaldoun",
+      "name": "Pharmacie Ibn Khaldoun",
+      "nameEn": "Ibn Khaldoun Pharmacy",
+      "nameAr": "صيدلية ابن خلدون",
+      "phone": "05 37 38 29 76",
+      "district": "Saknia",
+      "districtEn": "Saknia",
+      "districtAr": "الساكنية",
+      "address": "Saknia 1, rue 7 n°158, pres de la mosquee Al Assaïr",
+      "addressEn": "Saknia 1, 7th Street no. 158, near Al Assaïr mosque",
+      "addressAr": "الساكنية 1، زنقة 7 رقم 158، قرب مسجد العصائر",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ibn%20Khaldoun%20Saknia%20Kenitra",
+      "hours": "A completer",
+      "hoursEn": "To be completed",
+      "hoursAr": "سيتم إكمالها",
+      "services": []
     }
   ],
-  "noteEn": "Night duty 24/24 for Thursday, August 27, 2026. Always call the pharmacy before going.",
-  "noteAr": "حراسة ليلية 24/24 ليوم الخميس 27 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
-};
+  "noteEn": "24/24 duty on Saturday 29 and Sunday, August 30, 2026. Always call the pharmacy before going.",
+  "noteAr": "حراسة 24/24 يومي السبت 29 والأحد 30 غشت 2026. يرجى الاتصال بالصيدلية قبل التنقل."
+};;
 const pharmacyLabels = {
   fr: {
     title: "Pharmacies de garde à Kénitra",
@@ -2412,7 +2475,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-27.json", "data/pharmacies-garde.json"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-08-29.json", "data/pharmacies-garde.json"];
 
   try {
     let data = null;
