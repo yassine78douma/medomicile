@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-01",
+  "duplicates": [
+    {
+      "type": "phone",
+      "key": "0537376936",
+      "doctor_ids": [
+        "dr-mohamed-anas-abbadi",
+        "dr-fatima-zahra-kdider"
+      ]
+    },
+    {
+      "type": "phone",
+      "key": "0537379994",
+      "doctor_ids": [
+        "dr-ahmed-fouad-elmalti",
+        "dr-meryem-el-ghanmi"
+      ]
+    },
+    {
+      "type": "phone",
+      "key": "0537376281",
+      "doctor_ids": [
+        "dr-abdelaziz-bechri",
+        "dr-rachida-moussa"
+      ]
+    },
+    {
+      "type": "phone",
+      "key": "0537378696",
+      "doctor_ids": [
+        "dr-asmaa-elasri",
+        "dr-m-hamed-ait-hamou"
+      ]
+    }
+  ]
+}

@@ -24,3 +24,15 @@ Site vitrine statique pour un service de soins a domicile a Kenitra et region.
 Le site est pret a etre publie sur GitHub Pages ou tout hebergement statique.
 
 Point d'entree public principal : `https://medomicile.com/`.
+
+## Mise a jour des medecins specialistes
+
+Le fichier `médecin spécialiste kenitra.xlsx` est la source editable. Pour regenerer les donnees et les rapports en local :
+
+```bash
+python3 scripts/sync-doctors.py
+```
+
+Le script ecrit `data/doctors.json`, `data/doctors-report.json` et `data/doctors-duplicates.json`. Il ignore les lignes qui ne contiennent qu'un titre de specialite, separe les telephones avec `|` et refuse un remplacement qui ferait disparaitre au moins 20 % des medecins existants, sauf avec `--allow-mass-replacement` apres verification.
+
+Le workflow `.github/workflows/update-doctors.yml` se declenche lorsqu'un nouveau classeur est pousse ou manuellement depuis GitHub Actions. Les doublons sont signales dans le rapport et ne sont jamais supprimes automatiquement.
