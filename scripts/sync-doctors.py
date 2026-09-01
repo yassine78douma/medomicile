@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Import the editable specialist workbook into the site's canonical JSON data."""
-import argparse, datetime, json, re, unicodedata, zipfile
+import argparse, csv, datetime, io, json, re, unicodedata, zipfile
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -44,12 +44,16 @@ def xlsx_rows(path):
             rows.append([values.get(i, '') for i in range(max(values, default=-1) + 1)])
         return rows
 
+def csv_rows(path):
+    return list(csv.reader(Path(path).read_text(encoding='utf-8-sig').splitlines()))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('source', nargs='?', default='médecin spécialiste kenitra.xlsx')
     ap.add_argument('--allow-mass-replacement', action='store_true')
     args = ap.parse_args()
-    rows = xlsx_rows(ROOT / args.source)
+    source_path = ROOT / args.source
+    rows = csv_rows(source_path) if source_path.suffix.lower() == '.csv' else xlsx_rows(source_path)
     header = [norm(x) for x in rows[0]]
     required = {'dr. prenom nom': 0, 'specialite': 1, 'ville': 2, 'quartier': 3, 'numero de telephone': 4, 'google maps': 5, 'instagram': 6, 'facebook': 7}
     for key, index in required.items():
@@ -69,10 +73,10 @@ def main():
         raw_phone = clean(row[4] if len(row) > 4 else '')
         p = phones(raw_phone)
         doctors.append({'id': ident, 'name': name, 'title': 'Dr', 'specialty': specialty,
-          'specialty_group': specialty_group(specialty), 'sub_specialty': '', 'city': clean(row[2] if len(row)>2 else '') or 'Kénitra',
-          'district': clean(row[3] if len(row)>3 else ''), 'address': '', 'phone': raw_phone, 'phones': p, 'whatsapp': '',
+          'specialty_group': specialty_group(specialty), 'subspecialty': '', 'city': clean(row[2] if len(row)>2 else '') or 'Kénitra',
+          'district': clean(row[3] if len(row)>3 else ''), 'address': '', 'phone': p, 'whatsapp': '',
           'google_maps': clean(row[5] if len(row)>5 else ''), 'instagram': clean(row[6] if len(row)>6 else ''),
-          'facebook': clean(row[7] if len(row)>7 else ''), 'status': 'active', 'verified': False, 'featured': False})
+          'facebook': clean(row[7] if len(row)>7 else ''), 'status': 'active', 'verified': True})
     old_path = ROOT / 'data/doctors.json'
     old = json.loads(old_path.read_text()) if old_path.exists() else {'doctors': []}
     old_names = {norm(d.get('name')) for d in old.get('doctors', [])}
@@ -85,14 +89,14 @@ def main():
     for d in doctors:
         keys = [name_map.setdefault(norm(d['name']), []), specialty_map.setdefault((norm(d['name']), norm(d['specialty'])), [])]
         keys[0].append(d['id']); keys[1].append(d['id'])
-        for phone in d['phones']: phone_map.setdefault(re.sub(r'\D','',phone), []).append(d['id'])
+        for phone in d['phone']: phone_map.setdefault(re.sub(r'\D','',phone), []).append(d['id'])
     duplicates = [{'type': kind, 'key': key, 'doctor_ids': ids} for kind, mapping in [('name', name_map), ('phone', phone_map), ('name_specialty', specialty_map)] for key, ids in mapping.items() if key and len(ids) > 1]
     today = datetime.date.today().isoformat()
     payload = {'updated_at': today, 'source': f'local:{args.source}', 'doctors': doctors}
     (ROOT / 'data/doctors.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'data/doctors-duplicates.json').write_text(json.dumps({'generated_at': today, 'duplicates': duplicates}, ensure_ascii=False, indent=2) + '\n')
-    missing_phone = sum(not d['phones'] for d in doctors); missing_district = sum(not d['district'] for d in doctors)
-    report = {'generated_at': today, 'total_doctors': len(doctors), 'specialties': len({d['specialty_group'] for d in doctors}), 'missing_phone': missing_phone, 'missing_district': missing_district, 'duplicates': len(duplicates), 'specialty_groups': sorted({d['specialty_group'] for d in doctors})}
+    missing_phone = sum(not d['phone'] for d in doctors); missing_address = sum(not d['address'] for d in doctors); missing_maps = sum(not d['google_maps'] for d in doctors)
+    report = {'last_sync': today, 'total_doctors': len(doctors), 'verified_doctors': sum(d['verified'] for d in doctors), 'active_doctors': sum(d['status']=='active' for d in doctors), 'draft_doctors': sum(d['status']=='draft' for d in doctors), 'inactive_doctors': sum(d['status']=='inactive' for d in doctors), 'specialties': len({d['specialty_group'] for d in doctors}), 'missing_phone': missing_phone, 'missing_address': missing_address, 'missing_maps': missing_maps, 'missing_district': sum(not d['district'] for d in doctors), 'duplicates': len(duplicates), 'specialty_groups': sorted({d['specialty_group'] for d in doctors})}
     (ROOT / 'data/doctors-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({**report, 'overlap_with_previous': overlap}, ensure_ascii=False))
 if __name__ == '__main__': main()

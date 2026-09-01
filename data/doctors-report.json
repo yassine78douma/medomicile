@@ -1,8 +1,14 @@
 {
-  "generated_at": "2026-09-01",
+  "last_sync": "2026-09-01",
   "total_doctors": 386,
+  "verified_doctors": 386,
+  "active_doctors": 386,
+  "draft_doctors": 0,
+  "inactive_doctors": 0,
   "specialties": 31,
   "missing_phone": 243,
+  "missing_address": 386,
+  "missing_maps": 0,
   "missing_district": 33,
   "duplicates": 4,
   "specialty_groups": [

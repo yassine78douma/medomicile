@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "médecin spécialiste kenitra.xlsx"
+      - "scripts/sync-doctors.py"
   workflow_dispatch:
 
 permissions:
@@ -27,7 +28,12 @@ jobs:
           python-version: "3.x"
 
       - name: Generate doctor data and reports
-        run: python3 scripts/sync-doctors.py
+        env:
+          GOOGLE_SHEETS_ID: "1B-m6gFX3ks_b3oPI5iW34tR4jZyQWsagMgrUjfxcc5Y"
+        run: |
+          curl --fail --location --retry 3 "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=0" -o doctors-source.csv
+          python3 scripts/sync-doctors.py doctors-source.csv
+          rm doctors-source.csv
 
       - name: Validate generated JSON
         run: |
