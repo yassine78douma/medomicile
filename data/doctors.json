@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-09-01",
-  "source": "local:médecin spécialiste kenitra.xlsx",
+  "source": "local:doctors-source.csv",
   "doctors": [
     {
       "id": "dr-mouad-daoudi",
@@ -5401,7 +5401,7 @@
       "district": "Khebbazate",
       "address": "",
       "phone": [
-        "5.37364425E8"
+        "537364425"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Abdellatif+Ftouhi+dentiste+Kenitra",
@@ -5547,7 +5547,7 @@
       "district": "Maghrib Arabi",
       "address": "",
       "phone": [
-        "5.3737888E8"
+        "537378880"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Samia+Farhi+dentiste+Kenitra",
@@ -5693,7 +5693,7 @@
       "district": "Saknia",
       "address": "",
       "phone": [
-        "6.3683E8"
+        "636830000"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Centre+Dentaire+Arsalane+Kenitra",
@@ -6109,7 +6109,7 @@
       "district": "Mimosas",
       "address": "",
       "phone": [
-        "5.37367979E8"
+        "537367979"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Afaf+Lahjouji+dentiste+Kenitra",
@@ -6183,7 +6183,7 @@
       "district": "Maâmora",
       "address": "",
       "phone": [
-        "5.30220071E8"
+        "530220071"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Pristine+Dental+Center+Hiba+Guelida+Kenitra",
@@ -6707,7 +6707,7 @@
       "district": "Centre-ville",
       "address": "",
       "phone": [
-        "5.3737673E8"
+        "537376730"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+El+Yaaqoubi+Abdellah+dentiste+Kenitra",
@@ -6943,7 +6943,7 @@
       "district": "Centre-ville",
       "address": "",
       "phone": [
-        "5.37352699E8"
+        "537352699"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Oussama+Kararsi+dentiste+Kenitra",
@@ -7143,7 +7143,7 @@
       "district": "Centre-ville",
       "address": "",
       "phone": [
-        "7.0208976E8"
+        "702089760"
       ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Bakir+Saad+dentiste+Kenitra",
