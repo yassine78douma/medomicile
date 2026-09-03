@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Pharmacie Hinde",
+    "sector": "Maamora",
+    "address": "Rue Youssef Ben Tachfine, residence Younes, pres du cafe Le Grand et du cafe Ch. Ibrahim, vers le complexe sportif KAC",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Hinde%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Ilyas El Assam",
+    "sector": "Saknia - Medina",
+    "address": "A cote de l Hotel Assam, en face d Atacadao",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ilyas%20El%20Assam%20Hotel%20Assam%20Atacadao%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Al Mostachfa",
+    "sector": "Saknia - Medina",
+    "address": "Numero 4, rue Al Bassra, Hay Al Fath, entre la 7e annexe administrative et Dar Chabab Rahal El Meskini",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Mostachfa%20Hay%20Al%20Fath%20Rahal%20El%20Meskini%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Lotissement Assam",
+    "sector": "Lotissement Assam",
+    "address": "327 Lotissement Assam, derriere Atakado, pres de la mosquee Al Ouzra, a cote de la voie ferree",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Lotissement%20Assam%20327%20Lotissement%20Assam%2C%20derriere%20Atakado%2C%20pres%20de%20la%20mosquee%20Al%20Ouzra%2C%20a%20cote%20de%20la%20voie%20ferree%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Khabbazate",
+    "sector": "Khabbazate",
+    "address": "Quartier Khabbazate, Kenitra",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Khabbazate%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Rachdi",
+    "sector": "Gare de Kenitra",
+    "address": "Dans la grande gare de Kenitra, etage superieur",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Rachdi%20grande%20gare%20Kenitra%20etage%20superieur"
+  },
+  {
+    "name": "Pharmacie Touijer",
+    "sector": "Khabbazate",
+    "address": "Rue 36 n°20, Bir Anzaran, Khabbazate",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Touijer%20Rue%2036%2020%20Bir%20Anzaran%20Khabbazate%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Ibn Rochd",
+    "sector": "Lassakoun",
+    "address": "102, rue Riyada, quartier Lassakoun",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Ibn%20Rochd%20102%20rue%20Riyada%20Lassakoun%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Ocaliptus",
+    "sector": "Route de Mehdia",
+    "address": "Route de Mehdia principale, rond-point Al Haddada, pres du cafe Marrakech anciennement",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=34.2726391%2C-6.6217005"
+  },
+  {
+    "name": "Pharmacie Al Atlas",
+    "sector": "Atlas",
+    "address": "427, avenue El Bacha Abdelhamid, pres du cinema Atlas",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Atlas%20427%20Avenue%20El%20Bacha%20Abdelhamid%20Cinema%20Atlas%20Kenitra"
+  }
+]

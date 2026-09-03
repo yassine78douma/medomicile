@@ -4457,6 +4457,33 @@ a[href^="https://wa.me/"] {
   line-height: 1;
 }
 
+/* Area cards keep their copy and count in one readable column at every width. */
+.pharmacy-area-card {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.pharmacy-area-card .specialty-card__content {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.pharmacy-area-card .specialty-card__description {
+  max-width: none;
+  overflow-wrap: anywhere;
+}
+
+.pharmacy-area-card .specialty-card__meta {
+  min-width: 0;
+}
+
+.pharmacy-area-card .specialty-card__status {
+  margin-top: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .pending-page {
   width: min(100% - 24px, 780px);
   margin: 24px auto;
@@ -4567,6 +4594,11 @@ a[href^="https://wa.me/"] {
 
   .specialty-card__description {
     font-size: 0.95rem;
+  }
+
+  .pharmacy-area-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
   }
 }
 
