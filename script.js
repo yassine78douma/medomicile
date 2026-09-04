@@ -2918,9 +2918,9 @@ const enhanceEstablishmentCards = () => {
       actions.append(call);
     }
 
-    const directionsHref = address
-      ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${name}, ${address}`)}`
-      : "";
+    const directionsHref = card.dataset.googleMapsUrl || (address
+      ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${address} Kénitra`)}`
+      : "");
 
     if (directionsHref) {
       const directions = document.createElement("a");
