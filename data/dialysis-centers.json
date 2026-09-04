@@ -1,3 +1,16 @@
 {
-  "centers": []
+  "centers": [
+    {"id":"kenitra-dialyse","name":"Kénitra Dialyse","doctor_responsible":"Dr Najoua Agzid","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"Ismailia","address":"Villa 69, Ismailia, Kénitra","phones":["05 37 32 23 05"],"verification_status":"confirmed"},
+    {"id":"al-amal","name":"Centre de Dialyse Al Amal","doctor_responsible":"Dr Nabila Benqlilou","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"Saknia / Maâmora CGI","address":"Lot V15, Lotissement Maâmora CGI, Saknia, Kénitra","phones":["05 37 38 44 93"],"verification_status":"confirmed"},
+    {"id":"dar-chifaa","name":"Centre de Dialyse et Néphrologie Dar Chifaa","doctor_responsible":"Dr Fatima Zohraa Asfalou","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"Bir Rami Est","address":"719 Avenue 2 Mars, Bir Rami Est, Kénitra","phones":["05 37 36 42 42"],"verification_status":"confirmed"},
+    {"id":"assalam","name":"Centre d’Hémodialyse et de Néphrologie Assalam","doctor_responsible":"Dr Nabil El Khattabi","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"Bir Rami Est","address":"103 Lotissement Al Wahda, Bir Rami Est, Kénitra","phones":["05 37 37 44 55"],"verification_status":"confirmed"},
+    {"id":"ouled-oujih","name":"Centre de Dialyse et des Maladies Rénales Ouled Oujih","doctor_responsible":"Dr Anis Raqui","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"Ouled Oujih","address":"16 Lotissement El Oumnia, Ouled Oujih, Kénitra","phones":["05 37 35 50 11"],"verification_status":"confirmed"},
+    {"id":"al-hakim","name":"Centre des Maladies Rénales et d’Hémodialyse Al Hakim","doctor_responsible":"Dr Hakim Hamzaoui","specialty":"Néphrologie / Hémodialyse","city":"Kénitra","sector":"El Haouzia","address":"AB17, El Haouzia, Kénitra","phones":["05 37 35 67 13"],"verification_status":"confirmed"},
+    {"id":"maamora","name":"Centre d’Hémodialyse Maâmora","doctor_responsible":"Dr Aziza Laalou","specialty":"","city":"Kénitra","sector":"Centre / Maâmora","address":"24 Rue du Souss, Kénitra","phones":["05 37 37 70 70"],"verification_status":"a_confirmer"},
+    {"id":"el-jawhara","name":"Centre de Néphrologie et d’Hémodialyse El Jawhara","doctor_responsible":"","specialty":"","city":"Kénitra","sector":"","address":"23 Rue Mohamed El Korri, Kénitra","phones":["05 37 37 87 14","05 37 37 87 20"],"verification_status":"confirmed"},
+    {"id":"badr","name":"Centre de Dialyse BADR","doctor_responsible":"","specialty":"","city":"Kénitra","sector":"Bir Rami Ouest","address":"Bir Rami Ouest, Kénitra","phones":["05 37 37 68 23"],"verification_status":"confirmed"},
+    {"id":"lioussfi","name":"Centre de Maladies Rénales et Dialyse Lioussfi","doctor_responsible":"","specialty":"","city":"Kénitra","sector":"Val Fleury","address":"7 Rue F, Lotissement Sadika, Val Fleury, Kénitra","phones":["05 37 37 50 50"],"verification_status":"confirmed"},
+    {"id":"assafwa","name":"Centre de Dialyse Assafwa","doctor_responsible":"","specialty":"","city":"Kénitra","sector":"Route de Mehdia / Maâmora","address":"41 D Zone d’activité Maâmora, Route de Mehdia, Kénitra","phones":["05 37 35 66 26"],"verification_status":"confirmed"},
+    {"id":"arrahma","name":"Centre de Dialyse Arrahma","doctor_responsible":"","specialty":"","city":"Kénitra","sector":"","address":"Essalam Center, Boulevard Mohammed V / Rue Mohamed El Qorri, Kénitra","phones":["05 37 37 11 37"],"verification_status":"confirmed"}
+  ]
 }
