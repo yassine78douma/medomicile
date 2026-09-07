@@ -35,6 +35,10 @@ html {
   overflow-x: hidden;
 }
 
+html.menu-open {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -48,6 +52,7 @@ body {
 
 body.menu-open {
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 img {
@@ -252,12 +257,17 @@ button {
   right: 12px;
   display: grid;
   gap: 6px;
+  max-height: calc(100dvh - var(--header-height) - 22px);
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
   opacity: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   pointer-events: none;
   transform: translateY(-10px);
   transition: opacity 180ms ease, transform 180ms ease;
@@ -3154,7 +3164,9 @@ a[href^="https://wa.me/"] {
     opacity: 1;
     pointer-events: auto;
     transform: none;
+    max-height: none;
     overflow-x: auto;
+    overflow-y: visible;
     scrollbar-width: none;
   }
 

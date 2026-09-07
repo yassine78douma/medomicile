@@ -54,6 +54,7 @@ const initMobileMenu = () => {
 
   const closeMenu = () => {
     document.body.classList.remove("menu-open");
+    document.documentElement.classList.remove("menu-open");
     menu.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
   };
@@ -61,6 +62,7 @@ const initMobileMenu = () => {
   const toggleMenu = () => {
     const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
     document.body.classList.toggle("menu-open", !isOpen);
+    document.documentElement.classList.toggle("menu-open", !isOpen);
     menu.classList.toggle("is-open", !isOpen);
     menuToggle.setAttribute("aria-expanded", String(!isOpen));
   };
