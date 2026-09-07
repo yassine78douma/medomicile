@@ -3009,10 +3009,12 @@ const enhanceEstablishmentCards = () => {
     if (!name) return;
 
     const isDoctor = card.classList.contains("doctor-card");
+    const isDialysisCenter = card.classList.contains("dialysis-card");
+    const responsibleDoctor = card.dataset.doctorResponsible?.trim();
     if (isDoctor) {
       card.querySelectorAll(".doctor-specialty").forEach((specialty) => specialty.remove());
     }
-    const rating = isDoctor ? null : formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
+    const rating = isDoctor || isDialysisCenter ? null : formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
     const open24h = card.dataset.open24h === "true";
     const open24hLabel = getLocalizedLabel("Ouvert 24h/24", "Open 24/7", "متاح 24 ساعة");
     const open24hBadge = open24h ? `<span class="availability-badge" title="${open24hLabel}" aria-label="${open24hLabel}">24h/24</span>` : "";
@@ -3030,7 +3032,10 @@ const enhanceEstablishmentCards = () => {
       <span class="compact-card-title">
         <strong>${name}</strong>${open24hBadge}
       </span>
-      ${rating ? `<span class="compact-rating" aria-label="${rating.label}">
+      ${responsibleDoctor ? `<span class="compact-card-doctor" aria-label="${getLocalizedLabel("Médecin responsable", "Responsible physician", "الطبيب المسؤول")} : ${responsibleDoctor}">
+        <small>${getLocalizedLabel("Médecin responsable", "Responsible physician", "الطبيب المسؤول")}</small>
+        <b>${responsibleDoctor}</b>
+      </span>` : rating ? `<span class="compact-rating" aria-label="${rating.label}">
         <span aria-hidden="true">${rating.stars}</span>
         <b>${rating.label}</b>
       </span>` : ""}

@@ -4287,6 +4287,27 @@ a[href^="https://wa.me/"] {
   white-space: nowrap;
 }
 
+.compact-card-doctor {
+  display: grid;
+  gap: 3px;
+  justify-items: end;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-align: right;
+}
+
+.compact-card-doctor small {
+  color: var(--soft-muted);
+  font-size: inherit;
+  font-weight: 850;
+}
+
+.compact-card-doctor b {
+  color: var(--blue-850);
+  font-size: 0.88rem;
+}
+
 [dir="rtl"] .compact-rating {
   justify-items: start;
 }
@@ -4685,8 +4706,20 @@ a[href^="https://wa.me/"] {
     justify-items: start;
   }
 
+  .compact-card-doctor {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-items: start;
+    text-align: left;
+  }
+
   [dir="rtl"] .compact-rating {
     justify-items: end;
+  }
+
+  [dir="rtl"] .compact-card-doctor {
+    justify-items: end;
+    text-align: right;
   }
 
   .compact-card-details .establishment-actions {
@@ -6567,9 +6600,14 @@ a[href^="https://wa.me/"] {
 [data-theme="dark"] .facility-card .compact-card-title small,
 [data-theme="dark"] .laboratory-card .compact-card-title small,
 [data-theme="dark"] .doctor-card .compact-card-title small,
+[data-theme="dark"] .compact-card-doctor small,
 [data-theme="dark"] .compact-rating b,
 [data-theme="dark"] .facility-muted strong {
   color: #dce9f3;
+}
+
+[data-theme="dark"] .compact-card-doctor b {
+  color: #ffffff;
 }
 
 [data-theme="dark"] .compact-card-details,
