@@ -7622,3 +7622,25 @@ html[dir="rtl"] .specialty-professional-slot__link {
     color: var(--gold-strong);
   }
 }
+
+/* Keep directory heroes and featured facilities readable in dark mode. */
+[data-theme="dark"] .directory-hero.page-hero,
+:root:not([data-theme="light"]) .directory-hero.page-hero { color: #f8fafc; background: linear-gradient(180deg, rgba(8, 28, 45, 0.96), rgba(7, 24, 39, 0.98)), var(--soft); }
+[data-theme="dark"] .directory-hero.page-hero .eyebrow,
+:root:not([data-theme="light"]) .directory-hero.page-hero .eyebrow { color: #90c2ff; }
+[data-theme="dark"] .directory-hero.page-hero h1,
+:root:not([data-theme="light"]) .directory-hero.page-hero h1 { color: #f8fafc; }
+[data-theme="dark"] .directory-hero.page-hero .hero-subtitle,
+:root:not([data-theme="light"]) .directory-hero.page-hero .hero-subtitle { color: #dbeafe; }
+[data-theme="dark"] .directory-hero.page-hero .directory-note,
+:root:not([data-theme="light"]) .directory-hero.page-hero .directory-note { color: #bfd3e8; }
+[data-theme="dark"] .featured-clinic,
+:root:not([data-theme="light"]) .featured-clinic { color: #f8fafc; background: linear-gradient(135deg, rgba(11, 29, 46, 0.98), rgba(8, 28, 45, 0.96)), var(--surface); }
+[data-theme="dark"] .featured-clinic h2,
+:root:not([data-theme="light"]) .featured-clinic h2,
+[data-theme="dark"] .featured-clinic__meta,
+:root:not([data-theme="light"]) .featured-clinic__meta { color: #f8fafc; }
+[data-theme="dark"] .featured-clinic__content > p:not(.featured-clinic__eyebrow):not(.featured-clinic__type),
+:root:not([data-theme="light"]) .featured-clinic__content > p:not(.featured-clinic__eyebrow):not(.featured-clinic__type) { color: #dbe8f5; }
+[data-theme="dark"] .featured-clinic__type,
+:root:not([data-theme="light"]) .featured-clinic__type { color: #f2d58b; }
