@@ -295,6 +295,36 @@ button {
   outline: none;
 }
 
+.menu-language-selector {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--line);
+  color: var(--soft-muted);
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.menu-language-selector a {
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--blue-950);
+  background: var(--soft);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.menu-language-selector a[aria-current="page"] {
+  color: #ffffff;
+  border-color: var(--blue-850);
+  background: var(--blue-850);
+}
+
 .menu .lang-link {
   color: var(--blue-850);
   background: rgba(198, 169, 105, 0.13);
@@ -3168,6 +3198,10 @@ a[href^="https://wa.me/"] {
     overflow-x: auto;
     overflow-y: visible;
     scrollbar-width: none;
+  }
+
+  .menu-language-selector {
+    display: none;
   }
 
   .menu::-webkit-scrollbar {

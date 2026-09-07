@@ -72,6 +72,30 @@ const initMobileMenu = () => {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
+
+  const footerLanguageLinks = [...document.querySelectorAll(".footer-languages a")];
+  if (footerLanguageLinks.length < 2) return;
+
+  const languageSelector = document.createElement("div");
+  languageSelector.className = "menu-language-selector";
+  languageSelector.setAttribute("aria-label", isArabicPage ? "اختيار اللغة" : isEnglishPage ? "Language selection" : "Choix de langue");
+
+  const languageLabel = document.createElement("span");
+  languageLabel.textContent = isArabicPage ? "اللغة" : isEnglishPage ? "Language" : "Langue";
+  languageSelector.append(languageLabel);
+
+  footerLanguageLinks.forEach((sourceLink) => {
+    const link = document.createElement("a");
+    link.href = sourceLink.href;
+    link.lang = sourceLink.lang;
+    link.textContent = sourceLink.lang === "ar" ? "العربية" : sourceLink.lang === "en" ? "EN" : "FR";
+    if (sourceLink.dir) link.dir = sourceLink.dir;
+    if (sourceLink.getAttribute("aria-current")) link.setAttribute("aria-current", "page");
+    link.addEventListener("click", closeMenu);
+    languageSelector.append(link);
+  });
+
+  menu.append(languageSelector);
 };
 
 const initThemeToggle = () => {
