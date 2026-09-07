@@ -72,6 +72,42 @@ const initMobileMenu = () => {
   });
 };
 
+const initThemeToggle = () => {
+  if (!themeToggle) return;
+
+  const themeStorageKey = "medomicile-theme";
+  const root = document.documentElement;
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const currentThemeIsDark = () =>
+    root.dataset.theme ? root.dataset.theme === "dark" : systemPrefersDark.matches;
+
+  const syncToggle = () => {
+    const isDark = currentThemeIsDark();
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.textContent = isDark ? "☀" : "◐";
+  };
+
+  try {
+    const savedTheme = window.localStorage.getItem(themeStorageKey);
+    if (savedTheme === "light" || savedTheme === "dark") root.dataset.theme = savedTheme;
+  } catch {
+    // Theme selection remains usable when browser storage is unavailable.
+  }
+
+  syncToggle();
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = currentThemeIsDark() ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch {
+      // The selected theme still applies for the current page visit.
+    }
+    syncToggle();
+  });
+};
+
 const newMedicalCabinets = [
   {
     id: "ophthalmology-principale-building",
@@ -4207,6 +4243,7 @@ const revealAll = () => {
 };
 
 initMobileMenu();
+initThemeToggle();
 renderDirectoryFooterCtas();
 
 if ("IntersectionObserver" in window) {
