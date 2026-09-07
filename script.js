@@ -536,6 +536,87 @@ const galleryItems = [
 let activeGalleryIndex = 0;
 let activeGalleryFilter = "all";
 
+const initGallery = () => {
+  if (!galleryMain || !galleryThumbs.length) return;
+
+  const localizedTitle = (item) => {
+    if (isArabicPage) return item.titleAr || item.title;
+    if (isEnglishPage) return item.titleEn || item.title;
+    return item.title;
+  };
+
+  const localizedAlt = (item) => {
+    if (isArabicPage) return item.altAr || item.alt;
+    return item.alt;
+  };
+
+  const visibleIndexes = () => galleryItems
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => activeGalleryFilter === "all" || item.category === activeGalleryFilter)
+    .map(({ index }) => index);
+
+  const showImage = (index) => {
+    const item = galleryItems[index];
+    if (!item) return;
+
+    activeGalleryIndex = index;
+    galleryMain.classList.add("is-changing");
+    galleryMain.src = item.src;
+    galleryMain.alt = localizedAlt(item);
+    galleryMain.onload = () => galleryMain.classList.remove("is-changing");
+
+    if (galleryTitle) galleryTitle.textContent = localizedTitle(item);
+    if (galleryCount) {
+      const visible = visibleIndexes();
+      galleryCount.textContent = `${visible.indexOf(index) + 1} / ${visible.length}`;
+    }
+
+    galleryThumbs.forEach((thumb) => {
+      const isActive = Number(thumb.dataset.galleryIndex) === index;
+      thumb.classList.toggle("is-active", isActive);
+      thumb.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  };
+
+  const moveImage = (direction) => {
+    const visible = visibleIndexes();
+    if (!visible.length) return;
+    const currentPosition = Math.max(0, visible.indexOf(activeGalleryIndex));
+    const nextPosition = (currentPosition + direction + visible.length) % visible.length;
+    showImage(visible[nextPosition]);
+  };
+
+  galleryThumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => showImage(Number(thumb.dataset.galleryIndex)));
+  });
+
+  galleryFilters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      activeGalleryFilter = filter.dataset.galleryFilter || "all";
+      galleryFilters.forEach((button) => button.classList.toggle("is-active", button === filter));
+      galleryThumbs.forEach((thumb) => {
+        const visible = activeGalleryFilter === "all" || thumb.dataset.galleryCategory === activeGalleryFilter;
+        thumb.classList.toggle("is-hidden", !visible);
+      });
+
+      const visible = visibleIndexes();
+      if (visible.length) showImage(visible.includes(activeGalleryIndex) ? activeGalleryIndex : visible[0]);
+    });
+  });
+
+  galleryPrev?.addEventListener("click", () => moveImage(-1));
+  galleryNext?.addEventListener("click", () => moveImage(1));
+  document.addEventListener("keydown", (event) => {
+    if (event.target.matches("input, textarea, select")) return;
+    if (event.key === "ArrowLeft") moveImage(isArabicPage ? 1 : -1);
+    if (event.key === "ArrowRight") moveImage(isArabicPage ? -1 : 1);
+  });
+
+  showImage(activeGalleryIndex);
+};
+
+initGallery();
+
 const fallbackPharmacyData = {
   "source": "Affiche officielle du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
   "updatedAt": "2026-08-31T09:00:00+01:00",
