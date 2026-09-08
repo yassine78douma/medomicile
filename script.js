@@ -296,7 +296,7 @@ const professionalSlotTranslations = {
   fr: {
     city: "Kénitra",
     badge: "ESPACE PROFESSIONNEL",
-    sponsoredBadge: "SPONSORISÉ",
+    sponsoredBadge: "ESPACE PROFESSIONNEL",
     button: "Découvrir l’espace professionnel",
     call: "Appeler",
     directions: "Itinéraire",
@@ -321,7 +321,7 @@ const professionalSlotTranslations = {
   en: {
     city: "Kenitra",
     badge: "PROFESSIONAL SPACE",
-    sponsoredBadge: "SPONSORED",
+    sponsoredBadge: "PROFESSIONAL SPACE",
     button: "Discover the professional space",
     call: "Call",
     directions: "Directions",
@@ -346,7 +346,7 @@ const professionalSlotTranslations = {
   ar: {
     city: "القنيطرة",
     badge: "مساحة مهنية",
-    sponsoredBadge: "إعلان ممول",
+    sponsoredBadge: "مساحة مهنية",
     button: "اكتشف المساحة المهنية",
     call: "اتصال",
     directions: "الاتجاه",
@@ -4205,10 +4205,10 @@ const renderSpecialtyProfessionalSlots = (section) => {
       mention.textContent = labels.mention;
 
       const profileLinks = document.createElement("div");
-      profileLinks.className = "urgent-actions";
+      profileLinks.className = "urgent-actions specialty-professional-slot__profile-links";
       if (sponsor.instagram) {
         const instagram = document.createElement("a");
-        instagram.className = "secondary-action";
+        instagram.className = "specialty-professional-slot__link";
         instagram.href = sponsor.instagram;
         instagram.target = "_blank";
         instagram.rel = "noopener noreferrer";
@@ -4217,7 +4217,7 @@ const renderSpecialtyProfessionalSlots = (section) => {
       }
       if (sponsor.directions) {
         const directions = document.createElement("a");
-        directions.className = "secondary-action";
+        directions.className = "specialty-professional-slot__link";
         directions.href = sponsor.directions;
         directions.target = "_blank";
         directions.rel = "noopener noreferrer";
