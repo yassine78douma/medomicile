@@ -33,6 +33,32 @@ def slug(value):
 
 def e(value): return html.escape(str(value or ''), quote=True)
 
+LANGS = {
+    'fr': ('pharmacies-kenitra.html', 'pharmacies.html', 'Accueil', 'PHARMACIES À KÉNITRA', 'Pharmacies à Kénitra', 'Retrouvez les pharmacies de Kénitra par grande zone, avec leurs coordonnées et itinéraires disponibles.', 'Les informations peuvent évoluer. Contactez directement la pharmacie avant de vous déplacer lorsque cela est nécessaire.', 'Pharmacies par grande zone à Kénitra', 'Choisissez une zone pour afficher les pharmacies correspondantes.', 'Voir les pharmacies à', 'pharmacie', 'pharmacies', 'Visibilité locale', 'Développez la visibilité de votre pharmacie à Kénitra', 'Vous représentez une pharmacie à Kénitra ? Medomicile propose un emplacement sponsorisé clairement identifié.', 'Découvrir l’espace professionnel', 'Demande de visibilité sponsorisée pour une pharmacie'),
+    'en': ('pharmacies-kenitra-en.html', 'pharmacies-en.html', 'Home', 'PHARMACIES IN KENITRA', 'Pharmacies in Kenitra', 'Find pharmacies in Kenitra by main area, with available contact details and directions.', 'Information may change. Contact the pharmacy directly before travelling when needed.', 'Pharmacies by main area in Kenitra', 'Choose an area to view the corresponding pharmacies.', 'View pharmacies in', 'pharmacy', 'pharmacies', 'Local visibility', 'Develop your pharmacy visibility in Kenitra', 'Do you represent a pharmacy in Kenitra? Medomicile offers a clearly identified sponsored placement.', 'Discover the professional space', 'Sponsored visibility request for a pharmacy'),
+    'ar': ('pharmacies-kenitra-ar.html', 'pharmacies-ar.html', 'الرئيسية', 'صيدليات القنيطرة', 'صيدليات القنيطرة', 'اعثر على صيدليات القنيطرة حسب المناطق الرئيسية، مع بيانات الاتصال والاتجاهات المتاحة.', 'قد تتغير المعلومات. اتصل مباشرة بالصيدلية قبل التنقل عند الحاجة.', 'الصيدليات حسب المناطق الرئيسية في القنيطرة', 'اختر منطقة لعرض الصيدليات المعنية.', 'عرض صيدليات', 'صيدلية', 'صيدليات', 'ظهور محلي', 'طوّر ظهور صيدليتك في القنيطرة', 'هل تمثل صيدلية في القنيطرة؟ يوفر Medomicile مساحة ممولة ومحددة بوضوح.', 'اكتشف المساحة المهنية', 'طلب ظهور ممول لصيدلية'),
+}
+
+def shared_markup(source, tag):
+    text = (ROOT / source).read_text()
+    match = re.search(rf'(<{tag}\b[\s\S]*?</{tag}>)', text, re.I)
+    if not match:
+        raise ValueError(f'Missing shared {tag} in {source}')
+    return match.group(1)
+
+def main_directory_page(lang, groups):
+    output, source, home, eyebrow, title, description, note, list_title, list_description, view, singular, plural, sponsor_eyebrow, sponsor_title, sponsor_description, sponsor_cta, sponsor_subject = LANGS[lang]
+    header = shared_markup(source, 'header')
+    footer = shared_markup(source, 'footer')
+    directory_cards = ''.join(
+        f'<a class="specialty-card reveal pharmacy-area-card" href="pharmacies-{slug(name)}-kenitra.html"><span class="specialty-card__content"><strong class="specialty-card__title">{e(name)}</strong><span class="specialty-card__description">{e(view)} {e(name)}</span><span class="specialty-card__meta"><span class="specialty-card__status">{len(items)} {e(singular if len(items) == 1 else plural)}</span></span></span><span class="specialty-card__arrow" aria-hidden="true">›</span></a>'
+        for name, items in groups.items()
+    )
+    canonical = f'{BASE}{output}'
+    breadcrumb = f'<nav class="breadcrumb" aria-label="Breadcrumb"><a href="{BASE if lang == "fr" else BASE + ("en.html" if lang == "en" else "ar.html")}">{e(home)}</a><span aria-hidden="true">›</span><span>{e(title)}</span></nav>'
+    subject = html.escape(sponsor_subject.replace(' ', '%20'), quote=True)
+    return f'''<!DOCTYPE html><html lang="{lang}"{' dir="rtl"' if lang == 'ar' else ''}><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>{e(title)} | Medomicile</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{canonical}"><link rel="stylesheet" href="style.css?v=20260908-02"></head><body>{header}<main id="main" class="page-main directory-main pharmacy-page">{breadcrumb}<section class="directory-hero page-hero section ambient-page-hero" aria-labelledby="pharmacy-directory-title"><canvas class="ambient-canvas" data-ambient-canvas aria-hidden="true"></canvas><div class="directory-hero-copy reveal"><p class="eyebrow">{e(eyebrow)}</p><h1 id="pharmacy-directory-title">{e(title)}</h1><p class="hero-subtitle">{e(description)}</p><p class="directory-note">{e(note)}</p></div></section><section class="directory-cta laboratory-sponsor section reveal" aria-labelledby="pharmacy-sponsor-title"><div><p class="eyebrow">{e(sponsor_eyebrow)}</p><h2 id="pharmacy-sponsor-title">{e(sponsor_title)}</h2><p>{e(sponsor_description)}</p></div><div class="urgent-actions"><a class="primary-action" href="mailto:contact@medomicile.com?subject={subject}">{e(sponsor_cta)}</a></div></section><section class="directory section" aria-labelledby="sector-title"><div class="pharmacy-panel reveal"><div class="pharmacy-copy"><h2 id="sector-title">{e(list_title)}</h2><p>{e(list_description)}</p></div><div class="specialty-grid pharmacy-area-grid">{directory_cards}</div></div></section><section class="directory-cta section reveal" data-directory-footer-cta></section></main>{footer}<a dir="ltr" class="floating-call" href="tel:+212663058222">{'اتصال' if lang == 'ar' else 'Call' if lang == 'en' else 'Appeler'}</a><script defer src="script.js?v=20260908-02"></script></body></html>'''
+
 def card(p):
     lines = []
     for label, key in [('QUARTIER', 'district'), ('ADRESSE', 'address'), ('TÉLÉPHONE', 'phone'), ('HORAIRES', 'hours')]:
@@ -46,7 +72,7 @@ def page(title, description, breadcrumb, content, canonical):
     crumbs = ' <span aria-hidden="true">›</span> '.join(f'<a href="{e(url)}">{e(name)}</a>' for name, url in breadcrumb)
     schema = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
       {'@type':'ListItem','position':i+1,'name':name,'item':url} for i,(name,url) in enumerate(breadcrumb)]}
-    return f'''<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><link rel="stylesheet" href="style.css?v=20260731-01"></head><body><main id="main" class="page-main directory-main pharmacy-page"><nav class="breadcrumb" aria-label="Fil d’Ariane">{crumbs}</nav>{content}</main><script defer src="script.js?v=20260731-01"></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></body></html>'''
+    return f'''<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>{e(title)}</title><meta name="description" content="{e(description)}"><link rel="canonical" href="{e(canonical)}"><link rel="stylesheet" href="style.css?v=20260908-02"></head><body><main id="main" class="page-main directory-main pharmacy-page"><nav class="breadcrumb" aria-label="Fil d’Ariane">{crumbs}</nav>{content}</main><script defer src="script.js?v=20260908-02"></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></body></html>'''
 
 def main():
     data = json.loads((ROOT/'data/pharmacies-garde.json').read_text())
@@ -57,9 +83,8 @@ def main():
         if area: groups[area].append(p)
         else: unmapped.append({'name': p.get('name'), 'sector': p.get('district'), 'address': p.get('address'), 'google_maps': p.get('mapsUrl')})
     groups = {k: sorted(v, key=lambda p: norm(p.get('name'))) for k,v in groups.items()}
-    cards = ''.join(f'<a class="specialty-card reveal pharmacy-area-card" href="pharmacies-{slug(name)}-kenitra.html"><span class="specialty-card__content"><strong class="specialty-card__title">{e(name)}</strong><span class="specialty-card__description">Voir les pharmacies à {e(name)}</span><span class="specialty-card__meta"><span class="specialty-card__status">{len(items)} pharmacie{"s" if len(items)!=1 else ""}</span></span></span><span class="specialty-card__arrow" aria-hidden="true">›</span></a>' for name,items in groups.items())
-    main_content = f'<section class="directory-hero page-hero section"><div class="directory-hero-copy"><p class="eyebrow">ANNUAIRE PERMANENT</p><h1>Pharmacies à Kénitra</h1><p class="hero-subtitle">Retrouvez les pharmacies de Kénitra par grande zone, avec leurs coordonnées et itinéraires disponibles.</p></div></section><section class="directory section" aria-labelledby="sector-title"><div class="pharmacy-panel reveal"><div class="pharmacy-copy"><h2 id="sector-title">Pharmacies par grande zone à Kénitra</h2><p>Choisissez une zone pour afficher les pharmacies correspondantes.</p></div><div class="specialty-grid pharmacy-area-grid">{cards}</div></div></section>'
-    (ROOT/'pharmacies-kenitra.html').write_text(page('Pharmacies à Kénitra par secteur | Medomicile','Trouvez les pharmacies à Kénitra par grande zone, avec coordonnées et itinéraires disponibles.', [('Accueil',BASE),('Pharmacies à Kénitra',BASE+'pharmacies-kenitra.html')], main_content, BASE+'pharmacies-kenitra.html'))
+    for lang, (output, *_rest) in LANGS.items():
+        (ROOT / output).write_text(main_directory_page(lang, groups))
     generated=[]
     for name,items in groups.items():
         path = f'pharmacies-{slug(name)}-kenitra.html'; url=BASE+path

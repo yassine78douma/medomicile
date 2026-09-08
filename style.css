@@ -6048,12 +6048,12 @@ a[href^="https://wa.me/"] {
   display: none !important;
 }
 
-.radiology-page .directory-hero + .radiology-sponsor,
+.radiology-page .directory-hero + .laboratory-sponsor,
 .laboratories-page .directory-hero + .laboratory-sponsor {
   margin-top: clamp(26px, 4vw, 42px);
 }
 
-.radiology-page .radiology-sponsor + .directory,
+.radiology-page .laboratory-sponsor + .directory,
 .laboratories-page .laboratory-sponsor + .directory {
   margin-top: clamp(26px, 4vw, 38px);
 }

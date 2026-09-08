@@ -824,7 +824,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/pharmacies-kenitra-en.html" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/pharmacies-kenitra-ar.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/pharmacies-kenitra.html" />
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -838,13 +838,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-
-  <url><loc>https://medomicile.com/pharmacies-saknia-kenitra.html</loc></url>
-  <url><loc>https://medomicile.com/pharmacies-centre-ville-kenitra.html</loc></url>
-  <url><loc>https://medomicile.com/pharmacies-bir-rami-kenitra.html</loc></url>
-  <url><loc>https://medomicile.com/pharmacies-ouled-oujih-haddada-kenitra.html</loc></url>
   <url><loc>https://medomicile.com/centres-dialyse-kenitra.html</loc></url>
   <url><loc>https://medomicile.com/centres-dialyse-kenitra-ar.html</loc>
     <lastmod>2026-09-08</lastmod></url>
   <url><loc>https://medomicile.com/dialysis-centers-kenitra.html</loc></url>
+
+  <url><loc>https://medomicile.com/pharmacies-saknia-kenitra.html</loc>
+    <lastmod>2026-09-08</lastmod></url>
+  <url><loc>https://medomicile.com/pharmacies-centre-ville-kenitra.html</loc>
+    <lastmod>2026-09-08</lastmod></url>
+  <url><loc>https://medomicile.com/pharmacies-bir-rami-kenitra.html</loc>
+    <lastmod>2026-09-08</lastmod></url>
+  <url><loc>https://medomicile.com/pharmacies-ouled-oujih-haddada-kenitra.html</loc>
+    <lastmod>2026-09-08</lastmod></url>
 </urlset>
