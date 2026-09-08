@@ -7824,3 +7824,22 @@ html[dir="rtl"] .specialty-professional-slot__link {
 :root:not([data-theme="light"]) .featured-clinic__content > p:not(.featured-clinic__eyebrow):not(.featured-clinic__type) { color: #dbe8f5; }
 [data-theme="dark"] .featured-clinic__type,
 :root:not([data-theme="light"]) .featured-clinic__type { color: #f2d58b; }
+
+/* Final contrast guard for the professional directory slots. */
+[data-theme="dark"] .specialty-professional-slot {
+  background: linear-gradient(135deg, #0c2940, #071b2c) !important;
+  border-color: rgba(147, 196, 253, 0.42) !important;
+}
+[data-theme="dark"] .specialty-professional-slot h3 { color: #f8fafc !important; }
+[data-theme="dark"] .specialty-professional-slot p { color: #dbeafe !important; }
+[data-theme="dark"] .specialty-professional-slot small { color: #cbdcec !important; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .specialty-professional-slot {
+    background: linear-gradient(135deg, #0c2940, #071b2c) !important;
+    border-color: rgba(147, 196, 253, 0.42) !important;
+  }
+  :root:not([data-theme="light"]) .specialty-professional-slot h3 { color: #f8fafc !important; }
+  :root:not([data-theme="light"]) .specialty-professional-slot p { color: #dbeafe !important; }
+  :root:not([data-theme="light"]) .specialty-professional-slot small { color: #cbdcec !important; }
+}
