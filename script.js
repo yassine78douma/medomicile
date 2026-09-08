@@ -4201,9 +4201,6 @@ const renderSpecialtyProfessionalSlots = (section) => {
       const text = document.createElement("p");
       text.textContent = sponsor.specialty[currentLang] || sponsor.specialty.fr;
 
-      const mention = document.createElement("small");
-      mention.textContent = labels.mention;
-
       const profileLinks = document.createElement("div");
       profileLinks.className = "urgent-actions specialty-professional-slot__profile-links";
       if (sponsor.instagram) {
@@ -4231,7 +4228,7 @@ const renderSpecialtyProfessionalSlots = (section) => {
       link.dir = "ltr";
       link.textContent = `${labels.call} ${sponsor.phone}`;
 
-      content.append(badge, title, text, mention);
+      content.append(badge, title, text);
       if (profileLinks.children.length) content.append(profileLinks);
       card.append(icon, content, link);
       card.style.setProperty("--slot-index", index);
