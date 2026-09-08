@@ -7257,7 +7257,7 @@ html[dir="rtl"] .specialty-professional-slot__link {
   }
 
   .directory-main > .specialty-professional-slots {
-    order: 30;
+    order: 10;
   }
 
   .directory-main > .directory-info {
