@@ -299,6 +299,9 @@ const professionalSlotTranslations = {
     sponsoredBadge: "SPONSORISÉ",
     button: "Découvrir l’espace professionnel",
     call: "Appeler",
+    directions: "Itinéraire",
+    instagram: "Instagram",
+    open24h: "Ouvert 24h/24",
     mention: "Emplacement professionnel clairement identifié.",
     templates: [
       {
@@ -321,6 +324,9 @@ const professionalSlotTranslations = {
     sponsoredBadge: "SPONSORED",
     button: "Discover the professional space",
     call: "Call",
+    directions: "Directions",
+    instagram: "Instagram",
+    open24h: "Open 24/7",
     mention: "Clearly identified professional placement.",
     templates: [
       {
@@ -343,6 +349,9 @@ const professionalSlotTranslations = {
     sponsoredBadge: "إعلان ممول",
     button: "اكتشف المساحة المهنية",
     call: "اتصال",
+    directions: "الاتجاه",
+    instagram: "Instagram",
+    open24h: "مفتوح 24 ساعة",
     mention: "مساحة مهنية موضحة بشكل واضح.",
     templates: [
       {
@@ -362,7 +371,8 @@ const professionalSlotTranslations = {
 };
 
 const specialtySponsors = {
-  gastroenterologues: {
+  gastroenterologues: [{
+    position: 0,
     name: "Pr. Walid El Ouardi",
     phone: "+212639181290",
     specialty: {
@@ -370,7 +380,20 @@ const specialtySponsors = {
       en: "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
       ar: "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
     }
-  }
+  }],
+  dentistes: [{
+    position: 1,
+    name: "Dr Youssef Gaouri",
+    phone: "0771882093",
+    open24h: true,
+    instagram: "https://www.instagram.com/centre.dentairealirchad/",
+    directions: "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
+    specialty: {
+      fr: "Chirurgien-dentiste",
+      en: "Dental surgeon",
+      ar: "جراح أسنان"
+    }
+  }]
 };
 
 if ("scrollRestoration" in history) {
@@ -4142,44 +4165,81 @@ const renderSpecialtyProfessionalSlots = (section) => {
   const list = document.createElement("div");
   list.className = "specialty-professional-slots__list";
 
-  const sponsor = specialtySponsors[config.specialtySlug];
-  if (sponsor) {
-    const card = document.createElement("article");
-    card.className = "specialty-professional-slot specialty-professional-slot--sponsored";
+  const sponsors = specialtySponsors[config.specialtySlug] || [];
+  const sponsorsByPosition = new Map(sponsors.map((sponsor) => [sponsor.position, sponsor]));
+  let templateIndex = 0;
 
-    const icon = document.createElement("span");
-    icon.className = "specialty-professional-slot__icon";
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = "✦";
+  for (let index = 0; index < 3; index += 1) {
+    const sponsor = sponsorsByPosition.get(index);
+    if (sponsor) {
+      const card = document.createElement("article");
+      card.className = "specialty-professional-slot specialty-professional-slot--sponsored";
 
-    const content = document.createElement("div");
-    content.className = "specialty-professional-slot__content";
+      const icon = document.createElement("span");
+      icon.className = "specialty-professional-slot__icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.textContent = "✦";
 
-    const badge = document.createElement("span");
-    badge.className = "specialty-professional-slot__badge";
-    badge.textContent = labels.sponsoredBadge;
+      const content = document.createElement("div");
+      content.className = "specialty-professional-slot__content";
 
-    const title = document.createElement("h3");
-    title.textContent = sponsor.name;
+      const badge = document.createElement("span");
+      badge.className = "specialty-professional-slot__badge";
+      badge.textContent = labels.sponsoredBadge;
 
-    const text = document.createElement("p");
-    text.textContent = sponsor.specialty[currentLang] || sponsor.specialty.fr;
+      const title = document.createElement("h3");
+      title.textContent = sponsor.name;
+      if (sponsor.open24h) {
+        const availability = document.createElement("span");
+        availability.className = "availability-badge";
+        availability.title = labels.open24h;
+        availability.setAttribute("aria-label", labels.open24h);
+        availability.textContent = "24h/24";
+        title.append(" ", availability);
+      }
 
-    const mention = document.createElement("small");
-    mention.textContent = labels.mention;
+      const text = document.createElement("p");
+      text.textContent = sponsor.specialty[currentLang] || sponsor.specialty.fr;
 
-    const link = document.createElement("a");
-    link.className = "specialty-professional-slot__link";
-    link.href = `tel:${sponsor.phone}`;
-    link.dir = "ltr";
-    link.textContent = `${labels.call} ${sponsor.phone}`;
+      const mention = document.createElement("small");
+      mention.textContent = labels.mention;
 
-    content.append(badge, title, text, mention);
-    card.append(icon, content, link);
-    list.append(card);
-  }
+      const profileLinks = document.createElement("div");
+      profileLinks.className = "urgent-actions";
+      if (sponsor.instagram) {
+        const instagram = document.createElement("a");
+        instagram.className = "secondary-action";
+        instagram.href = sponsor.instagram;
+        instagram.target = "_blank";
+        instagram.rel = "noopener noreferrer";
+        instagram.textContent = labels.instagram;
+        profileLinks.append(instagram);
+      }
+      if (sponsor.directions) {
+        const directions = document.createElement("a");
+        directions.className = "secondary-action";
+        directions.href = sponsor.directions;
+        directions.target = "_blank";
+        directions.rel = "noopener noreferrer";
+        directions.textContent = labels.directions;
+        profileLinks.append(directions);
+      }
 
-  labels.templates.slice(0, sponsor ? 2 : 3).forEach((template, index) => {
+      const link = document.createElement("a");
+      link.className = "specialty-professional-slot__link";
+      link.href = `tel:${sponsor.phone}`;
+      link.dir = "ltr";
+      link.textContent = `${labels.call} ${sponsor.phone}`;
+
+      content.append(badge, title, text, mention);
+      if (profileLinks.children.length) content.append(profileLinks);
+      card.append(icon, content, link);
+      card.style.setProperty("--slot-index", index);
+      list.append(card);
+      continue;
+    }
+
+    const template = labels.templates[templateIndex++];
     const card = document.createElement("article");
     card.className = "specialty-professional-slot";
 
@@ -4223,7 +4283,7 @@ const renderSpecialtyProfessionalSlots = (section) => {
     card.append(icon, content, link);
     card.style.setProperty("--slot-index", index);
     list.append(card);
-  });
+  }
 
   section.setAttribute("aria-label", accessibleTitle);
   section.append(heading, list);

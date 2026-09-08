@@ -7116,6 +7116,11 @@ a[href^="https://wa.me/"] {
   line-height: 1.2;
 }
 
+.specialty-professional-slot h3 .availability-badge {
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}
+
 .specialty-professional-slot p {
   margin: 5px 0 0;
   color: var(--text-muted);
