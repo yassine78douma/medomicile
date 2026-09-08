@@ -296,7 +296,9 @@ const professionalSlotTranslations = {
   fr: {
     city: "Kénitra",
     badge: "ESPACE PROFESSIONNEL",
+    sponsoredBadge: "SPONSORISÉ",
     button: "Découvrir l’espace professionnel",
+    call: "Appeler",
     mention: "Emplacement professionnel clairement identifié.",
     templates: [
       {
@@ -316,7 +318,9 @@ const professionalSlotTranslations = {
   en: {
     city: "Kenitra",
     badge: "PROFESSIONAL SPACE",
+    sponsoredBadge: "SPONSORED",
     button: "Discover the professional space",
+    call: "Call",
     mention: "Clearly identified professional placement.",
     templates: [
       {
@@ -336,7 +340,9 @@ const professionalSlotTranslations = {
   ar: {
     city: "القنيطرة",
     badge: "مساحة مهنية",
+    sponsoredBadge: "إعلان ممول",
     button: "اكتشف المساحة المهنية",
+    call: "اتصال",
     mention: "مساحة مهنية موضحة بشكل واضح.",
     templates: [
       {
@@ -352,6 +358,18 @@ const professionalSlotTranslations = {
         text: () => "أضيفوا معلومات الاتصال، أوقات العمل والمسار."
       }
     ]
+  }
+};
+
+const specialtySponsors = {
+  gastroenterologues: {
+    name: "Pr. Walid El Ouardi",
+    phone: "+212639181290",
+    specialty: {
+      fr: "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
+      en: "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
+      ar: "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+    }
   }
 };
 
@@ -4124,7 +4142,44 @@ const renderSpecialtyProfessionalSlots = (section) => {
   const list = document.createElement("div");
   list.className = "specialty-professional-slots__list";
 
-  labels.templates.slice(0, 3).forEach((template, index) => {
+  const sponsor = specialtySponsors[config.specialtySlug];
+  if (sponsor) {
+    const card = document.createElement("article");
+    card.className = "specialty-professional-slot specialty-professional-slot--sponsored";
+
+    const icon = document.createElement("span");
+    icon.className = "specialty-professional-slot__icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "✦";
+
+    const content = document.createElement("div");
+    content.className = "specialty-professional-slot__content";
+
+    const badge = document.createElement("span");
+    badge.className = "specialty-professional-slot__badge";
+    badge.textContent = labels.sponsoredBadge;
+
+    const title = document.createElement("h3");
+    title.textContent = sponsor.name;
+
+    const text = document.createElement("p");
+    text.textContent = sponsor.specialty[currentLang] || sponsor.specialty.fr;
+
+    const mention = document.createElement("small");
+    mention.textContent = labels.mention;
+
+    const link = document.createElement("a");
+    link.className = "specialty-professional-slot__link";
+    link.href = `tel:${sponsor.phone}`;
+    link.dir = "ltr";
+    link.textContent = `${labels.call} ${sponsor.phone}`;
+
+    content.append(badge, title, text, mention);
+    card.append(icon, content, link);
+    list.append(card);
+  }
+
+  labels.templates.slice(0, sponsor ? 2 : 3).forEach((template, index) => {
     const card = document.createElement("article");
     card.className = "specialty-professional-slot";
 
