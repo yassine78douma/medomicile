@@ -13,7 +13,18 @@ def shared_header(lang):
     match = re.search(r'\s*<a class="skip-link"[\s\S]*?</header>', text)
     if not match:
         raise RuntimeError(f'No shared header found in {source}')
-    return match.group(0)
+    header = re.sub(r'\sclass="is-current"', '', match.group(0))
+    dialysis_path = {
+        'fr': 'centres-dialyse-kenitra.html',
+        'ar': 'centres-dialyse-kenitra-ar.html',
+        'en': 'dialysis-centers-kenitra.html',
+    }[lang]
+    return re.sub(
+        rf'(<a)(\s+href="{re.escape(dialysis_path)}")',
+        r'\1 class="is-current"\2',
+        header,
+        count=1,
+    )
 
 def shared_footer(lang):
     source = {'fr': 'hopitaux.html', 'ar': 'hopitaux-ar.html', 'en': 'hopitaux-en.html'}[lang]
