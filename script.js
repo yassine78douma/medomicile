@@ -3009,12 +3009,12 @@ const enhanceEstablishmentCards = () => {
     if (!name) return;
 
     const isDoctor = card.classList.contains("doctor-card");
-    const isDialysisCenter = card.classList.contains("dialysis-card");
+    const hideRating = card.dataset.hideRating === "true";
     const responsibleDoctor = card.dataset.doctorResponsible?.trim();
     if (isDoctor) {
       card.querySelectorAll(".doctor-specialty").forEach((specialty) => specialty.remove());
     }
-    const rating = isDoctor || isDialysisCenter ? null : formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
+    const rating = isDoctor || hideRating ? null : formatGoogleRating(card.querySelector(".facility-head strong")?.textContent || "");
     const open24h = card.dataset.open24h === "true";
     const open24hLabel = getLocalizedLabel("Ouvert 24h/24", "Open 24/7", "متاح 24 ساعة");
     const open24hBadge = open24h ? `<span class="availability-badge" title="${open24hLabel}" aria-label="${open24hLabel}">24h/24</span>` : "";

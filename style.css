@@ -5271,6 +5271,11 @@ a[href^="https://wa.me/"] {
     margin: 0;
   }
 
+  .compact-card-details .pharmacy-card-line {
+    display: grid;
+    gap: 2px;
+  }
+
   .compact-card.is-open,
   .compact-card.is-open .compact-card-details,
   .compact-card.is-open .compact-card-details * {
