@@ -7715,6 +7715,35 @@ html[dir="rtl"] .specialty-professional-slot__link {
   }
 }
 
+/* Directory links must remain legible when dark mode follows the device setting. */
+[data-theme="dark"] .directory-links a {
+  color: #f4fbff;
+  border-color: rgba(120, 186, 255, 0.44);
+  background: rgba(18, 49, 74, 0.92);
+}
+
+[data-theme="dark"] .directory-links a:hover,
+[data-theme="dark"] .directory-links a:focus-visible {
+  color: #ffffff;
+  border-color: rgba(155, 211, 255, 0.78);
+  background: rgba(28, 83, 122, 0.96);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .directory-links a {
+    color: #f4fbff;
+    border-color: rgba(120, 186, 255, 0.44);
+    background: rgba(18, 49, 74, 0.92);
+  }
+
+  :root:not([data-theme="light"]) .directory-links a:hover,
+  :root:not([data-theme="light"]) .directory-links a:focus-visible {
+    color: #ffffff;
+    border-color: rgba(155, 211, 255, 0.78);
+    background: rgba(28, 83, 122, 0.96);
+  }
+}
+
 /* Keep directory heroes and featured facilities readable in dark mode. */
 [data-theme="dark"] .directory-hero.page-hero,
 :root:not([data-theme="light"]) .directory-hero.page-hero { color: #f8fafc; background: linear-gradient(180deg, rgba(8, 28, 45, 0.96), rgba(7, 24, 39, 0.98)), var(--soft); }
