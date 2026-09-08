@@ -5825,6 +5825,16 @@ a[href^="https://wa.me/"] {
     var(--surface);
 }
 
+.laboratory-sponsor > div:first-child {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+}
+
+.laboratory-sponsor > div:first-child > * {
+  margin: 0;
+}
+
 .laboratory-sponsor p {
   margin-top: 0;
   margin-bottom: 18px;
@@ -5837,6 +5847,10 @@ a[href^="https://wa.me/"] {
 
 .laboratory-sponsor h2 + p {
   margin-top: 16px;
+}
+
+.laboratory-sponsor > div:first-child > h2 + p {
+  margin-top: 0;
 }
 
 .laboratory-sponsor a:not(.primary-action) {
