@@ -4564,7 +4564,8 @@ a[href^="https://wa.me/"] {
   box-shadow: 0 14px 34px rgba(15, 76, 129, 0.08);
 }
 
-.pending-page h1 {
+.pending-page h1,
+.pending-page__title {
   color: var(--blue-950);
   font-size: clamp(1.8rem, 7vw, 3rem);
   line-height: 1.04;
@@ -4773,7 +4774,8 @@ a[href^="https://wa.me/"] {
 
 [data-theme="dark"] .compact-card-title strong,
 [data-theme="dark"] .specialty-card__title,
-[data-theme="dark"] .pending-page h1 {
+[data-theme="dark"] .pending-page h1,
+[data-theme="dark"] .pending-page__title {
   color: #f8fafc;
 }
 
@@ -5017,7 +5019,8 @@ a[href^="https://wa.me/"] {
 .directory-toolbar h2,
 .directory-cta h2,
 .directory-info h2,
-.pending-page h1 {
+.pending-page h1,
+.pending-page__title {
   color: var(--blue-950);
 }
 
