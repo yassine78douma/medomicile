@@ -4404,7 +4404,7 @@ const initDoctorSharing = () => {
     card.id = stableId;
     card.dataset.shareReady = "true";
 
-    let actions = card.querySelector(".urgent-actions");
+    let actions = card.querySelector(".establishment-actions") || card.querySelector(".urgent-actions");
     if (!actions) {
       actions = document.createElement("div");
       actions.className = "urgent-actions doctor-card__actions";
@@ -4413,7 +4413,7 @@ const initDoctorSharing = () => {
 
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "secondary-action doctor-share-button";
+    button.className = "establishment-action directions doctor-share-button";
     button.setAttribute("aria-label", `${labels.shareProfile} ${name}`);
     button.innerHTML = `<span aria-hidden="true">↗</span>${labels.share}`;
 
