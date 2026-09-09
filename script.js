@@ -4367,6 +4367,142 @@ const ensureFloatingCallButton = () => {
   initFloatingCallVisibility(link);
 };
 
+const doctorShareTranslations = {
+  fr: { share: "Partager", shareProfile: "Partager la fiche", copy: "Copier le lien", copied: "Lien copié", whatsapp: "WhatsApp", text: (name) => `Retrouvez la fiche de ${name} sur Medomicile.` },
+  en: { share: "Share", shareProfile: "Share profile", copy: "Copy link", copied: "Link copied", whatsapp: "WhatsApp", text: (name) => `Find ${name}'s profile on Medomicile.` },
+  ar: { share: "مشاركة", shareProfile: "مشاركة الملف", copy: "نسخ الرابط", copied: "تم نسخ الرابط", whatsapp: "واتساب", text: (name) => `اطلع على ملف ${name} على Medomicile.` }
+};
+
+const doctorShareSlug = (value) => normalizeText(value)
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-+|-+$/g, "");
+
+const initDoctorSharing = () => {
+  const labels = doctorShareTranslations[currentLang] || doctorShareTranslations.fr;
+  const usedIds = new Set();
+  const cards = [...document.querySelectorAll(".doctor-card")];
+  if (!cards.length) return;
+
+  const makeShareUrl = (card) => {
+    const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href.split("#")[0];
+    return `${canonical.split("#")[0]}#${encodeURIComponent(card.id)}`;
+  };
+
+  const closeMenus = (except) => document.querySelectorAll(".doctor-share-menu.is-open").forEach((menu) => {
+    if (menu !== except) menu.classList.remove("is-open");
+  });
+
+  cards.forEach((card) => {
+    const name = card.querySelector("h3")?.textContent?.trim();
+    if (!name || card.dataset.shareReady === "true") return;
+    const baseId = card.id || card.dataset.doctorId || doctorShareSlug(name) || "professionnel";
+    let stableId = baseId;
+    let suffix = 2;
+    while (usedIds.has(stableId) || (document.getElementById(stableId) && document.getElementById(stableId) !== card)) {
+      stableId = `${baseId}-${suffix++}`;
+    }
+    usedIds.add(stableId);
+    card.id = stableId;
+    card.dataset.shareReady = "true";
+
+    let actions = card.querySelector(".urgent-actions");
+    if (!actions) {
+      actions = document.createElement("div");
+      actions.className = "urgent-actions doctor-card__actions";
+      card.append(actions);
+    }
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary-action doctor-share-button";
+    button.setAttribute("aria-label", `${labels.shareProfile} ${name}`);
+    button.innerHTML = `<span aria-hidden="true">↗</span>${labels.share}`;
+
+    const menu = document.createElement("div");
+    menu.className = "doctor-share-menu";
+    menu.setAttribute("role", "menu");
+    menu.hidden = true;
+
+    const copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "doctor-share-menu__item";
+    copy.setAttribute("role", "menuitem");
+    copy.textContent = labels.copy;
+
+    const whatsapp = document.createElement("a");
+    whatsapp.className = "doctor-share-menu__item";
+    whatsapp.target = "_blank";
+    whatsapp.rel = "noopener noreferrer";
+    whatsapp.setAttribute("role", "menuitem");
+    whatsapp.textContent = labels.whatsapp;
+
+    const setShareTargets = () => {
+      const url = makeShareUrl(card);
+      const text = `${name} - ${card.querySelector(".doctor-line span:last-child")?.textContent?.trim() || "Medomicile"}\\n${labels.text(name)}\\n${url}`;
+      whatsapp.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      return { url, text };
+    };
+
+    copy.addEventListener("click", async () => {
+      const { url } = setShareTargets();
+      try {
+        await navigator.clipboard.writeText(url);
+      } catch {
+        const fallback = document.createElement("textarea");
+        fallback.value = url;
+        fallback.setAttribute("readonly", "");
+        fallback.style.position = "fixed";
+        fallback.style.opacity = "0";
+        document.body.append(fallback);
+        fallback.select();
+        document.execCommand("copy");
+        fallback.remove();
+      }
+      copy.textContent = labels.copied;
+      window.setTimeout(() => { copy.textContent = labels.copy; }, 1600);
+    });
+
+    button.addEventListener("click", async () => {
+      const { url, text } = setShareTargets();
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: `${name} | Medomicile`, text: labels.text(name), url });
+          return;
+        } catch (error) {
+          if (error?.name === "AbortError") return;
+        }
+      }
+      const opening = !menu.classList.contains("is-open");
+      closeMenus(menu);
+      menu.hidden = !opening;
+      menu.classList.toggle("is-open", opening);
+      button.setAttribute("aria-expanded", String(opening));
+    });
+
+    menu.append(copy, whatsapp);
+    actions.classList.add("doctor-card__actions");
+    actions.append(button, menu);
+  });
+
+  const scrollToSharedCard = () => {
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (!id) return;
+    const card = document.getElementById(id);
+    if (!card?.classList.contains("doctor-card")) return;
+    window.setTimeout(() => {
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("is-share-target");
+      window.setTimeout(() => card.classList.remove("is-share-target"), 1800);
+    }, 80);
+  };
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".doctor-card__actions")) closeMenus();
+  });
+  window.addEventListener("hashchange", scrollToSharedCard);
+  scrollToSharedCard();
+};
+
 const initFloatingCallVisibility = (button) => {
   const hero = document.querySelector(".home-hero");
   if (!button || !hero) return;
@@ -4475,5 +4611,6 @@ specialtyProfessionalSlots.forEach(renderSpecialtyProfessionalSlots);
 sortHospitalFacilityCards();
 enhanceEstablishmentCards();
 initDirectorySearch();
+initDoctorSharing();
 window.addEventListener("scroll", updateMediaScale, { passive: true });
 window.addEventListener("resize", updateMediaScale);
