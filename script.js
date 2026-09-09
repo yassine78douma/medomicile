@@ -378,6 +378,7 @@ const specialtySponsors = {
     position: 0,
     name: "Pr. Walid El Ouardi",
     phone: "+212639181290",
+    whatsapp: "212639181290",
     specialty: {
       fr: "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
       en: "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
