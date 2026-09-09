@@ -299,6 +299,7 @@ const professionalSlotTranslations = {
     sponsoredBadge: "ESPACE PROFESSIONNEL",
     button: "Découvrir l’espace professionnel",
     call: "Appeler",
+    whatsapp: "WhatsApp",
     directions: "Itinéraire",
     instagram: "Instagram",
     open24h: "Ouvert 24h/24",
@@ -324,6 +325,7 @@ const professionalSlotTranslations = {
     sponsoredBadge: "PROFESSIONAL SPACE",
     button: "Discover the professional space",
     call: "Call",
+    whatsapp: "WhatsApp",
     directions: "Directions",
     instagram: "Instagram",
     open24h: "Open 24/7",
@@ -349,6 +351,7 @@ const professionalSlotTranslations = {
     sponsoredBadge: "مساحة مهنية",
     button: "اكتشف المساحة المهنية",
     call: "اتصال",
+    whatsapp: "واتساب",
     directions: "الاتجاه",
     instagram: "Instagram",
     open24h: "مفتوح 24 ساعة",
@@ -385,6 +388,7 @@ const specialtySponsors = {
     position: 1,
     name: "Dr Youssef Gaouri",
     phone: "0771882093",
+    whatsapp: "212771882093",
     open24h: true,
     instagram: "https://www.instagram.com/centre.dentairealirchad/",
     directions: "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
@@ -4222,15 +4226,31 @@ const renderSpecialtyProfessionalSlots = (section) => {
         profileLinks.append(directions);
       }
 
-      const link = document.createElement("a");
-      link.className = "specialty-professional-slot__link";
-      link.href = `tel:${sponsor.phone}`;
-      link.dir = "ltr";
-      link.textContent = `${labels.call} ${sponsor.phone}`;
+      const contactActions = document.createElement("div");
+      contactActions.className = "specialty-professional-slot__contact-actions";
+
+      const call = document.createElement("a");
+      call.className = "specialty-professional-slot__link";
+      call.href = `tel:${sponsor.phone}`;
+      call.dir = "ltr";
+      call.setAttribute("aria-label", `${labels.call} ${sponsor.phone}`);
+      call.textContent = labels.call;
+      contactActions.append(call);
+
+      if (sponsor.whatsapp) {
+        const whatsapp = document.createElement("a");
+        whatsapp.className = "specialty-professional-slot__link specialty-professional-slot__whatsapp";
+        whatsapp.href = `https://wa.me/${sponsor.whatsapp}`;
+        whatsapp.target = "_blank";
+        whatsapp.rel = "noopener noreferrer";
+        whatsapp.setAttribute("aria-label", `${labels.whatsapp} ${sponsor.phone}`);
+        whatsapp.textContent = labels.whatsapp;
+        contactActions.append(whatsapp);
+      }
 
       content.append(badge, title, text);
       if (profileLinks.children.length) content.append(profileLinks);
-      card.append(icon, content, link);
+      card.append(icon, content, sponsor.whatsapp ? contactActions : call);
       card.style.setProperty("--slot-index", index);
       list.append(card);
       continue;
