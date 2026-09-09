@@ -6940,11 +6940,11 @@ a[href^="https://wa.me/"] {
     width: 100%;
     min-height: 0;
     height: auto;
-    display: grid;
-    gap: 10px;
-    overflow: visible;
-    background: transparent;
-    box-shadow: none;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: var(--blue-100);
+    box-shadow: var(--deep-shadow);
     transform: none !important;
   }
 
@@ -6954,15 +6954,19 @@ a[href^="https://wa.me/"] {
 
   .home-hero .media-stage.hero-photo::before,
   .home-hero .media-overlay {
-    display: none;
+    display: block;
+  }
+
+  .home-hero .media-overlay {
+    background: linear-gradient(180deg, rgba(6, 36, 60, 0.08), rgba(6, 36, 60, 0.52));
   }
 
   .home-hero .media-stage picture {
     display: block;
-    overflow: hidden;
-    border-radius: var(--radius);
-    background: var(--blue-100);
-    box-shadow: var(--deep-shadow);
+    overflow: visible;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .home-hero .media-stage picture,
@@ -6979,20 +6983,31 @@ a[href^="https://wa.me/"] {
 
   .home-hero .media-caption,
   .home-hero .media-zone {
-    position: static;
-    z-index: auto;
-    min-height: 76px;
-    padding: 12px;
-    color: var(--blue-950);
-    background: rgba(255, 255, 255, 0.92);
+    position: absolute;
+    z-index: 3;
+    min-height: 0;
+    padding: 10px 12px;
+    color: #ffffff;
+    background: rgba(4, 26, 43, 0.76);
+    border-color: rgba(255, 255, 255, 0.42);
+    box-shadow: none;
   }
 
   .home-hero .media-caption {
-    grid-row: 2;
+    left: 12px;
+    bottom: 12px;
   }
 
   .home-hero .media-zone {
-    grid-row: 3;
+    top: 12px;
+    right: 12px;
+  }
+
+  .home-hero .media-caption strong,
+  .home-hero .media-zone strong,
+  .home-hero .media-caption span,
+  .home-hero .media-zone span {
+    color: #ffffff;
   }
 
   .floating-call,
