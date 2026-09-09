@@ -7161,6 +7161,28 @@ a[href^="https://wa.me/"] {
   outline-offset: 3px;
 }
 
+.specialty-professional-slot__profile-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.specialty-professional-slot__profile-links .specialty-professional-slot__link {
+  width: 100%;
+  min-height: 44px;
+  padding-inline: 12px;
+  color: #ffffff;
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.specialty-professional-slot__profile-links .specialty-professional-slot__link:hover,
+.specialty-professional-slot__profile-links .specialty-professional-slot__link:focus-visible {
+  color: var(--brand-primary);
+  background: #ffffff;
+}
+
 html[dir="rtl"] .specialty-professional-slot {
   direction: rtl;
   text-align: right;
@@ -7292,6 +7314,15 @@ html[dir="rtl"] .specialty-professional-slot__link {
     width: 100%;
     min-height: 46px;
     white-space: normal;
+  }
+
+  .specialty-professional-slot__profile-links {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+  }
+
+  .specialty-professional-slot__profile-links .specialty-professional-slot__link {
+    grid-column: auto;
   }
 
   html[dir="rtl"] .specialty-professional-slot__link {
