@@ -861,6 +861,25 @@ h1 {
   box-shadow: 0 0 0 3px rgba(47, 128, 237, 0.38), var(--shadow);
 }
 
+.profile-page { min-height: 100vh; padding: 24px 16px; background: var(--soft); }
+.profile-card { width: min(100%, 540px); margin: 0 auto; padding: 28px; border: 1px solid var(--border-default); border-radius: 8px; background: var(--surface); box-shadow: var(--shadow); text-align: center; }
+.profile-card__brand { color: var(--blue-850); font-weight: 900; text-decoration: none; }
+.profile-card__avatar { width: 76px; height: 76px; margin: 18px auto 12px; border-radius: 50%; object-fit: cover; background: var(--soft); }
+.profile-card h1 { margin-bottom: 6px; font-size: clamp(1.65rem, 7vw, 2.2rem); }
+.profile-card__specialty { margin: 0 0 20px; color: var(--muted); font-weight: 800; }
+.profile-card__details { display: grid; gap: 10px; margin: 0 0 20px; text-align: start; }
+.profile-card__details div { padding: 10px 12px; border: 1px solid var(--border-default); border-radius: 8px; }
+.profile-card__details dt { color: var(--soft-muted); font-size: .76rem; font-weight: 850; text-transform: uppercase; }
+.profile-card__details dd { margin: 3px 0 0; color: var(--blue-950); font-weight: 750; }
+.profile-card__actions, .profile-card__socials { display: grid; gap: 10px; }
+.profile-card__socials { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 10px; }
+.profile-card__action { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 10px 14px; color: var(--blue-850); border: 1px solid var(--border-default); border-radius: 8px; background: var(--surface); font: inherit; font-weight: 850; text-decoration: none; cursor: pointer; }
+.profile-card__action.is-primary { color: #fff; border-color: var(--brand-primary); background: var(--brand-primary); }
+.profile-card__action.is-whatsapp { color: #062315; border-color: var(--whatsapp); background: var(--whatsapp); }
+.profile-card__qr { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-default); }
+.profile-card__qr img { width: 160px; height: 160px; margin: 0 auto 10px; }
+.profile-card__qr a { color: var(--blue-700); font-weight: 800; }
+
 @media (max-width: 560px) {
   .doctor-share-button {
     width: 100%;

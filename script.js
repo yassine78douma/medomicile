@@ -4384,8 +4384,7 @@ const initDoctorSharing = () => {
   if (!cards.length) return;
 
   const makeShareUrl = (card) => {
-    const canonical = document.querySelector('link[rel="canonical"]')?.href || window.location.href.split("#")[0];
-    return `${canonical.split("#")[0]}#${encodeURIComponent(card.id)}`;
+    return new URL(`p/${encodeURIComponent(card.id)}.html`, window.location.origin + "/").href;
   };
 
   const closeMenus = (except) => document.querySelectorAll(".doctor-share-menu.is-open").forEach((menu) => {

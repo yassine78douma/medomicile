@@ -36,7 +36,9 @@ jobs:
           rm doctors-source.csv
 
       - name: Generate specialty pages
-        run: python3 scripts/generate-doctor-pages.py
+        run: |
+          python3 scripts/generate-doctor-pages.py
+          python3 scripts/generate-professional-cards.py
 
       - name: Validate generated JSON
         run: |
@@ -54,12 +56,12 @@ jobs:
 
       - name: Commit generated outputs
         run: |
-          if git diff --quiet -- data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html'; then
+          if git diff --quiet -- data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html' p contacts; then
             echo "No generated changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html'
+          git add data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html' p contacts
           git commit -m "chore: update doctors directory [skip ci]"
           git push
