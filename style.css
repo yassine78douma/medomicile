@@ -5374,11 +5374,11 @@ a[href^="https://wa.me/"] {
   }
 
   .directory-hero h1 {
-    width: fit-content;
-    max-width: 11ch;
+    width: 100%;
+    max-width: 100%;
     font-size: clamp(1.9rem, 10vw, 2.45rem);
     line-height: 1.06;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
     word-break: normal;
   }
 
