@@ -4526,6 +4526,8 @@ a[href^="https://wa.me/"] {
 
 /* Area cards keep their copy and count in one readable column at every width. */
 .pharmacy-area-card {
+  width: 100%;
+  min-width: 0;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
 }
@@ -4538,7 +4540,7 @@ a[href^="https://wa.me/"] {
 
 .pharmacy-area-card .specialty-card__description {
   max-width: none;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
 }
 
 .pharmacy-area-card .specialty-card__meta {
@@ -4548,7 +4550,7 @@ a[href^="https://wa.me/"] {
 .pharmacy-area-card .specialty-card__status {
   margin-top: 0;
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
 }
 
 .pending-page {
@@ -4606,6 +4608,12 @@ a[href^="https://wa.me/"] {
 }
 
 @media (max-width: 520px) {
+  .pharmacy-area-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
   .featured-clinic {
     width: min(100% - 24px, 1040px);
     margin-bottom: 16px;
@@ -4665,8 +4673,27 @@ a[href^="https://wa.me/"] {
   }
 
   .pharmacy-area-card {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) 28px;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .pharmacy-area-card .specialty-card__content {
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .pharmacy-area-card .specialty-card__meta {
+    justify-content: center;
+  }
+
+  .pharmacy-area-card .specialty-card__status {
+    white-space: nowrap;
+  }
+
+  .pharmacy-area-card .specialty-card__arrow {
+    justify-self: end;
   }
 }
 
