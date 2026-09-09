@@ -3128,6 +3128,15 @@ const enhanceEstablishmentCards = () => {
     }
 
     details.append(actions);
+    if (isDoctor && directionsHref) {
+      const routeLabels = ["Itinéraire", "Directions", "الاتجاهات"];
+      details.querySelectorAll(".urgent-actions a").forEach((link) => {
+        if (link.href === directionsHref || routeLabels.includes(link.textContent.trim())) link.remove();
+      });
+      details.querySelectorAll(".urgent-actions").forEach((group) => {
+        if (!group.children.length) group.remove();
+      });
+    }
     card.classList.add("compact-card");
     toggle.addEventListener("click", () => toggleCompactCard(card));
   });
