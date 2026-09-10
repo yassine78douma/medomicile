@@ -21,9 +21,6 @@ for(const [engineName,engine] of [['chromium',chromium],['webkit',webkit]]){
       assert.equal(await page.locator('.vc-card').getAttribute('data-variant'),entity.variant);
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
       assert.equal(await page.locator('.vc-actions a[href*="wa.me"]').count(),Number(Boolean(entity.whatsapp)));
-      assert.equal(await page.locator('.vc-save').getAttribute('href'),entity.vcard);
-      const vcf=await context.request.get(origin+entity.vcard);assert.equal(vcf.status(),200);
-      assert.ok((await vcf.text()).includes('BEGIN:VCARD'));
       await page.locator('#vc-share').click();
       assert.deepEqual(await page.locator('#vc-dialog .vc-action').allTextContents(),['Partager le lien','Télécharger la carte de visite']);
       assert.equal(await page.locator('#vc-dialog a').count(),0);
@@ -41,14 +38,14 @@ for(const [engineName,engine] of [['chromium',chromium],['webkit',webkit]]){
         // Native OS share is mocked; no external app receives a message.
         await page.evaluate(()=>Object.defineProperty(navigator,'share',{configurable:true,value:async payload=>{window.shared=payload;}}));
         await page.locator('#vc-share-link').click();
-        assert.equal(await page.evaluate(()=>window.shared.url),entity.url);
+        assert.equal(await page.evaluate(()=>window.shared.url),entity.share_url || entity.url);
         assert.equal(await page.evaluate(()=>window.shared.title),entity.name);
         assert.ok(await page.evaluate(()=>Boolean(window.shared.text)));
         await page.evaluate(()=>{Object.defineProperty(navigator,'share',{configurable:true,value:undefined});Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async value=>{window.copied=value;}}});});
-        await page.locator('#vc-share-link').click();assert.equal(await page.evaluate(()=>window.copied),entity.url);
+        await page.locator('#vc-share-link').click();assert.equal(await page.evaluate(()=>window.copied),entity.share_url || entity.url);
         assert.equal(await page.locator('#vc-status').textContent(),'Lien copié.');
         await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied');}}}));
-        await page.locator('#vc-share-link').click();assert.equal(await page.locator('#vc-copy-fallback').inputValue(),entity.url);
+        await page.locator('#vc-share-link').click();assert.equal(await page.locator('#vc-copy-fallback').inputValue(),entity.share_url || entity.url);
         assert.equal(await page.locator('#vc-copy-fallback').isVisible(),true);
         await page.locator('#vc-close').click();await page.locator('#vc-language').selectOption('ar');
         await page.locator('#vc-share').click();assert.equal(await page.locator('html').getAttribute('dir'),'rtl');

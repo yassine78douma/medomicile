@@ -68,12 +68,13 @@
   document.getElementById('vc-print').addEventListener('click',()=>window.print());
   const shareText=()=>`${data.name}${data.city ? ' · '+data.city : ''}\n${t('contact')}`;
   document.getElementById('vc-share-link').addEventListener('click',async()=>{
+    const shareUrl = data.share_url || data.url;
     if(navigator.share) {
-      try { await navigator.share({title:data.name,text:shareText(),url:data.url});return; }
+      try { await navigator.share({title:data.name,text:shareText(),url:shareUrl});return; }
       catch(error){if(error.name==='AbortError')return;}
     }
-    try{await navigator.clipboard.writeText(data.url);status.textContent=t('copied');}
-    catch{const input=document.getElementById('vc-copy-fallback');input.hidden=false;input.focus();input.select();status.textContent=t('manual');}
+    try{await navigator.clipboard.writeText(shareUrl);status.textContent=t('copied');}
+    catch{const input=document.getElementById('vc-copy-fallback');input.value=shareUrl;input.hidden=false;input.focus();input.select();status.textContent=t('manual');}
   });
   if(new URLSearchParams(location.search).get('share')==='1') document.getElementById('vc-share').click();
 })();

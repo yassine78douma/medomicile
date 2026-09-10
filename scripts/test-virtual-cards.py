@@ -36,9 +36,8 @@ class VirtualCards(unittest.TestCase):
             for flag in ('featured','sponsored','premium'):
                 premium=cards.normalize(dict(source,**{flag:True}),kind,'test')
                 self.assertEqual(premium['variant'],'premium')
-                for key in ('name','subtitle','phones','whatsapp','address','google_maps_url','url','path','qr','vcard'):
+                for key in ('name','subtitle','phones','whatsapp','address','google_maps_url','url','path','qr','share_url'):
                     self.assertEqual(premium[key],standard[key])
-                self.assertEqual(cards.vcard(premium),cards.vcard(standard))
                 self.assertIn('PARTENAIRE MEDOMICILE',cards.page(premium))
                 self.assertEqual(cards.normalize(dict(source,**{flag:'false'}),kind,'test')['variant'],'standard')
 
@@ -61,16 +60,7 @@ class VirtualCards(unittest.TestCase):
                 if e['google_maps_url']:
                     self.assertEqual(soup.select_one('.vc-actions a[href*="maps"]')['href'], e['google_maps_url'])
                 self.assertEqual(json.loads(soup.select_one('#vc-data').string)['url'], e['url'])
-                raw = (ROOT/e['vcard'].lstrip('/')).read_bytes()
-                self.assertTrue(raw.endswith(b'END:VCARD\r\n'))
-                self.assertTrue(all(len(line) <= 75 for line in raw.split(b'\r\n')))
-                unfolded = raw.decode().replace('\r\n ', '')
-                self.assertIn('URL:'+e['url'], unfolded)
-                self.assertEqual(unfolded.count('TEL;TYPE='), len(e['phones']))
-                adr = next((line for line in unfolded.split('\r\n') if line.startswith('ADR;')), None)
-                if adr:
-                    self.assertEqual(len(re.split(r'(?<!\\);', adr.split(':',1)[1])),7)
-                self.assertEqual('ORG:' in unfolded, e['type'] not in ('doctor','dentist'))
+                self.assertNotIn('vcard', e)
                 with Image.open(ROOT/e['qr'].lstrip('/')) as image:
                     self.assertEqual(image.width,image.height)
                     self.assertGreater(image.width,200)

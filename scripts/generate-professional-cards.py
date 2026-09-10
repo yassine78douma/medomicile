@@ -98,6 +98,24 @@ def normalize(source, default_type, filename):
         subtitle = subtitle.split(' · ', 1)[0]
     responsible = source.get('responsible_person') or source.get('doctor_responsible') or source.get('responsible_biologist')
     useful_maps = bool(exact and not any(s in exact for s in ['/search', 'destination=', '?q=']))
+    urgent = any(source.get(key) is True for key in ('open24h', 'available24h', 'urgences', 'emergency', 'emergencies'))
+    if not urgent and isinstance(source.get('hours'), str):
+        urgent = bool(re.search(r'24\s*h|urgence|garde', source['hours'], re.I))
+    directory_sources = source.get('directory_sources') or []
+    if not directory_sources and isinstance(source.get('sponsor'), dict):
+        category = source['sponsor'].get('category')
+        if category:
+            directory_sources = [f'{category}-kenitra.html']
+    if not directory_sources and kind in ('doctor', 'dentist'):
+        group = slug(source.get('specialty_group') or source.get('specialty') or '')
+        directory_sources = [f'{group}s-kenitra.html'] if group else ['medecins-kenitra.html']
+        if kind == 'dentist': directory_sources = ['dentistes-kenitra.html']
+        if group == 'gastro-enterologie': directory_sources = ['gastroenterologues-kenitra.html']
+    directory_path = f'/{directory_sources[0]}' if directory_sources else None
+    if directory_path and not directory_path.endswith('.html'): directory_path += '.html'
+    if not directory_path:
+        directory_path = {'dialysis_center': '/centres-dialyse-kenitra.html', 'radiology_center': '/radiologie-kenitra.html', 'laboratory': '/laboratoires-kenitra.html', 'pharmacy': '/pharmacies-kenitra.html', 'clinic': '/hopitaux.html', 'hospital': '/hopitaux.html'}.get(kind)
+    share_url = f'{BASE}{directory_path}#{entity_slug}' if directory_path else f'{BASE}/{prefix}/{entity_slug}/'
     return {'id': ident, 'slug': entity_slug, 'type': kind, 'name': source['name'], 'subtitle': subtitle,
         'subspecialty': source.get('subspecialty'), 'city': source.get('city'), 'district': source.get('district') or source.get('sector'),
         'address': address, 'phones': contacts, 'whatsapp': f'https://wa.me/{whatsapp[1:]}' if whatsapp else None,
@@ -111,9 +129,10 @@ def normalize(source, default_type, filename):
         'expertise': ' · '.join(str(value) for value in source['expertise']) if isinstance(source.get('expertise'), list) else source.get('expertise'),
         'featured': bool(source.get('featured')), 'verified': bool(source.get('verified') or source.get('verification_status') == 'confirmed'),
         'claimed': bool(source.get('claimed')), 'bio': source.get('bio'), 'gallery': source.get('gallery') or [],
-        'open24h': bool(source.get('open24h') and source.get('verifiedHours')),
+        'open24h': urgent,
         'url': f'{BASE}/{prefix}/{entity_slug}/', 'path': f'/{prefix}/{entity_slug}/',
-        'qr': f'/assets/cards/qr/{prefix}-{entity_slug}.png', 'vcard': f'/contacts/{prefix}-{entity_slug}.vcf',
+        'share_url': share_url,
+        'qr': f'/assets/cards/qr/{prefix}-{entity_slug}.png',
         'indexable': bool(contacts or address or useful_maps), 'source': filename,
         'aliases': list(filter(None, [source.get('nameEn'), source.get('nameAr')])), 'invalid_phones': invalid}
 
@@ -127,37 +146,6 @@ def entities():
             result.append(normalize(source, default, filename))
     assert len({e['path'] for e in result}) == len(result), 'Duplicate permanent path'
     return result
-
-
-def vc_escape(value):
-    return str(value or '').replace('\\', '\\\\').replace('\r\n', '\n').replace('\r', '\n').replace('\n', '\\n').replace(';', '\\;').replace(',', '\\,')
-
-
-def vcard(e):
-    name = vc_escape(e['name'])
-    # Preserve FN; the sources do not provide structured family/given names.
-    lines = ['BEGIN:VCARD', 'VERSION:3.0', f'N:;{name};;;', f'FN:{name}']
-    if e['type'] not in ('doctor', 'dentist'):
-        lines.append(f'ORG:{name}')
-    lines.append('TITLE:' + vc_escape(e['subtitle']))
-    lines.extend('TEL;TYPE=WORK,VOICE:' + p['number'] for p in e['phones'])
-    if e['address'] or e['district'] or e['city']:
-        lines.append('ADR;TYPE=WORK:;;' + vc_escape(e['address'] or e['district']) + ';' + vc_escape(e['city']) + ';;;')
-    if e['email']:
-        lines.append('EMAIL;TYPE=WORK:' + e['email'])
-    if e['responsible_person']:
-        lines.append('NOTE:' + vc_escape('Responsable : ' + e['responsible_person']))
-    lines += ['URL:' + e['url'], 'END:VCARD']
-    folded = []
-    for line in lines:
-        chunk = ''
-        for char in line:
-            if len((chunk + char).encode('utf-8')) > 75:
-                folded.append(chunk)
-                chunk = ' '
-            chunk += char
-        folded.append(chunk)
-    return '\r\n'.join(folded) + '\r\n'
 
 
 def action(label, href, key, icon, css=''):
@@ -200,10 +188,9 @@ def page(e):
 <main class="vc-card" data-variant="{e['variant']}"><div class="vc-identity"><span class="vc-badge" data-i18n="{'partner' if e['variant'] == 'premium' else 'type_' + e['type']}">{'PARTENAIRE MEDOMICILE' if e['variant'] == 'premium' else TYPES[e['type']]}</span>
 <img class="vc-photo{' vc-photo--wide' if e['photo'] and e['type'] not in ('doctor', 'dentist') else ''}" src="{esc(e['photo'] or LOGO)}" alt="" width="112" height="112"><h1>{esc(e['name'])}</h1><p class="vc-subtitle">{esc(e['subtitle'])}</p>
 {f'<p class="vc-expertise">{esc(e["expertise"])}</p>' if e['expertise'] else ''}
-{'<span class="vc-badge" data-i18n="open24h">24h/24</span>' if e['open24h'] else ''}</div>
+{'<span class="vc-badge vc-badge--urgent" data-i18n="open24h">24h/24</span>' if e['open24h'] else ''}</div>
 <dl class="vc-details">{''.join(rows)}</dl>{f'<p>{esc(e["bio"])}</p>' if e['bio'] else ''}
 <div class="vc-actions">{''.join(actions)}</div>
-<a class="vc-action vc-save" href="{e['vcard']}" download><i data-lucide="contact" aria-hidden="true"></i><span data-i18n="save">Enregistrer le contact</span></a>
 {f'<div class="vc-actions vc-socials">{socials}</div>' if socials else ''}
 <section class="vc-qr"><img src="{e['qr']}" width="180" height="180" alt="QR code Medomicile"><div>
 <a class="vc-action" href="{e['qr']}" download><i data-lucide="download" aria-hidden="true"></i><span data-i18n="qr">Télécharger le QR code</span></a>
@@ -213,25 +200,23 @@ def page(e):
 <img id="vc-business-preview" width="1700" height="1100" alt="Carte Medomicile" hidden>
 <div class="vc-share-options"><button class="vc-action" id="vc-share-link"><i data-lucide="share-2" aria-hidden="true"></i><span data-i18n="shareLink">Partager le lien</span></button>
 <button class="vc-action vc-primary" id="vc-business"><i data-lucide="download" aria-hidden="true"></i><span data-i18n="business">Télécharger la carte de visite</span></button>
-<p id="vc-status" role="status" aria-live="polite"></p><input id="vc-copy-fallback" readonly hidden aria-label="URL Medomicile" value="{e['url']}"></div></dialog>
+<p id="vc-status" role="status" aria-live="polite"></p><input id="vc-copy-fallback" readonly hidden aria-label="URL Medomicile" value="{e['share_url']}"></div></dialog>
 <footer class="vc-footer"><a href="/">medomicile.com</a></footer><script id="vc-data" type="application/json">{data}</script></body></html>'''
 
 
 def main():
     items = entities()
-    for folder in ['assets/cards/qr', 'contacts', 'p', 'e']:
+    for folder in ['assets/cards/qr', 'p', 'e']:
         (ROOT/folder).mkdir(parents=True, exist_ok=True)
     for e in items:
         folder = ROOT/e['path'].strip('/')
         folder.mkdir(parents=True, exist_ok=True)
         (folder/'index.html').write_text(page(e))
-        (ROOT/e['vcard'].lstrip('/')).write_bytes(vcard(e).encode('utf-8'))
-        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=8, border=4)
-        qr.add_data(e['url']); qr.make(fit=True)
+        qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q, box_size=8, border=4)
+        qr.add_data(e['share_url']); qr.make(fit=True)
         qr.make_image(fill_color='black', back_color='white').save(ROOT/e['qr'].lstrip('/'))
         if e['type'] in ('doctor', 'dentist'):
             (ROOT/'p'/f'{e["id"]}.html').write_text(page(e))
-            (ROOT/'contacts'/f'{e["id"]}.vcf').write_bytes(vcard(e).encode('utf-8'))
     (ROOT/'data/virtual-card-index.json').write_text(json.dumps(items, ensure_ascii=False, indent=2) + '\n')
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += ''.join(f'<url><loc>{e["url"]}</loc></url>\n' for e in items if e['indexable']) + '</urlset>\n'

@@ -4,6 +4,4 @@
 .entity-actions .entity-action:hover{background:#0b3d62}
 .entity-actions .entity-action:focus-visible{outline:3px solid #2b84cf;outline-offset:3px}
 .entity-actions .entity-action--whatsapp{background:#167445;border-color:#167445}
-.entity-actions .entity-action--contact{grid-column:1/-1;background:transparent;color:#125181!important}
-[data-theme="dark"] .entity-actions .entity-action--contact{color:#e1efff!important}
 @media(min-width:800px){.entity-actions{grid-template-columns:repeat(auto-fit,minmax(115px,1fr))}}
