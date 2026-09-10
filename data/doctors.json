@@ -7541,16 +7541,17 @@
       "status": "active",
       "verified": true
     },
-    {
-      "id": "pr-walid-el-ouardi",
+  {
+    "id": "pr-walid-el-ouardi",
       "name": "Pr. Walid El Ouardi",
-      "specialty": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
+    "specialty": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (Fibroscopie, Coloscopie, Polypectomie, POEM, Dissection sous-muqueuse, CPRE, Écho-endoscopie).",
       "specialty_group": "Gastro-entérologue",
       "phone": [
         "+212639181290"
       ],
       "whatsapp": "212639181290",
-      "city": "Kénitra",
+    "city": "Kénitra",
+    "address": "N°103, 1er étage, Avenue La Marche Verte, Hay Al Irchad, Kénitra",
       "google_maps": null,
       "instagram": null,
       "status": "active",
@@ -7563,15 +7564,15 @@
         "phone": "+212639181290",
         "whatsapp": "212639181290",
         "specialty": {
-          "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
-          "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
-          "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+          "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (Fibroscopie, Coloscopie, Polypectomie, POEM, Dissection sous-muqueuse, CPRE, Écho-endoscopie).",
+          "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, polypectomy, POEM, submucosal dissection, ERCP, and endoscopic ultrasound).",
+          "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، استئصال السلائل، POEM، التشريح تحت المخاطية، CPRE والتنظير بالموجات فوق الصوتية)."
         },
         "category": "gastroenterologues"
       }
     },
-    {
-      "id": "dr-youssef-gaouri",
+  {
+    "id": "dr-youssef-gaouri",
       "name": "Dr Youssef Gaouri",
       "specialty": "Chirurgien-dentiste",
       "specialty_group": "Dentiste",
@@ -7579,7 +7580,8 @@
         "0771882093"
       ],
       "whatsapp": "212771882093",
-      "city": "Kénitra",
+    "city": "Kénitra",
+    "address": "N°103, 1er étage, Avenue La Marche Verte, Hay Al Irchad, Kénitra",
       "google_maps": "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
       "instagram": "https://www.instagram.com/centre.dentairealirchad/",
       "status": "active",

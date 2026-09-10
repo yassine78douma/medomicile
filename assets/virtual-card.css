@@ -11,7 +11,7 @@
 .vc-card[data-variant="premium"] .vc-action:not(.vc-primary):not(.vc-whatsapp) svg{color:#886819}
 .vc-identity{text-align:center}
 .vc-badge{display:table;margin:0 auto 22px;border:1px solid #d9c18a;border-radius:8px;color:#765913;background:#fffaf0;font-size:13px;padding:4px 12px;font-weight:700}
-.vc-badge--urgent{border-color:#c62828!important;background:#fff0f0!important;color:#b21f1f!important}
+.vc-badge--urgent{margin-top:10px;border-color:#c62828!important;background:linear-gradient(135deg,#d93636,#b21f1f)!important;color:#fff!important;border-radius:999px;box-shadow:0 6px 16px #b21f1f33;font-size:16px;padding:8px 18px}
 .vc-photo{display:block;width:112px;height:112px;object-fit:contain;margin:0 auto 20px;border-radius:8px}
 .vc-photo--wide{width:min(100%,320px);height:180px}
 .vc-card h1{font-size:30px;line-height:1.2;margin:0 0 12px;overflow-wrap:anywhere;font-weight:750}
