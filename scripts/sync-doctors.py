@@ -80,6 +80,19 @@ def main():
     old_path = ROOT / 'data/doctors.json'
     old = json.loads(old_path.read_text()) if old_path.exists() else {'doctors': []}
     old_names = {norm(d.get('name')) for d in old.get('doctors', [])}
+    # Profiles supplied outside the sheet remain in the same canonical source.
+    imported_names = {norm(d['name']) for d in doctors}
+    doctors.extend(d for d in old.get('doctors', [])
+                   if d.get('source') in ('manual-professional', 'manual-directory') and norm(d['name']) not in imported_names)
+    old_by_id = {d['id']: d for d in old.get('doctors', [])}
+    for doctor in doctors:
+        previous = old_by_id.get(doctor['id'], {})
+        for key, value in previous.get('directory_enrichment', {}).items():
+            if not doctor.get(key):
+                doctor[key] = value
+        for key in ('directory_enrichment', 'directory_sources', 'sponsor', 'featured', 'sponsored', 'premium', 'nameAr', 'nameEn'):
+            if key in previous:
+                doctor[key] = previous[key]
     overlap = sum(norm(d['name']) in old_names for d in doctors)
     if old_names and overlap < len(old_names) * .8 and not args.allow_mass_replacement:
         raise SystemExit(f'Remplacement refusé: {overlap}/{len(old_names)} anciens médecins retrouvés; utilisez --allow-mass-replacement après vérification.')
@@ -95,8 +108,8 @@ def main():
     payload = {'updated_at': today, 'source': f'local:{args.source}', 'doctors': doctors}
     (ROOT / 'data/doctors.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'data/doctors-duplicates.json').write_text(json.dumps({'generated_at': today, 'duplicates': duplicates}, ensure_ascii=False, indent=2) + '\n')
-    missing_phone = sum(not d['phone'] for d in doctors); missing_address = sum(not d['address'] for d in doctors); missing_maps = sum(not d['google_maps'] for d in doctors)
-    report = {'last_sync': today, 'total_doctors': len(doctors), 'verified_doctors': sum(d['verified'] for d in doctors), 'active_doctors': sum(d['status']=='active' for d in doctors), 'draft_doctors': sum(d['status']=='draft' for d in doctors), 'inactive_doctors': sum(d['status']=='inactive' for d in doctors), 'specialties': len({d['specialty_group'] for d in doctors}), 'missing_phone': missing_phone, 'missing_address': missing_address, 'missing_maps': missing_maps, 'missing_district': sum(not d['district'] for d in doctors), 'duplicates': len(duplicates), 'specialty_groups': sorted({d['specialty_group'] for d in doctors})}
+    missing_phone = sum(not d.get('phone') for d in doctors); missing_address = sum(not d.get('address') for d in doctors); missing_maps = sum(not d.get('google_maps') for d in doctors)
+    report = {'last_sync': today, 'total_doctors': len(doctors), 'verified_doctors': sum(d['verified'] for d in doctors), 'active_doctors': sum(d['status']=='active' for d in doctors), 'draft_doctors': sum(d['status']=='draft' for d in doctors), 'inactive_doctors': sum(d['status']=='inactive' for d in doctors), 'specialties': len({d['specialty_group'] for d in doctors}), 'missing_phone': missing_phone, 'missing_address': missing_address, 'missing_maps': missing_maps, 'missing_district': sum(not d.get('district') for d in doctors), 'duplicates': len(duplicates), 'specialty_groups': sorted({d['specialty_group'] for d in doctors})}
     (ROOT / 'data/doctors-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({**report, 'overlap_with_previous': overlap}, ensure_ascii=False))
 if __name__ == '__main__': main()

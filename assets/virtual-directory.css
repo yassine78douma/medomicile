@@ -1,0 +1,9 @@
+.entity-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px!important;margin:16px 0 0!important;width:100%;grid-column:1/-1}
+.entity-actions .entity-action{display:flex!important;justify-content:center;align-items:center;gap:8px;min-width:0;min-height:46px;padding:11px 12px;margin:0!important;border:1px solid #b9cede;border-radius:8px;background:#125181;color:#fff!important;text-align:center;font-family:inherit;font-size:14px;font-weight:700;line-height:1.4;text-decoration:none;letter-spacing:0;overflow-wrap:normal;cursor:pointer}
+.entity-actions .entity-action svg{width:18px;height:18px;flex:none}
+.entity-actions .entity-action:hover{background:#0b3d62}
+.entity-actions .entity-action:focus-visible{outline:3px solid #2b84cf;outline-offset:3px}
+.entity-actions .entity-action--whatsapp{background:#167445;border-color:#167445}
+.entity-actions .entity-action--contact{grid-column:1/-1;background:transparent;color:#125181!important}
+[data-theme="dark"] .entity-actions .entity-action--contact{color:#e1efff!important}
+@media(min-width:800px){.entity-actions{grid-template-columns:repeat(auto-fit,minmax(115px,1fr))}}

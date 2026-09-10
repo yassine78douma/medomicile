@@ -37,8 +37,10 @@ jobs:
 
       - name: Generate specialty pages
         run: |
+          python3 -m pip install -r scripts/cards-requirements.txt
           python3 scripts/generate-doctor-pages.py
-          python3 scripts/generate-professional-cards.py
+          python3 scripts/build-virtual-cards.py
+          python3 scripts/test-virtual-cards.py
 
       - name: Validate generated JSON
         run: |
@@ -56,12 +58,12 @@ jobs:
 
       - name: Commit generated outputs
         run: |
-          if git diff --quiet -- data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html' p contacts; then
+          git add data/doctors.json data/doctors-duplicates.json data/doctors-report.json data/virtual-card-index.json data/virtual-card-report.json data/card-directory-report.json '*.html' p e contacts assets/cards sitemap-cards.xml script.js
+          if git diff --cached --quiet; then
             echo "No generated changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/doctors.json data/doctors-duplicates.json data/doctors-report.json '*-kenitra.html' p contacts
           git commit -m "chore: update doctors directory [skip ci]"
           git push

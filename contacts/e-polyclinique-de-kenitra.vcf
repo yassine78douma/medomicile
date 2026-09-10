@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Polyclinique de Kénitra;;;
+FN:Polyclinique de Kénitra
+ORG:Polyclinique de Kénitra
+TITLE:Centre chirurgical
+TEL;TYPE=WORK,VOICE:+212537373635
+TEL;TYPE=WORK,VOICE:+212622663536
+ADR;TYPE=WORK:;;Avenue de l’Hôpital\, Kenitra;Kénitra;;;
+URL:https://medomicile.com/e/polyclinique-de-kenitra/
+END:VCARD

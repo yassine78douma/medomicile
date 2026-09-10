@@ -11,7 +11,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Maâmora",
-      "address": "",
+      "address": "Avenue Mohammed V, immeuble Centre Palace, 2e étage, bureau 10, Kénitra",
       "phone": [
         "0537 32 76 34"
       ],
@@ -20,7 +20,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Avenue Mohammed V, immeuble Centre Palace, 2e étage, bureau 10, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-younes-ouahmane",
@@ -31,7 +37,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Diouri",
-      "address": "",
+      "address": "Résidence Camélia, angle avenue Mohamed Diouri et rue Mohamed Abdou, 2e étage, bureau 21, Kénitra",
       "phone": [
         "0668 50 57 66",
         "0530 09 68 18"
@@ -41,7 +47,13 @@
       "instagram": "https://www.instagram.com/dr.younes.ouahmane/",
       "facebook": "https://www.facebook.com/DrYounesOuahmane/",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Résidence Camélia, angle avenue Mohamed Diouri et rue Mohamed Abdou, 2e étage, bureau 21, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-hanane-el-mansouri",
@@ -52,7 +64,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Diouri / près de la gare",
-      "address": "",
+      "address": "172 avenue Mohamed Diouri, Résidence Nouhaila, bureau 12, 3e étage, près de la gare et de Toyota, Kénitra",
       "phone": [
         "0666 62 30 47",
         "0808 69 61 39"
@@ -62,7 +74,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "172 avenue Mohamed Diouri, Résidence Nouhaila, bureau 12, 3e étage, près de la gare et de Toyota, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-najat-essahli",
@@ -73,7 +91,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Diouri",
-      "address": "",
+      "address": "145 avenue Mohamed Diouri, Résidence Achifaa, 4e étage, bureau 9, Kénitra",
       "phone": [
         "0666 61 84 44",
         "0537 37 25 20"
@@ -83,7 +101,13 @@
       "instagram": "",
       "facebook": "https://www.facebook.com/essahli.najat/",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "145 avenue Mohamed Diouri, Résidence Achifaa, 4e étage, bureau 9, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mohamed-belmahi",
@@ -94,7 +118,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville",
-      "address": "",
+      "address": "Immeuble Métropole, 359 boulevard Mohammed V, appartement 3, Kénitra",
       "phone": [
         "0674 75 80 01",
         "0537 36 72 73"
@@ -104,7 +128,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Immeuble Métropole, 359 boulevard Mohammed V, appartement 3, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-imane-ferrassi",
@@ -115,7 +145,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Hassan II",
-      "address": "",
+      "address": "Centre d’affaires Hassan II, avenue Hassan II, 2e étage, bureau 8, Kénitra",
       "phone": [
         "0530 13 70 32"
       ],
@@ -124,7 +154,13 @@
       "instagram": "",
       "facebook": "https://www.facebook.com/p/Cabinet-de-NeurologieDr-Ferrassi-Imane-100092946706141/",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Centre d’affaires Hassan II, avenue Hassan II, 2e étage, bureau 8, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-alia-mrani",
@@ -135,7 +171,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Hassan II",
-      "address": "",
+      "address": "6 avenue Hassan II, Centre d’affaires Hassan II, bureau 15, Kénitra",
       "phone": [
         "0666 12 97 55",
         "0537 36 86 78"
@@ -145,7 +181,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "6 avenue Hassan II, Centre d’affaires Hassan II, bureau 15, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-soumiya-harbouz",
@@ -156,7 +198,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / bd Mohammed V",
-      "address": "",
+      "address": "Résidence Tour Hassan, bureau 21, avenue Mohammed V, près du rond-point El Harrati, Kénitra",
       "phone": [
         "0537 35 85 11"
       ],
@@ -165,7 +207,13 @@
       "instagram": "",
       "facebook": "https://www.facebook.com/100075977692469/",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Résidence Tour Hassan, bureau 21, avenue Mohammed V, près du rond-point El Harrati, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-adil-touzani",
@@ -176,7 +224,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohamed Diouri",
-      "address": "",
+      "address": "Medical Center, 26 avenue Mohamed Diouri, Kénitra",
       "phone": [
         "0537 36 29 48"
       ],
@@ -185,7 +233,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Medical Center, 26 avenue Mohamed Diouri, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-jabir-sghiar",
@@ -196,7 +250,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Maâmora",
-      "address": "",
+      "address": "Résidence Maâmora, 1er étage, bureau 12, angle rue Maâmora et avenue Mohamed El Amraoui, en face de la Clinique Maâmora, Kénitra",
       "phone": [
         "0537 39 57 19"
       ],
@@ -205,7 +259,13 @@
       "instagram": "",
       "facebook": "https://www.facebook.com/DrSghiarjabir/",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Résidence Maâmora, 1er étage, bureau 12, angle rue Maâmora et avenue Mohamed El Amraoui, en face de la Clinique Maâmora, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mhamed-et-taghy",
@@ -216,7 +276,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohammed V",
-      "address": "",
+      "address": "Résidence Al Morjane, angle avenue Mohammed V et rue Moulay Abdellah, 1er étage, bureau 7, Kénitra",
       "phone": [
         "0537 37 26 04",
         "0661 37 65 82"
@@ -226,7 +286,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Résidence Al Morjane, angle avenue Mohammed V et rue Moulay Abdellah, 1er étage, bureau 7, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-abdelmajid-belghiti",
@@ -258,7 +324,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. des FAR",
-      "address": "",
+      "address": "42 avenue des FAR, Kénitra",
       "phone": [
         "0537 36 21 27"
       ],
@@ -267,7 +333,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "42 avenue des FAR, Kénitra"
+      },
+      "directory_sources": [
+        "neurologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mahmoud-amine-krimech",
@@ -299,7 +371,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohammed V",
-      "address": "",
+      "address": "447 Avenue Mohammed V, Kénitra",
       "phone": [
         "0537 37 60 60"
       ],
@@ -308,7 +380,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "447 Avenue Mohammed V, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-chafik-sader",
@@ -319,7 +397,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohammed V",
-      "address": "",
+      "address": "359 Avenue Mohammed V, Grande Résidence, Kénitra",
       "phone": [
         "0537 37 75 70"
       ],
@@ -328,7 +406,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "359 Avenue Mohammed V, Grande Résidence, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-bahia-menebhi",
@@ -339,7 +423,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Diouri",
-      "address": "",
+      "address": "80 Boulevard Mohamed Diouri, Kénitra",
       "phone": [
         "0537 37 92 60"
       ],
@@ -348,10 +432,17 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "80 Boulevard Mohamed Diouri, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mohamed-anas-abbadi",
+      "nameAr": "الدكتور محمد أنس عبادي",
       "name": "Dr Mohamed Anas Abbadi",
       "title": "Dr",
       "specialty": "Cardiologue",
@@ -359,7 +450,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohammed V",
-      "address": "",
+      "address": "403 Boulevard Mohammed V, Kénitra",
       "phone": [
         "0537 37 69 36"
       ],
@@ -368,7 +459,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "403 Boulevard Mohammed V, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-hanane-el-achhab",
@@ -392,6 +489,7 @@
     },
     {
       "id": "dr-ahmed-fouad-elmalti",
+      "nameAr": "الدكتور أحمد فؤاد المالطي",
       "name": "Dr Ahmed Fouad Elmalti",
       "title": "Dr",
       "specialty": "Cardiologue",
@@ -399,7 +497,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Hassan II / Firdaous",
-      "address": "",
+      "address": "42 Avenue Hassan II, Résidence Firdaous, Kénitra",
       "phone": [
         "0537 37 99 94"
       ],
@@ -408,7 +506,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "42 Avenue Hassan II, Résidence Firdaous, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-amine-el-ouazzani",
@@ -479,7 +583,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Diouri / Résidence Achifae",
-      "address": "",
+      "address": "145 Boulevard Mohamed Diouri, Résidence Achifae, Kénitra",
       "phone": [
         "0661 41 82 01"
       ],
@@ -488,7 +592,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "145 Boulevard Mohamed Diouri, Résidence Achifae, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-ouassima-berroho",
@@ -519,7 +629,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Hassan II / près station Total",
-      "address": "",
+      "address": "20 Boulevard Hassan II, Kénitra",
       "phone": [
         "0537 37 88 16"
       ],
@@ -528,7 +638,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "20 Boulevard Hassan II, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-amal-lachhab",
@@ -599,7 +715,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / av. Mohammed V",
-      "address": "",
+      "address": "161 Avenue Mohammed V, Kénitra",
       "phone": [
         "0537 37 88 72"
       ],
@@ -608,7 +724,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "161 Avenue Mohammed V, Kénitra"
+      },
+      "directory_sources": [
+        "cardiologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-jaouad-benameur",
@@ -1647,7 +1769,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Maâmora / 80 avenue Mohamed Diouri",
-      "address": "",
+      "address": "Mohamed Diouri - 80 avenue Mohamed Diouri, appartement n°10, Kénitra",
       "phone": [
         "0537 36 11 08"
       ],
@@ -1656,7 +1778,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Mohamed Diouri - 80 avenue Mohamed Diouri, appartement n°10, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-bouchaib-jabil",
@@ -1680,6 +1808,7 @@
     },
     {
       "id": "dr-youssef-echatibi",
+      "nameAr": "د. يوسف الشاطبي",
       "name": "Dr Youssef Echatibi",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue",
@@ -1687,14 +1816,20 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Résidence Rania, 396 av. Mohammed V",
-      "address": "",
+      "address": "Mohammed V - 396 boulevard Mohammed V, résidence Rania, bureau n°1, Kénitra",
       "phone": [],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Youssef+Echatibi+396+Avenue+Mohammed+V+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Mohammed V - 396 boulevard Mohammed V, résidence Rania, bureau n°1, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-el-hassan-laaroussi",
@@ -1741,17 +1876,29 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Maâmora / 55 bd Imam Ali, bureau 1",
-      "address": "",
-      "phone": [],
+      "address": "Maâmora - 55 avenue Imam Ali, bureau n°1, Maâmora, Kénitra",
+      "phone": [
+        "05 37 37 44 39"
+      ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Omar+Lamzaf+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "05 37 37 44 39"
+        ],
+        "address": "Maâmora - 55 avenue Imam Ali, bureau n°1, Maâmora, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-younes-touileb",
+      "nameAr": "د. يونس طويلب",
       "name": "Dr Younes Touileb",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue pédiatrique",
@@ -1759,14 +1906,20 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "",
-      "address": "",
+      "address": "Kénitra Mall - Avenue Mohamed Diouri, secteur Kénitra Mall, Kénitra",
       "phone": [],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Younes+Touileb+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Kénitra Mall - Avenue Mohamed Diouri, secteur Kénitra Mall, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-rida-boueld",
@@ -1795,14 +1948,27 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Résidence Tour Hassan, 28 bd Mohammed V, bureau 31",
-      "address": "",
-      "phone": [],
+      "address": "Centre-ville - 40 rue Salah Eddine, 1er étage, en face de Pacha Palace, Kénitra",
+      "phone": [
+        "05 37 32 55 41",
+        "06 37 96 94 22"
+      ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+Brahim+Yaagoubi+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "05 37 32 55 41",
+          "06 37 96 94 22"
+        ],
+        "address": "Centre-ville - 40 rue Salah Eddine, 1er étage, en face de Pacha Palace, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-abdelhakim-geanah",
@@ -1813,7 +1979,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Maâmora / Résidence Zazia, bureau 5, 52 bd Hassan II",
-      "address": "",
+      "address": "Maâmora - Résidence Zazia, 52 avenue Hassan II, bureau n°5, Maâmora, Kénitra",
       "phone": [
         "0537 33 73 36"
       ],
@@ -1822,7 +1988,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Maâmora - Résidence Zazia, 52 avenue Hassan II, bureau n°5, Maâmora, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-anass-lahlou",
@@ -1851,7 +2023,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Résidence Machaallah, bureau 25, angle bd Diouri et Moulay Abderrahmane",
-      "address": "",
+      "address": "Mohamed Diouri - Résidence Machaallah, bureau n°25, angle boulevard Mohamed Diouri et rue Moulay Abderrahmane, Kénitra",
       "phone": [
         "0537 39 48 69"
       ],
@@ -1860,7 +2032,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Mohamed Diouri - Résidence Machaallah, bureau n°25, angle boulevard Mohamed Diouri et rue Moulay Abderrahmane, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mohammed-amine-haouzi",
@@ -1871,7 +2049,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / BH2 Business Center, 6 bd Hassan II, 2e étage bureau 20",
-      "address": "",
+      "address": "Centre-ville - BH2 Business Center, 6 avenue Hassan II, 2e étage, bureau n°20, Kénitra",
       "phone": [
         "0537 36 66 55"
       ],
@@ -1880,7 +2058,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Centre-ville - BH2 Business Center, 6 avenue Hassan II, 2e étage, bureau n°20, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-el-yazid-houass",
@@ -1891,17 +2075,29 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Résidence Al Mourjane, angle av. Mohammed V et rue Moulay Abdellah",
-      "address": "",
-      "phone": [],
+      "address": "Centre-ville - 1er étage, bureau n°4, angle avenue Mohammed V et rue Moulay Abdellah, Kénitra",
+      "phone": [
+        "06 99 40 08 39"
+      ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+El+Yazid+Houass+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "06 99 40 08 39"
+        ],
+        "address": "Centre-ville - 1er étage, bureau n°4, angle avenue Mohammed V et rue Moulay Abdellah, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-abdelaziz-bechri",
+      "nameAr": "د. عبد العزيز بشري",
       "name": "Dr Abdelaziz Bechri",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue",
@@ -1909,7 +2105,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / Résidence Ezzouhour, 144 bis bd Mohamed Diouri, appartement 3",
-      "address": "",
+      "address": "Mohamed Diouri - 144 bis avenue Mohamed Diouri, appartement n°3, Kénitra",
       "phone": [
         "0537 37 62 81"
       ],
@@ -1918,7 +2114,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Mohamed Diouri - 144 bis avenue Mohamed Diouri, appartement n°3, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-el-khalil-belkourchia",
@@ -1929,14 +2131,25 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "",
-      "address": "",
-      "phone": [],
+      "address": "Mohamed Diouri - Résidence Echifae, 145 avenue Mohamed Diouri, 3e étage, bureau n°8, Kénitra",
+      "phone": [
+        "05 37 32 40 33"
+      ],
       "whatsapp": "",
       "google_maps": "https://www.google.com/maps/search/?api=1&query=Dr+El+Khalil+Belkourchia+K%C3%A9nitra",
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "05 37 32 40 33"
+        ],
+        "address": "Mohamed Diouri - Résidence Echifae, 145 avenue Mohamed Diouri, 3e étage, bureau n°8, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mohamed-el-otmani",
@@ -1947,7 +2160,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / 141 bd Mohamed Diouri, appartement 2",
-      "address": "",
+      "address": "Mohamed Diouri - 141 avenue Mohamed Diouri, appartement n°2, Kénitra",
       "phone": [
         "0537 37 77 48"
       ],
@@ -1956,7 +2169,13 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "Mohamed Diouri - 141 avenue Mohamed Diouri, appartement n°2, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-mariem-safrioui",
@@ -1967,7 +2186,7 @@
       "subspecialty": "",
       "city": "Kénitra",
       "district": "Centre-ville / 413 avenue Mohammed V, n°11",
-      "address": "",
+      "address": "413, avenue Mohamed V, n° 11, Kénitra",
       "phone": [
         "0537 36 52 66",
         "WhatsApp 0774 82 76 28"
@@ -1977,7 +2196,13 @@
       "instagram": "https://www.instagram.com/dr_sefrioui_meryem/",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "address": "413, avenue Mohamed V, n° 11, Kénitra"
+      },
+      "directory_sources": [
+        "ophtalmologues-kenitra.html"
+      ]
     },
     {
       "id": "dr-abdellatif-bou-oulja",
@@ -5408,7 +5633,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "537364425"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-nafie-fadoua",
@@ -5554,7 +5787,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "537378880"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-mokrim-meryem",
@@ -6116,7 +6357,15 @@
       "instagram": "https://www.instagram.com/lahjoujidentalclinic/",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "537367979"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-badyine-hassan",
@@ -6190,7 +6439,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "530220071"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-karim-mariem",
@@ -6714,7 +6971,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "537376730"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-elfassih-rachid",
@@ -6950,7 +7215,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "537352699"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-laanaya-fatima",
@@ -7150,7 +7423,15 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "directory_enrichment": {
+        "phone": [
+          "702089760"
+        ]
+      },
+      "directory_sources": [
+        "dentistes-kenitra.html"
+      ]
     },
     {
       "id": "dr-hamza-khalil",
@@ -7259,6 +7540,138 @@
       "facebook": "",
       "status": "active",
       "verified": true
+    },
+    {
+      "id": "pr-walid-el-ouardi",
+      "name": "Pr. Walid El Ouardi",
+      "specialty": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
+      "specialty_group": "Gastro-entérologue",
+      "phone": [
+        "+212639181290"
+      ],
+      "whatsapp": "212639181290",
+      "city": "Kénitra",
+      "google_maps": null,
+      "instagram": null,
+      "status": "active",
+      "featured": true,
+      "verified": false,
+      "source": "manual-professional",
+      "sponsor": {
+        "position": 0,
+        "name": "Pr. Walid El Ouardi",
+        "phone": "+212639181290",
+        "whatsapp": "212639181290",
+        "specialty": {
+          "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
+          "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
+          "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+        },
+        "category": "gastroenterologues"
+      }
+    },
+    {
+      "id": "dr-youssef-gaouri",
+      "name": "Dr Youssef Gaouri",
+      "specialty": "Chirurgien-dentiste",
+      "specialty_group": "Dentiste",
+      "phone": [
+        "0771882093"
+      ],
+      "whatsapp": "212771882093",
+      "city": "Kénitra",
+      "google_maps": "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
+      "instagram": "https://www.instagram.com/centre.dentairealirchad/",
+      "status": "active",
+      "featured": true,
+      "verified": false,
+      "source": "manual-professional",
+      "sponsor": {
+        "position": 1,
+        "name": "Dr Youssef Gaouri",
+        "phone": "0771882093",
+        "whatsapp": "212771882093",
+        "open24h": true,
+        "instagram": "https://www.instagram.com/centre.dentairealirchad/",
+        "directions": "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
+        "specialty": {
+          "fr": "Chirurgien-dentiste",
+          "en": "Dental surgeon",
+          "ar": "جراح أسنان"
+        },
+        "category": "dentistes"
+      }
+    },
+    {
+      "id": "dr-mohammed-chetto",
+      "name": "Dr Mohammed Chetto",
+      "specialty": "Chirurgien orthopédiste et traumatologue",
+      "specialty_group": "Chirurgien orthopédiste et traumatologue",
+      "city": "Kénitra",
+      "phone": [
+        "06 63 36 99 57"
+      ],
+      "district": "",
+      "address": "Mohamed Diouri - Angle avenue Mohamed Diouri et rue Moulay Abderrahmane, 2e étage, Kénitra",
+      "google_maps": "",
+      "status": "active",
+      "verified": false,
+      "source": "manual-directory",
+      "directory_enrichment": {
+        "phone": [
+          "06 63 36 99 57"
+        ],
+        "address": "Mohamed Diouri - Angle avenue Mohamed Diouri et rue Moulay Abderrahmane, 2e étage, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
+    },
+    {
+      "id": "dr-jamal-manjaoui",
+      "nameAr": "د. جمال منجاوي",
+      "name": "Dr Jamal Manjaoui",
+      "specialty": "Traumatologue orthopédiste",
+      "specialty_group": "Traumatologue orthopédiste",
+      "city": "Kénitra",
+      "phone": [],
+      "district": "",
+      "address": "Mohamed Diouri - 80 avenue Mohamed Diouri, appartement n°6, Kénitra",
+      "google_maps": "",
+      "status": "active",
+      "verified": false,
+      "source": "manual-directory",
+      "directory_enrichment": {
+        "address": "Mohamed Diouri - 80 avenue Mohamed Diouri, appartement n°6, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
+    },
+    {
+      "id": "dr-karim-el-khadime",
+      "name": "Dr Karim El Khadime",
+      "specialty": "Traumatologue orthopédiste",
+      "specialty_group": "Traumatologue orthopédiste",
+      "city": "Kénitra",
+      "phone": [
+        "05 37 32 73 27"
+      ],
+      "district": "",
+      "address": "Centre-ville - Résidence Nakhla 3, 461 avenue Mohammed V et rue Ibn Abi Zaraa, bureau n°10, Kénitra",
+      "google_maps": "",
+      "status": "active",
+      "verified": false,
+      "source": "manual-directory",
+      "directory_enrichment": {
+        "phone": [
+          "05 37 32 73 27"
+        ],
+        "address": "Centre-ville - Résidence Nakhla 3, 461 avenue Mohammed V et rue Ibn Abi Zaraa, bureau n°10, Kénitra"
+      },
+      "directory_sources": [
+        "traumatologues-kenitra.html"
+      ]
     }
   ]
 }

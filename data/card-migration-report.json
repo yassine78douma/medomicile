@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "establishments": 14,
+    "radiology": 14,
+    "pharmacies": 103,
+    "original_doctors_preserved": 386,
+    "manual_doctors": 2
+  },
+  "comparisons": [
+    "Radiology: all source properties retained; name/phone/Maps identical",
+    "Pharmacies: every directory property retained; all legacy sector HTML archived per entity",
+    "Hospitals: all 3 language HTML records archived; every telephone retained",
+    "Doctors: all original records identical; 2 existing sponsored records appended"
+  ],
+  "legacy_differences": [
+    {
+      "name": "Pharmacie Ibn Khaldoun",
+      "ids": [
+        "ibn-khaldoun",
+        "pharmacie-ibn-khaldoun"
+      ],
+      "reason": "Same name, differing source records; not merged"
+    },
+    {
+      "name": "Pharmacie Lotissement Assam",
+      "ids": [
+        "lotissement-assam",
+        "pharmacie-lotissement-assam"
+      ],
+      "reason": "Same name, differing source records; not merged"
+    }
+  ],
+  "source_hashes": {
+    "script.js": "d6386feb99df8e966e436c361f9d0d83529e66fb6529403411168b2e4a4180fa",
+    "hopitaux.html": "e58e0410712ec083cc9d7793b911c96a01f7bd378a7854acbc4597d87966a3e6",
+    "hopitaux-en.html": "1be4ac4561173ef50af48760c2be003a539e7ba308054f864a585a1a740ca315",
+    "hopitaux-ar.html": "fa3b4472607d17717f13ebb2132ea8cc65c0cfcfd57311337acaad8dcb28ff84",
+    "data/pharmacies-garde.json": "c009db665330c1136c3ac01b0b02eae3043424e7ae9b37423d350ff583327ee5",
+    "data/doctors.json": "19d2dda80d6cfd672165465436e658c2dc02abdf58ecbbbb64a3baca3fa3f04e",
+    "data/dialysis-centers.json": "3f0791a978ba74e8e813cea08d05bcb75f917bee63ab3caf9293de042b81b039",
+    "data/laboratoires-kenitra.json": "7c3cf35399dec594dbbe2b2f69df7b823670e7d50ee5f1d745791ac305b39e1d"
+  }
+}

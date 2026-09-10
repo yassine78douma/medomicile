@@ -1,0 +1,2 @@
+# vCard 3.0 uses CRLF and space-prefixed folded lines by specification.
+*.vcf -text whitespace=-blank-at-eol,cr-at-eol

@@ -1,0 +1,326 @@
+{
+  "added": [
+    {
+      "name": "Dr Mohammed Chetto",
+      "page": "traumatologues-kenitra.html"
+    },
+    {
+      "name": "Dr Jamal Manjaoui",
+      "page": "traumatologues-kenitra.html"
+    },
+    {
+      "name": "Dr Karim El Khadime",
+      "page": "traumatologues-kenitra.html"
+    }
+  ],
+  "enriched": [
+    {
+      "name": "Dr Sourat Abderrahim",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Chafik Sader",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Bahia Menebhi",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mohamed Anas Abbadi",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Ahmed Fouad Elmalti",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Zakaria Abdeljalil",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Soukaina Berrouine",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Khalid Slaoui",
+      "page": "cardiologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Ftouhi Abdellatif",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Farhi Samia",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Afaf Lahjouji",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Guelida Hiba",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr El Yaaqoubi Abdellah",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Kararsi Oussama",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Bakir Saad",
+      "page": "dentistes-kenitra.html",
+      "fields": [
+        "phone"
+      ]
+    },
+    {
+      "name": "Dr Mouad Daoudi",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Younes Ouahmane",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Hanane El Mansouri",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Najat Essahli",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mohamed Belmahi",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Imane Ferrassi",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Alia Mrani",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Soumiya Harbouz",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Adil Touzani",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Jabir Sghiar",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mhamed Et Taghy",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Rachid Agdach",
+      "page": "neurologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mariem Safrioui",
+      "page": "ophtalmologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Abdelhakim Geanah",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mohammed Amine Haouzi",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mehdi Omar Krimech",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Badredine Dehayni",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr El Yazid Houass",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mohammed Chetto",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Younes Touileb",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Omar Lamzaf",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Brahim Yaagoubi",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Abdelaziz Bechri",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Mohamed Elotmani",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Jamal Manjaoui",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "name": "Dr El Khalil Belkourchia",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Karim El Khadime",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "phone",
+        "address"
+      ]
+    },
+    {
+      "name": "Dr Youssef Echatibi",
+      "page": "traumatologues-kenitra.html",
+      "fields": [
+        "address"
+      ]
+    }
+  ],
+  "unresolved": []
+}

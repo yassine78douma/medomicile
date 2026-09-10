@@ -374,31 +374,39 @@ const professionalSlotTranslations = {
 };
 
 const specialtySponsors = {
-  gastroenterologues: [{
-    position: 0,
-    name: "Pr. Walid El Ouardi",
-    phone: "+212639181290",
-    whatsapp: "212639181290",
-    specialty: {
-      fr: "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
-      en: "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
-      ar: "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+  "gastroenterologues": [
+    {
+      "position": 0,
+      "name": "Pr. Walid El Ouardi",
+      "phone": "+212639181290",
+      "whatsapp": "212639181290",
+      "specialty": {
+        "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
+        "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
+        "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+      },
+      "category": "gastroenterologues",
+      "instagram": null,
+      "directions": null
     }
-  }],
-  dentistes: [{
-    position: 1,
-    name: "Dr Youssef Gaouri",
-    phone: "0771882093",
-    whatsapp: "212771882093",
-    open24h: true,
-    instagram: "https://www.instagram.com/centre.dentairealirchad/",
-    directions: "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
-    specialty: {
-      fr: "Chirurgien-dentiste",
-      en: "Dental surgeon",
-      ar: "جراح أسنان"
+  ],
+  "dentistes": [
+    {
+      "position": 1,
+      "name": "Dr Youssef Gaouri",
+      "phone": "0771882093",
+      "whatsapp": "212771882093",
+      "open24h": true,
+      "instagram": "https://www.instagram.com/centre.dentairealirchad/",
+      "directions": "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
+      "specialty": {
+        "fr": "Chirurgien-dentiste",
+        "en": "Dental surgeon",
+        "ar": "جراح أسنان"
+      },
+      "category": "dentistes"
     }
-  }]
+  ]
 };
 
 if ("scrollRestoration" in history) {
@@ -2773,6 +2781,8 @@ const createPharmacyCard = (pharmacy, options = {}) => {
   const mapsUrl = getPharmacyMapsUrl(pharmacy);
   const article = document.createElement("article");
   article.className = `pharmacy-card${isDuty ? " pharmacy-card--duty" : " pharmacy-card--directory"}`;
+  article.dataset.entitySourceId = pharmacy.id;
+  article.dataset.entityType = "pharmacy";
 
   article.innerHTML = `
     <div class="pharmacy-card-head">
@@ -2871,6 +2881,13 @@ const loadPharmacies = async () => {
       break;
     }
     if (!data) throw new Error("Pharmacy data unavailable");
+    const directoryResponse = await fetch("data/pharmacies-kenitra.json").catch(() => null);
+    if (directoryResponse?.ok) {
+      const directoryData = await directoryResponse.json().catch(() => null);
+      if (Array.isArray(directoryData?.pharmacies)) {
+      data.directory = directoryData.pharmacies.map((pharmacy) => ({ ...pharmacy, mapsUrl: pharmacy.google_maps_url }));
+      }
+    }
     renderPharmacies(data);
   } catch (error) {
     renderPharmacies(fallbackPharmacyData);
@@ -3315,6 +3332,8 @@ const createLaboratoryCard = (lab, options = {}) => {
   const open24hBadge = lab.open24h ? `<span class="availability-badge" title="${text.open24h}" aria-label="${text.open24h}">24h/24</span>` : "";
   const card = document.createElement("article");
   card.className = `facility-card laboratory-card compact-card reveal is-visible${options.sponsored ? " sponsored-card" : ""}`;
+  card.dataset.entitySourceId = lab.id;
+  card.dataset.entityType = "laboratory";
   card.dataset.search = [lab.name, lab.nameAr, lab.shortName, lab.phone, ...(lab.hours || [])].filter(Boolean).join(" ");
 
   const panelId = `laboratory-${lab.id}-details`;
@@ -3366,327 +3385,411 @@ const createLaboratoryCard = (lab, options = {}) => {
 // ==============================
 const radiologyCenters = [
   {
-    id: "clinique-internationale",
-    name: "Clinique Internationale de Kénitra - service radiologie",
-    nameAr: "المصحة الدولية بالقنيطرة - قسم الأشعة",
-    type: "Service d’imagerie médicale",
-    typeEn: "Medical imaging service",
-    typeAr: "قسم التصوير الطبي",
-    district: "Kénitra",
-    address: "Kénitra, zone centrale",
-    phoneDisplay: "+212 5 37 31 34 34",
-    phoneRaw: "tel:+212537313434",
-    hours: "24h/24, urgences radiologiques selon disponibilité",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
-    website: "",
-    verified: true,
-    exams: [],
-    featured: true,
-    sponsored: false,
-    lastVerified: "2026-07-17",
+    "id": "clinique-internationale",
+    "name": "Clinique Internationale de Kénitra - service radiologie",
+    "nameAr": "المصحة الدولية بالقنيطرة - قسم الأشعة",
+    "type": "Service d’imagerie médicale",
+    "typeEn": "Medical imaging service",
+    "typeAr": "قسم التصوير الطبي",
+    "district": "Kénitra",
+    "address": "Kénitra, zone centrale",
+    "phoneDisplay": "+212 5 37 31 34 34",
+    "phoneRaw": "tel:+212537313434",
+    "hours": "24h/24, urgences radiologiques selon disponibilité",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+    "website": "",
+    "verified": true,
+    "exams": [],
+    "featured": true,
+    "sponsored": false,
+    "lastVerified": "2026-07-17",
+    "slug": "radiologie-clinique-internationale",
+    "subtitle": "Service d’imagerie médicale",
+    "city": "Kénitra",
+    "phone": "+212 5 37 31 34 34",
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+    "legacy_type": "Service d’imagerie médicale"
   },
   {
-    id: "hopital-international",
-    name: "Hôpital International de Kénitra - service radiologie",
-    nameAr: "المستشفى الدولي بالقنيطرة - قسم الأشعة",
-    type: "Service d’imagerie médicale",
-    typeEn: "Medical imaging service",
-    typeAr: "قسم التصوير الطبي",
-    district: "Kénitra",
-    address: "Avenue Mohammed VI, Kénitra",
-    phoneDisplay: "+212 5 37 36 96 96",
-    phoneRaw: "tel:+212537369696",
-    hours: "24h/24, urgences radiologiques selon disponibilité",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
-    website: "",
-    verified: true,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: "2026-07-17",
+    "id": "hopital-international",
+    "name": "Hôpital International de Kénitra - service radiologie",
+    "nameAr": "المستشفى الدولي بالقنيطرة - قسم الأشعة",
+    "type": "Service d’imagerie médicale",
+    "typeEn": "Medical imaging service",
+    "typeAr": "قسم التصوير الطبي",
+    "district": "Kénitra",
+    "address": "Avenue Mohammed VI, Kénitra",
+    "phoneDisplay": "+212 5 37 36 96 96",
+    "phoneRaw": "tel:+212537369696",
+    "hours": "24h/24, urgences radiologiques selon disponibilité",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+    "website": "",
+    "verified": true,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": "2026-07-17",
+    "slug": "radiologie-hopital-international",
+    "subtitle": "Service d’imagerie médicale",
+    "city": "Kénitra",
+    "phone": "+212 5 37 36 96 96",
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+    "legacy_type": "Service d’imagerie médicale"
   },
   {
-    id: "polyclinique-kenitra",
-    name: "Polyclinique de Kénitra - service radiologie",
-    nameAr: "المصحة المتعددة الاختصاصات بالقنيطرة - قسم الأشعة",
-    type: "Service d’imagerie médicale",
-    typeEn: "Medical imaging service",
-    typeAr: "قسم التصوير الطبي",
-    district: "Kénitra",
-    address: "Avenue de l’Hôpital, Kénitra",
-    phoneDisplay: "+212 5 37 37 36 35",
-    phoneRaw: "tel:+212537373635",
-    hours: "24h/24, urgences radiologiques selon disponibilité",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20de%20K%C3%A9nitra",
-    website: "",
-    verified: true,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: "2026-07-17",
+    "id": "polyclinique-kenitra",
+    "name": "Polyclinique de Kénitra - service radiologie",
+    "nameAr": "المصحة المتعددة الاختصاصات بالقنيطرة - قسم الأشعة",
+    "type": "Service d’imagerie médicale",
+    "typeEn": "Medical imaging service",
+    "typeAr": "قسم التصوير الطبي",
+    "district": "Kénitra",
+    "address": "Avenue de l’Hôpital, Kénitra",
+    "phoneDisplay": "+212 5 37 37 36 35",
+    "phoneRaw": "tel:+212537373635",
+    "hours": "24h/24, urgences radiologiques selon disponibilité",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20de%20K%C3%A9nitra",
+    "website": "",
+    "verified": true,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": "2026-07-17",
+    "slug": "radiologie-polyclinique-kenitra",
+    "subtitle": "Service d’imagerie médicale",
+    "city": "Kénitra",
+    "phone": "+212 5 37 37 36 35",
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20de%20K%C3%A9nitra",
+    "legacy_type": "Service d’imagerie médicale"
   },
   {
-    id: "cnss-radiologie",
-    name: "Polyclinique CNSS Kénitra - service radiologie",
-    nameAr: "مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة - قسم الأشعة",
-    type: "Service d’imagerie médicale",
-    typeEn: "Medical imaging service",
-    typeAr: "قسم التصوير الطبي",
-    district: "Kénitra",
-    address: "Avenue Moulay Youssef, Kénitra",
-    phoneDisplay: "+212 5 37 37 87 39",
-    phoneRaw: "tel:+212537378739",
-    hours: "24h/24, à confirmer auprès de l’établissement",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20CNSS%20K%C3%A9nitra",
-    website: "",
-    verified: true,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: "2026-07-17",
+    "id": "cnss-radiologie",
+    "name": "Polyclinique CNSS Kénitra - service radiologie",
+    "nameAr": "مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة - قسم الأشعة",
+    "type": "Service d’imagerie médicale",
+    "typeEn": "Medical imaging service",
+    "typeAr": "قسم التصوير الطبي",
+    "district": "Kénitra",
+    "address": "Avenue Moulay Youssef, Kénitra",
+    "phoneDisplay": "+212 5 37 37 87 39",
+    "phoneRaw": "tel:+212537378739",
+    "hours": "24h/24, à confirmer auprès de l’établissement",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20CNSS%20K%C3%A9nitra",
+    "website": "",
+    "verified": true,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": "2026-07-17",
+    "slug": "radiologie-cnss-radiologie",
+    "subtitle": "Service d’imagerie médicale",
+    "city": "Kénitra",
+    "phone": "+212 5 37 37 87 39",
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20CNSS%20K%C3%A9nitra",
+    "legacy_type": "Service d’imagerie médicale"
   },
   {
-    id: "radiologie-amane",
-    name: "Radiologie Amane",
-    nameAr: "مركز أمان للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Amane%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "radiologie-amane",
+    "name": "Radiologie Amane",
+    "nameAr": "مركز أمان للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Amane%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-radiologie-amane",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Amane%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "horloge",
-    name: "Cabinet radiologique de l’Horloge",
-    nameAr: "عيادة الساعة للأشعة",
-    type: "Cabinet de radiologie",
-    typeEn: "Radiology practice",
-    typeAr: "عيادة للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20radiologique%20de%20l%27Horloge%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "horloge",
+    "name": "Cabinet radiologique de l’Horloge",
+    "nameAr": "عيادة الساعة للأشعة",
+    "type": "Cabinet de radiologie",
+    "typeEn": "Radiology practice",
+    "typeAr": "عيادة للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20radiologique%20de%20l%27Horloge%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-horloge",
+    "subtitle": "Cabinet de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20radiologique%20de%20l%27Horloge%20Kenitra",
+    "legacy_type": "Cabinet de radiologie"
   },
   {
-    id: "ibn-sina-radiologie",
-    name: "Cabinet de Radiologie Ibn Sina",
-    nameAr: "عيادة ابن سينا للأشعة",
-    type: "Cabinet de radiologie",
-    typeEn: "Radiology practice",
-    typeAr: "عيادة للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20de%20Radiologie%20Ibn%20Sina%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "ibn-sina-radiologie",
+    "name": "Cabinet de Radiologie Ibn Sina",
+    "nameAr": "عيادة ابن سينا للأشعة",
+    "type": "Cabinet de radiologie",
+    "typeEn": "Radiology practice",
+    "typeAr": "عيادة للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20de%20Radiologie%20Ibn%20Sina%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-ibn-sina-radiologie",
+    "subtitle": "Cabinet de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Cabinet%20de%20Radiologie%20Ibn%20Sina%20Kenitra",
+    "legacy_type": "Cabinet de radiologie"
   },
   {
-    id: "firdaous-aouifi",
-    name: "Radiologie Firdaous / Aouifi",
-    nameAr: "مركز الفردوس / العويفي للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Firdaous%20Aouifi%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "firdaous-aouifi",
+    "name": "Radiologie Firdaous / Aouifi",
+    "nameAr": "مركز الفردوس / العويفي للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Firdaous%20Aouifi%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-firdaous-aouifi",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Firdaous%20Aouifi%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "al-istiqlal",
-    name: "Centre de Radiologie Al Istiqlal",
-    nameAr: "مركز الاستقلال للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Al%20Istiqlal%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "al-istiqlal",
+    "name": "Centre de Radiologie Al Istiqlal",
+    "nameAr": "مركز الاستقلال للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Al%20Istiqlal%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-al-istiqlal",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Al%20Istiqlal%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "hassan-ii",
-    name: "Centre de Radiologie Hassan II",
-    nameAr: "مركز الحسن الثاني للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: "24h/24, à confirmer auprès de l’établissement",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Hassan%20II%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "hassan-ii",
+    "name": "Centre de Radiologie Hassan II",
+    "nameAr": "مركز الحسن الثاني للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": "24h/24, à confirmer auprès de l’établissement",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Hassan%20II%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-hassan-ii",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Hassan%20II%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "nafora",
-    name: "Radiologie Nafora",
-    nameAr: "مركز النافورة للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Nafora%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "nafora",
+    "name": "Radiologie Nafora",
+    "nameAr": "مركز النافورة للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Nafora%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-nafora",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20Nafora%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "diouri",
-    name: "Centre Radiologie Diouri",
-    nameAr: "مركز الديوري للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: "24h/24, à confirmer auprès de l’établissement",
-    open24h: true,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Centre%20Radiologie%20Diouri%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "diouri",
+    "name": "Centre Radiologie Diouri",
+    "nameAr": "مركز الديوري للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": "24h/24, à confirmer auprès de l’établissement",
+    "open24h": true,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Centre%20Radiologie%20Diouri%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-diouri",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Centre%20Radiologie%20Diouri%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "el-hilal",
-    name: "Radiologie El Hilal",
-    nameAr: "مركز الهلال للأشعة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20El%20Hilal%20Kenitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
+    "id": "el-hilal",
+    "name": "Radiologie El Hilal",
+    "nameAr": "مركز الهلال للأشعة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20El%20Hilal%20Kenitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-el-hilal",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20El%20Hilal%20Kenitra",
+    "legacy_type": "Centre de radiologie"
   },
   {
-    id: "beclere",
-    name: "Radiologie Béclère Kénitra",
-    nameAr: "مركز بيكلير للأشعة بالقنيطرة",
-    type: "Centre de radiologie",
-    typeEn: "Radiology center",
-    typeAr: "مركز للأشعة",
-    district: "Kénitra",
-    address: null,
-    phoneDisplay: null,
-    phoneRaw: null,
-    hours: null,
-    open24h: false,
-    rating: null,
-    reviewCount: null,
-    mapsUrl: "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20B%C3%A9cl%C3%A8re%20K%C3%A9nitra",
-    website: "",
-    verified: false,
-    exams: [],
-    featured: false,
-    sponsored: false,
-    lastVerified: null,
-  },
+    "id": "beclere",
+    "name": "Radiologie Béclère Kénitra",
+    "nameAr": "مركز بيكلير للأشعة بالقنيطرة",
+    "type": "Centre de radiologie",
+    "typeEn": "Radiology center",
+    "typeAr": "مركز للأشعة",
+    "district": "Kénitra",
+    "address": null,
+    "phoneDisplay": null,
+    "phoneRaw": null,
+    "hours": null,
+    "open24h": false,
+    "rating": null,
+    "reviewCount": null,
+    "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20B%C3%A9cl%C3%A8re%20K%C3%A9nitra",
+    "website": "",
+    "verified": false,
+    "exams": [],
+    "featured": false,
+    "sponsored": false,
+    "lastVerified": null,
+    "slug": "radiologie-beclere",
+    "subtitle": "Centre de radiologie",
+    "city": "Kénitra",
+    "phone": null,
+    "google_maps_url": "https://www.google.com/maps/dir/?api=1&destination=Radiologie%20B%C3%A9cl%C3%A8re%20K%C3%A9nitra",
+    "legacy_type": "Centre de radiologie"
+  }
 ];
 
 // ==============================
@@ -3812,6 +3915,8 @@ const createCenterCard = (center) => {
   const panelId = `radiology-${center.id}-details`;
   const card = document.createElement("article");
   card.className = `facility-card radiology-card compact-card reveal is-visible${center.sponsored ? " sponsored-card" : ""}`;
+  card.dataset.entitySourceId = center.id;
+  card.dataset.entityType = "radiology_center";
   card.dataset.search = [center.name, center.nameAr, center.type, center.address, center.district, center.hours, ...(center.exams || [])].filter(Boolean).join(" ");
   const exams = center.exams?.length
     ? `<div class="exam-tags">${center.exams.map((exam) => `<span>${exam}</span>`).join("")}</div>`
@@ -4387,128 +4492,10 @@ const doctorShareSlug = (value) => normalizeText(value)
   .replace(/^-+|-+$/g, "");
 
 const initDoctorSharing = () => {
-  const labels = doctorShareTranslations[currentLang] || doctorShareTranslations.fr;
-  const usedIds = new Set();
-  const cards = [...document.querySelectorAll(".doctor-card")];
-  if (!cards.length) return;
-
-  const makeShareUrl = (card) => {
-    return new URL(`p/${encodeURIComponent(card.id)}.html`, window.location.origin + "/").href;
-  };
-
-  const closeMenus = (except) => document.querySelectorAll(".doctor-share-menu.is-open").forEach((menu) => {
-    if (menu !== except) menu.classList.remove("is-open");
-  });
-
-  cards.forEach((card) => {
-    const name = card.querySelector("h3")?.textContent?.trim();
-    if (!name || card.dataset.shareReady === "true") return;
-    const baseId = card.id || card.dataset.doctorId || doctorShareSlug(name) || "professionnel";
-    let stableId = baseId;
-    let suffix = 2;
-    while (usedIds.has(stableId) || (document.getElementById(stableId) && document.getElementById(stableId) !== card)) {
-      stableId = `${baseId}-${suffix++}`;
-    }
-    usedIds.add(stableId);
-    card.id = stableId;
-    card.dataset.shareReady = "true";
-
-    let actions = card.querySelector(".establishment-actions") || card.querySelector(".urgent-actions");
-    if (!actions) {
-      actions = document.createElement("div");
-      actions.className = "urgent-actions doctor-card__actions";
-      card.append(actions);
-    }
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "establishment-action directions doctor-share-button";
-    button.setAttribute("aria-label", `${labels.shareProfile} ${name}`);
-    button.innerHTML = `<span aria-hidden="true">↗</span>${labels.share}`;
-
-    const menu = document.createElement("div");
-    menu.className = "doctor-share-menu";
-    menu.setAttribute("role", "menu");
-    menu.hidden = true;
-
-    const copy = document.createElement("button");
-    copy.type = "button";
-    copy.className = "doctor-share-menu__item";
-    copy.setAttribute("role", "menuitem");
-    copy.textContent = labels.copy;
-
-    const whatsapp = document.createElement("a");
-    whatsapp.className = "doctor-share-menu__item";
-    whatsapp.target = "_blank";
-    whatsapp.rel = "noopener noreferrer";
-    whatsapp.setAttribute("role", "menuitem");
-    whatsapp.textContent = labels.whatsapp;
-
-    const setShareTargets = () => {
-      const url = makeShareUrl(card);
-      const text = `${name} - ${card.querySelector(".doctor-line span:last-child")?.textContent?.trim() || "Medomicile"}\\n${labels.text(name)}\\n${url}`;
-      whatsapp.href = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      return { url, text };
-    };
-
-    copy.addEventListener("click", async () => {
-      const { url } = setShareTargets();
-      try {
-        await navigator.clipboard.writeText(url);
-      } catch {
-        const fallback = document.createElement("textarea");
-        fallback.value = url;
-        fallback.setAttribute("readonly", "");
-        fallback.style.position = "fixed";
-        fallback.style.opacity = "0";
-        document.body.append(fallback);
-        fallback.select();
-        document.execCommand("copy");
-        fallback.remove();
-      }
-      copy.textContent = labels.copied;
-      window.setTimeout(() => { copy.textContent = labels.copy; }, 1600);
-    });
-
-    button.addEventListener("click", async () => {
-      const { url, text } = setShareTargets();
-      if (navigator.share) {
-        try {
-          await navigator.share({ title: `${name} | Medomicile`, text: labels.text(name), url });
-          return;
-        } catch (error) {
-          if (error?.name === "AbortError") return;
-        }
-      }
-      const opening = !menu.classList.contains("is-open");
-      closeMenus(menu);
-      menu.hidden = !opening;
-      menu.classList.toggle("is-open", opening);
-      button.setAttribute("aria-expanded", String(opening));
-    });
-
-    menu.append(copy, whatsapp);
-    actions.classList.add("doctor-card__actions");
-    actions.append(button, menu);
-  });
-
-  const scrollToSharedCard = () => {
-    const id = decodeURIComponent(window.location.hash.slice(1));
-    if (!id) return;
-    const card = document.getElementById(id);
-    if (!card?.classList.contains("doctor-card")) return;
-    window.setTimeout(() => {
-      card.scrollIntoView({ behavior: "smooth", block: "center" });
-      card.classList.add("is-share-target");
-      window.setTimeout(() => card.classList.remove("is-share-target"), 1800);
-    }, 80);
-  };
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".doctor-card__actions")) closeMenus();
-  });
-  window.addEventListener("hashchange", scrollToSharedCard);
-  scrollToSharedCard();
+  const script = document.createElement("script");
+  script.src = "/assets/virtual-directory.js";
+  script.defer = true;
+  document.head.append(script);
 };
 
 const initFloatingCallVisibility = (button) => {

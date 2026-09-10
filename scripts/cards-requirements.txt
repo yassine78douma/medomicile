@@ -1,0 +1,4 @@
+beautifulsoup4==4.14.3
+json5==0.12.1
+qrcode==8.2
+Pillow==11.3.0

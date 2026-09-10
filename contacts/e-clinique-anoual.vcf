@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;Clinique Anoual;;;
+FN:Clinique Anoual
+ORG:Clinique Anoual
+TITLE:Hôpital général
+TEL;TYPE=WORK,VOICE:+212537366767
+TEL;TYPE=WORK,VOICE:+212537377072
+ADR;TYPE=WORK:;;33 Rue Ibn Abi Zaraa\, Avenue Moulay Abderrahmane\, Kenitra
+ ;Kénitra;;;
+URL:https://medomicile.com/e/clinique-anoual/
+END:VCARD
