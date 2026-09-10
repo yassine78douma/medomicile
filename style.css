@@ -4800,9 +4800,25 @@ a[href^="https://wa.me/"] {
     white-space: nowrap;
   }
 
-  .pharmacy-area-card .specialty-card__arrow {
-    justify-self: end;
-  }
+.pharmacy-area-card .specialty-card__arrow {
+  justify-self: end;
+}
+
+/* Keep every dentist-area card centered and readable, including intermediate mobile widths. */
+.pharmacy-area-card {
+  grid-template-columns: minmax(0, 1fr) 36px !important;
+}
+.pharmacy-area-card .specialty-card__content {
+  width: 100%;
+  justify-items: center;
+  text-align: center;
+}
+.pharmacy-area-card .specialty-card__title,
+.pharmacy-area-card .specialty-card__description {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+}
 }
 
 @media (max-width: 360px) {

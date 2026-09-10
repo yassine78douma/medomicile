@@ -394,7 +394,7 @@ const specialtySponsors = {
   ],
   "dentistes": [
     {
-      "position": 1,
+      "position": 2,
       "name": "Dr Youssef Gaouri",
       "phone": "0771882093",
       "whatsapp": "212771882093",
@@ -411,7 +411,7 @@ const specialtySponsors = {
       "type": "dentist"
     },
     {
-      "position": 2,
+      "position": 1,
       "name": "Dr Mohcine Elbahja",
       "phone": "+212 621 406 621",
       "whatsapp": "212621406621",
@@ -4308,7 +4308,7 @@ const renderSpecialtyProfessionalSlots = (section) => {
   const sponsorsByPosition = new Map(sponsors.map((sponsor) => [sponsor.position, sponsor]));
   let templateIndex = 0;
 
-  for (let index = 0; index < 3; index += 1) {
+  for (let index = 1; index <= 3; index += 1) {
     const sponsor = sponsorsByPosition.get(index);
     if (sponsor) {
       const card = document.createElement("article");
