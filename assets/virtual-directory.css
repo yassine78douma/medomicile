@@ -3,5 +3,8 @@
 .entity-actions .entity-action svg{width:18px;height:18px;flex:none}
 .entity-actions .entity-action:hover{background:#0b3d62}
 .entity-actions .entity-action:focus-visible{outline:3px solid #2b84cf;outline-offset:3px}
+.entity-share-modal{width:min(460px,calc(100% - 28px));padding:20px;border:1px solid #c5d7e4;border-radius:14px;background:#fff;color:#12364b;box-shadow:0 20px 60px #08253633}
+.entity-share-modal::backdrop{background:#08253688}
+.entity-share-modal__head{display:flex;align-items:center;justify-content:space-between;gap:12px}.entity-share-modal h2{margin:0;font-size:20px}.entity-share-modal__close{width:38px;height:38px;border:1px solid #c9d9e5;border-radius:8px;background:#fff;color:#12364b;font-size:24px;cursor:pointer}.entity-share-modal__preview{display:block;width:100%;height:auto;margin:18px 0;border-radius:8px}.entity-share-modal__actions{display:grid;gap:10px}.entity-share-modal__actions button{min-height:46px;padding:10px 14px;border:1px solid #125181;border-radius:8px;background:#125181;color:#fff;font:700 15px Arial;cursor:pointer}.entity-share-modal__actions button+button{background:#fff;color:#125181}
 .entity-actions .entity-action--whatsapp{background:#167445;border-color:#167445}
 @media(min-width:800px){.entity-actions{grid-template-columns:repeat(auto-fit,minmax(115px,1fr))}}

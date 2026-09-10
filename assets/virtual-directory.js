@@ -13,6 +13,26 @@
   const byName=new Map();
   entities.forEach(e=>[e.name,...e.aliases].forEach(name=>{const key=norm(name);if(!byName.has(key))byName.set(key,[]);if(!byName.get(key).includes(e))byName.get(key).push(e);}));
   const byPath=new Map(entities.map(e=>[e.path,e]));
+  const modal=document.createElement('dialog');
+  modal.className='entity-share-modal';
+  modal.innerHTML='<div class="entity-share-modal__head"><h2>Aperçu de la carte</h2><button type="button" class="entity-share-modal__close" aria-label="Fermer">×</button></div><img class="entity-share-modal__preview" alt="Carte de visite Medomicile" hidden><div class="entity-share-modal__actions"><button type="button" data-share-link>Partager le lien</button><button type="button" data-share-download>Télécharger la carte de visite</button></div>';
+  document.body.append(modal);
+  const preview=modal.querySelector('.entity-share-modal__preview');
+  const shareLinkButton=modal.querySelector('[data-share-link]');
+  const downloadButton=modal.querySelector('[data-share-download]');
+  let activeEntity=null, activeUrl='', activeBlobUrl='';
+  const closeModal=()=>{modal.close();if(activeBlobUrl){URL.revokeObjectURL(activeBlobUrl);activeBlobUrl='';}};
+  modal.querySelector('.entity-share-modal__close').addEventListener('click',closeModal);
+  const openShareModal=async entity=>{
+    activeEntity=entity;activeUrl=entity.share_url||entity.url;modal.showModal();preview.hidden=true;shareLinkButton.disabled=downloadButton.disabled=true;
+    try{const {blob}=await import('/assets/business-card.js').then(m=>m.generateBusinessCard(entity));activeBlobUrl=URL.createObjectURL(blob);preview.src=activeBlobUrl;preview.hidden=false;}
+    finally{shareLinkButton.disabled=downloadButton.disabled=false;}
+  };
+  shareLinkButton.addEventListener('click',async()=>{
+    if(navigator.share){try{await navigator.share({title:activeEntity.name,url:activeUrl});return;}catch(error){if(error.name==='AbortError')return;}}
+    try{await navigator.clipboard.writeText(activeUrl);}catch{}
+  });
+  downloadButton.addEventListener('click',()=>{if(!activeBlobUrl)return;const a=document.createElement('a');a.href=activeBlobUrl;a.download=`${activeEntity.slug}-medomicile-carte-visite.png`;a.click();});
   function identify(card) {
     if(byPath.has(card.dataset.entityPath))return byPath.get(card.dataset.entityPath);
     if(card.dataset.entitySourceId)return entities.find(e=>e.id===card.dataset.entitySourceId && e.type===card.dataset.entityType) || null;
@@ -50,7 +70,9 @@
     if(e.phones.length)grid.append(link(labels[0],'tel:'+e.phones[0].number,'phone'));
     if(e.whatsapp)grid.append(link(labels[1],e.whatsapp,'message-circle','entity-action--whatsapp'));
     if(e.google_maps_url)grid.append(link(labels[2],e.google_maps_url,'map-pin'));
-    grid.append(link(labels[3],new URL(e.share_url || e.url, location.origin).pathname + new URL(e.share_url || e.url, location.origin).hash,'share-2'));
+    const share=link(labels[3],'#'+e.slug,'share-2');
+    share.addEventListener('click',event=>{event.preventDefault();openShareModal(e);});
+    grid.append(share);
     holder.append(grid);
   }
   let pending=false;
