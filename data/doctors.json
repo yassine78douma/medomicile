@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-01",
+  "updated_at": "2026-09-10",
   "source": "local:doctors-source.csv",
   "doctors": [
     {
@@ -442,7 +442,6 @@
     },
     {
       "id": "dr-mohamed-anas-abbadi",
-      "nameAr": "الدكتور محمد أنس عبادي",
       "name": "Dr Mohamed Anas Abbadi",
       "title": "Dr",
       "specialty": "Cardiologue",
@@ -465,7 +464,8 @@
       },
       "directory_sources": [
         "cardiologues-kenitra.html"
-      ]
+      ],
+      "nameAr": "الدكتور محمد أنس عبادي"
     },
     {
       "id": "dr-hanane-el-achhab",
@@ -489,7 +489,6 @@
     },
     {
       "id": "dr-ahmed-fouad-elmalti",
-      "nameAr": "الدكتور أحمد فؤاد المالطي",
       "name": "Dr Ahmed Fouad Elmalti",
       "title": "Dr",
       "specialty": "Cardiologue",
@@ -512,7 +511,8 @@
       },
       "directory_sources": [
         "cardiologues-kenitra.html"
-      ]
+      ],
+      "nameAr": "الدكتور أحمد فؤاد المالطي"
     },
     {
       "id": "dr-amine-el-ouazzani",
@@ -1808,7 +1808,6 @@
     },
     {
       "id": "dr-youssef-echatibi",
-      "nameAr": "د. يوسف الشاطبي",
       "name": "Dr Youssef Echatibi",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue",
@@ -1829,7 +1828,8 @@
       },
       "directory_sources": [
         "traumatologues-kenitra.html"
-      ]
+      ],
+      "nameAr": "د. يوسف الشاطبي"
     },
     {
       "id": "dr-el-hassan-laaroussi",
@@ -1898,7 +1898,6 @@
     },
     {
       "id": "dr-younes-touileb",
-      "nameAr": "د. يونس طويلب",
       "name": "Dr Younes Touileb",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue pédiatrique",
@@ -1919,7 +1918,8 @@
       },
       "directory_sources": [
         "traumatologues-kenitra.html"
-      ]
+      ],
+      "nameAr": "د. يونس طويلب"
     },
     {
       "id": "dr-rida-boueld",
@@ -2097,7 +2097,6 @@
     },
     {
       "id": "dr-abdelaziz-bechri",
-      "nameAr": "د. عبد العزيز بشري",
       "name": "Dr Abdelaziz Bechri",
       "title": "Dr",
       "specialty": "Chirurgien orthopédiste – Traumatologue",
@@ -2120,7 +2119,8 @@
       },
       "directory_sources": [
         "traumatologues-kenitra.html"
-      ]
+      ],
+      "nameAr": "د. عبد العزيز بشري"
     },
     {
       "id": "dr-el-khalil-belkourchia",
