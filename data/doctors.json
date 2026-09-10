@@ -7604,6 +7604,37 @@
       }
     },
     {
+      "id": "dr-mohcine-elbahja",
+      "name": "Dr Mohcine Elbahja",
+      "specialty": "Chirurgien-dentiste",
+      "specialty_group": "Dentiste",
+      "phone": ["+212 621 406 621"],
+      "whatsapp": "212621406621",
+      "city": "Kénitra",
+      "address": "Groupe Azzohor 7, 1er étage, Avenue Massira, Kénitra, Maroc",
+      "establishment": "Cabinet Dentaire Elbahja",
+      "google_maps": "https://maps.app.goo.gl/oh5K4dsRvjWamgdR9",
+      "instagram": "https://www.instagram.com/cabinet.dentaire.elbahja/",
+      "status": "active",
+      "featured": true,
+      "verified": false,
+      "source": "manual-professional",
+      "sponsor": {
+        "position": 2,
+        "name": "Dr Mohcine Elbahja",
+        "phone": "0621406621",
+        "whatsapp": "212621406621",
+        "instagram": "https://www.instagram.com/cabinet.dentaire.elbahja/",
+        "directions": "https://maps.app.goo.gl/oh5K4dsRvjWamgdR9",
+        "specialty": {
+          "fr": "Chirurgien-dentiste",
+          "en": "Dental surgeon",
+          "ar": "جراح أسنان"
+        },
+        "category": "dentistes"
+      }
+    },
+    {
       "id": "dr-mohammed-chetto",
       "name": "Dr Mohammed Chetto",
       "specialty": "Chirurgien orthopédiste et traumatologue",

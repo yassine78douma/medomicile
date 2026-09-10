@@ -381,11 +381,13 @@ const specialtySponsors = {
       "phone": "+212639181290",
       "whatsapp": "212639181290",
       "specialty": {
-        "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (fibroscopie, coloscopie, POEM, ESD, CPRE, écho-endoscopie).",
-        "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, POEM, ESD, ERCP, and endoscopic ultrasound).",
-        "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، POEM، ESD، CPRE والتنظير بالموجات فوق الصوتية)."
+        "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (Fibroscopie, Coloscopie, Polypectomie, POEM, Dissection sous-muqueuse, CPRE, Écho-endoscopie).",
+        "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, polypectomy, POEM, submucosal dissection, ERCP, and endoscopic ultrasound).",
+        "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، استئصال السلائل، POEM، التشريح تحت المخاطية، CPRE والتنظير بالموجات فوق الصوتية)."
       },
       "category": "gastroenterologues",
+      "id": "pr-walid-el-ouardi",
+      "type": "dentist",
       "instagram": null,
       "directions": null
     }
@@ -404,7 +406,25 @@ const specialtySponsors = {
         "en": "Dental surgeon",
         "ar": "جراح أسنان"
       },
-      "category": "dentistes"
+      "category": "dentistes",
+      "id": "dr-youssef-gaouri",
+      "type": "dentist"
+    },
+    {
+      "position": 2,
+      "name": "Dr Mohcine Elbahja",
+      "phone": "+212 621 406 621",
+      "whatsapp": "212621406621",
+      "instagram": "https://www.instagram.com/cabinet.dentaire.elbahja/",
+      "directions": "https://maps.app.goo.gl/oh5K4dsRvjWamgdR9",
+      "specialty": {
+        "fr": "Chirurgien-dentiste",
+        "en": "Dental surgeon",
+        "ar": "جراح أسنان"
+      },
+      "category": "dentistes",
+      "id": "dr-mohcine-elbahja",
+      "type": "dentist"
     }
   ]
 };
@@ -4293,6 +4313,9 @@ const renderSpecialtyProfessionalSlots = (section) => {
     if (sponsor) {
       const card = document.createElement("article");
       card.className = "specialty-professional-slot specialty-professional-slot--sponsored";
+      card.dataset.entitySourceId = sponsor.id || "";
+      card.dataset.entityType = sponsor.type || "dentist";
+      if (sponsor.id) card.dataset.entityPath = `/p/${sponsor.id}/`;
 
       const icon = document.createElement("span");
       icon.className = "specialty-professional-slot__icon";
@@ -4493,7 +4516,7 @@ const doctorShareSlug = (value) => normalizeText(value)
 
 const initDoctorSharing = () => {
   const script = document.createElement("script");
-  script.src = "/assets/virtual-directory.js";
+  script.src = "/assets/virtual-directory.js?v=partner-20260910";
   script.defer = true;
   document.head.append(script);
 };

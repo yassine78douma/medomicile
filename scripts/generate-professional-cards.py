@@ -98,7 +98,7 @@ def normalize(source, default_type, filename):
         subtitle = subtitle.split(' · ', 1)[0]
     responsible = source.get('responsible_person') or source.get('doctor_responsible') or source.get('responsible_biologist')
     useful_maps = bool(exact and not any(s in exact for s in ['/search', 'destination=', '?q=']))
-    urgent_keys = ('available24h', 'urgences', 'urgence', 'garde', 'permanence', 'is24h', 'emergency', 'emergency24', 'open24', 'open24h', 'onDuty')
+    urgent_keys = ('available24h', 'urgences', 'urgence', 'garde', 'permanence', 'is24h', 'emergency', 'emergency24', 'open24', 'open24h', 'onDuty', 'legacy_open24h')
     urgency_sources = [source]
     if isinstance(source.get('sponsor'), dict): urgency_sources.append(source['sponsor'])
     def urgent_value(value):
@@ -124,7 +124,7 @@ def normalize(source, default_type, filename):
         directory_path = {'dialysis_center': '/centres-dialyse-kenitra.html', 'radiology_center': '/radiologie-kenitra.html', 'laboratory': '/laboratoires-kenitra.html', 'pharmacy': '/pharmacies-kenitra.html', 'clinic': '/hopitaux.html', 'hospital': '/hopitaux.html'}.get(kind)
     share_url = f'{BASE}{directory_path}#{entity_slug}' if directory_path else f'{BASE}/{prefix}/{entity_slug}/'
     return {'id': ident, 'slug': entity_slug, 'type': kind, 'name': source['name'], 'subtitle': subtitle,
-        'subspecialty': source.get('subspecialty'), 'city': source.get('city'), 'district': source.get('district') or source.get('sector'),
+        'subspecialty': source.get('subspecialty'), 'establishment': source.get('establishment'), 'city': source.get('city'), 'district': source.get('district') or source.get('sector'),
         'address': address, 'phones': contacts, 'whatsapp': f'https://wa.me/{whatsapp[1:]}' if whatsapp else None,
         'google_maps_url': maps, 'responsible_person': responsible, 'director': source.get('director'),
         'resuscitation_doctor': source.get('resuscitation_doctor'),
@@ -173,7 +173,7 @@ def page(e):
         actions.append(action('Itinéraire', e['google_maps_url'], 'directions', 'map-pin'))
     actions.append('<button class="vc-action" id="vc-share" aria-haspopup="dialog"><i data-lucide="share-2" aria-hidden="true"></i><span data-i18n="share">Partager</span></button>')
     rows = []
-    for key, label in [('subspecialty', 'Sous-spécialité'), ('city', 'Ville'), ('district', 'Quartier'), ('address', 'Adresse'),
+    for key, label in [('subspecialty', 'Sous-spécialité'), ('establishment', 'Établissement'), ('city', 'Ville'), ('district', 'Quartier'), ('address', 'Adresse'),
                        ('responsible_person', 'Responsable'), ('director', 'Directeur médical'), ('resuscitation_doctor', 'Réanimateur principal')]:
         if e.get(key):
             rows.append(f'<div><dt data-i18n="{key}">{label}</dt><dd>{esc(e[key])}</dd></div>')

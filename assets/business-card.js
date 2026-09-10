@@ -50,7 +50,8 @@ function background(ctx,theme){
 }
 function contactBlocks(entity,labels){
   const blocks=[{key:'name',text:entity.name,title:true},
-    {key:'specialty',text:entity.subtitle||entity.specialty}];
+    {key:'specialty',text:entity.subtitle||entity.specialty},
+    {key:'establishment',text:entity.establishment}];
   const responsible=entity.type==='hospital'&&entity.director ? ['director',entity.director]
     :entity.type==='clinic'&&entity.resuscitation_doctor ? ['resuscitation_doctor',entity.resuscitation_doctor]
     :entity.responsible_person ? ['responsible_person',entity.responsible_person] : null;
@@ -80,6 +81,16 @@ function drawText(ctx,text,x,y,size,color,title=false,bold=false,width=546){
   ctx.direction=isRTL(text)?'rtl':'ltr';ctx.textAlign=isRTL(text)?'right':'left';
   ctx.fillText(text,isRTL(text)?x+width:x,y+size);
 }
+function drawUrgencyBadge(ctx,y){
+  const x=590,w=220,h=24;
+  const gradient=ctx.createLinearGradient(x,y,x+w,y+h);
+  gradient.addColorStop(0,'#d13a3a');gradient.addColorStop(1,'#c62828');
+  ctx.fillStyle=gradient;ctx.shadowColor='#7f1d1d26';ctx.shadowBlur=5;ctx.shadowOffsetY=2;
+  ctx.beginPath();ctx.roundRect(x,y,w,h,h/2);ctx.fill();ctx.shadowBlur=0;ctx.shadowOffsetY=0;
+  ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(x+14,y+12,6,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#c62828';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x+14,y+8);ctx.lineTo(x+14,y+16);ctx.moveTo(x+10,y+12);ctx.lineTo(x+18,y+12);ctx.stroke();
+  drawText(ctx,'Urgences 24h/24',x+28,y+5,11,'#ffffff',false,true,w-34);
+}
 // Canvas normally labels PNGs 96 dpi. 20,000 px/m makes 1700 x 1100 exactly 85 x 55 mm.
 async function physicalPNG(canvas){
   const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('PNG unavailable')),'image/png'));
@@ -103,11 +114,12 @@ export async function generateBusinessCard(entity,options={}){
   const category=options.category||({doctor:'Médecin',dentist:'Dentiste',clinic:'Clinique',hospital:'Hôpital',dialysis_center:'Centre de dialyse',laboratory:'Laboratoire',radiology_center:'Centre de radiologie',pharmacy:'Pharmacie'})[entity.type]||entity.type;
   drawText(ctx,category.toLocaleUpperCase(),48,124,12,theme.accentText,false,true);
   if(gold)drawText(ctx,options.partner||'PARTENAIRE MEDOMICILE',550,90,11,theme.accentText,false,true,250);
-  if(entity.open24h){const y=gold?100:58,badge=ctx.createLinearGradient(550,y,810,y+26);badge.addColorStop(0,'#d13a3a');badge.addColorStop(1,'#c62828');ctx.fillStyle=badge;ctx.shadowColor='#b21f1f2e';ctx.shadowBlur=6;ctx.beginPath();ctx.roundRect(550,y,260,26,13);ctx.fill();ctx.shadowBlur=0;drawText(ctx,'🚑 Urgences 24h/24',562,y+5,11,'#ffffff',false,true,236);}
+  const is24h=entity.is24h===true||entity.open24h===true||entity.available24h===true||entity.urgences===true||entity.emergency24===true||entity.open24===true||entity.onDuty===true;
+  if(is24h)drawUrgencyBadge(ctx,gold?118:72);
   const boxes=layout(ctx,contactBlocks(entity,options.labels||{}));
   for(const box of boxes)box.lines.forEach((line,i)=>drawText(ctx,line,box.x,box.y+i*box.size*1.24,box.size,box.title?theme.ink:box.bold?theme.accentText:theme.muted,box.title,box.bold));
   // Integer scaling preserves the QR modules and its original white quiet zone.
-  const modules=qr.naturalWidth/8,qrSize=Math.floor(360/modules)*modules;
+  const modules=qr.naturalWidth/8,qrSize=Math.floor(384/modules)*modules;
   const qrWidth=qrSize/2,qrX=714-qrWidth/2,qrY=310;
   ctx.fillStyle='#ffffff';ctx.fillRect(qrX-8,qrY-8,qrWidth+16,qrWidth+16);
   ctx.imageSmoothingEnabled=false;ctx.drawImage(qr,qrX,qrY,qrWidth,qrWidth);ctx.imageSmoothingEnabled=true;

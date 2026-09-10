@@ -48,7 +48,7 @@ def main():
         if d.get('sponsor') and d.get('status') == 'active':
             cfg = d['sponsor']
             translated = dict(cfg['specialty'], fr=d['specialty'])
-            sponsors.setdefault(cfg['category'], []).append(dict(cfg, name=d['name'], phone=d['phone'][0] if d['phone'] else '',
+            sponsors.setdefault(cfg['category'], []).append(dict(cfg, id=d['id'], type='dentist', name=d['name'], phone=d['phone'][0] if d['phone'] else '',
                 whatsapp=d.get('whatsapp'), instagram=d.get('instagram'), directions=d.get('google_maps'), specialty=translated))
     script = replace_literal(script, 'specialtySponsors', sponsors)
     script_path.write_text(script)

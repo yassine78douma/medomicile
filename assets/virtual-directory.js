@@ -2,7 +2,7 @@
 (async () => {
   'use strict';
   const selector='.doctor-card,.facility-card,.pharmacy-card--directory,.featured-clinic,.specialty-professional-slot--sponsored';
-  if(!document.querySelector(selector) && !document.querySelector('[data-radiology-list],[data-laboratory-list]')) return;
+  if(!document.querySelector(selector) && !document.querySelector('[data-radiology-list],[data-laboratory-list],[data-specialty-professional-slots]')) return;
   const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/virtual-directory.css';document.head.append(css);
   let entities;
   try { const response=await fetch('/data/virtual-card-index.json');if(!response.ok)throw new Error();entities=await response.json(); }
@@ -83,6 +83,7 @@
   observer.observe(document.querySelector('main')||document.body,{childList:true,subtree:true});
   if(!window.lucide){const script=document.createElement('script');script.src='/assets/vendor/lucide.min.js';script.onload=scan;document.head.append(script);}
   scan();
+  setTimeout(scan,100);
   const openTarget = () => {
     const id = decodeURIComponent(location.hash.slice(1));
     if (!id) return;
