@@ -195,7 +195,7 @@ def page(e):
 <main class="vc-card" data-variant="{e['variant']}"><div class="vc-identity"><span class="vc-badge" data-i18n="{'partner' if e['variant'] == 'premium' else 'type_' + e['type']}">{'PARTENAIRE MEDOMICILE' if e['variant'] == 'premium' else TYPES[e['type']]}</span>
 <img class="vc-photo{' vc-photo--wide' if e['photo'] and e['type'] not in ('doctor', 'dentist') else ''}" src="{esc(e['photo'] or LOGO)}" alt="" width="112" height="112"><h1>{esc(e['name'])}</h1><p class="vc-subtitle">{esc(e['subtitle'])}</p>
 {f'<p class="vc-expertise">{esc(e["expertise"])}</p>' if e['expertise'] else ''}
-{'<span class="vc-badge vc-badge--urgent" data-i18n="open24h">🚨 Urgences 24h/24</span>' if e['open24h'] else ''}</div>
+{'<span class="vc-badge vc-badge--urgent" data-i18n="open24h">🚨 URGENCES 24H/24</span>' if e['open24h'] else ''}</div>
 <dl class="vc-details">{''.join(rows)}</dl>{f'<p>{esc(e["bio"])}</p>' if e['bio'] else ''}
 <div class="vc-actions">{''.join(actions)}</div>
 {f'<div class="vc-actions vc-socials">{socials}</div>' if socials else ''}
