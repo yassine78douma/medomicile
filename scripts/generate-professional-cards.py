@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """One engine: canonical JSON -> static cards, local QR, vCards, directory index."""
 import html
+import hashlib
 import json
 import re
 import unicodedata
@@ -165,6 +166,7 @@ def action(label, href, key, icon, css=''):
 
 
 def page(e):
+    asset_version = hashlib.sha256(b''.join((ROOT/path).read_bytes() for path in ('assets/virtual-card.js', 'assets/virtual-card.css', 'assets/business-card.js'))).hexdigest()[:12]
     description = f'{e["name"]} · {e["subtitle"]}. Coordonnées et carte de contact sur Medomicile.'
     title = f'{e["name"]} | Medomicile'
     actions = []
@@ -192,7 +194,7 @@ def page(e):
 <title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{'index' if e['indexable'] else 'noindex'},follow">
 <link rel="canonical" href="{e['url']}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{e['url']}"><meta property="og:image" content="{esc(og_image)}"><meta property="og:type" content="website">
-<link rel="stylesheet" href="/assets/virtual-card.css"><script defer src="/assets/vendor/lucide.min.js"></script><script defer src="/assets/virtual-card.js"></script></head>
+<link rel="stylesheet" href="/assets/virtual-card.css?v={asset_version}"><script defer src="/assets/vendor/lucide.min.js"></script><script defer src="/assets/virtual-card.js?v={asset_version}"></script></head>
 <body class="vc-page"><header class="vc-header"><a class="vc-brand" href="/"><img src="{LOGO}" alt="" width="40" height="40">Medomicile</a>
 <select id="vc-language" aria-label="Langue / Language / اللغة"><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option></select></header>
 <main class="vc-card" data-variant="{e['variant']}"><div class="vc-identity"><span class="vc-badge" data-i18n="{'partner' if e['variant'] == 'premium' else 'type_' + e['type']}">{'PARTENAIRE MEDOMICILE' if e['variant'] == 'premium' else TYPES[e['type']]}</span>
@@ -208,14 +210,10 @@ def page(e):
 <button class="vc-action" id="vc-print"><i data-lucide="printer" aria-hidden="true"></i><span data-i18n="print">Imprimer</span></button></div></section>
 <p class="vc-note" data-i18n="note">Contactez directement le professionnel ou l’établissement pour confirmer les informations.</p></main>
 <dialog id="vc-dialog" aria-labelledby="vc-dialog-title"><div class="vc-dialog-head"><h2 id="vc-dialog-title" data-i18n="share">Partager</h2><button class="vc-icon" id="vc-close" aria-label="Fermer" title="Fermer"><i data-lucide="x" aria-hidden="true"></i></button></div>
+<img id="vc-business-preview" width="1700" height="1100" alt="Carte Medomicile" hidden>
 <div class="vc-share-options"><button class="vc-action" id="vc-share-link"><i data-lucide="share-2" aria-hidden="true"></i><span data-i18n="shareLink">Partager le lien</span></button>
-<button class="vc-action vc-primary" id="vc-share-image"><i data-lucide="image" aria-hidden="true"></i><span data-i18n="shareImage">Partager la carte en image</span></button>
-<div class="vc-share-fallback">
-<button class="vc-action" id="vc-copy"><i data-lucide="copy" aria-hidden="true"></i><span data-i18n="copy">Copier le lien</span></button>
-<a class="vc-action vc-whatsapp" href="https://wa.me/?text={quote(e['name'] + chr(10) + e['url'])}" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle" aria-hidden="true"></i>WhatsApp</a>
-<button class="vc-action" id="vc-download"><i data-lucide="download" aria-hidden="true"></i><span data-i18n="download">Télécharger l’image</span></button>
-<button class="vc-action" id="vc-business"><i data-lucide="contact" aria-hidden="true"></i><span data-i18n="business">Carte de visite 85 × 55 mm</span></button>
-<input id="vc-copy-fallback" readonly hidden aria-label="URL Medomicile" value="{e['url']}"></div><p id="vc-status" role="status" aria-live="polite"></p></div></dialog>
+<button class="vc-action vc-primary" id="vc-business"><i data-lucide="download" aria-hidden="true"></i><span data-i18n="business">Télécharger la carte de visite</span></button>
+<p id="vc-status" role="status" aria-live="polite"></p><input id="vc-copy-fallback" readonly hidden aria-label="URL Medomicile" value="{e['url']}"></div></dialog>
 <footer class="vc-footer"><a href="/">medomicile.com</a></footer><script id="vc-data" type="application/json">{data}</script></body></html>'''
 
 

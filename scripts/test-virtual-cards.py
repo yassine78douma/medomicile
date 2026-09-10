@@ -47,6 +47,9 @@ class VirtualCards(unittest.TestCase):
             with self.subTest(entity=e['name']):
                 soup = BeautifulSoup((ROOT/e['path'].strip('/')/'index.html').read_text(), 'html.parser')
                 self.assertEqual(soup.h1.text, e['name'])
+                self.assertEqual([b['id'] for b in soup.select('#vc-dialog .vc-action')], ['vc-share-link', 'vc-business'])
+                self.assertFalse(soup.select('#vc-dialog a'))
+                self.assertFalse(any(str(a.get('href', '')).startswith('file:') for a in soup.select('a')))
                 self.assertEqual(soup.select_one('.vc-card')['data-variant'],e['variant'])
                 for prop in ['og:title','og:description','og:url','og:image']:
                     self.assertTrue(soup.find('meta', property=prop)['content'])

@@ -45,6 +45,7 @@
 .vc-dialog-head h2{font-size:22px;margin:0}
 .vc-icon{display:grid;place-items:center;width:44px;height:44px;border:1px solid #c9d9e5;background:white;color:#12364b;border-radius:8px;cursor:pointer}
 .vc-share-options{display:grid;gap:10px}
+#vc-business-preview{width:100%;height:auto;aspect-ratio:17/11;object-fit:contain;margin-bottom:18px}
 .vc-share-fallback{display:grid;gap:10px;padding-top:18px;margin-top:8px;border-top:1px solid #d5e2ec}
 #vc-status{margin:0;font-size:14px;color:#526b7d;min-height:22px}
 #vc-copy-fallback{width:100%;padding:12px;font:inherit}
