@@ -98,9 +98,16 @@ def normalize(source, default_type, filename):
         subtitle = subtitle.split(' · ', 1)[0]
     responsible = source.get('responsible_person') or source.get('doctor_responsible') or source.get('responsible_biologist')
     useful_maps = bool(exact and not any(s in exact for s in ['/search', 'destination=', '?q=']))
-    urgent = any(source.get(key) is True for key in ('open24h', 'available24h', 'urgences', 'emergency', 'emergencies'))
-    if not urgent and isinstance(source.get('hours'), str):
-        urgent = bool(re.search(r'24\s*h|urgence|garde', source['hours'], re.I))
+    urgent_keys = ('available24h', 'urgences', 'urgence', 'garde', 'permanence', 'is24h', 'emergency', 'emergency24', 'open24', 'open24h', 'onDuty')
+    urgency_sources = [source]
+    if isinstance(source.get('sponsor'), dict): urgency_sources.append(source['sponsor'])
+    def urgent_value(value):
+        if value is True or value == 1: return True
+        if isinstance(value, str): return bool(re.fullmatch(r'1|true|yes|oui', value.strip(), re.I) or re.search(r'24\s*h|urgence|garde|permanence|on.?duty', value, re.I))
+        if isinstance(value, list): return any(urgent_value(item) for item in value)
+        return False
+    urgent = any(urgent_value(item.get(key)) for item in urgency_sources for key in urgent_keys)
+    if not urgent: urgent = any(urgent_value(item.get('hours')) for item in urgency_sources)
     directory_sources = source.get('directory_sources') or []
     if not directory_sources and isinstance(source.get('sponsor'), dict):
         category = source['sponsor'].get('category')

@@ -103,7 +103,7 @@ export async function generateBusinessCard(entity,options={}){
   const category=options.category||({doctor:'Médecin',dentist:'Dentiste',clinic:'Clinique',hospital:'Hôpital',dialysis_center:'Centre de dialyse',laboratory:'Laboratoire',radiology_center:'Centre de radiologie',pharmacy:'Pharmacie'})[entity.type]||entity.type;
   drawText(ctx,category.toLocaleUpperCase(),48,124,12,theme.accentText,false,true);
   if(gold)drawText(ctx,options.partner||'PARTENAIRE MEDOMICILE',550,90,11,theme.accentText,false,true,250);
-  if(entity.open24h){ctx.fillStyle='#c62828';ctx.beginPath();ctx.roundRect(670,58,132,30,8);ctx.fill();drawText(ctx,'24h/24',680,64,13,'#ffffff',false,true,112);}
+  if(entity.open24h){const badge=ctx.createLinearGradient(670,58,802,88);badge.addColorStop(0,'#d93636');badge.addColorStop(1,'#b21f1f');ctx.fillStyle=badge;ctx.shadowColor='#b21f1f44';ctx.shadowBlur=8;ctx.beginPath();ctx.roundRect(670,58,132,30,15);ctx.fill();ctx.shadowBlur=0;drawText(ctx,'24h/24',680,64,13,'#ffffff',false,true,112);}
   const boxes=layout(ctx,contactBlocks(entity,options.labels||{}));
   for(const box of boxes)box.lines.forEach((line,i)=>drawText(ctx,line,box.x,box.y+i*box.size*1.24,box.size,box.title?theme.ink:box.bold?theme.accentText:theme.muted,box.title,box.bold));
   // Integer scaling preserves the QR modules and its original white quiet zone.
