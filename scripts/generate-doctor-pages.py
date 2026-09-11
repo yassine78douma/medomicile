@@ -6,6 +6,16 @@ from collections import defaultdict
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = {'Dentiste':'dentistes-kenitra.html','Dermatologue':'dermatologues-kenitra.html','Endocrinologue':'endocrinologues-kenitra.html','Gastro-entérologie':'gastroenterologues-kenitra.html','Gynécologue-obstétricien':'gynecologues-kenitra.html','Médecine interne':'internistes-kenitra.html','ORL':'orl-kenitra.html','Pédiatre':'pediatres-kenitra.html','Pneumologue':'pneumologues-kenitra.html','Rhumatologie':'rhumatologues-kenitra.html','Urologie':'urologues-kenitra.html','Chirurgien viscéral et digestif':'visceralistes-kenitra.html'}
 FILTERS = {'Dentiste':'dentiste','Dermatologue':'dermatologue','Endocrinologue':'endocrinologue','Gastro-entérologie':'gastro','Gynécologue-obstétricien':'gynecologue','Médecine interne':'medecine interne','ORL':'orl','Pédiatre':'pediatre','Pneumologue':'pneumologue','Rhumatologie':'rhumatolog','Urologie':'urolog','Chirurgien viscéral et digestif':'chirurgien'}
+# These pages are maintained from the same canonical doctors.json source too.
+# Keep sponsor slots separate, but never let a stale static page hide normal doctors.
+CANONICAL_PAGES = {
+    'Dentiste': 'dentistes-kenitra.html',
+    'Parodontologue': 'dentistes-kenitra.html',
+    'Cardiologie': 'cardiologues-kenitra.html',
+    'Ophtalmologie': 'ophtalmologues-kenitra.html',
+    'Traumatologie et orthopédie': 'traumatologues-kenitra.html',
+    'Neurologie et neurochirurgie': 'neurologues-kenitra.html',
+}
 AREAS = {
     'saknia': {'name': 'Saknia', 'url': 'dentistes-saknia-kenitra.html', 'districts': {'saknia', 'fouarat', 'fourat', 'saknia-fouarat'}},
     'centre-ville': {'name': 'Centre-ville', 'url': 'dentistes-centre-ville-kenitra.html', 'districts': {'centre-ville', 'maamora', 'mimosas', 'ville-haute'}},
@@ -26,7 +36,7 @@ def card(d):
         if d.get(key): links.append(f'<a class="secondary-action" href="{e(d[key])}" target="_blank" rel="noopener">{label}</a>')
     if links: lines.append(f'<div class="urgent-actions">{"".join(links)}</div>')
     search=' '.join([d['name'],d['specialty'],d.get('district',''),d.get('address','')])
-    return f'<article id="{e(d["id"])}" class="doctor-card reveal" data-doctor-id="{e(d["id"])}" data-status="active" data-search="{e(search)}"><h3>{e(d["name"])}</h3>{"".join(lines)}</article>'
+    return f'<article id="{e(d["id"])}" class="doctor-card reveal" data-doctor-id="{e(d["id"])}" data-entity-path="/p/{e(d["id"])}/" data-status="active" data-search="{e(search)}"><h3>{e(d["name"])}</h3>{"".join(lines)}</article>'
 
 def dentist_area(d):
     district = norm(d.get('district'))
@@ -66,7 +76,7 @@ def area_page(area, dentists):
 <script defer src="script.js?v=20260909-11"></script><script type="application/ld+json">{json.dumps(breadcrumb, ensure_ascii=False)}</script></body></html>\n'''
 
 def generate_dentist_areas(docs):
-    dentists = [d for d in docs if 'dentiste' in norm(f'{d.get("specialty", "")} {d.get("specialty_group", "")}')]
+    dentists = [d for d in docs if any(term in norm(f'{d.get("specialty", "")} {d.get("specialty_group", "")}') for term in ('dentiste', 'parodontologue'))]
     grouped = defaultdict(list)
     for dentist in dentists: grouped[dentist_area(dentist)].append(dentist)
     counts = {key: len(grouped[key]) for key in AREAS}
@@ -84,6 +94,33 @@ def generate_dentist_areas(docs):
     for key, area in AREAS.items():
         (ROOT / area['url']).write_text(area_page(area, grouped[key]))
     return len(dentists), counts, len(grouped['unmapped'])
+
+def complete_canonical_pages(docs):
+    """Append missing canonical records without touching existing card markup."""
+    updated = []
+    for group, filename in CANONICAL_PAGES.items():
+        for variant in ('', '-en', '-ar'):
+            path = ROOT / filename.replace('.html', f'{variant}.html')
+            if not path.exists():
+                continue
+            text = path.read_text()
+            existing = set(re.findall(r'data-entity-path="/p/([^/]+)/"', text))
+            items = [d for d in docs if d.get('specialty_group') == group and d['id'] not in existing and not d.get('sponsor')]
+            if not items:
+                continue
+            insertion = '\n'.join(card(d) for d in items)
+            list_start = text.find('data-directory-list')
+            section_end = text.find('</section>', list_start)
+            if list_start < 0 or section_end < 0:
+                continue
+            offset = text.rfind('</div>', list_start, section_end)
+            if offset < 0:
+                continue
+            text = text[:offset] + insertion + '\n' + text[offset:]
+            path.write_text(text)
+            updated.append(path.name)
+    return updated
+
 def main():
     docs=json.loads((ROOT/'data/doctors.json').read_text())['doctors']; groups=defaultdict(list)
     for d in docs: groups[d['specialty_group']].append(d)
@@ -98,5 +135,6 @@ def main():
         next_text=next_text.replace('Cette spécialité sera complétée progressivement après vérification des coordonnées.', 'Retrouvez les professionnels exerçant à Kénitra avec leurs coordonnées disponibles.')
         if next_text != text: path.write_text(next_text); changed.append(filename)
     dentist_total, dentist_counts, dentist_unmapped = generate_dentist_areas(docs)
-    print(json.dumps({'updated_pages':changed,'groups':{k:len(v) for k,v in groups.items()},'dentists': {'total': dentist_total, 'areas': dentist_counts, 'unmapped': dentist_unmapped}},ensure_ascii=False))
+    completed = complete_canonical_pages(docs)
+    print(json.dumps({'updated_pages':changed + completed,'groups':{k:len(v) for k,v in groups.items()},'dentists': {'total': dentist_total, 'areas': dentist_counts, 'unmapped': dentist_unmapped}},ensure_ascii=False))
 if __name__=='__main__': main()
