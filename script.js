@@ -4476,6 +4476,10 @@ const cleanGoogleReviewTimes = () => {
 };
 
 const ensureFloatingCallButton = () => {
+  if (document.querySelector(".directory-main") && !document.querySelector(".home-hero")) {
+    document.querySelectorAll(".floating-call, .floating-call-button").forEach((button) => button.remove());
+    return;
+  }
   if (document.querySelector(".mobile-sticky-actions")) {
     return;
   }
