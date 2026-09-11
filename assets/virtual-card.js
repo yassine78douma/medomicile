@@ -15,6 +15,19 @@
   translations.en.business='Download business card';
   translations.ar.business='تنزيل بطاقة الزيارة';
   const t = key => translations[lang][key] || ({instagram:'Instagram',facebook:'Facebook'})[key] || key;
+  const specialtyText = value => {
+    const key = String(value || '').trim().toLocaleLowerCase('fr-FR');
+    if (key.startsWith('spécialiste en gastroentérologie')) {
+      return lang === 'en' ? 'Gastroenterology, hepatology and diagnostic and therapeutic endoscopy specialist (Gastroscopy, Colonoscopy, Polypectomy, POEM, Submucosal Dissection, ERCP, Endoscopic Ultrasound).' : lang === 'ar' ? 'اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، استئصال السلائل، POEM، التشريح تحت المخاطية، CPRE والتنظير بالموجات فوق الصوتية).' : value;
+    }
+    const map = {
+      'chirurgien-dentiste': {en:'Dental Surgeon',ar:'جراح أسنان'},
+      'dentiste': {en:'Dentist',ar:'طبيب أسنان'},
+      'gastro-entérologue': {en:'Gastroenterologist',ar:'اختصاصي أمراض الجهاز الهضمي'},
+      'médecin généraliste': {en:'General Practitioner',ar:'طبيب عام'}
+    };
+    return map[key]?.[lang] || value;
+  };
   const dialog = document.getElementById('vc-dialog');
   const status = document.getElementById('vc-status');
   const selector = document.getElementById('vc-language');
@@ -24,6 +37,8 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.querySelectorAll('[data-i18n]').forEach(node => { node.textContent = t(node.dataset.i18n); });
+    const subtitle = document.querySelector('.vc-subtitle');
+    if (subtitle) subtitle.textContent = specialtyText(data.specialty || data.subtitle);
     const close = document.getElementById('vc-close');
     close.title = close.ariaLabel = t('close');
   };
@@ -41,9 +56,9 @@
   selector.addEventListener('change',resetPreview);
   async function prepareCard(){
     if(previewPromise)return previewPromise;
-    const category=lang==='fr'?undefined:t('type_'+data.type),partner=t('partner'),labels={responsible_person:t('responsible_person'),director:t('director'),resuscitation_doctor:t('resuscitation_doctor')};
+    const category=lang==='fr'?undefined:t('type_'+data.type),partner=t('partner'),labels={responsible_person:t('responsible_person'),director:t('director'),resuscitation_doctor:t('resuscitation_doctor'),urgency:t('open24h'),specialty:specialtyText(data.specialty || data.subtitle)};
     const version=new URL(document.querySelector('script[src*="/assets/virtual-card.js"]').src).searchParams.get('v')||'';
-    const pending=import('/assets/business-card.js?v='+version).then(module=>module.generateBusinessCard(data,{category,partner,labels}));
+    const pending=import('/assets/business-card.js?v='+version).then(module=>module.generateBusinessCard(data,{lang,category,partner,labels}));
     previewPromise=pending;
     try{
       const card=await pending;

@@ -8,14 +8,14 @@
   try { const response=await fetch('/data/virtual-card-index.json');if(!response.ok)throw new Error();entities=await response.json(); }
   catch { return; } // Original contacts stay usable when the index cannot load.
   const lang=document.documentElement.lang.split('-')[0];
-  const labels={fr:['Appeler','WhatsApp','Itinéraire','Partager'],en:['Call','WhatsApp','Directions','Share'],ar:['اتصال','واتساب','الاتجاهات','مشاركة']}[lang] || ['Appeler','WhatsApp','Itinéraire','Partager'];
+  const labels={fr:{actions:['Appeler','WhatsApp','Itinéraire','Partager'],preview:'Aperçu de la carte',download:'Télécharger la carte de visite',shareLink:'Partager le lien',close:'Fermer',partner:'PARTENAIRE MEDOMICILE',urgency:'Urgences 24h/24'},en:{actions:['Call','WhatsApp','Directions','Share'],preview:'Card preview',download:'Download business card',shareLink:'Share link',close:'Close',partner:'MEDOMICILE PARTNER',urgency:'24/7 Emergency'},ar:{actions:['اتصال','واتساب','الاتجاهات','مشاركة'],preview:'معاينة البطاقة',download:'تنزيل بطاقة الزيارة',shareLink:'مشاركة الرابط',close:'إغلاق',partner:'شريك ميدوميسيل',urgency:'طوارئ 24/24'}}[lang] || {actions:['Appeler','WhatsApp','Itinéraire','Partager'],preview:'Aperçu de la carte',download:'Télécharger la carte de visite',shareLink:'Partager le lien',close:'Fermer',partner:'PARTENAIRE MEDOMICILE',urgency:'Urgences 24h/24'};
   const norm=value=>String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]/gu,'');
   const byName=new Map();
   entities.forEach(e=>[e.name,...e.aliases].forEach(name=>{const key=norm(name);if(!byName.has(key))byName.set(key,[]);if(!byName.get(key).includes(e))byName.get(key).push(e);}));
   const byPath=new Map(entities.map(e=>[e.path,e]));
   const modal=document.createElement('dialog');
   modal.className='entity-share-modal';
-  modal.innerHTML='<div class="entity-share-modal__head"><h2>Aperçu de la carte</h2><button type="button" class="entity-share-modal__close" aria-label="Fermer">×</button></div><img class="entity-share-modal__preview" alt="Carte de visite Medomicile" hidden><div class="entity-share-modal__actions"><button type="button" data-share-link>Partager le lien</button><button type="button" data-share-download>Télécharger la carte de visite</button></div>';
+  modal.innerHTML=`<div class="entity-share-modal__head"><h2>${labels.preview}</h2><button type="button" class="entity-share-modal__close" aria-label="${labels.close}">×</button></div><img class="entity-share-modal__preview" alt="${labels.preview}" hidden><div class="entity-share-modal__actions"><button type="button" data-share-link>${labels.shareLink}</button><button type="button" data-share-download>${labels.download}</button></div>`;
   document.body.append(modal);
   const preview=modal.querySelector('.entity-share-modal__preview');
   const shareLinkButton=modal.querySelector('[data-share-link]');
@@ -25,7 +25,7 @@
   modal.querySelector('.entity-share-modal__close').addEventListener('click',closeModal);
   const openShareModal=async entity=>{
     activeEntity=entity;activeUrl=entity.share_url||entity.url;modal.showModal();preview.hidden=true;shareLinkButton.disabled=downloadButton.disabled=true;
-    try{const {blob}=await import('/assets/business-card.js').then(m=>m.generateBusinessCard(entity));activeBlobUrl=URL.createObjectURL(blob);preview.src=activeBlobUrl;preview.hidden=false;}
+    try{const {blob}=await import('/assets/business-card.js').then(m=>m.generateBusinessCard(entity,{lang,labels:{partner:labels.partner,urgency:labels.urgency}}));activeBlobUrl=URL.createObjectURL(blob);preview.src=activeBlobUrl;preview.hidden=false;}
     finally{shareLinkButton.disabled=downloadButton.disabled=false;}
   };
   shareLinkButton.addEventListener('click',async()=>{
@@ -67,10 +67,10 @@
     });
     holder.querySelectorAll('.urgent-actions,.featured-clinic__actions').forEach(n=>{if(!n.children.length)n.remove();});
     const grid=document.createElement('div');grid.className='entity-actions';
-    if(e.phones.length)grid.append(link(labels[0],'tel:'+e.phones[0].number,'phone'));
-    if(e.whatsapp)grid.append(link(labels[1],e.whatsapp,'message-circle','entity-action--whatsapp'));
-    if(e.google_maps_url)grid.append(link(labels[2],e.google_maps_url,'map-pin'));
-    const share=link(labels[3],'#'+e.slug,'share-2');
+    if(e.phones.length)grid.append(link(labels.actions[0],'tel:'+e.phones[0].number,'phone'));
+    if(e.whatsapp)grid.append(link(labels.actions[1],e.whatsapp,'message-circle','entity-action--whatsapp'));
+    if(e.google_maps_url)grid.append(link(labels.actions[2],e.google_maps_url,'map-pin'));
+    const share=link(labels.actions[3],'#'+e.slug,'share-2');
     share.addEventListener('click',event=>{event.preventDefault();openShareModal(e);});
     grid.append(share);
     holder.append(grid);
