@@ -1,13 +1,14 @@
 {
   "source": "Affiche officielle du Syndicat Regional des Pharmaciens d'Officine de la ville de Kenitra",
   "updatedAt": "2026-09-10T09:00:00+01:00",
-  "displayDate": "Du lundi 7 au vendredi 11 septembre 2026",
-  "displayDateEn": "Monday, September 7 to Friday, September 11, 2026",
-  "displayDateAr": "من الإثنين 7 إلى الجمعة 11 شتنبر 2026",
-  "title": "Pharmacies de garde a Kenitra - 7 au 11 septembre 2026",
+  "activeDate": "11 septembre 2026",
+  "displayDate": "Vendredi 11 septembre 2026",
+  "displayDateEn": "Friday, September 11, 2026",
+  "displayDateAr": "الجمعة 11 شتنبر 2026",
+  "title": "Pharmacies de garde a Kenitra - vendredi 11 septembre 2026",
   "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-09-07-11.jpeg",
   "updateFrequency": "daily-manual-from-official-poster",
-  "note": "Garde de nuit 24h/24 du lundi 7 au vendredi 11 septembre 2026. Appelez toujours la pharmacie avant de vous deplacer.",
+  "note": "Garde de nuit 24h/24 du vendredi 11 septembre 2026. Appelez toujours la pharmacie avant de vous deplacer.",
   "duty": {
     "day": [],
     "night": [

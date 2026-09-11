@@ -2865,7 +2865,9 @@ const renderPharmacies = (data) => {
 
   pharmacyDutyLists.forEach((container) => {
     const dutyType = container.dataset.pharmacyDutyList;
-    const pharmacies = data?.duty?.[dutyType] || [];
+    const pharmacies = (data?.duty?.[dutyType] || []).filter((pharmacy) =>
+      !data.activeDate || String(pharmacy.hours || "").includes(data.activeDate)
+    );
     container.replaceChildren();
     if (!pharmacies.length) {
       renderPharmacyEmpty(container, dutyType === "night" ? labels.noNight : labels.noDay);
@@ -2890,7 +2892,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde.json?v=20260910"];
+  const pharmacyDataUrls = ["data/pharmacies-garde.json?v=20260911"];
 
   try {
     let data = null;
