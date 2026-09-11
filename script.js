@@ -4308,7 +4308,8 @@ const renderSpecialtyProfessionalSlots = (section) => {
   const sponsorsByPosition = new Map(sponsors.map((sponsor) => [sponsor.position, sponsor]));
   let templateIndex = 0;
 
-  for (let index = 1; index <= 3; index += 1) {
+  const firstPosition = config.specialtySlug === "gastroenterologues" ? 0 : 1;
+  for (let index = firstPosition; index < firstPosition + 3; index += 1) {
     const sponsor = sponsorsByPosition.get(index);
     if (sponsor) {
       const card = document.createElement("article");

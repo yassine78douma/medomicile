@@ -90,7 +90,7 @@ def main():
         for key, value in previous.get('directory_enrichment', {}).items():
             if not doctor.get(key):
                 doctor[key] = value
-        for key in ('directory_enrichment', 'directory_sources', 'sponsor', 'featured', 'sponsored', 'premium', 'nameAr', 'nameEn'):
+        for key in ('source', 'directory_enrichment', 'directory_sources', 'sponsor', 'featured', 'sponsored', 'premium', 'nameAr', 'nameEn'):
             if key in previous:
                 doctor[key] = previous[key]
     overlap = sum(norm(d['name']) in old_names for d in doctors)
