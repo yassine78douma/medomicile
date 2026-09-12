@@ -1,0 +1,99 @@
+{
+  "source": "Affiche officielle du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
+  "updatedAt": "2025-12-13T00:00:00+01:00",
+  "activeDate": "13 et 14 décembre 2025",
+  "displayDate": "Samedi et dimanche 13 et 14 décembre 2025",
+  "displayDateEn": "Saturday and Sunday, December 13 and 14, 2025",
+  "displayDateAr": "السبت والأحد 13 و14 دجنبر 2025",
+  "title": "Pharmacies de garde à Kénitra - 13 et 14 décembre 2025",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra-2025-12-13.jpg",
+  "updateFrequency": "historical-official-poster",
+  "note": "Archive historique issue de l'affiche officielle fournie à Medomicile.",
+  "duty": {
+    "day": [],
+    "night": [
+      {
+        "id": "pharmacie-tiddas",
+        "directoryId": "pharmacie-tidas",
+        "name": "Pharmacie Tiddas",
+        "nameEn": "Tiddas Pharmacy",
+        "nameAr": "صيدلية تيداس",
+        "phone": "05 37 35 09 21",
+        "district": "Ouled Oujih",
+        "districtEn": "Ouled Oujih",
+        "districtAr": "أولاد أوجيه",
+        "address": "Bloc 30, Ouled Oujih, près du café Tiddas et du souk Ouled Oujih",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Tiddas+Bloc+30+Ouled+Oujih+Kenitra",
+        "hours": "Garde 24h/24 - 13 et 14 décembre 2025",
+        "hoursEn": "24/24 duty - December 13 and 14, 2025",
+        "hoursAr": "حراسة 24/24 - 13 و14 دجنبر 2025",
+        "services": [],
+        "badge": "De garde",
+        "badgeEn": "On duty",
+        "badgeAr": "حراسة"
+      }
+    ]
+  },
+  "directory": [
+    {
+      "id": "pharmacie-train-medina",
+      "directoryId": "pharmacie-train-medina",
+      "name": "Pharmacie Train Medina",
+      "nameEn": "Train Medina Pharmacy",
+      "nameAr": "صيدلية قطار المدينة",
+      "phone": "05 37 36 64 22",
+      "district": "Medina",
+      "districtEn": "Medina",
+      "districtAr": "المدينة",
+      "address": "Rue 24, n° 37, près de la gare Medina",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Train+Medina+Kénitra",
+      "hours": "Autres pharmacie de garde - 13 et 14 décembre 2025",
+      "services": []
+    },
+    {
+      "id": "pharmacie-moustachfa-al-idrissi",
+      "directoryId": "pharmacie-moustachfa-al-idrissi",
+      "name": "Pharmacie Moustachfa Al Idrissi",
+      "nameEn": "Moustachfa Al Idrissi Pharmacy",
+      "nameAr": "صيدلية مستشفى الإدريسي",
+      "phone": "05 37 37 32 76",
+      "district": "Ville Nouvelle",
+      "districtEn": "Ville Nouvelle",
+      "districtAr": "المدينة الجديدة",
+      "address": "N° 1, Cité Maamora, près de l'Hôpital Idrissi, Diour El Askari, route de la faculté",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Moustachfa+Al+Idrissi+Kénitra",
+      "hours": "Autres pharmacie de garde - 13 et 14 décembre 2025",
+      "services": []
+    },
+    {
+      "id": "pharmacie-chiboub",
+      "directoryId": "pharmacie-chiboub",
+      "name": "Pharmacie Chiboub",
+      "nameEn": "Chiboub Pharmacy",
+      "nameAr": "صيدلية شيبوب",
+      "phone": "06 09 27 28 83",
+      "district": "Bir Rami Industrielle",
+      "districtEn": "Bir Rami Industrielle",
+      "districtAr": "بير الرامي الصناعية",
+      "address": "Bir Rami Ouest, Jnan 4",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Chiboub+Bir+Rami+Ouest+Kénitra",
+      "hours": "Autres pharmacie de garde - 13 et 14 décembre 2025",
+      "services": []
+    },
+    {
+      "id": "pharmacie-hay-rabii",
+      "directoryId": "pharmacie-hay-rabii",
+      "name": "Pharmacie Hay Rabii",
+      "nameEn": "Hay Rabii Pharmacy",
+      "nameAr": "صيدلية حي الربيع",
+      "phone": "05 38 15 27 97",
+      "district": "Saknia",
+      "districtEn": "Saknia",
+      "districtAr": "الساكنية",
+      "address": "N° 5550, rue 202, Hay Rabii",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Pharmacie+Hay+Rabii+Saknia+Kénitra",
+      "hours": "Autres pharmacie de garde - 13 et 14 décembre 2025",
+      "services": []
+    }
+  ]
+}
