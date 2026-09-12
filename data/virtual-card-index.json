@@ -41,7 +41,9 @@
     "qr": "/assets/cards/qr/p-dr-mouad-daoudi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. معاذ داودي"
+    ],
     "invalid_phones": []
   },
   {
@@ -90,7 +92,9 @@
     "qr": "/assets/cards/qr/p-dr-younes-ouahmane.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. يونس واحمان"
+    ],
     "invalid_phones": []
   },
   {
@@ -139,7 +143,9 @@
     "qr": "/assets/cards/qr/p-dr-hanane-el-mansouri.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. حنان المنصوري"
+    ],
     "invalid_phones": []
   },
   {
@@ -188,7 +194,9 @@
     "qr": "/assets/cards/qr/p-dr-najat-essahli.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. نجاة السهلي"
+    ],
     "invalid_phones": []
   },
   {
@@ -237,7 +245,9 @@
     "qr": "/assets/cards/qr/p-dr-mohamed-belmahi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. محمد بلماحي"
+    ],
     "invalid_phones": []
   },
   {
@@ -282,7 +292,9 @@
     "qr": "/assets/cards/qr/p-dr-imane-ferrassi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. إيمان فراسي"
+    ],
     "invalid_phones": []
   },
   {
@@ -331,7 +343,9 @@
     "qr": "/assets/cards/qr/p-dr-alia-mrani.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. عالية مراني"
+    ],
     "invalid_phones": []
   },
   {
@@ -376,7 +390,9 @@
     "qr": "/assets/cards/qr/p-dr-soumiya-harbouz.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. سمية حربوز"
+    ],
     "invalid_phones": []
   },
   {
@@ -421,7 +437,9 @@
     "qr": "/assets/cards/qr/p-dr-adil-touzani.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. عادل توزاني"
+    ],
     "invalid_phones": []
   },
   {
@@ -466,7 +484,9 @@
     "qr": "/assets/cards/qr/p-dr-jabir-sghiar.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. جابر صغير"
+    ],
     "invalid_phones": []
   },
   {
@@ -515,7 +535,9 @@
     "qr": "/assets/cards/qr/p-dr-mhamed-et-taghy.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. محمد التاغي"
+    ],
     "invalid_phones": []
   },
   {
@@ -564,7 +586,9 @@
     "qr": "/assets/cards/qr/p-dr-abdelmajid-belghiti.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. عبد المجيد بلغيثي"
+    ],
     "invalid_phones": []
   },
   {
@@ -609,7 +633,9 @@
     "qr": "/assets/cards/qr/p-dr-rachid-agdach.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. رشيد أكداح"
+    ],
     "invalid_phones": []
   },
   {
@@ -703,7 +729,9 @@
     "qr": "/assets/cards/qr/p-dr-sourat-abderrahim.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور عبد الرحيم صورات"
+    ],
     "invalid_phones": []
   },
   {
@@ -748,7 +776,9 @@
     "qr": "/assets/cards/qr/p-dr-chafik-sader.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور شفيق صادر"
+    ],
     "invalid_phones": []
   },
   {
@@ -793,7 +823,9 @@
     "qr": "/assets/cards/qr/p-dr-bahia-menebhi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة بهية منبهي"
+    ],
     "invalid_phones": []
   },
   {
@@ -885,7 +917,9 @@
     "qr": "/assets/cards/qr/p-dr-hanane-el-achhab.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة حنان الأشهب"
+    ],
     "invalid_phones": []
   },
   {
@@ -977,7 +1011,9 @@
     "qr": "/assets/cards/qr/p-dr-amine-el-ouazzani.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور أمين الوزاني"
+    ],
     "invalid_phones": []
   },
   {
@@ -1022,7 +1058,9 @@
     "qr": "/assets/cards/qr/p-dr-nisrine-azib.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة نسرين عازب"
+    ],
     "invalid_phones": []
   },
   {
@@ -1067,7 +1105,9 @@
     "qr": "/assets/cards/qr/p-dr-dania-srifi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة دانية صريفي"
+    ],
     "invalid_phones": []
   },
   {
@@ -1112,7 +1152,9 @@
     "qr": "/assets/cards/qr/p-dr-zakaria-abdeljalil.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور زكرياء عبد الجليل"
+    ],
     "invalid_phones": []
   },
   {
@@ -1157,7 +1199,9 @@
     "qr": "/assets/cards/qr/p-dr-ouassima-berroho.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة وسيمة بروهو"
+    ],
     "invalid_phones": []
   },
   {
@@ -1202,7 +1246,9 @@
     "qr": "/assets/cards/qr/p-dr-soukaina-berrouine.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة سكينة بروين"
+    ],
     "invalid_phones": []
   },
   {
@@ -1247,7 +1293,9 @@
     "qr": "/assets/cards/qr/p-dr-amal-lachhab.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتورة أمال الأشهب"
+    ],
     "invalid_phones": []
   },
   {
@@ -1292,7 +1340,9 @@
     "qr": "/assets/cards/qr/p-dr-brahim-mouline.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور إبراهيم مولين"
+    ],
     "invalid_phones": []
   },
   {
@@ -1337,7 +1387,9 @@
     "qr": "/assets/cards/qr/p-dr-badr-chacha.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور بدر شاشا"
+    ],
     "invalid_phones": []
   },
   {
@@ -1382,7 +1434,9 @@
     "qr": "/assets/cards/qr/p-dr-khalid-slaoui.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "الدكتور خالد السلاوي"
+    ],
     "invalid_phones": []
   },
   {
@@ -3741,7 +3795,9 @@
     "qr": "/assets/cards/qr/p-dr-mehdi-omar-krimech.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. المهدي عمر كريميش"
+    ],
     "invalid_phones": []
   },
   {
@@ -3953,7 +4009,9 @@
     "qr": "/assets/cards/qr/p-dr-omar-lamzaf.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. عمر لمزاف"
+    ],
     "invalid_phones": []
   },
   {
@@ -4084,7 +4142,9 @@
     "qr": "/assets/cards/qr/p-dr-brahim-yaagoubi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. إبراهيم يعقوبي"
+    ],
     "invalid_phones": []
   },
   {
@@ -4129,7 +4189,9 @@
     "qr": "/assets/cards/qr/p-dr-abdelhakim-geanah.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. عبد الحكيم جنة"
+    ],
     "invalid_phones": []
   },
   {
@@ -4214,7 +4276,9 @@
     "qr": "/assets/cards/qr/p-dr-badreddine-dehayni.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. بدر الدين دهيني"
+    ],
     "invalid_phones": []
   },
   {
@@ -4259,7 +4323,9 @@
     "qr": "/assets/cards/qr/p-dr-mohammed-amine-haouzi.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. محمد أمين حوزي"
+    ],
     "invalid_phones": []
   },
   {
@@ -4304,7 +4370,9 @@
     "qr": "/assets/cards/qr/p-dr-el-yazid-houass.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. اليزيد حواس"
+    ],
     "invalid_phones": []
   },
   {
@@ -4396,7 +4464,9 @@
     "qr": "/assets/cards/qr/p-dr-el-khalil-belkourchia.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. الخليل بلكورشية"
+    ],
     "invalid_phones": []
   },
   {
@@ -4441,7 +4511,9 @@
     "qr": "/assets/cards/qr/p-dr-mohamed-el-otmani.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. محمد العثماني"
+    ],
     "invalid_phones": []
   },
   {
@@ -4490,7 +4562,9 @@
     "qr": "/assets/cards/qr/p-dr-mariem-safrioui.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. الصفريوي مريم"
+    ],
     "invalid_phones": []
   },
   {
@@ -16437,7 +16511,9 @@
     "qr": "/assets/cards/qr/p-dr-mohammed-chetto.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. محمد شتو"
+    ],
     "invalid_phones": []
   },
   {
@@ -16524,7 +16600,9 @@
     "qr": "/assets/cards/qr/p-dr-karim-el-khadime.png",
     "indexable": true,
     "source": "doctors.json",
-    "aliases": [],
+    "aliases": [
+      "د. كريم الخديم"
+    ],
     "invalid_phones": []
   },
   {
@@ -16573,7 +16651,9 @@
     "qr": "/assets/cards/qr/e-clinique-internationale-de-kenitra.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "المصحة الدولية بالقنيطرة"
+    ],
     "invalid_phones": []
   },
   {
@@ -16613,7 +16693,9 @@
     "qr": "/assets/cards/qr/e-centre-hospitalier-provincial-el-azemmouri.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "المستشفى الإقليمي الزموري"
+    ],
     "invalid_phones": []
   },
   {
@@ -16658,7 +16740,9 @@
     "qr": "/assets/cards/qr/e-akdital-international-hospital-kenitra.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مستشفى أكديطال الدولي - القنيطرة"
+    ],
     "invalid_phones": []
   },
   {
@@ -16707,7 +16791,9 @@
     "qr": "/assets/cards/qr/e-polyclinique-de-kenitra.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "المصحة المتعددة التخصصات بالقنيطرة"
+    ],
     "invalid_phones": []
   },
   {
@@ -16752,7 +16838,9 @@
     "qr": "/assets/cards/qr/e-polyclinique-du-gharb.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة الغرب"
+    ],
     "invalid_phones": []
   },
   {
@@ -16801,7 +16889,9 @@
     "qr": "/assets/cards/qr/e-noor-clinic.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة النور"
+    ],
     "invalid_phones": []
   },
   {
@@ -16846,7 +16936,9 @@
     "qr": "/assets/cards/qr/e-clinique-val-fleury.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة فال فلوري"
+    ],
     "invalid_phones": []
   },
   {
@@ -16891,7 +16983,9 @@
     "qr": "/assets/cards/qr/e-mimosas-clinic.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة الميموزا"
+    ],
     "invalid_phones": []
   },
   {
@@ -16940,7 +17034,9 @@
     "qr": "/assets/cards/qr/e-clinique-anoual.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة أنوال"
+    ],
     "invalid_phones": []
   },
   {
@@ -16985,7 +17081,9 @@
     "qr": "/assets/cards/qr/e-clinique-sebou.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة سبو"
+    ],
     "invalid_phones": []
   },
   {
@@ -17030,7 +17128,9 @@
     "qr": "/assets/cards/qr/e-polyclinique-cnss-kenitra.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة"
+    ],
     "invalid_phones": []
   },
   {
@@ -17075,7 +17175,9 @@
     "qr": "/assets/cards/qr/e-clinique-c-c-o-t-k.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة جراحة العظام والرضوض بالقنيطرة"
+    ],
     "invalid_phones": []
   },
   {
@@ -17120,7 +17222,9 @@
     "qr": "/assets/cards/qr/e-clinique-maamora.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة المعمورة"
+    ],
     "invalid_phones": []
   },
   {
@@ -17165,7 +17269,9 @@
     "qr": "/assets/cards/qr/e-clinique-doncologie-ibn-sina.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [],
+    "aliases": [
+      "مصحة ابن سينا لطب الأورام"
+    ],
     "invalid_phones": []
   },
   {
