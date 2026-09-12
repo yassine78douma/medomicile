@@ -31,7 +31,7 @@ jobs:
       - run: python scripts/test-virtual-cards.py
       - name: Commit generated artifacts
         run: |
-          git add p e contacts assets/cards data/virtual-card-index.json data/virtual-card-report.json data/card-directory-report.json sitemap-cards.xml script.js '*.html'
+          git add p e assets/cards data/virtual-card-index.json data/virtual-card-report.json data/card-directory-report.json sitemap-cards.xml script.js '*.html'
           if git diff --cached --quiet; then exit 0; fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
