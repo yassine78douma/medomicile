@@ -24,7 +24,7 @@ AREAS = {
 }
 def e(v): return html.escape(str(v or ''), quote=True)
 def norm(v): return re.sub(r'[^a-z0-9]+', '-', str(v or '').lower().replace('â','a').replace('à','a').replace('é','e').replace('è','e').replace('ê','e').replace('î','i').replace('ô','o').replace('û','u')).strip('-')
-def card(d):
+def card(d, lang='fr'):
     lines=[f'<p class="doctor-line"><span aria-hidden="true">✚</span><span>{e(d["specialty"])}</span></p>']
     if d.get('subspecialty'): lines.append(f'<p class="doctor-line"><span aria-hidden="true">◇</span><span>{e(d["subspecialty"])}</span></p>')
     if d.get('district'): lines.append(f'<p class="doctor-line"><span aria-hidden="true">⌖</span><span>{e(d["district"])}</span></p>')
@@ -32,7 +32,11 @@ def card(d):
     for phone in d.get('phone',[]): lines.append(f'<p class="doctor-line"><span aria-hidden="true">☎</span><a dir="ltr" href="tel:{e(re.sub(r"[^0-9+]", "", phone))}">{e(phone)}</a></p>')
     if d.get('whatsapp'): lines.append(f'<p class="doctor-line"><span aria-hidden="true">◔</span><a dir="ltr" href="https://wa.me/{e(re.sub(r"[^0-9]", "", d["whatsapp"]))}">{e(d["whatsapp"])}</a></p>')
     links=[]
-    for key,label in [('google_maps','Itinéraire'),('instagram','Instagram'),('facebook','Facebook')]:
+    labels = {'fr': {'google_maps': 'Itinéraire', 'instagram': 'Instagram', 'facebook': 'Facebook'},
+              'en': {'google_maps': 'Directions', 'instagram': 'Instagram', 'facebook': 'Facebook'},
+              'ar': {'google_maps': 'الاتجاهات', 'instagram': 'Instagram', 'facebook': 'Facebook'}}[lang]
+    for key in ('google_maps','instagram','facebook'):
+        label = labels[key]
         if d.get(key): links.append(f'<a class="secondary-action" href="{e(d[key])}" target="_blank" rel="noopener">{label}</a>')
     if links: lines.append(f'<div class="urgent-actions">{"".join(links)}</div>')
     search=' '.join([d['name'],d['specialty'],d.get('district',''),d.get('address','')])
@@ -96,29 +100,59 @@ def generate_dentist_areas(docs):
     return len(dentists), counts, len(grouped['unmapped'])
 
 def complete_canonical_pages(docs):
-    """Append missing canonical records without touching existing card markup."""
+    """Keep every language variant aligned with the already-generated FR page.
+
+    FR is the existing page source for membership/order.  The records still come
+    from doctors.json, keyed by stable id; translated pages never use display
+    names as identifiers and are never allowed to fall back to a pending page.
+    """
     updated = []
-    for group, filename in CANONICAL_PAGES.items():
-        for variant in ('', '-en', '-ar'):
-            path = ROOT / filename.replace('.html', f'{variant}.html')
+    by_id = {d['id']: d for d in docs}
+    for fr_path in sorted(ROOT.glob('*-kenitra.html')):
+        if fr_path.name.endswith(('-en.html', '-ar.html')):
+            continue
+        fr_text = fr_path.read_text()
+        fr_ids = re.findall(r'data-entity-path="/p/([^/]+)/"', fr_text)
+        if not fr_ids:
+            continue
+        for suffix, lang in (('-en', 'en'), ('-ar', 'ar')):
+            path = fr_path.with_name(fr_path.stem + suffix + fr_path.suffix)
             if not path.exists():
                 continue
             text = path.read_text()
             existing = set(re.findall(r'data-entity-path="/p/([^/]+)/"', text))
-            items = [d for d in docs if d.get('specialty_group') == group and d['id'] not in existing and not d.get('sponsor')]
-            if not items:
-                continue
-            insertion = '\n'.join(card(d) for d in items)
-            list_start = text.find('data-directory-list')
-            section_end = text.find('</section>', list_start)
-            if list_start < 0 or section_end < 0:
-                continue
-            offset = text.rfind('</div>', list_start, section_end)
-            if offset < 0:
-                continue
-            text = text[:offset] + insertion + '\n' + text[offset:]
-            path.write_text(text)
-            updated.append(path.name)
+            missing = [by_id[doctor_id] for doctor_id in fr_ids
+                       if doctor_id in by_id and doctor_id not in existing and not by_id[doctor_id].get('sponsor')]
+            if missing:
+                insertion = '\n'.join(card(d, lang) for d in missing)
+                list_start = text.find('data-directory-list')
+                if list_start >= 0:
+                    section_end = text.find('</section>', list_start)
+                    offset = text.rfind('</div>', list_start, section_end)
+                    if section_end >= 0 and offset >= 0:
+                        text = text[:offset] + insertion + '\n' + text[offset:]
+                else:
+                    pending = re.search(r'\s*<section class="pending-page section reveal">[\s\S]*?</section>', text)
+                    if pending:
+                        section_title = {'en': 'Doctors in Kénitra', 'ar': 'الأطباء في القنيطرة'}[lang]
+                        section = ('\n      <section class="directory section" aria-labelledby="directory-list-title">'
+                                   f'<h2 id="directory-list-title" class="sr-only">{section_title}</h2>'
+                                   '<div class="doctor-grid" data-directory-list>\n'
+                                   + '\n'.join(card(d, lang) for d in missing)
+                                   + '\n</div></section>')
+                        text = text[:pending.start()] + section + text[pending.end():]
+                    else:
+                        section_title = {'en': 'Doctors in Kénitra', 'ar': 'الأطباء في القنيطرة'}[lang]
+                        section = ('\n      <section class="directory section" aria-labelledby="directory-list-title">'
+                                   f'<h2 id="directory-list-title" class="sr-only">{section_title}</h2>'
+                                   '<div class="doctor-grid" data-directory-list>\n'
+                                   + '\n'.join(card(d, lang) for d in missing)
+                                   + '\n</div></section>\n')
+                        main_end = text.rfind('</main>')
+                        if main_end >= 0:
+                            text = text[:main_end] + section + text[main_end:]
+                path.write_text(text)
+                updated.append(path.name)
     return updated
 
 def main():
