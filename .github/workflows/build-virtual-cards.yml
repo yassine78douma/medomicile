@@ -34,4 +34,19 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git commit -m 'chore: rebuild virtual cards [skip ci]'
-          git push
+          # The doctor/pharmacy workflows can update main while this build is running.
+          # Rebase the generated commit before pushing instead of failing with exit 128.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "Push attempt ${attempt} failed; retrying after remote refresh."
+            sleep 2
+          done
+          echo "Unable to publish generated artifacts after 3 attempts."
+          exit 1
