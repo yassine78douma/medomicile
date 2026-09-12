@@ -9,6 +9,7 @@ on:
       - data/radiology-centers.json
       - data/laboratoires-kenitra.json
       - data/pharmacies-kenitra.json
+      - data/virtual-card-index.json
       - scripts/*cards*
       - scripts/build-card-directories.py
       - .github/workflows/build-virtual-cards.yml
