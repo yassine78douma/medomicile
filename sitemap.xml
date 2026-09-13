@@ -263,11 +263,28 @@
   <url>
     <loc>https://medomicile.com/articles.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/articles.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/articles-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/articles-ar.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/articles.html" />
     <lastmod>2026-09-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://medomicile.com/articles-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/articles.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/articles-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/articles-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/articles.html" />
+  </url>
+  <url>
+    <loc>https://medomicile.com/articles-ar.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/articles.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://medomicile.com/articles-en.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/articles-ar.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://medomicile.com/articles.html" />
+  </url>
+  <url><loc>https://medomicile.com/hypertension-ar.html</loc><xhtml:link rel="alternate" hreflang="ar" href="https://medomicile.com/hypertension-ar.html" /><lastmod>2026-09-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url>
     <loc>https://medomicile.com/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="fr" href="https://medomicile.com/contact.html" />
