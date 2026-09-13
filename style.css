@@ -8310,9 +8310,19 @@ html[dir="rtl"] .specialty-professional-slot__link {
   }
 
   :root:not([data-theme="light"]) .specialty-professional-slot__whatsapp:hover,
-  :root:not([data-theme="light"]) .specialty-professional-slot__whatsapp:focus-visible {
+:root:not([data-theme="light"]) .specialty-professional-slot__whatsapp:focus-visible {
     color: #ffffff;
     background: #168b43;
     border-color: #168b43;
   }
 }
+
+/* Arabic articles reuse the French article components with RTL typography. */
+.arabic-editorial h1,
+.arabic-editorial h2,
+.arabic-editorial h3,
+.arabic-editorial p,
+.arabic-editorial a { font-family: Tajawal, Arial, sans-serif; }
+.arabic-editorial .blood-lang-panel p,
+.arabic-editorial .article-card p { line-height: 1.9; }
+.arabic-editorial .blood-article-media img { aspect-ratio: 1969 / 799; height: auto; object-fit: contain; }
