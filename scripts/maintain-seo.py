@@ -54,7 +54,8 @@ def improve_description(text):
     if language == "en":
         replacement = f"Find {heading} with practical information, addresses and phone details in Kenitra. Confirm availability before travelling."
     elif language == "ar":
-        replacement = f"اكتشف {heading} في القنيطرة مع المعلومات العملية والعناوين وأرقام الهاتف المتاحة. يرجى التأكد قبل التنقل."
+        location_suffix = "" if "في القنيطرة" in heading else " في القنيطرة"
+        replacement = f"اكتشف {heading}{location_suffix} مع المعلومات العملية والعناوين وأرقام الهاتف المتاحة. يرجى التأكد قبل التنقل."
     else:
         replacement = f"Retrouvez {heading} à Kénitra avec informations pratiques, adresses et numéros utiles. Vérifiez les disponibilités avant votre déplacement."
     return re.sub(
