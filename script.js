@@ -2892,7 +2892,7 @@ const renderPharmacies = (data) => {
 const loadPharmacies = async () => {
   if (!pharmacyDutyLists.length && !pharmacyDirectoryList) return;
 
-  const pharmacyDataUrls = ["data/pharmacies-garde-2026-09-19-20.json?v=20260919", "data/pharmacies-garde.json?v=20260919"];
+  const pharmacyDataUrls = ["data/pharmacies-garde-2026-09-21-25.json?v=20260921", "data/pharmacies-garde.json?v=20260921"];
 
   try {
     let data = null;
