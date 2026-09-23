@@ -2865,9 +2865,17 @@ const renderPharmacies = (data) => {
 
   pharmacyDutyLists.forEach((container) => {
     const dutyType = container.dataset.pharmacyDutyList;
-    const pharmacies = (data?.duty?.[dutyType] || []).filter((pharmacy) =>
-      !data.activeDate || String(pharmacy.hours || "").includes(data.activeDate)
-    );
+    const todayLabel = new Intl.DateTimeFormat("fr-FR", {
+      timeZone: "Africa/Casablanca",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    }).format(new Date());
+    const pharmacies = (data?.duty?.[dutyType] || []).filter((pharmacy) => {
+      if (!data.activeDate) return true;
+      if (String(pharmacy.hours || "").includes(data.activeDate)) return true;
+      return String(data.activeDate).includes(" au ") && String(pharmacy.hours || "").includes(todayLabel);
+    });
     container.replaceChildren();
     if (!pharmacies.length) {
       renderPharmacyEmpty(container, dutyType === "night" ? labels.noNight : labels.noDay);
