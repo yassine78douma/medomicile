@@ -4614,7 +4614,24 @@ if ("IntersectionObserver" in window) {
   revealAll();
 }
 
+const initArticleAuthorLinks = () => {
+  document.querySelectorAll(".medical-article__author").forEach((author) => {
+    const name = author.querySelector("strong")?.textContent?.trim();
+    if (name !== "Dr Wiame Fimoud" || author.querySelector(".author-linkedin")) return;
+    const link = document.createElement("a");
+    link.className = "author-linkedin";
+    link.href = "https://www.linkedin.com/in/wiame-fimoud-b9425120a/";
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", "Profil LinkedIn de Dr Wiame Fimoud");
+    const label = document.documentElement.lang === "en" ? "View LinkedIn profile" : "Voir le profil LinkedIn";
+    link.innerHTML = `<span class="author-linkedin__icon" aria-hidden="true">in</span><span>${label}</span>`;
+    author.append(link);
+  });
+};
+
 updateMediaScale();
+initArticleAuthorLinks();
 loadPharmacies();
 loadLaboratories();
 renderCenters();

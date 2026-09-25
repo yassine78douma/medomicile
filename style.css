@@ -2370,6 +2370,7 @@ h1 {
   background: var(--panel);
   box-shadow: var(--shadow);
 }
+.medical-article__hero-image { display: block; width: 100%; max-height: 360px; object-fit: cover; margin: 0 0 24px; border-radius: var(--radius); }
 
 .medical-article__hero {
   background: linear-gradient(135deg, rgba(15, 76, 129, 0.1), rgba(198, 169, 105, 0.14));
@@ -2391,6 +2392,9 @@ h1 {
 .medical-article__warning { padding: 16px; border-left: 4px solid #c62828; border-radius: 12px; background: rgba(198, 40, 40, 0.08); }
 .medical-article__author { border-color: rgba(198, 169, 105, 0.5); }
 .medical-article__author strong { display: block; margin-top: 5px; color: var(--blue-950); font-size: 1.25rem; }
+.author-linkedin { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 9px 13px; border: 1px solid rgba(10, 102, 194, .35); border-radius: 999px; color: var(--blue-950); background: rgba(10, 102, 194, .06); font-weight: 800; text-decoration: none; }
+.author-linkedin__icon { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 5px; color: #fff; background: #0a66c2; font-size: .78rem; line-height: 1; }
+.author-linkedin:hover, .author-linkedin:focus-visible { color: #0a66c2; border-color: #0a66c2; background: rgba(10, 102, 194, .12); }
 .medical-article__disclaimer { color: var(--muted); font-size: .92rem; }
 [dir="rtl"] .medical-article__body ul,
 [dir="rtl"] .medical-article__body ol { padding-right: 24px; padding-left: 0; }
