@@ -2357,6 +2357,8 @@ h1 {
   display: grid;
   gap: 22px;
   max-width: 900px;
+  min-width: 0;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -2364,6 +2366,9 @@ h1 {
 .medical-article__body,
 .medical-article__author,
 .medical-article__disclaimer {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
   padding: clamp(18px, 4vw, 32px);
   border: 1px solid var(--line);
   border-radius: var(--radius);

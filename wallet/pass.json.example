@@ -1,0 +1,34 @@
+{
+  "formatVersion": 1,
+  "passTypeIdentifier": "pass.com.medomicile.card",
+  "serialNumber": "medomicile-official-v1",
+  "teamIdentifier": "REPLACE_WITH_APPLE_TEAM_ID",
+  "organizationName": "Medomicile",
+  "description": "Carte officielle Medomicile",
+  "logoText": "Medomicile",
+  "foregroundColor": "rgb(255, 255, 255)",
+  "backgroundColor": "rgb(15, 42, 67)",
+  "labelColor": "rgb(224, 194, 122)",
+  "generic": {
+    "primaryFields": [
+      {
+        "key": "message",
+        "label": "",
+        "value": "Votre santé, toujours à proximité."
+      }
+    ],
+    "secondaryFields": [
+      {
+        "key": "website",
+        "label": "Site",
+        "value": "medomicile.com"
+      }
+    ]
+  },
+  "barcode": {
+    "format": "PKBarcodeFormatQR",
+    "message": "https://medomicile.com/",
+    "messageEncoding": "iso-8859-1",
+    "altText": "medomicile.com"
+  }
+}

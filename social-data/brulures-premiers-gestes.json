@@ -1,0 +1,17 @@
+{
+  "slug": "brulures-premiers-gestes",
+  "title": "Brûlures domestiques",
+  "subtitle": "Les premiers gestes à faire à la maison",
+  "author": "Dr Wiame Fimoud",
+  "language": "fr",
+  "article_url": "https://medomicile.com/brulures-premiers-gestes.html",
+  "status": "DRAFT",
+  "slides": [
+    {"kind":"cover","title":"BRÛLURES DOMESTIQUES","body":"Les premiers gestes à faire à la maison","source_section":"medical-article__hero"},
+    {"kind":"reflexes","title":"PREMIERS RÉFLEXES","body":["Éloigner la personne de la source de chaleur.","Refroidir la zone brûlée sous une eau courante fraîche pendant 20 min.","Retirer les bijoux et protéger la zone."],"source_section":"Premiers réflexes"},
+    {"kind":"errors","title":"ERREURS À ÉVITER","body":["Pas de glace directement sur la brûlure.","Ne pas arracher un vêtement collé.","Pas de dentifrice, beurre, farine ou remède maison.","Ne pas percer les cloques."],"source_section":"Erreurs à éviter"},
+    {"kind":"urgent","title":"QUAND CONSULTER EN URGENCE ?","body":["Brûlure étendue ou profonde, avec peau noire ou insensible.","Visage, organes génitaux ou articulation importante.","Produit chimique ou électricité.","Difficultés respiratoires ou altération de la conscience."],"source_section":"Quand consulter en urgence ?"},
+    {"kind":"cta","title":"La prévention commence par un geste,\nla sécurité par un réflexe.","body":"Lire l’article complet sur medomicile.com","source_section":"Conclusion"}
+  ],
+  "hashtags": ["#Medomicile","#Santé","#Kenitra","#Maroc","#PremiersSecours","#Brulure","#ConseilsSante"]
+}
