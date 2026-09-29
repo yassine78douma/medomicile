@@ -1,0 +1,27 @@
+{
+  "source": "Affiche officielle du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
+  "updatedAt": "2026-09-29T10:00:00+01:00",
+  "activeDate": "28 septembre au 2 octobre 2026",
+  "displayDate": "Du lundi 28 septembre au vendredi 2 octobre 2026",
+  "displayDateEn": "Monday, September 28 to Friday, October 2, 2026",
+  "displayDateAr": "من الاثنين 28 شتنبر إلى الجمعة 2 أكتوبر 2026",
+  "title": "Pharmacies de garde à Kénitra - 28 septembre au 2 octobre 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-09-28-10-02.jpeg",
+  "updateFrequency": "official-poster",
+  "note": "Garde de nuit 24h/24 du lundi 28 septembre au vendredi 2 octobre 2026. Appelez toujours la pharmacie avant de vous déplacer.",
+  "duty": {
+    "day": [],
+    "night": [
+      {"id":"pharmacie-azharoun","name":"Pharmacie Azharoun","nameAr":"صيدلية أزهرون","phone":"05 37 35 00 20","district":"Kénitra","address":"Immeuble Azharoun n°363, près de la pharmacie centrale, après 200 m de l’école Séndiad","hours":"Garde de nuit 24h/24 - lundi 28 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-moussa","name":"Pharmacie Moussa","nameAr":"صيدلية موسى","phone":"05 37 38 01 72","district":"Saknia","address":"210 Ouled Arfa, Hay Al Andalous, douar Foua Ouled Arfa, Saknia","hours":"Garde de nuit 24h/24 - lundi 28 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-al-feline","name":"Pharmacie Al Feline","nameAr":"صيدلية الفلين","phone":"06 38 81 48 67","district":"Bir Rami Ouest","address":"Jnan 4, Bir Rami-Ouest, derrière la salle couverte, rue 25, sur la route de l’ISTA, derrière la formation Tital Pneus","hours":"Garde de nuit 24h/24 - mardi 29 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-wargane","name":"Pharmacie Wargane","nameAr":"صيدلية ورقان","phone":"07 74 01 64 60","district":"El Fourarat","address":"Lotissement Hadj Mansour n°153, secteur D, El Fourarat","hours":"Garde de nuit 24h/24 - mardi 29 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-al-doha-al-issam","name":"Pharmacie Al Doha Al Issam","nameAr":"صيدلية الضحى العصام","phone":"05 37 32 16 76","district":"El Issam","address":"Route Klem 9, lotissement Al Issam, derrière Al Hilal","hours":"Garde de nuit 24h/24 - mercredi 30 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-karam","name":"Pharmacie Karam","nameAr":"صيدلية كرم","phone":"06 61 87 78 17","district":"Le Vallon","address":"Lotissement Le Vallon, derrière le lycée Abdelrahman Ennasser, à 200 m du café Broadway","hours":"Garde de nuit 24h/24 - mercredi 30 septembre 2026","badge":"De garde"},
+      {"id":"pharmacie-al-ghaba","name":"Pharmacie Al Ghaba","nameAr":"صيدلية الغابة","phone":"05 37 37 22 80","district":"Kénitra","address":"Rue Al Ghaba, près de l’hôpital Idrissi, à côté de la Clinique de Kénitra","hours":"Garde de nuit 24h/24 - jeudi 1 octobre 2026","badge":"De garde"},
+      {"id":"pharmacie-al-iqamat","name":"Pharmacie Al Iqamat","nameAr":"صيدلية الإقامات","phone":"05 37 35 25 57","district":"Ouled Oujih","address":"Immeuble Riyad Maâmora, boulevard principal d’Ouled Oujih, près du café Damas","hours":"Garde de nuit 24h/24 - jeudi 1 octobre 2026","badge":"De garde"},
+      {"id":"pharmacie-hay-al-jamii","name":"Pharmacie Hay Al Jamiâi","nameAr":"صيدلية الحي الجامعي","phone":"06 69 45 86 45","district":"Saknia","address":"Hay Annachat Al Hirafiyine, Saknia, entre le mussala de Saknia et le quartier universitaire","hours":"Garde de nuit 24h/24 - vendredi 2 octobre 2026","badge":"De garde"},
+      {"id":"pharmacie-siham","name":"Pharmacie Siham","nameAr":"صيدلية سهام","phone":"05 37 36 08 05","district":"Saknia","address":"Lotissement Larak, à 200 m, devant le lycée Ibn Al Haytham","hours":"Garde de nuit 24h/24 - vendredi 2 octobre 2026","badge":"De garde"}
+    ]
+  }
+}
