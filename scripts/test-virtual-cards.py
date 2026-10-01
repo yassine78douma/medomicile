@@ -46,6 +46,13 @@ class VirtualCards(unittest.TestCase):
             with self.subTest(entity=e['name']):
                 soup = BeautifulSoup((ROOT/e['path'].strip('/')/'index.html').read_text(), 'html.parser')
                 self.assertEqual(soup.h1.text, e['name'])
+                if e['type'] == 'doctor' and e['path'].startswith('/p/'):
+                    self.assertIsNotNone(soup.select_one('#dc-data'))
+                    self.assertTrue(soup.select_one('link[rel="canonical"]')['href'] == e['url'])
+                    self.assertIn('/assets/vendor/qrcode-generator-1.4.4.js', str(soup))
+                    self.assertIn('Appeler', soup.get_text())
+                    self.assertIn('Itinéraire', soup.get_text()) if e['google_maps_url'] else None
+                    continue
                 self.assertEqual([b['id'] for b in soup.select('#vc-dialog .vc-action')], ['vc-share-link', 'vc-business'])
                 self.assertFalse(soup.select('#vc-dialog a'))
                 self.assertFalse(any(str(a.get('href', '')).startswith('file:') for a in soup.select('a')))

@@ -273,17 +273,20 @@ def main():
         print(json.dumps({'staged_doctors': len(doctors), 'eligible': len(eligible), 'non_eligible': len([item for item in all_items if item['type'] == 'doctor']) - len(doctors)}))
         return
     items = entities()
+    index = json.loads((ROOT/'data/virtual-card-index.json').read_text())
+    eligible_doctor_slugs = {item['slug'] for item in index if item.get('type') == 'doctor' and re.fullmatch(r'https://medomicile\.com/p/[^/]+/', item.get('url', ''))}
     for folder in ['assets/cards/qr', 'p', 'e']:
         (ROOT/folder).mkdir(parents=True, exist_ok=True)
     for e in items:
         folder = ROOT/e['path'].strip('/')
         folder.mkdir(parents=True, exist_ok=True)
-        (folder/'index.html').write_text(page(e))
+        rendered = dc41_page(e) if e['type'] == 'doctor' and e['slug'] in eligible_doctor_slugs else page(e)
+        (folder/'index.html').write_text(rendered)
         qr = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_Q, box_size=8, border=4)
         qr.add_data(e['share_url']); qr.make(fit=True)
         qr.make_image(fill_color='black', back_color='white').save(ROOT/e['qr'].lstrip('/'))
         if e['type'] in ('doctor', 'dentist'):
-            (ROOT/'p'/f'{e["id"]}.html').write_text(page(e))
+            (ROOT/'p'/f'{e["id"]}.html').write_text(rendered)
     (ROOT/'data/virtual-card-index.json').write_text(json.dumps(items, ensure_ascii=False, indent=2) + '\n')
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += ''.join(f'<url><loc>{e["url"]}</loc></url>\n' for e in items if e['indexable']) + '</urlset>\n'
