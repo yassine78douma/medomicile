@@ -907,3 +907,5 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .prototype-shell .article-card,.prototype-shell .clinic-card,.prototype-shell .doctor-card,.prototype-shell .pharmacy-directory-card,.prototype-shell .duty-card{transition:transform .2s ease,box-shadow .2s ease}
 .prototype-shell .article-card:hover,.prototype-shell .clinic-card:hover,.prototype-shell .doctor-card:hover,.prototype-shell .pharmacy-directory-card:hover,.prototype-shell .duty-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,54,121,.1)}
 @media(max-width:900px){.prototype-shell h1{font-size:clamp(2.35rem,10vw,3.4rem)}.prototype-shell h2{font-size:clamp(1.8rem,7vw,2.55rem)}.prototype-shell .content-width{padding-left:20px;padding-right:20px}.prototype-shell .article-grid,.prototype-shell .doctor-grid,.prototype-shell .clinic-results,.prototype-shell .pharmacy-results,.prototype-shell .duty-results{gap:12px}.prototype-shell .site-footer{padding-bottom:112px}}
+.prototype-shell .site-footer{scroll-margin-bottom:96px}
+@media(max-width:900px){.prototype-shell .site-footer{padding-bottom:calc(132px + env(safe-area-inset-bottom))!important}}
