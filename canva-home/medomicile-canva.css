@@ -870,3 +870,8 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 /* Header clearance hardening for existing article detail pages. */
 .article-detail-page .review-article{padding-top:205px!important}
 @media(max-width:900px){.article-detail-page .review-article{padding-top:112px!important}}
+
+/* Article details use a flow header so the reading content can never be covered. */
+.article-detail-page .site-header{position:relative;top:auto}
+.article-detail-page .review-article{padding-top:54px!important}
+@media(max-width:900px){.article-detail-page .site-header{position:relative}.article-detail-page .review-article{padding-top:38px!important}}
