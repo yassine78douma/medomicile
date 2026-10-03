@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <script>location.replace('canva-home/index.html');</script>
   <head>
     <!-- Google tag (gtag.js) -->
     <script>
-      if (window.location.protocol.indexOf("http") === 0 && window.location.pathname === "/index.html") {
+      if (window.location.protocol.indexOf("http") === 0 && window.location.pathname === "/index.html" && !/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) {
         window.location.replace("https://medomicile.com/");
       }
       window.dataLayer = window.dataLayer || [];
@@ -116,7 +117,7 @@
   <body>
     <a class="skip-link" href="#main">Aller au contenu</a>
 
-    <header class="mobile-header">
+    <header class="mobile-header home-site-header">
       <nav class="nav" aria-label="Navigation principale">
         <a class="brand" href="./" aria-label="Medomicile, accueil">
           <span class="brand-mark" aria-hidden="true">
@@ -126,6 +127,7 @@
         </a>
 
         <div class="header-actions" aria-label="Contact rapide">
+          <a class="mini-action consultation" href="services.html">Demander une consultation</a>
           <a dir="ltr" class="mini-action call" href="tel:+212663058222" aria-label="Appeler +212663058222">Appeler</a>
           <a class="mini-action whats" href="https://wa.me/212663058222" aria-label="WhatsApp +212663058222">WhatsApp</a>
         </div>
@@ -139,15 +141,10 @@
 
         <div class="menu" id="menu">
           <a class="is-current" href="./">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="pharmacies.html">Pharmacies</a>
-          <a href="hopitaux.html">Hôpitaux</a>
-          <a href="centres-dialyse-kenitra.html">Dialyse</a>
-          <a href="laboratoires-kenitra.html">Laboratoires</a>
-          <a href="radiologie-kenitra.html">Radiologie</a>
-          <a href="medecins-kenitra.html">Médecins</a>
-          <a href="vitamines.html">Vitamines</a>
-          <a href="galerie.html">Galerie</a>
+          <a href="services.html">Consultation à domicile</a>
+          <a href="services.html">Ambulance</a>
+          <a href="hopitaux.html">Urgences</a>
+          <a href="medecins-kenitra.html">Annuaire médical</a>
           <a href="articles.html">Articles</a>
           <a href="contact.html">Contact</a>
           <a class="lang-link" href="en.html" lang="en">English</a>
@@ -156,79 +153,77 @@
       </nav>
     </header>
 
-    <main id="main">
-      <section class="hero home-hero" aria-labelledby="hero-title">
+    <main id="main" class="canva-home v19-home">
+      <section class="hero home-hero v19-hero" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
-          <p class="availability">
-            <span aria-hidden="true"></span>
-            Kenitra, Mehdia et région - appel ou WhatsApp
-          </p>
+          <p class="availability"><span aria-hidden="true"></span>Consultations et soins médicaux à domicile à Kénitra</p>
           <h1 id="hero-title">
-            <span class="hero-title-line">Toute la santé</span>
-            <span class="hero-title-line">à Kénitra,</span>
-            <span class="hero-title-line">au même endroit.</span>
+            <span class="hero-title-line">Un médecin chez vous, à Kénitra</span>
           </h1>
           <p class="hero-subtitle">
-            Trouvez rapidement un médecin, une pharmacie de garde, un laboratoire ou un établissement de santé près de chez vous.
+            Consultations et soins médicaux à domicile.
           </p>
 
-          <form class="platform-search" data-home-search role="search">
-            <label class="sr-only" for="home-search">Que recherchez-vous ?</label>
-            <span aria-hidden="true">⌕</span>
-            <input id="home-search" name="q" type="search" placeholder="Que recherchez-vous ?" autocomplete="off" />
-            <button type="submit">Rechercher</button>
-          </form>
-          <p class="home-search-status" data-home-search-status aria-live="polite"></p>
-          <nav class="home-quick-links" aria-label="Accès santé rapide">
-            <a href="medecins-kenitra.html"><span>✚</span><strong>Médecins</strong></a>
-            <a href="pharmacies.html"><span>⌂</span><strong>Pharmacies</strong></a>
-            <a href="laboratoires-kenitra.html"><span>◈</span><strong>Laboratoires</strong></a>
-            <a href="radiologie-kenitra.html"><span>◉</span><strong>Radiologie</strong></a>
-            <a href="hopitaux.html"><span>＋</span><strong>Hôpitaux</strong></a>
-            <a href="services.html"><span>⌁</span><strong>À domicile</strong></a>
-          </nav>
-
-          <div class="hero-buttons">
-            <a dir="ltr" class="primary-action" href="tel:+212663058222">
-              <span aria-hidden="true">☎</span>
-              Appeler maintenant
-            </a>
-            <a class="whatsapp-action" href="https://wa.me/212663058222">
-              <span aria-hidden="true">WA</span>
-              WhatsApp
-            </a>
-          </div>
-
-          <p class="fine-print">Délai indicatif selon disponibilité, localisation et circulation.</p>
-
         </div>
 
-        <div class="media-stage hero-photo reveal" data-scroll-media aria-label="Aperçu assistance médicale à domicile">
-          <picture>
-            <source srcset="assets/optimized/medomicile-hospital-team-480.avif 480w, assets/optimized/medomicile-hospital-team-768.avif 768w, assets/optimized/medomicile-hospital-team-1200.avif 1200w" sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw" type="image/avif" />
-            <source srcset="assets/optimized/medomicile-hospital-team-480.webp 480w, assets/optimized/medomicile-hospital-team-768.webp 768w, assets/optimized/medomicile-hospital-team-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw" type="image/webp" />
-            <img
-              src="assets/optimized/medomicile-hospital-team-1200.jpg"
-              srcset="assets/optimized/medomicile-hospital-team-720.jpg 720w, assets/optimized/medomicile-hospital-team-1200.jpg 1200w"
-              sizes="(max-width: 640px) calc(100vw - 24px), (max-width: 1100px) calc(100vw - 64px), 50vw"
-              alt="Équipe Medomicile devant un hôpital avec ambulance et véhicule d’assistance"
-              width="1200"
-              height="800"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </picture>
-          <div class="media-overlay" aria-hidden="true"></div>
-          <div class="media-caption">
-            <strong>24/24</strong>
-            <span>Contact direct</span>
+        <div class="media-stage hero-photo v19-portrait-placeholder reveal" data-scroll-media aria-label="Portrait médecin V19 à intégrer">
+          <div class="v19-badge v19-badge-home">À domicile à Kénitra</div>
+          <div class="v19-badge v19-badge-pro">Professionnels de santé</div>
+          <div class="v19-badge v19-badge-contact">Contact simple et rapide</div>
+        </div>
+
+        <div class="v19-hero-actions">
+          <div class="hero-buttons">
+            <a dir="ltr" class="primary-action" href="tel:+212663058222"><span aria-hidden="true">☎</span>Appeler maintenant</a>
+            <a class="whatsapp-action" href="https://wa.me/212663058222"><span aria-hidden="true">WA</span>WhatsApp</a>
           </div>
-          <div class="media-zone">
-            <span>Zone principale</span>
-            <strong>Kenitra</strong>
-          </div>
+          <div class="v19-consultation-card"><strong>Consultation à domicile</strong><b>À partir de 300 DH</b><small>Disponibilité à confirmer</small></div>
         </div>
       </section>
+
+      <section class="v19-primary-entries section" aria-labelledby="primary-entries-title">
+        <div class="section-heading">
+          <p class="eyebrow">Accès direct</p>
+          <h2 id="primary-entries-title">Choisissez votre besoin</h2>
+        </div>
+        <div class="v19-primary-grid">
+          <!-- Temporary destinations until the dedicated hubs are created. -->
+          <a class="v19-primary-entry is-priority" href="services.html"><span>01</span><strong>Consultation à domicile</strong><small>Échanger avec Medomicile</small></a>
+          <a class="v19-primary-entry is-secondary" href="services.html"><span>02</span><strong>Ambulance</strong><small>Destination temporaire</small></a>
+          <a class="v19-primary-entry" href="hopitaux.html"><span>03</span><strong>Urgences</strong><small>Destination temporaire</small></a>
+          <a class="v19-primary-entry" href="medecins-kenitra.html"><span>04</span><strong>Annuaire médical</strong><small>Destination temporaire</small></a>
+        </div>
+      </section>
+
+      <section class="canva-consultation section" aria-label="Consultation à domicile">
+        <div><p class="eyebrow">Une prise en charge proche</p><h2>Consultation à domicile</h2><p>À partir de <strong>300 DH</strong></p></div>
+        <p>Disponibilité à confirmer par téléphone selon votre demande et votre localisation.</p>
+        <a class="primary-action" href="tel:+212663058222">Vérifier les possibilités</a>
+      </section>
+
+      <section class="canva-about section" aria-labelledby="about-title">
+        <div class="section-heading"><p class="eyebrow">Notre approche</p><h2 id="about-title">Une médecine plus proche de vous</h2></div>
+        <p>Medomicile facilite l’accès aux soins en vous permettant de demander une consultation ou un soin à domicile à Kénitra.</p>
+      </section>
+
+      <section class="canva-services section" aria-labelledby="services-title">
+        <div class="section-heading"><p class="eyebrow">Nos services</p><h2 id="services-title">Des soins adaptés à votre besoin</h2></div>
+        <div class="canva-service-grid">
+          <a href="services.html"><b>01</b><h3>Consultation médicale à domicile</h3><p>Évaluation clinique, conseils médicaux et orientation.</p><span>Découvrir →</span></a>
+          <a href="services.html"><b>02</b><h3>Soins infirmiers</h3><p>Pansements, injections, perfusions et soins prescrits.</p><span>Découvrir →</span></a>
+          <a href="services.html"><b>03</b><h3>Suivi des maladies chroniques</h3><p>Accompagnement des patients diabétiques, hypertendus et âgés.</p><span>Découvrir →</span></a>
+          <a href="services.html"><b>04</b><h3>Soins après hospitalisation</h3><p>Surveillance et accompagnement après une sortie d’hôpital.</p><span>Découvrir →</span></a>
+          <a href="services.html"><b>05</b><h3>Prise en charge de l’enfant</h3><p>Évaluation médicale de l’enfant selon la situation.</p><span>Découvrir →</span></a>
+          <a href="services.html"><b>06</b><h3>Orientation spécialisée</h3><p>Orientation vers le spécialiste ou la structure adaptée.</p><span>Découvrir →</span></a>
+        </div>
+      </section>
+
+      <section class="canva-steps section" aria-labelledby="steps-title">
+        <div class="section-heading"><p class="eyebrow">Comment ça marche</p><h2 id="steps-title">Trois étapes, simplement</h2></div>
+        <div class="canva-step-grid"><article><b>01</b><h3>Contactez-nous</h3><p>Appelez-nous ou envoyez un message WhatsApp.</p></article><article><b>02</b><h3>Expliquez votre besoin</h3><p>Nous recueillons les informations essentielles concernant votre demande.</p></article><article><b>03</b><h3>Organisez la prise en charge</h3><p>Nous vérifions les possibilités et vous indiquons la suite adaptée.</p></article></div>
+      </section>
+
+      <section class="canva-why section" aria-labelledby="why-title"><div><p class="eyebrow">Pourquoi Medomicile ?</p><h2 id="why-title">Une approche humaine, directement chez vous.</h2></div><ul><li>Soins directement à domicile</li><li>Contact rapide et simple</li><li>Approche humaine</li><li>Orientation adaptée</li></ul></section>
 
       <section class="home-links section" aria-labelledby="home-links-title">
         <div class="section-heading reveal">
@@ -357,6 +352,13 @@
         </div>
       </section>
     </main>
+
+    <nav class="v19-mobile-nav" aria-label="Accès rapides Medomicile">
+      <a class="is-active" href="services.html"><span aria-hidden="true">＋</span><small>Consultation</small></a>
+      <a href="services.html"><span aria-hidden="true">⌁</span><small>Ambulance</small></a>
+      <a href="hopitaux.html"><span aria-hidden="true">!</span><small>Urgences</small></a>
+      <a href="medecins-kenitra.html"><span aria-hidden="true">⌕</span><small>Annuaire</small></a>
+    </nav>
 
     <footer class="footer">
       <strong class="footer-brand">
