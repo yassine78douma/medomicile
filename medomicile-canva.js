@@ -465,9 +465,9 @@ if (location.pathname.includes('/canva-home/')) {
   };
   fetch('/data/establishments.json').catch(() => fetch('../data/establishments.json')).then((response) => response.json()).then((data) => {
     establishments = Array.isArray(data) ? data : (data.establishments || []);
-    if (location.pathname.endsWith('etablissements-urgences.html')) {
-      const international = establishments.find((item) => item.name === 'Hôpital International de Kénitra' || item.slug === 'akdital-international-hospital-kenitra');
-      if (international) establishments.splice(1, 0, { ...international, name: 'Clinique Internationale de Kénitra', type: 'clinic', subtitle: 'Clinique privée · Akdital' });
+    const international = establishments.find((item) => item.name === 'Hôpital International de Kénitra' || item.slug === 'akdital-international-hospital-kenitra');
+    if (international && !establishments.some((item) => item.name === 'Clinique Internationale de Kénitra')) {
+      establishments.splice(1, 0, { ...international, name: 'Clinique Internationale de Kénitra', type: 'clinic', subtitle: 'Clinique privée · Akdital' });
     }
     [...new Set(establishments.map((item) => item.type).filter(Boolean))].sort().forEach((item) => { const option = document.createElement('option'); option.value = item; option.textContent = typeLabel(item); type.append(option); });
     [...new Set(establishments.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr')).forEach((item) => { const option = document.createElement('option'); option.value = item; option.textContent = item; zone.append(option); });
