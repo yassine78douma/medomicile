@@ -866,6 +866,7 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .article-detail-page .review-article>.content-width{max-width:900px}
 .article-detail-page .review-article article{max-width:820px;padding:46px 52px;border-radius:22px;box-shadow:0 16px 38px rgba(0,54,121,.1)}
 .article-detail-page .author-linkedin,.rose-article-page .author-linkedin{display:inline-block;color:inherit;font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.article-detail-page .author-linkedin:hover,.article-detail-page .author-linkedin:focus-visible,.rose-article-page .author-linkedin:hover,.rose-article-page .author-linkedin:focus-visible{color:#0a66c2}
+.rose-article-page .site-header{position:relative;top:auto}.rose-article-page .review-article{padding-top:54px!important}
 @media(max-width:700px){.article-detail-page .review-article{padding:106px 14px 112px}.article-detail-page .review-article article{padding:28px 22px}}
 
 /* Header clearance hardening for existing article detail pages. */
