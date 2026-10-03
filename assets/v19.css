@@ -29,6 +29,52 @@ body.v19-shell.v19-menu-open { overflow: hidden; }
 .v19-shell button, .v19-shell a { -webkit-tap-highlight-color: transparent; }
 .v19-shell :focus-visible { outline: 3px solid #79adff; outline-offset: 3px; }
 
+/* Production article presentation layer. Content and metadata remain source-owned. */
+.v19-article-page { background: #f7fafc; color: #173b5c; }
+.v19-article-page .mobile-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); border-bottom: 1px solid #d7e5f0; box-shadow: 0 8px 24px rgba(6,45,74,.06); }
+.v19-article-page .medical-article { max-width: 780px; margin: 0 auto; padding: 62px 24px 84px; background: #fff; }
+.v19-article-page > .page-main > .breadcrumb { width: min(780px, calc(100% - 48px)); margin: 28px auto 0; color: #647b93; }
+.v19-article-page .medical-article__hero { margin: 0 0 42px; padding: 0; background: transparent; }
+.v19-article-page .medical-article__hero .article-tag { display: inline-block; margin-bottom: 18px; color: #1264e8; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.v19-article-page .medical-article__hero h1 { max-width: 760px; margin: 0 0 24px; color: #062d4a; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2.5rem, 6vw, 4.8rem); font-weight: 400; line-height: .98; letter-spacing: -.035em; }
+.v19-article-page .medical-article__hero p { max-width: 680px; margin: 0 0 14px; color: #647b93; font-size: 1.08rem; line-height: 1.75; }
+.v19-article-page .medical-article__body { color: #173b5c; font-size: 1.08rem; line-height: 1.85; }
+.v19-article-page .medical-article__body h2 { margin: 44px 0 14px; color: #062d4a; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(1.7rem, 3vw, 2.35rem); font-weight: 400; line-height: 1.08; }
+.v19-article-page .medical-article__body p { margin: 0 0 20px; }
+.v19-article-page .medical-article__body ul { margin: 0 0 24px; padding-left: 1.3rem; }
+.v19-article-page .medical-article__body li { margin: 0 0 10px; }
+.v19-article-page .medical-article__author { margin: 48px 0 0; padding: 20px 0; border-top: 1px solid #d7e5f0; border-bottom: 1px solid #d7e5f0; background: transparent; }
+.v19-article-page .medical-article__author .article-tag { display: block; margin-bottom: 6px; color: #1264e8; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.v19-article-page .medical-article__author strong { color: #062d4a; font-size: 1.05rem; }
+.v19-article-page .medical-article__author p { margin: 4px 0 0; color: #647b93; }
+.v19-article-page .medical-article__disclaimer { margin: 26px 0 0; padding: 16px 18px; border-left: 3px solid #d8a43a; background: #f3f8fc; color: #647b93; line-height: 1.65; }
+.v19-article-page .footer { margin-top: 0; }
+.v19-article-index .directory-hero { background: #f3f8fc; }
+.v19-article-index .article-grid .article-card:nth-child(n+4), .v19-article-index > .page-main > section[aria-labelledby="blood-article-title"] { display: none; }
+.v19-article-index .article-grid { max-width: 1180px; margin-inline: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.v19-article-index .article-card { border: 1px solid #d7e5f0; border-radius: 16px; background: #fff; box-shadow: 0 18px 44px rgba(6,45,74,.08); }
+@media (max-width: 700px) { .v19-article-page .medical-article { padding: 44px 20px 64px; } .v19-article-page > .page-main > .breadcrumb { width: calc(100% - 40px); } .v19-article-page .medical-article__hero h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); } .v19-article-page .medical-article__body { font-size: 1rem; line-height: 1.78; } .v19-article-index .article-grid { grid-template-columns: 1fr; } }
+
+/* Same rules for legacy article markup until its body class is normalized. */
+body:has(.medical-article) { background: #f7fafc; color: #173b5c; }
+body:has(.medical-article) .mobile-header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); border-bottom: 1px solid #d7e5f0; }
+body:has(.medical-article) .medical-article { max-width: 780px; margin: 0 auto; padding: 62px 24px 84px; background: #fff; }
+body:has(.medical-article) .medical-article__hero { padding: 0; background: transparent; }
+body:has(.medical-article) .medical-article__hero h1 { color: #062d4a; font-family: "DM Serif Display", Georgia, serif; font-size: clamp(2.5rem, 6vw, 4.8rem); font-weight: 400; line-height: .98; }
+body:has(.medical-article) .medical-article__hero p, body:has(.medical-article) .medical-article__body { color: #173b5c; line-height: 1.85; }
+body:has(.medical-article) .medical-article__body h2 { color: #062d4a; font-family: "DM Serif Display", Georgia, serif; font-weight: 400; }
+body:has(.medical-article) .medical-article__author { background: transparent; border-top: 1px solid #d7e5f0; border-bottom: 1px solid #d7e5f0; }
+body:has(.medical-article) .medical-article__disclaimer { border-left: 3px solid #d8a43a; background: #f3f8fc; }
+@media (max-width: 700px) { body:has(.medical-article) .medical-article { padding: 44px 20px 64px; } body:has(.medical-article) .medical-article__hero h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); } body:has(.medical-article) .medical-article__body { font-size: 1rem; line-height: 1.78; } }
+
+body:has(.arabic-article) { background: #f7fafc; color: #173b5c; }
+body:has(.arabic-article) .arabic-article { max-width: 780px; margin-inline: auto; padding: 56px 24px 76px; background: #fff; text-align: right; }
+body:has(.arabic-article) .arabic-article h1, body:has(.arabic-article) .arabic-article h2 { color: #062d4a; font-family: Tajawal, Arial, sans-serif; line-height: 1.2; }
+body:has(.arabic-article) .arabic-article h2 { margin-top: 42px; font-size: clamp(1.55rem, 3vw, 2.25rem); }
+body:has(.arabic-article) .arabic-article p, body:has(.arabic-article) .arabic-article li { color: #647b93; font-size: 1.08rem; line-height: 2; }
+body:has(.arabic-article) .arabic-article ul { padding-inline-start: 1.3rem; }
+@media (max-width: 700px) { body:has(.arabic-article) .arabic-article { padding: 42px 20px 60px; } body:has(.arabic-article) .arabic-article p, body:has(.arabic-article) .arabic-article li { font-size: 1rem; } }
+
 .v19-shell { min-height: 100vh; display: flex; flex-direction: column; }
 .v19-container { width: min(var(--v19-container), calc(100% - 48px)); margin-inline: auto; }
 .v19-container--narrow { width: min(780px, calc(100% - 48px)); }

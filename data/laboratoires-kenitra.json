@@ -3,6 +3,10 @@
   "laboratories": [
     {
       "id": "maghreb-arabi",
+      "slug": "maghreb-arabi",
+      "city": "Kénitra",
+      "district": "Maghreb Arabi",
+      "address": "Bloc D n°57, Immeuble Afnane, Maghreb Arabi, Kénitra",
       "name": "Laboratoire Maghreb Arabi",
       "shortName": "MAGHREB ARABI",
       "type": "Laboratoire d’analyses médicales",
@@ -27,6 +31,7 @@
     },
     {
       "id": "nader",
+      "slug": "nader",
       "name": "Laboratoire Nader",
       "shortName": "NADER",
       "type": "Laboratoire d’analyses médicales",
@@ -50,6 +55,7 @@
     },
     {
       "id": "le-vallon",
+      "slug": "le-vallon",
       "name": "Laboratoire Le Vallon",
       "shortName": "LE VALLON",
       "type": "Laboratoire d’analyses médicales",
@@ -73,6 +79,10 @@
     },
     {
       "id": "la-province",
+      "slug": "la-province",
+      "city": "Kénitra",
+      "district": "Centre-ville",
+      "address": "N°4, angle avenue Hassan II et rue Mohamed Abdou, Kénitra",
       "name": "Laboratoire La Province",
       "shortName": "LA PROVINCE",
       "type": "Laboratoire d’analyses médicales",
@@ -95,6 +105,10 @@
     },
     {
       "id": "al-andalousse",
+      "slug": "al-andalousse",
+      "city": "Kénitra",
+      "district": "Youssef Ibn Tachfine",
+      "address": "Boulevard Youssef Ibn Tachfine, immeuble Riad Al Andalousse II, bureaux 2, 3 et 4, Kénitra",
       "name": "Laboratoire Al Andalousse",
       "shortName": "AL ANDALOUSSE",
       "type": "Laboratoire d’analyses médicales",
@@ -118,6 +132,10 @@
     },
     {
       "id": "saada",
+      "slug": "saada",
+      "city": "Kénitra",
+      "district": "Maâmora",
+      "address": "7C58+P57, avenue Mohamed V, quartier Maâmora, Kénitra",
       "name": "Laboratoire Saada",
       "shortName": "SAADA",
       "type": "Laboratoire d’analyses médicales",
@@ -141,6 +159,10 @@
     },
     {
       "id": "asseha",
+      "slug": "asseha",
+      "city": "Kénitra",
+      "district": "Centre-ville",
+      "address": "Bureau n°20, résidence Almorjane, angle avenue Mohamed V et rue Moulay Abdellah, Kénitra",
       "name": "Laboratoire Asseha",
       "shortName": "ASSEHA",
       "type": "Laboratoire d’analyses médicales",
@@ -164,6 +186,7 @@
     },
     {
       "id": "international-analyses-medicales",
+      "slug": "international-analyses-medicales",
       "name": "Laboratoire International d’Analyses Médicales",
       "shortName": "INTERNATIONAL",
       "type": "Laboratoire d’analyses médicales",
@@ -186,6 +209,7 @@
     },
     {
       "id": "biranzarane",
+      "slug": "biranzarane",
       "name": "Laboratoire Biranzarane",
       "shortName": "BIRANZARANE",
       "type": "Laboratoire d’analyses médicales",
@@ -208,6 +232,9 @@
     },
     {
       "id": "cbms",
+      "slug": "cbms",
+      "city": "Kénitra",
+      "address": "N°2, immeuble 44, avenue Mohamed Diouri, Kénitra",
       "name": "Centre de Biologie Médicale Sebou — CBMS",
       "shortName": "CBMS",
       "type": "Laboratoire d’analyses médicales",
@@ -230,6 +257,10 @@
     },
     {
       "id": "ibn-sina",
+      "slug": "ibn-sina",
+      "city": "Kénitra",
+      "district": "Nakhela 3",
+      "address": "N°4 et 7, résidence Annakhla 3, avenue Ibn Abi Zaraa, Kénitra",
       "name": "Laboratoire Ibn Sina",
       "shortName": "IBN SINA",
       "type": "Laboratoire d’analyses médicales",
@@ -253,6 +284,9 @@
     },
     {
       "id": "les-mimosas",
+      "slug": "les-mimosas",
+      "city": "Kénitra",
+      "address": "Avenue Mohamed V, Kénitra",
       "name": "Laboratoire Les Mimosas",
       "shortName": "LES MIMOSAS",
       "type": "Laboratoire d’analyses médicales",
@@ -275,6 +309,7 @@
     },
     {
       "id": "central-analyses-medicales",
+      "slug": "central-analyses-medicales",
       "name": "Laboratoire Central d’Analyses Médicales",
       "shortName": "CENTRAL",
       "type": "Laboratoire d’analyses médicales",
@@ -297,6 +332,7 @@
     },
     {
       "id": "du-gharb",
+      "slug": "du-gharb",
       "name": "Laboratoire du Gharb",
       "shortName": "DU GHARB",
       "type": "Laboratoire d’analyses médicales",
@@ -319,6 +355,7 @@
     },
     {
       "id": "saknia",
+      "slug": "saknia",
       "name": "Laboratoire Saknia",
       "shortName": "SAKNIA",
       "type": "Laboratoire d’analyses médicales",
@@ -341,6 +378,7 @@
     },
     {
       "id": "maamora",
+      "slug": "maamora",
       "name": "Laboratoire Maâmora",
       "shortName": "MAÂMORA",
       "type": "Laboratoire d’analyses médicales",
@@ -363,6 +401,7 @@
     },
     {
       "id": "bab-fes",
+      "slug": "bab-fes",
       "name": "Laboratoire Bab Fès",
       "shortName": "BAB FÈS",
       "type": "Laboratoire d’analyses médicales",

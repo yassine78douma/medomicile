@@ -1,0 +1,13 @@
+{
+  "radiologie": [
+    {"name":"Clinique Internationale de Kénitra","phone":"+212 5 37 31 34 34","address":"Kénitra, Saknia","hours":"24h/24, urgences radiologiques selon disponibilité","map":"https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20Kénitra%2C%20Kenitra"},
+    {"name":"Centre de Radiologie Hassan II","phone":"","address":"Kénitra","hours":"24h/24, à confirmer","map":"https://www.google.com/maps/dir/?api=1&destination=Centre%20de%20Radiologie%20Hassan%20II%20Kenitra"},
+    {"name":"Hôpital International de Kénitra","phone":"+212 5 37 36 96 96","address":"Avenue Mohammed VI, Kénitra","hours":"24h/24, urgences radiologiques selon disponibilité","map":"https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra"},
+    {"name":"Polyclinique CNSS Kénitra","phone":"+212 5 37 37 87 39","address":"Avenue Moulay Youssef, Kénitra","hours":"24h/24, à confirmer","map":"https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20CNSS%20Kénitra"},
+    {"name":"Polyclinique de Kénitra","phone":"+212 5 37 37 36 35","address":"Avenue de l’Hôpital, Kénitra","hours":"24h/24, urgences radiologiques selon disponibilité","map":"https://www.google.com/maps/dir/?api=1&destination=Polyclinique%20de%20Kénitra"}
+  ],
+  "laboratoires": [
+    {"name":"Laboratoire Nader","phone":"06 64 26 28 58","address":"Kénitra","hours":"24h/24","rating":"4,9 Google","map":"https://maps.google.com/?q=Laboratoire+NADER+Kenitra"},
+    {"name":"Laboratoire Ibn Sina","phone":"05 37 32 79 24","address":"N°4 et 7, résidence Annakhla 3, avenue Ibn Abi Zaraa, Kénitra","hours":"24h/24, à confirmer","rating":"3,8 Google","map":"https://maps.google.com/?q=Laboratoire+Ibn+Sina+Kenitra"}
+  ]
+}
