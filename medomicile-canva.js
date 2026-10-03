@@ -1,4 +1,5 @@
 (() => {
+  if (document.body?.classList.contains('rose-article-page')) return;
   const routeMap = {
     '../index.html': 'index.html'
   };
@@ -6,6 +7,16 @@
     const attribute = element.tagName === 'FORM' ? 'action' : 'href';
     if (routeMap[element.getAttribute(attribute)]) element.setAttribute(attribute, routeMap[element.getAttribute(attribute)]);
   });
+})();
+
+// Keep the contact page at the top so the fixed mobile header never hides its title.
+(() => {
+  if (!document.querySelector('main.contact-page')) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const reset = () => window.scrollTo(0, 0);
+  window.addEventListener('pageshow', reset);
+  requestAnimationFrame(reset);
+  setTimeout(reset, 120);
 })();
 
 /* Shared detail-page component. Data adapters below provide only the page-specific content. */
@@ -43,12 +54,14 @@ window.MedomicileDetail = {
 })();
 
 (() => {
+  if (document.body?.classList.contains('rose-article-page')) return;
   const footer = document.querySelector('.site-footer');
   const grid = footer?.querySelector('.footer-grid');
   if (!grid) return;
   const footerPath = (file) => {
     // Keep file:// previews inside canva-home while making the local HTTP
     // server target explicit instead of resolving against the project root.
+    if (arabic && file === 'contact.html') return location.protocol === 'file:' ? file : '/ar/contact.html';
     if (location.protocol === 'file:') return file;
     return `/canva-home/${file}`;
   };
@@ -133,6 +146,7 @@ if (location.pathname.includes('/canva-home/')) {
 })();
 
 (() => {
+  if (document.body?.classList.contains('rose-article-page')) return;
   const page = location.pathname.split('/').pop() || 'index.html';
   const isDirectory = ['annuaire.html', 'medecins.html', 'medecin.html', 'pharmacies.html', 'pharmacie.html', 'pharmacies-garde.html', 'cliniques.html', 'etablissement.html', 'laboratoires.html', 'laboratoire.html', 'radiologie.html', 'centre-radiologie.html', 'dialyse.html', 'centre-dialyse.html'].includes(page);
   const active = page === 'index.html' ? 'index.html' : page === 'consultation.html' ? 'consultation.html' : (page === 'urgences.html' || page === 'etablissements-urgences.html') ? 'urgences.html' : isDirectory ? 'annuaire.html' : '';
