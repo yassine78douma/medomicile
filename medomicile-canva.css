@@ -503,6 +503,7 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 
 /* Articles: restore a calm editorial opening and keep the fixed header clear. */
 .article-hub { padding: 164px 20px 112px; background: linear-gradient(180deg, #eaf4fa 0%, #f7fbfd 58%, #fff 100%); }
+.prototype-shell:has(.article-hub) .site-header{position:relative;top:auto}.prototype-shell:has(.article-hub) main.article-hub{padding-top:164px;scroll-margin-top:96px}
 .article-hub .content-width { max-width: 1180px; }
 .article-hub .section-kicker { margin-bottom: 18px; color: var(--md-blue); }
 .article-hub h1 { max-width: 760px; font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: .98; }
@@ -515,7 +516,7 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .article-card p { max-width: 32ch; margin: 16px 0; }
 .article-card span { margin-top: auto; }
 @media(max-width:700px){
-  .article-hub { padding: calc(150px + 72px) 20px 112px; scroll-margin-top: 72px; }
+  .article-hub { padding: 108px 20px 112px; scroll-margin-top: 96px; }
   .article-hub h1 { font-size: clamp(2.55rem, 12vw, 3.6rem); line-height: 1; }
   .article-grid { margin-top: 30px; gap: 12px; }
   .article-card { min-height: 208px; padding: 22px; }

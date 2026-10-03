@@ -9,14 +9,30 @@
   });
 })();
 
-// Keep the contact page at the top so the fixed mobile header never hides its title.
+// Keep opening pages at the top so the fixed mobile header never hides their titles.
 (() => {
-  if (!document.querySelector('main.contact-page')) return;
+  if (!document.querySelector('main.contact-page, main.article-hub')) return;
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   const reset = () => window.scrollTo(0, 0);
   window.addEventListener('pageshow', reset);
+  window.addEventListener('load', reset, { once: true });
   requestAnimationFrame(reset);
   setTimeout(reset, 120);
+  setTimeout(reset, 600);
+})();
+
+// Add the privacy link consistently to every shared footer.
+(() => {
+  const isArabic = document.documentElement.lang === 'ar' || location.pathname.startsWith('/ar/');
+  document.querySelectorAll('.site-footer .footer-grid').forEach((grid) => {
+    if (grid.querySelector('a[href*="confidentialite"]')) return;
+    const info = [...grid.children].find((column) => /Informations|المعلومات|معلومات/.test(column.textContent || ''));
+    if (!info) return;
+    const link = document.createElement('a');
+    link.href = isArabic ? '/ar/confidentialite.html' : '/confidentialite.html';
+    link.textContent = isArabic ? 'الخصوصية' : 'Confidentialité';
+    info.append(link);
+  });
 })();
 
 /* Shared detail-page component. Data adapters below provide only the page-specific content. */
@@ -69,15 +85,15 @@ window.MedomicileDetail = {
   const english = document.documentElement.lang === 'en';
   const prefix = location.pathname.includes('/en/') ? '../' : '';
   const copy = arabic ? {
-    brand: 'استشارات ورعاية وتوجيه في القنيطرة', services: 'الخدمات', consultation: 'الاستشارة', ambulance: 'الإسعاف', emergencies: 'الطوارئ', directory: 'الدليل', doctors: 'الأطباء', pharmacies: 'الصيدليات', clinics: 'العيادات والمستشفيات', labs: 'المختبرات', radiology: 'مراكز الأشعة', info: 'المعلومات', home: 'الرئيسية', contact: 'اتصل بنا', languages: 'اللغات', ar: 'العربية', fr: 'Français', en: 'English'
+    brand: 'استشارات ورعاية وتوجيه في القنيطرة', services: 'الخدمات', consultation: 'الاستشارة', ambulance: 'الإسعاف', emergencies: 'الطوارئ', directory: 'الدليل', doctors: 'الأطباء', pharmacies: 'الصيدليات', clinics: 'العيادات والمستشفيات', labs: 'المختبرات', radiology: 'مراكز الأشعة', info: 'المعلومات', home: 'الرئيسية', contact: 'اتصل بنا', privacy: 'الخصوصية', languages: 'اللغات', ar: 'العربية', fr: 'Français', en: 'English'
   } : english ? {
-    brand: 'Consultations, care and guidance in Kénitra', services: 'Services', consultation: 'Consultation', ambulance: 'Ambulance', emergencies: 'Emergency', directory: 'Directory', doctors: 'Doctors', pharmacies: 'Pharmacies', clinics: 'Clinics / Hospitals', labs: 'Laboratories', radiology: 'Radiology', info: 'Information', home: 'Home', contact: 'Contact', languages: 'Languages', ar: 'العربية', fr: 'Français', en: 'English'
+    brand: 'Consultations, care and guidance in Kénitra', services: 'Services', consultation: 'Consultation', ambulance: 'Ambulance', emergencies: 'Emergency', directory: 'Directory', doctors: 'Doctors', pharmacies: 'Pharmacies', clinics: 'Clinics / Hospitals', labs: 'Laboratories', radiology: 'Radiology', info: 'Information', home: 'Home', contact: 'Contact', privacy: 'Privacy', languages: 'Languages', ar: 'العربية', fr: 'Français', en: 'English'
   } : {
-    brand: 'Consultations, soins et orientation à Kénitra', services: 'Services', consultation: 'Consultation à domicile', ambulance: 'Ambulance', emergencies: 'Urgences', directory: 'Annuaire', doctors: 'Médecins', pharmacies: 'Pharmacies', clinics: 'Cliniques / Hôpitaux', labs: 'Laboratoires', radiology: 'Radiologie', info: 'Informations', home: 'Accueil', contact: 'Contact', languages: 'Langues', ar: 'العربية', fr: 'Français', en: 'English'
+    brand: 'Consultations, soins et orientation à Kénitra', services: 'Services', consultation: 'Consultation à domicile', ambulance: 'Ambulance', emergencies: 'Urgences', directory: 'Annuaire', doctors: 'Médecins', pharmacies: 'Pharmacies', clinics: 'Cliniques / Hôpitaux', labs: 'Laboratoires', radiology: 'Radiologie', info: 'Informations', home: 'Accueil', contact: 'Contact', privacy: 'Confidentialité', languages: 'Langues', ar: 'العربية', fr: 'Français', en: 'English'
   };
   const p = (path) => `${prefix}${path}`;
   const langLinks = arabic ? ['index.html', '../index.html', '../en/index.html'] : english ? ['../ar/index.html', '../index.html', 'index.html'] : ['ar/index.html', 'index.html', 'en/index.html'];
-  grid.innerHTML = `<div><strong>Medomicile</strong><p>${copy.brand}</p></div><div><b>${copy.services}</b><a href="${p('consultation.html')}">${copy.consultation}</a><a href="${p('ambulance.html')}">${copy.ambulance}</a><a href="${p('urgences.html')}">${copy.emergencies}</a></div><div><b>${copy.directory}</b><a href="${p('medecins.html')}">${copy.doctors}</a><a href="${p('pharmacies.html')}">${copy.pharmacies}</a><a href="${p('cliniques.html')}">${copy.clinics}</a><a href="${p('laboratoires.html')}">${copy.labs}</a><a href="${p('radiologie.html')}">${copy.radiology}</a></div><div><b>${copy.info}</b><a href="${p('index.html')}">${copy.home}</a><a href="${footerPath('contact.html')}">${copy.contact}</a></div><div data-language-links><b>${copy.languages}</b><a href="${langLinks[0]}">${copy.ar}</a><a href="${langLinks[1]}">${copy.fr}</a><a href="${langLinks[2]}">${copy.en}</a></div>`;
+  grid.innerHTML = `<div><strong>Medomicile</strong><p>${copy.brand}</p></div><div><b>${copy.services}</b><a href="${p('consultation.html')}">${copy.consultation}</a><a href="${p('ambulance.html')}">${copy.ambulance}</a><a href="${p('urgences.html')}">${copy.emergencies}</a></div><div><b>${copy.directory}</b><a href="${p('medecins.html')}">${copy.doctors}</a><a href="${p('pharmacies.html')}">${copy.pharmacies}</a><a href="${p('cliniques.html')}">${copy.clinics}</a><a href="${p('laboratoires.html')}">${copy.labs}</a><a href="${p('radiologie.html')}">${copy.radiology}</a></div><div><b>${copy.info}</b><a href="${p('index.html')}">${copy.home}</a><a href="${footerPath('contact.html')}">${copy.contact}</a><a href="${p('confidentialite.html')}">${copy.privacy}</a></div><div data-language-links><b>${copy.languages}</b><a href="${langLinks[0]}">${copy.ar}</a><a href="${langLinks[1]}">${copy.fr}</a><a href="${langLinks[2]}">${copy.en}</a></div>`;
 })();
 
 // Canva review continuity: keep article and specialty review journeys inside canva-home.
@@ -173,7 +189,7 @@ if (location.pathname.includes('/canva-home/')) {
   }
   const footer = document.querySelector('.site-footer');
   if (footer) {
-    footer.innerHTML = `<div class="footer-grid"><div><strong>Medomicile</strong><p>Consultations, soins et orientation à Kénitra.</p></div><div><b>Services</b><a href="consultation.html">Consultation à domicile</a><a href="ambulance.html">Ambulance</a><a href="urgences.html">Urgences</a></div><div><b>Annuaire</b><a href="medecins.html">Médecins</a><a href="pharmacies.html">Pharmacies</a><a href="cliniques.html">Cliniques / Hôpitaux</a><a href="laboratoires.html">Laboratoires</a><a href="radiologie.html">Radiologie</a><a href="dialyse.html">Dialyse</a></div><div><b>Informations</b><a href="${internalPage('articles.html')}">Articles</a><a href="${internalPage('contact.html')}">Contact</a></div><div data-language-links><b>Langues</b><a href="ar/index.html">العربية</a><a href="index.html">Français</a><a href="en/index.html">English</a></div></div>`;
+    footer.innerHTML = `<div class="footer-grid"><div><strong>Medomicile</strong><p>Consultations, soins et orientation à Kénitra.</p></div><div><b>Services</b><a href="consultation.html">Consultation à domicile</a><a href="ambulance.html">Ambulance</a><a href="urgences.html">Urgences</a></div><div><b>Annuaire</b><a href="medecins.html">Médecins</a><a href="pharmacies.html">Pharmacies</a><a href="cliniques.html">Cliniques / Hôpitaux</a><a href="laboratoires.html">Laboratoires</a><a href="radiologie.html">Radiologie</a><a href="dialyse.html">Dialyse</a></div><div><b>Informations</b><a href="${internalPage('articles.html')}">Articles</a><a href="${internalPage('contact.html')}">Contact</a><a href="${internalPage('confidentialite.html')}">Confidentialité</a></div><div data-language-links><b>Langues</b><a href="ar/index.html">العربية</a><a href="index.html">Français</a><a href="en/index.html">English</a></div></div>`;
   }
   }
   if (isArabic) {
