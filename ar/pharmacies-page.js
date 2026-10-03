@@ -7,8 +7,8 @@
   function card(p) {
     const phone = p.phone || (Array.isArray(p.phones) && p.phones[0] && (p.phones[0].number || p.phones[0].label));
     const map = p.mapsUrl || p.google_maps_url;
-    return '<article class="pharmacy-directory-card"><div class="pharmacy-card-top"><span class="pharmacy-avatar">✚</span><div><h3>' + esc(p.name || p.nameAr || p.nameEn) + '</h3><p>' + esc(p.district || p.zone || 'القنيطرة') + '</p></div></div>'
-      + (p.address ? '<p class="pharmacy-address"><strong>العنوان</strong>' + esc(p.address) + '</p>' : '') + (phone ? '<p class="pharmacy-address"><strong>الهاتف</strong>' + esc(phone) + '</p>' : '')
+    return '<article class="pharmacy-directory-card"><div class="pharmacy-card-top"><span class="pharmacy-avatar">✚</span><div><h3>' + esc(p.nameAr || p.name || p.nameEn) + '</h3><p>' + esc(p.districtAr || p.district || p.zone || 'القنيطرة') + '</p></div></div>'
+      + (p.addressAr || p.address ? '<p class="pharmacy-address"><strong>العنوان</strong>' + esc(p.addressAr || p.address) + '</p>' : '') + (phone ? '<p class="pharmacy-address"><strong>الهاتف</strong>' + esc(phone) + '</p>' : '')
       + '<div class="doctor-actions">' + (p.slug ? '<a class="pharmacy-profile" href="pharmacie.html?slug=' + encodeURIComponent(p.slug) + '">عرض الملف</a>' : '') + (phone ? '<a href="tel:' + esc(phone) + '">اتصال</a>' : '') + (map ? '<a href="' + esc(map) + '" target="_blank" rel="noopener">الاتجاهات</a>' : '') + '</div></article>';
   }
   function render() {
