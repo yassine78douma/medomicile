@@ -34,4 +34,18 @@ if (!document.querySelector('.bottom-nav')) {
   bottom.innerHTML = '<a href="../index.html"><span>⌂</span><small>Accueil</small></a><a href="../consultation.html"><span>＋</span><small>Consultation</small></a><a href="../urgences.html"><span>!</span><small>Urgences</small></a><a href="../annuaire.html"><span>⌕</span><small>Annuaire</small></a>';
   document.querySelector('.prototype-shell')?.append(bottom);
 }
-fetch('../../' + source).then(r => r.text()).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); }).catch(() => { target.textContent = 'Article indisponible dans cette revue locale.'; });
+const linkArticleAuthor = (root) => {
+  const author = root.querySelector('.medical-article__author');
+  const name = author?.querySelector('strong');
+  if (!author || !name || name.textContent.trim() !== 'Dr Wiame Fimoud' || author.querySelector('.author-linkedin')) return;
+  const link = document.createElement('a');
+  link.className = 'author-linkedin';
+  link.href = 'https://www.linkedin.com/in/wiame-fimoud-b9425120a/';
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.setAttribute('aria-label', 'Profil LinkedIn de Dr Wiame Fimoud');
+  link.textContent = name.textContent;
+  name.replaceWith(link);
+};
+
+fetch('../../' + source).then(r => r.text()).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); linkArticleAuthor(target); }).catch(() => { target.textContent = 'Article indisponible dans cette revue locale.'; });

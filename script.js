@@ -4624,9 +4624,8 @@ const initArticleAuthorLinks = () => {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.setAttribute("aria-label", "Profil LinkedIn de Dr Wiame Fimoud");
-    const label = document.documentElement.lang === "en" ? "View LinkedIn profile" : "Voir le profil LinkedIn";
-    link.innerHTML = `<span class="author-linkedin__icon" aria-hidden="true">in</span><span>${label}</span>`;
-    author.append(link);
+    link.textContent = name;
+    author.querySelector("strong").replaceWith(link);
   });
 };
 
