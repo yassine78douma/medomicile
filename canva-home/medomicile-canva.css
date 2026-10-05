@@ -521,6 +521,65 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
   .article-card { min-height: 208px; padding: 22px; }
 }
 
+/* French Canva V19 Articles hub: the home shell, with an editorial reading hierarchy. */
+.article-hub-v19 { padding: 0; background: #fff; }
+.article-week { padding: 156px 20px 92px; color: #fff; background: #f10291; }
+.article-week-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr); gap: 64px; align-items: center; }
+.article-week-copy { max-width: 650px; }
+.article-week-kicker { margin: 0 0 18px; color: #a9eaff; font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
+.article-week h1 { max-width: 680px; color: #fff; font-size: clamp(3rem, 5.4vw, 5.25rem); line-height: .98; }
+.article-week-excerpt { max-width: 560px; margin: 24px 0 14px; color: #eaf6ff; font-size: 1rem; line-height: 1.65; }
+.article-week-meta { margin: 0 0 28px; color: #dcecff; font-size: .78rem; font-weight: 700; }
+.article-week-cta { color: var(--md-navy); }
+.article-week-media { position: relative; min-height: 500px; }
+.article-week-image { width: 84%; height: 500px; margin-left: auto; display: block; object-fit: cover; object-position: center; background: #fff; border: 8px solid rgba(255,255,255,.25); border-radius: 34px; box-shadow: 0 26px 52px rgba(0,0,0,.2); }
+.article-week-badge, .article-week-card { position: absolute; color: var(--md-navy); background: #fff; box-shadow: 0 12px 25px rgba(0,28,85,.18); }
+.article-week-badge { padding: 10px 12px; border-radius: 12px; font-size: .72rem; font-weight: 800; }
+.article-week-badge-one { top: 48px; left: 0; }.article-week-badge-two { top: 132px; right: 0; }
+.article-week-card { right: -10px; bottom: -18px; width: 205px; padding: 16px; display: grid; gap: 6px; border-radius: 15px; }
+.article-week-card strong { font-size: .78rem; }.article-week-card span { color: #526b86; font-size: .72rem; line-height: 1.45; }
+.article-library { padding: 84px 20px 112px; background: #fff; }
+.article-library-heading { display: flex; justify-content: space-between; gap: 40px; align-items: end; }
+.article-library-heading h2 { color: var(--md-ink); font-size: clamp(2.3rem, 4vw, 3.5rem); }
+.article-library-heading > p { max-width: 390px; margin: 0; color: var(--md-muted); line-height: 1.65; }
+.article-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 32px 0 28px; }
+.article-filters button { min-height: 38px; padding: 0 14px; border: 1px solid var(--md-line); border-radius: 999px; color: var(--md-muted); background: #fff; font: inherit; font-size: .7rem; font-weight: 700; cursor: pointer; }
+.article-filters button.is-active, .article-filters button:focus-visible { border-color: var(--md-blue); color: #fff; background: var(--md-blue); }
+.article-editorial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.article-editorial-card { overflow: hidden; border-radius: 20px; background: #fff; box-shadow: 0 14px 34px rgba(0,54,121,.09); }
+.article-editorial-image { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--md-pale); }
+.article-editorial-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .25s ease; }
+.article-editorial-card:hover .article-editorial-image img { transform: scale(1.03); }
+.article-editorial-body { padding: 22px; }
+.article-editorial-body small { color: var(--md-blue); font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.article-editorial-body h3 { margin: 10px 0 0; color: var(--md-navy); font-family: "DM Serif Display", Georgia, serif; font-size: 1.7rem; line-height: 1.08; }
+.article-editorial-body h3 a { text-decoration: none; }
+.article-editorial-body p { margin: 14px 0; color: #526b86; line-height: 1.55; }
+.article-editorial-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; color: #526b86; font-size: .72rem; }
+.article-editorial-link { display: inline-block; margin-top: 18px; color: var(--md-blue); font-size: .75rem; font-weight: 800; text-decoration: none; }
+@media (max-width: 900px) {
+  .article-week { padding: 102px 20px 54px; color: var(--md-ink); background: var(--md-pale); }
+  .article-week-grid { display: flex; flex-direction: column; gap: 0; align-items: stretch; }
+  .article-week-copy { max-width: none; }
+  .article-week-kicker { color: var(--md-blue); }
+  .article-week h1 { color: var(--md-ink); font-size: clamp(2.5rem, 11vw, 3.8rem); }
+  .article-week-excerpt { color: var(--md-muted); }
+  .article-week-meta { color: var(--md-muted); }
+  .article-week-cta { width: 100%; color: #fff; background: #f10291; }
+  .article-week-media { width: 100%; min-height: 280px; margin-top: 26px; }
+  .article-week-image { width: 100%; height: 280px; border: 4px solid #fff; border-radius: 23px; box-shadow: 0 12px 26px rgba(0,0,0,.1); }
+  .article-week-badge { top: 16px; padding: 8px 9px; font-size: .58rem; }.article-week-badge-one { left: 12px; }.article-week-badge-two { right: 12px; }
+  .article-week-card { position: relative; right: auto; bottom: auto; width: 100%; margin-top: 12px; box-shadow: 0 8px 20px rgba(0,54,121,.08); }
+  .article-library { padding: 52px 20px 112px; }
+  .article-library-heading { display: block; }.article-library-heading > p { margin-top: 14px; }
+  .article-editorial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .article-filters { gap: 6px; }.article-filters button { padding: 0 10px; font-size: .64rem; }
+  .article-editorial-grid { grid-template-columns: 1fr; gap: 12px; }
+  .article-editorial-body { padding: 20px; }.article-editorial-body h3 { font-size: 1.55rem; }
+}
+
 /* Contact: keep the opening title below the floating header. */
 .contact-page { padding: 164px 20px 112px; background: linear-gradient(180deg, #eaf4fa 0%, #f7fbfd 58%, #fff 100%); }
 .contact-page .content-width { max-width: 1180px; }
@@ -859,7 +918,7 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .article-detail-page article p,.article-detail-page article li{color:var(--md-muted);font-size:1.05rem;line-height:1.8}
 @media(max-width:700px){.article-detail-page .review-article{padding:105px 20px 90px}.article-detail-page .review-article article{padding:24px}}
 /* Dedicated pink editorial theme for Dr Wiame Fimoud articles. */
-.rose-article-page{background:#fff0f8}.rose-article-page .review-article{padding:164px 20px 112px;background:linear-gradient(180deg,#fff0f8 0%,#fff7fb 62%,#fff 100%)}.rose-article-page .review-article>.content-width{max-width:900px}.rose-article-page .section-kicker a{color:#8a2861}.rose-article-card{overflow:hidden;border:1px solid rgba(122,32,87,.18);border-radius:26px;background:#f6b6d8;box-shadow:0 18px 42px rgba(122,32,87,.12)}.rose-article-hero{padding:clamp(30px,6vw,70px);background:#f6b6d8}.rose-ribbon{display:inline-grid;width:46px;height:46px;margin-bottom:22px;place-items:center;border-radius:50%;color:#7a2057;background:#fff0f8;font-size:1.55rem}.rose-article-hero h1{max-width:780px;color:#241b2b;font-size:clamp(2.8rem,6vw,5rem);line-height:.98}.rose-article-lead{max-width:680px;margin:24px 0 0;color:#4b3044;font-size:1.08rem;line-height:1.7}.rose-article-body{padding:clamp(30px,6vw,70px);border-top:1px solid rgba(122,32,87,.18);border-bottom:1px solid rgba(122,32,87,.18);color:#4b3044;background:#ffd0e7;font-size:1.02rem;line-height:1.75}.rose-article-body h2{margin:2.2em 0 .55em;color:#241b2b;font-size:clamp(1.65rem,3vw,2.35rem)}.rose-article-body ul{display:grid;gap:12px;padding-left:1.25rem}.rose-callout{margin-top:2.2rem;padding:22px 24px;border:1px solid rgba(122,32,87,.22);border-radius:16px;color:#241b2b;background:#fff0f8}.rose-author{padding:26px clamp(30px,6vw,70px);color:#241b2b;background:#f6b6d8}.rose-author strong{display:block;margin-top:6px;font-size:1.25rem}.rose-author p{margin:.35rem 0 0;color:#684b60}.rose-disclaimer{margin:18px 0 0;padding:18px 24px;border:1px solid rgba(122,32,87,.18);border-radius:14px;color:#4b3044;background:#fff0f8;font-size:.9rem}@media(max-width:700px){.rose-article-page .review-article{padding:106px 14px 112px}.rose-article-hero{padding:28px 22px}.rose-article-hero h1{font-size:clamp(2.45rem,12vw,3.6rem)}.rose-article-body{padding:28px 22px;font-size:.98rem}.rose-author{padding:22px}}
+.rose-article-page{background:#fff0f8}.rose-article-page .review-article{padding:164px 20px 112px;background:linear-gradient(180deg,#fff0f8 0%,#fff7fb 62%,#fff 100%)}.rose-article-page .review-article>.content-width{max-width:900px}.rose-article-page .section-kicker a{color:#8a2861}.rose-article-card{overflow:hidden;border:1px solid rgba(122,32,87,.18);border-radius:26px;background:#ffcae4;box-shadow:0 18px 42px rgba(122,32,87,.12)}.rose-article-hero{padding:clamp(30px,6vw,70px);background:#ffcae4}.rose-ribbon{display:inline-grid;width:46px;height:46px;margin-bottom:22px;place-items:center;border-radius:50%;color:#7a2057;background:#fff0f8;font-size:1.55rem}.rose-article-hero h1{max-width:780px;color:#241b2b;font-size:clamp(2.8rem,6vw,5rem);line-height:.98}.rose-article-lead{max-width:680px;margin:24px 0 0;color:#4b3044;font-size:1.08rem;line-height:1.7}.rose-article-body{padding:clamp(30px,6vw,70px);border-top:1px solid rgba(122,32,87,.18);border-bottom:1px solid rgba(122,32,87,.18);color:#4b3044;background:#ffcae4;font-size:1.02rem;line-height:1.75}.rose-article-body h2{margin:2.2em 0 .55em;color:#241b2b;font-size:clamp(1.65rem,3vw,2.35rem)}.rose-article-body ul{display:grid;gap:12px;padding-left:1.25rem}.rose-callout{margin-top:2.2rem;padding:22px 24px;border:1px solid rgba(122,32,87,.22);border-radius:16px;color:#241b2b;background:#fff0f8}.rose-author{padding:26px clamp(30px,6vw,70px);color:#241b2b;background:#ffcae4}.rose-author strong{display:block;margin-top:6px;font-size:1.25rem}.rose-author p{margin:.35rem 0 0;color:#684b60}.rose-disclaimer{margin:18px 0 0;padding:18px 24px;border:1px solid rgba(122,32,87,.18);border-radius:14px;color:#4b3044;background:#fff0f8;font-size:.9rem}@media(max-width:700px){.rose-article-page .review-article{padding:106px 14px 112px}.rose-article-hero{padding:28px 22px}.rose-article-hero h1{font-size:clamp(2.45rem,12vw,3.6rem)}.rose-article-body{padding:28px 22px;font-size:.98rem}.rose-author{padding:22px}}
 
 /* Final spacing for detail articles: clear the floating header. */
 .article-detail-page .review-article{padding:164px 20px 112px;background:linear-gradient(180deg,#eaf4fa 0%,#f7fbfd 60%,#fff 100%)}
