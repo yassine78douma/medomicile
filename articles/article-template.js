@@ -48,4 +48,5 @@ const linkArticleAuthor = (root) => {
   name.replaceWith(link);
 };
 
-fetch('content/' + source).then(r => r.text()).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); linkArticleAuthor(target); }).catch(() => { target.textContent = 'Article indisponible dans cette revue locale.'; });
+const sourceUrl = '/articles/content/' + encodeURIComponent(source);
+fetch(sourceUrl).then(response => { if (!response.ok) throw new Error(`Article source unavailable (${response.status})`); return response.text(); }).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); linkArticleAuthor(target); }).catch((error) => { console.error('Unable to load article', error); target.innerHTML = '<div class="article-empty-state"><h1>Article indisponible</h1><p>Le contenu de cet article ne peut pas être chargé pour le moment.</p><a class="button button-blue" href="../articles.html">Retour aux articles</a></div>'; });
