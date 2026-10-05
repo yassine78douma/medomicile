@@ -48,4 +48,4 @@ const linkArticleAuthor = (root) => {
   name.replaceWith(link);
 };
 
-fetch('../content/' + source).then(r => r.text()).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); linkArticleAuthor(target); }).catch(() => { target.textContent = 'Article indisponible dans cette revue locale.'; });
+fetch('content/' + source).then(r => r.text()).then(html => { const doc = new DOMParser().parseFromString(html, 'text/html'); const article = doc.querySelector('.medical-article'); if (!article) throw new Error('Article source unavailable'); target.replaceChildren(article); linkArticleAuthor(target); }).catch(() => { target.textContent = 'Article indisponible dans cette revue locale.'; });
