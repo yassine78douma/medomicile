@@ -14,6 +14,7 @@
     if (copy) copy.textContent = 'Tell Medomicile what you need. We help distinguish a home-care request from a situation that requires public emergency services.';
     if (cardTitle) cardTitle.textContent = 'Need urgent help?';
     if (cardCopy) cardCopy.textContent = 'For a life-threatening emergency, call 15.';
+    orientation.querySelector('.info-card a')?.remove();
   }
   const finalContact = contact.querySelector('h2');
   const finalKicker = contact.querySelector('.section-kicker');
