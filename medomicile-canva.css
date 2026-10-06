@@ -149,6 +149,12 @@ html[lang="en"] .english-mobile-call { display: none; }
   html[lang="en"] .english-home-quicknav a { flex: 0 0 auto; padding: 8px 12px; border: 1px solid var(--md-line); border-radius: 999px; color: var(--md-navy); font-size: .68rem; font-weight: 800; text-decoration: none; }
   html[lang="en"] .english-mobile-call { position: fixed; z-index: 30; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); left: 16px; display: flex; min-height: 52px; align-items: center; justify-content: center; border-radius: 14px; color: #fff; background: var(--md-blue); box-shadow: 0 10px 24px rgba(0,31,73,.28); font-size: .9rem; font-weight: 800; text-decoration: none; }
   html[lang="en"] body:has(.english-mobile-call) { padding-bottom: 88px; }
+  html[lang="en"] .experience-section { display: none; }
+  html[lang="en"] .why-section { padding-top: 34px; padding-bottom: 34px; }
+  html[lang="en"] .why-section .benefit-grid { margin-top: 16px; gap: 7px; }
+  html[lang="en"] .why-section .benefit-grid span { padding: 9px; font-size: .68rem; }
+  html[lang="en"] .contact-section { padding-top: 34px; padding-bottom: 34px; }
+  html[lang="en"] .contact-panel { padding: 22px; }
 }
 
 /* Mobile secondary links: darker blue and a clear keyboard/focus state. */
