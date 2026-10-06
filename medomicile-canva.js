@@ -457,6 +457,8 @@ if (location.pathname.includes('/canva-home/')) {
 })();
 
 (() => {
+  if (window.__medomicileClinicRenderer) return;
+  window.__medomicileClinicRenderer = true;
   const results = document.querySelector('#clinic-results');
   if (!results) return;
   const search = document.querySelector('#clinic-search');
