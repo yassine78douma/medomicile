@@ -9,6 +9,29 @@
   });
 })();
 
+(() => {
+  if (document.documentElement.lang !== 'en') return;
+  const results = document.querySelector('#duty-results');
+  const status = document.querySelector('#duty-status');
+  const translate = () => {
+    const replacements = {
+      'Aucune période disponible ne couvre la date actuelle.': 'No on-call period covers the current date.',
+      'Les informations de garde disponibles ne couvrent pas la date actuelle.': 'No on-call information covers the current date.',
+      'Aucune pharmacie de garde n’est disponible dans les données pour cette période.': 'No on-call pharmacy information is available for this period.',
+      'Les informations de garde ne sont pas disponibles pour le moment.': 'On-call pharmacy information is currently unavailable.',
+      'Consulter l’annuaire des pharmacies': 'View pharmacies',
+      'Voir toutes les pharmacies': 'View pharmacies',
+      '← Urgences à Kénitra': '← Back to emergencies'
+    };
+    [results, status].filter(Boolean).forEach((node) => {
+      if (replacements[node.textContent]) node.textContent = replacements[node.textContent];
+      node.querySelectorAll('*').forEach((child) => { if (replacements[child.textContent]) child.textContent = replacements[child.textContent]; });
+    });
+  };
+  if (results) new MutationObserver(translate).observe(results, {childList: true, subtree: true});
+  translate();
+})();
+
 // Keep opening pages at the top so the fixed mobile header never hides their titles.
 (() => {
   if (!document.querySelector('main.contact-page, main.article-hub')) return;
