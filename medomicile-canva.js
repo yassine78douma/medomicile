@@ -94,6 +94,10 @@ window.MedomicileDetail = {
   const p = (path) => `${prefix}${path}`;
   const langLinks = arabic ? ['index.html', '../index.html', '../en/index.html'] : english ? ['../ar/index.html', '../index.html', 'index.html'] : ['ar/index.html', 'index.html', 'en/index.html'];
   const infoLinks = arabic ? `<a href="${p('articles.html')}">${copy.articles}</a><a href="${footerPath('contact.html')}">${copy.contact}</a><a href="${p('confidentialite.html')}">${copy.privacy}</a>` : `<a href="${p('index.html')}">${copy.home}</a><a href="${footerPath('contact.html')}">${copy.contact}</a><a href="${p('confidentialite.html')}">${copy.privacy}</a>`;
+  if (english) {
+    grid.innerHTML = `<div><strong>Medomicile</strong><p>Home consultations, nursing care and local guidance in Kenitra.</p></div><div><b>Services</b><a href="${p('consultation.html')}">Home consultation</a><a href="${p('consultation.html')}">Nursing care</a><a href="${p('urgences.html')}">Emergency guidance</a></div><div><b>Contact</b><a href="tel:+212663058222">+212 6 63 05 82 22</a><a href="https://wa.me/212663058222">WhatsApp</a><span>Kenitra, Mehdia and surrounding area</span></div><div><b>Explore</b><a href="${p('index.html')}">Home</a><a href="${p('consultation.html')}">Consultation</a><a href="${p('urgences.html')}">Emergencies</a></div>`;
+    return;
+  }
   grid.innerHTML = `<div><strong>Medomicile</strong><p>${copy.brand}</p></div><div><b>${copy.services}</b><a href="${p('consultation.html')}">${copy.consultation}</a><a href="${p('ambulance.html')}">${copy.ambulance}</a><a href="${p('urgences.html')}">${copy.emergencies}</a></div><div><b>${copy.directory}</b><a href="${p('medecins.html')}">${copy.doctors}</a><a href="${p('pharmacies.html')}">${copy.pharmacies}</a><a href="${p('cliniques.html')}">${copy.clinics}</a><a href="${p('laboratoires.html')}">${copy.labs}</a><a href="${p('radiologie.html')}">${copy.radiology}</a></div><div><b>${copy.info}</b>${infoLinks}</div><div data-language-links><b>${copy.languages}</b><a href="${langLinks[0]}">${copy.ar}</a><a href="${langLinks[1]}">${copy.fr}</a><a href="${langLinks[2]}">${copy.en}</a></div>`;
 })();
 
@@ -168,6 +172,8 @@ if (location.pathname.includes('/canva-home/')) {
   const isDirectory = ['annuaire.html', 'medecins.html', 'medecin.html', 'pharmacies.html', 'pharmacie.html', 'pharmacies-garde.html', 'cliniques.html', 'etablissement.html', 'laboratoires.html', 'laboratoire.html', 'radiologie.html', 'centre-radiologie.html', 'dialyse.html', 'centre-dialyse.html'].includes(page);
   const active = page === 'index.html' ? 'index.html' : page === 'consultation.html' ? 'consultation.html' : (page === 'urgences.html' || page === 'etablissements-urgences.html') ? 'urgences.html' : isDirectory ? 'annuaire.html' : '';
   const isArabic = document.documentElement.lang === 'ar';
+  const isEnglish = document.documentElement.lang === 'en';
+  if (isEnglish) return;
   if (!isArabic) {
   const inCanvaHome = location.pathname.includes('/canva-home/');
   const internalPage = (file) => location.protocol === 'file:' ? file : `${inCanvaHome ? '/canva-home' : ''}/${file}`;
