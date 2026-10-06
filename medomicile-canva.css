@@ -105,6 +105,30 @@ h1 { max-width: 650px; font-size: clamp(3rem, 5vw, 5rem); line-height: .98; lett
   .intro-section, .services-section, .steps-section, .why-section, .reviews-section, .contact-section { padding: 44px 20px; }.split-content { display: block; }.split-content > p { margin-top: 16px; }.split-content h2, .services-section h2, .steps-section h2, .why-section h2, .reviews-section h2, .contact-section h2 { font-size: 2rem; }.service-grid, .steps-grid, .review-grid, .benefit-grid { grid-template-columns: 1fr; gap: 9px; }.service-grid a { min-height: 102px; padding: 14px; }.service-grid small { font-size: .75rem; }.steps-grid { margin-top: 18px; gap: 0; }.steps-grid article { padding: 14px 0; border-top-width: 2px; }.steps-grid b { display: inline-block; margin: 0 14px 0 0; }.steps-grid strong { display: inline; }.steps-grid p { margin: 8px 0 0 32px; }.why-section h2 { font-size: 2rem; }.benefit-grid { margin-top: 20px; grid-template-columns: 1fr 1fr; }.benefit-grid span { padding: 11px; font-size: .7rem; }.rating-summary { margin-top: 20px; }.review-grid article { padding: 14px; }.review-grid p { font-size: .74rem; }.contact-panel { padding: 24px; }.contact-actions { display: grid; }.site-footer { padding-bottom: 120px; }.footer-grid { grid-template-columns: 1fr 1fr; gap: 24px 18px; }.footer-grid > div:first-child { grid-column: 1 / -1; }
 }
 
+/* English pages use the same V19 spacing and content density as the French pages. */
+html[lang="en"] .consultation-hero,
+html[lang="en"] .urgent-hero { min-height: 520px; }
+html[lang="en"] .service-section,
+html[lang="en"] .urgent-section,
+html[lang="en"] .urgent-quick { padding-top: 72px; padding-bottom: 84px; }
+html[lang="en"] .service-grid,
+html[lang="en"] .urgent-quick-grid { max-width: 1040px; margin-right: auto; margin-left: auto; }
+html[lang="en"] .service-grid a,
+html[lang="en"] .urgent-quick-grid a { min-height: 150px; border-radius: 16px; box-shadow: 0 8px 18px rgba(0,54,121,.05); }
+html[lang="en"] .urgent-feature,
+html[lang="en"] .urgent-number-card { max-width: 1040px; margin-right: auto; margin-left: auto; }
+html[lang="en"] .urgent-section h2,
+html[lang="en"] .service-section h2 { max-width: 720px; }
+@media (max-width: 900px) {
+  html[lang="en"] .consultation-hero,
+  html[lang="en"] .urgent-hero { min-height: 0; }
+  html[lang="en"] .service-section,
+  html[lang="en"] .urgent-section,
+  html[lang="en"] .urgent-quick { padding-top: 44px; padding-bottom: 48px; }
+  html[lang="en"] .service-grid a,
+  html[lang="en"] .urgent-quick-grid a { min-height: 118px; }
+}
+
 /* Mobile secondary links: darker blue and a clear keyboard/focus state. */
 @media (max-width: 900px) {
   .directory-context a,
