@@ -123,6 +123,7 @@ html[lang="en"] .urgent-copy { max-width: 720px; color: var(--md-muted); line-he
 html[lang="en"] .header-cta { color: var(--md-navy); }
 html[lang="en"] .section-kicker { color: #004bb8; }
 html[lang="en"] .footer-grid b { color: #006b9e; }
+html[lang="en"] .footer-grid span { display: block; margin: 0 0 8px; color: #c7d9e9; font-size: .72rem; line-height: 1.5; }
 html[lang="en"] a:focus-visible,
 html[lang="en"] button:focus-visible { outline: 3px solid #f10291; outline-offset: 3px; }
 html[lang="en"] .urgent-section .service-grid { margin-top: 28px; }
