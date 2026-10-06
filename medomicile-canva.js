@@ -511,6 +511,8 @@ if (location.pathname.includes('/canva-home/')) {
       'Oncologie · Akdital': 'Oncology · Akdital', 'Maternité': 'Maternity unit',
       'Médecine générale': 'General medicine', 'Nutrition': 'Nutrition', 'Pédiatrie': 'Paediatrics',
       'Urgences 24h/24': '24/7 emergency care', '24h/24': '24/7',
+      'Horaires à confirmer': 'Hours to be confirmed', 'Horaires à vérifier': 'Hours to be checked',
+      'Ouvert - horaires à vérifier': 'Open — hours to be checked',
       'urgences radiologiques selon disponibilité': 'radiology emergency care subject to availability',
       'à confirmer': 'to be confirmed'
     };
@@ -732,7 +734,7 @@ if (location.pathname.includes('/canva-home/')) {
   const status = document.querySelector('#duty-status');
   const english = document.documentElement.lang === 'en';
   const formatPhone = (value) => String(value || '').replace(/[^0-9+]/g, '');
-  const englishText = (value) => String(value || '').replace(/Calendrier des pharmacies de garde d'/g, 'On-call pharmacy schedule for ').replace(/Appelez toujours avant de vous déplacer\.?/g, 'Always call before travelling.').replace(/Garde 24h\/24/g, '24-hour duty').replace(/Garde de nuit/g, 'Night duty').replace(/Garde de jour/g, 'Day duty');
+  const englishText = (value) => String(value || '').replace(/Calendrier des pharmacies de garde d'/g, 'On-call pharmacy schedule for ').replace(/Appelez toujours avant de vous déplacer\.?/g, 'Always call before travelling.').replace(/Garde 24h\/24/g, '24-hour duty').replace(/Garde de nuit/g, 'Night duty').replace(/Garde de jour/g, 'Day duty').replace(/Pharmacie de garde/g, 'On-call pharmacy').replace(/Conseil pharmaceutique/g, 'Pharmacy advice').replace(/Ordonnances/g, 'Prescriptions').replace(/A completer/gi, 'To be completed').replace(/Horaires à confirmer/g, 'Hours to be confirmed').replace(/Horaires à vérifier/g, 'Hours to be checked');
   const englishMonth = (value) => String(value || '').replace(/^Janvier/, 'January').replace(/^Février/, 'February').replace(/^Mars/, 'March').replace(/^Avril/, 'April').replace(/^Mai/, 'May').replace(/^Juin/, 'June').replace(/^Juillet/, 'July').replace(/^Août/, 'August').replace(/^Septembre/, 'September').replace(/^Octobre/, 'October').replace(/^Novembre/, 'November').replace(/^Décembre/, 'December');
   const render = (data, directory = []) => {
     const groups = [['day', english ? 'Day duty' : 'Garde de jour'], ['night', english ? 'Night duty' : 'Garde de nuit']].flatMap(([type, label]) => (data?.duty?.[type] || []).map((pharmacy) => ({ ...pharmacy, periodLabel: label })));
