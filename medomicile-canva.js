@@ -83,7 +83,7 @@ window.MedomicileDetail = {
   };
   const arabic = document.documentElement.lang === 'ar';
   const english = document.documentElement.lang === 'en';
-  const prefix = location.pathname.includes('/en/') ? '../' : '';
+  const prefix = english ? '' : (location.pathname.includes('/en/') ? '../' : '');
   const copy = arabic ? {
     brand: 'استشارات ورعاية وتوجيه في القنيطرة', services: 'الخدمات', consultation: 'الاستشارة', ambulance: 'الإسعاف', emergencies: 'الطوارئ', directory: 'الدليل', doctors: 'الأطباء', pharmacies: 'الصيدليات', clinics: 'العيادات والمستشفيات', labs: 'المختبرات', radiology: 'مراكز الأشعة', info: 'المعلومات', articles: 'المقالات', home: 'الرئيسية', contact: 'اتصل بنا', privacy: 'الخصوصية', languages: 'اللغات', ar: 'العربية', fr: 'Français', en: 'English'
   } : english ? {
