@@ -2,6 +2,13 @@
   const main = document.querySelector('main');
   const contact = main?.querySelector('.contact-section');
   if (!main || !contact) return;
+  const heroActions = main.querySelector('.hero-actions');
+  if (heroActions && !heroActions.querySelector('.availability-note')) {
+    const note = document.createElement('p');
+    note.className = 'availability-note';
+    note.textContent = 'Availability to be confirmed by phone.';
+    heroActions.append(note);
+  }
 
   const care = document.createElement('section');
   care.className = 'service-section';

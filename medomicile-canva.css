@@ -134,6 +134,7 @@ html[lang="en"] .urgent-section .service-grid article small { color: var(--md-mu
 html[lang="en"] .urgent-mobile-call { display: none; }
 html[lang="en"] .english-home-quicknav { display: none; }
 html[lang="en"] .english-mobile-call { display: none; }
+html[lang="en"] .availability-note { width: 100%; margin: 2px 0 0; color: #eaf6ff; font-size: .72rem; font-weight: 700; line-height: 1.4; }
 @media (max-width: 900px) {
   html[lang="en"] .consultation-hero,
   html[lang="en"] .urgent-hero { min-height: 0; }
@@ -148,6 +149,7 @@ html[lang="en"] .english-mobile-call { display: none; }
   html[lang="en"] .english-home-quicknav { position: sticky; z-index: 10; top: 68px; display: flex; gap: 8px; overflow-x: auto; padding: 10px 20px; border-bottom: 1px solid var(--md-line); background: rgba(255,255,255,.96); }
   html[lang="en"] .english-home-quicknav a { flex: 0 0 auto; padding: 8px 12px; border: 1px solid var(--md-line); border-radius: 999px; color: var(--md-navy); font-size: .68rem; font-weight: 800; text-decoration: none; }
   html[lang="en"] .english-mobile-call { position: fixed; z-index: 30; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); left: 16px; display: flex; min-height: 52px; align-items: center; justify-content: center; border-radius: 14px; color: #fff; background: var(--md-blue); box-shadow: 0 10px 24px rgba(0,31,73,.28); font-size: .9rem; font-weight: 800; text-decoration: none; }
+  html[lang="en"] .availability-note { margin-top: 4px; color: var(--md-muted); }
   html[lang="en"] body:has(.english-mobile-call) { padding-bottom: 88px; }
   html[lang="en"] .experience-section { display: none; }
   html[lang="en"] .why-section { padding-top: 34px; padding-bottom: 34px; }

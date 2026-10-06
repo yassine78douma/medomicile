@@ -22,6 +22,13 @@
   if (finalContact) finalContact.textContent = 'Ready to explain your request?';
   if (finalCopy) finalCopy.textContent = 'Call or use WhatsApp for a home-care request in Kenitra, Mehdia or the surrounding area.';
   const hero = main.querySelector('.hero');
+  const heroActions = hero?.querySelector('.hero-actions');
+  if (heroActions && !heroActions.querySelector('.availability-note')) {
+    const note = document.createElement('p');
+    note.className = 'availability-note';
+    note.textContent = 'Availability to be confirmed by phone.';
+    heroActions.append(note);
+  }
   if (hero) {
     const quickNav = document.createElement('nav');
     quickNav.className = 'english-home-quicknav';
