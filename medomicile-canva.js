@@ -507,6 +507,10 @@ if (location.pathname.includes('/canva-home/')) {
       'Hospitalisation oncologique': 'Oncology inpatient care',
       'Cardiologie interventionnelle': 'Interventional cardiology', 'Ophtalmologie': 'Ophthalmology',
       'Gynécologie-obstétrique': 'Obstetrics and gynaecology', 'Chirurgie générale': 'General surgery',
+      'Centre chirurgical': 'Surgical centre', 'Hôpital privé · Akdital': 'Private hospital · Akdital',
+      'Oncologie · Akdital': 'Oncology · Akdital', 'Maternité': 'Maternity unit',
+      'Médecine générale': 'General medicine', 'Nutrition': 'Nutrition', 'Pédiatrie': 'Paediatrics',
+      'Urgences 24h/24': '24/7 emergency care', '24h/24': '24/7',
       'urgences radiologiques selon disponibilité': 'radiology emergency care subject to availability',
       'à confirmer': 'to be confirmed'
     };
@@ -537,7 +541,7 @@ if (location.pathname.includes('/canva-home/')) {
       const maps = item.google_maps_url ? `<a href="${item.google_maps_url}" target="_blank" rel="noopener noreferrer">${english ? 'Directions' : 'Itinéraire'}</a>` : '';
       const profile = item.slug ? `<a class="clinic-profile" href="etablissement.html?slug=${encodeURIComponent(item.slug)}">${english ? 'View profile' : 'Voir la fiche'}</a>` : '';
       const website = item.website ? `<a href="${item.website}" target="_blank" rel="noopener noreferrer">${english ? 'Website' : 'Site web'}</a>` : '';
-      const emergency = emergencyFacilitiesPage ? `<span class="clinic-status">${english ? 'Emergency care · 24/7' : 'Urgences · 24h/24'}</span>` : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `${english ? 'Emergency care · ' : 'Urgences · '}${item.emergency_hours}` : (english ? 'Emergency care' : 'Urgences')}</span>` : '');
+      const emergency = emergencyFacilitiesPage ? `<span class="clinic-status">${english ? 'Emergency care · 24/7' : 'Urgences · 24h/24'}</span>` : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `${english ? 'Emergency care · ' : 'Urgences · '}${english ? dataLabel(item.emergency_hours) : item.emergency_hours}` : (english ? 'Emergency care' : 'Urgences')}</span>` : '');
       const labels = [...(item.services || []), ...(item.specialties || [])].filter((label) => label && !/^urgences\b/i.test(label)).slice(0, 3);
       const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${dataLabel(label)}</span>`).join('')}</p>` : '';
       card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
