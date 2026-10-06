@@ -453,6 +453,36 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .steps-section > .content-width > h2 { max-width: 720px; margin-right: auto; margin-left: auto; }
 .steps-grid article { min-height: 142px; border-top-width: 2px; border-radius: 12px; }
 .why-section { padding-top: 78px; padding-bottom: 78px; }
+
+/* Keep the English home composition on the same French V19 visual rhythm. */
+.direct-section { padding: 58px 20px 74px; background: #fff; }
+.direct-section > .content-width > .section-kicker,
+.direct-section > .content-width > h2 { text-align: center; }
+.direct-section > .content-width > h2 { color: var(--md-ink); font-size: clamp(2rem, 4vw, 3.1rem); }
+.direct-section .primary-grid { max-width: 1040px; margin: 28px auto 0; }
+.direct-section .primary-card { min-height: 138px; padding: 20px 22px; border-radius: 12px; box-shadow: 0 8px 18px rgba(0,54,121,.05); }
+.direct-section .primary-card-main { background: var(--md-blue); border-color: var(--md-blue); }
+.direct-section .primary-card-secondary { background: var(--md-navy); border-color: var(--md-navy); }
+.split-section { padding: 70px 20px 76px; background: var(--md-pale); }
+.split-section .split-content { padding: 42px; border: 1px solid #e1edf4; border-radius: var(--md-radius); background: #fff; box-shadow: var(--md-shadow); }
+.split-section .split-content h2 { color: var(--md-ink); font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.04; }
+.split-section .split-content > div:first-child p:last-child { color: var(--md-muted); line-height: 1.75; }
+.split-section .info-card { padding: 20px; border-top: 2px solid var(--md-gold); }
+.split-section .info-card strong { display: block; color: var(--md-navy); }
+.split-section .info-card p { color: var(--md-muted); }
+.split-section .info-card a { color: var(--md-blue); font-weight: 800; }
+@media (max-width: 900px) {
+  .direct-section { padding: 46px 20px 76px; }
+  .direct-section > .content-width > h2 { font-size: 2.1rem; }
+  .direct-section .primary-grid { grid-template-columns: repeat(2, 1fr); gap: 9px; }
+  .direct-section .primary-card { min-height: 126px; padding: 13px; border-radius: 16px; }
+  .direct-section .primary-card strong { font-size: .82rem; }
+  .direct-section .primary-card small { font-size: .58rem; }
+  .split-section { padding: 44px 20px; }
+  .split-section .split-content { display: block; padding: 24px; }
+  .split-section .split-content h2 { font-size: 2rem; }
+  .split-section .info-card { margin-top: 22px; }
+}
 .why-layout { display: grid; grid-template-columns: .86fr 1.14fr; gap: 64px; align-items: center; }
 .why-image { min-height: 310px; overflow: hidden; border: 7px solid rgba(255,255,255,.25); border-radius: 20px; }
 .why-image img { width: 100%; height: 100%; min-height: 310px; display: block; object-fit: cover; }
