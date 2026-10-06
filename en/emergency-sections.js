@@ -12,7 +12,7 @@
   const warning = document.createElement('section');
   warning.className = 'urgent-section';
   warning.setAttribute('aria-labelledby', 'english-warning-signs');
-  warning.innerHTML = `<div class="content-width"><p class="section-kicker">When to call</p><h2 id="english-warning-signs">Use the right service for the situation.</h2><p class="urgent-copy">Call 15 immediately for breathing difficulty, loss of consciousness, severe bleeding, serious injury or a road accident. For a non-life-threatening request in Kenitra, contact Medomicile about a home consultation.</p><a class="button button-blue" href="tel:15">Call 15 →</a><a class="button button-white" href="consultation.html">Home consultation →</a></div>`;
+  warning.innerHTML = `<div class="content-width"><p class="section-kicker">Non-emergency care</p><h2 id="english-warning-signs">Need a home consultation?</h2><p class="urgent-copy">For a non-life-threatening request in Kenitra, contact Medomicile to discuss a home consultation. In a serious emergency, use the public emergency service on 15.</p><a class="button button-white" href="consultation.html">Home consultation →</a></div>`;
   main.insertBefore(warning, disclaimer);
 
   const mobileCall = document.createElement('a');
