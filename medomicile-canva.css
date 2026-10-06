@@ -119,6 +119,11 @@ html[lang="en"] .urgent-feature,
 html[lang="en"] .urgent-number-card { max-width: 1040px; margin-right: auto; margin-left: auto; }
 html[lang="en"] .urgent-section h2,
 html[lang="en"] .service-section h2 { max-width: 720px; }
+html[lang="en"] .urgent-copy { max-width: 720px; color: var(--md-muted); line-height: 1.75; }
+html[lang="en"] .urgent-section .service-grid { margin-top: 28px; }
+html[lang="en"] .urgent-section .service-grid article { min-height: 150px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--md-line); border-radius: 16px; background: #fff; box-shadow: 0 8px 18px rgba(0,54,121,.05); }
+html[lang="en"] .urgent-section .service-grid article strong { color: var(--md-navy); }
+html[lang="en"] .urgent-section .service-grid article small { color: var(--md-muted); line-height: 1.5; }
 @media (max-width: 900px) {
   html[lang="en"] .consultation-hero,
   html[lang="en"] .urgent-hero { min-height: 0; }
