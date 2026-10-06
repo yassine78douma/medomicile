@@ -2,6 +2,14 @@
   const main = document.querySelector('main');
   const disclaimer = main?.querySelector('.urgent-disclaimer');
   if (!main || !disclaimer) return;
+  const quick = main.querySelector('.urgent-quick-grid');
+  if (quick && !quick.querySelector('[data-emergency-resources]')) {
+    const resources = document.createElement('div');
+    resources.dataset.emergencyResources = '1';
+    resources.className = 'urgent-resource-links';
+    resources.innerHTML = '<a href="../etablissements-urgences.html"><b>04</b><strong>Emergency facilities</strong><span>Find local hospitals and emergency establishments.</span></a><a href="../pharmacies-garde.html"><b>05</b><strong>On-call pharmacies</strong><span>Check the available pharmacy duty information.</span></a>';
+    quick.append(resources);
+  }
 
   const section = document.createElement('section');
   section.className = 'urgent-section urgent-soft';
