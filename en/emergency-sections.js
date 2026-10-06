@@ -7,7 +7,7 @@
     const resources = document.createElement('div');
     resources.dataset.emergencyResources = '1';
     resources.className = 'urgent-resource-links';
-    resources.innerHTML = '<a href="etablissements-urgences.html"><b>04</b><strong>Emergency facilities</strong><span>Find local hospitals and emergency establishments.</span></a><a href="pharmacies-garde.html"><b>05</b><strong>On-call pharmacies</strong><span>Check the available pharmacy duty information.</span></a>';
+    resources.innerHTML = '<a href="/en/etablissements-urgences.html"><b>04</b><strong>Emergency facilities</strong><span>Find local hospitals and emergency establishments.</span></a><a href="/en/pharmacies-garde.html"><b>05</b><strong>On-call pharmacies</strong><span>Check the available pharmacy duty information.</span></a>';
     quick.append(resources);
   }
 
