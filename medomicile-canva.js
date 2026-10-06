@@ -467,8 +467,9 @@ if (location.pathname.includes('/canva-home/')) {
   const empty = document.querySelector('#clinic-empty');
   const clear = document.querySelector('#clinic-clear');
   let establishments = [], visible = 20;
+  const english = document.documentElement.lang === 'en';
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
-  const typeLabel = (value) => ({ clinic: 'Clinique', hospital: 'Hôpital' }[value] || value || 'Établissement');
+  const typeLabel = (value) => english ? ({ clinic: 'Clinic', hospital: 'Hospital' }[value] || value || 'Facility') : ({ clinic: 'Clinique', hospital: 'Hôpital' }[value] || value || 'Établissement');
   const safePhone = (value) => String(value || '').replace(/[^0-9+]/g, '');
   const render = () => {
     const query = normalize(search.value), selectedType = type.value, selectedZone = zone.value;
@@ -482,21 +483,21 @@ if (location.pathname.includes('/canva-home/')) {
       return emergencyFacility && (!query || haystack.includes(query)) && (!selectedType || item.type === selectedType) && (!selectedZone || item.city === selectedZone);
     });
     results.replaceChildren();
-    count.textContent = `${filtered.length} établissement${filtered.length > 1 ? 's' : ''}`;
+    count.textContent = english ? `${filtered.length} facilit${filtered.length === 1 ? 'y' : 'ies'}` : `${filtered.length} établissement${filtered.length > 1 ? 's' : ''}`;
     empty.hidden = filtered.length !== 0;
     more.hidden = filtered.length <= visible;
     filtered.slice(0, visible).forEach((item) => {
       const card = document.createElement('article');
       card.className = 'clinic-card';
       const phoneValue = item.phone || item.phones?.[0]?.href?.replace(/^tel:/, '');
-      const phone = phoneValue ? `<a href="tel:${safePhone(phoneValue)}">Appeler</a>` : '';
-      const maps = item.google_maps_url ? `<a href="${item.google_maps_url}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
-      const profile = item.slug ? `<a class="clinic-profile" href="etablissement.html?slug=${encodeURIComponent(item.slug)}">Voir la fiche</a>` : '';
-      const website = item.website ? `<a href="${item.website}" target="_blank" rel="noopener noreferrer">Site web</a>` : '';
-      const emergency = location.pathname.endsWith('etablissements-urgences.html') ? '<span class="clinic-status">Urgences · 24h/24</span>' : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `Urgences · ${item.emergency_hours}` : 'Urgences'}</span>` : '');
+      const phone = phoneValue ? `<a href="tel:${safePhone(phoneValue)}">${english ? 'Call' : 'Appeler'}</a>` : '';
+      const maps = item.google_maps_url ? `<a href="${item.google_maps_url}" target="_blank" rel="noopener noreferrer">${english ? 'Directions' : 'Itinéraire'}</a>` : '';
+      const profile = item.slug ? `<a class="clinic-profile" href="etablissement.html?slug=${encodeURIComponent(item.slug)}">${english ? 'View profile' : 'Voir la fiche'}</a>` : '';
+      const website = item.website ? `<a href="${item.website}" target="_blank" rel="noopener noreferrer">${english ? 'Website' : 'Site web'}</a>` : '';
+      const emergency = location.pathname.endsWith('etablissements-urgences.html') ? `<span class="clinic-status">${english ? 'Emergency care · 24/7' : 'Urgences · 24h/24'}</span>` : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `${english ? 'Emergency care · ' : 'Urgences · '}${item.emergency_hours}` : (english ? 'Emergency care' : 'Urgences')}</span>` : '');
       const labels = [...(item.services || []), ...(item.specialties || [])].filter((label) => label && !/^urgences\b/i.test(label)).slice(0, 3);
       const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${label}</span>`).join('')}</p>` : '';
-      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${item.subtitle}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${item.city || 'Kénitra'}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>Téléphone</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
+      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${item.subtitle}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
       results.append(card);
     });
   };
@@ -514,7 +515,7 @@ if (location.pathname.includes('/canva-home/')) {
     count.textContent = '';
     empty.hidden = false;
     const message = empty.querySelector('strong');
-    if (message) message.textContent = 'Les établissements sont momentanément indisponibles.';
+    if (message) message.textContent = english ? 'Facility information is temporarily unavailable.' : 'Les établissements sont momentanément indisponibles.';
   });
   search.addEventListener('input', () => { visible = 20; render(); });
   type.addEventListener('change', () => { visible = 20; render(); });
@@ -670,14 +671,15 @@ if (location.pathname.includes('/canva-home/')) {
   if (!results) return;
   const meta = document.querySelector('#duty-meta');
   const status = document.querySelector('#duty-status');
+  const english = document.documentElement.lang === 'en';
   const formatPhone = (value) => String(value || '').replace(/[^0-9+]/g, '');
   const render = (data, directory = []) => {
-    const groups = [['day', 'Garde de jour'], ['night', 'Garde de nuit']].flatMap(([type, label]) => (data?.duty?.[type] || []).map((pharmacy) => ({ ...pharmacy, periodLabel: label })));
-    if (meta) meta.textContent = [data?.displayDate, data?.updatedAt ? `Mise à jour : ${new Date(data.updatedAt).toLocaleDateString('fr-FR')}` : ''].filter(Boolean).join(' · ');
-    if (status) status.textContent = data?.note || 'Appelez toujours la pharmacie avant de vous déplacer.';
+    const groups = [['day', english ? 'Day duty' : 'Garde de jour'], ['night', english ? 'Night duty' : 'Garde de nuit']].flatMap(([type, label]) => (data?.duty?.[type] || []).map((pharmacy) => ({ ...pharmacy, periodLabel: label })));
+    if (meta) meta.textContent = [data?.displayDate, data?.updatedAt ? `${english ? 'Updated: ' : 'Mise à jour : '}${new Date(data.updatedAt).toLocaleDateString(english ? 'en-GB' : 'fr-FR')}` : ''].filter(Boolean).join(' · ');
+    if (status) status.textContent = data?.note || (english ? 'Always call the pharmacy before travelling.' : 'Appelez toujours la pharmacie avant de vous déplacer.');
     results.replaceChildren();
-    if (!groups.length) { results.innerHTML = '<div class="pharmacy-empty"><strong>Aucune pharmacie de garde n’est disponible dans les données pour cette période.</strong><a href="pharmacies.html">Consulter l’annuaire des pharmacies</a><a href="urgences.html">← Urgences à Kénitra</a></div>'; return; }
-    groups.forEach((pharmacy) => { const card = document.createElement('article'); card.className = 'duty-card'; const permanent = directory.find((item) => item.id === pharmacy.directoryId || item.id === pharmacy.id); const phoneValue = pharmacy.phone || permanent?.phone; const mapsValue = pharmacy.mapsUrl || pharmacy.google_maps_url || permanent?.mapsUrl || permanent?.google_maps_url; const phone = phoneValue ? `<a href="tel:${formatPhone(phoneValue)}">Appeler</a>` : ''; const maps = mapsValue ? `<a href="${mapsValue}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : ''; const profile = permanent?.slug ? `<a href="pharmacie.html?slug=${encodeURIComponent(permanent.slug)}">Voir la fiche</a>` : ''; card.innerHTML = `<div class="duty-card-head"><span>${pharmacy.periodLabel}</span><b>De garde</b></div><h3>${pharmacy.name || permanent?.name || ''}</h3>${pharmacy.hours ? `<p class="duty-hours">${pharmacy.hours}</p>` : ''}${pharmacy.district || permanent?.district ? `<p><strong>Quartier</strong>${pharmacy.district || permanent.district}</p>` : ''}${pharmacy.address || permanent?.address ? `<p><strong>Adresse</strong>${pharmacy.address || permanent.address}</p>` : ''}${phoneValue ? `<p><strong>Téléphone</strong>${phoneValue}</p>` : ''}<div class="duty-actions">${phone}${maps}${profile}</div>`; results.append(card); });
+    if (!groups.length) { results.innerHTML = `<div class="pharmacy-empty"><strong>${english ? 'No on-call pharmacy information is available for this period.' : 'Aucune pharmacie de garde n’est disponible dans les données pour cette période.'}</strong><a href="pharmacies.html">${english ? 'View pharmacies' : 'Consulter l’annuaire des pharmacies'}</a><a href="urgences.html">${english ? '← Back to emergencies' : '← Urgences à Kénitra'}</a></div>`; return; }
+    groups.forEach((pharmacy) => { const card = document.createElement('article'); card.className = 'duty-card'; const permanent = directory.find((item) => item.id === pharmacy.directoryId || item.id === pharmacy.id); const phoneValue = pharmacy.phone || permanent?.phone; const mapsValue = pharmacy.mapsUrl || pharmacy.google_maps_url || permanent?.mapsUrl || permanent?.google_maps_url; const phone = phoneValue ? `<a href="tel:${formatPhone(phoneValue)}">${english ? 'Call' : 'Appeler'}</a>` : ''; const maps = mapsValue ? `<a href="${mapsValue}" target="_blank" rel="noopener noreferrer">${english ? 'Directions' : 'Itinéraire'}</a>` : ''; const profile = permanent?.slug ? `<a href="pharmacie.html?slug=${encodeURIComponent(permanent.slug)}">${english ? 'View profile' : 'Voir la fiche'}</a>` : ''; card.innerHTML = `<div class="duty-card-head"><span>${pharmacy.periodLabel}</span><b>${english ? 'On call' : 'De garde'}</b></div><h3>${pharmacy.name || permanent?.name || ''}</h3>${pharmacy.hours ? `<p class="duty-hours">${pharmacy.hours}</p>` : ''}${pharmacy.district || permanent?.district ? `<p><strong>${english ? 'Area' : 'Quartier'}</strong>${pharmacy.district || permanent.district}</p>` : ''}${pharmacy.address || permanent?.address ? `<p><strong>${english ? 'Address' : 'Adresse'}</strong>${pharmacy.address || permanent.address}</p>` : ''}${phoneValue ? `<p><strong>${english ? 'Phone' : 'Téléphone'}</strong>${phoneValue}</p>` : ''}<div class="duty-actions">${phone}${maps}${profile}</div>`; results.append(card); });
   };
   const files = ['2025-12-13','2026-07-23','2026-07-24','2026-07-25','2026-07-27','2026-07-28','2026-07-29','2026-07-30','2026-07-31','2026-08-01','2026-08-03','2026-08-04','2026-08-05','2026-08-06','2026-08-07','2026-08-08','2026-08-10','2026-08-11','2026-08-12','2026-08-13','2026-08-14','2026-08-16','2026-08-17','2026-08-18','2026-08-19','2026-08-20','2026-08-21','2026-08-22','2026-08-24','2026-08-25','2026-08-26','2026-08-27','2026-08-29','2026-08-31','2026-09-07','2026-09-08','2026-09-09','2026-09-12','2026-09-14','2026-09-19-20','2026-09-21-25','2026-09-26-27','2026-09-28-10-02'];
   const dateInPeriod = (value, file) => { const parts = file.split('-').map(Number); const year = parts[0], month = parts[1], start = parts[2], endMonth = parts.length === 5 ? parts[3] : month, end = parts.length === 5 ? parts[4] : start; const date = new Date(`${value}T12:00:00`), from = new Date(year, month - 1, start, 12), to = new Date(year, endMonth - 1, end, 12); return date >= from && date <= to; };
