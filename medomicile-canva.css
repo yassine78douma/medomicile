@@ -321,9 +321,10 @@ html[dir="rtl"] main.ml-page .ml-actions { display: grid !important; gap: 14px !
 html[dir="rtl"] main.ml-page .ml-actions a { display: flex !important; text-decoration: none !important; }
 
 /* Clinics & hospitals directory */
-.clinics-hero { padding: 58px 20px 48px; background: var(--md-pale); }
+.clinics-hero { padding: 112px 20px 58px; color: #fff; background: linear-gradient(125deg, #00275b, var(--md-navy) 48%, var(--md-blue)); }
 .clinics-hero h1 { max-width: 720px; margin: 12px 0 14px; }
-.clinics-hero > .content-width > p:not(.eyebrow) { color: var(--md-muted); }
+.clinics-hero .back-link { color: #dcecff; }
+.clinics-hero > .content-width > p:not(.eyebrow) { color: #eaf6ff; }
 .back-link { display: inline-block; color: var(--md-blue); font-size: .72rem; font-weight: 800; text-decoration: none; }
 .clinic-toolbar { margin-top: 28px; padding: 18px; display: grid; grid-template-columns: 1fr 170px 170px; gap: 12px; align-items: end; border: 1px solid #d7e5f0; border-radius: 18px; background: #fff; box-shadow: var(--md-shadow); }
 .clinic-toolbar label { grid-row: 1; color: var(--md-muted); font-size: .64rem; font-weight: 800; }
