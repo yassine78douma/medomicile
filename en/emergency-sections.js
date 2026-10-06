@@ -14,4 +14,11 @@
   warning.setAttribute('aria-labelledby', 'english-warning-signs');
   warning.innerHTML = `<div class="content-width"><p class="section-kicker">When to call</p><h2 id="english-warning-signs">Use the right service for the situation.</h2><p class="urgent-copy">Call 15 immediately for breathing difficulty, loss of consciousness, severe bleeding, serious injury or a road accident. For a non-life-threatening request in Kenitra, contact Medomicile about a home consultation.</p><a class="button button-blue" href="tel:15">Call 15 →</a><a class="button button-white" href="consultation.html">Home consultation →</a></div>`;
   main.insertBefore(warning, disclaimer);
+
+  const mobileCall = document.createElement('a');
+  mobileCall.className = 'urgent-mobile-call';
+  mobileCall.href = 'tel:15';
+  mobileCall.setAttribute('aria-label', 'Call emergency services on 15');
+  mobileCall.textContent = 'Call 15';
+  document.body.append(mobileCall);
 })();
