@@ -527,6 +527,7 @@ if (location.pathname.includes('/canva-home/')) {
 /* Emergency directory tabs use one external, local data source. */
 (() => {
   if (!location.pathname.endsWith('etablissements-urgences.html')) return;
+  if (!document.querySelector('[data-clinic-category]')) return;
   const results = document.querySelector('#clinic-results');
   const count = document.querySelector('#clinic-count');
   const title = document.querySelector('.clinic-results-heading h2');
