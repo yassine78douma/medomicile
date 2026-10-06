@@ -524,6 +524,16 @@ if (location.pathname.includes('/canva-home/')) {
   clear.addEventListener('click', () => { search.value = ''; type.value = ''; zone.value = ''; visible = 20; render(); });
 })();
 
+(() => {
+  if (document.documentElement.lang !== 'en' || !location.pathname.endsWith('etablissements-urgences.html')) return;
+  const resultsSection = document.querySelector('.clinic-results-section');
+  if (!resultsSection || document.querySelector('.english-resource-context')) return;
+  const section = document.createElement('section');
+  section.className = 'english-resource-context';
+  section.innerHTML = '<div class="content-width"><div class="english-resource-context-grid"><a href="urgences.html"><b>Need urgent guidance?</b><span>Review emergency advice and when to call 15.</span><strong>Back to Emergencies →</strong></a><a href="consultation.html"><b>Need non-emergency care?</b><span>Contact Medomicile about a home consultation in Kenitra.</span><strong>Home consultation →</strong></a></div></div>';
+  resultsSection.insertAdjacentElement('afterend', section);
+})();
+
 /* Emergency directory tabs use one external, local data source. */
 (() => {
   if (!location.pathname.endsWith('etablissements-urgences.html')) return;
