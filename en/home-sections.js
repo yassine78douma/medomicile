@@ -2,6 +2,25 @@
   const main = document.querySelector('main');
   const contact = main?.querySelector('.contact-section');
   if (!main || !contact) return;
+  const orientation = main.querySelector('.split-section');
+  if (orientation) {
+    const kicker = orientation.querySelector('.section-kicker');
+    const heading = orientation.querySelector('h2');
+    const copy = orientation.querySelector('.split-content > div:first-child p:last-child');
+    const cardTitle = orientation.querySelector('.info-card strong');
+    const cardCopy = orientation.querySelector('.info-card p');
+    if (kicker) kicker.textContent = 'Care orientation';
+    if (heading) heading.textContent = 'Find the right next step.';
+    if (copy) copy.textContent = 'Tell Medomicile what you need. We help distinguish a home-care request from a situation that requires public emergency services.';
+    if (cardTitle) cardTitle.textContent = 'Need urgent help?';
+    if (cardCopy) cardCopy.textContent = 'For a life-threatening emergency, call 15.';
+  }
+  const finalContact = contact.querySelector('h2');
+  const finalKicker = contact.querySelector('.section-kicker');
+  const finalCopy = contact.querySelector('.contact-panel p:not(.section-kicker)');
+  if (finalKicker) finalKicker.textContent = 'Speak to Medomicile';
+  if (finalContact) finalContact.textContent = 'Ready to explain your request?';
+  if (finalCopy) finalCopy.textContent = 'Call or use WhatsApp for a home-care request in Kenitra, Mehdia or the surrounding area.';
   const section = document.createElement('section');
   section.className = 'services-section';
   section.setAttribute('aria-labelledby', 'english-services-title');
@@ -28,6 +47,6 @@
   const details = document.createElement('section');
   details.className = 'contact-section';
   details.setAttribute('aria-labelledby', 'english-details-title');
-  details.innerHTML = `<div class="content-width contact-panel"><div><p class="section-kicker">Contact details</p><h2 id="english-details-title">Care in Kenitra, Mehdia and the surrounding area.</h2><p>Call Medomicile to explain your request and check the available home-care option.</p></div><div class="contact-details"><span><b>Phone</b>+212 6 63 05 82 22</span><span><b>WhatsApp</b>Available through our team</span><span><b>Service area</b>Kenitra, Mehdia and surrounding area</span><span><b>Availability</b>To be confirmed by phone</span></div></div>`;
+  details.innerHTML = `<div class="content-width contact-panel"><div><p class="section-kicker">Your coordinates</p><h2 id="english-details-title">Where and when we can help.</h2><p>Keep these details ready when you contact the team. Availability is confirmed by phone.</p></div><div class="contact-details"><span><b>Phone</b>+212 6 63 05 82 22</span><span><b>WhatsApp</b>Available through our team</span><span><b>Service area</b>Kenitra, Mehdia and surrounding area</span><span><b>Availability</b>To be confirmed by phone</span></div></div>`;
   main.insertBefore(details, contact);
 })();
