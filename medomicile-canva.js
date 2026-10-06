@@ -532,8 +532,8 @@ if (location.pathname.includes('/canva-home/')) {
     if (international && !establishments.some((item) => item.name === 'Clinique Internationale de Kénitra')) {
       establishments.splice(1, 0, { ...international, name: 'Clinique Internationale de Kénitra', type: 'clinic', subtitle: 'Clinique privée · Akdital' });
     }
-    [...new Set(establishments.map((item) => item.type).filter(Boolean))].sort().forEach((item) => { const option = document.createElement('option'); option.value = item; option.textContent = typeLabel(item); type.append(option); });
-    [...new Set(establishments.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr')).forEach((item) => { const option = document.createElement('option'); option.value = item; option.textContent = item; zone.append(option); });
+    [...new Set(establishments.map((item) => item.type).filter(Boolean))].sort().forEach((item) => { if ([...type.options].some((option) => option.value === item)) return; const option = document.createElement('option'); option.value = item; option.textContent = typeLabel(item); type.append(option); });
+    [...new Set(establishments.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr')).forEach((item) => { if ([...zone.options].some((option) => option.value === item)) return; const option = document.createElement('option'); option.value = item; option.textContent = english && item === 'Kénitra' ? 'Kenitra' : item; zone.append(option); });
     render();
   }).catch(() => {
     results.replaceChildren();
