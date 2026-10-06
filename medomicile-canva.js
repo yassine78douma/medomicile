@@ -495,6 +495,19 @@ if (location.pathname.includes('/canva-home/')) {
   const english = document.documentElement.lang === 'en';
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const typeLabel = (value) => english ? ({ clinic: 'Clinic', hospital: 'Hospital' }[value] || value || 'Facility') : ({ clinic: 'Clinique', hospital: 'Hôpital' }[value] || value || 'Établissement');
+  const dataLabel = (value) => {
+    if (!english || !value) return value || '';
+    const labels = {
+      'Hôpital public': 'Public hospital', 'Hôpital privé': 'Private hospital',
+      'Clinique spécialisée': 'Specialist clinic', 'Centre chirurgical': 'Surgical centre',
+      'Clinique privée': 'Private clinic', 'Oncologie': 'Oncology', 'Radiologie': 'Radiology',
+      'Cardiologie interventionnelle': 'Interventional cardiology', 'Ophtalmologie': 'Ophthalmology',
+      'Gynécologie-obstétrique': 'Obstetrics and gynaecology', 'Chirurgie générale': 'General surgery',
+      'urgences radiologiques selon disponibilité': 'radiology emergency care subject to availability',
+      'à confirmer': 'to be confirmed'
+    };
+    return String(value).split(' · ').map((part) => labels[part] || part).join(' · ');
+  };
   const safePhone = (value) => String(value || '').replace(/[^0-9+]/g, '');
   const render = () => {
     const query = normalize(search.value), selectedType = type.value, selectedZone = zone.value;
@@ -521,8 +534,8 @@ if (location.pathname.includes('/canva-home/')) {
       const website = item.website ? `<a href="${item.website}" target="_blank" rel="noopener noreferrer">${english ? 'Website' : 'Site web'}</a>` : '';
       const emergency = location.pathname.endsWith('etablissements-urgences.html') ? `<span class="clinic-status">${english ? 'Emergency care · 24/7' : 'Urgences · 24h/24'}</span>` : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `${english ? 'Emergency care · ' : 'Urgences · '}${item.emergency_hours}` : (english ? 'Emergency care' : 'Urgences')}</span>` : '');
       const labels = [...(item.services || []), ...(item.specialties || [])].filter((label) => label && !/^urgences\b/i.test(label)).slice(0, 3);
-      const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${label}</span>`).join('')}</p>` : '';
-      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${item.subtitle}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
+      const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${dataLabel(label)}</span>`).join('')}</p>` : '';
+      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
       results.append(card);
     });
   };
