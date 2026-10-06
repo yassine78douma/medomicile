@@ -21,6 +21,14 @@
   if (finalKicker) finalKicker.textContent = 'Speak to Medomicile';
   if (finalContact) finalContact.textContent = 'Ready to explain your request?';
   if (finalCopy) finalCopy.textContent = 'Call or use WhatsApp for a home-care request in Kenitra, Mehdia or the surrounding area.';
+  const hero = main.querySelector('.hero');
+  if (hero) {
+    const quickNav = document.createElement('nav');
+    quickNav.className = 'english-home-quicknav';
+    quickNav.setAttribute('aria-label', 'Home page sections');
+    quickNav.innerHTML = '<a href="#english-services-title">Services</a><a href="#english-steps-title">How it works</a><a href="#english-details-title">Contact</a>';
+    hero.after(quickNav);
+  }
   const section = document.createElement('section');
   section.className = 'services-section';
   section.setAttribute('aria-labelledby', 'english-services-title');
@@ -49,4 +57,10 @@
   details.setAttribute('aria-labelledby', 'english-details-title');
   details.innerHTML = `<div class="content-width contact-panel"><div><p class="section-kicker">Your coordinates</p><h2 id="english-details-title">Where and when we can help.</h2><p>Keep these details ready when you contact the team. Availability is confirmed by phone.</p></div><div class="contact-details"><span><b>Phone</b>+212 6 63 05 82 22</span><span><b>WhatsApp</b>Available through our team</span><span><b>Service area</b>Kenitra, Mehdia and surrounding area</span><span><b>Availability</b>To be confirmed by phone</span></div></div>`;
   main.insertBefore(details, contact);
+  const mobileCall = document.createElement('a');
+  mobileCall.className = 'english-mobile-call';
+  mobileCall.href = 'tel:+212663058222';
+  mobileCall.setAttribute('aria-label', 'Call Medomicile');
+  mobileCall.textContent = 'Call Medomicile';
+  document.body.append(mobileCall);
 })();
