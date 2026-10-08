@@ -1,0 +1,29 @@
+# Medomicile
+
+> Medomicile provides local healthcare guidance, home consultations and emergency orientation in Kenitra, Mehdia and the surrounding area in Morocco.
+
+## Main services
+
+- [Home](https://medomicile.com/): local healthcare access and orientation.
+- [Home consultation](https://medomicile.com/consultation.html): request a medical consultation at home in Kenitra and nearby areas.
+- [Emergencies](https://medomicile.com/urgences.html): guidance for urgent situations and the public emergency number 15.
+- [Emergency facilities](https://medomicile.com/etablissements-urgences.html): hospitals and clinics receiving emergency cases in Kenitra.
+- [On-call pharmacies](https://medomicile.com/pharmacies-garde.html): current on-call pharmacy information when data is available.
+
+## English pages
+
+- [English home](https://medomicile.com/en/)
+- [Home consultation](https://medomicile.com/en/consultation.html)
+- [Emergencies](https://medomicile.com/en/emergencies.html)
+- [Emergency facilities](https://medomicile.com/en/emergency-facilities.html)
+- [On-call pharmacies](https://medomicile.com/en/on-call-pharmacies.html)
+
+## Arabic pages
+
+- [Arabic home](https://medomicile.com/ar/)
+- [Arabic consultation](https://medomicile.com/ar/consultation.html)
+- [Arabic emergencies](https://medomicile.com/ar/urgences.html)
+
+## Important safety note
+
+Medomicile information does not replace public emergency services. For a life-threatening emergency in Morocco, call 15 immediately.
