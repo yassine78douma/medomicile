@@ -9,6 +9,31 @@
   });
 })();
 
+// Translate descriptive values coming from shared French data on English pages.
+window.medomicileEnglishDataLabel = (value) => {
+  const labels = {
+    'Hôpital public': 'Public hospital', 'Hôpital privé': 'Private hospital',
+    'Clinique spécialisée': 'Specialist clinic', 'Clinique privée': 'Private clinic',
+    'Clinique médicale': 'Medical clinic', 'Hôpital général': 'General hospital',
+    'Centre chirurgical': 'Surgical centre', 'Médecine générale': 'General medicine',
+    'Gynécologie-obstétrique': 'Obstetrics and gynaecology', 'Pédiatrie': 'Paediatrics',
+    'Cardiologie interventionnelle': 'Interventional cardiology', 'Chirurgie générale': 'General surgery',
+    'Radiologie': 'Radiology', 'Oncologie': 'Oncology', 'Maternité': 'Maternity unit',
+    'Cardiologue': 'Cardiologist', 'Cardiologue - Angiologue': 'Cardiologist · Angiologist',
+    'Cardiologue interventionnel': 'Interventional cardiologist', 'Neurologue': 'Neurologist',
+    'Neurochirurgien': 'Neurosurgeon', 'Gastro-entérologue': 'Gastroenterologist',
+    'Gynécologue-obstétricien': 'Obstetrician · Gynaecologist', 'Pédiatre': 'Paediatrician',
+    'Pneumologue': 'Pulmonologist', 'Dermatologue': 'Dermatologist', 'Endocrinologue': 'Endocrinologist',
+    'Urologue': 'Urologist', 'Ophtalmologue': 'Ophthalmologist', 'ORL': 'ENT specialist',
+    'Rhumatologue': 'Rheumatologist', 'Chirurgien général / chirurgie viscérale': 'General surgeon · Visceral surgery',
+    'Laboratoire': 'Laboratory', 'Laboratoire d’analyses médicales': 'Medical analysis laboratory',
+    'Centre de radiologie': 'Radiology centre', 'Pharmacie': 'Pharmacy',
+    'Horaires à confirmer': 'Hours to be confirmed', 'Horaires à vérifier': 'Hours to be checked',
+    'Urgences 24h/24': '24/7 emergency care'
+  };
+  return String(value || '').split(' · ').map((part) => labels[part] || part).join(' · ');
+};
+
 (() => {
   if (document.documentElement.lang !== 'en') return;
   const results = document.querySelector('#duty-results');
@@ -456,7 +481,7 @@ if (location.pathname.includes('/canva-home/')) {
       const maps = lab.mapsUrl ? `<a href="${lab.mapsUrl}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
       const profile = lab.slug ? `<a class="lab-profile" href="laboratoire.html?slug=${encodeURIComponent(lab.slug)}">Voir la fiche</a>` : '';
       const hours = Array.isArray(lab.hours) && lab.hours.length && !lab.hours.some((value) => /à confirmer/i.test(value)) ? `<p class="lab-hours"><strong>Horaires</strong>${lab.hours.join(' · ')}</p>` : '';
-      card.innerHTML = `<div class="lab-card-top"><span class="lab-avatar">⌁</span><div><p class="lab-type">${lab.type || 'Laboratoire'}</p><h3>${lab.name || ''}</h3>${lab.district ? `<p class="lab-detail"><strong>Quartier</strong>${lab.district}</p>` : ''}</div></div>${lab.address ? `<p class="lab-detail"><strong>Adresse</strong>${lab.address}</p>` : ''}${lab.phone ? `<p class="lab-detail"><strong>Téléphone</strong>${lab.phone}</p>` : ''}${hours}<div class="lab-actions">${profile}${phone}${maps}</div>`;
+      card.innerHTML = `<div class="lab-card-top"><span class="lab-avatar">⌁</span><div><p class="lab-type">${document.documentElement.lang === 'en' ? window.medomicileEnglishDataLabel(lab.type || 'Laboratoire') : (lab.type || 'Laboratoire')}</p><h3>${lab.name || ''}</h3>${lab.district ? `<p class="lab-detail"><strong>Quartier</strong>${lab.district}</p>` : ''}</div></div>${lab.address ? `<p class="lab-detail"><strong>Adresse</strong>${lab.address}</p>` : ''}${lab.phone ? `<p class="lab-detail"><strong>Téléphone</strong>${lab.phone}</p>` : ''}${hours}<div class="lab-actions">${profile}${phone}${maps}</div>`;
       results.append(card);
     });
   };
@@ -667,7 +692,7 @@ if (location.pathname.includes('/canva-home/')) {
     const query = normalize(search.value), selected = specialty.value;
     const filtered = doctors.filter((doctor) => !query || normalize(`${doctor.name} ${doctor.subtitle} ${doctor.specialty} ${doctor.address} ${doctor.district}`).includes(query)).filter((doctor) => !selected || specialtyGroup(doctor.subtitle).id === selected);
     results.replaceChildren(); count.textContent = `${filtered.length} résultat${filtered.length > 1 ? 's' : ''}`; empty.hidden = filtered.length !== 0; more.hidden = filtered.length <= visible;
-    filtered.slice(0, visible).forEach((doctor) => { const card = document.createElement('article'); card.className = 'doctor-card'; const phone = doctor.phones?.[0]?.number ? `<a href="tel:${doctor.phones[0].number}">Appeler</a>` : ''; const maps = doctor.google_maps_url ? `<a href="${doctor.google_maps_url}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : ''; const profile = doctor.slug ? `medecin.html?slug=${encodeURIComponent(doctor.slug)}` : 'medecins.html'; card.innerHTML = `<div class="doctor-card-top"><span class="doctor-avatar">${String(doctor.name || 'M').replace(/^Dr\s*/i,'').split(' ').map((part) => part[0]).slice(0,2).join('').toUpperCase()}</span><div><h3>${doctor.name || ''}</h3><p>${doctor.subtitle || ''}</p></div></div>${doctor.district || doctor.address ? `<p class="doctor-location"><strong>${doctor.district || 'Kénitra'}</strong>${doctor.address || ''}</p>` : ''}<div class="doctor-actions"><a class="doctor-profile" href="${profile}">Voir la fiche</a>${phone}${maps}</div>`; results.append(card); });
+    filtered.slice(0, visible).forEach((doctor) => { const card = document.createElement('article'); card.className = 'doctor-card'; const english = document.documentElement.lang === 'en'; const phone = doctor.phones?.[0]?.number ? `<a href="tel:${doctor.phones[0].number}">${english ? 'Call' : 'Appeler'}</a>` : ''; const maps = doctor.google_maps_url ? `<a href="${doctor.google_maps_url}" target="_blank" rel="noopener noreferrer">${english ? 'Directions' : 'Itinéraire'}</a>` : ''; const profile = doctor.slug ? `medecin.html?slug=${encodeURIComponent(doctor.slug)}` : 'medecins.html'; card.innerHTML = `<div class="doctor-card-top"><span class="doctor-avatar">${String(doctor.name || 'M').replace(/^Dr\s*/i,'').split(' ').map((part) => part[0]).slice(0,2).join('').toUpperCase()}</span><div><h3>${doctor.name || ''}</h3><p>${english ? window.medomicileEnglishDataLabel(doctor.subtitle) : (doctor.subtitle || '')}</p></div></div>${doctor.district || doctor.address ? `<p class="doctor-location"><strong>${doctor.district || (english ? 'Kenitra' : 'Kénitra')}</strong>${doctor.address || ''}</p>` : ''}<div class="doctor-actions"><a class="doctor-profile" href="${profile}">${english ? 'View profile' : 'Voir la fiche'}</a>${phone}${maps}</div>`; results.append(card); });
   };
   fetch('/data/virtual-card-index.json').catch(() => fetch('../data/virtual-card-index.json')).then((response) => response.json()).then((data) => { doctors = data.filter((item) => item.type === 'doctor' && item.indexable !== false); const specialties = [...new Map(doctors.map((doctor) => specialtyGroup(doctor.subtitle)).map((item) => [item.id, item])).values()].sort((a,b) => a.label.localeCompare(b.label,'fr')); specialties.forEach((item) => { const option = document.createElement('option'); option.value = item.id; option.textContent = item.label; specialty.append(option); }); if (resultsSection && specialties.length) { const strip = document.createElement('section'); strip.className = 'doctor-specialty-strip'; strip.innerHTML = `<div class="content-width"><div class="doctor-results-heading"><h2>Parcourir par spécialité</h2><a href="medecins.html">Voir toutes les spécialités →</a></div><div class="doctor-specialty-chips"></div></div>`; resultsSection.before(strip); specialties.slice(0, 12).forEach((item) => { const chip = document.createElement('button'); chip.type = 'button'; chip.textContent = item.label; chip.addEventListener('click', () => { specialty.value = item.id; visible = 24; render(); }); strip.querySelector('.doctor-specialty-chips').append(chip); }); } render(); }).catch(() => { empty.hidden = false; });
   search.addEventListener('input', () => { visible = 24; render(); }); specialty.addEventListener('change', () => { visible = 24; render(); }); more.addEventListener('click', () => { visible += 24; render(); }); clear.addEventListener('click', () => { search.value = ''; specialty.value = ''; visible = 24; render(); });
