@@ -26,7 +26,7 @@
   const mobileCall = document.createElement('a');
   mobileCall.className = 'urgent-mobile-call';
   mobileCall.href = 'tel:15';
-  mobileCall.setAttribute('aria-label', 'Call emergency services on 15');
+  mobileCall.setAttribute('aria-label', 'Call 15');
   mobileCall.textContent = 'Call 15';
   document.body.append(mobileCall);
 })();
