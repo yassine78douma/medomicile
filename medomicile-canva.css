@@ -143,6 +143,12 @@ html[lang="en"] .urgent-resource-links span { color: #24496f; font-size: .78rem;
 html[lang="en"] .urgent-mobile-call { display: none; }
 html[lang="en"] .english-home-quicknav { display: none; }
 html[lang="en"] .english-mobile-call { display: none; }
+ .faq-section { padding: 72px 20px; background: #f1f7fc; }
+ .faq-section .content-width { max-width: 1040px; margin: 0 auto; }
+ .faq-list { display: grid; gap: 10px; max-width: 860px; }
+ .faq-list details { padding: 18px 20px; border: 1px solid var(--md-line); border-radius: 14px; background: #fff; }
+ .faq-list summary { color: var(--md-navy); cursor: pointer; font-weight: 800; }
+ .faq-list p { max-width: 720px; margin: 12px 0 0; color: #24496f; line-height: 1.6; }
 html[lang="en"] .availability-note { width: 100%; margin: 2px 0 0; color: #eaf6ff; font-size: .72rem; font-weight: 700; line-height: 1.4; }
 @media (max-width: 900px) {
   html[lang="en"] .consultation-hero,
