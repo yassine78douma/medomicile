@@ -147,6 +147,8 @@ html[lang="en"] .english-mobile-call { display: none; }
 html[lang="en"] .urgent-quick-grid > a:not(:first-child) > b,
 html[lang="en"] .urgent-resource-links b { color: #7a5000; }
 html[lang="en"] .urgent-resource-links span { color: #24496f; }
+html[lang="en"] .urgent-quick-grid .urgent-resource-links a b { color: #7a5000; }
+html[lang="en"] .urgent-quick-grid .urgent-resource-links a span { color: #24496f; }
 html[lang="en"] .urgent-mark { color: #274d70; }
  .faq-section { padding: 72px 20px; background: #f1f7fc; }
  .faq-section .content-width { max-width: 1040px; margin: 0 auto; }
