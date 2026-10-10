@@ -143,6 +143,11 @@ html[lang="en"] .urgent-resource-links span { color: #24496f; font-size: .78rem;
 html[lang="en"] .urgent-mobile-call { display: none; }
 html[lang="en"] .english-home-quicknav { display: none; }
 html[lang="en"] .english-mobile-call { display: none; }
+/* Keep numeric markers and descriptive card text readable on the light emergency cards. */
+html[lang="en"] .urgent-quick-grid > a:not(:first-child) > b,
+html[lang="en"] .urgent-resource-links b { color: #7a5000; }
+html[lang="en"] .urgent-resource-links span { color: #24496f; }
+html[lang="en"] .urgent-mark { color: #274d70; }
  .faq-section { padding: 72px 20px; background: #f1f7fc; }
  .faq-section .content-width { max-width: 1040px; margin: 0 auto; }
  .faq-list { display: grid; gap: 10px; max-width: 860px; }
