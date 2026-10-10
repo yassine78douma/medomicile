@@ -609,6 +609,9 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .urgent-feature > div > p:not(.section-kicker) { color: #4b6178; }
 .urgent-mark { color: #4b6178; }
 html[lang="en"] .why-section > .content-width > .section-kicker { color: #a9eaff; }
+.experience-layout > div:first-child > p:last-child { color: #4b6178; }
+.urgent-quick-grid a:not(:first-child) > b,
+.urgent-clinic-feature .eyebrow { color: #7a5000; }
 
 @media (max-width: 900px) {
   .primary-section { padding-top: 42px; padding-bottom: 76px; }
