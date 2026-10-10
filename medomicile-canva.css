@@ -595,6 +595,15 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .contact-details span { min-height: 72px; padding: 12px; border-radius: 10px; color: var(--md-navy); background: #eaf4fa; font-size: .66rem; line-height: 1.4; }
 .contact-details b { display: block; margin-bottom: 5px; color: var(--md-muted); font-size: .56rem; letter-spacing: .04em; text-transform: uppercase; }
 
+/* WCAG AA contrast corrections for shared components. */
+.header-cta,
+.intro-link { color: var(--md-navy); }
+.primary-card > span { color: #7a5000; }
+.primary-card-main > span,
+.primary-card-secondary > span { color: #ffffff; }
+.experience-layout > div > p,
+.contact-details b { color: #4b6178; }
+
 @media (max-width: 900px) {
   .primary-section { padding-top: 42px; padding-bottom: 76px; }
   .primary-grid { gap: 10px; }
