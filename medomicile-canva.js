@@ -575,7 +575,11 @@ if (location.pathname.includes('/canva-home/')) {
       results.append(card);
     });
   };
-  fetch('/data/establishments.json').catch(() => fetch('../data/establishments.json')).then((response) => response.json()).then((data) => {
+  const loadEstablishments = (url) => fetch(url).then((response) => {
+    if (!response.ok) throw new Error(`Failed to load establishments: ${response.status}`);
+    return response.json();
+  });
+  loadEstablishments('/data/establishments.json?v=emergency-facilities-20261012').catch(() => loadEstablishments('../data/establishments.json?v=emergency-facilities-20261012')).then((data) => {
     establishments = Array.isArray(data) ? data : (data.establishments || []);
     const international = establishments.find((item) => item.name === 'Hôpital International de Kénitra' || item.slug === 'akdital-international-hospital-kenitra');
     if (international && !establishments.some((item) => item.name === 'Clinique Internationale de Kénitra')) {
