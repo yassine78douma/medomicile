@@ -545,6 +545,7 @@ if (location.pathname.includes('/canva-home/')) {
   };
   const safePhone = (value) => String(value || '').replace(/[^0-9+]/g, '');
   const render = () => {
+    const emergencyFacilitiesPage = location.pathname.endsWith('etablissements-urgences.html') || location.pathname.endsWith('emergency-facilities.html');
     const query = normalize(search.value), selectedType = type.value, selectedZone = zone.value;
     const filtered = establishments.filter((item) => {
       const haystack = normalize([
@@ -552,7 +553,6 @@ if (location.pathname.includes('/canva-home/')) {
         ...(item.services || []), ...(item.specialties || [])
       ].filter(Boolean).join(' '));
       const emergencyNames = ['Centre Hospitalier Provincial El-Azemmouri','Polyclinique de Kénitra','Polyclinique du Gharb','Noor Clinic','Clinique Val Fleury','Clinique Sebou','Polyclinique CNSS Kénitra','Hôpital International de Kénitra'];
-      const emergencyFacilitiesPage = location.pathname.endsWith('etablissements-urgences.html') || location.pathname.endsWith('emergency-facilities.html');
       const emergencyFacility = emergencyFacilitiesPage ? emergencyNames.includes(item.name) : (item.type === 'clinic' || item.type === 'hospital');
       return emergencyFacility && (!query || haystack.includes(query)) && (!selectedType || item.type === selectedType) && (!selectedZone || item.city === selectedZone);
     });
