@@ -608,7 +608,8 @@ if (location.pathname.includes('/canva-home/')) {
   resultsSection.insertAdjacentElement('afterend', section);
 })();
 
-/* Emergency directory tabs use one external, local data source. */
+/* Optional directory category tabs. The main renderer above owns the emergency
+ * facilities view; this block must never overwrite it on initial load. */
 (() => {
   if (!location.pathname.endsWith('etablissements-urgences.html')) return;
   if (document.documentElement.lang === 'en') return;
@@ -632,9 +633,12 @@ if (location.pathname.includes('/canva-home/')) {
       event.preventDefault();
       document.querySelectorAll('.clinic-category-strip a').forEach((item) => item.classList.remove('is-active'));
       tab.classList.add('is-active');
+      if (tab.dataset.clinicCategory === 'cliniques') {
+        window.location.reload();
+        return;
+      }
       render(tab.dataset.clinicCategory === 'laboratoires' ? 'laboratoires' : 'radiologie', data);
     }));
-    render('radiologie', data);
   }).catch(() => { count.textContent = ''; results.replaceChildren(); empty.hidden = false; });
 })();
 
