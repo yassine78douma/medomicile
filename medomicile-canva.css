@@ -637,6 +637,36 @@ html[lang="en"] .why-section > .content-width > .section-kicker { color: #a9eaff
 .mobile-section-toggle { display: none; }
 .home-mobile-call { display: none; }
 
+/* Emergency quick access: keep 15 dominant and give each secondary route a clear role. */
+.urgent-quick-grid a:nth-child(2),
+.urgent-quick-grid a:nth-child(3),
+.urgent-quick-grid a:nth-child(4),
+.urgent-quick-grid a:nth-child(5) { border-color: #b8cde0; background: #edf5fb; box-shadow: 0 8px 18px rgba(0,54,121,.1); }
+.urgent-quick-grid a:nth-child(3) { background: #f5f8fb; }
+.urgent-quick-grid a:nth-child(5) { border-color: #ddc98f; background: #fff8e6; }
+.urgent-quick-grid a:nth-child(n+2) > b { color: #7a5000; }
+.urgent-quick-grid a:nth-child(n+2) strong { color: #062b63; }
+.urgent-quick-grid a:nth-child(n+2) span { color: #24496f; opacity: 1; }
+.urgent-quick-grid a:hover,
+.urgent-quick-grid a:focus-visible,
+.urgent-quick-grid a:active { border-color: #075fc8; background: #dcecff; box-shadow: 0 12px 24px rgba(0,54,121,.17); }
+.urgent-quick-grid a:nth-child(5):hover,
+.urgent-quick-grid a:nth-child(5):focus-visible,
+.urgent-quick-grid a:nth-child(5):active { background: #ffefbd; }
+.urgent-quick-grid a:focus-visible { outline: 3px solid #075fc8; outline-offset: 3px; }
+.urgent-quick-grid a:first-child:focus-visible { outline-color: #fff; }
+.urgent-resource-links a { border-color: #b8cde0 !important; background: #edf5fb !important; box-shadow: 0 8px 18px rgba(0,54,121,.1) !important; }
+.urgent-resource-links a:last-child { border-color: #ddc98f !important; background: #fff8e6 !important; }
+.urgent-resource-links a strong { color: #062b63 !important; }
+.urgent-resource-links a span { color: #24496f !important; opacity: 1 !important; }
+.urgent-resource-links a:hover,
+.urgent-resource-links a:focus-visible,
+.urgent-resource-links a:active { border-color: #075fc8 !important; background: #dcecff !important; box-shadow: 0 12px 24px rgba(0,54,121,.17) !important; }
+.urgent-resource-links a:last-child:hover,
+.urgent-resource-links a:last-child:focus-visible,
+.urgent-resource-links a:last-child:active { background: #ffefbd !important; }
+.urgent-resource-links a:focus-visible { outline: 3px solid #075fc8; outline-offset: 3px; }
+
 @media (max-width: 700px) {
   .intro-section,
   .services-section,
@@ -705,6 +735,10 @@ html[lang="en"] .why-section > .content-width > .section-kicker { color: #a9eaff
   }
   .home-mobile-call.is-hidden { opacity: 0; pointer-events: none; transform: translateY(12px); }
   .site-footer { padding-bottom: 96px; }
+  .urgent-quick-grid { grid-template-columns: 1fr; gap: 8px; }
+  .urgent-quick-grid a { min-height: 82px; padding: 13px 14px; }
+  .urgent-quick-grid strong { font-size: .82rem; }
+  .urgent-quick-grid span { max-width: 28ch; font-size: .68rem; }
 }
 .urgent-duty-preview{display:grid;gap:10px;margin:22px 0}.urgent-duty-day{display:grid;gap:6px;padding:12px 14px;border:1px solid var(--md-line);border-radius:12px;background:#fff}.urgent-duty-day>strong{color:var(--md-blue);font-size:.72rem}.urgent-duty-day span{display:flex;justify-content:space-between;gap:12px;color:var(--md-navy);font-size:.76rem}.urgent-duty-day a{color:var(--md-blue);font-weight:800;text-decoration:none}.urgent-clinic-feature{display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr;gap:30px;align-items:center;padding:22px;border:1px solid var(--md-line);border-radius:18px;background:#fff}.urgent-clinic-photo{min-height:210px;overflow:hidden;border-radius:12px;background:#d6e7f3}.urgent-clinic-photo img{display:block;width:100%;height:100%;min-height:210px;object-fit:cover}.urgent-clinic-feature h3{margin:8px 0;color:var(--md-navy);font-size:1.5rem}.urgent-clinic-feature p:not(.eyebrow){color:var(--md-muted);line-height:1.6}@media(max-width:900px){.urgent-clinic-feature{grid-template-columns:1fr}.urgent-clinic-photo,.urgent-clinic-photo img{min-height:150px}}
 .clinic-category-strip{padding:28px 20px;background:#fff}.clinic-category-strip .content-width{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.clinic-category-strip a{display:grid;gap:6px;padding:18px;border:1px solid var(--md-line);border-radius:14px;color:var(--md-navy);text-decoration:none}.clinic-category-strip a.is-active{background:var(--md-blue);color:#fff}.clinic-category-strip span{font-size:.75rem;opacity:.8}@media(max-width:900px){.clinic-category-strip .content-width{grid-template-columns:1fr}}.clinic-category-strip a.is-active{color:#fff;background:var(--md-blue)}
