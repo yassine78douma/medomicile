@@ -209,7 +209,7 @@ const newMedicalCabinets = [
       ar: "القنيطرة، المنطقة المركزية"
     },
     href: {
-      fr: "hopitaux.html",
+      fr: "etablissements-urgences.html",
       en: "hopitaux-en.html",
       ar: "hopitaux-ar.html"
     },
