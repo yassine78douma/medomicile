@@ -3,3 +3,7 @@ preview-*.png
 __pycache__/
 .venv/
 test-results/
+
+# Local previews and generated working data; never publish these directories.
+/tmp/
+/v19-*/
