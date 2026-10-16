@@ -542,6 +542,12 @@ if (location.pathname.includes('/canva-home/')) {
   const clear = document.querySelector('#clinic-clear');
   let establishments = [], visible = 20;
   const english = document.documentElement.lang === 'en';
+  if (empty && !empty.querySelector('.clinic-empty-help')) {
+    const help = document.createElement('p');
+    help.className = 'clinic-empty-help';
+    help.textContent = english ? 'Try another area or remove a filter. For urgent symptoms, call 15.' : 'Essayez un autre quartier ou effacez un filtre. En cas d’urgence vitale, appelez le 15.';
+    empty.insertBefore(help, clear || empty.firstChild);
+  }
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
   const typeLabel = (value) => english ? ({ clinic: 'Clinic', hospital: 'Hospital' }[value] || value || 'Facility') : ({ clinic: 'Clinique', hospital: 'Hôpital' }[value] || value || 'Établissement');
   const dataLabel = (value) => {
@@ -593,9 +599,11 @@ if (location.pathname.includes('/canva-home/')) {
       const profile = item.slug ? `<a class="clinic-profile" href="etablissement.html?slug=${encodeURIComponent(item.slug)}">${english ? 'View profile' : 'Voir la fiche'}</a>` : '';
       const website = item.website ? `<a href="${item.website}" target="_blank" rel="noopener noreferrer">${english ? 'Website' : 'Site web'}</a>` : '';
       const emergency = emergencyFacilitiesPage ? `<span class="clinic-status">${english ? 'Emergency care · 24/7' : 'Urgences · 24h/24'}</span>` : (item.emergency_available === true ? `<span class="clinic-status">${item.emergency_hours ? `${english ? 'Emergency care · ' : 'Urgences · '}${english ? dataLabel(item.emergency_hours) : item.emergency_hours}` : (english ? 'Emergency care' : 'Urgences')}</span>` : '');
+      const verifiedDate = item.verification?.last_verified || item.last_verified || '';
+      const verification = `<p class="clinic-verification">${english ? 'Information checked' : 'Information vérifiée'}${verifiedDate ? ` · ${new Date(`${verifiedDate}T12:00:00`).toLocaleDateString(english ? 'en-GB' : 'fr-FR')}` : ` · ${english ? 'date to be confirmed' : 'date à confirmer'}`}</p>`;
       const labels = [...(item.services || []), ...(item.specialties || [])].filter((label) => label && !/^urgences\b/i.test(label)).slice(0, 3);
       const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${dataLabel(label)}</span>`).join('')}</p>` : '';
-      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
+      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${verification}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
       results.append(card);
     });
   };
