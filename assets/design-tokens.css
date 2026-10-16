@@ -1,0 +1,27 @@
+/* Shared visual tokens. Component styles keep legacy aliases during migration. */
+:root {
+  --md-token-navy: #082f49;
+  --md-token-blue: #0f4c81;
+  --md-token-blue-bright: #2f80ed;
+  --md-token-gold: #c6a969;
+  --md-token-green: #15803d;
+  --md-token-ink: #0f172a;
+  --md-token-muted: #475569;
+  --md-token-soft: #f8fafc;
+  --md-token-surface: #ffffff;
+  --md-token-line: #dbe7f3;
+  --md-token-radius-sm: 10px;
+  --md-token-radius-md: 16px;
+  --md-token-radius-lg: 24px;
+  --md-token-shadow-sm: 0 8px 22px rgba(15, 76, 129, 0.07);
+  --md-token-shadow-md: 0 18px 44px rgba(15, 76, 129, 0.16);
+  --md-token-space-1: 4px;
+  --md-token-space-2: 8px;
+  --md-token-space-3: 12px;
+  --md-token-space-4: 16px;
+  --md-token-space-5: 24px;
+  --md-token-space-6: 32px;
+  --md-token-content: 1160px;
+  --md-token-breakpoint-mobile: 768px;
+  --md-token-breakpoint-wide: 1080px;
+}

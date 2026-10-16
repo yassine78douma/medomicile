@@ -1,3 +1,5 @@
+@import url("assets/design-tokens.css");
+
 :root {
   --blue-950: #082f49;
   --blue-850: #0f4c81;
