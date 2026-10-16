@@ -9,6 +9,30 @@
   });
 })();
 
+// Keep Arabic category descriptions specific even when legacy HTML carries a shared fallback.
+(() => {
+  if (document.documentElement.lang !== 'ar') return;
+  const descriptions = {
+    '/ar/': 'ميدوميسيل: توجيه صحي واستشارات منزلية في القنيطرة والمهدية، مع معلومات عملية للوصول إلى الرعاية المناسبة.',
+    '/ar/consultation.html': 'اطلبوا استشارة طبية منزلية في القنيطرة والمهدية، مع توجيه واضح حسب حاجتكم وتوفر الفريق.',
+    '/ar/ambulance.html': 'خدمات الإسعاف والنقل الصحي في القنيطرة والمهدية من ميدوميسيل، مع تأكيد الإمكانيات قبل الطلب.',
+    '/ar/annuaire.html': 'دليل ميدوميسيل الطبي في القنيطرة: أطباء وصيدليات وعيادات ومختبرات ومراكز أشعة وتصفية الدم.',
+    '/ar/cliniques.html': 'دليل العيادات والمستشفيات في القنيطرة: المؤسسات والعناوين وأرقام الاتصال المتاحة عبر ميدوميسيل.',
+    '/ar/dialyse.html': 'دليل مراكز تصفية الدم في القنيطرة: العناوين والقطاعات وأرقام الاتصال والمعلومات العملية المتاحة.',
+    '/ar/laboratoires.html': 'دليل مختبرات التحاليل الطبية في القنيطرة: البحث حسب المركز والحي والعنوان ومعلومات الاتصال.',
+    '/ar/pharmacies.html': 'دليل الصيدليات في القنيطرة: العناوين والأحياء ومعلومات الاتصال، مع رابط إلى صيدليات الحراسة.',
+    '/ar/radiologie.html': 'دليل مراكز الأشعة في القنيطرة: البحث عن المركز والحي والعنوان ومعلومات الاتصال المتاحة.',
+    '/ar/specialite.html': 'دليل التخصصات الطبية في القنيطرة لمساعدتكم على العثور على الخدمة أو المهني الصحي المناسب.',
+    '/ar/contact.html': 'تواصلوا مع ميدوميسيل في القنيطرة والمهدية لطلب التوجيه الصحي أو الاستشارة المنزلية.',
+    '/ar/confidentialite.html': 'سياسة الخصوصية في ميدوميسيل وكيفية التعامل مع المعلومات عند استخدام الموقع والخدمات.'
+  };
+  const description = descriptions[location.pathname];
+  if (!description) return;
+  let meta = document.querySelector('meta[name="description"]');
+  if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.append(meta); }
+  meta.content = description;
+})();
+
 // Translate descriptive values coming from shared French data on English pages.
 window.medomicileEnglishDataLabel = (value) => {
   const labels = {
