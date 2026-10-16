@@ -673,6 +673,19 @@ html[lang="en"] .why-section > .content-width > .section-kicker { color: #a9eaff
 .clinic-status { letter-spacing: .01em; }
 .clinic-verification { margin: 10px 0 0; color: #557087; font-size: .62rem; line-height: 1.4; }
 .clinic-empty-help { margin: 0; color: #557087; font-size: .78rem; line-height: 1.55; }
+.clinic-card:focus-within,
+.urgent-quick-grid a:focus-visible,
+.urgent-resource-links a:focus-visible { border-color: #075fc8; box-shadow: 0 0 0 3px rgba(7,95,200,.22), 0 12px 24px rgba(0,54,121,.14); }
+.clinic-actions a:focus-visible,
+.doctor-empty a:focus-visible,
+.doctor-empty button:focus-visible,
+.site-footer a:focus-visible { outline: 3px solid #075fc8; outline-offset: 3px; }
+html[dir="rtl"] .clinic-card,
+html[dir="rtl"] .clinic-card-top,
+html[dir="rtl"] .clinic-actions,
+html[dir="rtl"] .doctor-empty { text-align: right; }
+html[dir="rtl"] .clinic-card-top { flex-direction: row-reverse; }
+html[dir="rtl"] .clinic-actions { justify-content: flex-start; }
 
 @media (max-width: 700px) {
   .intro-section,
