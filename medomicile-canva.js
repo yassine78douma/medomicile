@@ -33,6 +33,18 @@
   slot.dataset.partnerLogo = 'axa';
 })();
 
+(() => {
+  const slot = document.querySelector('.partners-section .partner-slots span:nth-child(3)');
+  if (!slot || slot.dataset.partnerLogo) return;
+  const logo = document.createElement('img');
+  logo.className = 'partner-logo';
+  logo.src = 'assets/partners/sanlam.jpeg';
+  logo.alt = 'Sanlam';
+  logo.loading = 'lazy';
+  slot.replaceChildren(logo);
+  slot.dataset.partnerLogo = 'sanlam';
+})();
+
 // Keep Arabic category descriptions specific even when legacy HTML carries a shared fallback.
 (() => {
   if (document.documentElement.lang !== 'ar') return;
