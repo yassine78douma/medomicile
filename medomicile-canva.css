@@ -673,6 +673,8 @@ html[lang="en"] .why-section > .content-width > .section-kicker { color: #a9eaff
 .clinic-status { letter-spacing: .01em; }
 .clinic-verification { margin: 10px 0 0; color: #557087; font-size: .62rem; line-height: 1.4; }
 .clinic-empty-help { margin: 0; color: #557087; font-size: .78rem; line-height: 1.55; }
+.partner-slots span:has(.partner-logo) { padding: 10px; display: grid; place-items: center; overflow: hidden; }
+.partner-logo { width: min(100%, 180px); height: 92px; display: block; object-fit: contain; mix-blend-mode: multiply; }
 .clinic-card:focus-within,
 .urgent-quick-grid a:focus-visible,
 .urgent-resource-links a:focus-visible { border-color: #075fc8; box-shadow: 0 0 0 3px rgba(7,95,200,.22), 0 12px 24px rgba(0,54,121,.14); }

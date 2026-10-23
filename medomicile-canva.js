@@ -9,6 +9,18 @@
   });
 })();
 
+(() => {
+  const slot = document.querySelector('.partners-section .partner-slots span:first-child');
+  if (!slot || slot.dataset.partnerLogo) return;
+  const logo = document.createElement('img');
+  logo.className = 'partner-logo';
+  logo.src = 'assets/partners/commune-urbaine-kenitra.png';
+  logo.alt = 'Commune Urbaine de Kénitra';
+  logo.loading = 'lazy';
+  slot.replaceChildren(logo);
+  slot.dataset.partnerLogo = 'commune-urbaine-kenitra';
+})();
+
 // Keep Arabic category descriptions specific even when legacy HTML carries a shared fallback.
 (() => {
   if (document.documentElement.lang !== 'ar') return;
