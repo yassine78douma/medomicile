@@ -21,6 +21,18 @@
   slot.dataset.partnerLogo = 'commune-urbaine-kenitra';
 })();
 
+(() => {
+  const slot = document.querySelector('.partners-section .partner-slots span:nth-child(2)');
+  if (!slot || slot.dataset.partnerLogo) return;
+  const logo = document.createElement('img');
+  logo.className = 'partner-logo';
+  logo.src = 'assets/partners/axa.webp';
+  logo.alt = 'AXA';
+  logo.loading = 'lazy';
+  slot.replaceChildren(logo);
+  slot.dataset.partnerLogo = 'axa';
+})();
+
 // Keep Arabic category descriptions specific even when legacy HTML carries a shared fallback.
 (() => {
   if (document.documentElement.lang !== 'ar') return;
