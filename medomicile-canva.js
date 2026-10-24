@@ -57,7 +57,7 @@
   const contact = document.createElement('div');
   contact.dataset.professionalContact = 'true';
   contact.className = 'footer-contact';
-  contact.innerHTML = `<b>${labels.title}</b><a href="mailto:contact@medomicile.com">${labels.email}: contact@medomicile.com</a><a dir="ltr" href="tel:+212663058222">${labels.mobile}: +212 6 63 05 82 22</a><a dir="ltr" href="tel:+212537373736">${labels.landline}: 05 37 37 37 36</a>`;
+  contact.innerHTML = `<b>${labels.title}</b><a href="mailto:contact@medomicile.com">${labels.email}: contact@medomicile.com</a><a dir="ltr" href="tel:+212663058222">${labels.mobile}: +212 6 63 05 82 22</a><a dir="ltr" href="tel:+212537373736">${labels.landline}: 05 37 37 37 36</a><div class="footer-social-links"><a href="https://www.instagram.com/medomicile/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/medomicile" target="_blank" rel="noopener">Facebook</a><a href="https://www.linkedin.com/in/wiame-fimoud-b9425120a/" target="_blank" rel="noopener">LinkedIn</a></div>`;
   footerGrid.append(contact);
 })();
 
