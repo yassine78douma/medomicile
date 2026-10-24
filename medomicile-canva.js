@@ -45,6 +45,22 @@
   slot.dataset.partnerLogo = 'sanlam';
 })();
 
+(() => {
+  const footerGrid = document.querySelector('.site-footer .footer-grid');
+  if (!footerGrid || footerGrid.querySelector('[data-professional-contact]')) return;
+  const lang = document.documentElement.lang?.toLowerCase() || 'fr';
+  const labels = lang.startsWith('ar')
+    ? { title: 'اتصال مهني', email: 'البريد الإلكتروني', mobile: 'الهاتف المهني', landline: 'الهاتف الثابت' }
+    : lang.startsWith('en')
+      ? { title: 'Professional contact', email: 'Email', mobile: 'Professional phone', landline: 'Landline' }
+      : { title: 'Contact professionnel', email: 'E-mail', mobile: 'Téléphone professionnel', landline: 'Téléphone fixe' };
+  const contact = document.createElement('div');
+  contact.dataset.professionalContact = 'true';
+  contact.className = 'footer-contact';
+  contact.innerHTML = `<b>${labels.title}</b><a href="mailto:contact@medomicile.com">${labels.email}: contact@medomicile.com</a><a dir="ltr" href="tel:+212663058222">${labels.mobile}: +212 6 63 05 82 22</a><a dir="ltr" href="tel:+212537373736">${labels.landline}: 05 37 37 37 36</a>`;
+  footerGrid.append(contact);
+})();
+
 // Keep Arabic category descriptions specific even when legacy HTML carries a shared fallback.
 (() => {
   if (document.documentElement.lang !== 'ar') return;
