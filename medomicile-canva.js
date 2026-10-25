@@ -319,7 +319,7 @@ if (location.pathname.includes('/canva-home/')) {
     bottom.innerHTML = [['index.html', '⌂', 'Accueil'], ['consultation.html', '＋', 'Consultation'], ['urgences.html', '!', 'Urgences'], ['annuaire.html', '⌕', 'Annuaire']].map(([href, icon, label]) => `<a${active === href ? ' class="active"' : ''} href="${href}"><span>${icon}</span><small>${label}</small></a>`).join('');
   }
   const footer = document.querySelector('.site-footer');
-  if (footer) {
+  if (footer && !footer.querySelector('[data-professional-contact]')) {
     footer.innerHTML = `<div class="footer-grid"><div><strong>Medomicile</strong><p>Consultations, soins et orientation à Kénitra.</p></div><div><b>Services</b><a href="consultation.html">Consultation à domicile</a><a href="ambulance.html">Ambulance</a><a href="urgences.html">Urgences</a></div><div><b>Annuaire</b><a href="medecins.html">Médecins</a><a href="pharmacies.html">Pharmacies</a><a href="cliniques.html">Cliniques / Hôpitaux</a><a href="laboratoires.html">Laboratoires</a><a href="radiologie.html">Radiologie</a><a href="dialyse.html">Dialyse</a></div><div><b>Informations</b><a href="${internalPage('articles.html')}">Articles</a><a href="${internalPage('contact.html')}">Contact</a><a href="${internalPage('confidentialite.html')}">Confidentialité</a></div><div data-language-links><b>Langues</b><a href="ar/index.html">العربية</a><a href="index.html">Français</a><a href="en/index.html">English</a></div></div>`;
   }
   }
