@@ -2,8 +2,8 @@
   'use strict';
   const results = document.getElementById('duty-results'), meta = document.getElementById('duty-meta'), status = document.getElementById('duty-status'); if (!results) return;
   const esc = (v) => String(v || '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
-  Promise.all([fetch('../data/pharmacies-garde-2026-09-28-10-02.json').then((r) => r.json()), fetch('../data/pharmacies-kenitra.json').then((r) => r.json()).catch(() => ({ pharmacies: [] }))]).then(([data, directory]) => {
-    meta.textContent = data.displayDateAr || 'آخر تحديث متاح';
+  Promise.all([fetch('../data/pharmacies-garde-2026-10.json?v=20261026').then((r) => r.json()), fetch('../data/pharmacies-kenitra.json').then((r) => r.json()).catch(() => ({ pharmacies: [] }))]).then(([data, directory]) => {
+    meta.textContent = data.displayDateAr || data.displayDate || 'آخر تحديث متاح';
     const groups = [['day', 'الحراسة النهارية'], ['night', 'الحراسة الليلية']].flatMap(([key, label]) => (data.duty && data.duty[key] || []).map((p) => ({ ...p, periodLabel: label })));
     status.textContent = groups.length + ' صيدليات مناوبة';
     const list = directory.pharmacies || [];
