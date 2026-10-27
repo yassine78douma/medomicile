@@ -634,7 +634,7 @@ if (location.pathname.includes('/canva-home/')) {
         item.name, ...(item.aliases || []), item.type, item.subtitle, item.city, item.address,
         ...(item.services || []), ...(item.specialties || [])
       ].filter(Boolean).join(' '));
-      const emergencyNames = ['Centre Hospitalier Provincial El-Azemmouri','Polyclinique de Kénitra','Polyclinique du Gharb','Noor Clinic','Clinique Val Fleury','Clinique Sebou','Polyclinique CNSS Kénitra','Hôpital International de Kénitra'];
+      const emergencyNames = ['Centre Hospitalier Provincial El-Azemmouri','Polyclinique de Kénitra','Polyclinique du Gharb','Noor Clinic','Clinique Val Fleury','Clinique Sebou','Polyclinique CNSS Kénitra','Hôpital International de Kénitra','Clinique Internationale de Kénitra'];
       const emergencyFacility = emergencyFacilitiesPage ? emergencyNames.includes(item.name) : (item.type === 'clinic' || item.type === 'hospital');
       return emergencyFacility && (!query || haystack.includes(query)) && (!selectedType || item.type === selectedType) && (!selectedZone || item.city === selectedZone);
     });
