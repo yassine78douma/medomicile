@@ -1,3 +1,15 @@
+(() => {
+  const path = location.pathname;
+  const canonicalPath = path.startsWith('/articles/content/') ? path.replace('/articles/content/', '/content/') : '';
+  if (!canonicalPath || canonicalPath === path) return;
+  let robots = document.querySelector('meta[name="robots"]');
+  if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
+  robots.content = 'noindex,follow';
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
+  canonical.href = `${location.origin}${canonicalPath}`;
+})();
+
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 const menuLinks = document.querySelectorAll(".menu a");

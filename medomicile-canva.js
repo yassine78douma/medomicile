@@ -1,4 +1,21 @@
 (() => {
+  const path = location.pathname;
+  let canonicalPath = '';
+  if (path.startsWith('/articles/content/')) canonicalPath = path.replace('/articles/content/', '/content/');
+  else if (path.startsWith('/canva-home/')) canonicalPath = path.replace('/canva-home', '');
+  else if (/^\/p\/[^/]+\.html$/.test(path)) canonicalPath = path.replace(/\.html$/, '/');
+  else if (/^\/e\/pharmacie-pharmacie-[^/]+\/index\.html$/.test(path)) canonicalPath = path.replace('/pharmacie-pharmacie-', '/pharmacie-').replace('/index.html', '/');
+  if (canonicalPath && canonicalPath !== path) {
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
+    robots.content = 'noindex,follow';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
+    canonical.href = `${location.origin}${canonicalPath}`;
+  }
+})();
+
+(() => {
   document.querySelectorAll('img').forEach((image, index) => {
     if (!image.hasAttribute('decoding')) image.decoding = 'async';
     const aboveFold = image.closest('header, .hero, .ambulance-hero, .urgent-hero') || index === 0;
