@@ -552,6 +552,34 @@
         "source_type": "official_group_and_institutional_document",
         "source_url": "https://akdital.ma/wp-content/uploads/2024/12/CP-KENITRA-2024-VF-2.pdf"
       }
+    },
+    {
+      "id": "clinique-ik-urgences-kenitra",
+      "slug": "clinique-ik-urgences-kenitra",
+      "name": "Clinique IK — Urgences",
+      "type": "clinic",
+      "subtitle": "Urgences · 24h/24",
+      "city": "Kénitra",
+      "address": "Lotissement Maamora, Les Allées du Parc, Saknia — Kénitra",
+      "phone": "+212 5 37 38 19 19",
+      "phones": [
+        {"label": "+212 5 37 38 19 19", "href": "tel:+212537381919"},
+        {"label": "+212 5 37 31 34 34", "href": "tel:+212537313434"},
+        {"label": "+212 5 37 38 60 80", "href": "tel:+212537386080"}
+      ],
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Urgences+IK+Lotissement+Maamora+Kenitra",
+      "hours": "Ouvert 24h/24",
+      "emergency_available": true,
+      "emergency_hours": "24h/24",
+      "verified": false,
+      "featured": false,
+      "gallery": [],
+      "photo": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "legacy_markup": null,
+      "aliases": ["IK", "Urgences IK", "Clinique IK Kénitra"],
+      "verification": {"last_verified": "2026-10-27", "source_type": "user_supplied_photo"}
     }
   ]
 }
