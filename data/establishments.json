@@ -58,11 +58,7 @@
         "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>2.8 Google</strong></div>\n<h3>مستشفى أكديطال الدولي - القنيطرة</h3>\n<p>شارع محمد السادس، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537369696\">+212 5 37 36 96 96</a>\n<a class=\"facility-route\" href=\"https://www.google.com/maps/dir/?api=1&amp;destination=Akdital%20International%20Hospital%20Kenitra\" rel=\"noopener noreferrer\" target=\"_blank\">الاتجاهات</a>\n</article>"
       },
       "website": "https://hopital-international-kenitra.ma/",
-      "aliases": [
-        "Clinique Internationale de Kénitra",
-        "Clinique Internationale de Kénitra-Akdital",
-        "Akdital International Hospital - Kenitra"
-      ],
+      "aliases": ["Akdital International Hospital - Kenitra"],
       "services": [
         "Urgences 24h/24",
         "Oncologie",
@@ -81,6 +77,35 @@
         "source_type": "official_establishment_and_group",
         "source_url": "https://hopital-international-kenitra.ma/notre-plateau-technique/"
       }
+    },
+    {
+      "id": "clinique-internationale-de-kenitra",
+      "slug": "clinique-internationale-de-kenitra",
+      "name": "Clinique Internationale de Kénitra",
+      "type": "clinic",
+      "subtitle": "Clinique privée · Urgences 24h/24",
+      "city": "Kénitra",
+      "address": "Lotissement Maamora, Les Allées du Parc, Saknia — Kénitra",
+      "phone": "+212 5 37 31 34 34",
+      "phones": [
+        {"label": "+212 5 37 31 34 34", "href": "tel:+212537313434"},
+        {"label": "+212 5 37 38 19 19", "href": "tel:+212537381919"},
+        {"label": "+212 5 37 38 60 80", "href": "tel:+212537386080"}
+      ],
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Clinique+Internationale+de+Kenitra+Les+Allees+du+Parc",
+      "director": "Dr Hakim Azzerki, anesthésiste-réanimateur",
+      "resuscitation_doctor": "Dr Hakim Azzerki, anesthésiste-réanimateur",
+      "photo": "assets/clinique-ik-urgences.jpg",
+      "gallery": [],
+      "featured": true,
+      "verified": false,
+      "hours": "Ouvert 24h/24",
+      "services": ["Urgences 24h/24", "Cardiologie interventionnelle", "Radiologie", "Traumatologie", "Urgences gastro-entérologiques", "Neurochirurgie"],
+      "specialties": ["Cardiologie interventionnelle", "Radiologie", "Traumatologie", "Gastro-entérologie", "Neurochirurgie"],
+      "emergency_available": true,
+      "emergency_hours": "24h/24, 7j/7",
+      "aliases": ["Clinique IK", "IK Kénitra"],
+      "verification": {"last_verified": "2026-10-27", "source_type": "user_supplied_photo"}
     },
     {
       "id": "polyclinique-de-kenitra",
@@ -552,34 +577,6 @@
         "source_type": "official_group_and_institutional_document",
         "source_url": "https://akdital.ma/wp-content/uploads/2024/12/CP-KENITRA-2024-VF-2.pdf"
       }
-    },
-    {
-      "id": "clinique-ik-urgences-kenitra",
-      "slug": "clinique-ik-urgences-kenitra",
-      "name": "Clinique IK — Urgences",
-      "type": "clinic",
-      "subtitle": "Urgences · 24h/24",
-      "city": "Kénitra",
-      "address": "Lotissement Maamora, Les Allées du Parc, Saknia — Kénitra",
-      "phone": "+212 5 37 38 19 19",
-      "phones": [
-        {"label": "+212 5 37 38 19 19", "href": "tel:+212537381919"},
-        {"label": "+212 5 37 31 34 34", "href": "tel:+212537313434"},
-        {"label": "+212 5 37 38 60 80", "href": "tel:+212537386080"}
-      ],
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Urgences+IK+Lotissement+Maamora+Kenitra",
-      "hours": "Ouvert 24h/24",
-      "emergency_available": true,
-      "emergency_hours": "24h/24",
-      "verified": false,
-      "featured": false,
-      "gallery": [],
-      "photo": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "legacy_markup": null,
-      "aliases": ["IK", "Urgences IK", "Clinique IK Kénitra"],
-      "verification": {"last_verified": "2026-10-27", "source_type": "user_supplied_photo"}
     }
   ]
 }

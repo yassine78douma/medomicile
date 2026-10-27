@@ -634,7 +634,7 @@ if (location.pathname.includes('/canva-home/')) {
         item.name, ...(item.aliases || []), item.type, item.subtitle, item.city, item.address,
         ...(item.services || []), ...(item.specialties || [])
       ].filter(Boolean).join(' '));
-      const emergencyNames = ['Centre Hospitalier Provincial El-Azemmouri','Polyclinique de Kénitra','Polyclinique du Gharb','Noor Clinic','Clinique Val Fleury','Clinique Sebou','Polyclinique CNSS Kénitra','Hôpital International de Kénitra','Clinique Internationale de Kénitra','Clinique IK — Urgences'];
+      const emergencyNames = ['Centre Hospitalier Provincial El-Azemmouri','Polyclinique de Kénitra','Polyclinique du Gharb','Noor Clinic','Clinique Val Fleury','Clinique Sebou','Polyclinique CNSS Kénitra','Hôpital International de Kénitra','Clinique Internationale de Kénitra'];
       const emergencyFacility = emergencyFacilitiesPage ? emergencyNames.includes(item.name) : (item.type === 'clinic' || item.type === 'hospital');
       return emergencyFacility && (!query || haystack.includes(query)) && (!selectedType || item.type === selectedType) && (!selectedZone || item.city === selectedZone);
     });
@@ -654,8 +654,8 @@ if (location.pathname.includes('/canva-home/')) {
       const verifiedDate = item.verification?.last_verified || item.last_verified || '';
       const verification = `<p class="clinic-verification">${english ? 'Information checked' : 'Information vérifiée'}${verifiedDate ? ` · ${new Date(`${verifiedDate}T12:00:00`).toLocaleDateString(english ? 'en-GB' : 'fr-FR')}` : ` · ${english ? 'date to be confirmed' : 'date à confirmer'}`}</p>`;
       const labels = [...(item.services || []), ...(item.specialties || [])].filter((label) => label && !/^urgences\b/i.test(label)).slice(0, 3);
-      const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${dataLabel(label)}</span>`).join('')}</p>` : '';
-      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${verification}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
+      const serviceSummary = labels.length ? `<p class="clinic-tags">${labels.map((label) => `<span>${dataLabel(label)}</span>`).join('')}</p>` : ''; const director = item.director ? `<p class="clinic-director"><strong>${english ? 'Medical director' : 'Directeur médical'}</strong>${dataLabel(item.director)}</p>` : '';
+      card.innerHTML = `<div class="clinic-card-top"><span class="clinic-avatar">✚</span><div><p class="clinic-type">${typeLabel(item.type)}</p><h3>${item.name || ''}</h3></div></div>${item.subtitle ? `<p class="clinic-subtitle">${dataLabel(item.subtitle)}</p>` : ''}${director}${item.address || item.city ? `<p class="clinic-location"><strong>${english && item.city === 'Kénitra' ? 'Kenitra' : (item.city || 'Kénitra')}</strong>${item.address || ''}</p>` : ''}${item.phone ? `<p class="clinic-phone"><strong>${english ? 'Phone' : 'Téléphone'}</strong>${item.phone}</p>` : ''}${emergency}${verification}${serviceSummary}<div class="clinic-actions">${profile}${phone}${maps}${website}</div>`;
       results.append(card);
     });
   };
@@ -665,10 +665,6 @@ if (location.pathname.includes('/canva-home/')) {
   });
   loadEstablishments('/data/establishments.json').catch(() => loadEstablishments('../data/establishments.json')).then((data) => {
     establishments = Array.isArray(data) ? data : (data.establishments || []);
-    const international = establishments.find((item) => item.name === 'Hôpital International de Kénitra' || item.slug === 'akdital-international-hospital-kenitra');
-    if (international && !establishments.some((item) => item.name === 'Clinique Internationale de Kénitra')) {
-      establishments.splice(1, 0, { ...international, name: 'Clinique Internationale de Kénitra', type: 'clinic', subtitle: 'Clinique privée · Akdital' });
-    }
     [...new Set(establishments.map((item) => item.type).filter(Boolean))].sort().forEach((item) => { if ([...type.options].some((option) => option.value === item)) return; const option = document.createElement('option'); option.value = item; option.textContent = typeLabel(item); type.append(option); });
     [...new Set(establishments.map((item) => item.city).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'fr')).forEach((item) => { if ([...zone.options].some((option) => option.value === item)) return; const option = document.createElement('option'); option.value = item; option.textContent = english && item === 'Kénitra' ? 'Kenitra' : item; zone.append(option); });
     render();
