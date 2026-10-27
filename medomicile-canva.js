@@ -1,7 +1,83 @@
 (() => {
+  document.querySelectorAll('img').forEach((image, index) => {
+    if (!image.hasAttribute('decoding')) image.decoding = 'async';
+    const aboveFold = image.closest('header, .hero, .ambulance-hero, .urgent-hero') || index === 0;
+    if (!aboveFold && !image.hasAttribute('loading')) image.loading = 'lazy';
+    if (aboveFold && !image.hasAttribute('fetchpriority')) image.fetchPriority = 'high';
+  });
+})();
+
+(() => {
+  const templates = {
+    '/medecin.html': ['Fiche médecin à Kénitra', 'Fiche médecin à Kénitra : spécialité, téléphone, adresse et itinéraire sur Medomicile.'],
+    '/pharmacie.html': ['Fiche pharmacie à Kénitra', 'Fiche pharmacie à Kénitra : adresse, téléphone, horaires et itinéraire sur Medomicile.'],
+    '/etablissement.html': ['Fiche établissement médical à Kénitra', 'Fiche établissement médical à Kénitra : services, téléphone, adresse et itinéraire sur Medomicile.'],
+    '/laboratoire.html': ['Fiche laboratoire à Kénitra', 'Fiche laboratoire à Kénitra : adresse, téléphone, horaires et itinéraire sur Medomicile.'],
+    '/centre-radiologie.html': ['Fiche centre de radiologie à Kénitra', 'Fiche centre de radiologie à Kénitra : adresse, téléphone, horaires et itinéraire sur Medomicile.'],
+    '/centre-dialyse.html': ['Fiche centre de dialyse à Kénitra', 'Fiche centre de dialyse à Kénitra : adresse, téléphone, services et itinéraire sur Medomicile.'],
+    '/carte-medecin.html': ['Carte professionnelle médecin à Kénitra', 'Carte professionnelle d’un médecin à Kénitra, avec coordonnées et informations pratiques sur Medomicile.']
+  };
+  const fallback = templates[location.pathname];
+  if (fallback) {
+    document.title = `${fallback[0]} — Medomicile`;
+    let description = document.querySelector('meta[name="description"]');
+    if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.append(description); }
+    description.content = fallback[1];
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
+    robots.content = 'noindex,follow';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
+    canonical.href = `${location.origin}${location.pathname}${location.search}`;
+  }
+
+  const setDynamicMetadata = (item, kind) => {
+    const name = String(item?.name || '').trim();
+    if (!name) return;
+    const city = String(item?.city || 'Kénitra').trim();
+    const labels = {
+      doctor: ['Médecin', 'médecin'],
+      pharmacy: ['Pharmacie', 'pharmacie'],
+      laboratory: ['Laboratoire', 'laboratoire'],
+      radiology: ['Centre de radiologie', 'centre de radiologie'],
+      dialysis: ['Centre de dialyse', 'centre de dialyse'],
+      establishment: [item?.type || 'Établissement médical', 'établissement médical']
+    };
+    const [label, lowerLabel] = labels[kind] || labels.establishment;
+    const specialty = item?.specialty || item?.subtitle || item?.subspecialty || '';
+    const title = `${name} — ${label} à ${city} | Medomicile`;
+    const description = `${name}, ${lowerLabel} à ${city}${specialty ? ` · ${specialty}` : ''}. Adresse, téléphone, itinéraire et informations pratiques sur Medomicile.`;
+    document.title = title;
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement('meta'); meta.name = 'description'; document.head.append(meta); }
+    meta.content = description;
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
+    robots.content = 'index,follow';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.append(canonical); }
+    canonical.href = `${location.origin}${location.pathname}${location.search}`;
+    const setProperty = (property, content) => {
+      let tag = document.querySelector(`meta[property="${property}"]`);
+      if (!tag) { tag = document.createElement('meta'); tag.setAttribute('property', property); document.head.append(tag); }
+      tag.content = content;
+    };
+    setProperty('og:title', title);
+    setProperty('og:description', description);
+    setProperty('og:url', canonical.href);
+  };
+  window.medomicileSetDynamicMetadata = setDynamicMetadata;
+})();
+
+(() => {
   if (document.body?.classList.contains('rose-article-page')) return;
   const routeMap = {
-    '../index.html': 'index.html'
+    'index.html': '/',
+    '../index.html': '../',
+    'ar/index.html': 'ar/',
+    'en/index.html': 'en/',
+    '../ar/index.html': '../ar/',
+    '../en/index.html': '../en/'
   };
   document.querySelectorAll('a[href], form[action]').forEach((element) => {
     const attribute = element.tagName === 'FORM' ? 'action' : 'href';
@@ -449,7 +525,7 @@ if (location.pathname.includes('/canva-home/')) {
   fetch('/data/laboratoires-kenitra.json').catch(() => fetch('../data/laboratoires-kenitra.json')).then((r) => r.json()).then((data) => {
     const all = data.laboratories || [], item = all.find((lab) => lab.slug === slug);
     if (!item) return notFound();
-    document.title = `${item.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(item, 'laboratory');
     const phone = item.phone ? `<a class="establishment-action" href="${esc(item.phoneHref || `tel:${String(item.phone).replace(/[^0-9+]/g,'')}`)}">Appeler</a>` : '';
     const maps = item.mapsUrl ? `<a class="establishment-action" href="${esc(item.mapsUrl)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
     const hours = Array.isArray(item.hours) && item.hours.length && !item.hours.some((value) => /à confirmer/i.test(value)) ? `<section class="establishment-section"><p class="eyebrow">Horaires</p><p>${item.hours.map(esc).join(' · ')}</p></section>` : '';
@@ -514,7 +590,7 @@ if (location.pathname.includes('/canva-home/')) {
   fetch('../data/dialysis-centers.json').catch(() => fetch('/data/dialysis-centers.json')).then((response) => response.json()).then((data) => {
     const centers = data.centers || [], item = centers.find((center) => center.id === id);
     if (!item) return notFound();
-    document.title = `${item.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(item, 'dialysis');
     const phones = Array.isArray(item.phones) ? item.phones.filter(Boolean) : [];
     const phone = phones[0] ? `<a class="establishment-action" href="tel:${phones[0].replace(/[^0-9+]/g, '')}">Appeler</a>` : '';
     const maps = item.address ? `<a class="establishment-action" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${item.address}${item.city ? `, ${item.city}` : ''}`)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
@@ -532,7 +608,7 @@ if (location.pathname.includes('/canva-home/')) {
   fetch('../data/radiology-centers.json').catch(() => fetch('/data/radiology-centers.json')).then((response) => response.json()).then((data) => {
     const centers = data.centers || [], item = centers.find((center) => center.slug === slug);
     if (!item) return notFound();
-    document.title = `${item.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(item, 'radiology');
     const phone = item.phoneRaw && item.phone ? `<a class="establishment-action" href="${esc(item.phoneRaw)}">Appeler</a>` : '';
     const maps = item.mapsUrl ? `<a class="establishment-action" href="${esc(item.mapsUrl)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
     const hours = item.hours && !/à confirmer|disponibilité/i.test(item.hours) ? `<p><strong>Horaires</strong>${esc(item.hours)}</p>` : '';
@@ -740,7 +816,7 @@ if (location.pathname.includes('/canva-home/')) {
   const action = (href, label, external = false) => href ? `<a class="establishment-action" href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>` : '';
   const notFound = () => { root.innerHTML = `<section class="establishment-not-found"><div class="content-width"><p class="eyebrow">Annuaire médical</p><h1>Établissement introuvable.</h1><p>Cette fiche n’est pas disponible dans l’annuaire Medomicile.</p><a class="button button-blue" href="cliniques.html">Voir les cliniques et hôpitaux</a></div></section>`; };
   const render = (item, all) => {
-    document.title = `${item.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(item, 'establishment');
     const hours = item.hours && !/à vérifier|a vérifier/i.test(item.hours) ? `<p><strong>Horaires</strong>${esc(item.hours)}</p>` : '';
     const emergency = item.emergency_available === true ? `<aside class="establishment-emergency"><strong>Service d’urgences</strong>${item.emergency_hours ? `<span>${esc(item.emergency_hours)}</span>` : ''}</aside>` : '';
     const media = item.photo ? `<div class="establishment-media"><img src="${esc(item.photo)}" alt="${esc(item.name)}"></div>` : '';
@@ -808,7 +884,7 @@ if (location.pathname.includes('/canva-home/')) {
     const maps = doctor.google_maps_url || doctor.google_maps || '';
     const related = indexed.filter((other) => other.slug !== doctor.slug && (other.subtitle || '') === doctor.specialty).slice(0, 4);
     const action = (href, label, external = false) => href ? `<a class="establishment-action" href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>` : '';
-    document.title = `${doctor.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(doctor, 'doctor');
     const cardUrl = /^https:\/\/medomicile\.com\/p\/[^/]+\/$/.test(indexed.find((entry) => entry.slug === doctor.slug)?.url || '') ? indexed.find((entry) => entry.slug === doctor.slug).url : '';
     const cardQr = indexed.find((entry) => entry.slug === doctor.slug)?.qr;
     const shareAction = cardUrl && cardQr ? `<button class="establishment-action establishment-share-action" type="button" data-doctor-share>Partager le contact</button>` : '';
@@ -882,7 +958,7 @@ if (location.pathname.includes('/canva-home/')) {
   fetch('/data/pharmacies-kenitra.json').catch(() => fetch('../data/pharmacies-kenitra.json')).then((r) => r.json()).then((data) => {
     const all = data.pharmacies || [], item = all.find((p) => p.slug === slug);
     if (!item) return notFound();
-    document.title = `${item.name} — Medomicile`;
+    window.medomicileSetDynamicMetadata(item, 'pharmacy');
     const phone = item.phone ? `<a class="establishment-action" href="tel:${String(item.phone).replace(/[^0-9+]/g,'')}">Appeler</a>` : '';
     const maps = item.mapsUrl || item.google_maps_url ? `<a class="establishment-action" href="${esc(item.mapsUrl || item.google_maps_url)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
     const related = all.filter((p) => p.slug !== item.slug && p.district === item.district).slice(0, 4);
