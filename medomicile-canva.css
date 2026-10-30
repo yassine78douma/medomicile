@@ -312,6 +312,7 @@ html[lang="en"] .availability-note { width: 100%; margin: 2px 0 0; color: #eaf6f
   textarea,
   button { max-width: 100%; }
   .content-width { width: 100%; max-width: 100%; }
+  .footer-grid a { min-height: 44px; display: flex; align-items: center; margin-bottom: 0; }
 }
 
 /* Consultation service cards: keep titles and descriptions separated on mobile. */
@@ -1256,3 +1257,90 @@ html[dir="rtl"] .clinic-actions { justify-content: flex-start; }
 .article-related{padding:0 20px 80px}.article-related h2{margin:0 0 20px;color:var(--md-navy);font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem)}.article-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.article-related-grid a{display:flex;min-height:180px;flex-direction:column;gap:10px;padding:22px;border:1px solid #d5e4ef;border-radius:20px;color:var(--md-navy);background:#fff;text-decoration:none}.article-related-grid span{color:var(--md-blue);font-size:.68rem;font-weight:800;letter-spacing:.08em}.article-related-grid strong{font-family:'DM Serif Display',Georgia,serif;font-size:1.35rem;line-height:1.12}.article-related-grid small{color:var(--md-muted);line-height:1.5}.article-related-grid b{margin-top:auto;color:var(--md-blue);font-size:.8rem}@media(max-width:700px){.article-related{padding:0 14px 70px}.article-related-grid{grid-template-columns:1fr}}
 
 .rose-related{padding:0 20px 90px}.rose-related h2{margin:0 0 22px;color:var(--md-navy);font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2rem,4vw,3rem)}.rose-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.rose-related-grid a{display:flex;min-height:190px;flex-direction:column;gap:10px;padding:22px;border:1px solid #d5e4ef;border-radius:20px;color:var(--md-navy);background:#fff;text-decoration:none}.rose-related-grid span{color:var(--md-blue);font-size:.68rem;font-weight:800;letter-spacing:.08em}.rose-related-grid strong{font-family:'DM Serif Display',Georgia,serif;font-size:1.35rem;line-height:1.12}.rose-related-grid small{color:var(--md-muted);line-height:1.5}.rose-related-grid b{margin-top:auto;color:var(--md-blue);font-size:.8rem}@media(max-width:700px){.rose-related{padding:0 14px 70px}.rose-related-grid{grid-template-columns:1fr}}
+
+/* Russian surface: preserve the English layout while giving Cyrillic copy its own type rhythm. */
+@font-face {
+  font-family: "Inter Local";
+  src: url("assets/fonts/inter-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Local";
+  src: url("assets/fonts/inter-700.ttf") format("truetype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+.ru-page,
+.ru-page button,
+.ru-page input,
+.ru-page select,
+.ru-page textarea {
+  font-family: "Inter Local", "Noto Sans", Arial, sans-serif;
+}
+.ru-page h1,
+.ru-page h2,
+.ru-page h3,
+.ru-page .urgent-resource-links b,
+.ru-page .article-card strong {
+  font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.02em;
+}
+.ru-page h1 { line-height: 1.06; }
+.ru-page h2 { line-height: 1.12; }
+.ru-page .eyebrow,
+.ru-page .section-kicker { color: var(--md-blue); }
+.ru-page .hero .eyebrow,
+.ru-page .urgent-hero .eyebrow,
+.ru-page .clinics-hero .eyebrow,
+.ru-page .duty-hero .eyebrow { color: #eaf6ff; }
+.ru-page .hero h1,
+.ru-page .urgent-hero h1,
+.ru-page .clinics-hero h1,
+.ru-page .duty-hero h1 { color: #fff; }
+.ru-page .hero > .content-width > p:not(.eyebrow),
+.ru-page .urgent-hero > .content-width > p:not(.eyebrow),
+.ru-page .clinics-hero > .content-width > p:not(.eyebrow),
+.ru-page .duty-hero > .content-width > p:not(.eyebrow) { color: #eaf6ff; }
+.ru-page p,
+.ru-page li,
+.ru-page .hero-subtitle,
+.ru-page .clinic-subtitle,
+.ru-page .clinic-location,
+.ru-page .clinic-phone,
+.ru-page .duty-card,
+.ru-page .duty-card p { line-height: 1.62; }
+.ru-page .content-width { max-width: 1180px; }
+.ru-page .hero-copy,
+.ru-page .clinics-hero > .content-width > p:not(.eyebrow),
+.ru-page .duty-hero > .content-width > p:not(.eyebrow) { max-width: 760px; }
+.ru-page .site-header,
+.ru-page .site-footer,
+.ru-page .button,
+.ru-page .header-cta,
+.ru-page .desktop-nav a,
+.ru-page .mobile-menu a { font-family: "Inter Local", "Noto Sans", Arial, sans-serif; }
+.ru-page .desktop-nav a,
+.ru-page .mobile-menu a,
+.ru-page .header-cta,
+.ru-page .footer-grid a,
+.ru-page .footer-grid p { font-size: .8rem; }
+.ru-page .footer-grid b { color: #b7e8f7; }
+.ru-page .site-footer { line-height: 1.55; }
+.ru-page .clinic-card,
+.ru-page .duty-card { min-width: 0; }
+.ru-page .clinic-actions a,
+.ru-page .duty-actions a { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; }
+@media (max-width: 900px) {
+  .ru-page h1 { max-width: 100%; font-size: clamp(2.45rem, 11vw, 3.7rem); line-height: 1.04; }
+  .ru-page h2 { line-height: 1.12; }
+  .ru-page .hero-subtitle { font-size: .98rem; line-height: 1.68; }
+  .ru-page .clinic-card,
+  .ru-page .duty-card { padding: 18px; }
+  .ru-page .clinic-actions,
+  .ru-page .duty-actions { gap: 8px; }
+  .ru-page .clinic-actions a,
+  .ru-page .duty-actions a { flex: 1 1 140px; }
+}

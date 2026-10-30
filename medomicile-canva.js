@@ -300,6 +300,8 @@ window.MedomicileDetail = {
   };
   const arabic = document.documentElement.lang === 'ar';
   const english = document.documentElement.lang === 'en';
+  const russian = document.documentElement.lang === 'ru';
+  if (russian) return;
   const prefix = english ? '' : (location.pathname.includes('/en/') ? '../' : '');
   const copy = arabic ? {
     brand: 'استشارات ورعاية وتوجيه في القنيطرة', services: 'الخدمات', consultation: 'الاستشارة', ambulance: 'الإسعاف', emergencies: 'الطوارئ', directory: 'الدليل', doctors: 'الأطباء', pharmacies: 'الصيدليات', clinics: 'العيادات والمستشفيات', labs: 'المختبرات', radiology: 'مراكز الأشعة', info: 'المعلومات', articles: 'المقالات', home: 'الرئيسية', contact: 'اتصل بنا', privacy: 'الخصوصية', languages: 'اللغات', ar: 'العربية', fr: 'Français', en: 'English'
@@ -390,6 +392,8 @@ if (location.pathname.includes('/canva-home/')) {
   const active = page === 'index.html' ? 'index.html' : page === 'consultation.html' ? 'consultation.html' : (page === 'urgences.html' || page === 'etablissements-urgences.html') ? 'urgences.html' : isDirectory ? 'annuaire.html' : '';
   const isArabic = document.documentElement.lang === 'ar';
   const isEnglish = document.documentElement.lang === 'en';
+  const isRussian = document.documentElement.lang === 'ru';
+  if (isRussian) return;
   if (isEnglish) return;
   if (!isArabic) {
   const inCanvaHome = location.pathname.includes('/canva-home/');
