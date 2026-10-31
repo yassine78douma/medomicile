@@ -2,15 +2,15 @@
   "counts": {
     "doctor": 286,
     "dentist": 106,
-    "hospital": 6,
-    "clinic": 8,
+    "hospital": 5,
+    "clinic": 12,
     "dialysis_center": 12,
     "radiology_center": 14,
     "laboratory": 17,
     "pharmacy": 103
   },
-  "total": 552,
-  "indexable": 296,
+  "total": 555,
+  "indexable": 309,
   "invalid_phones": [
     {
       "name": "Dr Ftouhi Abdellatif",
