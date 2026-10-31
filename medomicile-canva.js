@@ -628,6 +628,7 @@ if (location.pathname.includes('/canva-home/')) {
     filtered.slice(0, visible).forEach((center) => {
       const card = document.createElement('article'); card.className = 'radiology-card';
       const arabic = document.documentElement.lang === 'ar';
+      const russian = document.documentElement.lang === 'ru';
       const localizedName = arabic ? (center.nameAr || center.name) : center.name;
       const phone = center.phoneRaw && center.phone ? `<a href="${center.phoneRaw}">${arabic ? 'اتصال' : 'Appeler'}</a>` : '';
       const maps = center.mapsUrl ? `<a href="${center.mapsUrl}" target="_blank" rel="noopener noreferrer">${arabic ? 'الاتجاهات' : 'Itinéraire'}</a>` : '';
@@ -692,8 +693,8 @@ if (location.pathname.includes('/canva-home/')) {
       const arabic = document.documentElement.lang === 'ar';
       const phone = lab.phoneHref && lab.phone ? `<a href="${lab.phoneHref}">${arabic ? 'اتصال' : 'Appeler'}</a>` : '';
       const maps = lab.mapsUrl ? `<a href="${lab.mapsUrl}" target="_blank" rel="noopener noreferrer">${arabic ? 'الاتجاهات' : 'Itinéraire'}</a>` : '';
-      const profile = lab.slug ? `<a class="lab-profile" href="laboratoire.html?slug=${encodeURIComponent(lab.slug)}">Voir la fiche</a>` : '';
-      const hours = Array.isArray(lab.hours) && lab.hours.length && !lab.hours.some((value) => /à confirmer/i.test(value)) ? `<p class="lab-hours"><strong>Horaires</strong>${lab.hours.join(' · ')}</p>` : '';
+      const profile = lab.slug ? `<a class="lab-profile" href="${russian ? '/laboratoire.html' : 'laboratoire.html'}?slug=${encodeURIComponent(lab.slug)}">${russian ? 'Открыть профиль' : arabic ? 'عرض الملف' : document.documentElement.lang === 'en' ? 'View profile' : 'Voir la fiche'}</a>` : '';
+      const hours = Array.isArray(lab.hours) && lab.hours.length && !lab.hours.some((value) => /à confirmer/i.test(value)) ? `<p class="lab-hours"><strong>${russian ? 'Часы работы' : arabic ? 'ساعات العمل' : document.documentElement.lang === 'en' ? 'Hours' : 'Horaires'}</strong>${lab.hours.join(' · ')}</p>` : '';
       card.innerHTML = `<div class="lab-card-top"><span class="lab-avatar">⌁</span><div><p class="lab-type">${document.documentElement.lang === 'en' ? window.medomicileEnglishDataLabel(lab.type || 'Laboratoire') : (arabic ? 'مختبر تحاليل طبية' : (lab.type || 'Laboratoire'))}</p><h3>${lab.name || ''}</h3>${lab.district ? `<p class="lab-detail"><strong>${arabic ? 'الحي' : 'Quartier'}</strong>${lab.district}</p>` : ''}</div></div>${lab.address ? `<p class="lab-detail"><strong>${arabic ? 'العنوان' : 'Adresse'}</strong>${lab.address}</p>` : ''}${lab.phone ? `<p class="lab-detail"><strong>${arabic ? 'الهاتف' : 'Téléphone'}</strong>${lab.phone}</p>` : ''}${hours}<div class="lab-actions">${profile}${phone}${maps}</div>`;
       results.append(card);
     });
