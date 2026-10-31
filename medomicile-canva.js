@@ -863,8 +863,7 @@ if (location.pathname.includes('/canva-home/')) {
   if (!root) return;
   const params = new URLSearchParams(location.search);
   const requestedSlug = params.get('slug') || '';
-  const legacySlugMap = { 'clinique-internationale-de-kenitra': 'akdital-international-hospital-kenitra' };
-  const slug = legacySlugMap[requestedSlug] || requestedSlug;
+  const slug = requestedSlug;
   const esc = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[char]));
   const list = (values, className) => Array.isArray(values) && values.length ? `<div class="establishment-list ${className}">${values.map((value) => `<span>${esc(value)}</span>`).join('')}</div>` : '';
   const action = (href, label, external = false) => href ? `<a class="establishment-action" href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>` : '';
