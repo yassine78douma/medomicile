@@ -992,11 +992,15 @@ if (location.pathname.includes('/canva-home/')) {
 
   const call = document.createElement('a');
   call.className = 'home-mobile-call is-hidden';
-  call.setAttribute('role', 'region');
   call.href = 'tel:+212663058222';
   call.textContent = labels.call;
   call.setAttribute('aria-label', labels.call);
-  document.body.append(call);
+  const callRegion = document.createElement('div');
+  callRegion.className = 'home-mobile-call-region';
+  callRegion.setAttribute('role', 'region');
+  callRegion.setAttribute('aria-label', labels.call);
+  callRegion.append(call);
+  document.body.append(callRegion);
 
   const updateCall = () => call.classList.toggle('is-hidden', !mobileQuery.matches || hero.getBoundingClientRect().bottom > 80);
   updateCall();
