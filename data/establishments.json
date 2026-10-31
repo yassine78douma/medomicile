@@ -478,7 +478,11 @@
       "id": "clinique-d-oncologie-ibn-sina",
       "slug": "clinique-d-oncologie-ibn-sina",
       "name": "Clinique spécialisée Ibn Sina",
-      "legacy_markup": {},
+      "legacy_markup": {
+        "fr": "<h3>Clinique d’oncologie Ibn Sina</h3>",
+        "en": "<h3>Clinique d’oncologie Ibn Sina</h3>",
+        "ar": "<h3>مصحة ابن سينا لطب الأورام</h3>"
+      },
       "type": "clinic",
       "aliases": ["Clinique d’oncologie Ibn Sina", "مصحة ابن سينا لطب الأورام"],
       "subtitle": "Oncologie",
