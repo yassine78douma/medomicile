@@ -1,0 +1,47 @@
+name: Scheduled site quality audit
+
+on:
+  schedule:
+    - cron: '30 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse-and-axe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        page:
+          - /
+          - /ar/
+          - /en/
+          - /ru/
+          - /consultation.html
+          - /en/consultation.html
+          - /ru/consultation.html
+          - /emergency-facilities.html
+          - /en/emergency-facilities.html
+          - /ru/emergency-facilities.html
+          - /on-call-pharmacies.html
+          - /en/on-call-pharmacies.html
+          - /ru/on-call-pharmacies.html
+          - /laboratoires.html
+          - /en/laboratories.html
+          - /ru/laboratories.html
+          - /radiologie.html
+          - /en/radiology.html
+          - /ru/radiology.html
+    steps:
+      - name: Run Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: https://medomicile.com${{ matrix.page }}?scheduled-audit=${{ github.run_id }}
+          runs: 1
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+      - name: Run axe
+        run: npx --yes @axe-core/cli "https://medomicile.com${{ matrix.page }}?scheduled-audit=${{ github.run_id }}" --exit
