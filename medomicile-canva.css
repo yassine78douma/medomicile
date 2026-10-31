@@ -1373,3 +1373,6 @@ html[lang="ru"] { --md-muted: #52677e; }
 .establishment-video-actions { display: flex; gap: 8px; position: absolute; right: 14px; bottom: 14px; z-index: 2; }
 .establishment-video-actions button { min-height: 42px; padding: 9px 13px; border: 1px solid rgba(255,255,255,.7); border-radius: 10px; color: #fff; background: rgba(4,31,70,.86); font: inherit; font-size: .75rem; font-weight: 800; cursor: pointer; }
 .establishment-video-actions button:focus-visible { outline: 3px solid #f6bd2f; outline-offset: 2px; }
+.establishment-affiliation { max-width: 900px; margin: 0 auto 42px; padding: 24px 26px; border: 1px solid #cfe0ee; border-radius: 18px; color: var(--md-navy); background: #fff; }
+.establishment-affiliation p { margin: 0 0 8px; }
+.establishment-affiliation a { color: var(--md-blue); font-weight: 800; }

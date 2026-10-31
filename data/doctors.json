@@ -313,7 +313,9 @@
       "instagram": "",
       "facebook": "",
       "status": "active",
-      "verified": true
+      "verified": true,
+      "management_role": "Directeur général de la Clinique Internationale de Kénitra",
+      "establishment_slug": "clinique-internationale-de-kenitra"
     },
     {
       "id": "dr-rachid-agdach",
