@@ -1,5 +1,12 @@
 @import url("assets/design-tokens.css");
 
+@font-face { font-family: "DM Serif Display"; src: url("/assets/fonts/dm-serif-display-400.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-400.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-500.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-600.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-700.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("/assets/fonts/montserrat-800.ttf") format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+
 :root {
   --blue-950: #082f49;
   --blue-850: #0f4c81;
