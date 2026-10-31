@@ -277,6 +277,10 @@ def main():
     eligible_doctor_slugs = {item['slug'] for item in index if item.get('type') == 'doctor' and re.fullmatch(r'https://medomicile\.com/p/[^/]+/', item.get('url', ''))}
     for folder in ['assets/cards/qr', 'p', 'e']:
         (ROOT/folder).mkdir(parents=True, exist_ok=True)
+    def legacy_redirect(target):
+        escaped = html.escape(target, quote=True)
+        return f'''<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0;url={escaped}"><link rel="canonical" href="{escaped}"><title>Redirection Medomicile</title></head><body><p>Cette adresse a été déplacée. <a href="{escaped}">Ouvrir la fiche Medomicile</a>.</p><script>location.replace({json.dumps(target)});</script></body></html>'''
+
     for e in items:
         folder = ROOT/e['path'].strip('/')
         folder.mkdir(parents=True, exist_ok=True)
@@ -286,7 +290,7 @@ def main():
         qr.add_data(e['share_url']); qr.make(fit=True)
         qr.make_image(fill_color='black', back_color='white').save(ROOT/e['qr'].lstrip('/'))
         if e['type'] in ('doctor', 'dentist'):
-            (ROOT/'p'/f'{e["id"]}.html').write_text(rendered)
+            (ROOT/'p'/f'{e["id"]}.html').write_text(legacy_redirect(e['url']), encoding='utf-8')
     (ROOT/'data/virtual-card-index.json').write_text(json.dumps(items, ensure_ascii=False, indent=2) + '\n')
     sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     sitemap += ''.join(f'<url><loc>{e["url"]}</loc></url>\n' for e in items if e['indexable']) + '</urlset>\n'

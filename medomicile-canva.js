@@ -5,6 +5,7 @@
   else if (path.startsWith('/canva-home/')) canonicalPath = path.replace('/canva-home', '');
   else if (/^\/p\/[^/]+\.html$/.test(path)) canonicalPath = path.replace(/\.html$/, '/');
   else if (/^\/e\/pharmacie-pharmacie-[^/]+\/index\.html$/.test(path)) canonicalPath = path.replace('/pharmacie-pharmacie-', '/pharmacie-').replace('/index.html', '/');
+  else if (/^\/e\/[^/]+\/index\.html$/.test(path)) canonicalPath = path.replace(/index\.html$/, '');
   if (canonicalPath && canonicalPath !== path) {
     let robots = document.querySelector('meta[name="robots"]');
     if (!robots) { robots = document.createElement('meta'); robots.name = 'robots'; document.head.append(robots); }
