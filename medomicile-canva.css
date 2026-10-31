@@ -1367,3 +1367,5 @@ html[lang="ru"] { --md-muted: #52677e; }
   .ru-page .clinic-actions a,
   .ru-page .duty-actions a { flex: 1 1 140px; }
 }
+/* Clinique Internationale video media */
+.establishment-media video { display: block; width: 100%; max-height: 360px; aspect-ratio: 4 / 5; object-fit: cover; background: #071f46; }
