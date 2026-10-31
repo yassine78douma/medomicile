@@ -14,6 +14,14 @@
   --md-content: 1180px;
 }
 
+/* Keep the fixed call action above the mobile navigation instead of covering content. */
+@media (max-width: 768px) {
+  .floating-call,
+  .floating-call-button {
+    bottom: calc(82px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; color: var(--md-ink); background: var(--md-pale); font-family: Montserrat, sans-serif; }
