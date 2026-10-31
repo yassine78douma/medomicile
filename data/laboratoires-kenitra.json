@@ -1,8 +1,8 @@
 {
   "laboratories": [
     {
-      "id": "laboratoire-bab-fes",
-      "slug": "laboratoire-bab-fes",
+      "id": "laboratoire-laboratoire-bab-fes",
+      "slug": "laboratoire-laboratoire-bab-fes",
       "name": "Laboratoire Bab Fès",
       "shortName": "Laboratoire Bab Fès",
       "type": "Laboratoire d’analyses médicales",
@@ -22,8 +22,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-saada-d-analyses-medicales",
-      "slug": "laboratoire-saada-d-analyses-medicales",
+      "id": "laboratoire-laboratoire-saada-danalyses-medicales",
+      "slug": "laboratoire-laboratoire-saada-danalyses-medicales",
       "name": "Laboratoire Saada d’Analyses Médicales",
       "shortName": "Laboratoire Saada d’Analyses Médicales",
       "type": "Laboratoire d’analyses médicales",
@@ -43,14 +43,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "centre-d-anatomie-pathologique-de-kenitra",
-      "slug": "centre-d-anatomie-pathologique-de-kenitra",
+      "id": "laboratoire-centre-danatomie-pathologique-de-kenitra",
+      "slug": "laboratoire-centre-danatomie-pathologique-de-kenitra",
       "name": "Centre d’Anatomie Pathologique de Kénitra",
       "shortName": "Centre d’Anatomie Pathologique de Kénitra",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "Station Shell, 323 avenue Mohammed V, Kénitra",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Anatomie pathologique"
       ],
@@ -64,8 +64,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "centre-de-biologie-medicale-sebou-cbms",
-      "slug": "centre-de-biologie-medicale-sebou-cbms",
+      "id": "laboratoire-centre-de-biologie-medicale-sebou-cbms",
+      "slug": "laboratoire-centre-de-biologie-medicale-sebou-cbms",
       "name": "Centre de Biologie Médicale Sebou (CBMS)",
       "shortName": "Centre de Biologie Médicale Sebou (CBMS)",
       "type": "Laboratoire d’analyses médicales",
@@ -85,8 +85,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "dhl-lab",
-      "slug": "dhl-lab",
+      "id": "laboratoire-dhl-lab-laboratoire-de-biologie-medicale",
+      "slug": "laboratoire-dhl-lab-laboratoire-de-biologie-medicale",
       "name": "DHL-Lab — Laboratoire de Biologie Médicale",
       "shortName": "DHL-Lab — Laboratoire de Biologie Médicale",
       "type": "Laboratoire d’analyses médicales",
@@ -106,8 +106,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "kenilab",
-      "slug": "kenilab",
+      "id": "laboratoire-kenilab-laboratoire-danalyses-medicales",
+      "slug": "laboratoire-kenilab-laboratoire-danalyses-medicales",
       "name": "Kenilab — Laboratoire d’Analyses Médicales",
       "shortName": "Kenilab — Laboratoire d’Analyses Médicales",
       "type": "Laboratoire d’analyses médicales",
@@ -127,8 +127,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-al-andalousse",
-      "slug": "laboratoire-al-andalousse",
+      "id": "laboratoire-laboratoire-al-andalousse",
+      "slug": "laboratoire-laboratoire-al-andalousse",
       "name": "Laboratoire Al Andalousse",
       "shortName": "Laboratoire Al Andalousse",
       "type": "Laboratoire d’analyses médicales",
@@ -148,8 +148,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-al-massira",
-      "slug": "laboratoire-al-massira",
+      "id": "laboratoire-laboratoire-al-massira",
+      "slug": "laboratoire-laboratoire-al-massira",
       "name": "Laboratoire Al Massira",
       "shortName": "Laboratoire Al Massira",
       "type": "Laboratoire d’analyses médicales",
@@ -169,14 +169,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-asseha-d-analyses-medicales",
-      "slug": "laboratoire-asseha-d-analyses-medicales",
+      "id": "laboratoire-laboratoire-asseha-danalyses-medicales",
+      "slug": "laboratoire-laboratoire-asseha-danalyses-medicales",
       "name": "Laboratoire Asseha d’Analyses Médicales",
       "shortName": "Laboratoire Asseha d’Analyses Médicales",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "1 boulevard Mohammed V, angle rue Moulay Abdellah, résidence Amorjane, bureau n° 20",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Biologie médicale ; examens précis à confirmer"
       ],
@@ -190,8 +190,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-central-d-analyses-medicales",
-      "slug": "laboratoire-central-d-analyses-medicales",
+      "id": "laboratoire-laboratoire-central-danalyses-medicales",
+      "slug": "laboratoire-laboratoire-central-danalyses-medicales",
       "name": "Laboratoire Central d’Analyses Médicales",
       "shortName": "Laboratoire Central d’Analyses Médicales",
       "type": "Laboratoire d’analyses médicales",
@@ -211,8 +211,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-les-mimosas",
-      "slug": "laboratoire-les-mimosas",
+      "id": "laboratoire-laboratoire-les-mimosas",
+      "slug": "laboratoire-laboratoire-les-mimosas",
       "name": "Laboratoire Les Mimosas",
       "shortName": "Laboratoire Les Mimosas",
       "type": "Laboratoire d’analyses médicales",
@@ -232,8 +232,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-al-hikma",
-      "slug": "laboratoire-al-hikma",
+      "id": "laboratoire-laboratoire-al-hikma",
+      "slug": "laboratoire-laboratoire-al-hikma",
       "name": "Laboratoire Al Hikma",
       "shortName": "Laboratoire Al Hikma",
       "type": "Laboratoire d’analyses médicales",
@@ -253,8 +253,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-du-gharb",
-      "slug": "laboratoire-du-gharb",
+      "id": "laboratoire-laboratoire-du-gharb",
+      "slug": "laboratoire-laboratoire-du-gharb",
       "name": "Laboratoire du Gharb",
       "shortName": "Laboratoire du Gharb",
       "type": "Laboratoire d’analyses médicales",
@@ -274,8 +274,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-firdaous",
-      "slug": "laboratoire-firdaous",
+      "id": "laboratoire-laboratoire-firdaous",
+      "slug": "laboratoire-laboratoire-firdaous",
       "name": "Laboratoire Firdaous",
       "shortName": "Laboratoire Firdaous",
       "type": "Laboratoire d’analyses médicales",
@@ -295,8 +295,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-ibn-sina-d-analyses-medicales",
-      "slug": "laboratoire-ibn-sina-d-analyses-medicales",
+      "id": "laboratoire-laboratoire-ibn-sina-danalyses-medicales",
+      "slug": "laboratoire-laboratoire-ibn-sina-danalyses-medicales",
       "name": "Laboratoire Ibn Sina d’Analyses Médicales",
       "shortName": "Laboratoire Ibn Sina d’Analyses Médicales",
       "type": "Laboratoire d’analyses médicales",
@@ -316,14 +316,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-ibn-sina-d-anatomie-et-de-cytologie-pathologiques",
-      "slug": "laboratoire-ibn-sina-d-anatomie-et-de-cytologie-pathologiques",
+      "id": "laboratoire-laboratoire-ibn-sina-danatomie-et-de-cytologie-pathologiques",
+      "slug": "laboratoire-laboratoire-ibn-sina-danatomie-et-de-cytologie-pathologiques",
       "name": "Laboratoire Ibn Sina d’Anatomie et de Cytologie Pathologiques",
       "shortName": "Laboratoire Ibn Sina d’Anatomie et de Cytologie Pathologiques",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "27 boulevard Hassan II, 1er étage, appartement n° 2",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Anatomie et cytologie pathologiques"
       ],
@@ -337,8 +337,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-ittihad",
-      "slug": "laboratoire-ittihad",
+      "id": "laboratoire-laboratoire-ittihad",
+      "slug": "laboratoire-laboratoire-ittihad",
       "name": "Laboratoire Ittihad",
       "shortName": "Laboratoire Ittihad",
       "type": "Laboratoire d’analyses médicales",
@@ -358,8 +358,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-la-ville-haute",
-      "slug": "laboratoire-la-ville-haute",
+      "id": "laboratoire-laboratoire-la-ville-haute",
+      "slug": "laboratoire-laboratoire-la-ville-haute",
       "name": "Laboratoire La Ville Haute",
       "shortName": "Laboratoire La Ville Haute",
       "type": "Laboratoire d’analyses médicales",
@@ -379,8 +379,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-maghreb-arabi-maghreblab",
-      "slug": "laboratoire-maghreb-arabi-maghreblab",
+      "id": "laboratoire-laboratoire-maghreb-arabi-maghreblab",
+      "slug": "laboratoire-laboratoire-maghreb-arabi-maghreblab",
       "name": "Laboratoire Maghreb Arabi (MaghrebLab)",
       "shortName": "Laboratoire Maghreb Arabi (MaghrebLab)",
       "type": "Laboratoire d’analyses médicales",
@@ -400,8 +400,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-maamora",
-      "slug": "laboratoire-maamora",
+      "id": "laboratoire-laboratoire-maamora",
+      "slug": "laboratoire-laboratoire-maamora",
       "name": "Laboratoire Mâamora",
       "shortName": "Laboratoire Mâamora",
       "type": "Laboratoire d’analyses médicales",
@@ -421,8 +421,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-saknia",
-      "slug": "laboratoire-saknia",
+      "id": "laboratoire-laboratoire-saknia",
+      "slug": "laboratoire-laboratoire-saknia",
       "name": "Laboratoire Saknia",
       "shortName": "Laboratoire Saknia",
       "type": "Laboratoire d’analyses médicales",
@@ -442,8 +442,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-sidi-larbi-boujemaa",
-      "slug": "laboratoire-sidi-larbi-boujemaa",
+      "id": "laboratoire-laboratoire-sidi-larbi-boujemaa",
+      "slug": "laboratoire-laboratoire-sidi-larbi-boujemaa",
       "name": "Laboratoire Sidi Larbi Boujemaa",
       "shortName": "Laboratoire Sidi Larbi Boujemaa",
       "type": "Laboratoire d’analyses médicales",
@@ -463,8 +463,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-la-province",
-      "slug": "laboratoire-la-province",
+      "id": "laboratoire-laboratoire-la-province",
+      "slug": "laboratoire-laboratoire-la-province",
       "name": "Laboratoire La Province",
       "shortName": "Laboratoire La Province",
       "type": "Laboratoire d’analyses médicales",
@@ -484,14 +484,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "hopital-international-de-kenitra",
-      "slug": "hopital-international-de-kenitra",
+      "id": "laboratoire-hopital-international-de-kenitra-laboratoire-danalyses-medicales",
+      "slug": "laboratoire-hopital-international-de-kenitra-laboratoire-danalyses-medicales",
       "name": "Hôpital International de Kénitra — laboratoire d’analyses médicales",
       "shortName": "Hôpital International de Kénitra — laboratoire d’analyses médicales",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "Avenue Mohammed VI, Kénitra",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Analyses sanguines et examens spécialisés"
       ],
@@ -505,8 +505,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-international-d-analyses-medicales-interkenilab",
-      "slug": "laboratoire-international-d-analyses-medicales-interkenilab",
+      "id": "laboratoire-laboratoire-international-danalyses-medicales-interkenilab",
+      "slug": "laboratoire-laboratoire-international-danalyses-medicales-interkenilab",
       "name": "Laboratoire International d’Analyses Médicales (Interkenilab)",
       "shortName": "Laboratoire International d’Analyses Médicales (Interkenilab)",
       "type": "Laboratoire d’analyses médicales",
@@ -526,8 +526,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-d-analyses-medicales-nader",
-      "slug": "laboratoire-d-analyses-medicales-nader",
+      "id": "laboratoire-laboratoire-danalyses-medicales-nader",
+      "slug": "laboratoire-laboratoire-danalyses-medicales-nader",
       "name": "Laboratoire d’Analyses Médicales NADER",
       "shortName": "Laboratoire d’Analyses Médicales NADER",
       "type": "Laboratoire d’analyses médicales",
@@ -547,14 +547,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-d-analyses-medicales-le-vallon",
-      "slug": "laboratoire-d-analyses-medicales-le-vallon",
+      "id": "laboratoire-laboratoire-danalyses-medicales-le-vallon",
+      "slug": "laboratoire-laboratoire-danalyses-medicales-le-vallon",
       "name": "Laboratoire d’Analyses Médicales Le Vallon",
       "shortName": "Laboratoire d’Analyses Médicales Le Vallon",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "798W+9RH, Kénitra",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Biologie médicale ; examens précis à confirmer"
       ],
@@ -568,14 +568,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-bir-rami",
-      "slug": "laboratoire-bir-rami",
+      "id": "laboratoire-laboratoire-bir-rami",
+      "slug": "laboratoire-laboratoire-bir-rami",
       "name": "Laboratoire Bir Rami",
       "shortName": "Laboratoire Bir Rami",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "Immeuble C4 n° 2, résidence Cité des Jardins, avenue Mohammed V, Kénitra",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Biologie médicale ; examens précis à confirmer"
       ],
@@ -589,8 +589,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-biranzarane-kenitra",
-      "slug": "laboratoire-biranzarane-kenitra",
+      "id": "laboratoire-laboratoire-biranzarane-kenitra",
+      "slug": "laboratoire-laboratoire-biranzarane-kenitra",
       "name": "Laboratoire Biranzarane Kénitra",
       "shortName": "Laboratoire Biranzarane Kénitra",
       "type": "Laboratoire d’analyses médicales",
@@ -610,14 +610,14 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-d-analyses-medicales-errazi-fiche-a-confirmer",
-      "slug": "laboratoire-d-analyses-medicales-errazi-fiche-a-confirmer",
+      "id": "laboratoire-laboratoire-danalyses-medicales-errazi-fiche-a-confirmer",
+      "slug": "laboratoire-laboratoire-danalyses-medicales-errazi-fiche-a-confirmer",
       "name": "Laboratoire d’Analyses Médicales Errazi (fiche à confirmer)",
       "shortName": "Laboratoire d’Analyses Médicales Errazi (fiche à confirmer)",
       "type": "Laboratoire d’analyses médicales",
       "city": "Kénitra",
       "address": "Kénitra — adresse précise non communiquée par l’annuaire",
-      "director": null,
+      "director": "À confirmer",
       "specialties": [
         "Analyses médicales (spécialités à confirmer)"
       ],
@@ -631,8 +631,8 @@
       "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     },
     {
-      "id": "laboratoire-du-centre-hospitalier-provincial-azzamouri",
-      "slug": "laboratoire-du-centre-hospitalier-provincial-azzamouri",
+      "id": "laboratoire-laboratoire-du-centre-hospitalier-provincial-azzamouri",
+      "slug": "laboratoire-laboratoire-du-centre-hospitalier-provincial-azzamouri",
       "name": "Laboratoire du Centre Hospitalier Provincial Azzamouri",
       "shortName": "Laboratoire du Centre Hospitalier Provincial Azzamouri",
       "type": "Laboratoire d’analyses médicales",
