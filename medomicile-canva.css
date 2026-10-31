@@ -1376,3 +1376,5 @@ html[lang="ru"] { --md-muted: #52677e; }
 .establishment-affiliation { max-width: 900px; margin: 0 auto 42px; padding: 24px 26px; border: 1px solid #cfe0ee; border-radius: 18px; color: var(--md-navy); background: #fff; }
 .establishment-affiliation p { margin: 0 0 8px; }
 .establishment-affiliation a { color: var(--md-blue); font-weight: 800; }
+.establishment-partner-list { display: grid; gap: 8px; margin-top: 14px; }
+.establishment-partner-list a { padding: 11px 13px; border: 1px solid #d5e4ef; border-radius: 10px; color: var(--md-navy); background: #f7fbfe; }
