@@ -15,6 +15,33 @@
   }
 })();
 
+// Add a clear first action to directory pages whose main task starts with a call.
+(() => {
+  const path = location.pathname;
+  if (!/pharmacies-garde|on-call-pharmacies/.test(path)) return;
+  const enhance = () => {
+    const hero = document.querySelector('.duty-hero .content-width');
+    if (!hero || hero.querySelector('.strategic-cta')) return;
+    const lang = document.documentElement.lang;
+    const copy = lang === 'en'
+      ? { text: 'Duty schedules can change. Call the pharmacy before travelling, then use Directions to plan your route.', call: 'Call Medomicile', wa: 'WhatsApp' }
+      : lang === 'ar'
+        ? { text: 'قد تتغير أوقات الحراسة. اتصلوا بالصيدلية قبل التنقل، ثم استخدموا الاتجاهات للوصول إليها.', call: 'اتصلوا بميدوميسيل', wa: 'واتساب' }
+        : lang === 'ru'
+          ? { text: 'Расписание дежурств может измениться. Позвоните в аптеку перед поездкой и используйте маршрут для навигации.', call: 'Позвонить в Medomicile', wa: 'WhatsApp' }
+          : { text: 'Les horaires de garde peuvent changer. Appelez la pharmacie avant de vous déplacer, puis utilisez Itinéraire pour préparer votre trajet.', call: 'Appeler Medomicile', wa: 'WhatsApp' };
+    const note = document.createElement('p');
+    note.className = 'strategic-cta';
+    note.textContent = copy.text;
+    const actions = document.createElement('div');
+    actions.className = 'hero-actions strategic-cta';
+    actions.innerHTML = `<a class="button button-blue" href="tel:+212663058222">${copy.call}</a><a class="button button-white" href="https://wa.me/212663058222" target="_blank" rel="noopener">${copy.wa}</a>`;
+    hero.append(note, actions);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', enhance, { once: true });
+  else enhance();
+})();
+
 (() => {
   document.querySelectorAll('img').forEach((image, index) => {
     if (!image.hasAttribute('decoding')) image.decoding = 'async';
