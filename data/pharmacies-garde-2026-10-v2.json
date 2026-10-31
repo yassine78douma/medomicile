@@ -1,12 +1,17 @@
 {
   "source": "Affiches officielles du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
-  "updatedAt": "2026-10-26T12:00:00+01:00",
+  "updatedAt": "2026-10-31T12:00:00+01:00",
   "month": "2026-10",
   "displayDate": "Octobre 2026",
   "note": "Calendrier des pharmacies de garde d'octobre 2026. Appelez toujours avant de vous déplacer.",
   "duty": {
     "day": [],
     "night": [
+      {"id":"pharmacie-tolbix","name":"Pharmacie Tolbix","nameAr":"صيدلية طولبيكس","phone":"05 37 35 22 41","district":"Ouled Oujih","address":"N°154, bloc F, près de Zemzami, Ouled Oujih","addressAr":"رقم 154، بلوك F، قرب الزمزامي، أولاد أوجيه","from":"2026-10-31","to":"2026-11-01","hours":"Garde de week-end 24h/24 - 31 octobre et 1er novembre 2026","hoursAr":"حراسة نهاية الأسبوع 24 ساعة/24 - 31 أكتوبر و1 نوفمبر 2026"},
+      {"id":"pharmacie-sidi-laarbi-boujemaa","name":"Pharmacie Sidi Laarbi Boujemaa","nameAr":"صيدلية سيدي العربي بوجمعة","phone":"05 37 36 48 98","district":"Medina","address":"272, avenue Mohammed V, Kénitra","addressAr":"272، شارع محمد الخامس، القنيطرة","from":"2026-10-31","to":"2026-11-01","hours":"Garde de week-end 24h/24 - 31 octobre et 1er novembre 2026","hoursAr":"حراسة نهاية الأسبوع 24 ساعة/24 - 31 أكتوبر و1 نوفمبر 2026"},
+      {"id":"pharmacie-mohammed-ville-nouvelle","name":"Pharmacie Mohammed","nameAr":"صيدلية محمد","phone":"05 37 37 35 73","district":"Ville Nouvelle","address":"2, rue Ibn Al Banna, près de la mosquée Lala Khadija","addressAr":"2، زنقة ابن البنا، قرب مسجد للا خديجة","from":"2026-10-31","to":"2026-11-01","hours":"Garde de week-end 24h/24 - 31 octobre et 1er novembre 2026","hoursAr":"حراسة نهاية الأسبوع 24 ساعة/24 - 31 أكتوبر و1 نوفمبر 2026"},
+      {"id":"pharmacie-al-felline","name":"Pharmacie Al Felline","nameAr":"صيدلية الفلين","phone":"06 38 81 48 67","district":"Bir Rami Industrielle","address":"736, Jnane 4, Bir Rami, derrière la caserne de Bir Rami, près de Titale Pneus","addressAr":"جنان 4 رقم 736، بير الرامي، وراء القاعة المغطاة لبير الرامي، قرب Titale Pneus","from":"2026-10-31","to":"2026-11-01","hours":"Garde de week-end 24h/24 - 31 octobre et 1er novembre 2026","hoursAr":"حراسة نهاية الأسبوع 24 ساعة/24 - 31 أكتوبر و1 نوفمبر 2026"},
+      {"id":"pharmacie-lamssalla","name":"Pharmacie Lamssalla","nameAr":"صيدلية المصلى","phone":"07 00 80 52 67","district":"Saknia","address":"Route vers le marché couvert, près de la mosquée communale et de l’ISTA, immeuble 114, CGI, jardins Al Montazah","addressAr":"طريق السوق المغطى، قرب المسجد البلدي وISTA، عمارة 114، CGI، حدائق المنتزه","from":"2026-10-31","to":"2026-11-01","hours":"Garde de week-end 24h/24 - 31 octobre et 1er novembre 2026","hoursAr":"حراسة نهاية الأسبوع 24 ساعة/24 - 31 أكتوبر و1 نوفمبر 2026"},
       {"id":"pharmacie-centrale-bir-rami","name":"Pharmacie Centrale Bir Rami","phone":"07 75 28 54 85","district":"Bir Rami Industrielle","address":"Jnane 3 n°3959, Bir Rami Industriel, près du مسجد الأبرار","from":"2026-10-03","to":"2026-10-04","hours":"Garde 24h/24 - 3 et 4 octobre 2026"},
       {"id":"pharmacie-saknia-ista","name":"Pharmacie Lycée Mohammed V","phone":"07 68 03 94 86","district":"Saknia","address":"Route ISTA, près du lycée Mohammed V","from":"2026-10-05","to":"2026-10-05","hours":"Garde de nuit - 5 octobre 2026"},
       {"id":"pharmacie-rami-sud","name":"Pharmacie Ramzani","phone":"05 26 07 77 78","district":"Bir Rami Sud","address":"Jnan 3 n°146, près de la mosquée Al Mowada","from":"2026-10-05","to":"2026-10-05","hours":"Garde de nuit - 5 octobre 2026"},
