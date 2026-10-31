@@ -619,11 +619,12 @@ if (location.pathname.includes('/canva-home/')) {
     filtered.slice(0, visible).forEach((center) => {
       const card = document.createElement('article'); card.className = 'radiology-card';
       const arabic = document.documentElement.lang === 'ar';
+      const localizedName = arabic ? (center.nameAr || center.name) : center.name;
       const phone = center.phoneRaw && center.phone ? `<a href="${center.phoneRaw}">${arabic ? 'اتصال' : 'Appeler'}</a>` : '';
       const maps = center.mapsUrl ? `<a href="${center.mapsUrl}" target="_blank" rel="noopener noreferrer">${arabic ? 'الاتجاهات' : 'Itinéraire'}</a>` : '';
       const profile = center.slug ? `<a class="radiology-profile" href="centre-radiologie.html?slug=${encodeURIComponent(center.slug)}">Voir la fiche</a>` : '';
       const hours = center.hours && !/à confirmer|disponibilité/i.test(center.hours) ? `<p class="radiology-detail"><strong>Horaires</strong>${center.hours}</p>` : '';
-      card.innerHTML = `<div class="radiology-card-top"><span class="radiology-avatar">◉</span><div><p class="radiology-type">${center.subtitle || (arabic ? 'مركز أشعة' : 'Centre de radiologie')}</p><h3>${center.name || ''}</h3></div></div>${center.district ? `<p class="radiology-detail"><strong>${arabic ? 'الحي' : 'Quartier'}</strong>${center.district}</p>` : ''}${center.address ? `<p class="radiology-detail"><strong>${arabic ? 'العنوان' : 'Adresse'}</strong>${center.address}</p>` : ''}${center.phone ? `<p class="radiology-detail"><strong>${arabic ? 'الهاتف' : 'Téléphone'}</strong>${center.phone}</p>` : ''}${hours}<div class="radiology-actions">${profile}${phone}${maps}</div>`;
+      card.innerHTML = `<div class="radiology-card-top"><span class="radiology-avatar">◉</span><div><p class="radiology-type">${arabic ? (center.typeAr || 'مركز أشعة') : (center.subtitle || 'Centre de radiologie')}</p><h3>${localizedName || ''}</h3></div></div>${center.district ? `<p class="radiology-detail"><strong>${arabic ? 'الحي' : 'Quartier'}</strong>${center.district}</p>` : ''}${center.address ? `<p class="radiology-detail"><strong>${arabic ? 'العنوان' : 'Adresse'}</strong>${center.address}</p>` : ''}${center.phone ? `<p class="radiology-detail"><strong>${arabic ? 'الهاتف' : 'Téléphone'}</strong>${center.phone}</p>` : ''}${hours}<div class="radiology-actions">${profile}${phone}${maps}</div>`;
       results.append(card);
     });
   };
