@@ -107,6 +107,24 @@
       "director": "Dr. Hakim Azzerki",
       "general_director": "Dr Bouchaib Jabil",
       "general_director_slug": "dr-bouchaib-jabil",
+      "partner_laboratories": [
+        {
+          "name": "Laboratoire International d’Analyses Médicales (Interkenilab)",
+          "slug": "laboratoire-international-d-analyses-medicales-interkenilab"
+        },
+        {
+          "name": "Laboratoire d’Analyses Médicales NADER",
+          "slug": "laboratoire-d-analyses-medicales-nader"
+        },
+        {
+          "name": "Laboratoire du Gharb — La Grande Métropole",
+          "slug": "laboratoire-du-gharb"
+        },
+        {
+          "name": "Centre de Biologie Médicale Sebou (CBMS)",
+          "slug": "centre-de-biologie-medicale-sebou-cbms"
+        }
+      ],
       "resuscitation_doctor": "Dr Hakim Azzerki, anesthésiste-réanimateur",
       "photo": "assets/clinique-ik-urgences.jpg",
       "gallery": [],
