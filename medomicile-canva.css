@@ -1369,3 +1369,7 @@ html[lang="ru"] { --md-muted: #52677e; }
 }
 /* Clinique Internationale video media */
 .establishment-media video { display: block; width: 100%; height: auto; max-height: none; background: #071f46; }
+.establishment-video-media { position: relative; }
+.establishment-video-actions { display: flex; gap: 8px; position: absolute; right: 14px; bottom: 14px; z-index: 2; }
+.establishment-video-actions button { min-height: 42px; padding: 9px 13px; border: 1px solid rgba(255,255,255,.7); border-radius: 10px; color: #fff; background: rgba(4,31,70,.86); font: inherit; font-size: .75rem; font-weight: 800; cursor: pointer; }
+.establishment-video-actions button:focus-visible { outline: 3px solid #f6bd2f; outline-offset: 2px; }
