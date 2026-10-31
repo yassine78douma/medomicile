@@ -4319,425 +4319,655 @@
   ],
   "laboratories": [
     {
-      "id": "maghreb-arabi",
-      "slug": "maghreb-arabi",
-      "city": "Kénitra",
-      "district": "Maghreb Arabi",
-      "address": "Bloc D n°57, Immeuble Afnane, Maghreb Arabi, Kénitra",
-      "name": "Laboratoire Maghreb Arabi",
-      "shortName": "MAGHREB ARABI",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 35 14 13",
-      "phoneHref": "tel:+212537351413",
-      "hours": [
-        "Lun–Ven : 07:30–19:00",
-        "Sam : 08:00–16:00",
-        "Dim : 09:00–15:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Maghreb+Arabi+Bloc+D+57+Kenitra",
-      "rating": 4.9,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر المغرب العربي"
-    },
-    {
-      "id": "nader",
-      "slug": "nader",
-      "name": "Laboratoire Nader",
-      "shortName": "NADER",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "06 64 26 28 58",
-      "phoneHref": "tel:+212664262858",
-      "hours": [
-        "24h/24"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+NADER+Kenitra",
-      "rating": 4.9,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر نادر",
-      "open24h": true
-    },
-    {
-      "id": "le-vallon",
-      "slug": "le-vallon",
-      "name": "Laboratoire Le Vallon",
-      "shortName": "LE VALLON",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 17 00",
-      "phoneHref": "tel:+212537371700",
-      "hours": [
-        "Lun–Ven : 07:30–18:30",
-        "Sam : 08:00–13:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Le+Vallon+Kenitra",
-      "rating": 4.9,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الوالون"
-    },
-    {
-      "id": "la-province",
-      "slug": "la-province",
-      "city": "Kénitra",
-      "district": "Centre-ville",
-      "address": "N°4, angle avenue Hassan II et rue Mohamed Abdou, Kénitra",
-      "name": "Laboratoire La Province",
-      "shortName": "LA PROVINCE",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 20 00",
-      "phoneHref": "tel:+212537372000",
-      "hours": [
-        "07:30–21:30"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+La+Province+Kenitra",
-      "rating": 4.8,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر لا بروفانس"
-    },
-    {
-      "id": "al-andalousse",
-      "slug": "al-andalousse",
-      "city": "Kénitra",
-      "district": "Youssef Ibn Tachfine",
-      "address": "Boulevard Youssef Ibn Tachfine, immeuble Riad Al Andalousse II, bureaux 2, 3 et 4, Kénitra",
-      "name": "Laboratoire Al Andalousse",
-      "shortName": "AL ANDALOUSSE",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 39 74 30",
-      "phoneHref": "tel:+212537397430",
-      "hours": [
-        "Lun–Ven : 07:30–18:00",
-        "Sam : 07:30–13:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Al+Andalousse+Kenitra",
-      "rating": 4.7,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الأندلس"
-    },
-    {
-      "id": "saada",
-      "slug": "saada",
-      "city": "Kénitra",
-      "district": "Maâmora",
-      "address": "7C58+P57, avenue Mohamed V, quartier Maâmora, Kénitra",
-      "name": "Laboratoire Saada",
-      "shortName": "SAADA",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 36 88 88",
-      "phoneHref": "tel:+212537368888",
-      "hours": [
-        "Lun–Ven : 07:30–18:00",
-        "Sam : 07:30–13:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+SAADA+Kenitra",
-      "rating": 4.7,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر السعادة"
-    },
-    {
-      "id": "asseha",
-      "slug": "asseha",
-      "city": "Kénitra",
-      "district": "Centre-ville",
-      "address": "Bureau n°20, résidence Almorjane, angle avenue Mohamed V et rue Moulay Abdellah, Kénitra",
-      "name": "Laboratoire Asseha",
-      "shortName": "ASSEHA",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 50 70",
-      "phoneHref": "tel:+212537375070",
-      "hours": [
-        "Lun–Ven : 07:30–18:30",
-        "Sam : 07:30–14:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Asseha+Kenitra",
-      "rating": 4.6,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الصحة"
-    },
-    {
-      "id": "international-analyses-medicales",
-      "slug": "international-analyses-medicales",
-      "name": "Laboratoire International d’Analyses Médicales",
-      "shortName": "INTERNATIONAL",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": null,
-      "phoneHref": null,
-      "hours": [
-        "24h/24, à confirmer"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+International+d%27Analyses+Medicales+Kenitra",
-      "rating": 4.5,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": false,
-      "verifiedHours": false,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "المختبر الدولي للتحاليل الطبية"
-    },
-    {
-      "id": "biranzarane",
-      "slug": "biranzarane",
-      "name": "Laboratoire Biranzarane",
-      "shortName": "BIRANZARANE",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 32 14 50",
-      "phoneHref": "tel:+212537321450",
-      "hours": [
-        "Lun–Ven : 07:30–18:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Biranzarane+Kenitra",
-      "rating": 5,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر بئر انزران"
-    },
-    {
-      "id": "cbms",
-      "slug": "cbms",
-      "city": "Kénitra",
-      "address": "N°2, immeuble 44, avenue Mohamed Diouri, Kénitra",
-      "name": "Centre de Biologie Médicale Sebou — CBMS",
-      "shortName": "CBMS",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 30 75 06",
-      "phoneHref": "tel:+212537307506",
-      "hours": [
-        "24h/24, à confirmer"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=CBMS+Kenitra",
-      "rating": 3.8,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": false,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مركز سبو للبيولوجيا الطبية - CBMS"
-    },
-    {
-      "id": "ibn-sina",
-      "slug": "ibn-sina",
-      "city": "Kénitra",
-      "district": "Nakhela 3",
-      "address": "N°4 et 7, résidence Annakhla 3, avenue Ibn Abi Zaraa, Kénitra",
-      "name": "Laboratoire Ibn Sina",
-      "shortName": "IBN SINA",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 32 79 24",
-      "phoneHref": "tel:+212537327924",
-      "hours": [
-        "24h/24, à confirmer"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Ibn+Sina+Kenitra",
-      "rating": 3.8,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": false,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر ابن سينا",
-      "open24h": true
-    },
-    {
-      "id": "les-mimosas",
-      "slug": "les-mimosas",
-      "city": "Kénitra",
-      "address": "Avenue Mohamed V, Kénitra",
-      "name": "Laboratoire Les Mimosas",
-      "shortName": "LES MIMOSAS",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 36 00 15",
-      "phoneHref": "tel:+212537360015",
-      "hours": [
-        "Lun–Ven : 07:30–18:30"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Les+Mimosas+Kenitra",
-      "rating": 3.3,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الميموزا"
-    },
-    {
-      "id": "central-analyses-medicales",
-      "slug": "central-analyses-medicales",
-      "name": "Laboratoire Central d’Analyses Médicales",
-      "shortName": "CENTRAL",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 98 81",
-      "phoneHref": "tel:+212537379881",
-      "hours": [
-        "Lun–Ven : 07:30–16:30"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Central+Kenitra",
-      "rating": 3.6,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "المختبر المركزي للتحاليل الطبية"
-    },
-    {
-      "id": "du-gharb",
-      "slug": "du-gharb",
-      "name": "Laboratoire du Gharb",
-      "shortName": "DU GHARB",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 21 17",
-      "phoneHref": "tel:+212537372117",
-      "hours": [
-        "Lun–Ven : 07:30–18:00"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+du+Gharb+Kenitra",
-      "rating": 3.6,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الغرب"
-    },
-    {
-      "id": "saknia",
-      "slug": "saknia",
-      "name": "Laboratoire Saknia",
-      "shortName": "SAKNIA",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 39 26 21",
-      "phoneHref": "tel:+212537392621",
-      "hours": [
-        "Lun–Ven : 07:30–17:30"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratory+Saknia+Kenitra",
-      "rating": 4,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر الساكنية"
-    },
-    {
-      "id": "maamora",
-      "slug": "maamora",
-      "name": "Laboratoire Maâmora",
-      "shortName": "MAÂMORA",
-      "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 37 04 03",
-      "phoneHref": "tel:+212537370403",
-      "hours": [
-        "08:00–00:00, à confirmer"
-      ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Maamora+Kenitra",
-      "rating": 1.9,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": false,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر المعمورة"
-    },
-    {
-      "id": "bab-fes",
-      "slug": "bab-fes",
+      "id": "laboratoire-bab-fes",
+      "slug": "laboratoire-bab-fes",
       "name": "Laboratoire Bab Fès",
-      "shortName": "BAB FÈS",
+      "shortName": "Laboratoire Bab Fès",
       "type": "Laboratoire d’analyses médicales",
-      "phone": "05 37 32 01 78",
-      "phoneHref": "tel:+212537320178",
-      "hours": [
-        "Lun–Ven : 08:00–18:15"
+      "city": "Kénitra",
+      "address": "Angle boulevard Mohammed V et rue 300, quartier Bab Fès / Khabbazat",
+      "director": "Dr Redouan Laoulidi",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
       ],
-      "mapsUrl": "https://maps.google.com/?q=Laboratoire+Bab+Fes+Kenitra",
-      "rating": 5,
-      "reviewCount": null,
-      "verified": true,
-      "verifiedPhone": true,
-      "verifiedHours": true,
-      "lastVerified": "2026-07-16",
-      "ratingLastVerified": "2026-07-16",
-      "sponsored": false,
-      "image": null,
-      "nameAr": "مختبر باب فاس"
+      "phone": "05 37 32 01 78",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Bab%20F%C3%A8s%2C%20Angle%20boulevard%20Mohammed%20V%20et%20rue%20300%2C%20quartier%20Bab%20F%C3%A8s%20%2F%20Khabbazat",
+      "hours": [
+        "Lun–Ven 08:00–18:15 ; week-end à confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-saada-d-analyses-medicales",
+      "slug": "laboratoire-saada-d-analyses-medicales",
+      "name": "Laboratoire Saada d’Analyses Médicales",
+      "shortName": "Laboratoire Saada d’Analyses Médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Angle boulevard Mohammed V et avenue Mohamed Diouri, Centre Plaza, 1er étage",
+      "director": "Dr Nissrine Tchiche",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 36 88 88",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Saada%20d%E2%80%99Analyses%20M%C3%A9dicales%2C%20Angle%20boulevard%20Mohammed%20V%20et%20avenue%20Mohamed%20Diouri%2C%20Centre%20Plaza%2C%201er%20%C3%A9tage",
+      "hours": [
+        "Lun–Ven 07:30–18:00 ; sam. 07:30–13:00"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "centre-d-anatomie-pathologique-de-kenitra",
+      "slug": "centre-d-anatomie-pathologique-de-kenitra",
+      "name": "Centre d’Anatomie Pathologique de Kénitra",
+      "shortName": "Centre d’Anatomie Pathologique de Kénitra",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Station Shell, 323 avenue Mohammed V, Kénitra",
+      "director": null,
+      "specialties": [
+        "Anatomie pathologique"
+      ],
+      "phone": "05 37 37 99 93",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Centre%20d%E2%80%99Anatomie%20Pathologique%20de%20K%C3%A9nitra%2C%20Station%20Shell%2C%20323%20avenue%20Mohammed%20V%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "centre-de-biologie-medicale-sebou-cbms",
+      "slug": "centre-de-biologie-medicale-sebou-cbms",
+      "name": "Centre de Biologie Médicale Sebou (CBMS)",
+      "shortName": "Centre de Biologie Médicale Sebou (CBMS)",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "44 boulevard Mohamed Diouri, RDC n° 2, Kénitra",
+      "director": "Dr Anas Zerrour",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 30 75 06",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Centre%20de%20Biologie%20M%C3%A9dicale%20Sebou%20(CBMS)%2C%2044%20boulevard%20Mohamed%20Diouri%2C%20RDC%20n%C2%B0%202%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "dhl-lab",
+      "slug": "dhl-lab",
+      "name": "DHL-Lab — Laboratoire de Biologie Médicale",
+      "shortName": "DHL-Lab — Laboratoire de Biologie Médicale",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Angle boulevard Imam Ali et avenue Moulay Abdellah, Kénitra",
+      "director": "Dr Hamid Loutfi",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 17 01",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=DHL-Lab%20%E2%80%94%20Laboratoire%20de%20Biologie%20M%C3%A9dicale%2C%20Angle%20boulevard%20Imam%20Ali%20et%20avenue%20Moulay%20Abdellah%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "kenilab",
+      "slug": "kenilab",
+      "name": "Kenilab — Laboratoire d’Analyses Médicales",
+      "shortName": "Kenilab — Laboratoire d’Analyses Médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "161 boulevard Mohammed V, bâtiment Oapam, appartement 3A, Khabbazate",
+      "director": "Dr Seddik Lahlali",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 90 68",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Kenilab%20%E2%80%94%20Laboratoire%20d%E2%80%99Analyses%20M%C3%A9dicales%2C%20161%20boulevard%20Mohammed%20V%2C%20b%C3%A2timent%20Oapam%2C%20appartement%203A%2C%20Khabbazate",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-al-andalousse",
+      "slug": "laboratoire-al-andalousse",
+      "name": "Laboratoire Al Andalousse",
+      "shortName": "Laboratoire Al Andalousse",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Résidence Riad Al Andalousse II, avenue Youssef Ibn Tachfine, Kénitra",
+      "director": "Dr Fatiha Chibani",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 39 74 30",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Al%20Andalousse%2C%20R%C3%A9sidence%20Riad%20Al%20Andalousse%20II%2C%20avenue%20Youssef%20Ibn%20Tachfine%2C%20K%C3%A9nitra",
+      "hours": [
+        "Lun–Ven 07:30–18:00 ; sam. 07:30–13:00"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-al-massira",
+      "slug": "laboratoire-al-massira",
+      "name": "Laboratoire Al Massira",
+      "shortName": "Laboratoire Al Massira",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "59 lotissement Zone d’Activité, avenue Al Massira, Saknia (annuaire Cybo/CPB 2024 ; adresse antérieure CPB 2022 : n° 16, rue 94, quartier Chabab — à confirmer)",
+      "director": "Dr Younes Ennouali",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 39 03 04",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Al%20Massira%2C%2059%20lotissement%20Zone%20d%E2%80%99Activit%C3%A9%2C%20avenue%20Al%20Massira%2C%20Saknia%20(annuaire%20Cybo%2FCPB%202024%20%3B%20adresse%20ant%C3%A9rieure%20CPB%202022%20%3A%20n%C2%B0%2016%2C%20rue%2094%2C%20quartier%20Chabab%20%E2%80%94%20%C3%A0%20confirmer)",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-asseha-d-analyses-medicales",
+      "slug": "laboratoire-asseha-d-analyses-medicales",
+      "name": "Laboratoire Asseha d’Analyses Médicales",
+      "shortName": "Laboratoire Asseha d’Analyses Médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "1 boulevard Mohammed V, angle rue Moulay Abdellah, résidence Amorjane, bureau n° 20",
+      "director": null,
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 50 70",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Asseha%20d%E2%80%99Analyses%20M%C3%A9dicales%2C%201%20boulevard%20Mohammed%20V%2C%20angle%20rue%20Moulay%20Abdellah%2C%20r%C3%A9sidence%20Amorjane%2C%20bureau%20n%C2%B0%2020",
+      "hours": [
+        "Lun–Ven 07:30–18:30 ; sam. 07:30–14:00"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-central-d-analyses-medicales",
+      "slug": "laboratoire-central-d-analyses-medicales",
+      "name": "Laboratoire Central d’Analyses Médicales",
+      "shortName": "Laboratoire Central d’Analyses Médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "413 boulevard Mohammed V, immeuble Ouarda, 2e étage, appartements 4 et 6",
+      "director": "Dr Abdelkebir Hachad / Dr Najib Benchekroun",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 98 81 / 05 37 37 98 84",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Central%20d%E2%80%99Analyses%20M%C3%A9dicales%2C%20413%20boulevard%20Mohammed%20V%2C%20immeuble%20Ouarda%2C%202e%20%C3%A9tage%2C%20appartements%204%20et%206",
+      "hours": [
+        "Lun–Ven 07:30–16:30"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-les-mimosas",
+      "slug": "laboratoire-les-mimosas",
+      "name": "Laboratoire Les Mimosas",
+      "shortName": "Laboratoire Les Mimosas",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "3 boulevard Mohamed El Qorri, angle avenue Mohammed V, résidence Boulafdam",
+      "director": "Dr Mina Boudhan (référencée)",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 36 00 15",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Les%20Mimosas%2C%203%20boulevard%20Mohamed%20El%20Qorri%2C%20angle%20avenue%20Mohammed%20V%2C%20r%C3%A9sidence%20Boulafdam",
+      "hours": [
+        "Lun–Ven 07:30–18:30"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-al-hikma",
+      "slug": "laboratoire-al-hikma",
+      "name": "Laboratoire Al Hikma",
+      "shortName": "Laboratoire Al Hikma",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "87, bloc I, Oulad Oujih, Kénitra",
+      "director": "Dr Benzakour",
+      "specialties": [
+        "Biochimie, hématologie, immunologie, bactériologie, parasitologie et mycologie"
+      ],
+      "phone": "05 37 35 05 51",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Al%20Hikma%2C%2087%2C%20bloc%20I%2C%20Oulad%20Oujih%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-du-gharb",
+      "slug": "laboratoire-du-gharb",
+      "name": "Laboratoire du Gharb",
+      "shortName": "Laboratoire du Gharb",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "359 boulevard Mohammed V, angle rue Sebta, immeuble La Grande Métropole",
+      "director": "Dr Amina Kharraz",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 21 17",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20du%20Gharb%2C%20359%20boulevard%20Mohammed%20V%2C%20angle%20rue%20Sebta%2C%20immeuble%20La%20Grande%20M%C3%A9tropole",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-firdaous",
+      "slug": "laboratoire-firdaous",
+      "name": "Laboratoire Firdaous",
+      "shortName": "Laboratoire Firdaous",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "322 avenue Mohammed V, Mamora, Kénitra",
+      "director": "Dr Maha Lahlou",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 19 78",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Firdaous%2C%20322%20avenue%20Mohammed%20V%2C%20Mamora%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-ibn-sina-d-analyses-medicales",
+      "slug": "laboratoire-ibn-sina-d-analyses-medicales",
+      "name": "Laboratoire Ibn Sina d’Analyses Médicales",
+      "shortName": "Laboratoire Ibn Sina d’Analyses Médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "461 boulevard Mohammed V, angle Ibn Zaraa, immeuble Nakhla 3, 1er étage, bureau 4",
+      "director": "Dr Kamal Nakari",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 32 79 29 (CPB Maroc) / 05 37 32 79 24 (Medomicile, à confirmer)",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Ibn%20Sina%20d%E2%80%99Analyses%20M%C3%A9dicales%2C%20461%20boulevard%20Mohammed%20V%2C%20angle%20Ibn%20Zaraa%2C%20immeuble%20Nakhla%203%2C%201er%20%C3%A9tage%2C%20bureau%204",
+      "hours": [
+        "24h/24 7j/7"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-ibn-sina-d-anatomie-et-de-cytologie-pathologiques",
+      "slug": "laboratoire-ibn-sina-d-anatomie-et-de-cytologie-pathologiques",
+      "name": "Laboratoire Ibn Sina d’Anatomie et de Cytologie Pathologiques",
+      "shortName": "Laboratoire Ibn Sina d’Anatomie et de Cytologie Pathologiques",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "27 boulevard Hassan II, 1er étage, appartement n° 2",
+      "director": null,
+      "specialties": [
+        "Anatomie et cytologie pathologiques"
+      ],
+      "phone": "05 37 37 39 63",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Ibn%20Sina%20d%E2%80%99Anatomie%20et%20de%20Cytologie%20Pathologiques%2C%2027%20boulevard%20Hassan%20II%2C%201er%20%C3%A9tage%2C%20appartement%20n%C2%B0%202",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-ittihad",
+      "slug": "laboratoire-ittihad",
+      "name": "Laboratoire Ittihad",
+      "shortName": "Laboratoire Ittihad",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "212 boulevard Mohammed V, angle rue 41, appartement 3",
+      "director": "Dr Abderrahman Zarhloul (adresse référencée)",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 64 87",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Ittihad%2C%20212%20boulevard%20Mohammed%20V%2C%20angle%20rue%2041%2C%20appartement%203",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-la-ville-haute",
+      "slug": "laboratoire-la-ville-haute",
+      "name": "Laboratoire La Ville Haute",
+      "shortName": "Laboratoire La Ville Haute",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "114 boulevard Abou Bakr Essedik, angle avenue Imam Ali, résidence Gharnata",
+      "director": "Dr Aicha Zahni (référencée)",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 09 48",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20La%20Ville%20Haute%2C%20114%20boulevard%20Abou%20Bakr%20Essedik%2C%20angle%20avenue%20Imam%20Ali%2C%20r%C3%A9sidence%20Gharnata",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-maghreb-arabi-maghreblab",
+      "slug": "laboratoire-maghreb-arabi-maghreblab",
+      "name": "Laboratoire Maghreb Arabi (MaghrebLab)",
+      "shortName": "Laboratoire Maghreb Arabi (MaghrebLab)",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "57, bloc D, immeuble Afnane, Maghreb Arabi, Kénitra",
+      "director": "Dr Assam Ezzaki / Dr Yousra El Aissaoui",
+      "specialties": [
+        "Immunologie, hématologie, microbiologie, sérologie et hormonologie"
+      ],
+      "phone": "05 37 35 14 13",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Maghreb%20Arabi%20(MaghrebLab)%2C%2057%2C%20bloc%20D%2C%20immeuble%20Afnane%2C%20Maghreb%20Arabi%2C%20K%C3%A9nitra",
+      "hours": [
+        "Lun–Ven 07:30–19:00 ; sam. 08:00–16:00 ; dim. 09:00–15:00"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-maamora",
+      "slug": "laboratoire-maamora",
+      "name": "Laboratoire Mâamora",
+      "shortName": "Laboratoire Mâamora",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "150 avenue Mohammed Diouri, Maâmora, Kénitra",
+      "director": "Dr Mouna Kenfaoui",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 04 03",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20M%C3%A2amora%2C%20150%20avenue%20Mohammed%20Diouri%2C%20Ma%C3%A2mora%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-saknia",
+      "slug": "laboratoire-saknia",
+      "name": "Laboratoire Saknia",
+      "shortName": "Laboratoire Saknia",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "2, groupe Taroudant, avenue Al Massira, Saknia, Kénitra",
+      "director": "Dr Nawfal Benqlilou",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 39 26 21",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Saknia%2C%202%2C%20groupe%20Taroudant%2C%20avenue%20Al%20Massira%2C%20Saknia%2C%20K%C3%A9nitra",
+      "hours": [
+        "Lun–Ven 07:30–17:30"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-sidi-larbi-boujemaa",
+      "slug": "laboratoire-sidi-larbi-boujemaa",
+      "name": "Laboratoire Sidi Larbi Boujemaa",
+      "shortName": "Laboratoire Sidi Larbi Boujemaa",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "272 boulevard Mohammed V, Kénitra",
+      "director": "Dr Ouaffa Lahlou",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 36 39 03",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Sidi%20Larbi%20Boujemaa%2C%20272%20boulevard%20Mohammed%20V%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-la-province",
+      "slug": "laboratoire-la-province",
+      "name": "Laboratoire La Province",
+      "shortName": "Laboratoire La Province",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "4 avenue Hassan II, angle rue Mohamed Abdou, Kénitra",
+      "director": "Dr El Mehdi Bounou",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 20 00",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20La%20Province%2C%204%20avenue%20Hassan%20II%2C%20angle%20rue%20Mohamed%20Abdou%2C%20K%C3%A9nitra",
+      "hours": [
+        "07:30–21:30 (jours à confirmer)"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "hopital-international-de-kenitra",
+      "slug": "hopital-international-de-kenitra",
+      "name": "Hôpital International de Kénitra — laboratoire d’analyses médicales",
+      "shortName": "Hôpital International de Kénitra — laboratoire d’analyses médicales",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Avenue Mohammed VI, Kénitra",
+      "director": null,
+      "specialties": [
+        "Analyses sanguines et examens spécialisés"
+      ],
+      "phone": "05 37 36 96 96",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital%20International%20de%20K%C3%A9nitra%20%E2%80%94%20laboratoire%20d%E2%80%99analyses%20m%C3%A9dicales%2C%20Avenue%20Mohammed%20VI%2C%20K%C3%A9nitra",
+      "hours": [
+        "Hôpital ouvert 24 h/24, 7 j/7 ; horaires du laboratoire à confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-international-d-analyses-medicales-interkenilab",
+      "slug": "laboratoire-international-d-analyses-medicales-interkenilab",
+      "name": "Laboratoire International d’Analyses Médicales (Interkenilab)",
+      "shortName": "Laboratoire International d’Analyses Médicales (Interkenilab)",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "15 Centre d’Affaires, avenue Hassan II, à côté de La Province, Kénitra",
+      "director": "dr. anass zerour",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 00 01",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20International%20d%E2%80%99Analyses%20M%C3%A9dicales%20(Interkenilab)%2C%2015%20Centre%20d%E2%80%99Affaires%2C%20avenue%20Hassan%20II%2C%20%C3%A0%20c%C3%B4t%C3%A9%20de%20La%20Province%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-d-analyses-medicales-nader",
+      "slug": "laboratoire-d-analyses-medicales-nader",
+      "name": "Laboratoire d’Analyses Médicales NADER",
+      "shortName": "Laboratoire d’Analyses Médicales NADER",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "N° 2, angle avenue Mohamed Diouri et avenue des FAR, Kénitra",
+      "director": "Dr Soufiane Nader",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 30 98 68 58 / 06 64 26 28 58",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20d%E2%80%99Analyses%20M%C3%A9dicales%20NADER%2C%20N%C2%B0%202%2C%20angle%20avenue%20Mohamed%20Diouri%20et%20avenue%20des%20FAR%2C%20K%C3%A9nitra",
+      "hours": [
+        "24h/24 7j/7"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-d-analyses-medicales-le-vallon",
+      "slug": "laboratoire-d-analyses-medicales-le-vallon",
+      "name": "Laboratoire d’Analyses Médicales Le Vallon",
+      "shortName": "Laboratoire d’Analyses Médicales Le Vallon",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "798W+9RH, Kénitra",
+      "director": null,
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 17 00",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20d%E2%80%99Analyses%20M%C3%A9dicales%20Le%20Vallon%2C%20798W%2B9RH%2C%20K%C3%A9nitra",
+      "hours": [
+        "Lun–Ven 07:30–18:30 ; samedi 08:00–13:00 ; dimanche fermé (annuaire)"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-bir-rami",
+      "slug": "laboratoire-bir-rami",
+      "name": "Laboratoire Bir Rami",
+      "shortName": "Laboratoire Bir Rami",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Immeuble C4 n° 2, résidence Cité des Jardins, avenue Mohammed V, Kénitra",
+      "director": null,
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 37 52 81",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Bir%20Rami%2C%20Immeuble%20C4%20n%C2%B0%202%2C%20r%C3%A9sidence%20Cit%C3%A9%20des%20Jardins%2C%20avenue%20Mohammed%20V%2C%20K%C3%A9nitra",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-biranzarane-kenitra",
+      "slug": "laboratoire-biranzarane-kenitra",
+      "name": "Laboratoire Biranzarane Kénitra",
+      "shortName": "Laboratoire Biranzarane Kénitra",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Diour Al Baladia, lot n° 11, rue N, Kénitra",
+      "director": "Dr Reda Elkyak (profil professionnel)",
+      "specialties": [
+        "Biologie médicale ; examens précis à confirmer"
+      ],
+      "phone": "05 37 32 14 50",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20Biranzarane%20K%C3%A9nitra%2C%20Diour%20Al%20Baladia%2C%20lot%20n%C2%B0%2011%2C%20rue%20N%2C%20K%C3%A9nitra",
+      "hours": [
+        "Lun–Ven 07:30–19:00 ; sam. 08:00–16:00 ; dim. 09:00–15:00"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-d-analyses-medicales-errazi-fiche-a-confirmer",
+      "slug": "laboratoire-d-analyses-medicales-errazi-fiche-a-confirmer",
+      "name": "Laboratoire d’Analyses Médicales Errazi (fiche à confirmer)",
+      "shortName": "Laboratoire d’Analyses Médicales Errazi (fiche à confirmer)",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Kénitra — adresse précise non communiquée par l’annuaire",
+      "director": null,
+      "specialties": [
+        "Analyses médicales (spécialités à confirmer)"
+      ],
+      "phone": "05 37 37 51 17",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20d%E2%80%99Analyses%20M%C3%A9dicales%20Errazi%20(fiche%20%C3%A0%20confirmer)%2C%20K%C3%A9nitra%20%E2%80%94%20adresse%20pr%C3%A9cise%20non%20communiqu%C3%A9e%20par%20l%E2%80%99annuaire",
+      "hours": [
+        "À confirmer"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
+    },
+    {
+      "id": "laboratoire-du-centre-hospitalier-provincial-azzamouri",
+      "slug": "laboratoire-du-centre-hospitalier-provincial-azzamouri",
+      "name": "Laboratoire du Centre Hospitalier Provincial Azzamouri",
+      "shortName": "Laboratoire du Centre Hospitalier Provincial Azzamouri",
+      "type": "Laboratoire d’analyses médicales",
+      "city": "Kénitra",
+      "address": "Route de Sidi Allal Bahraoui, Kénitra",
+      "director": "Établissement public — biologiste à confirmer",
+      "specialties": [
+        "Biochimie, hématologie, sérologie/hormonologie, immunologie et bactériologie"
+      ],
+      "phone": null,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Laboratoire%20du%20Centre%20Hospitalier%20Provincial%20Azzamouri%2C%20Route%20de%20Sidi%20Allal%20Bahraoui%2C%20K%C3%A9nitra",
+      "hours": [
+        "sur rendez-vous"
+      ],
+      "verified": false,
+      "lastVerified": "2026-10-31",
+      "source": "google_sheet:1miA4BT5tR1RZ4WRWI5H_Zy5V4c2MUh-Zy_iXpvkx-dc"
     }
   ],
   "centers": [
