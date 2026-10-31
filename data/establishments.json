@@ -3,11 +3,11 @@
     {
       "id": "centre-hospitalier-provincial-el-azemmouri",
       "slug": "centre-hospitalier-provincial-el-azemmouri",
-      "name": "Centre Hospitalier Provincial El-Azemmouri",
+      "name": "Centre Hospitalier Provincial Azzamouri",
       "type": "hospital",
       "subtitle": "Hôpital public",
       "city": "Kénitra",
-      "address": "Route de Sidi Allal Bahraoui, Kenitra",
+      "address": "Route de Sidi Allal Bahraoui, Kénitra",
       "phone": null,
       "phones": [],
       "google_maps_url": null,
@@ -25,21 +25,33 @@
         "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Public hospital</span><strong>3.1 Google</strong></div>\n<h3>Centre Hospitalier Provincial El-Azemmouri</h3>\n<p>Route de Sidi Allal Bahraoui, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<span class=\"facility-muted\">Phone not publicly available</span>\n</article>",
         "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى عمومي</span><strong>3.1 Google</strong></div>\n<h3>المستشفى الإقليمي الزموري</h3>\n<p>طريق سيدي علال البحراوي، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<span class=\"facility-muted\">الهاتف غير متوفر علنا</span>\n</article>"
       },
-      "emergency_available": null
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Médecine et chirurgie générales"
+      ],
+      "services": [
+        "Médecine et chirurgie générales"
+      ],
+      "emergency_hours": "",
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
     },
     {
       "id": "akdital-international-hospital-kenitra",
       "slug": "akdital-international-hospital-kenitra",
       "name": "Hôpital International de Kénitra",
       "type": "hospital",
-      "subtitle": "Hôpital privé · Akdital",
+      "subtitle": "Hôpital privé",
       "city": "Kénitra",
       "address": "Avenue Mohammed VI, Kénitra",
-      "phone": "+212 5 37 36 96 96",
+      "phone": "05 37 36 96 96",
       "phones": [
         {
-          "label": "+212 5 37 36 96 96",
-          "href": "tel:+212537369696"
+          "label": "05 37 36 96 96",
+          "href": "tel:0537369696"
         }
       ],
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI",
@@ -58,273 +70,77 @@
         "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>2.8 Google</strong></div>\n<h3>مستشفى أكديطال الدولي - القنيطرة</h3>\n<p>شارع محمد السادس، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537369696\">+212 5 37 36 96 96</a>\n<a class=\"facility-route\" href=\"https://www.google.com/maps/dir/?api=1&amp;destination=Akdital%20International%20Hospital%20Kenitra\" rel=\"noopener noreferrer\" target=\"_blank\">الاتجاهات</a>\n</article>"
       },
       "website": "https://hopital-international-kenitra.ma/",
-      "aliases": ["Akdital International Hospital - Kenitra"],
+      "aliases": [
+        "Akdital International Hospital - Kenitra"
+      ],
       "services": [
-        "Urgences 24h/24",
-        "Oncologie",
-        "Radiologie",
-        "Cardiologie interventionnelle",
-        "Maternité"
+        "Établissement multidisciplinaire"
       ],
       "coordinates": {
         "latitude": 34.2520429,
         "longitude": -6.5745513
       },
       "emergency_available": true,
-      "emergency_hours": "24h/24, 7j/7",
+      "emergency_hours": "24 h/24, 7 j/7",
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "official_establishment_and_group",
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
         "source_url": "https://hopital-international-kenitra.ma/notre-plateau-technique/"
-      }
+      },
+      "specialties": [
+        "Établissement multidisciplinaire"
+      ]
     },
     {
       "id": "clinique-internationale-de-kenitra",
       "slug": "clinique-internationale-de-kenitra",
       "name": "Clinique Internationale de Kénitra",
+      "legacy_markup": {},
       "type": "clinic",
-      "subtitle": "Clinique privée · Urgences 24h/24",
+      "subtitle": "Établissement multidisciplinaire",
       "city": "Kénitra",
-      "address": "Lotissement Maamora, Les Allées du Parc, Saknia — Kénitra",
-      "phone": "+212 5 37 31 34 34",
-      "phones": [
-        {"label": "+212 5 37 31 34 34", "href": "tel:+212537313434"},
-        {"label": "+212 5 37 38 19 19", "href": "tel:+212537381919"},
-        {"label": "+212 5 37 38 60 80", "href": "tel:+212537386080"}
-      ],
+      "address": "Lotissement Maâmora, Les Allées du Parc, Saknia, Kénitra (siège social publié ; adresse d’accueil à confirmer)",
+      "phone": null,
+      "phones": [],
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Clinique+Internationale+de+Kenitra+Les+Allees+du+Parc",
-      "director": "Dr Hakim Azzerki, anesthésiste-réanimateur",
+      "director": "Dr. Hakim Azzerki",
       "resuscitation_doctor": "Dr Hakim Azzerki, anesthésiste-réanimateur",
       "photo": "assets/clinique-ik-urgences.jpg",
       "gallery": [],
       "featured": true,
       "verified": false,
       "hours": "Ouvert 24h/24",
-      "services": ["Urgences 24h/24", "Cardiologie interventionnelle", "Radiologie", "Traumatologie", "Urgences gastro-entérologiques", "Neurochirurgie"],
-      "specialties": ["Cardiologie interventionnelle", "Radiologie", "Traumatologie", "Gastro-entérologie", "Neurochirurgie"],
-      "emergency_available": true,
-      "emergency_hours": "24h/24, 7j/7",
-      "aliases": ["Clinique IK", "IK Kénitra"],
-      "verification": {"last_verified": "2026-10-27", "source_type": "user_supplied_photo"}
-    },
-    {
-      "id": "polyclinique-de-kenitra",
-      "slug": "polyclinique-de-kenitra",
-      "name": "Polyclinique de Kénitra",
-      "type": "clinic",
-      "subtitle": "Centre chirurgical",
-      "city": "Kénitra",
-      "address": "Avenue de l’Hôpital, Kenitra",
-      "phone": "+212 5 37 37 36 35",
-      "phones": [
-        {
-          "label": "+212 5 37 37 36 35",
-          "href": "tel:+212537373635"
-        },
-        {
-          "label": "Urgences : +212 6 22 66 35 36",
-          "href": "tel:+212622663536"
-        }
+      "services": [
+        "Établissement multidisciplinaire"
       ],
-      "google_maps_url": "https://www.google.com/maps/place/POLYCLINIQUE+DE+KENITRA/@34.2520429,-6.5745513,14z",
-      "director": "Dr Abdellatif Dridba, spécialiste en anesthésie et réanimation",
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": true,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Centre chirurgical</span><strong>2.3 Google</strong></div>\n<h3>Polyclinique de Kénitra</h3>\n<p>Avenue de l’Hôpital, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">Urgences : +212 6 22 66 35 36</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Surgical center</span><strong>2.3 Google</strong></div>\n<h3>Polyclinique de Kénitra</h3>\n<p>Avenue de l’Hôpital, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">Emergency: +212 6 22 66 35 36</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مركز جراحي</span><strong>2.3 Google</strong></div>\n<h3>المصحة المتعددة التخصصات بالقنيطرة</h3>\n<p>شارع المستشفى، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">المستعجلات: +212 6 22 66 35 36</a>\n</article>"
-      },
-      "coordinates": {
-        "latitude": 34.2520429,
-        "longitude": -6.5745513
-      },
-      "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "maps_and_official_site",
-        "source_url": "https://www.polycliniquekenitra.com/"
-      },
-      "emergency_available": null
-    },
-    {
-      "id": "polyclinique-du-gharb",
-      "slug": "polyclinique-du-gharb",
-      "name": "Polyclinique du Gharb",
-      "type": "clinic",
-      "subtitle": "Clinique spécialisée",
-      "city": "Kénitra",
-      "address": "148 Avenue Mohamed Diouri, Kenitra",
-      "phone": "+212 5 37 37 65 65",
-      "phones": [
-        {
-          "label": "+212 5 37 37 65 65",
-          "href": "tel:+212537376565"
-        }
-      ],
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Polyclinique+du+Gharb+148+Avenue+Mohamed+Diouri+Kenitra",
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": false,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique spécialisée</span><strong>3.4 Google</strong></div>\n<h3>Polyclinique du Gharb</h3>\n<p>148 Avenue Mohamed Diouri, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Specialized clinic</span><strong>3.4 Google</strong></div>\n<h3>Polyclinique du Gharb</h3>\n<p>148 Avenue Mohamed Diouri, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة متخصصة</span><strong>3.4 Google</strong></div>\n<h3>مصحة الغرب</h3>\n<p>148 شارع محمد الديوري، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>"
-      },
-      "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "maps_listing_corroborated",
-        "source_url": "https://www.top-rated.online/cities/Kenitra/place/p/9387635/Polyclinique%2Bdu%2BGharb"
-      },
-      "emergency_available": null
-    },
-    {
-      "id": "noor-clinic",
-      "slug": "noor-clinic",
-      "name": "Noor Clinic",
-      "type": "clinic",
-      "subtitle": "Clinique spécialisée",
-      "city": "Kénitra",
-      "address": "Lotissement Al Qods 1 Lot C, en face d’Acima, Kenitra",
-      "phone": "+212 5 37 37 13 33",
-      "phones": [
-        {
-          "label": "+212 5 37 37 13 33",
-          "href": "tel:+212537371333"
-        },
-        {
-          "label": "+212 5 37 37 36 42",
-          "href": "tel:+212537373642"
-        }
-      ],
-      "google_maps_url": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": true,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique spécialisée</span><strong>3.7 Google</strong></div>\n<h3>Noor Clinic</h3>\n<p>Lotissement Al Qods 1 Lot C, en face d’Acima, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Specialized clinic</span><strong>3.7 Google</strong></div>\n<h3>Noor Clinic</h3>\n<p>Lotissement Al Qods 1 Lot C, opposite Acima, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة متخصصة</span><strong>3.7 Google</strong></div>\n<h3>مصحة النور</h3>\n<p>تجزئة القدس 1، القطعة C، مقابل أسيما، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>"
-      },
-      "website": "https://www.cnk.ma/",
       "specialties": [
-        "Ophtalmologie",
-        "Gynécologie-obstétrique",
-        "Chirurgie générale",
-        "Médecine générale",
-        "Nutrition",
-        "Pédiatrie"
+        "Établissement multidisciplinaire"
+      ],
+      "emergency_available": true,
+      "emergency_hours": "24 h/24, 7 j/7",
+      "aliases": [
+        "Clinique IK",
+        "IK Kénitra"
       ],
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "official_establishment_site",
-        "source_url": "https://www.cnk.ma/"
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
       },
-      "emergency_available": null
-    },
-    {
-      "id": "clinique-val-fleury",
-      "slug": "clinique-val-fleury",
-      "name": "Clinique Val Fleury",
-      "type": "hospital",
-      "subtitle": "Hôpital privé",
-      "city": "Kénitra",
-      "address": "Avenue Abderrahim Bouabid, Kenitra",
-      "phone": "+212 5 37 39 79 31",
-      "phones": [
-        {
-          "label": "+212 5 37 39 79 31",
-          "href": "tel:+212537397931"
-        }
-      ],
-      "google_maps_url": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": true,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Hôpital privé</span><strong>3.0 Google</strong></div>\n<h3>Clinique Val Fleury</h3>\n<p>Avenue Abderrahim Bouabid, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Private hospital</span><strong>3.0 Google</strong></div>\n<h3>Clinique Val Fleury</h3>\n<p>Avenue Abderrahim Bouabid, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>3.0 Google</strong></div>\n<h3>مصحة فال فلوري</h3>\n<p>شارع عبد الرحيم بوعبيد، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>"
-      },
-      "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "google_maps_and_medical_directory",
-        "source_url": "https://www.google.com/maps/search/Clinique+Val+Fleury+Kenitra"
-      },
-      "emergency_available": null
-    },
-    {
-      "id": "mimosas-clinic",
-      "slug": "mimosas-clinic",
-      "name": "Mimosas Clinic",
-      "type": "clinic",
-      "subtitle": "Centre chirurgical",
-      "city": "Kénitra",
-      "address": "21 Avenue Mohamed El Qori, Kenitra",
-      "phone": "+212 5 37 37 97 98",
-      "phones": [
-        {
-          "label": "+212 5 37 37 97 98",
-          "href": "tel:+212537379798"
-        }
-      ],
-      "google_maps_url": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": false,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Centre chirurgical</span><strong>2.6 Google</strong></div>\n<h3>Mimosas Clinic</h3>\n<p>21 Avenue Mohamed El Qori, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Surgical center</span><strong>2.6 Google</strong></div>\n<h3>Mimosas Clinic</h3>\n<p>21 Avenue Mohamed El Qori, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مركز جراحي</span><strong>2.6 Google</strong></div>\n<h3>مصحة الميموزا</h3>\n<p>21 شارع محمد القوري، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>"
-      },
-      "emergency_available": null
+      "website": "https://cliniqueinternationalekenitra.ma/fr"
     },
     {
       "id": "clinique-anoual",
       "slug": "clinique-anoual",
       "name": "Clinique Anoual",
       "type": "hospital",
-      "subtitle": "Hôpital général",
+      "subtitle": "Clinique chirurgicale ; urologie et gynécologie (à confirmer)",
       "city": "Kénitra",
-      "address": "33 Rue Ibn Abi Zaraa, Avenue Moulay Abderrahmane, Kenitra",
-      "phone": "+212 5 37 36 67 67",
+      "address": "33 rue Ibn Abi Zaraa, Kénitra",
+      "phone": "05 37 36 67 67",
       "phones": [
         {
-          "label": "+212 5 37 36 67 67",
-          "href": "tel:+212537366767"
-        },
-        {
-          "label": "+212 5 37 37 70 72",
-          "href": "tel:+212537377072"
+          "label": "05 37 36 67 67",
+          "href": "tel:0537366767"
         }
       ],
       "google_maps_url": null,
@@ -342,94 +158,113 @@
         "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">General hospital</span><strong>2.9 Google</strong></div>\n<h3>Clinique Anoual</h3>\n<p>33 Rue Ibn Abi Zaraa, Avenue Moulay Abderrahmane, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537366767\">+212 5 37 36 67 67</a>\n<a dir=\"ltr\" href=\"tel:+212537377072\">+212 5 37 37 70 72</a>\n</article>",
         "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى عام</span><strong>2.9 Google</strong></div>\n<h3>مصحة أنوال</h3>\n<p>33 شارع ابن أبي زرع، شارع مولاي عبد الرحمان، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537366767\">+212 5 37 36 67 67</a>\n<a dir=\"ltr\" href=\"tel:+212537377072\">+212 5 37 37 70 72</a>\n</article>"
       },
-      "emergency_available": null
-    },
-    {
-      "id": "clinique-sebou",
-      "slug": "clinique-sebou",
-      "name": "Clinique Sebou",
-      "type": "clinic",
-      "subtitle": "Clinique médicale",
-      "city": "Kénitra",
-      "address": "1 Rue Al Masjid, Kenitra",
-      "phone": "+212 5 37 36 62 77",
-      "phones": [
-        {
-          "label": "+212 5 37 36 62 77",
-          "href": "tel:+212537366277"
-        },
-        {
-          "label": "+212 5 37 36 03 31 (historique / à confirmer)",
-          "href": "tel:+212537360331"
-        }
+      "emergency_available": false,
+      "website": null,
+      "specialties": [
+        "Clinique chirurgicale",
+        "urologie et gynécologie (à confirmer)"
       ],
-      "google_maps_url": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": true,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique médicale</span><strong>3.2 Google</strong></div>\n<h3>Clinique Sebou</h3>\n<p>1 Rue Al Masjid, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Medical clinic</span><strong>3.2 Google</strong></div>\n<h3>Clinique Sebou</h3>\n<p>1 Rue Al Masjid, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة طبية</span><strong>3.2 Google</strong></div>\n<h3>مصحة سبو</h3>\n<p>1 شارع المسجد، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>"
-      },
+      "services": [
+        "Clinique chirurgicale",
+        "urologie et gynécologie (à confirmer)"
+      ],
+      "emergency_hours": null,
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "current_medical_directory_with_historical_conflict",
-        "source_url": "https://www.dabadoc.com/e/clinique-privee-kenitra/clinique-sebou"
-      },
-      "emergency_available": null
-    },
-    {
-      "id": "polyclinique-cnss-kenitra",
-      "slug": "polyclinique-cnss-kenitra",
-      "name": "Polyclinique CNSS Kénitra",
-      "type": "hospital",
-      "subtitle": "Hôpital privé",
-      "city": "Kénitra",
-      "address": "Avenue Moulay Youssef, Kenitra",
-      "phone": "+212 5 37 37 87 39",
-      "phones": [
-        {
-          "label": "+212 5 37 37 87 39",
-          "href": "tel:+212537378739"
-        }
-      ],
-      "google_maps_url": null,
-      "director": null,
-      "resuscitation_doctor": null,
-      "photo": null,
-      "gallery": [],
-      "featured": false,
-      "verified": false,
-      "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": true,
-      "description": null,
-      "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Hôpital privé</span><strong>2.5 Google</strong></div>\n<h3>Polyclinique CNSS Kénitra</h3>\n<p>Avenue Moulay Youssef, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Private hospital</span><strong>2.5 Google</strong></div>\n<h3>Polyclinique CNSS Kénitra</h3>\n<p>Avenue Moulay Youssef, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>2.5 Google</strong></div>\n<h3>مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة</h3>\n<p>شارع مولاي يوسف، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>"
-      },
-      "emergency_available": null
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
     },
     {
       "id": "clinique-c-c-o-t-k",
       "slug": "clinique-c-c-o-t-k",
-      "name": "Clinique C.C.O.T.K.",
+      "name": "Clinique de chirurgie orthopédique et traumatologique du Kénitra (C.C.O.T.K.)",
+      "legacy_markup": {},
       "type": "clinic",
-      "subtitle": "Clinique médicale",
+      "subtitle": "Orthopédie et traumatologie",
       "city": "Kénitra",
-      "address": "Clinique de chirurgie orthopédique et traumatologique, Kenitra",
-      "phone": "+212 5 37 37 30 81",
+      "address": "6 rue Houssein Heikel, Kénitra",
+      "phone": "05 37 37 60 01",
       "phones": [
         {
-          "label": "+212 5 37 37 30 81",
-          "href": "tel:+212537373081"
+          "label": "05 37 37 60 01",
+          "href": "tel:0537376001"
+        }
+      ],
+      "google_maps_url": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "description": null,
+      "emergency_available": false,
+      "website": null,
+      "specialties": [
+        "Orthopédie et traumatologie"
+      ],
+      "services": [
+        "Orthopédie et traumatologie"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
+    },
+    {
+      "id": "clinique-elkhettabi",
+      "slug": "clinique-elkhettabi",
+      "name": "Clinique Elkhettabi",
+      "legacy_markup": {},
+      "type": "clinic",
+      "subtitle": "Clinique chirurgicale",
+      "city": "Kénitra",
+      "address": "Rue Ichbilia, Carrefour Mauritania, Kénitra",
+      "phone": "05 37 37 42 76",
+      "phones": [
+        {
+          "label": "05 37 37 42 76",
+          "href": "tel:0537374276"
+        }
+      ],
+      "google_maps_url": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "description": null,
+      "emergency_available": false,
+      "website": null,
+      "specialties": [
+        "Clinique chirurgicale"
+      ],
+      "services": [
+        "Clinique chirurgicale"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
+    },
+    {
+      "id": "mimosas-clinic",
+      "slug": "mimosas-clinic",
+      "name": "Clinique Les Mimosas",
+      "type": "clinic",
+      "subtitle": "Clinique chirurgicale",
+      "city": "Kénitra",
+      "address": "21 boulevard Mohamed El Qorri, Kénitra",
+      "phone": "05 37 37 97 98",
+      "phones": [
+        {
+          "label": "05 37 37 97 98",
+          "href": "tel:0537379798"
         }
       ],
       "google_maps_url": null,
@@ -443,25 +278,37 @@
       "legacy_open24h": false,
       "description": null,
       "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique médicale</span><strong>2.1 Google</strong></div>\n<h3>Clinique C.C.O.T.K.</h3>\n<p>Clinique de chirurgie orthopédique et traumatologique, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537373081\">+212 5 37 37 30 81</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Medical clinic</span><strong>2.1 Google</strong></div>\n<h3>Clinique C.C.O.T.K.</h3>\n<p>Orthopedic and trauma surgery clinic, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537373081\">+212 5 37 37 30 81</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة طبية</span><strong>2.1 Google</strong></div>\n<h3>مصحة جراحة العظام والرضوض بالقنيطرة</h3>\n<p>مصحة جراحة العظام والرضوض, القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537373081\">+212 5 37 37 30 81</a>\n</article>"
+        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Centre chirurgical</span><strong>2.6 Google</strong></div>\n<h3>Mimosas Clinic</h3>\n<p>21 Avenue Mohamed El Qori, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Surgical center</span><strong>2.6 Google</strong></div>\n<h3>Mimosas Clinic</h3>\n<p>21 Avenue Mohamed El Qori, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مركز جراحي</span><strong>2.6 Google</strong></div>\n<h3>مصحة الميموزا</h3>\n<p>21 شارع محمد القوري، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537379798\">+212 5 37 37 97 98</a>\n</article>"
       },
-      "emergency_available": null
+      "emergency_available": false,
+      "website": null,
+      "specialties": [
+        "Clinique chirurgicale"
+      ],
+      "services": [
+        "Clinique chirurgicale"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
     },
     {
       "id": "clinique-maamora",
       "slug": "clinique-maamora",
-      "name": "Clinique Maamora",
+      "name": "Clinique Maâmora",
       "type": "clinic",
-      "subtitle": "Clinique médicale",
+      "subtitle": "Clinique chirurgicale",
       "city": "Kénitra",
-      "address": "116 Rue Maamora, Kenitra",
-      "phone": "+212 5 37 36 55 00",
+      "address": "116 rue Maâmora, Kénitra",
+      "phone": "05 37 36 55 00",
       "phones": [
         {
-          "label": "+212 5 37 36 55 00",
-          "href": "tel:+212537365500"
+          "label": "05 37 36 55 00",
+          "href": "tel:0537365500"
         }
       ],
       "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Clinique+Maamora+116+Rue+Maamora+Kenitra",
@@ -480,37 +327,82 @@
         "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة طبية</span><strong>4.4 Google</strong></div>\n<h3>مصحة المعمورة</h3>\n<p>116 شارع المعمورة، القنيطرة</p>\n<span class=\"facility-hours\">الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537365500\">+212 5 37 36 55 00</a>\n</article>"
       },
       "specialties": [
-        "Gynécologie",
-        "Gynécologie-obstétrique"
+        "Clinique chirurgicale"
       ],
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "google_maps_and_medical_directory",
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
         "source_url": "https://www.google.com/maps/search/Pedijatar%2BQuartier%2BMaamora%2BKenitra/"
       },
-      "emergency_available": null
+      "emergency_available": false,
+      "website": null,
+      "services": [
+        "Clinique chirurgicale"
+      ],
+      "emergency_hours": null
     },
     {
-      "id": "clinique-doncologie-ibn-sina",
-      "slug": "clinique-doncologie-ibn-sina",
-      "name": "Clinique d’oncologie Ibn Sina",
+      "id": "noor-clinic",
+      "slug": "noor-clinic",
+      "name": "Clinique Noor Kénitra",
       "type": "clinic",
-      "subtitle": "Oncologie",
+      "subtitle": "Ophtalmologie, gynécologie-obstétrique, chirurgie générale",
       "city": "Kénitra",
-      "address": "Avenue 2 Mars, Kenitra",
-      "phone": "+212 5 37 32 79 37",
+      "address": "Route de Rabat, lotissement Al Qods 1, lot C, Kénitra",
+      "phone": "05 37 37 13 33",
       "phones": [
         {
-          "label": "+212 5 37 32 79 37",
-          "href": "tel:+212537327937"
-        },
+          "label": "05 37 37 13 33",
+          "href": "tel:0537371333"
+        }
+      ],
+      "google_maps_url": null,
+      "director": "Dr. Anass mellali",
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "legacy_open24h": true,
+      "description": null,
+      "legacy_markup": {
+        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique spécialisée</span><strong>3.7 Google</strong></div>\n<h3>Noor Clinic</h3>\n<p>Lotissement Al Qods 1 Lot C, en face d’Acima, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Specialized clinic</span><strong>3.7 Google</strong></div>\n<h3>Noor Clinic</h3>\n<p>Lotissement Al Qods 1 Lot C, opposite Acima, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة متخصصة</span><strong>3.7 Google</strong></div>\n<h3>مصحة النور</h3>\n<p>تجزئة القدس 1، القطعة C، مقابل أسيما، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537371333\">+212 5 37 37 13 33</a>\n<a dir=\"ltr\" href=\"tel:+212537373642\">+212 5 37 37 36 42</a>\n</article>"
+      },
+      "website": "https://www.cnk.ma/",
+      "specialties": [
+        "Ophtalmologie",
+        "gynécologie-obstétrique",
+        "chirurgie générale"
+      ],
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
+        "source_url": "https://www.cnk.ma/"
+      },
+      "emergency_available": true,
+      "services": [
+        "Ophtalmologie",
+        "gynécologie-obstétrique",
+        "chirurgie générale"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)"
+    },
+    {
+      "id": "clinique-sebou",
+      "slug": "clinique-sebou",
+      "name": "Clinique Sebou",
+      "type": "clinic",
+      "subtitle": "Clinique médico-chirurgicale",
+      "city": "Kénitra",
+      "address": "1 rue Al Masjid, Kénitra",
+      "phone": "05 37 36 03 31",
+      "phones": [
         {
-          "label": "+212 6 50 08 97 97 (secondaire à confirmer)",
-          "href": "tel:+212650089797"
-        },
-        {
-          "label": "+212 6 61 55 76 24 (secondaire à confirmer)",
-          "href": "tel:+212661557624"
+          "label": "05 37 36 03 31",
+          "href": "tel:0537360331"
         }
       ],
       "google_maps_url": null,
@@ -521,61 +413,326 @@
       "featured": false,
       "verified": false,
       "hours": "Ouvert - horaires à vérifier",
-      "legacy_open24h": false,
+      "legacy_open24h": true,
       "description": null,
       "legacy_markup": {
-        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Oncologie</span><strong>4.0 Google</strong></div>\n<h3>Clinique d’oncologie Ibn Sina</h3>\n<p>Avenue 2 Mars, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212650014999\">+212 6 50 01 49 99</a>\n</article>",
-        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Oncology</span><strong>4.0 Google</strong></div>\n<h3>Clinique d’oncologie Ibn Sina</h3>\n<p>Avenue 2 Mars, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212650014999\">+212 6 50 01 49 99</a>\n</article>",
-        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">طب الأورام</span><strong>4.0 Google</strong></div>\n<h3>مصحة ابن سينا لطب الأورام</h3>\n<p>شارع 2 مارس، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212650014999\">+212 6 50 01 49 99</a>\n</article>"
+        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique médicale</span><strong>3.2 Google</strong></div>\n<h3>Clinique Sebou</h3>\n<p>1 Rue Al Masjid, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Medical clinic</span><strong>3.2 Google</strong></div>\n<h3>Clinique Sebou</h3>\n<p>1 Rue Al Masjid, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة طبية</span><strong>3.2 Google</strong></div>\n<h3>مصحة سبو</h3>\n<p>1 شارع المسجد، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537366277\">+212 5 37 36 62 77</a>\n</article>"
       },
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "medical_directory_corroborated",
-        "source_url": "https://www.marocannuaire.org/Annuaire/Details_infos.php?activite=Cliniques&e=CLINIQUE+IBN+SINA&id=111658&p=&ville=KENITRA"
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
+        "source_url": "https://www.dabadoc.com/e/clinique-privee-kenitra/clinique-sebou"
       },
-      "emergency_available": null
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Clinique médico-chirurgicale"
+      ],
+      "services": [
+        "Clinique médico-chirurgicale"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)"
     },
     {
-      "id": "centre-international-oncologie-kenitra",
-      "slug": "centre-international-oncologie-kenitra",
-      "name": "Centre International d’Oncologie de Kénitra",
-      "subtitle": "Oncologie · Akdital",
+      "id": "clinique-ophtalmologique-du-croissant-rouge-marocain",
+      "slug": "clinique-ophtalmologique-du-croissant-rouge-marocain",
+      "name": "Clinique ophtalmologique du Croissant-Rouge Marocain",
+      "legacy_markup": {},
       "type": "clinic",
+      "subtitle": "Ophtalmologie",
       "city": "Kénitra",
-      "address": "Avenue Al Qadissia, Kénitra",
-      "phone": "+212 5 37 36 96 97",
+      "address": "6 rue Omar Ibn Abdelaziz, Kénitra",
+      "phone": "05 37 37 43 05",
       "phones": [
         {
-          "label": "+212 5 37 36 96 97",
-          "href": "tel:+212537369697"
+          "label": "05 37 37 43 05",
+          "href": "tel:0537374305"
         }
       ],
-      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Centre+International+d%27Oncologie+de+K%C3%A9nitra+Avenue+Al+Qadissia",
-      "website": "https://akdital.ma/fr/nos-etablissements/",
-      "hours": "Horaires à confirmer",
-      "services": [
-        "Chimiothérapie ambulatoire",
-        "Radiothérapie",
-        "Hospitalisation oncologique"
+      "google_maps_url": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "description": null,
+      "emergency_available": false,
+      "website": null,
+      "specialties": [
+        "Ophtalmologie"
       ],
+      "services": [
+        "Ophtalmologie"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
+    },
+    {
+      "id": "clinique-d-oncologie-ibn-sina",
+      "slug": "clinique-d-oncologie-ibn-sina",
+      "name": "Clinique spécialisée Ibn Sina",
+      "legacy_markup": {
+        "fr": "<h3>Clinique d’oncologie Ibn Sina</h3>",
+        "en": "<h3>Clinique d’oncologie Ibn Sina</h3>",
+        "ar": "<h3>مصحة ابن سينا لطب الأورام</h3>"
+      },
+      "type": "clinic",
+      "aliases": ["Clinique d’oncologie Ibn Sina", "مصحة ابن سينا لطب الأورام"],
+      "subtitle": "Oncologie",
+      "city": "Kénitra",
+      "address": "Boulevard du 2 Mars, Bir Rami Est, Kénitra",
+      "phone": "05 37 32 79 37",
+      "phones": [
+        {
+          "label": "05 37 32 79 37",
+          "href": "tel:0537327937"
+        }
+      ],
+      "google_maps_url": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "description": null,
+      "emergency_available": false,
+      "website": "https://www.ibn-sina.ma/fr/",
       "specialties": [
         "Oncologie"
       ],
-      "emergency_available": null,
-      "verified": false,
-      "featured": false,
-      "gallery": [],
+      "services": [
+        "Oncologie"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
+    },
+    {
+      "id": "clinique-val-fleury",
+      "slug": "clinique-val-fleury",
+      "name": "Clinique Val Fleury",
+      "type": "hospital",
+      "subtitle": "Clinique médicale",
+      "city": "Kénitra",
+      "address": "91 route Antara, Kénitra",
+      "phone": "05 37 39 79 31",
+      "phones": [
+        {
+          "label": "05 37 39 79 31",
+          "href": "tel:0537397931"
+        }
+      ],
+      "google_maps_url": null,
+      "director": "Dr. Azizi",
+      "resuscitation_doctor": null,
       "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "legacy_open24h": true,
+      "description": null,
+      "legacy_markup": {
+        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Hôpital privé</span><strong>3.0 Google</strong></div>\n<h3>Clinique Val Fleury</h3>\n<p>Avenue Abderrahim Bouabid, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Private hospital</span><strong>3.0 Google</strong></div>\n<h3>Clinique Val Fleury</h3>\n<p>Avenue Abderrahim Bouabid, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>3.0 Google</strong></div>\n<h3>مصحة فال فلوري</h3>\n<p>شارع عبد الرحيم بوعبيد، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537397931\">+212 5 37 39 79 31</a>\n</article>"
+      },
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
+        "source_url": "https://www.google.com/maps/search/Clinique+Val+Fleury+Kenitra"
+      },
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Clinique médicale"
+      ],
+      "services": [
+        "Clinique médicale"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)"
+    },
+    {
+      "id": "polyclinique-cnss-kenitra",
+      "slug": "polyclinique-cnss-kenitra",
+      "name": "Polyclinique CNSS de Kénitra",
+      "type": "hospital",
+      "subtitle": "Polyclinique / soins multidisciplinaires",
+      "city": "Kénitra",
+      "address": "Place Moulay Youssef, Kénitra",
+      "phone": "05 37 37 87 38",
+      "phones": [
+        {
+          "label": "05 37 37 87 38",
+          "href": "tel:0537378738"
+        }
+      ],
+      "google_maps_url": null,
       "director": null,
       "resuscitation_doctor": null,
-      "legacy_markup": null,
-      "aliases": [
-        "Centre International d’Oncologie de Kénitra-Akdital"
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "legacy_open24h": true,
+      "description": null,
+      "legacy_markup": {
+        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Hôpital privé</span><strong>2.5 Google</strong></div>\n<h3>Polyclinique CNSS Kénitra</h3>\n<p>Avenue Moulay Youssef, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Private hospital</span><strong>2.5 Google</strong></div>\n<h3>Polyclinique CNSS Kénitra</h3>\n<p>Avenue Moulay Youssef, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مستشفى خاص</span><strong>2.5 Google</strong></div>\n<h3>مصحة الصندوق الوطني للضمان الاجتماعي بالقنيطرة</h3>\n<p>شارع مولاي يوسف، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537378739\">+212 5 37 37 87 39</a>\n</article>"
+      },
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Polyclinique / soins multidisciplinaires"
       ],
+      "services": [
+        "Polyclinique / soins multidisciplinaires"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)",
       "verification": {
-        "last_verified": "2026-09-29",
-        "source_type": "official_group_and_institutional_document",
-        "source_url": "https://akdital.ma/wp-content/uploads/2024/12/CP-KENITRA-2024-VF-2.pdf"
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
+      }
+    },
+    {
+      "id": "polyclinique-de-kenitra",
+      "slug": "polyclinique-de-kenitra",
+      "name": "Polyclinique de Kénitra",
+      "type": "clinic",
+      "subtitle": "Polyclinique / soins multidisciplinaires",
+      "city": "Kénitra",
+      "address": "Avenue de l’Hôpital Idrissi, Kénitra",
+      "phone": "05 37 37 36 35",
+      "phones": [
+        {
+          "label": "05 37 37 36 35",
+          "href": "tel:0537373635"
+        }
+      ],
+      "google_maps_url": "https://www.google.com/maps/place/POLYCLINIQUE+DE+KENITRA/@34.2520429,-6.5745513,14z",
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "legacy_open24h": true,
+      "description": null,
+      "legacy_markup": {
+        "fr": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Centre chirurgical</span><strong>2.3 Google</strong></div>\n<h3>Polyclinique de Kénitra</h3>\n<p>Avenue de l’Hôpital, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">Urgences : +212 6 22 66 35 36</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">Surgical center</span><strong>2.3 Google</strong></div>\n<h3>Polyclinique de Kénitra</h3>\n<p>Avenue de l’Hôpital, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">Emergency: +212 6 22 66 35 36</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\" data-open24h=\"true\">\n<div class=\"facility-head\"><span class=\"facility-type\">مركز جراحي</span><strong>2.3 Google</strong></div>\n<h3>المصحة المتعددة التخصصات بالقنيطرة</h3>\n<p>شارع المستشفى، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537373635\">+212 5 37 37 36 35</a>\n<a dir=\"ltr\" href=\"tel:+212622663536\">المستعجلات: +212 6 22 66 35 36</a>\n</article>"
+      },
+      "coordinates": {
+        "latitude": 34.2520429,
+        "longitude": -6.5745513
+      },
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
+        "source_url": "https://www.polycliniquekenitra.com/"
+      },
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Polyclinique / soins multidisciplinaires"
+      ],
+      "services": [
+        "Polyclinique / soins multidisciplinaires"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)"
+    },
+    {
+      "id": "polyclinique-du-gharb",
+      "slug": "polyclinique-du-gharb",
+      "name": "Polyclinique du Gharb",
+      "type": "clinic",
+      "subtitle": "Polyclinique / soins multidisciplinaires",
+      "city": "Kénitra",
+      "address": "148 avenue Mohamed Diouri, Kénitra",
+      "phone": "05 37 37 65 65",
+      "phones": [
+        {
+          "label": "05 37 37 65 65",
+          "href": "tel:0537376565"
+        }
+      ],
+      "google_maps_url": "https://www.google.com/maps/search/?api=1&query=Polyclinique+du+Gharb+148+Avenue+Mohamed+Diouri+Kenitra",
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "legacy_open24h": false,
+      "description": null,
+      "legacy_markup": {
+        "fr": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Clinique spécialisée</span><strong>3.4 Google</strong></div>\n<h3>Polyclinique du Gharb</h3>\n<p>148 Avenue Mohamed Diouri, Kenitra</p>\n<span class=\"facility-hours\">Ouvert - horaires à vérifier</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>",
+        "en": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">Specialized clinic</span><strong>3.4 Google</strong></div>\n<h3>Polyclinique du Gharb</h3>\n<p>148 Avenue Mohamed Diouri, Kenitra</p>\n<span class=\"facility-hours\">Open - hours to verify</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>",
+        "ar": "<article class=\"facility-card reveal\">\n<div class=\"facility-head\"><span class=\"facility-type\">مصحة متخصصة</span><strong>3.4 Google</strong></div>\n<h3>مصحة الغرب</h3>\n<p>148 شارع محمد الديوري، القنيطرة</p>\n<span class=\"facility-hours\">مفتوح - الأوقات للتأكد</span>\n<a dir=\"ltr\" href=\"tel:+212537376565\">+212 5 37 37 65 65</a>\n</article>"
+      },
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet",
+        "source_url": "https://www.top-rated.online/cities/Kenitra/place/p/9387635/Polyclinique%2Bdu%2BGharb"
+      },
+      "emergency_available": true,
+      "website": null,
+      "specialties": [
+        "Polyclinique / soins multidisciplinaires"
+      ],
+      "services": [
+        "Polyclinique / soins multidisciplinaires"
+      ],
+      "emergency_hours": "24 h/24 (annuaire local)"
+    },
+    {
+      "id": "centre-international-d-oncologie-de-kenitra",
+      "slug": "centre-international-d-oncologie-de-kenitra",
+      "name": "Centre International d’Oncologie de Kénitra",
+      "legacy_markup": {},
+      "type": "clinic",
+      "subtitle": "Oncologie",
+      "city": "Kénitra",
+      "address": "Avenue Mohammed VI, Kénitra",
+      "phone": null,
+      "phones": [],
+      "google_maps_url": null,
+      "director": null,
+      "resuscitation_doctor": null,
+      "photo": null,
+      "gallery": [],
+      "featured": false,
+      "verified": false,
+      "hours": "Ouvert - horaires à vérifier",
+      "description": null,
+      "emergency_available": false,
+      "website": "https://ciokenitra.ma/",
+      "specialties": [
+        "Oncologie"
+      ],
+      "services": [
+        "Oncologie"
+      ],
+      "emergency_hours": null,
+      "verification": {
+        "last_verified": "2026-10-30",
+        "source_type": "user_provided_google_sheet"
       }
     }
   ]
