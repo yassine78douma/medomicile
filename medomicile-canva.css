@@ -1302,6 +1302,7 @@ html[dir="rtl"] .clinic-actions { justify-content: flex-start; }
 .ru-page textarea {
   font-family: "Inter Local", "Noto Sans", Arial, sans-serif;
 }
+html[lang="ru"] { --md-muted: #52677e; }
 .ru-page h1,
 .ru-page h2,
 .ru-page h3,
