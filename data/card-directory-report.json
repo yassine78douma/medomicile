@@ -94,6 +94,48 @@
   "bound_cards": 1657,
   "preserved_conflicts": [
     {
+      "page": "hopitaux-ar.html",
+      "name": "المصحة الدولية بالقنيطرة",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=Clinique+Internationale+de+Kenitra+Les+Allees+du+Parc"
+    },
+    {
+      "page": "hopitaux-ar.html",
+      "name": "مستشفى أكديطال الدولي - القنيطرة",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI"
+    },
+    {
+      "page": "hopitaux-en.html",
+      "name": "Clinique Internationale de Kénitra",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=Clinique+Internationale+de+Kenitra+Les+Allees+du+Parc"
+    },
+    {
+      "page": "hopitaux-en.html",
+      "name": "Akdital International Hospital - Kenitra",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI"
+    },
+    {
+      "page": "hopitaux.html",
+      "name": "Clinique Internationale de Kénitra",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Clinique%20Internationale%20de%20K%C3%A9nitra%2C%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=Clinique+Internationale+de+Kenitra+Les+Allees+du+Parc"
+    },
+    {
+      "page": "hopitaux.html",
+      "name": "Akdital International Hospital - Kenitra",
+      "field": "maps",
+      "html": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
+      "canonical": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI"
+    },
+    {
       "page": "neurologues-kenitra-ar.html",
       "name": "د. عادل توزاني",
       "field": "maps",
