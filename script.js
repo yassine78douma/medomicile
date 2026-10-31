@@ -2923,7 +2923,7 @@ const loadPharmacies = async () => {
       break;
     }
     if (!data) throw new Error("Pharmacy data unavailable");
-    const directoryResponse = await fetch("data/pharmacies-kenitra.json").catch(() => null);
+    const directoryResponse = await fetch("data/directory-index.json").catch(() => null);
     if (directoryResponse?.ok) {
       const directoryData = await directoryResponse.json().catch(() => null);
       if (Array.isArray(directoryData?.pharmacies)) {
@@ -4021,7 +4021,7 @@ const loadLaboratories = async () => {
   if (!laboratoryList) return;
 
   try {
-    const response = await fetch(`data/laboratoires-kenitra.json?cache=20260716-01`);
+    const response = await fetch(`data/directory-index.json?cache=20261031-01`);
     if (!response.ok) throw new Error("Laboratory data unavailable");
     renderLaboratories(await response.json());
   } catch (error) {
