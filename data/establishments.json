@@ -480,6 +480,7 @@
       "name": "Clinique spécialisée Ibn Sina",
       "legacy_markup": {},
       "type": "clinic",
+      "aliases": ["Clinique d’oncologie Ibn Sina", "مصحة ابن سينا لطب الأورام"],
       "subtitle": "Oncologie",
       "city": "Kénitra",
       "address": "Boulevard du 2 Mars, Bir Rami Est, Kénitra",
