@@ -992,6 +992,7 @@ if (location.pathname.includes('/canva-home/')) {
 
   const call = document.createElement('a');
   call.className = 'home-mobile-call is-hidden';
+  call.setAttribute('role', 'region');
   call.href = 'tel:+212663058222';
   call.textContent = labels.call;
   call.setAttribute('aria-label', labels.call);
