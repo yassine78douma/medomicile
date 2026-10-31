@@ -875,7 +875,7 @@ if (location.pathname.includes('/canva-home/')) {
     const generalDirector = item.general_director && item.general_director_slug ? `<section class="establishment-affiliation"><p class="eyebrow">Direction générale</p><p><strong>${esc(item.general_director)}</strong></p><a href="medecin.html?slug=${encodeURIComponent(item.general_director_slug)}">Voir la fiche du directeur général →</a></section>` : '';
     const partnerLabs = Array.isArray(item.partner_laboratories) && item.partner_laboratories.length ? `<section class="establishment-affiliation"><p class="eyebrow">Laboratoires partenaires</p><p><strong>Les bilans de la Clinique Internationale sont traités 24h/24, 7j/7.</strong></p><p>Les horaires d’accueil de chaque laboratoire restent ceux indiqués dans l’annuaire.</p><div class="establishment-partner-list">${item.partner_laboratories.map((lab) => `<a href="laboratoire.html?slug=${encodeURIComponent(lab.slug)}">${esc(lab.name)} →</a>`).join('')}</div></section>` : '';
     const media = item.slug === 'clinique-internationale-de-kenitra'
-      ? `<div class="establishment-media establishment-video-media"><video controls autoplay muted loop playsinline preload="metadata" poster="${esc(item.photo || '')}" aria-label="Présentation vidéo de ${esc(item.name)}"><source src="/assets/clinique-internationale-kenitra.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video><div class="establishment-video-actions"><button type="button" data-video-play aria-label="Lire ou mettre en pause la vidéo">Lecture</button><button type="button" data-video-fullscreen aria-label="Agrandir la vidéo">Agrandir</button></div></div>`
+      ? `<div class="establishment-media establishment-video-media"><video controls autoplay muted loop playsinline preload="metadata" poster="${esc(item.photo || '')}" aria-label="Présentation vidéo de ${esc(item.name)}"><source src="/assets/clinique-internationale-kenitra.mp4" type="video/mp4">Votre navigateur ne prend pas en charge la lecture vidéo.</video></div>`
       : item.photo ? `<div class="establishment-media"><img src="${esc(item.photo)}" alt="${esc(item.name)}"></div>` : '';
     const related = all.filter((other) => other.slug !== item.slug).slice(0, 3).map((other) => `<a class="establishment-related-card" href="etablissement.html?slug=${encodeURIComponent(other.slug)}"><span>${esc(other.type === 'hospital' ? 'Hôpital' : 'Clinique')}</span><strong>${esc(other.name)}</strong><small>${esc(other.city || 'Kénitra')}</small></a>`).join('');
     const phoneHref = item.phone ? `tel:${String(item.phone).replace(/[^0-9+]/g, '')}` : '';
@@ -1065,17 +1065,3 @@ if (location.pathname.includes('/canva-home/')) {
   };
   Promise.all([loadForDate(moroccoToday()), fetch('/data/directory-index.json').catch(() => fetch('../data/directory-index.json')).then((r) => r.ok ? r.json() : ({ pharmacies: [] })).catch(() => ({ pharmacies: [] }))]).then(([data, directoryData]) => { if (!data) { const unavailable = english ? 'The available duty information does not cover today.' : russian ? 'Доступная информация о дежурстве не охватывает сегодняшний день.' : 'Aucune période disponible ne couvre la date actuelle.'; if (meta) meta.textContent = english ? 'No current duty period available.' : russian ? 'Нет доступного периода дежурства на сегодня.' : 'Aucune période disponible ne couvre la date actuelle.'; if (status) status.textContent = unavailable; results.innerHTML = `<div class="pharmacy-empty"><strong>${unavailable}</strong><a href="pharmacies.html">${english ? 'View pharmacies' : russian ? 'Посмотреть аптеки' : 'Voir toutes les pharmacies'}</a></div>`; return; } render(data, directoryData.pharmacies || []); }).catch(() => { if (status) status.textContent = english ? 'On-call pharmacy information is temporarily unavailable.' : russian ? 'Информация о дежурных аптеках временно недоступна.' : 'Les informations de garde ne sont pas disponibles pour le moment.'; });
 })();
-document.addEventListener('click', (event) => {
-  const play = event.target.closest('[data-video-play]');
-  const fullscreen = event.target.closest('[data-video-fullscreen]');
-  const video = event.target.closest('.establishment-video-media')?.querySelector('video');
-  if (!video) return;
-  if (play) {
-    if (video.paused) video.play(); else video.pause();
-    play.textContent = video.paused ? 'Lecture' : 'Pause';
-  }
-  if (fullscreen) {
-    if (document.fullscreenElement) document.exitFullscreen();
-    else if (video.requestFullscreen) video.requestFullscreen();
-  }
-});
