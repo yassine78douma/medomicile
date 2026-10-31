@@ -1204,6 +1204,13 @@ html[dir="rtl"] .clinic-actions { justify-content: flex-start; }
   #clinic-empty, #doctor-empty, #pharmacy-empty, #lab-empty, #radiology-empty, #dialysis-empty { min-height: 180px; margin-top: 22px; padding: 24px 18px; }
 }
 
+/* Final contrast overrides for dynamically rendered directory metadata. */
+.lab-card .lab-detail,
+.lab-card .lab-hours,
+.radiology-card .radiology-detail { color: #405a75; }
+.labs-hero [aria-hidden="true"],
+.radiology-hero [aria-hidden="true"] { color: #405a75; }
+
 @media (max-width: 900px) {
   .hero,
   .ambulance-hero,
