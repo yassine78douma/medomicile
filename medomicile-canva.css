@@ -155,6 +155,11 @@ html[lang="ru"] .hero h1 { color: var(--md-ink); }
 html[lang="ru"] .hero .hero-subtitle { color: #4c637c; }
 html[lang="ru"] .clinic-tags span { color: #4b6178; }
 html[lang="ru"] .clinic-category-strip a.is-active span { color: #fff; opacity: 1; }
+
+/* Keep directory metadata above WCAG AA contrast on white result cards. */
+.lab-detail,
+.lab-hours,
+.radiology-detail { color: #4c637c; }
 html[lang="en"] .urgent-section .service-grid { margin-top: 28px; }
 html[lang="en"] .urgent-section .service-grid article { min-height: 150px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--md-line); border-radius: 16px; background: #fff; box-shadow: 0 8px 18px rgba(0,54,121,.05); }
 html[lang="en"] .urgent-section .service-grid article strong { color: var(--md-navy); }
