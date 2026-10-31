@@ -116,7 +116,7 @@
     },
     {
       "page": "hopitaux-en.html",
-      "name": "Akdital International Hospital - Kenitra",
+      "name": "Hôpital International de Kénitra",
       "field": "maps",
       "html": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
       "canonical": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI"
@@ -130,7 +130,7 @@
     },
     {
       "page": "hopitaux.html",
-      "name": "Akdital International Hospital - Kenitra",
+      "name": "Hôpital International de Kénitra",
       "field": "maps",
       "html": "https://www.google.com/maps/dir/?api=1&destination=Akdital%20International%20Hospital%20Kenitra",
       "canonical": "https://www.google.com/maps/search/?api=1&query=H%C3%B4pital+International+de+K%C3%A9nitra+Avenue+Mohammed+VI"
