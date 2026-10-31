@@ -46,4 +46,6 @@ jobs:
           uploadArtifacts: true
           temporaryPublicStorage: true
       - name: Run axe
+        run: npx --yes browser-driver-manager install chrome
+      - name: Run axe audit
         run: npx --yes @axe-core/cli "https://medomicile.com${{ matrix.page }}?scheduled-audit=${{ github.run_id }}" --exit
