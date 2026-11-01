@@ -24,6 +24,37 @@ if (!window.__medomicileAnalyticsLoaded) {
   }
 })();
 
+// Keep the Russian shell self-contained: legacy templates still contain a few
+// root-language links and shared French labels.
+(() => {
+  if (document.documentElement.lang !== 'ru') return;
+  const links = {
+    '/consultation.html': '/ru/consultation.html',
+    '/ambulance.html': '/ru/ambulance.html',
+    '/urgences.html': '/ru/urgences.html',
+    '/annuaire.html': '/ru/annuaire.html',
+    '/contact.html': '/ru/contact.html',
+    '/laboratoires.html': '/ru/laboratories.html',
+    '/radiologie.html': '/ru/radiology.html',
+    '/pharmacies-garde.html': '/ru/on-call-pharmacies.html'
+  };
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const target = links[link.getAttribute('href')];
+    if (target) link.setAttribute('href', target);
+  });
+  const replacements = new Map([
+    ['Services', 'Услуги'], ['Contact professionnel', 'Контакты для связи'],
+    ['Explorer', 'Навигация'], ['Langues', 'Язык'], ['Appeler', 'Позвонить'],
+    ['Orientation santé', 'Медицинская помощь'], ['Quartier', 'Район'],
+    ['Français', 'Французский'], ['English', 'Английский'], ['E-mail', 'Электронная почта'],
+    ['Mobile', 'Мобильный'], ['Fixe', 'Городской']
+  ]);
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach((node) => { if (replacements.has(node.nodeValue.trim())) node.nodeValue = node.nodeValue.replace(node.nodeValue.trim(), replacements.get(node.nodeValue.trim())); });
+})();
+
 // Add a clear first action to directory pages whose main task starts with a call.
 (() => {
   const path = location.pathname;
