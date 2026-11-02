@@ -839,6 +839,8 @@ html[lang="ar"] .text-link { font-size: max(0.86rem, 14px); }
 html[lang="ar"] .section-kicker,
 html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
 
+.service-section .hero-actions { margin-top: 46px; }
+
 /* Keep elevation purposeful: borders define cards, shadows are reserved for key surfaces. */
 .steps-grid article { border-top: 1px solid var(--md-line); }
 .emergency { border-left: 1px solid var(--md-gold); }
