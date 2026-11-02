@@ -1387,3 +1387,49 @@ html[lang="ru"] { --md-muted: #52677e; }
 .establishment-affiliation a { color: var(--md-blue); font-weight: 800; }
 .establishment-partner-list { display: grid; gap: 8px; margin-top: 14px; }
 .establishment-partner-list a { padding: 11px 13px; border: 1px solid #d5e4ef; border-radius: 10px; color: var(--md-navy); background: #f7fbfe; }
+
+/* Shared accessibility and hierarchy refinement for secondary directories. */
+:root { --md-muted: #4f6680; }
+.clinic-card,
+.service-section .service-grid article,
+.directory-context a,
+.establishment-related-card,
+.establishment-list span,
+.review-grid article,
+.primary-card,
+.service-grid a { box-shadow: none; }
+.steps-grid article { border-top: 1px solid var(--md-line); border-right: 0; border-bottom: 0; border-left: 0; }
+.emergency { border: 1px solid #ead9ad; border-left-width: 1px; }
+.eyebrow,
+.section-kicker { margin-bottom: 10px; font-size: .72rem; color: #0753b5; }
+.footer-grid p,
+.footer-grid a,
+.clinic-actions a,
+.clinic-type,
+.clinic-location strong,
+.clinic-phone strong,
+.clinic-tags span,
+.directory-context span { font-size: .72rem; }
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .section-kicker { color: #0753b5; font-size: .78rem; letter-spacing: 0; }
+html[lang="ar"] body { line-height: 1.65; }
+html[lang="ar"] .clinic-card,
+html[lang="ar"] .service-section .service-grid article,
+html[lang="ar"] .directory-context a,
+html[lang="ar"] .establishment-related-card { font-size: .9rem; }
+html[lang="ar"] .clinic-subtitle,
+html[lang="ar"] .clinic-location,
+html[lang="ar"] .clinic-phone,
+html[lang="ar"] .clinic-tags span,
+html[lang="ar"] .directory-context span { font-size: .78rem; }
+@media (max-width: 900px) {
+  .clinic-actions a,
+  .directory-context span,
+  .footer-grid p,
+  .footer-grid a { font-size: .78rem; }
+  html[lang="ar"] .clinic-actions a,
+  html[lang="ar"] .directory-context span,
+  html[lang="ar"] .footer-grid p,
+  html[lang="ar"] .footer-grid a { font-size: .84rem; }
+  html[lang="ar"] .bottom-nav small { font-size: .7rem; }
+}
