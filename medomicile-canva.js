@@ -1098,8 +1098,10 @@ if (location.pathname.includes('/canva-home/')) {
   const dateInPeriod = (value, file) => { const parts = file.split('-').map(Number); const year = parts[0], month = parts[1], start = parts[2], endMonth = parts.length === 5 ? parts[3] : month, end = parts.length === 5 ? parts[4] : start; const date = new Date(`${value}T12:00:00`), from = new Date(year, month - 1, start, 12), to = new Date(year, endMonth - 1, end, 12); return date >= from && date <= to; };
   const moroccoToday = () => { const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Casablanca', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).reduce((o, p) => (o[p.type] = p.value, o), {}); return `${parts.year}-${parts.month}-${parts.day}`; };
   const loadForDate = async (date) => {
-    const monthly = await fetch('/data/pharmacies-garde-2026-10-v2.json?v=20261031').catch(() => fetch('../data/pharmacies-garde-2026-10-v2.json?v=20261031'));
-    if (monthly.ok && (date.startsWith('2026-10') || date === '2026-11-01')) {
+    const isNovemberUpdate = date >= '2026-11-02' && date <= '2026-11-06';
+    const sourceFile = isNovemberUpdate ? 'pharmacies-garde-2026-11-02-06.json?v=20261102' : 'pharmacies-garde-2026-10-v2.json?v=20261031';
+    const monthly = await fetch(`/data/${sourceFile}`).catch(() => fetch(`../data/${sourceFile}`));
+    if (monthly.ok && (isNovemberUpdate || date.startsWith('2026-10') || date === '2026-11-01')) {
       const data = await monthly.json();
       const current = new Date(`${date}T12:00:00`);
       const activeToday = (p) => new Date(`${p.from}T12:00:00`) <= current && new Date(`${p.to || p.from}T12:00:00`) >= current;

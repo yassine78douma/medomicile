@@ -1,0 +1,21 @@
+{
+  "source": "Affiche officielle du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
+  "updatedAt": "2026-11-02T12:00:00+01:00",
+  "month": "2026-11",
+  "displayDate": "Novembre 2026",
+  "note": "Garde de nuit 24h/24 du 2 au 6 novembre 2026. Appelez toujours avant de vous déplacer.",
+  "noteAr": "حراسة ليلية 24 ساعة/24 من 2 إلى 6 نونبر 2026. يرجى الاتصال قبل التنقل.",
+  "duty": {
+    "day": [],
+    "night": [
+      {"id":"pharmacie-al-maghrib-2026-11-02","name":"Pharmacie Al Maghrib","nameAr":"صيدلية المغرب","phone":"05 37 38 15 25","district":"Saknia","address":"Groupe Al Fath n°1, devant la mosquée Sahraoua, derrière Larak, Saknia","addressAr":"مجموعة الفتح رقم 1، أمام مسجد صحراوة، وراء لاراك، الساكنية","from":"2026-11-02","to":"2026-11-02","hours":"Garde de nuit 24h/24 - 2 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 2 نونبر 2026"},
+      {"id":"pharmacie-al-firdaws-2026-11-02","name":"Pharmacie Al Firdaws","nameAr":"صيدلية الفردوس","phone":"05 37 35 12 11","district":"Ouled Oujih","address":"Bloc 171, Ouled Oujih, avenue principale, en face du Crédit Agricole, près de la mosquée Al Huda","addressAr":"بلوك 171، أولاد أوجيه، الشارع الرئيسي، مقابل القرض الفلاحي، قرب مسجد الهدى","from":"2026-11-02","to":"2026-11-02","hours":"Garde de nuit 24h/24 - 2 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 2 نونبر 2026"},
+      {"id":"pharmacie-hay-meriem-2026-11-03","name":"Pharmacie Hay Meriem","nameAr":"صيدلية حي مريم","phone":"05 37 39 24 42","district":"Hay Meriem","address":"N°411, Hay Lalla Meriem, près de l’oued Hamadi","addressAr":"رقم 411، حي للا مريم، قرب حمادي","from":"2026-11-03","to":"2026-11-03","hours":"Garde de nuit 24h/24 - 3 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 3 نونبر 2026"},
+      {"id":"pharmacie-sanaa-2026-11-03","name":"Pharmacie Sanaa","nameAr":"صيدلية سناء","phone":"05 37 35 56 55","district":"El Haouzia","address":"Bloc L, El Haouzia, près du hammam Berkakat, en face du cimetière","addressAr":"بلوك L، الحوزية، قرب حمام بركات، أمام المقبرة","from":"2026-11-03","to":"2026-11-03","hours":"Garde de nuit 24h/24 - 3 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 3 نونبر 2026"},
+      {"id":"pharmacie-ourida-2026-11-04","name":"Pharmacie Ourida","nameAr":"صيدلية أوريدة","phone":"05 37 38 34 67","district":"Groupe Ourida","address":"Groupe Ourida 91, fin de la route 13","addressAr":"مجموعة أوريدة 91، نهاية الحافة 13","from":"2026-11-04","to":"2026-11-04","hours":"Garde de nuit 24h/24 - 4 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 4 نونبر 2026"},
+      {"id":"pharmacie-somaa-2026-11-04","name":"Pharmacie Somaa","nameAr":"صيدلية الصومعة","phone":"05 37 35 75 40","district":"Kénitra","address":"Près du souk Essalam, derrière la mosquée Mohammed VI","addressAr":"قرب أسواق السلام، خلف مسجد محمد السادس","from":"2026-11-04","to":"2026-11-04","hours":"Garde de nuit 24h/24 - 4 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 4 نونبر 2026"},
+      {"id":"pharmacie-rida-2026-11-05","name":"Pharmacie Rida","nameAr":"صيدلية الرضى","phone":"05 37 39 20 42","district":"Saknia","address":"Groupe 96 n°2, bloc 1, Saknia, près du hammam Al Fath, derrière le lycée Ibn Nafis","addressAr":"مجموعة 96 رقم 2، بلوك 1، الساكنية، قرب حمام الفتح، وراء إعدادية ابن نافـع","from":"2026-11-05","to":"2026-11-05","hours":"Garde de nuit 24h/24 - 5 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 5 نونبر 2026"},
+      {"id":"pharmacie-mohamed-2026-11-05","name":"Pharmacie Mohamed","nameAr":"صيدلية محمد","phone":"05 37 37 35 73","district":"Ville Nouvelle","address":"2, rue Ibn Al Banna, près de la mosquée Lakh... et de la direction des impôts","addressAr":"2، زنقة ابن البنا، قرب مسجد للا خديجة، قرب مديرية الضرائب","from":"2026-11-05","to":"2026-11-05","hours":"Garde de nuit 24h/24 - 5 novembre 2026","hoursAr":"حراسة ليلية 24 ساعة/24 - 5 نونبر 2026"}
+    ]
+  }
+}
