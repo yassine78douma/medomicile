@@ -841,6 +841,10 @@ html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
 
 .service-section .hero-actions { margin-top: 46px; }
 
+.urgent-section .button-blue { background: #f20819; border-color: #f20819; }
+.urgent-section .button-blue:hover,
+.urgent-section .button-blue:focus-visible { background: #c90718; border-color: #c90718; }
+
 /* Keep elevation purposeful: borders define cards, shadows are reserved for key surfaces. */
 .steps-grid article { border-top: 1px solid var(--md-line); }
 .emergency { border-left: 1px solid var(--md-gold); }
