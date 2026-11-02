@@ -823,6 +823,38 @@ html[dir="rtl"] .clinic-actions { justify-content: flex-start; }
 .article-grid { margin-top: 42px; gap: 18px; }
 .article-card { min-height: 258px; padding: 28px; border-radius: 20px; box-shadow: 0 14px 34px rgba(0,54,121,.09); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
 .article-card:hover { transform: translateY(-3px); border-color: #a9c8df; box-shadow: 0 20px 40px rgba(0,54,121,.14); }
+
+/* Arabic readability and calmer elevation on small screens. */
+html[lang="ar"] body { font-size: 1rem; }
+html[lang="ar"] p,
+html[lang="ar"] li,
+html[lang="ar"] small,
+html[lang="ar"] label,
+html[lang="ar"] .footer-grid a,
+html[lang="ar"] .footer-grid p { font-size: max(0.92rem, 15px); line-height: 1.85; }
+html[lang="ar"] .button,
+html[lang="ar"] .contact-actions a,
+html[lang="ar"] .service-grid span,
+html[lang="ar"] .text-link { font-size: max(0.86rem, 14px); }
+html[lang="ar"] .section-kicker,
+html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
+
+/* Keep elevation purposeful: borders define cards, shadows are reserved for key surfaces. */
+.steps-grid article { border-top: 1px solid var(--md-line); }
+.emergency { border-left: 1px solid var(--md-gold); }
+.article-card,
+.shortcut,
+.review-list a,
+.service-grid a,
+.directory-grid a,
+.doctor-card,
+.pharmacy-directory-card,
+.urgent-quick-grid a { box-shadow: none; }
+@media (max-width: 900px) {
+  .steps-grid article { border-top-width: 1px; }
+  html[lang="ar"] .mobile-menu a,
+  html[lang="ar"] .bottom-nav small { font-size: 0.86rem; }
+}
 .article-card small { color: var(--md-blue); font-size: .68rem; font-weight: 800; letter-spacing: .08em; }
 .article-card strong { font-size: clamp(1.45rem, 2.2vw, 1.9rem); }
 .article-card p { max-width: 32ch; margin: 16px 0; }
