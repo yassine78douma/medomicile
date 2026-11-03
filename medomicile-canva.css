@@ -575,6 +575,8 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .service-grid > article::before { display: block; color: #e7f2f8; font-family: "DM Serif Display", Georgia, serif; font-size: 2.5rem; line-height: .7; text-align: right; }
 .service-grid > article:nth-child(1)::before { content: "01"; }.service-grid > article:nth-child(2)::before { content: "02"; }.service-grid > article:nth-child(3)::before { content: "03"; }.service-grid > article:nth-child(4)::before { content: "04"; }.service-grid > article:nth-child(5)::before { content: "05"; }.service-grid > article:nth-child(6)::before { content: "06"; }
 .service-grid .service-featured::before { color: rgba(255,255,255,.18); }
+.service-section .service-grid article.service-clickable { padding: 0; overflow: hidden; }
+.service-section .service-grid article.service-clickable > .service-card-link { padding: 22px; }
 .service-section .service-grid article.service-featured { padding: 0; overflow: hidden; }
 .service-section .service-grid article.service-featured > .service-card-link { min-height: 150px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; color: var(--md-white); background: var(--md-blue); text-decoration: none; }
 .service-section .service-grid article.service-featured > .service-card-link strong { color: var(--md-white); }
