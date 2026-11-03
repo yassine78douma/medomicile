@@ -24,6 +24,17 @@ if (!window.__medomicileAnalyticsLoaded) {
   }
 })();
 
+(() => {
+  if (!document.querySelector('.paramedical-category-grid')) return;
+  const card = document.querySelector('.paramedical-category-grid a:nth-child(4)');
+  if (!card) return;
+  card.classList.add('vynce-card');
+  card.href = 'https://vynce.app';
+  card.target = '_blank';
+  card.rel = 'noopener noreferrer';
+  card.innerHTML = '<span>04</span><strong>Vynce</strong><small>Marketplace marocaine de matériel médical et paramédical. Elle permet aux patients et aux professionnels d’acheter, vendre ou louer des équipements — lits, oxygène, fauteuils — à prix accessibles, avec une vérification biomédicale.</small><small class="vynce-link-label">Visiter vynce.app →</small>';
+})();
+
 // Keep the Russian shell self-contained: legacy templates still contain a few
 // root-language links and shared French labels.
 (() => {
