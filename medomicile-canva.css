@@ -1506,3 +1506,20 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
 .paramedical-category-grid a.vynce-card { min-height: 178px; }
 .paramedical-category-grid a.vynce-card small { display: block; max-width: 48ch; line-height: 1.45; }
 .paramedical-category-grid a.vynce-card .vynce-link-label { margin-top: 12px; color: var(--md-blue); font-weight: 700; }
+
+/* Paramédical directory: keep the page aligned with the shared directory shell. */
+.ml-page { padding: 112px 20px 96px; background: var(--md-pale); }
+.ml-page > .content-width { max-width: var(--md-content); margin: 0 auto; }
+.ml-page .ml-copy { max-width: 72ch; color: var(--md-muted); line-height: 1.65; }
+.ml-page .paramedical-category-grid { margin-top: 28px; margin-bottom: 0; }
+.ml-page .paramedical-category-grid > a { min-height: 178px; }
+.ml-page .ml-actions { margin-top: 34px; padding-top: 2px; display: flex; flex-wrap: wrap; gap: 12px; }
+.ml-page .ml-actions > a { min-width: 220px; min-height: 86px; padding: 18px 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; border: 1px solid var(--md-line); border-radius: 14px; color: var(--md-navy); background: #fff; box-shadow: 0 7px 17px rgba(0,54,121,.06); font-weight: 800; line-height: 1.35; text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.ml-page .ml-actions > a:hover { transform: translateY(-2px); border-color: #9bc9f6; box-shadow: 0 10px 22px rgba(0,54,121,.1); }
+.ml-page .ml-actions > a span { color: var(--md-blue); font-size: .78rem; font-weight: 700; }
+.ml-page + .bottom-nav + .site-footer { margin-top: 0; }
+@media (max-width: 700px) {
+  .ml-page { padding: 96px 20px 84px; }
+  .ml-page .ml-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .ml-page .ml-actions > a { min-width: 0; min-height: 72px; }
+}
