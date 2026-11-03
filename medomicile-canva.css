@@ -1498,3 +1498,6 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
 .service-section .service-grid article.service-featured > .service-card-link { min-height: 150px !important; color: #fff !important; background: #1264e8 !important; }
 .service-section .service-grid article.service-featured > .service-card-link strong { color: #fff !important; }
 .service-section .service-grid article.service-featured > .service-card-link small { color: #e4f1ff !important; }
+.service-section .service-grid article.service-featured { min-height: 178px !important; padding: 0 !important; border: 0 !important; border-radius: 14px !important; background: transparent !important; box-shadow: none !important; }
+.service-section .service-grid article.service-featured::before { display: none !important; }
+.service-section .service-grid article.service-featured > .service-card-link { min-height: 178px !important; height: 100% !important; padding: 22px !important; border: 1px solid #66b5ff !important; border-radius: 14px !important; box-shadow: 0 7px 17px rgba(0,54,121,.12) !important; }
