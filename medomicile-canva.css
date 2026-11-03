@@ -1484,6 +1484,13 @@ html[lang="ar"] .directory-context span { font-size: .78rem; }
 .duty-card-head b.duty-live-badge { background: #f20819; }
 .pharmacies-page .pharmacy-toolbar { display: none; }
 .pharmacies-page .duty-cta-strip a { color: #f20819; }
+.pharmacy-zone-group { margin-top: 34px; }
+.pharmacy-zone-group h3 { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin: 0; padding: 0 0 12px; color: var(--md-navy); font-size: 1.2rem; }
+.pharmacy-zone-group h3 span { color: var(--md-blue); font-size: .72rem; }
+.pharmacy-group-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.pharmacy-zone-group + .pharmacy-zone-group { border-top: 1px solid var(--md-line); padding-top: 30px; }
+html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
+@media (max-width: 900px) { .pharmacy-group-grid { grid-template-columns: 1fr; } }
 .service-section .service-grid article.service-featured { color: #fff; border-color: var(--md-blue); background: var(--md-blue); }
 .service-section .service-grid article.service-featured strong { color: #fff; }
 .service-section .service-grid article.service-featured small { color: #dcecff; }
