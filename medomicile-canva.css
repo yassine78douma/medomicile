@@ -1483,6 +1483,7 @@ html[lang="ar"] .directory-context span { font-size: .78rem; }
 }
 .duty-card-head b.duty-live-badge { background: #f20819; }
 .pharmacies-page .pharmacy-toolbar { display: none; }
+.pharmacies-page .duty-cta-strip a { color: #f20819; }
 .service-section .service-grid article.service-featured { color: #fff; border-color: var(--md-blue); background: var(--md-blue); }
 .service-section .service-grid article.service-featured strong { color: #fff; }
 .service-section .service-grid article.service-featured small { color: #dcecff; }
