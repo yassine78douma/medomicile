@@ -1482,3 +1482,6 @@ html[lang="ar"] .directory-context span { font-size: .78rem; }
   html[lang="ar"] .bottom-nav small { font-size: .7rem; }
 }
 .duty-card-head b.duty-live-badge { background: #f20819; }
+.service-section .service-grid article.service-featured { color: #fff; border-color: var(--md-blue); background: var(--md-blue); }
+.service-section .service-grid article.service-featured strong { color: #fff; }
+.service-section .service-grid article.service-featured small { color: #dcecff; }
