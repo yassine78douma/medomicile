@@ -6,11 +6,11 @@
     "clinic": 12,
     "dialysis_center": 12,
     "radiology_center": 14,
-    "laboratory": 17,
+    "laboratory": 31,
     "pharmacy": 103
   },
-  "total": 555,
-  "indexable": 309,
+  "total": 569,
+  "indexable": 324,
   "invalid_phones": [
     {
       "name": "Dr Ftouhi Abdellatif",
@@ -66,6 +66,14 @@
       "source": "doctors.json",
       "values": [
         "702089760"
+      ]
+    },
+    {
+      "name": "Laboratoire Ibn Sina d’Analyses Médicales",
+      "source": "laboratoires-kenitra.json",
+      "values": [
+        "05 37 32 79 29 (CPB Maroc)",
+        "05 37 32 79 24 (Medomicile, à confirmer)"
       ]
     }
   ]
