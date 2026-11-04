@@ -24,10 +24,10 @@ jobs:
           - /en/consultation.html
           - /ru/consultation.html
           - /etablissements-urgences.html
-          - /en/emergency-facilities.html
-          - /ru/emergency-facilities.html
+          - /en/emergencies.html
+          - /ru/emergencies.html
           - /pharmacies-garde.html
-          - /en/on-call-pharmacies.html
+          - /en/pharmacies-garde.html
           - /ru/on-call-pharmacies.html
           - /laboratoires.html
           - /en/laboratories.html
