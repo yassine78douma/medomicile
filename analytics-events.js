@@ -1,4 +1,21 @@
 (() => {
+  if (window.__medomicileAnalyticsEventsLoaded) return;
+  window.__medomicileAnalyticsEventsLoaded = true;
+
+  const measurementId = 'G-LKJ67V4941';
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  const gaScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`);
+  if (!window.__medomicileGa4Configured && !gaScript) {
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.append(script);
+  }
+  window.__medomicileGa4Configured = measurementId;
+
   const send = (eventName, link) => {
     const event = {
       event: 'medomicile_contact',

@@ -40,10 +40,18 @@ Créer également les règles suivantes dans **Rules → Redirect Rules**. Pour 
 | Ancienne URL | Destination |
 |---|---|
 | `/services.html` | `/consultation.html` |
+| `/emergency-facilities.html` | `/etablissements-urgences.html` |
+| `/on-call-pharmacies.html` | `/pharmacies-garde.html` |
+| `/en/etablissements-urgences.html` | `/en/emergency-facilities.html` |
+| `/en/pharmacies-garde.html` | `/en/on-call-pharmacies.html` |
+| `/en/urgences.html` | `/en/emergencies.html` |
 | `/medecins-kenitra.html` | `/medecins.html` |
 | `/pharmacies-kenitra.html` | `/pharmacies.html` |
 | `/neurologues-kenitra-ar.html` | `/ar/medecins.html` |
 | `/contact-en.html` | `/contact.html` |
+| `/ar/index.html` | `/ar/` |
+| `/en/index.html` | `/en/` |
+| `/ru/index.html` | `/ru/` |
 | `/brulures-premiers-gestes.html` | `/articles/brulures-premiers-gestes.html` |
 | `/antibiotiques-infections-bon-usage.html` | `/articles/antibiotiques-infections-bon-usage.html` |
 | `/hypoglycemie-reconnaitre-signes-agir.html` | `/articles/hypoglycemie-reconnaitre-signes-agir.html` |

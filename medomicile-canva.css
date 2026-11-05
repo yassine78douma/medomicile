@@ -575,6 +575,56 @@ html[dir="rtl"] .site-footer { direction: rtl; text-align: right; }
 .service-grid > article::before { display: block; color: #e7f2f8; font-family: "DM Serif Display", Georgia, serif; font-size: 2.5rem; line-height: .7; text-align: right; }
 .service-grid > article:nth-child(1)::before { content: "01"; }.service-grid > article:nth-child(2)::before { content: "02"; }.service-grid > article:nth-child(3)::before { content: "03"; }.service-grid > article:nth-child(4)::before { content: "04"; }.service-grid > article:nth-child(5)::before { content: "05"; }.service-grid > article:nth-child(6)::before { content: "06"; }
 .service-grid .service-featured::before { color: rgba(255,255,255,.18); }
+.service-section .service-grid > article { position: relative; }
+.service-section .service-grid > article::before { position: absolute; top: 14px; right: 18px; z-index: 2; }
+.service-section .service-grid > article > .service-card-link { position: relative; z-index: 1; }
+
+/* Keep the hero information card readable when its content wraps. */
+.consultation-page .hero-media { overflow: visible; }
+.consultation-page .hero-media > .consultation-card {
+  box-sizing: border-box;
+  z-index: 3;
+  max-width: calc(100% - 16px);
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  overflow-wrap: anywhere;
+}
+
+/* Shared footer baseline across public pages. */
+.site-footer { background: #032b61; color: #fff; }
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 32px;
+}
+.site-footer a { color: inherit; }
+@media (max-width: 700px) {
+  .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+}
+
+/* Keep the hero information card readable when its content wraps. */
+.consultation-page .hero-media { overflow: visible; }
+.consultation-page .hero-media > .consultation-card {
+  box-sizing: border-box;
+  z-index: 3;
+  max-width: calc(100% - 16px);
+  height: auto;
+  min-height: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Shared footer baseline across public pages. */
+.site-footer { background: #032b61; color: #fff; }
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 32px;
+}
+.site-footer a { color: inherit; }
+@media (max-width: 700px) {
+  .site-footer .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px 20px; }
+}
 .service-section .service-grid article.service-clickable { padding: 0; overflow: hidden; }
 .service-section .service-grid article.service-clickable > .service-card-link { min-height: 150px; padding: 22px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .service-section .service-grid article.service-featured { padding: 0; overflow: hidden; }
@@ -1531,3 +1581,33 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
   .ml-page .ml-actions { display: grid; grid-template-columns: 1fr; gap: 10px; }
   .ml-page .ml-actions > a { min-width: 0; min-height: 72px; }
 }
+
+/* Shared accessibility baseline for the public Canva-style pages. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--md-token-focus, #1264e8) !important;
+  outline-offset: 3px !important;
+}
+:where(.button, .v19-btn, .hero-actions a, .service-actions a, .contact-actions a,
+  .doctor-actions a, .clinic-actions a, .pharmacy-actions a, .ml-actions a,
+  .directory-search button, .pharmacy-toolbar button) { min-height: 44px; }
+:where(.hero-actions, .service-actions, .contact-actions, .doctor-actions,
+  .clinic-actions, .pharmacy-actions, .ml-actions, .v19-result-actions) { gap: 12px; }
+@media (max-width: 480px) {
+  :where(html[lang="ar"], html[dir="rtl"]) :where(p, li, small, label, .mobile-menu a, .footer-grid a) {
+    font-size: max(16px, 1em);
+    line-height: 1.7;
+  }
+}
+
+/* Keep shared pages visually consistent without changing their content. */
+:where(.site-footer, .v19-footer) { padding-block: 52px 90px; }
+:where(.footer-grid, .v19-footer-grid) { align-items: start; }
+:where(.service-grid, .service-section .service-grid, .ambulance-service-grid) { gap: 16px; }
+:where(.service-grid > a, .service-section .service-grid > article, .ambulance-service-grid > article) {
+  border-radius: 18px;
+}
+:where(.button, .button-blue, .button-white, .button-red, .button-green,
+  .hero-actions a, .contact-actions a, .service-actions a, .doctor-actions a,
+  .clinic-actions a, .pharmacy-actions a, .ml-actions a) { border-radius: 13px; }
+:where(.hero-actions, .contact-actions, .service-actions, .doctor-actions,
+  .clinic-actions, .pharmacy-actions, .ml-actions, .v19-result-actions) { margin-top: 24px; }

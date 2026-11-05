@@ -231,3 +231,12 @@ body:has(.arabic-article) .arabic-article ul { padding-inline-start: 1.3rem; }
   .v19-candidate-contact { padding: 22px; }
   .v19-footer-grid { grid-template-columns: 1fr; gap: 26px; }
 }
+
+/* Shared accessibility baseline: visible keyboard focus and 44px controls. */
+.v19-shell :where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--md-token-focus, #1264e8) !important;
+  outline-offset: 3px;
+}
+.v19-result-actions { gap: 12px; }
+.v19-result-actions .v19-btn,
+.v19-btn--icon { min-height: 44px; }

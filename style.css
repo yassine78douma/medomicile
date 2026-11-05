@@ -8938,3 +8938,17 @@ body:has(.v19-hero) > main.v19-home > .v19-primary-entries { display: block; }
   body:has(.v19-hero) .v19-hero .v19-hero-actions { display: block; }
   body:has(.v19-hero) .v19-hero .v19-consultation-card { display: grid; }
 }
+
+/* Shared fallback for legacy and secondary public pages. Keep this last so legacy rules cannot hide focus. */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--md-token-focus, #1264e8) !important;
+  outline-offset: 3px !important;
+}
+:where(button, .button, .v19-btn, .v19-result-actions a, .v19-result-actions button) { min-height: 44px; }
+:where(.hero-actions, .service-actions, .contact-actions, .v19-result-actions) { gap: 12px; }
+@media (max-width: 480px) {
+  :where(html[lang="ar"], html[dir="rtl"]) :where(p, li, small, label, .mobile-menu a, .footer-grid a) {
+    font-size: max(16px, 1em);
+    line-height: 1.7;
+  }
+}

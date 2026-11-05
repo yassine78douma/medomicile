@@ -1,4 +1,4 @@
-if (!window.__medomicileAnalyticsLoaded) {
+if (!window.__medomicileAnalyticsLoaded && !window.__medomicileAnalyticsEventsLoaded) {
   window.__medomicileAnalyticsLoaded = true;
   const analyticsScript = document.createElement('script');
   analyticsScript.src = '/analytics-events.js?v=contact-events-v1';

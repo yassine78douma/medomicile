@@ -18,13 +18,20 @@
     if (emergencyRoot) emergencyRoot.innerHTML = (directory.establishments || []).filter((x) => x.emergency_available === true).map((x) => card(facilityNames[x.name] || x.name, x.phone, x.address, 'الطوارئ · 24 ساعة / 24')).join('');
     const directoryCenters = directory.centers || [];
     const directoryLabs = directory.laboratories || [];
-    const findDirectoryItem = (items, name) => items.find((item) => item.name === name || item.name.includes(name) || name.includes(item.name));
+    const normalize = (value) => String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/^laboratoire\s+/i, '').trim();
+    const findDirectoryItem = (items, name) => {
+      const query = normalize(name);
+      return items.find((item) => [item.name, item.shortName].some((value) => {
+        const candidate = normalize(value);
+        return candidate === query || candidate.includes(query) || query.includes(candidate);
+      }));
+    };
     const radioRoot = document.querySelector('#radiology-results .clinic-results');
-    if (radioRoot) radioRoot.innerHTML = (emergencyData.radiologie || []).map((x) => {
-      const item = findDirectoryItem(directoryCenters, x.name);
-      return card(radioNames[x.name] || item?.nameAr || x.name, item?.phone || x.phone, item?.address || x.address, 'خدمة الأشعة · 24 ساعة / 24');
+    if (radioRoot) radioRoot.innerHTML = directoryCenters.filter((item) => item.type === 'radiology_center' && item.open24h === true).map((item) => {
+      return card(item.nameAr || radioNames[item.name] || item.name, item.phone, item.address, 'خدمة الأشعة · 24 ساعة / 24');
     }).join('');
     const labRoot = document.querySelector('#labs-results')?.nextElementSibling;
+    // shortcut: directory-index has no emergency-lab flag, keep the validated emergency subset until the schema adds one.
     if (labRoot?.classList.contains('clinic-results')) labRoot.innerHTML = (emergencyData.laboratoires || []).map((x) => {
       const item = findDirectoryItem(directoryLabs, x.name.replace(/^Laboratoire\s+/i, ''));
       return card(labNames[x.name] || item?.nameAr || x.name, item?.phone || x.phone, item?.address || x.address, 'مختبر تحاليل طبية · 24 ساعة / 24');
