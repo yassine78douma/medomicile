@@ -4,7 +4,7 @@ Travail local, non publie. Ce document remplace le format SVG indique dans le pr
 
 ## References inspectees avant modification
 
-`centres-dialyse-kenitra.html`, `hopitaux.html` et `laboratoires-kenitra.html` utilisent `.directory-hero.page-hero`. Le fichier `laboratoires.html` n'existe pas dans ce projet.
+`dialyse.html`, `cliniques.html` et `laboratoires-kenitra.html` utilisent `.directory-hero.page-hero`. Le fichier `laboratoires.html` n'existe pas dans ce projet.
 
 `style.css` definit Manrope pour les titres, Inter pour le texte et Tajawal pour l'arabe. Les polices correspondantes sont maintenant chargees localement uniquement par le moteur PNG, avec leurs licences OFL. Le logo reste exactement `assets/brand/medomicile-logo.png`.
 

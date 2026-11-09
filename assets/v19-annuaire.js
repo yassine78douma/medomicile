@@ -11,7 +11,7 @@
     ['establishments', '/data/establishments.json', 'establishments']
   ];
   var labels = { doctors: 'Médecins', pharmacies: 'Pharmacies', garde: 'Pharmacies de garde', labs: 'Laboratoires', radiology: 'Radiologie', dialysis: 'Dialyse', establishments: 'Établissements' };
-  var routes = { doctors: '/medecins-kenitra.html', pharmacies: '/pharmacies-kenitra.html', garde: '/pharmacies-garde.html', labs: '/laboratoires-kenitra.html', radiology: '/radiologie-kenitra.html', dialysis: '/centres-dialyse-kenitra.html', establishments: '/hopitaux.html' };
+  var routes = { doctors: '/medecins-kenitra.html', pharmacies: '/pharmacies-kenitra.html', garde: '/pharmacies-garde.html', labs: '/laboratoires-kenitra.html', radiology: '/radiologie.html', dialysis: '/dialyse.html', establishments: '/cliniques.html' };
   var allTypes = sources.map(function (source) { return source[0]; });
   var state = { rows: [], category: 'all', query: '', limit: 30, loaded: {}, loading: {} };
   var root = document.querySelector('[data-v19-annuaire]');

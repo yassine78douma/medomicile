@@ -178,6 +178,9 @@ def prerender_pharmacies():
         text = path.read_text()
         cards = "".join(render_duty_card(pharmacy, lang) for pharmacy in data.get("duty", {}).get("night", []))
         opening = '<div class="pharmacy-list" data-pharmacy-duty-list="night">'
+        # The main pharmacy directory is client-rendered; only pre-render legacy duty containers.
+        if opening not in text:
+            continue
         replacement = f"{opening}{cards}</div>"
         text, count = re.subn(
             rf"{re.escape(opening)}[\s\S]*?(?=</section>)",

@@ -1611,3 +1611,18 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
   .clinic-actions a, .pharmacy-actions a, .ml-actions a) { border-radius: 13px; }
 :where(.hero-actions, .contact-actions, .service-actions, .doctor-actions,
   .clinic-actions, .pharmacy-actions, .ml-actions, .v19-result-actions) { margin-top: 24px; }
+.establishment-google-reviews {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(22, 92, 182, .18);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, .72);
+}
+
+.establishment-google-reviews h2 {
+  margin: .25rem 0 .65rem;
+}
+
+.establishment-google-reviews p:not(.eyebrow) {
+  max-width: 48rem;
+}

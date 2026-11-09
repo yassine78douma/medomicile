@@ -222,8 +222,8 @@ const newMedicalCabinets = [
     },
     href: {
       fr: "etablissements-urgences.html",
-      en: "hopitaux-en.html",
-      ar: "hopitaux-ar.html"
+      en: "en/hospitals.html",
+      ar: "ar/hospitals.html"
     },
     image: "assets/partners/clinical-international/exterieur-principal.avif"
   }

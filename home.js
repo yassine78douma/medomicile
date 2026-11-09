@@ -24,8 +24,8 @@
     const routes = [
       { terms: ["pharm", "garde", "صيد", "حراسة"], path: english ? "pharmacies-en.html" : arabic ? "pharmacies-ar.html" : "pharmacies.html", label: english ? "pharmacies" : arabic ? "الصيدليات" : "les pharmacies" },
       { terms: ["labor", "analyse", "مختبر", "تحاليل"], path: english ? "laboratories-kenitra.html" : arabic ? "laboratoires-kenitra-ar.html" : "laboratoires-kenitra.html", label: english ? "laboratories" : arabic ? "المختبرات" : "les laboratoires" },
-      { terms: ["radio", "imagerie", "أشعة", "radiolog"], path: english ? "radiology-kenitra.html" : arabic ? "radiologie-kenitra-ar.html" : "radiologie-kenitra.html", label: english ? "radiology" : arabic ? "الأشعة" : "la radiologie" },
-      { terms: ["hôpital", "hopital", "clinique", "hospital", "مستشفى", "مصحة"], path: english ? "hopitaux-en.html" : arabic ? "hopitaux-ar.html" : "hopitaux.html", label: english ? "hospitals and clinics" : arabic ? "المستشفيات والمصحات" : "les hôpitaux et cliniques" },
+      { terms: ["radio", "imagerie", "أشعة", "radiolog"], path: english ? "en/radiology.html" : arabic ? "ar/radiologie.html" : "radiologie.html", label: english ? "radiology" : arabic ? "الأشعة" : "la radiologie" },
+      { terms: ["hôpital", "hopital", "clinique", "hospital", "مستشفى", "مصحة"], path: english ? "en/hospitals.html" : arabic ? "ar/hospitals.html" : "cliniques.html", label: english ? "hospitals and clinics" : arabic ? "المستشفيات والمصحات" : "les hôpitaux et cliniques" },
       { terms: ["médecin", "medecin", "doctor", "طبيب", "أطباء"], path: english ? "medecins-kenitra-en.html" : "medecins-kenitra.html", label: english ? "doctors" : arabic ? "الأطباء" : "les médecins" },
       { terms: ["domicile", "ambulance", "soin", "home", "خدمة", "دار"], path: english ? "services-en.html" : arabic ? "services-ar.html" : "services.html", label: english ? "home care" : arabic ? "العلاج فالدار" : "les soins à domicile" }
     ];
