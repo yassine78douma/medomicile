@@ -16735,9 +16735,7 @@
     "qr": "/assets/cards/qr/e-clinique-internationale-de-kenitra.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [
-      "المصحة الدولية بالقنيطرة"
-    ],
+    "aliases": [],
     "invalid_phones": []
   },
   {
@@ -16829,9 +16827,7 @@
     "qr": "/assets/cards/qr/e-clinique-c-c-o-t-k.png",
     "indexable": true,
     "source": "establishments.json",
-    "aliases": [
-      "مصحة جراحة العظام والرضوض بالقنيطرة"
-    ],
+    "aliases": [],
     "invalid_phones": []
   },
   {
