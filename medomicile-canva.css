@@ -1623,6 +1623,44 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
   margin: .25rem 0 .65rem;
 }
 
+.google-review-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.google-review-score {
+  white-space: nowrap;
+  color: #b66d00;
+  font-weight: 800;
+}
+
+.google-review-list {
+  display: grid;
+  gap: .75rem;
+  margin: 1.25rem 0;
+}
+
+.google-review-list article {
+  padding: .9rem 1rem;
+  border-radius: .8rem;
+  background: rgba(255, 255, 255, .72);
+}
+
+.google-review-list article strong {
+  color: #b66d00;
+}
+
+.google-review-list p {
+  margin: .35rem 0 0;
+}
+
+.google-review-note {
+  font-size: .82rem;
+  opacity: .76;
+}
+
 .establishment-google-reviews p:not(.eyebrow) {
   max-width: 48rem;
 }

@@ -4,4 +4,3 @@ Disallow: /canva-home/
 Disallow: /v19-
 
 Sitemap: https://medomicile.com/sitemap.xml
-Sitemap: https://medomicile.com/sitemap-cards.xml
