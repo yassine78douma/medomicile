@@ -1,0 +1,22 @@
+{
+  "source": "Affiche officielle du Syndicat Régional des Pharmaciens d'Officine de la ville de Kénitra",
+  "updatedAt": "2026-11-08T09:00:00+01:00",
+  "activeDate": "6 novembre 2026",
+  "displayDate": "Vendredi 6 novembre 2026 — Fête de la Marche Verte",
+  "displayDateEn": "Friday, November 6, 2026 — Green March holiday",
+  "displayDateAr": "الجمعة 6 نونبر 2026 — ذكرى المسيرة الخضراء",
+  "title": "Pharmacies de garde à Kénitra - 6 novembre 2026",
+  "image": "assets/pharmacies/pharmacie-garde-kenitra-2026-11-06.jpeg",
+  "updateFrequency": "official-poster",
+  "note": "Garde 24h/24 du vendredi 6 novembre 2026. Appelez toujours la pharmacie avant de vous déplacer.",
+  "duty": {
+    "day": [],
+    "night": [
+      {"id":"pharmacie-iskan-chaabi","name":"Pharmacie Iskan Chaabi","nameEn":"Iskan Chaabi Pharmacy","nameAr":"صيدلية إسكان شعبي","phone":"05 37 37 15 83","district":"Ville Nouvelle","districtEn":"New Town","districtAr":"المدينة الجديدة","address":"Lot Darsalama, 32 Bloc H, au milieu du complexe populaire pour logements, près de la prison centrale","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Pharmacie+Iskan+Chaabi+Kenitra","hours":"Garde 24h/24 - 6 novembre 2026","hoursEn":"24/24 duty - November 6, 2026","hoursAr":"حراسة 24/24 - 6 نونبر 2026","services":[],"badge":"De garde","badgeEn":"On duty","badgeAr":"حراسة"},
+      {"id":"pharmacie-de-lecole","name":"Pharmacie de l'École","nameEn":"School Pharmacy","nameAr":"صيدلية المدرسة","phone":"05 37 35 02 76","district":"Ouled Oujih","districtEn":"Ouled Oujih","districtAr":"أولاد أوجيه","address":"Groupe A n°172, Ouled Oujih, près de la Banque Chaabi","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Pharmacie+de+l%27Ecole+Ouled+Oujih+Kenitra","hours":"Pharmacies de garde - 6 novembre 2026","hoursEn":"On-duty pharmacy - November 6, 2026","hoursAr":"صيدلية الحراسة - 6 نونبر 2026","services":[],"badge":"De garde","badgeEn":"On duty","badgeAr":"حراسة"},
+      {"id":"pharmacie-ennassr","name":"Pharmacie Ennassr","nameEn":"Ennassr Pharmacy","nameAr":"صيدلية النصر","phone":"06 59 79 90 24 / 05 37 38 79 00","district":"Medina","districtEn":"Medina","districtAr":"المدينة","address":"Boulevard Mohammed V, route de Tanger, à côté de la rôtisserie El Mizan","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Pharmacie+Ennassr+Kenitra","hours":"Pharmacies de garde - 6 novembre 2026","hoursEn":"On-duty pharmacy - November 6, 2026","hoursAr":"صيدلية الحراسة - 6 نونبر 2026","services":[],"badge":"De garde","badgeEn":"On duty","badgeAr":"حراسة"},
+      {"id":"pharmacie-al-bahaa","name":"Pharmacie Al Bahaa","nameEn":"Al Bahaa Pharmacy","nameAr":"صيدلية البهاء","phone":"06 73 58 10 07 / 06 61 22 62 69","district":"Bir Rami Industrielle","districtEn":"Industrial Bir Rami","districtAr":"بئر الرامي الصناعية","address":"Bir Rami Industrielle Sud","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Pharmacie+Al+Bahaa+Bir+Rami+Kenitra","hours":"Pharmacies de garde - 6 novembre 2026","hoursEn":"On-duty pharmacy - November 6, 2026","hoursAr":"صيدلية الحراسة - 6 نونبر 2026","services":[],"badge":"De garde","badgeEn":"On duty","badgeAr":"حراسة"},
+      {"id":"pharmacie-el-massira","name":"Pharmacie El Massira","nameEn":"El Massira Pharmacy","nameAr":"صيدلية المسيرة","phone":"05 37 38 06 27","district":"Saknia","districtEn":"Saknia","districtAr":"الساكنية","address":"Groupe PAM, près de la gendarmerie Oued Eddahab","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Pharmacie+El+Massira+Saknia+Kenitra","hours":"Pharmacies de garde - 6 novembre 2026","hoursEn":"On-duty pharmacy - November 6, 2026","hoursAr":"صيدلية الحراسة - 6 نونبر 2026","services":[],"badge":"De garde","badgeEn":"On duty","badgeAr":"حراسة"}
+    ]
+  }
+}
