@@ -385,61 +385,7 @@ const professionalSlotTranslations = {
   }
 };
 
-const specialtySponsors = {
-  "gastroenterologues": [
-    {
-      "position": 0,
-      "name": "Pr. Walid El Ouardi",
-      "phone": "+212639181290",
-      "whatsapp": "212639181290",
-      "specialty": {
-        "fr": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique (Fibroscopie, Coloscopie, Polypectomie, POEM, Dissection sous-muqueuse, CPRE, Écho-endoscopie).",
-        "en": "Specialist in gastroenterology, hepatology, and diagnostic and therapeutic endoscopy (gastroscopy, colonoscopy, polypectomy, POEM, submucosal dissection, ERCP, and endoscopic ultrasound).",
-        "ar": "اختصاصي في أمراض الجهاز الهضمي والكبد والتنظير التشخيصي والعلاجي (تنظير المعدة والقولون، استئصال السلائل، POEM، التشريح تحت المخاطية، CPRE والتنظير بالموجات فوق الصوتية)."
-      },
-      "category": "gastroenterologues",
-      "id": "pr-walid-el-ouardi",
-      "type": "dentist",
-      "instagram": null,
-      "directions": null
-    }
-  ],
-  "dentistes": [
-    {
-      "position": 2,
-      "name": "Dr Youssef Gaouri",
-      "phone": "0771882093",
-      "whatsapp": "212771882093",
-      "open24h": true,
-      "instagram": "https://www.instagram.com/centre.dentairealirchad/",
-      "directions": "https://maps.app.goo.gl/eKvFTp6U5yErzPc79",
-      "specialty": {
-        "fr": "Chirurgien-dentiste",
-        "en": "Dental surgeon",
-        "ar": "جراح أسنان"
-      },
-      "category": "dentistes",
-      "id": "dr-youssef-gaouri",
-      "type": "dentist"
-    },
-    {
-      "position": 1,
-      "name": "Dr Mohcine Elbahja",
-      "phone": "+212 621 406 621",
-      "whatsapp": "212621406621",
-      "instagram": "https://www.instagram.com/cabinet.dentaire.elbahja/",
-      "directions": "https://maps.app.goo.gl/oh5K4dsRvjWamgdR9",
-      "specialty": {
-        "fr": "Chirurgien-dentiste",
-        "en": "Dental surgeon",
-        "ar": "جراح أسنان"
-      },
-      "category": "dentistes",
-      "id": "dr-mohcine-elbahja",
-      "type": "dentist"
-    }
-  ]
-};
+const specialtySponsors = {};
 
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";

@@ -1,73 +1,16 @@
 {
   "counts": {
-    "doctor": 286,
-    "dentist": 106,
+    "doctor": 3,
     "hospital": 5,
     "clinic": 12,
     "dialysis_center": 12,
     "radiology_center": 14,
     "laboratory": 31,
-    "pharmacy": 103
+    "pharmacy": 101
   },
-  "total": 569,
-  "indexable": 324,
+  "total": 178,
+  "indexable": 178,
   "invalid_phones": [
-    {
-      "name": "Dr Ftouhi Abdellatif",
-      "source": "doctors.json",
-      "values": [
-        "537364425"
-      ]
-    },
-    {
-      "name": "Dr Farhi Samia",
-      "source": "doctors.json",
-      "values": [
-        "537378880"
-      ]
-    },
-    {
-      "name": "Dr Hamza Bouatlaoui",
-      "source": "doctors.json",
-      "values": [
-        "636830000"
-      ]
-    },
-    {
-      "name": "Dr Afaf Lahjouji",
-      "source": "doctors.json",
-      "values": [
-        "537367979"
-      ]
-    },
-    {
-      "name": "Dr Guelida Hiba",
-      "source": "doctors.json",
-      "values": [
-        "530220071"
-      ]
-    },
-    {
-      "name": "Dr El Yaaqoubi Abdellah",
-      "source": "doctors.json",
-      "values": [
-        "537376730"
-      ]
-    },
-    {
-      "name": "Dr Kararsi Oussama",
-      "source": "doctors.json",
-      "values": [
-        "537352699"
-      ]
-    },
-    {
-      "name": "Dr Bakir Saad",
-      "source": "doctors.json",
-      "values": [
-        "702089760"
-      ]
-    },
     {
       "name": "Laboratoire Ibn Sina d’Analyses Médicales",
       "source": "laboratoires-kenitra.json",
