@@ -89,6 +89,27 @@ def insert_head(text, markup):
     return text.replace("</head>", f"    {markup}\n  </head>", 1)
 
 
+def add_priority_jsonld(text, filename):
+    if 'application/ld+json' in text:
+        return text
+    priority = (
+        'medecins-kenitra', 'pharmacies-kenitra', 'pharmacies-garde',
+        'cliniques', 'hopitaux', 'laboratoires-kenitra', 'laboratoires',
+    )
+    if not filename.startswith(priority):
+        return text
+    title, description = metadata(text)
+    payload = {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        'name': title,
+        'description': description,
+        'url': canonical(text) or absolute_url(filename),
+        'isPartOf': {'@type': 'WebSite', 'name': 'Medomicile', 'url': BASE},
+    }
+    return insert_head(text, f'<script type="application/ld+json">{json.dumps(payload, ensure_ascii=False)}</script>')
+
+
 def add_hreflang(text, group):
     if len(group) < 2:
         return text
@@ -223,6 +244,7 @@ def main():
             text = re.sub(r"<title[^>]*>[\s\S]*?</title>", f"<title>{TITLE_OVERRIDES[path.name]}</title>", text, count=1, flags=re.I)
         text = improve_description(text)
         text = add_hreflang(text, language_group(path.name, available))
+        text = add_priority_jsonld(text, path.name)
         text = add_open_graph(text, path.name)
         path.write_text(text)
         if text != before:
