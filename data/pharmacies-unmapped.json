@@ -18,18 +18,6 @@
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Mostachfa%20Hay%20Al%20Fath%20Rahal%20El%20Meskini%20Kenitra"
   },
   {
-    "name": "Pharmacie Lotissement Assam",
-    "sector": "Lotissement Assam",
-    "address": "327 Lotissement Assam, derriere Atakado, pres de la mosquee Al Ouzra, a cote de la voie ferree",
-    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Lotissement%20Assam%20327%20Lotissement%20Assam%2C%20derriere%20Atakado%2C%20pres%20de%20la%20mosquee%20Al%20Ouzra%2C%20a%20cote%20de%20la%20voie%20ferree%20Kenitra"
-  },
-  {
-    "name": "Pharmacie Khabbazate",
-    "sector": "Khabbazate",
-    "address": "Quartier Khabbazate, Kenitra",
-    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Khabbazate%20Kenitra"
-  },
-  {
     "name": "Pharmacie Rachdi",
     "sector": "Gare de Kenitra",
     "address": "Dans la grande gare de Kenitra, etage superieur",
@@ -58,5 +46,11 @@
     "sector": "Atlas",
     "address": "427, avenue El Bacha Abdelhamid, pres du cinema Atlas",
     "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Al%20Atlas%20427%20Avenue%20El%20Bacha%20Abdelhamid%20Cinema%20Atlas%20Kenitra"
+  },
+  {
+    "name": "Pharmacie Benjdo",
+    "sector": "Mehdia",
+    "address": "Route principale de Mehdia, résidence Nassim Mehdia, près du café Coco Lico, à 500 m du café Marrakech",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pharmacie%20Benjdo%20Mehdia%20Kenitra"
   }
 ]
