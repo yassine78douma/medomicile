@@ -155,6 +155,17 @@ def complete_canonical_pages(docs):
                 updated.append(path.name)
     return updated
 
+def remove_stale_doctor_cards(docs):
+    current_ids = {d['id'] for d in docs}
+    removed = []
+    for path in sorted(ROOT.glob('*-kenitra*.html')):
+        text = path.read_text()
+        updated = re.sub(r'\s*<article\b[^>]*data-entity-path="/p/([^/]+)/"[^>]*>[\s\S]*?</article>', lambda m: '' if m.group(1) not in current_ids else m.group(0), text)
+        if updated != text:
+            path.write_text(updated)
+            removed.append(path.name)
+    return removed
+
 def main():
     docs=json.loads((ROOT/'data/doctors.json').read_text())['doctors']; groups=defaultdict(list)
     for d in docs: groups[d['specialty_group']].append(d)
@@ -169,6 +180,7 @@ def main():
         next_text=next_text.replace('Cette spécialité sera complétée progressivement après vérification des coordonnées.', 'Retrouvez les professionnels exerçant à Kénitra avec leurs coordonnées disponibles.')
         if next_text != text: path.write_text(next_text); changed.append(filename)
     dentist_total, dentist_counts, dentist_unmapped = generate_dentist_areas(docs)
+    removed = remove_stale_doctor_cards(docs)
     completed = complete_canonical_pages(docs)
-    print(json.dumps({'updated_pages':changed + completed,'groups':{k:len(v) for k,v in groups.items()},'dentists': {'total': dentist_total, 'areas': dentist_counts, 'unmapped': dentist_unmapped}},ensure_ascii=False))
+    print(json.dumps({'updated_pages':changed + completed,'removed_stale_cards':removed,'groups':{k:len(v) for k,v in groups.items()},'dentists': {'total': dentist_total, 'areas': dentist_counts, 'unmapped': dentist_unmapped}},ensure_ascii=False))
 if __name__=='__main__': main()

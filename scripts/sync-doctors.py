@@ -14,6 +14,9 @@ def slug(value):
     value = norm(value).replace('œ','oe')
     return re.sub(r'(^-|-$)', '', re.sub(r'[^a-z0-9]+', '-', value)) or 'doctor'
 def phones(value): return [clean(x) for x in re.split(r'\s*[|;/]\s*', clean(value)) if clean(x)]
+def phone_key(value):
+    digits = re.sub(r'\D', '', value)
+    return '0' + digits[3:] if digits.startswith('212') and len(digits) == 12 else digits
 def specialty_group(value):
     s = norm(value)
     if 'neuro' in s: return 'Neurologie et neurochirurgie'
@@ -51,18 +54,26 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('source', nargs='?', default='médecin spécialiste kenitra.xlsx')
     ap.add_argument('--allow-mass-replacement', action='store_true')
+    ap.add_argument('--replace-all', action='store_true')
     args = ap.parse_args()
     source_path = ROOT / args.source
     rows = csv_rows(source_path) if source_path.suffix.lower() == '.csv' else xlsx_rows(source_path)
     header = [norm(x) for x in rows[0]]
-    required = {'dr. prenom nom': 0, 'specialite': 1, 'ville': 2, 'quartier': 3, 'numero de telephone': 4, 'google maps': 5, 'instagram': 6, 'facebook': 7}
-    for key, index in required.items():
+    sheet_columns = {
+        'medecin': 0, 'specialite': 1, 'numero de telephone': 2, 'email': 3,
+        'instagram': 4, 'facebook': 5, 'linkedin': 6, 'clinique attaeche': 7,
+        'description': 8, 'lien google map': 9,
+    }
+    legacy_columns = {'dr. prenom nom': 0, 'specialite': 1, 'ville': 2, 'quartier': 3, 'numero de telephone': 4, 'google maps': 5, 'instagram': 6, 'facebook': 7}
+    columns = sheet_columns if all(index < len(header) and header[index] == key for key, index in sheet_columns.items()) else legacy_columns
+    for key, index in columns.items():
         if index >= len(header) or header[index] != key: raise SystemExit(f'En-tête inattendu: colonne {index + 1}')
+    current_sheet = columns is sheet_columns
     doctors, current_specialty, used = [], '', set()
     for line, row in enumerate(rows[1:], 2):
-        name = clean(row[0] if len(row) > 0 else '')
+        name = clean(row[columns['medecin' if current_sheet else 'dr. prenom nom']] if len(row) > columns['medecin' if current_sheet else 'dr. prenom nom'] else '')
         if not name: current_specialty = clean(row[1] if len(row) > 1 else '') or current_specialty; continue
-        specialty = clean(row[1] if len(row) > 1 else '') or current_specialty
+        specialty = clean(row[columns['specialite']] if len(row) > columns['specialite'] else '') or current_specialty
         if not specialty: raise SystemExit(f'Ligne {line}: spécialité manquante')
         base = slug(name)
         ident = base
@@ -70,20 +81,23 @@ def main():
         n = 2
         while ident in used: ident = f'{base}-{n}'; n += 1
         used.add(ident)
-        raw_phone = clean(row[4] if len(row) > 4 else '')
+        raw_phone = clean(row[columns['numero de telephone']] if len(row) > columns['numero de telephone'] else '')
         p = phones(raw_phone)
-        doctors.append({'id': ident, 'name': name, 'title': 'Dr', 'specialty': specialty,
-          'specialty_group': specialty_group(specialty), 'subspecialty': '', 'city': clean(row[2] if len(row)>2 else '') or 'Kénitra',
-          'district': clean(row[3] if len(row)>3 else ''), 'address': '', 'phone': p, 'whatsapp': '',
-          'google_maps': clean(row[5] if len(row)>5 else ''), 'instagram': clean(row[6] if len(row)>6 else ''),
-          'facebook': clean(row[7] if len(row)>7 else ''), 'status': 'active', 'verified': True})
+        get = lambda key: clean(row[columns[key]]) if key in columns and len(row) > columns[key] else ''
+        doctors.append({'id': ident, 'name': name, 'title': 'Pr' if name.lower().startswith('pr.') else 'Dr', 'specialty': specialty,
+          'specialty_group': specialty_group(specialty), 'subspecialty': '', 'city': get('ville') or 'Kénitra',
+          'district': get('quartier'), 'address': '', 'phone': p, 'whatsapp': '', 'email': get('email'),
+          'google_maps': get('lien google map') or get('google maps'), 'instagram': get('instagram'),
+          'facebook': get('facebook'), 'linkedin': get('linkedin'), 'establishment': get('clinique attaeche'),
+          'description': get('description'), 'status': 'active', 'verified': True, 'source': 'google-sheet'})
     old_path = ROOT / 'data/doctors.json'
     old = json.loads(old_path.read_text()) if old_path.exists() else {'doctors': []}
     old_names = {norm(d.get('name')) for d in old.get('doctors', [])}
     # Profiles supplied outside the sheet remain in the same canonical source.
     imported_names = {norm(d['name']) for d in doctors}
-    doctors.extend(d for d in old.get('doctors', [])
-                   if d.get('source') in ('manual-professional', 'manual-directory') and norm(d['name']) not in imported_names)
+    if not args.replace_all:
+        doctors.extend(d for d in old.get('doctors', [])
+                       if d.get('source') in ('manual-professional', 'manual-directory') and norm(d['name']) not in imported_names)
     old_by_id = {d['id']: d for d in old.get('doctors', [])}
     for doctor in doctors:
         previous = old_by_id.get(doctor['id'], {})
@@ -94,18 +108,25 @@ def main():
             if key in previous:
                 doctor[key] = previous[key]
     overlap = sum(norm(d['name']) in old_names for d in doctors)
-    if old_names and overlap < len(old_names) * .8 and not args.allow_mass_replacement:
+    if old_names and overlap < len(old_names) * .8 and not (args.allow_mass_replacement or args.replace_all):
         raise SystemExit(f'Remplacement refusé: {overlap}/{len(old_names)} anciens médecins retrouvés; utilisez --allow-mass-replacement après vérification.')
+    unique, names_seen, phones_seen = [], set(), set()
+    for doctor in doctors:
+        phone_keys = {phone_key(phone) for phone in doctor['phone'] if phone_key(phone)}
+        if norm(doctor['name']) in names_seen or phone_keys & phones_seen:
+            continue
+        unique.append(doctor); names_seen.add(norm(doctor['name'])); phones_seen.update(phone_keys)
+    doctors = unique
     name_map = {}
     phone_map = {}
     specialty_map = {}
     for d in doctors:
         keys = [name_map.setdefault(norm(d['name']), []), specialty_map.setdefault((norm(d['name']), norm(d['specialty'])), [])]
         keys[0].append(d['id']); keys[1].append(d['id'])
-        for phone in d['phone']: phone_map.setdefault(re.sub(r'\D','',phone), []).append(d['id'])
+        for phone in d['phone']: phone_map.setdefault(phone_key(phone), []).append(d['id'])
     duplicates = [{'type': kind, 'key': key, 'doctor_ids': ids} for kind, mapping in [('name', name_map), ('phone', phone_map), ('name_specialty', specialty_map)] for key, ids in mapping.items() if key and len(ids) > 1]
     today = datetime.date.today().isoformat()
-    payload = {'updated_at': today, 'source': f'local:{args.source}', 'doctors': doctors}
+    payload = {'updated_at': today, 'source': 'google-sheet' if current_sheet else f'local:{args.source}', 'doctors': doctors}
     (ROOT / 'data/doctors.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n')
     (ROOT / 'data/doctors-duplicates.json').write_text(json.dumps({'generated_at': today, 'duplicates': duplicates}, ensure_ascii=False, indent=2) + '\n')
     missing_phone = sum(not d.get('phone') for d in doctors); missing_address = sum(not d.get('address') for d in doctors); missing_maps = sum(not d.get('google_maps') for d in doctors)

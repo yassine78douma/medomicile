@@ -3,8 +3,13 @@ name: Update doctors from workbook
 on:
   push:
     paths:
-      - "médecin spécialiste kenitra.xlsx"
       - "scripts/sync-doctors.py"
+      - "scripts/generate-doctor-pages.py"
+      - "scripts/generate-professional-cards.py"
+      - "scripts/build-card-directories.py"
+      - ".github/workflows/update-doctors.yml"
+  schedule:
+    - cron: "17 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,10 +34,11 @@ jobs:
 
       - name: Generate doctor data and reports
         env:
-          GOOGLE_SHEETS_ID: "1B-m6gFX3ks_b3oPI5iW34tR4jZyQWsagMgrUjfxcc5Y"
+          GOOGLE_SHEETS_CSV_URL: ${{ secrets.GOOGLE_SHEETS_CSV_URL }}
         run: |
-          curl --fail --location --retry 3 "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=0" -o doctors-source.csv
-          python3 scripts/sync-doctors.py doctors-source.csv
+          test -n "$GOOGLE_SHEETS_CSV_URL" || { echo "Le secret GOOGLE_SHEETS_CSV_URL est requis (export CSV authentifié de Feuille 1)."; exit 1; }
+          curl --fail --location --retry 3 "$GOOGLE_SHEETS_CSV_URL" -o doctors-source.csv
+          python3 scripts/sync-doctors.py doctors-source.csv --replace-all
           rm doctors-source.csv
 
       - name: Generate specialty pages
@@ -40,7 +46,6 @@ jobs:
           python3 -m pip install -r scripts/cards-requirements.txt
           python3 scripts/generate-doctor-pages.py
           python3 scripts/build-virtual-cards.py
-          python3 scripts/test-virtual-cards.py
 
       - name: Validate generated JSON
         run: |
@@ -53,6 +58,8 @@ jobs:
           doctors = data["doctors"]
           assert doctors and all(d["name"] and d["specialty"] and d["city"] for d in doctors)
           assert len({d["id"] for d in doctors}) == len(doctors)
+          duplicates = json.loads(Path("data", "doctors-duplicates.json").read_text(encoding="utf-8"))
+          assert not duplicates["duplicates"], duplicates["duplicates"]
           print(f"Validated {len(doctors)} doctors")
           PY
 
@@ -66,4 +73,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update doctors directory [skip ci]"
+          git pull --rebase origin main
           git push

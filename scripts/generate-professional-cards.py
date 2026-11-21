@@ -5,6 +5,7 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
 import unicodedata
 from collections import Counter
 from pathlib import Path
@@ -274,6 +275,15 @@ def main():
         return
     items = entities()
     index = json.loads((ROOT/'data/virtual-card-index.json').read_text())
+    current_ids = {item['id'] for item in items}
+    for old in index:
+        if old.get('type') not in ('doctor', 'dentist') or old.get('id') in current_ids:
+            continue
+        for stale in (ROOT / old.get('path', '').strip('/'), ROOT / 'p' / f"{old.get('id')}.html"):
+            if stale.is_dir(): shutil.rmtree(stale)
+            elif stale.is_file(): stale.unlink()
+        qr = ROOT / old.get('qr', '').lstrip('/')
+        if qr.is_file(): qr.unlink()
     eligible_doctor_slugs = {item['slug'] for item in index if item.get('type') == 'doctor' and re.fullmatch(r'https://medomicile\.com/p/[^/]+/', item.get('url', ''))}
     for folder in ['assets/cards/qr', 'p', 'e']:
         (ROOT/folder).mkdir(parents=True, exist_ok=True)
