@@ -90,8 +90,9 @@ def insert_head(text, markup):
 
 
 def add_hreflang(text, group):
-    if len(group) < 2 or "hreflang=" in text:
+    if len(group) < 2:
         return text
+    text = re.sub(r'\s*<link\s+rel=["\']alternate["\']\s+hreflang=[^>]+>', '', text, flags=re.I)
     links = "\n    ".join(
         f'<link rel="alternate" hreflang="{lang}" href="{absolute_url(filename)}" />'
         for lang, filename in group.items()
