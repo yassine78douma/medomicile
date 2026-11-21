@@ -34,10 +34,9 @@ jobs:
 
       - name: Generate doctor data and reports
         env:
-          GOOGLE_SHEETS_CSV_URL: ${{ secrets.GOOGLE_SHEETS_CSV_URL }}
+          GOOGLE_SHEETS_ID: "1lXJ9zgJhO169M2-2cq46fWv53QyX0SNLnRJznFQU7QU"
         run: |
-          test -n "$GOOGLE_SHEETS_CSV_URL" || { echo "Le secret GOOGLE_SHEETS_CSV_URL est requis (export CSV authentifié de Feuille 1)."; exit 1; }
-          curl --fail --location --retry 3 "$GOOGLE_SHEETS_CSV_URL" -o doctors-source.csv
+          curl --fail --location --retry 3 "https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=0" -o doctors-source.csv
           python3 scripts/sync-doctors.py doctors-source.csv --replace-all
           rm doctors-source.csv
 
