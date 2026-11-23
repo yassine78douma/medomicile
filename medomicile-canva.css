@@ -1664,3 +1664,9 @@ html[dir="rtl"] .pharmacy-zone-group h3 { text-align: right; }
 .establishment-google-reviews p:not(.eyebrow) {
   max-width: 48rem;
 }
+
+/* The doctors directory is now a simple reference list. */
+.doctors-page .doctor-toolbar,
+.doctors-page .doctor-specialty-strip {
+  display: none !important;
+}
