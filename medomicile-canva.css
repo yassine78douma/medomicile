@@ -939,7 +939,9 @@ html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
 .article-week h1 { max-width: 680px; color: #fff; font-size: clamp(3rem, 5.4vw, 5.25rem); line-height: .98; }
 .article-week-excerpt { max-width: 560px; margin: 24px 0 14px; color: #eaf6ff; font-size: 1rem; line-height: 1.65; }
 .article-week-meta { margin: 0 0 28px; color: #dcecff; font-size: .78rem; font-weight: 700; }
-.article-week-cta { color: var(--md-navy); }
+.article-week-cta { color: #fff; background: #0f4c81; border-color: #0f4c81; }
+.article-week-cta:hover,
+.article-week-cta:focus-visible { color: #fff; background: #0b3b67; border-color: #0b3b67; }
 .article-week-media { position: relative; min-height: 500px; }
 .article-week-image { width: 84%; height: 500px; margin-left: auto; display: block; object-fit: cover; object-position: center; background: #fff; border: 8px solid rgba(255,255,255,.25); border-radius: 34px; box-shadow: 0 26px 52px rgba(0,0,0,.2); }
 .article-week-badge, .article-week-card { position: absolute; color: var(--md-navy); background: #fff; box-shadow: 0 12px 25px rgba(0,28,85,.18); }
@@ -974,7 +976,7 @@ html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
   .article-week h1 { color: var(--md-ink); font-size: clamp(2.5rem, 11vw, 3.8rem); }
   .article-week-excerpt { color: var(--md-muted); }
   .article-week-meta { color: var(--md-muted); }
-  .article-week-cta { width: 100%; color: #fff; background: #f10291; }
+  .article-week-cta { width: 100%; color: #fff; background: #0f4c81; border-color: #0f4c81; }
   .article-week-media { width: 100%; min-height: 280px; margin-top: 26px; }
   .article-week-image { width: 100%; height: 280px; border: 4px solid #fff; border-radius: 23px; box-shadow: 0 12px 26px rgba(0,0,0,.1); }
   .article-week-badge { top: 16px; padding: 8px 9px; font-size: .58rem; }.article-week-badge-one { left: 12px; }.article-week-badge-two { right: 12px; }
