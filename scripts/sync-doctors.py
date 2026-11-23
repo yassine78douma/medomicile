@@ -17,6 +17,9 @@ def phones(value): return [clean(x) for x in re.split(r'\s*[|;/]\s*', clean(valu
 def phone_key(value):
     digits = re.sub(r'\D', '', value)
     return '0' + digits[3:] if digits.startswith('212') and len(digits) == 12 else digits
+def establishment_links(value):
+    return [{'name': clean(name), 'url': url.rstrip(' .')}
+            for name, url in re.findall(r'([^,;:]+?)\s*:\s*(https?://[^,;\s]+)', clean(value), re.I)]
 def specialty_group(value):
     s = norm(value)
     if 'neuro' in s: return 'Neurologie et neurochirurgie'
@@ -84,12 +87,14 @@ def main():
         raw_phone = clean(row[columns['numero de telephone']] if len(row) > columns['numero de telephone'] else '')
         p = phones(raw_phone)
         get = lambda key: clean(row[columns[key]]) if key in columns and len(row) > columns[key] else ''
+        establishment = get('clinique attaeche')
         doctors.append({'id': ident, 'name': name, 'title': 'Pr' if name.lower().startswith('pr.') else 'Dr', 'specialty': specialty,
           'specialty_group': specialty_group(specialty), 'subspecialty': '', 'city': get('ville') or 'Kénitra',
           'district': get('quartier'), 'address': '', 'phone': p, 'whatsapp': '', 'email': get('email'),
           'google_maps': get('lien google map') or get('google maps'), 'instagram': get('instagram'),
-          'facebook': get('facebook'), 'linkedin': get('linkedin'), 'establishment': get('clinique attaeche'),
+          'facebook': get('facebook'), 'linkedin': get('linkedin'), 'establishment': establishment,
           'description': get('description'), 'status': 'active', 'verified': True, 'source': 'google-sheet'})
+        if establishment_links(establishment): doctors[-1]['establishment_links'] = establishment_links(establishment)
     old_path = ROOT / 'data/doctors.json'
     old = json.loads(old_path.read_text()) if old_path.exists() else {'doctors': []}
     old_names = {norm(d.get('name')) for d in old.get('doctors', [])}

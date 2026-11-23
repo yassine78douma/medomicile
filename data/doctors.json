@@ -73,6 +73,11 @@
       "verified": true,
       "source": "google-sheet",
       "establishment": "HUIR ; Clinique Annakhil ; Clinique Internationale de Kénitra",
+      "establishment_links": [
+        {"name": "HUIR", "url": "https://hopital-uir.ma/specialite?pole=Gastro-hépato-entérologie%E2%80%8B"},
+        {"name": "Clinique Annakhil", "url": "https://www.pira.ma"},
+        {"name": "Clinique Internationale de Kénitra", "url": "https://cliniqueinternationalekenitra.ma/fr"}
+      ],
       "description": "Spécialiste en gastroentérologie, hépatologie et endoscopie diagnostique et thérapeutique : fibroscopie, coloscopie, POEM, ESD, CPRE et écho-endoscopie."
     }
   ]
