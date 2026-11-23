@@ -932,7 +932,7 @@ html[lang="ar"] .eyebrow { font-size: max(0.78rem, 13px); }
 
 /* French Canva V19 Articles hub: the home shell, with an editorial reading hierarchy. */
 .article-hub-v19 { padding: 0; background: #fff; }
-.article-week { padding: 156px 20px 92px; color: #fff; background: #f10291; }
+.article-week { padding: 156px 20px 92px; color: #fff; background: linear-gradient(135deg, #061d4b, #0b4aa2 58%, #147cff); }
 .article-week-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr); gap: 64px; align-items: center; }
 .article-week-copy { max-width: 650px; }
 .article-week-kicker { margin: 0 0 18px; color: #a9eaff; font-size: .7rem; font-weight: 800; letter-spacing: .14em; }
