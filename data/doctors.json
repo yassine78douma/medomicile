@@ -49,6 +49,7 @@
       "verified": true,
       "source": "google-sheet",
       "establishment": "Clinique Noor",
+      "establishment_links": [{"name": "Clinique Noor", "url": "etablissement.html?slug=noor-clinic", "internal": true}],
       "description": "Diplômée des facultés de médecine de Rabat et Paris. Chirurgie de la cataracte, chirurgie réfractive, chirurgie des voies lacrymales, kératocône, lentilles de contact, strabisme, maladies de la rétine, glaucome, diabète et laser."
     },
     {

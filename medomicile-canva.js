@@ -1025,7 +1025,7 @@ if (location.pathname.includes('/canva-home/')) {
     const bio = doctor.bio || doctor.description || '';
     const establishment = doctor.establishment || '';
     const establishmentLinks = Array.isArray(doctor.establishment_links) ? doctor.establishment_links : [];
-    const establishmentMarkup = establishmentLinks.length ? establishmentLinks.map((link) => `<a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer">${esc(link.name)}</a>`).join(' · ') : esc(establishment);
+    const establishmentMarkup = establishmentLinks.length ? establishmentLinks.map((link) => `<a href="${esc(link.url)}"${link.internal ? '' : ' target="_blank" rel="noopener noreferrer"'}>${esc(link.name)}</a>`).join(' · ') : esc(establishment);
     const socialLinks = [['Instagram', doctor.instagram], ['Facebook', doctor.facebook], ['LinkedIn', doctor.linkedin]].filter(([, href]) => href).map(([label, href]) => `<a class="establishment-action establishment-action-secondary" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`).join('');
     const related = indexed.filter((other) => other.slug !== doctor.slug && (other.subtitle || '') === doctor.specialty).slice(0, 4);
     const action = (href, label, external = false) => href ? `<a class="establishment-action" href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>` : '';
