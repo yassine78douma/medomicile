@@ -35,39 +35,28 @@
 }
 
 /* Article theme for Dr Wiame Fimoud — intentionally scoped to this article. */
-body:has(.medical-article__author strong) { --wiame-pink:#f6b6d8; --wiame-pink-soft:#fff0f8; --wiame-ink:#241b2b; background:var(--wiame-pink-soft); }
+body:has(.medical-article__author strong) { --wiame-blue:#0b4ea2; --wiame-blue-deep:#082b63; --wiame-blue-soft:#eaf3ff; --wiame-ink:#0b2347; background:var(--wiame-blue-soft); }
 body:has(.medical-article__author strong) .mobile-header,
-body:has(.medical-article__author strong) .page-main { background:var(--wiame-pink-soft); }
-body:has(.medical-article__author strong) .breadcrumb { color:#684b60; }
-body:has(.medical-article__author strong) .breadcrumb a { color:#8a2861; }
-body:has(.medical-article__author strong) .medical-article { max-width:860px; margin-inline:auto; padding:clamp(28px,5vw,72px) clamp(18px,4vw,48px); color:var(--wiame-ink); }
-body:has(.medical-article__author strong) .medical-article__hero,
+body:has(.medical-article__author strong) .page-main { background:var(--wiame-blue-soft); }
+body:has(.medical-article__author strong) .breadcrumb { color:#496486; }
+body:has(.medical-article__author strong) .breadcrumb a { color:var(--wiame-blue); }
+body:has(.medical-article__author strong) .medical-article { max-width:900px; margin-inline:auto; padding:clamp(28px,5vw,72px) clamp(18px,4vw,48px); color:var(--wiame-ink); }
+body:has(.medical-article__author strong) .medical-article__hero { padding:clamp(30px,5vw,68px); border:1px solid rgba(255,255,255,.18); border-radius:26px 26px 0 0; background:linear-gradient(135deg,var(--wiame-blue-deep),#1267d8); color:#fff; box-shadow:0 14px 30px rgba(15,23,42,.12); }
+body:has(.medical-article__author strong) .medical-article__hero h1 { max-width:760px; color:#fff; font-size:clamp(2.2rem,5vw,4.5rem); line-height:1.02; }
+body:has(.medical-article__author strong) .medical-article__hero p { color:#dbeafe; }
 body:has(.medical-article__author strong) .medical-article__body,
 body:has(.medical-article__author strong) .medical-article__author,
-body:has(.medical-article__author strong) .medical-article__disclaimer { border-color:rgba(120,41,91,.22); background:var(--wiame-pink); color:var(--wiame-ink); }
-body:has(.medical-article__author strong) .medical-article__hero { padding:clamp(28px,5vw,64px); border-radius:24px 24px 0 0; }
-body:has(.medical-article__author strong) .medical-article__hero h1,
-body:has(.medical-article__author strong) .medical-article__body h2,
-body:has(.medical-article__author strong) .medical-article__author strong { color:var(--wiame-ink); }
-body:has(.medical-article__author strong) .medical-article__hero p,
+body:has(.medical-article__author strong) .medical-article__disclaimer { border-color:#c7dcf7; background:#fff; color:var(--wiame-ink); }
+body:has(.medical-article__author strong) .medical-article__body { padding:clamp(30px,5vw,68px); border-top:0; border-bottom:1px solid #c7dcf7; }
+body:has(.medical-article__author strong) .medical-article__body h2 { margin-top:1.35rem; color:var(--wiame-blue-deep); }
 body:has(.medical-article__author strong) .medical-article__body p,
-body:has(.medical-article__author strong) .medical-article__body li,
-body:has(.medical-article__author strong) .medical-article__disclaimer { color:#4b3044; }
-body:has(.medical-article__author strong) .medical-article__body { padding:clamp(28px,5vw,64px); border-top:1px solid rgba(120,41,91,.2); border-bottom:1px solid rgba(120,41,91,.2); }
-body:has(.medical-article__author strong) .medical-article__author { margin-top:0; padding:24px clamp(28px,5vw,64px); border-radius:0 0 24px 24px; }
-body:has(.medical-article__author strong) .article-tag { color:#7a2057; background:rgba(255,255,255,.48); border-color:rgba(122,32,87,.25); }
-body:has(.medical-article__author strong) .medical-article__disclaimer { margin-top:18px; padding:18px 24px; border:1px solid rgba(120,41,91,.2); border-radius:14px; }
-body:has(.medical-article__author strong) .footer { background:#2b2030; }
-body:has(.medical-article__author strong) { --wiame-pink:#b9d8ff; --wiame-pink-soft:#eef6ff; --wiame-ink:#071d42; }
-body:has(.medical-article__author strong) .medical-article__hero,
-body:has(.medical-article__author strong) .medical-article__body,
-body:has(.medical-article__author strong) .medical-article__author,
-body:has(.medical-article__author strong) .medical-article__disclaimer { border-color:rgba(17,78,145,.22); background:var(--wiame-pink); color:var(--wiame-ink); }
-body:has(.medical-article__author strong) .article-tag { color:#0b4a9b; border-color:rgba(11,74,155,.25); }
-body:has(.medical-article__author strong) .footer { background:#071d42; }
-body:has(.medical-article__author strong) .medical-article__hero { background:linear-gradient(135deg,#0a2a63,#0d5bc7)!important; color:#fff; }
-body:has(.medical-article__author strong) .medical-article__body { background:#d9eaff!important; }
-body:has(.medical-article__author strong) .medical-article__author { background:#b9d8ff!important; }
+body:has(.medical-article__author strong) .medical-article__body li { color:#304d70; line-height:1.75; }
+body:has(.medical-article__author strong) .medical-article__body strong { color:var(--wiame-blue-deep); }
+body:has(.medical-article__author strong) .medical-article__author { margin-top:0; padding:24px clamp(30px,5vw,68px); border-radius:0 0 26px 26px; }
+body:has(.medical-article__author strong) .medical-article__author strong { color:var(--wiame-blue-deep); }
+body:has(.medical-article__author strong) .article-tag { color:#0b4ea2; background:#dbeafe; border-color:#a9c9f5; }
+body:has(.medical-article__author strong) .medical-article__disclaimer { margin-top:18px; padding:18px 24px; border:1px solid #c7dcf7; border-radius:14px; }
+body:has(.medical-article__author strong) .site-footer { background:var(--wiame-blue-deep); }
 @media (max-width:700px) {
   body:has(.medical-article__author strong) .medical-article { padding:18px 12px 48px; }
   body:has(.medical-article__author strong) .medical-article__hero,
