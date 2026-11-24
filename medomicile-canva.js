@@ -637,6 +637,24 @@ if (location.pathname.includes('/canva-home/')) {
 })();
 
 (() => {
+  const addEntityJsonLd = (item, type) => {
+    if (!item || document.getElementById('medomicile-entity-jsonld')) return;
+    const entity = {
+      '@context': 'https://schema.org', '@type': type, '@id': `${location.href}#entity`,
+      name: item.name || '', url: location.href,
+      address: { '@type': 'PostalAddress', streetAddress: item.address || item.city || 'Kénitra', addressLocality: item.city || 'Kénitra', addressCountry: 'MA' }
+    };
+    const phone = item.phone || item.phones?.[0]?.number;
+    if (phone) entity.telephone = phone;
+    if (item.specialty || item.subtitle) entity.medicalSpecialty = item.specialty || item.subtitle;
+    if (item.website) entity.url = item.website;
+    if (item.mapsUrl || item.google_maps_url) entity.hasMap = item.mapsUrl || item.google_maps_url;
+    const script = document.createElement('script'); script.id = 'medomicile-entity-jsonld'; script.type = 'application/ld+json'; script.textContent = JSON.stringify(entity); document.head.append(script);
+  };
+  window.medomicileAddEntityJsonLd = addEntityJsonLd;
+})();
+
+(() => {
   const root = document.querySelector('#laboratory-root');
   if (!root) return;
   const esc = (value) => String(value || '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -646,6 +664,7 @@ if (location.pathname.includes('/canva-home/')) {
     const all = data.laboratories || [], item = all.find((lab) => lab.slug === slug);
     if (!item) return notFound();
     window.medomicileSetDynamicMetadata(item, 'laboratory');
+    window.medomicileAddEntityJsonLd(item, 'DiagnosticLab');
     const phone = item.phone ? `<a class="establishment-action" href="${esc(item.phoneHref || `tel:${String(item.phone).replace(/[^0-9+]/g,'')}`)}">Appeler</a>` : '';
     const maps = item.mapsUrl ? `<a class="establishment-action" href="${esc(item.mapsUrl)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
     const hours = Array.isArray(item.hours) && item.hours.length && !item.hours.some((value) => /à confirmer/i.test(value)) ? `<section class="establishment-section"><p class="eyebrow">Horaires</p><p>${item.hours.map(esc).join(' · ')}</p></section>` : '';
@@ -942,6 +961,7 @@ if (location.pathname.includes('/canva-home/')) {
   const notFound = () => { root.innerHTML = `<section class="establishment-not-found"><div class="content-width"><p class="eyebrow">Annuaire médical</p><h1>Établissement introuvable.</h1><p>Cette fiche n’est pas disponible dans l’annuaire Medomicile.</p><a class="button button-blue" href="cliniques.html">Voir les cliniques et hôpitaux</a></div></section>`; };
   const render = (item, all) => {
     window.medomicileSetDynamicMetadata(item, 'establishment');
+    window.medomicileAddEntityJsonLd(item, item.type === 'hospital' ? 'Hospital' : 'MedicalClinic');
     const hours = item.hours && !/à vérifier|a vérifier/i.test(item.hours) ? `<p><strong>Horaires</strong>${esc(item.hours)}</p>` : '';
     const googleReviews = item.slug === 'akdital-international-hospital-kenitra'
       ? `<section class="establishment-google-reviews" aria-labelledby="google-reviews-title"><p class="eyebrow">Avis Google</p><div class="google-review-heading"><div><h2 id="google-reviews-title">Avis sur l’Hôpital International de Kénitra</h2><p>Note affichée sur Google : <strong>2,7/5</strong> · <strong>252 avis</strong></p></div><span class="google-review-score" aria-label="Note Google 2,7 sur 5">2,7 ★</span></div><div class="google-review-list"><article><strong>1 ★</strong><p>Synthèse d’un avis visible : prise en charge des urgences jugée très insatisfaisante, avec des reproches sur l’accueil et le suivi.</p></article><article><strong>1 ★</strong><p>Synthèse d’un avis visible : accueil des urgences décrit comme difficile et manque de communication avec les patients.</p></article><article><strong>5 ★</strong><p>Synthèse d’un avis visible : témoignage très positif sur la prise en charge lors d’un accouchement.</p></article></div><p class="google-review-note">Ces synthèses reflètent des avis visibles au moment de la consultation et peuvent évoluer.</p><a class="establishment-action" href="https://maps.app.goo.gl/ZRMTsEkxyAsiyYUV9" target="_blank" rel="noopener noreferrer">Lire les avis complets sur Google</a></section>`
@@ -1030,6 +1050,7 @@ if (location.pathname.includes('/canva-home/')) {
     const related = indexed.filter((other) => other.slug !== doctor.slug && (other.subtitle || '') === doctor.specialty).slice(0, 4);
     const action = (href, label, external = false) => href ? `<a class="establishment-action" href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>` : '';
     window.medomicileSetDynamicMetadata(doctor, 'doctor');
+    window.medomicileAddEntityJsonLd(doctor, 'Physician');
     const cardUrl = /^https:\/\/medomicile\.com\/p\/[^/]+\/$/.test(indexed.find((entry) => entry.slug === doctor.slug)?.url || '') ? indexed.find((entry) => entry.slug === doctor.slug).url : '';
     const cardQr = indexed.find((entry) => entry.slug === doctor.slug)?.qr;
     const shareAction = cardUrl && cardQr ? `<button class="establishment-action establishment-share-action" type="button" data-doctor-share>Partager le contact</button>` : '';
@@ -1115,6 +1136,7 @@ if (location.pathname.includes('/canva-home/')) {
     const all = data.pharmacies || [], item = all.find((p) => p.slug === slug);
     if (!item) return notFound();
     window.medomicileSetDynamicMetadata(item, 'pharmacy');
+    window.medomicileAddEntityJsonLd(item, 'Pharmacy');
     const phone = item.phone ? `<a class="establishment-action" href="tel:${String(item.phone).replace(/[^0-9+]/g,'')}">Appeler</a>` : '';
     const maps = item.mapsUrl || item.google_maps_url ? `<a class="establishment-action" href="${esc(item.mapsUrl || item.google_maps_url)}" target="_blank" rel="noopener noreferrer">Itinéraire</a>` : '';
     const related = all.filter((p) => p.slug !== item.slug && p.district === item.district).slice(0, 4);
