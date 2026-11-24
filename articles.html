@@ -39,7 +39,7 @@
             <a class="button button-white article-week-cta" href="">Lire l’article →</a>
           </div>
           <div class="article-week-media">
-            <img class="article-week-image" src="assets/awareness/octobre-rose-affiche-3.png" alt="Affiche Octobre Rose au Maroc" width="1587" height="2245" loading="lazy">
+            <img class="article-week-image" src="assets/awareness/octobre-rose-affiche-3.webp" alt="Affiche Octobre Rose au Maroc" width="900" height="507" loading="lazy" decoding="async">
             <span class="article-week-badge article-week-badge-one">Conseils santé</span>
             <span class="article-week-badge article-week-badge-two">Bon usage</span>
             <aside class="article-week-card"><strong>Article santé</strong><span class="article-week-card-meta"></span></aside>
@@ -70,6 +70,9 @@
       render(); document.querySelectorAll('[data-filter]').forEach((button) => button.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach((item) => item.classList.toggle('is-active', item === button)); render(button.dataset.filter); }));
       const menuToggle = document.querySelector('.menu-toggle'); const menu = document.querySelector('.mobile-menu'); menuToggle?.addEventListener('click', () => { const open = menuToggle.getAttribute('aria-expanded') === 'true'; menuToggle.setAttribute('aria-expanded', String(!open)); menu?.classList.toggle('is-open', !open); });
     })();
+  </script>
+  <script>
+    document.querySelectorAll('img[src="assets/awareness/novembre-bleu-cancer-prostate.png"], img[src="assets/awareness/octobre-rose-affiche-3.png"]').forEach((image) => { image.src = image.src.replace(/\.png$/, '.webp'); image.setAttribute('decoding', 'async'); });
   </script>
 </body>
 </html>
