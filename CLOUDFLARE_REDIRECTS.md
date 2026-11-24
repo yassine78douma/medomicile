@@ -55,6 +55,9 @@ Créer également les règles suivantes dans **Rules → Redirect Rules**. Pour 
 | `/brulures-premiers-gestes.html` | `/articles/brulures-premiers-gestes.html` |
 | `/antibiotiques-infections-bon-usage.html` | `/articles/antibiotiques-infections-bon-usage.html` |
 | `/hypoglycemie-reconnaitre-signes-agir.html` | `/articles/hypoglycemie-reconnaitre-signes-agir.html` |
+| `/hopitaux.html` | `/cliniques.html` |
+| `/centres-dialyse-kenitra.html` | `/dialyse.html` |
+| `/radiologie-kenitra.html` | `/radiologie.html` |
 
 Ne pas créer de règle Cloudflare pour les dossiers `canva-home/` ou `v19-*` tant
 que leur usage n’a pas été confirmé. Ces chemins peuvent encore servir aux
