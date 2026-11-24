@@ -183,15 +183,23 @@ def page(e):
         rows.append('<div><dt data-i18n="phone">Téléphone</dt><dd>' + '<br>'.join(f'<a dir="ltr" href="tel:{p["number"]}">{esc(p["label"])}</a>' for p in e['phones']) + '</dd></div>')
     socials = ''.join(action(label, e[key], key, icon) for key, label, icon in [('website', 'Site web', 'globe'), ('instagram', 'Instagram', 'instagram'), ('facebook', 'Facebook', 'facebook')] if e[key])
     data = json.dumps(e, ensure_ascii=False).replace('<', '\\u003c')
+    schema_type = {'doctor': 'Physician', 'dentist': 'Dentist', 'pharmacy': 'Pharmacy', 'laboratory': 'MedicalBusiness', 'clinic': 'MedicalClinic', 'hospital': 'Hospital', 'dialysis_center': 'MedicalBusiness', 'radiology_center': 'MedicalBusiness'}.get(e['type'], 'MedicalBusiness')
+    schema = {'@context': 'https://schema.org', '@type': schema_type, 'name': e['name'], 'url': e['url'], 'description': description}
+    if e.get('subtitle'): schema['medicalSpecialty'] = e['subtitle']
+    if e.get('phones'): schema['telephone'] = [p['number'] for p in e['phones']]
+    if e.get('address'): schema['address'] = {'@type': 'PostalAddress', 'streetAddress': e['address'], 'addressLocality': e.get('city') or 'Kénitra', 'addressCountry': 'MA'}
+    if e.get('google_maps_url'): schema['hasMap'] = e['google_maps_url']
+    schema_json = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
     og_image = e['photo'] or LOGO
     if og_image.startswith('/'):
         og_image = BASE + og_image
+    robots = 'index,follow' if e.get('indexable') else 'noindex,follow'
     return f'''<!doctype html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="noindex,follow">
+<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="{robots}">
 <link rel="canonical" href="{e['url']}"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{e['url']}"><meta property="og:image" content="{esc(og_image)}"><meta property="og:type" content="website">
-<link rel="stylesheet" href="/assets/virtual-card.css?v={asset_version}"><script defer src="/assets/vendor/lucide.min.js"></script><script defer src="/assets/virtual-card.js?v={asset_version}"></script></head>
+<link rel="stylesheet" href="/assets/virtual-card.css?v={asset_version}"><script type="application/ld+json">{schema_json}</script><script defer src="/assets/vendor/lucide.min.js"></script><script defer src="/assets/virtual-card.js?v={asset_version}"></script></head>
 <body class="vc-page"><header class="vc-header"><a class="vc-brand" href="/"><img src="{LOGO}" alt="" width="40" height="40">Medomicile</a>
 <select id="vc-language" aria-label="Langue / Language / اللغة"><option value="fr">Français</option><option value="en">English</option><option value="ar">العربية</option></select></header>
 <main class="vc-card" data-variant="{e['variant']}"><div class="vc-identity"><span class="vc-badge" data-i18n="{'partner' if e['variant'] == 'premium' else 'type_' + e['type']}">{'PARTENAIRE MEDOMICILE' if e['variant'] == 'premium' else TYPES[e['type']]}</span>
