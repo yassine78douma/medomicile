@@ -41,7 +41,6 @@ if (!window.__medomicileAnalyticsLoaded && !window.__medomicileAnalyticsEventsLo
   if (document.documentElement.lang !== 'ru') return;
   const links = {
     '/consultation.html': '/ru/consultation.html',
-    '/ambulance.html': '/ru/ambulance.html',
     '/urgences.html': '/ru/urgences.html',
     '/annuaire.html': '/ru/annuaire.html',
     '/contact.html': '/ru/contact.html',
@@ -565,11 +564,12 @@ if (location.pathname.includes('/canva-home/')) {
   }[lang] || null;
   if (!copy) return;
   const link = (path) => `${prefix}${path}` || '/';
+  const ambulanceLink = lang === 'fr' || lang === 'ar' ? `<a href="${link('/ambulance.html')}">${copy.ambulance}</a>` : '';
   const dialysisHref = lang === 'fr' || lang === 'ar' ? '/dialyse.html' : '/hospitals.html';
   const languageLinks = lang === 'fr'
     ? [['/ar/','ar'],['/','fr'],['/en/','en'],['/ru/','ru']]
     : [['/ar/','ar'],['/','fr'],['/en/','en'],['/ru/','ru']];
-  grid.innerHTML = `<div><strong>Medomicile</strong><p>${copy.brand}</p></div><div><b>${copy.services}</b><a href="${link('/consultation.html')}">${copy.consultation}</a><a href="${link('/ambulance.html')}">${copy.ambulance}</a><a href="${link('/urgences.html')}">${copy.emergencies}</a></div><div><b>${copy.directory}</b><a href="${link('/medecins.html')}">${copy.doctors}</a><a href="${link('/pharmacies.html')}">${copy.pharmacies}</a><a href="${link('/cliniques.html')}">${copy.clinics}</a><a href="${link('/laboratoires.html')}">${copy.labs}</a><a href="${link('/radiologie.html')}">${copy.radiology}</a><a href="${prefix + dialysisHref}">${copy.dialysis}</a></div><div><b>${copy.info}</b><a href="${link('/articles.html')}">${copy.articles}</a><a href="${link('/contact.html')}">${copy.contact}</a><a href="${link('/confidentialite.html')}">${copy.privacy}</a></div><div data-language-links><b>${copy.languages}</b>${languageLinks.map(([href,key]) => `<a href="${href}" lang="${key}">${copy[key]}</a>`).join('')}</div>`;
+  grid.innerHTML = `<div><strong>Medomicile</strong><p>${copy.brand}</p></div><div><b>${copy.services}</b><a href="${link('/consultation.html')}">${copy.consultation}</a>${ambulanceLink}<a href="${link('/urgences.html')}">${copy.emergencies}</a></div><div><b>${copy.directory}</b><a href="${link('/medecins.html')}">${copy.doctors}</a><a href="${link('/pharmacies.html')}">${copy.pharmacies}</a><a href="${link('/cliniques.html')}">${copy.clinics}</a><a href="${link('/laboratoires.html')}">${copy.labs}</a><a href="${link('/radiologie.html')}">${copy.radiology}</a><a href="${prefix + dialysisHref}">${copy.dialysis}</a></div><div><b>${copy.info}</b><a href="${link('/articles.html')}">${copy.articles}</a><a href="${link('/contact.html')}">${copy.contact}</a><a href="${link('/confidentialite.html')}">${copy.privacy}</a></div><div data-language-links><b>${copy.languages}</b>${languageLinks.map(([href,key]) => `<a href="${href}" lang="${key}">${copy[key]}</a>`).join('')}</div>`;
 })();
 
 /* Arabic presentation layer for labels coming from shared French JSON data. */
