@@ -14,13 +14,38 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
+        {
+          "@type": "Service",
+          "@id": "https://medomicile.com/ambulance.html#service",
+          "name": "Ambulance à Kénitra 24h/24",
+          "serviceType": "Transport sanitaire et transferts médicaux",
+          "description": "Transport sanitaire, transferts médicaux, sorties d’hôpital, dialyse, chimiothérapie et transport longue distance depuis ou vers Kénitra, selon disponibilité.",
+          "provider": {"@id":"https://medomicile.com/ambulance.html#business"},
+          "areaServed": {"@type":"City","name":"Kénitra"},
+          "url": "https://medomicile.com/ambulance.html"
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://medomicile.com/ambulance.html#business",
+          "name": "Medomicile — Ambulance à Kénitra",
+          "url": "https://medomicile.com/ambulance.html",
+          "telephone": "+212663058222",
+          "image": "https://medomicile.com/assets/brand/medomicile-logo.png",
+          "priceRange": "À confirmer",
+          "address": {"@type":"PostalAddress","addressLocality":"Kénitra","addressCountry":"MA"},
+          "areaServed": {"@type":"City","name":"Kénitra"}
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
         {"@type":"Question","name":"Comment réserver une ambulance ?","acceptedAnswer":{"@type":"Answer","text":"Appelez Medomicile au +212 6 63 05 82 22 ou envoyez un message WhatsApp. Décrivez la situation, le lieu de départ, la destination et l’horaire souhaité afin de confirmer la prise en charge."}},
         {"@type":"Question","name":"Quel est le délai d’intervention ?","acceptedAnswer":{"@type":"Answer","text":"Une intervention peut être possible sous 30 minutes, selon la disponibilité et la confirmation de la demande. Le délai exact est communiqué lors de l’appel."}},
         {"@type":"Question","name":"L’ambulance est-elle médicalisée ?","acceptedAnswer":{"@type":"Answer","text":"Une ambulance médicalisée peut être proposée, avec ou sans équipe médicale, selon l’état du patient et les besoins du transport. Cette possibilité doit être confirmée avant la prise en charge."}},
         {"@type":"Question","name":"Faites-vous les transferts entre villes ?","acceptedAnswer":{"@type":"Answer","text":"Oui, les transferts médicaux longue distance depuis ou vers Kénitra peuvent être étudiés au cas par cas, selon le trajet, le véhicule disponible et les besoins du patient."}},
         {"@type":"Question","name":"Transportez-vous les patients dialysés ?","acceptedAnswer":{"@type":"Answer","text":"Oui, des transports programmés pour la dialyse et la chimiothérapie peuvent être organisés, sous réserve de confirmation de la disponibilité et des conditions nécessaires."}}
+          ]
+        }
       ]
     }
     </script>
