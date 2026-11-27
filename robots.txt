@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /canva-home/
 Disallow: /v19-
+Disallow: /internal/
 
 Sitemap: https://medomicile.com/sitemap.xml
