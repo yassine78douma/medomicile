@@ -1,0 +1,6 @@
+.tag { font-size: 0; }
+.tag::after { content: "Chabab"; font-size: .82rem; }
+.intro > p,
+#patient-demo,
+.guide > p,
+.foot { display: none !important; }
