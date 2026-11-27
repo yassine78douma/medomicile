@@ -10,4 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const guideNote = document.querySelector('.guide > p');
   if (guideNote) guideNote.remove();
+
+  const footerNote = document.querySelector('.foot');
+  if (footerNote) footerNote.remove();
 });
